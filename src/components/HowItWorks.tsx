@@ -130,7 +130,7 @@ const HowItWorks = () => (
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(90deg, hsl(220 16% 5%) 0%, hsl(215 50% 14% / 0.7) 18%, hsl(215 50% 14% / 0.15) 45%, transparent 75%)",
+                  "linear-gradient(90deg, hsl(215 50% 14%) 0%, hsl(215 50% 14% / 0.7) 18%, hsl(215 50% 14% / 0.15) 45%, transparent 75%)",
               }}
               aria-hidden
             />
@@ -138,7 +138,7 @@ const HowItWorks = () => (
               className="pointer-events-none absolute inset-x-0 bottom-0 h-32"
               style={{
                 background:
-                  "linear-gradient(180deg, transparent, hsl(220 16% 5%) 95%)",
+                  "linear-gradient(180deg, transparent, hsl(215 50% 14%) 95%)",
               }}
               aria-hidden
             />
