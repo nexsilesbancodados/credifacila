@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import Simular from "./pages/Simular.tsx";
 import Securitizadora from "./pages/Securitizadora.tsx";
 import Consignado from "./pages/Consignado.tsx";
 import AntecipacaoRecebiveis from "./pages/AntecipacaoRecebiveis.tsx";
@@ -49,7 +48,6 @@ const App = () => (
     <AnalyticsBoot />
     <Routes>
       <Route path="/" element={<Index />} />
-      <Route path="/simular" element={<Simular />} />
       <Route path="/securitizadora" element={<Securitizadora />} />
       <Route path="/consignado" element={<Consignado />} />
       <Route path="/securitizadora/antecipacao-de-recebiveis" element={<AntecipacaoRecebiveis />} />
