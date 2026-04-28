@@ -1,4 +1,4 @@
-import { useEffect, Suspense, lazy } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowLeft,
@@ -107,22 +107,15 @@ const Simular = () => {
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1.1fr_1fr]">
           {/* Left: copy + steps */}
           <div className="flex flex-col">
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-gold/30 bg-brand-gold/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-brand-gold">
-              <Sparkles className="h-3.5 w-3.5" />
-              Simulador oficial Credifácil
-            </span>
+            <h2 className="text-2xl font-bold leading-tight tracking-tight text-foreground md:text-3xl">
+              Como funciona em <span className="text-brand-gold">4 passos</span>
+            </h2>
 
-            <h1 className="mt-5 text-4xl font-bold leading-[1.05] tracking-tight text-foreground md:text-[52px]">
-              Simule seu empréstimo
-              <br />
-              em <span className="text-brand-gold">30 segundos</span>.
-            </h1>
-
-            <p className="mt-5 max-w-md text-base leading-relaxed text-foreground/70 md:text-lg">
+            <p className="mt-3 max-w-md text-base leading-relaxed text-foreground/70">
               Sem fila, sem papelada e sem surpresas. Descubra agora a parcela que cabe no seu bolso.
             </p>
 
-            <ol className="mt-8 space-y-3">
+            <ol className="mt-6 space-y-3">
               {steps.map((s, i) => (
                 <li key={s} className="flex items-start gap-3">
                   <span
