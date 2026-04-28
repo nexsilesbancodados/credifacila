@@ -36,7 +36,7 @@ const Header = () => {
   return (
     <header className="relative w-full overflow-hidden" aria-label="Cabeçalho Credifácil">
       {/* Top navigation - dark with gold arcs */}
-      <div className="relative z-20 w-full bg-[hsl(30_15%_8%)]">
+      <div className="relative z-20 w-full bg-[hsl(30_18%_6%)]/95 backdrop-blur-md">
         {/* Top gold curve - thin, dipping down at the sides */}
         <svg
           className="pointer-events-none absolute -top-px left-0 h-2 w-full"
@@ -134,12 +134,12 @@ const Header = () => {
               width={1920}
               height={1080}
             />
-            {/* Light gradient overlay on the left for text legibility */}
+            {/* Dark gradient overlay on the left for text legibility */}
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(90deg, hsl(40 30% 97% / 0.96) 0%, hsl(40 30% 97% / 0.85) 28%, hsl(40 30% 97% / 0.35) 50%, transparent 65%)",
+                  "linear-gradient(90deg, hsl(30 18% 6% / 0.96) 0%, hsl(30 18% 6% / 0.85) 30%, hsl(30 18% 6% / 0.4) 55%, transparent 75%)",
               }}
               aria-hidden="true"
             />
@@ -148,20 +148,20 @@ const Header = () => {
               className="pointer-events-none absolute -right-32 top-0 h-[600px] w-[800px] opacity-40"
               style={{
                 background:
-                  "radial-gradient(ellipse at center, hsl(35 75% 55% / 0.45), transparent 65%)",
+                  "radial-gradient(ellipse at center, hsl(35 80% 55% / 0.55), transparent 65%)",
               }}
               aria-hidden="true"
             />
             {/* Subtle gold arc top-left */}
             <svg
-              className="pointer-events-none absolute left-0 top-0 h-40 w-[60%] opacity-50"
+              className="pointer-events-none absolute left-0 top-0 h-40 w-[60%] opacity-40"
               viewBox="0 0 800 200"
               preserveAspectRatio="none"
               aria-hidden="true"
             >
               <path
                 d="M0,0 Q400,180 800,40 L800,0 Z"
-                fill="hsl(38 80% 55% / 0.08)"
+                fill="hsl(38 80% 55% / 0.12)"
               />
             </svg>
 
@@ -170,14 +170,14 @@ const Header = () => {
                <div className="w-full px-5 md:px-8 lg:px-10">
                  <div className="max-w-xl">
                   {/* Eyebrow badge */}
-                  <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-background/70 px-3 py-1.5 backdrop-blur-sm">
+                  <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-white/5 px-3 py-1.5 backdrop-blur-sm">
                     <span className="flex h-1.5 w-1.5 rounded-full bg-brand-gold" />
                     <span className="text-xs font-semibold uppercase tracking-wider text-brand-gold">
                       Crédito sem complicação
                     </span>
                   </div>
 
-                  <h1 className="text-4xl font-bold leading-[1.05] tracking-tight text-foreground md:text-[56px]">
+                  <h1 className="text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-[58px]">
                     O crédito que
                     <br />
                     você precisa,
@@ -187,7 +187,7 @@ const Header = () => {
                     <span className="text-brand-gold">que você merece.</span>
                   </h1>
 
-                  <p className="mt-6 max-w-md text-base leading-relaxed text-foreground/75 md:text-lg">
+                  <p className="mt-6 max-w-md text-base leading-relaxed text-white/70 md:text-lg">
                     Empréstimos rápidos, seguros e descomplicados para realizar seus planos e transformar sua vida.
                   </p>
 
@@ -203,7 +203,7 @@ const Header = () => {
                     </a>
                     <a
                       href="#simular"
-                      className="inline-flex items-center gap-2 rounded-2xl border border-foreground/15 bg-background/60 px-5 py-4 text-sm font-semibold text-foreground backdrop-blur-sm transition-all hover:border-brand-gold/60 hover:text-brand-gold"
+                      className="inline-flex items-center gap-2 rounded-2xl border border-white/15 bg-white/5 px-5 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:border-brand-gold/60 hover:text-brand-gold"
                     >
                       Simular agora
                     </a>
@@ -211,15 +211,15 @@ const Header = () => {
 
                   {/* Trust chips */}
                   <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
-                    <div className="flex items-center gap-2 text-xs font-medium text-foreground/70">
+                    <div className="flex items-center gap-2 text-xs font-medium text-white/65">
                       <CheckCircle2 className="h-4 w-4 text-brand-gold" />
                       Aprovação em minutos
                     </div>
-                    <div className="flex items-center gap-2 text-xs font-medium text-foreground/70">
+                    <div className="flex items-center gap-2 text-xs font-medium text-white/65">
                       <Clock className="h-4 w-4 text-brand-gold" />
                       Dinheiro na conta hoje
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs font-medium text-foreground/70">
+                    <div className="flex items-center gap-1.5 text-xs font-medium text-white/65">
                       <div className="flex">
                         {[0, 1, 2, 3, 4].map((i) => (
                           <Star key={i} className="h-3.5 w-3.5 fill-brand-gold text-brand-gold" />
@@ -235,13 +235,13 @@ const Header = () => {
             {/* Carousel arrows */}
             <button
               aria-label="Anterior"
-              className="absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-foreground/10 bg-background/70 text-foreground/70 backdrop-blur-sm transition hover:border-brand-gold/40 hover:bg-background/90 hover:text-brand-gold"
+              className="absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white/70 backdrop-blur-sm transition hover:border-brand-gold/50 hover:bg-black/60 hover:text-brand-gold"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
             <button
               aria-label="Próximo"
-              className="absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-foreground/10 bg-background/70 text-foreground/70 backdrop-blur-sm transition hover:border-brand-gold/40 hover:bg-background/90 hover:text-brand-gold"
+              className="absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white/70 backdrop-blur-sm transition hover:border-brand-gold/50 hover:bg-black/60 hover:text-brand-gold"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
@@ -249,12 +249,12 @@ const Header = () => {
             {/* Carousel dots */}
             <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2">
               <span className="h-1.5 w-6 rounded-full bg-brand-gold" />
-              <span className="h-1.5 w-1.5 rounded-full bg-foreground/30" />
-              <span className="h-1.5 w-1.5 rounded-full bg-foreground/30" />
+              <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
+              <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
             </div>
 
             {/* Floating dark badge */}
-            <div className="absolute bottom-20 right-8 hidden max-w-xs items-start gap-3 rounded-2xl border border-brand-gold/20 bg-[hsl(var(--surface-dark))]/95 p-4 text-[hsl(40_30%_97%)] shadow-[var(--shadow-card)] backdrop-blur md:flex">
+            <div className="absolute bottom-20 right-8 hidden max-w-xs items-start gap-3 rounded-2xl border border-brand-gold/25 bg-[hsl(var(--surface-elevated))]/90 p-4 text-white shadow-[var(--shadow-card)] backdrop-blur-md md:flex">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-gold">
                 <ShieldCheck className="h-5 w-5" />
               </div>
@@ -270,21 +270,21 @@ const Header = () => {
 
         {/* Features card */}
         <div className="relative z-10 -mt-10 w-full px-0">
-          <div className="rounded-2xl border border-foreground/8 bg-background p-6 shadow-[var(--shadow-card)]">
+          <div className="rounded-2xl border border-white/8 bg-[hsl(var(--surface-elevated))]/85 p-6 shadow-[var(--shadow-card)] backdrop-blur-md">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
               {features.map((f, i) => (
                 <div
                   key={f.title}
                   className={`flex items-start gap-4 ${
-                    i < 3 ? "lg:border-r lg:border-foreground/10 lg:pr-6" : ""
+                    i < 3 ? "lg:border-r lg:border-white/10 lg:pr-6" : ""
                   }`}
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-brand-gold/40 text-brand-gold">
                     <f.icon className="h-5 w-5" strokeWidth={2.2} />
                   </div>
                   <div className="leading-snug">
-                    <div className="text-sm font-bold text-foreground">{f.title}</div>
-                    <div className="mt-1 whitespace-pre-line text-xs text-foreground/60">
+                    <div className="text-sm font-bold text-white">{f.title}</div>
+                    <div className="mt-1 whitespace-pre-line text-xs text-white/60">
                       {f.desc}
                     </div>
                   </div>
@@ -296,7 +296,7 @@ const Header = () => {
 
         {/* Bottom dark bar */}
         <div className="mt-5 w-full px-0 pb-10">
-          <div className="flex flex-col items-center justify-between gap-4 rounded-2xl bg-[hsl(var(--surface-dark))] px-6 py-4 text-[hsl(40_30%_97%)] md:flex-row">
+          <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border border-white/5 bg-[hsl(var(--surface-dark))]/80 px-6 py-4 text-white backdrop-blur-md md:flex-row">
             <div className="flex items-center gap-3">
               <Heart className="h-5 w-5 text-brand-gold" />
               <span className="text-sm font-medium">Aqui o seu sonho tem crédito.</span>
