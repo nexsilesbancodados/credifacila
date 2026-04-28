@@ -27,7 +27,13 @@ const Index = () => (
       <LoansSection />
       {/* 2. Vantagens — por que escolher a Vamos Crédito */}
       <AdvantagesSection />
-      {/* 3. Depoimentos — marquee em loop */}
+      {/* 3. Bancos parceiros — prova social e credibilidade */}
+      <PartnerBanks />
+      {/* 4. Como funciona — desmistifica o processo em 4 passos */}
+      <HowItWorks />
+      {/* 5. Sobre nós — história, propósito e estatísticas */}
+      <AboutSection />
+      {/* 6. Depoimentos — marquee em loop (penúltima seção) */}
       <TestimonialsMarquee
         eyebrow="Quem confia"
         title="Histórias reais"
@@ -35,13 +41,7 @@ const Index = () => (
         subtitle="Mais de 50 mil pessoas já contrataram com a gente. Veja por que nossos clientes recomendam."
         testimonials={homeTestimonials}
       />
-      {/* 4. Bancos parceiros — prova social e credibilidade */}
-      <PartnerBanks />
-      {/* 4. Como funciona — desmistifica o processo em 4 passos */}
-      <HowItWorks />
-      {/* 5. Sobre nós — história, propósito e estatísticas */}
-      <AboutSection />
-      {/* 6. FAQ — remove últimas objeções antes do contato */}
+      {/* 7. FAQ — remove últimas objeções antes do contato */}
       <FaqSection />
     </main>
     <ContactFooter />
