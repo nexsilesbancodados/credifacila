@@ -5,11 +5,11 @@ const VISIBLE_CLASS = "anim-visible";
 const useScrollAnimations = () => {
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
       document.querySelectorAll<HTMLElement>("[data-anim], [data-anim-stagger]").forEach((el) => {
         el.classList.add(VISIBLE_CLASS);
       });
-      return;
     }
 
     const io = new IntersectionObserver(
@@ -31,7 +31,57 @@ const useScrollAnimations = () => {
       });
     };
 
-    observe();
+    if (!reduce) observe();
+
+    /* ------- Lightweight parallax (rAF + IO, skips offscreen) ------- */
+    const parallaxEls = new Set<HTMLElement>();
+    const visibleParallax = new Set<HTMLElement>();
+    let rafId = 0;
+
+    const updateParallax = () => {
+      rafId = 0;
+      const vh = window.innerHeight;
+      visibleParallax.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const speed = parseFloat(el.dataset.parallax || "0.15");
+        // progress: -1 (entering bottom) → 1 (leaving top)
+        const progress = (rect.top + rect.height / 2 - vh / 2) / vh;
+        const offset = -progress * 100 * speed;
+        el.style.setProperty("--parallax-y", `${offset.toFixed(2)}px`);
+      });
+    };
+
+    const onScroll = () => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(updateParallax);
+    };
+
+    const pIO = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const el = entry.target as HTMLElement;
+          if (entry.isIntersecting) visibleParallax.add(el);
+          else visibleParallax.delete(el);
+        }
+        if (visibleParallax.size > 0) onScroll();
+      },
+      { rootMargin: "10% 0px 10% 0px" }
+    );
+
+    const observeParallax = (root: ParentNode = document) => {
+      if (reduce) return;
+      root.querySelectorAll<HTMLElement>("[data-parallax]").forEach((el) => {
+        if (parallaxEls.has(el)) return;
+        parallaxEls.add(el);
+        pIO.observe(el);
+      });
+    };
+
+    observeParallax();
+    if (!reduce) {
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll, { passive: true });
+    }
 
     let pending = false;
     const mo = new MutationObserver((mutations) => {
@@ -46,7 +96,8 @@ const useScrollAnimations = () => {
       if (!hasNew) return;
       pending = true;
       requestAnimationFrame(() => {
-        observe();
+        if (!reduce) observe();
+        observeParallax();
         pending = false;
       });
     });
@@ -54,7 +105,11 @@ const useScrollAnimations = () => {
 
     return () => {
       io.disconnect();
+      pIO.disconnect();
       mo.disconnect();
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (rafId) cancelAnimationFrame(rafId);
     };
   }, []);
 };
