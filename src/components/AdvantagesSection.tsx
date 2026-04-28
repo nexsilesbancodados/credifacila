@@ -8,7 +8,6 @@ import {
   Coins,
   TrendingUp,
   Heart,
-  Quote,
   Phone,
   MessageCircle,
   ShieldCheck,
@@ -16,10 +15,7 @@ import {
 } from "lucide-react";
 import { site, whatsappLink, telLink } from "@/config/site";
 import womanCoffee from "@/assets/woman-coffee.webp";
-import juliana from "@/assets/testimonial-juliana.webp";
-import carlos from "@/assets/testimonial-carlos.webp";
 import cardAdvantages from "@/assets/card-advantages.webp";
-import cardStories from "@/assets/card-stories.webp";
 
 const advantages = [
   { icon: Clock, title: "Liberação no mesmo dia", desc: "Dinheiro na conta em poucas horas após aprovação.", tag: "Rápido" },
@@ -33,23 +29,6 @@ const purposes = [
   { icon: Coins, label: "Quite\ndívidas" },
   { icon: TrendingUp, label: "Invista no\nseu futuro" },
   { icon: Heart, label: "Tenha mais\ntranquilidade" },
-];
-
-const testimonials = [
-  {
-    text: "Consegui o crédito que precisava e fui muito bem atendida do início ao fim. Em menos de 24h o dinheiro estava na conta!",
-    name: "Juliana S.",
-    role: "São Paulo, SP",
-    avatar: juliana,
-    rating: 5,
-  },
-  {
-    text: "Processo rápido, seguro e sem letras miúdas. As parcelas couberam direitinho no orçamento da família.",
-    name: "Carlos M.",
-    role: "Belo Horizonte, MG",
-    avatar: carlos,
-    rating: 5,
-  },
 ];
 
 const AdvantagesSection = () => {
@@ -74,7 +53,7 @@ const AdvantagesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3" data-anim-stagger>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2" data-anim-stagger>
           {/* CARD 1 — Vantagens */}
           <article className="group relative overflow-hidden rounded-3xl border border-white/8 bg-[hsl(220_16%_8%)] p-7 text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/40">
             <img
@@ -197,80 +176,6 @@ const AdvantagesSection = () => {
             </div>
           </article>
 
-          {/* CARD 3 — Histórias reais */}
-          <article className="relative overflow-hidden rounded-3xl border border-white/8 bg-[hsl(220_16%_8%)] p-7 text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/40">
-            <img
-              src={cardStories}
-              alt=""
-              aria-hidden
-              className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-25 transition-opacity duration-500 hover:opacity-35"
-              loading="lazy"
-              decoding="async"
-            />
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(180deg, hsl(220 16% 8% / 0.88) 0%, hsl(220 16% 8% / 0.95) 60%, hsl(220 16% 8% / 0.98) 100%)",
-              }}
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute -left-20 -bottom-20 h-60 w-60 rounded-full opacity-30"
-              style={{
-                background:
-                  "radial-gradient(circle, hsl(35 90% 55% / 0.5), transparent 70%)",
-              }}
-              aria-hidden
-            />
-            <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden />
-            <div className="relative">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-gold/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold">
-                <Star className="h-3 w-3 fill-brand-gold" /> 4,9 / 5 — +12 mil avaliações
-              </span>
-              <h3 className="mt-3 font-display text-2xl font-bold leading-[1.15]">
-                Histórias reais,
-                <br />
-                <span className="text-brand-gold">resultados reais</span>
-              </h3>
-
-              <div className="mt-6 flex flex-col gap-4">
-                {testimonials.map((t) => (
-                  <div
-                    key={t.name}
-                    className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur-sm transition-all hover:border-brand-gold/30 hover:bg-white/[0.05]"
-                  >
-                    <div className="flex items-start gap-3">
-                      <Quote className="h-4 w-4 shrink-0 text-brand-gold" />
-                      <div className="flex-1">
-                        <div className="mb-1.5 flex gap-0.5">
-                          {Array.from({ length: t.rating }).map((_, idx) => (
-                            <Star key={idx} className="h-3 w-3 fill-brand-gold text-brand-gold" />
-                          ))}
-                        </div>
-                        <p className="text-xs leading-relaxed text-white/85">"{t.text}"</p>
-                        <div className="mt-3 flex items-center justify-between gap-3">
-                          <div className="leading-tight">
-                            <div className="text-xs font-bold">{t.name}</div>
-                            <div className="mt-0.5 text-[10px] text-white/50">{t.role}</div>
-                          </div>
-                          <img
-                            src={t.avatar}
-                            alt={`Foto de ${t.name}`}
-                            className="h-12 w-12 rounded-full object-cover ring-1 ring-brand-gold/30"
-                            loading="lazy"
-                            decoding="async"
-                            width={512}
-                            height={512}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </article>
         </div>
 
         {/* Bottom golden CTA bar */}
