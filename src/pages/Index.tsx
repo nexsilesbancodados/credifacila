@@ -13,17 +13,17 @@ const Index = () => (
     <AnimatedBackdrop variant="soft" />
     <Header />
     <main id="main">
-      {/* 1. Soluções (linhas de crédito) — primeiro contato com produtos */}
+      {/* 1. Soluções — apresenta produtos logo após a hero */}
       <LoansSection />
-      {/* 2. Como funciona — fluxo de contratação em 4 passos */}
-      <HowItWorks />
-      {/* 3. Vantagens + propósito + depoimentos */}
+      {/* 2. Vantagens — por que escolher a Vamos Crédito */}
       <AdvantagesSection />
-      {/* 4. Bancos parceiros */}
+      {/* 3. Bancos parceiros — prova social e credibilidade */}
       <PartnerBanks />
-      {/* 5. Sobre nós + estatísticas com counters */}
+      {/* 4. Como funciona — desmistifica o processo em 4 passos */}
+      <HowItWorks />
+      {/* 5. Sobre nós — história, propósito e estatísticas */}
       <AboutSection />
-      {/* 6. FAQ */}
+      {/* 6. FAQ — remove últimas objeções antes do contato */}
       <FaqSection />
     </main>
     <ContactFooter />
