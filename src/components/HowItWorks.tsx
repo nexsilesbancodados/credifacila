@@ -1,4 +1,5 @@
 import { Calculator, FileText, ShieldCheck, Banknote, ChevronRight } from "lucide-react";
+import { Fragment } from "react";
 
 const steps = [
   {
@@ -43,8 +44,8 @@ const HowItWorks = () => {
         <div className="mt-10 rounded-3xl border border-foreground/8 bg-gradient-to-br from-[hsl(40_60%_96%)] to-background p-6 shadow-[var(--shadow-card)] md:p-8">
           <ol className="flex flex-col items-stretch gap-8 md:grid md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] md:items-center md:gap-4">
             {steps.map((step, i) => (
-              <>
-                <li key={step.title} className="flex flex-col items-center text-center">
+              <Fragment key={step.title}>
+                <li className="flex flex-col items-center text-center">
                   <div className="relative">
                     <div className="flex h-20 w-20 items-center justify-center rounded-full bg-brand-gold/10 text-brand-gold ring-1 ring-brand-gold/20">
                       <step.icon className="h-9 w-9" strokeWidth={1.8} />
@@ -68,7 +69,7 @@ const HowItWorks = () => {
                     </span>
                   </li>
                 )}
-              </>
+              </Fragment>
             ))}
           </ol>
         </div>
