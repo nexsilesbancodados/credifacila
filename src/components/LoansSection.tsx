@@ -440,13 +440,17 @@ const LoansSection = () => {
         >
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-brand-gold">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold">
+                <Sparkles className="h-3 w-3" />
                 Linhas de crédito
               </span>
               <h3 className="mt-1 font-display text-2xl font-bold leading-tight text-foreground md:text-[28px]">
                 A solução certa para{" "}
                 <span className="text-brand-gold">cada necessidade</span>
               </h3>
+              <p className="mt-1.5 text-sm text-foreground/65">
+                Taxas a partir de <strong className="text-foreground/85">0,89% a.m.</strong> · simulação grátis e sem compromisso.
+              </p>
             </div>
             <a
               href={whatsappLink("Olá! Quero contratar um crédito Credifácil.")}
@@ -466,7 +470,11 @@ const LoansSection = () => {
                 href={p.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-foreground/8 bg-white transition-all hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-[var(--shadow-gold)]"
+                className={`group relative flex flex-col overflow-hidden rounded-2xl border bg-white transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-gold)] ${
+                  p.tag === "Mais pedido"
+                    ? "border-brand-gold/45 ring-1 ring-brand-gold/30 hover:border-brand-gold/70"
+                    : "border-foreground/8 hover:border-brand-gold/40"
+                }`}
               >
                 {/* Illustration */}
                 <div className="relative h-44 overflow-hidden">
@@ -478,26 +486,67 @@ const LoansSection = () => {
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   {p.tag && (
-                    <span className="absolute right-3 top-3 rounded-full bg-brand-gold px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold-foreground shadow-[var(--shadow-gold-sm)]">
+                    <span
+                      className="absolute right-3 top-3 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold-foreground shadow-[var(--shadow-gold-sm)]"
+                      style={{ background: "var(--gradient-gold)" }}
+                    >
                       {p.tag}
                     </span>
                   )}
+                  {/* Rate chip */}
+                  <div className="absolute bottom-3 left-3 rounded-xl border border-foreground/10 bg-white/95 px-2.5 py-1.5 shadow-sm backdrop-blur">
+                    <div className="text-[9px] font-semibold uppercase tracking-wider text-foreground/55 leading-none">
+                      {p.rateLabel}
+                    </div>
+                    <div className="mt-0.5 font-display text-[15px] font-bold leading-none text-foreground">
+                      {p.rate}
+                    </div>
+                  </div>
+                  {/* Term chip */}
+                  <div className="absolute bottom-3 right-3 rounded-full border border-foreground/10 bg-white/95 px-2.5 py-1 text-[10px] font-bold text-foreground/75 shadow-sm backdrop-blur">
+                    {p.term}
+                  </div>
                 </div>
                 {/* Content */}
                 <div className="flex flex-1 flex-col p-5">
-                  <h4 className="font-display text-[16px] font-bold text-foreground">
+                  <h4 className="font-display text-[16px] font-bold text-foreground transition-colors group-hover:text-brand-gold">
                     {p.title}
                   </h4>
                   <p className="mt-2 flex-1 text-xs leading-relaxed text-foreground/75">
                     {p.desc}
                   </p>
-                  <div className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-brand-gold transition-all group-hover:gap-2">
-                    Falar no WhatsApp
-                    <ChevronRight className="h-3.5 w-3.5" />
+                  <div className="mt-4 inline-flex items-center justify-between gap-2 border-t border-foreground/8 pt-3">
+                    <span className="inline-flex items-center gap-1 text-xs font-semibold text-brand-gold transition-all group-hover:gap-2">
+                      Falar no WhatsApp
+                      <ChevronRight className="h-3.5 w-3.5" />
+                    </span>
+                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-brand-gold/35 bg-brand-gold/5 text-brand-gold transition-all group-hover:bg-brand-gold group-hover:text-brand-gold-foreground group-hover:border-brand-gold">
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </span>
                   </div>
                 </div>
+                {/* Shine sweep on hover */}
+                <span
+                  className="pointer-events-none absolute inset-y-0 -left-16 w-16 -skew-x-12 bg-gradient-to-r from-transparent via-white/55 to-transparent opacity-0 transition-all duration-700 group-hover:left-[110%] group-hover:opacity-100"
+                  aria-hidden
+                />
               </a>
             ))}
+          </div>
+
+          {/* Reassurance bar */}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 rounded-2xl border border-foreground/8 bg-white/60 px-4 py-3 text-[11px] font-medium text-foreground/70 backdrop-blur-sm">
+            <span className="inline-flex items-center gap-1.5">
+              <ShieldCheck className="h-3.5 w-3.5 text-brand-gold" /> Autorizada pelo Banco Central
+            </span>
+            <span className="hidden h-3 w-px bg-foreground/15 sm:inline-block" />
+            <span className="inline-flex items-center gap-1.5">
+              <Lock className="h-3.5 w-3.5 text-brand-gold" /> Seus dados protegidos pela LGPD
+            </span>
+            <span className="hidden h-3 w-px bg-foreground/15 sm:inline-block" />
+            <span className="inline-flex items-center gap-1.5">
+              <CheckCircle2 className="h-3.5 w-3.5 text-brand-gold" /> Simulação 100% gratuita
+            </span>
           </div>
         </div>
 
