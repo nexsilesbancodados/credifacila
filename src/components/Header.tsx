@@ -53,7 +53,7 @@ const Header = () => {
           <path d="M0,16 L1440,16 L1440,8 Q720,-6 0,8 Z" fill="hsl(38 90% 50%)" />
         </svg>
 
-        <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-8 py-4">
+        <nav className="relative flex w-full items-center justify-between px-5 py-4 md:px-8 lg:px-10">
           {/* Logo */}
           <a href="#inicio" className="flex items-center gap-3">
             <svg viewBox="0 0 64 56" className="h-11 w-14" aria-hidden="true">
@@ -127,7 +127,7 @@ const Header = () => {
             <img
               src={heroImage}
               alt="Casal sorridente representando clientes satisfeitos da Credifácil"
-              className="h-[560px] w-full object-cover"
+              className="h-[560px] w-full object-cover object-[64%_center]"
               width={1920}
               height={1080}
             />
@@ -136,7 +136,7 @@ const Header = () => {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(90deg, hsl(40 30% 97% / 0.96) 0%, hsl(40 30% 97% / 0.85) 35%, hsl(40 30% 97% / 0.35) 60%, transparent 80%)",
+                  "linear-gradient(90deg, hsl(40 30% 97% / 0.9) 0%, hsl(40 30% 97% / 0.76) 22%, hsl(40 30% 97% / 0.28) 42%, transparent 58%)",
               }}
               aria-hidden="true"
             />
@@ -151,9 +151,9 @@ const Header = () => {
             />
 
             {/* Content */}
-            <div className="absolute inset-0 flex items-center">
-              <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
-                <div className="max-w-xl">
+             <div className="absolute inset-0 flex items-center">
+               <div className="w-full px-5 md:px-8 lg:px-10">
+                 <div className="max-w-xl">
                   <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-foreground md:text-[52px]">
                     O crédito que
                     <br />
@@ -210,7 +210,7 @@ const Header = () => {
         </div>
 
         {/* Features card */}
-        <div className="relative z-10 mx-auto -mt-10 max-w-7xl px-6">
+        <div className="relative z-10 -mt-10 w-full px-0">
           <div className="rounded-2xl border border-foreground/8 bg-background p-6 shadow-[var(--shadow-card)]">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
               {features.map((f, i) => (
@@ -236,7 +236,7 @@ const Header = () => {
         </div>
 
         {/* Bottom dark bar */}
-        <div className="mx-auto mt-5 max-w-7xl px-6 pb-10">
+        <div className="mt-5 w-full px-0 pb-10">
           <div className="flex flex-col items-center justify-between gap-4 rounded-2xl bg-[hsl(var(--surface-dark))] px-6 py-4 text-[hsl(40_30%_97%)] md:flex-row">
             <div className="flex items-center gap-3">
               <Heart className="h-5 w-5 text-brand-gold" />

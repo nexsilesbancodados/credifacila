@@ -103,6 +103,15 @@ All colors MUST be HSL.
 }
 
 @layer base {
+  html,
+  body,
+  #root {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
   * {
     @apply border-border;
   }
