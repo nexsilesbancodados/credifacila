@@ -200,6 +200,30 @@
   50% { background-position: 100% 50%; }
 }
 
+/* ---------- Micro-interactions: badges, trust cards, stats ---------- */
+@keyframes pop-in {
+  0%   { opacity: 0; transform: translateY(8px) scale(.94); }
+  60%  { opacity: 1; transform: translateY(-2px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes badge-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--brand-gold) / 0.0); }
+  50%      { box-shadow: 0 0 0 6px hsl(var(--brand-gold) / 0.12); }
+}
+@keyframes icon-tilt {
+  0%   { transform: rotate(0deg) scale(1); }
+  40%  { transform: rotate(-6deg) scale(1.08); }
+  100% { transform: rotate(0deg) scale(1.05); }
+}
+@keyframes count-glow {
+  0%, 100% { text-shadow: 0 0 0 hsl(var(--brand-gold) / 0); }
+  50%      { text-shadow: 0 0 14px hsl(var(--brand-gold) / 0.35); }
+}
+@keyframes shine-sweep {
+  0%   { transform: translateX(-120%) skewX(-12deg); }
+  100% { transform: translateX(220%) skewX(-12deg); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   body::before { animation: none !important; }
 }
@@ -273,6 +297,59 @@
   /* Ensure surfaces over the animated gradient stay readable */
   .surface-soft {
     @apply bg-white/85 backdrop-blur-sm;
+  }
+
+  /* ---------- Micro-anim utility classes ---------- */
+  .anim-pop-in {
+    animation: pop-in .55s cubic-bezier(.22,1,.36,1) both;
+  }
+  .badge-live {
+    animation: badge-pulse 2.6s ease-in-out infinite;
+  }
+  .stat-tile {
+    @apply relative transition-transform duration-300 ease-out;
+  }
+  .stat-tile:hover { transform: translateY(-2px); }
+  .stat-tile:hover .stat-value { animation: count-glow 1.4s ease-in-out infinite; }
+
+  .trust-card {
+    @apply relative overflow-hidden rounded-2xl border border-foreground/8 bg-white/70 p-4 backdrop-blur-sm;
+    transition: transform .35s cubic-bezier(.22,1,.36,1),
+                box-shadow .35s ease,
+                border-color .25s ease,
+                background-color .25s ease;
+  }
+  .trust-card:hover {
+    transform: translateY(-3px);
+    @apply border-brand-gold/40 bg-white shadow-[var(--shadow-card)];
+  }
+  .trust-card:hover .trust-icon { animation: icon-tilt .6s cubic-bezier(.22,1,.36,1) forwards; }
+  /* Sweeping shine over icon on hover */
+  .trust-icon {
+    @apply relative overflow-hidden;
+    transition: transform .35s ease;
+  }
+  .trust-icon::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, hsl(0 0% 100% / .55) 50%, transparent 100%);
+    transform: translateX(-120%) skewX(-12deg);
+    pointer-events: none;
+  }
+  .trust-card:hover .trust-icon::after {
+    animation: shine-sweep .9s ease-out forwards;
+  }
+
+  /* Reduced-motion safety */
+  @media (prefers-reduced-motion: reduce) {
+    .anim-pop-in, .badge-live,
+    .trust-card:hover, .trust-card:hover .trust-icon,
+    .trust-card:hover .trust-icon::after,
+    .stat-tile:hover, .stat-tile:hover .stat-value {
+      animation: none !important;
+      transform: none !important;
+    }
   }
 }
 
