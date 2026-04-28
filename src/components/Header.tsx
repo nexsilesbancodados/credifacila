@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   MessageCircle,
   Zap,
@@ -15,6 +16,8 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import heroImage from "@/assets/hero-credifacil.jpg";
+import heroSlide2 from "@/assets/hero-slide-2.jpg";
+import heroSlide3 from "@/assets/hero-slide-3.jpg";
 import logo from "@/assets/credifacil-logo.png";
 
 const navItems = [
@@ -24,6 +27,24 @@ const navItems = [
   { label: "Sobre nós", href: "#sobre" },
   { label: "Dúvidas", href: "#duvidas" },
   { label: "Fale conosco", href: "#contato" },
+];
+
+const heroSlides = [
+  {
+    src: heroImage,
+    alt: "Casal sorridente representando clientes satisfeitos da Credifácil",
+    objectPosition: "64% center",
+  },
+  {
+    src: heroSlide2,
+    alt: "Mulher sorrindo enquanto usa o aplicativo da Credifácil no celular",
+    objectPosition: "70% center",
+  },
+  {
+    src: heroSlide3,
+    alt: "Família comemorando a aprovação do crédito Credifácil em casa",
+    objectPosition: "60% center",
+  },
 ];
 
 const features = [
@@ -54,6 +75,15 @@ const features = [
 ];
 
 const Header = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <header className="relative w-full overflow-hidden" aria-label="Cabeçalho Credifácil">
       {/* Top navigation - dark with gold arcs */}
@@ -127,14 +157,25 @@ const Header = () => {
       <div className="relative">
         {/* Hero image */}
         <div className="relative w-full">
-          <div className="relative overflow-hidden">
-            <img loading="eager" decoding="async" fetchPriority="high"
-              src={heroImage}
-              alt="Casal sorridente representando clientes satisfeitos da Credifácil"
-              className="h-[640px] w-full object-cover object-[64%_center] md:h-[700px]"
-              width={1920}
-              height={1080}
-            />
+          <div className="relative h-[640px] overflow-hidden md:h-[700px]">
+            {/* Carousel slides */}
+            {heroSlides.map((slide, i) => (
+              <img
+                key={slide.src}
+                loading={i === 0 ? "eager" : "lazy"}
+                decoding="async"
+                fetchPriority={i === 0 ? "high" : "low"}
+                src={slide.src}
+                alt={slide.alt}
+                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1400ms] ease-in-out ${
+                  activeSlide === i ? "opacity-100" : "opacity-0"
+                }`}
+                style={{ objectPosition: slide.objectPosition }}
+                width={1920}
+                height={1080}
+                aria-hidden={activeSlide !== i}
+              />
+            ))}
             {/* Dark gradient overlay on the left for text legibility */}
             <div
               className="absolute inset-0"
@@ -283,12 +324,18 @@ const Header = () => {
 
             {/* Carousel arrows */}
             <button
+              type="button"
+              onClick={() =>
+                setActiveSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
+              }
               aria-label="Anterior"
               className="absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white/70 backdrop-blur-sm transition hover:border-brand-gold/50 hover:bg-black/60 hover:text-brand-gold"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
             <button
+              type="button"
+              onClick={() => setActiveSlide((prev) => (prev + 1) % heroSlides.length)}
               aria-label="Próximo"
               className="absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white/70 backdrop-blur-sm transition hover:border-brand-gold/50 hover:bg-black/60 hover:text-brand-gold"
             >
@@ -297,9 +344,17 @@ const Header = () => {
 
             {/* Carousel dots */}
             <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2">
-              <span className="h-1.5 w-6 rounded-full bg-brand-gold" />
-              <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
-              <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
+              {heroSlides.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => setActiveSlide(i)}
+                  aria-label={`Ir para slide ${i + 1}`}
+                  className={`h-1.5 rounded-full transition-all duration-500 ${
+                    activeSlide === i ? "w-6 bg-brand-gold" : "w-1.5 bg-white/30 hover:bg-white/60"
+                  }`}
+                />
+              ))}
             </div>
 
             {/* Floating dark badge */}
