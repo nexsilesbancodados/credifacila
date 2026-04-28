@@ -1,11 +1,9 @@
-import { useState } from "react";
 import {
   Heart,
   ShieldCheck,
   Clock,
   Headphones,
   ChevronRight,
-  ChevronDown,
   Star,
   Quote,
   Wallet,
@@ -18,9 +16,9 @@ import {
   MessageCircle,
   Sparkles,
   TrendingUp,
-  CheckCircle2,
   ArrowRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import loansHero from "@/assets/loans-hero.jpg";
 import supportAgent from "@/assets/support-agent.jpg";
 import cardPersonal from "@/assets/card-personal.jpg";
@@ -71,18 +69,7 @@ const partnerItems = [
   { icon: Lock, title: "Compromisso real", desc: "Estamos do seu lado\nem cada etapa." },
 ];
 
-const formatBRL = (n: number) =>
-  n.toLocaleString("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: 2 });
-
 const LoansSection = () => {
-  const [amount, setAmount] = useState(15000);
-  const [installments, setInstallments] = useState(36);
-
-  // Simple illustrative calculation (1.49% a.m.)
-  const rate = 0.0149;
-  const factor = (rate * Math.pow(1 + rate, installments)) / (Math.pow(1 + rate, installments) - 1);
-  const monthly = amount * factor;
-
   return (
     <section
       id="emprestimos"
