@@ -46,10 +46,10 @@ const navColumns = [
   {
     title: "Empréstimos",
     links: [
-      { label: "Crédito pessoal", href: "/simular" },
+      { label: "Crédito pessoal", href: "/#solucoes" },
       { label: "Crédito consignado", href: "/consignado" },
       { label: "Securitizadora", href: "/securitizadora" },
-      { label: "Simulador", href: "/simular" },
+      { label: "Linhas de crédito", href: "/#solucoes" },
     ],
   },
   {
