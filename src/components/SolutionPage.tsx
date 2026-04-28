@@ -225,17 +225,19 @@ const SolutionPage = ({
           >
             <div
               data-anim="zoom-out"
-              className="relative overflow-hidden rounded-3xl shadow-[var(--shadow-card)] ring-1 ring-brand-gold/15"
+              className="glow-gold-hover relative h-[420px] overflow-hidden rounded-3xl shadow-[var(--shadow-card)] ring-1 ring-brand-gold/15 md:h-[520px]"
             >
-              <img
-                src={showcase.image}
-                alt={showcase.alt}
-                loading="lazy"
-                decoding="async"
-                width={1600}
-                height={1024}
-                className="h-[420px] w-full object-cover md:h-[520px]"
-              />
+              <div data-parallax="0.12" className="absolute inset-0 -top-12 -bottom-12">
+                <img
+                  src={showcase.image}
+                  alt={showcase.alt}
+                  loading="lazy"
+                  decoding="async"
+                  width={1600}
+                  height={1024}
+                  className="h-full w-full scale-110 object-cover"
+                />
+              </div>
               <div
                 className="pointer-events-none absolute inset-0"
                 style={{
