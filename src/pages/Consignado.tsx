@@ -269,11 +269,16 @@ const Consignado = () => {
               <span className="font-semibold text-white">96 meses</span>.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link to="/simular" className="btn-gold group">
+              <a
+                href={whatsappLink("Olá! Quero contratar o crédito consignado.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-gold group"
+              >
                 <Wallet className="h-5 w-5" strokeWidth={2.4} />
-                Simular meu consignado
+                Quero meu consignado
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
+              </a>
               <a href="#beneficios" className="btn-ghost-light">
                 Ver vantagens
               </a>
@@ -557,14 +562,16 @@ const Consignado = () => {
               Viaje, reforme, quite dívidas ou ajude a família. Use seu consignado da forma que
               fizer mais sentido para você.
             </p>
-            <Link
-              to="/simular"
+            <a
+              href={whatsappLink("Olá! Quero contratar o crédito consignado.")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-7 inline-flex items-center gap-3 rounded-2xl px-7 py-4 text-base font-bold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.03]"
               style={{ background: "var(--gradient-gold)" }}
             >
-              Quero simular agora
+              Quero contratar agora
               <ArrowRight className="h-5 w-5" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -755,21 +762,23 @@ const Consignado = () => {
         >
           <div className="relative">
             <h2 className="text-3xl font-bold leading-tight text-white md:text-4xl">
-              Simule agora e descubra
+              Fale com a gente e descubra
               <br />o quanto você pode receber.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-[15px] text-white/90">
               Sem compromisso, sem burocracia e sem afetar o seu score.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                to="/simular"
+              <a
+                href={whatsappLink("Olá! Quero contratar o crédito consignado.")}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-2xl bg-[hsl(30_22%_5%)] px-7 py-4 text-base font-bold text-white transition-all hover:scale-[1.03]"
               >
                 <Wallet className="h-5 w-5" />
-                Simular meu consignado
+                Quero meu consignado
                 <ArrowRight className="h-5 w-5" />
-              </Link>
+              </a>
               <a
                 href={whatsappLink("Olá! Quero falar com um especialista em consignado.")}
                 target="_blank"
@@ -792,7 +801,6 @@ const Consignado = () => {
           <div className="flex items-center gap-5 text-xs font-medium text-foreground/65">
             <Link to="/" className="hover:text-brand-gold">Início</Link>
             <Link to="/securitizadora" className="hover:text-brand-gold">Securitizadora</Link>
-            <Link to="/simular" className="hover:text-brand-gold">Simular</Link>
           </div>
         </div>
       </footer>

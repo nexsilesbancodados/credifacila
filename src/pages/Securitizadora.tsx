@@ -591,14 +591,16 @@ const Securitizadora = () => {
               e descubra a melhor solução para a sua empresa.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                to="/simular"
+              <a
+                href={whatsappLink("Olá! Quero contratar uma solução da Securitizadora.")}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-2xl bg-[hsl(30_22%_5%)] px-7 py-4 text-base font-bold text-white transition-all hover:scale-[1.03]"
               >
                 <TrendingUp className="h-5 w-5" />
-                Simular agora
+                Solicitar agora
                 <ArrowRight className="h-5 w-5" />
-              </Link>
+              </a>
               <a
                 href={whatsappLink("Olá! Quero falar com a Credifácil Securitizadora.")}
                 target="_blank"
@@ -632,7 +634,6 @@ const Securitizadora = () => {
           <div className="flex items-center gap-5 text-xs font-medium text-foreground/65">
             <Link to="/" className="hover:text-brand-gold">Início</Link>
             <Link to="/consignado" className="hover:text-brand-gold">Consignado</Link>
-            <Link to="/simular" className="hover:text-brand-gold">Simular</Link>
           </div>
         </div>
       </footer>
