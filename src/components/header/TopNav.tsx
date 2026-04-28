@@ -23,6 +23,7 @@ const navItems: {
   },
   { label: "Como funciona", href: "#como-funciona" },
   { label: "Sobre nós", href: "#sobre" },
+  { label: "Invista Conosco", href: "/invista-conosco" },
   { label: "Dúvidas", href: "/perguntas-frequentes" },
 ];
 
