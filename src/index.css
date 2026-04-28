@@ -15,6 +15,8 @@ All colors MUST be HSL.
     --brand-gold-foreground: 0 0% 8%;
     --gradient-gold: linear-gradient(90deg, hsl(38 90% 50%), hsl(45 95% 60%));
     --header-overlay: linear-gradient(180deg, hsl(0 0% 4% / 0.85), hsl(0 0% 4% / 0.55));
+    --shadow-gold: 0 10px 40px -10px hsl(42 95% 55% / 0.55);
+    --shadow-card: 0 20px 60px -20px hsl(0 0% 0% / 0.6);
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
