@@ -132,23 +132,45 @@ const LoansSection = () => {
             </ul>
 
             {/* CTAs */}
-            <div className="mt-7 flex flex-wrap items-center gap-3">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-stretch">
               <a
                 href={whatsappLink("Olá! Quero solicitar meu crédito Credifácil.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-gold group"
+                className="btn-gold group sm:self-start"
               >
                 <MessageCircle className="h-4 w-4" />
                 Solicitar agora
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>
+
+              {/* Discover-lines card CTA */}
               <a
                 href="#linhas"
-                className="inline-flex items-center gap-1.5 rounded-2xl px-3.5 py-3.5 text-sm font-semibold text-foreground/80 transition-colors hover:text-brand-gold"
+                className="group relative flex flex-1 items-center gap-3 overflow-hidden rounded-2xl border border-foreground/10 bg-white/75 px-4 py-3 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-brand-gold/45 hover:bg-white hover:shadow-[var(--shadow-card)] sm:max-w-md"
               >
-                Conhecer linhas de crédito
-                <ChevronRight className="h-4 w-4" />
+                <span
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-brand-gold/30 bg-brand-gold/10 text-brand-gold transition-transform group-hover:scale-105 group-hover:rotate-[-3deg]"
+                  aria-hidden
+                >
+                  <HandCoins className="h-[18px] w-[18px]" strokeWidth={2.2} />
+                </span>
+                <div className="min-w-0 flex-1 leading-tight">
+                  <div className="text-[13px] font-bold text-foreground">
+                    Veja todas as linhas de crédito
+                  </div>
+                  <div className="mt-0.5 text-[11px] text-foreground/72">
+                    Pessoal, com garantia, portabilidade e PJ — escolha a sua.
+                  </div>
+                </div>
+                <span className="inline-flex shrink-0 items-center gap-1 rounded-full border border-brand-gold/40 bg-white px-2.5 py-1.5 text-[11px] font-bold text-brand-gold transition-all group-hover:gap-1.5 group-hover:bg-brand-gold group-hover:text-brand-gold-foreground">
+                  Ver
+                  <ChevronRight className="h-3.5 w-3.5" />
+                </span>
+                <span
+                  className="pointer-events-none absolute inset-y-0 -left-10 w-10 -skew-x-12 bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-0 transition-all duration-700 group-hover:left-[110%] group-hover:opacity-100"
+                  aria-hidden
+                />
               </a>
             </div>
 
