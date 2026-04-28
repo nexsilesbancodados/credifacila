@@ -254,19 +254,9 @@ const HeroCarousel = () => {
             >
               {(() => {
                 const isInternal = slide.ctaPrimary.href.startsWith("/");
-                const PrimaryEl = isInternal
-                  ? (Link as unknown as "a")
-                  : ("a" as const);
-                const primaryProps = isInternal
-                  ? { to: slide.ctaPrimary.href }
-                  : { href: slide.ctaPrimary.href };
-                return (
-                  // @ts-expect-error — dispatch dinâmico Link/a
-                  <PrimaryEl
-                    {...primaryProps}
-                    className="group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl px-7 py-4 text-base font-bold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.03] hover:brightness-110"
-                    style={{ background: "var(--gradient-gold)" }}
-                  >
+                const primaryClassName = "group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl px-7 py-4 text-base font-bold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.03] hover:brightness-110";
+                const primaryContent = (
+                  <>
                     <span
                       className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full"
                       aria-hidden
@@ -274,28 +264,45 @@ const HeroCarousel = () => {
                     <PrimaryIcon className="relative h-5 w-5" />
                     <span className="relative">{slide.ctaPrimary.label}</span>
                     <ChevronRight className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </PrimaryEl>
+                  </>
+                );
+
+                return isInternal ? (
+                  <Link
+                    to={slide.ctaPrimary.href}
+                    className={primaryClassName}
+                    style={{ background: "var(--gradient-gold)" }}
+                  >
+                    {primaryContent}
+                  </Link>
+                ) : (
+                  <a
+                    href={slide.ctaPrimary.href}
+                    className={primaryClassName}
+                    style={{ background: "var(--gradient-gold)" }}
+                  >
+                    {primaryContent}
+                  </a>
                 );
               })()}
               {(() => {
                 const isInternal = slide.ctaSecondary.href.startsWith("/");
                 const isExternal = slide.ctaSecondary.href.startsWith("http");
-                const SecondaryEl = isInternal
-                  ? (Link as unknown as "a")
-                  : ("a" as const);
-                const secondaryProps = isInternal
-                  ? { to: slide.ctaSecondary.href }
-                  : isExternal
-                  ? { href: slide.ctaSecondary.href, target: "_blank", rel: "noopener noreferrer" }
-                  : { href: slide.ctaSecondary.href };
-                return (
-                  // @ts-expect-error — dispatch dinâmico Link/a
-                  <SecondaryEl
-                    {...secondaryProps}
-                    className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/[0.06] px-5 py-4 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-brand-gold/60 hover:bg-white/10 hover:text-brand-gold"
+                const secondaryClassName = "inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/[0.06] px-5 py-4 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-brand-gold/60 hover:bg-white/10 hover:text-brand-gold";
+
+                return isInternal ? (
+                  <Link to={slide.ctaSecondary.href} className={secondaryClassName}>
+                    {slide.ctaSecondary.label}
+                  </Link>
+                ) : (
+                  <a
+                    href={slide.ctaSecondary.href}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className={secondaryClassName}
                   >
                     {slide.ctaSecondary.label}
-                  </SecondaryEl>
+                  </a>
                 );
               })()}
             </div>

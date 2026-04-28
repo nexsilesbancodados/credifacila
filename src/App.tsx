@@ -1,23 +1,22 @@
-import { lazy, Suspense, useEffect } from "react";
+import { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Index from "./pages/Index.tsx";
+import NotFound from "./pages/NotFound.tsx";
+import Simular from "./pages/Simular.tsx";
+import Securitizadora from "./pages/Securitizadora.tsx";
+import Consignado from "./pages/Consignado.tsx";
+import AntecipacaoRecebiveis from "./pages/AntecipacaoRecebiveis.tsx";
+import BoletoGarantido from "./pages/BoletoGarantido.tsx";
+import ContaDigitalLuri from "./pages/ContaDigitalLuri.tsx";
+import PerguntasFrequentes from "./pages/PerguntasFrequentes.tsx";
+import Privacidade from "./pages/Privacidade.tsx";
+import Termos from "./pages/Termos.tsx";
+import Lgpd from "./pages/Lgpd.tsx";
+import Ouvidoria from "./pages/Ouvidoria.tsx";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import CookieBanner from "./components/CookieBanner";
 import useScrollAnimations from "./hooks/useScrollAnimations";
 import { initAnalytics, trackEvent } from "./lib/analytics";
-
-const NotFound = lazy(() => import("./pages/NotFound.tsx"));
-const Simular = lazy(() => import("./pages/Simular.tsx"));
-const Securitizadora = lazy(() => import("./pages/Securitizadora.tsx"));
-const Consignado = lazy(() => import("./pages/Consignado.tsx"));
-const AntecipacaoRecebiveis = lazy(() => import("./pages/AntecipacaoRecebiveis.tsx"));
-const BoletoGarantido = lazy(() => import("./pages/BoletoGarantido.tsx"));
-const ContaDigitalLuri = lazy(() => import("./pages/ContaDigitalLuri.tsx"));
-const PerguntasFrequentes = lazy(() => import("./pages/PerguntasFrequentes.tsx"));
-const Privacidade = lazy(() => import("./pages/Privacidade.tsx"));
-const Termos = lazy(() => import("./pages/Termos.tsx"));
-const Lgpd = lazy(() => import("./pages/Lgpd.tsx"));
-const Ouvidoria = lazy(() => import("./pages/Ouvidoria.tsx"));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -40,12 +39,6 @@ const AnimationsBoot = () => {
   return null;
 };
 
-const RouteFallback = () => (
-  <div className="flex min-h-[60vh] w-full items-center justify-center">
-    <div className="h-10 w-10 animate-spin rounded-full border-2 border-brand-gold/20 border-t-brand-gold" />
-  </div>
-);
-
 const App = () => (
   <BrowserRouter>
     <a href="#main" className="skip-link">
@@ -54,24 +47,22 @@ const App = () => (
     <ScrollToTop />
     <AnimationsBoot />
     <AnalyticsBoot />
-    <Suspense fallback={<RouteFallback />}>
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/simular" element={<Simular />} />
-        <Route path="/securitizadora" element={<Securitizadora />} />
-        <Route path="/consignado" element={<Consignado />} />
-        <Route path="/securitizadora/antecipacao-de-recebiveis" element={<AntecipacaoRecebiveis />} />
-        <Route path="/securitizadora/boleto-garantido" element={<BoletoGarantido />} />
-        <Route path="/securitizadora/conta-digital-luri" element={<ContaDigitalLuri />} />
-        <Route path="/perguntas-frequentes" element={<PerguntasFrequentes />} />
-        <Route path="/faq" element={<PerguntasFrequentes />} />
-        <Route path="/privacidade" element={<Privacidade />} />
-        <Route path="/termos" element={<Termos />} />
-        <Route path="/lgpd" element={<Lgpd />} />
-        <Route path="/ouvidoria" element={<Ouvidoria />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Suspense>
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/simular" element={<Simular />} />
+      <Route path="/securitizadora" element={<Securitizadora />} />
+      <Route path="/consignado" element={<Consignado />} />
+      <Route path="/securitizadora/antecipacao-de-recebiveis" element={<AntecipacaoRecebiveis />} />
+      <Route path="/securitizadora/boleto-garantido" element={<BoletoGarantido />} />
+      <Route path="/securitizadora/conta-digital-luri" element={<ContaDigitalLuri />} />
+      <Route path="/perguntas-frequentes" element={<PerguntasFrequentes />} />
+      <Route path="/faq" element={<PerguntasFrequentes />} />
+      <Route path="/privacidade" element={<Privacidade />} />
+      <Route path="/termos" element={<Termos />} />
+      <Route path="/lgpd" element={<Lgpd />} />
+      <Route path="/ouvidoria" element={<Ouvidoria />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
     <FloatingWhatsApp />
     <CookieBanner />
   </BrowserRouter>
