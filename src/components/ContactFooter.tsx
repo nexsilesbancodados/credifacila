@@ -79,6 +79,7 @@ const ContactFooter = () => {
       <div className="mx-auto max-w-7xl">
         {/* Contact CTA card */}
         <div
+          data-anim="scale-in"
           className="relative overflow-hidden rounded-[32px] border border-white/10 p-8 shadow-[var(--shadow-card)] md:p-10"
           style={{
             background:

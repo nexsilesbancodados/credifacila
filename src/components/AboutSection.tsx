@@ -31,7 +31,7 @@ const AboutSection = () => {
     >
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
-          <div>
+          <div data-anim="fade-right">
             <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-gold/50 bg-white/80 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-gold shadow-sm backdrop-blur-sm">
               <Sparkles className="h-3 w-3" />
               Sobre a Credifácil
@@ -72,7 +72,7 @@ const AboutSection = () => {
             </ul>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4" data-anim-stagger>
             {stats.map((s) => (
               <div
                 key={s.label}

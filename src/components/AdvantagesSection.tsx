@@ -59,7 +59,7 @@ const AdvantagesSection = () => {
       aria-label="Vantagens, propósito e depoimentos"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="mb-10 text-center">
+        <div className="mb-10 text-center" data-anim="fade-up">
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-gold/50 bg-white/80 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-gold shadow-sm backdrop-blur-sm">
             <Sparkles className="h-3 w-3" />
             Por que a Credifácil
@@ -78,7 +78,7 @@ const AdvantagesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3" data-anim-stagger>
           {/* CARD 1 — Vantagens */}
           <article className="group relative overflow-hidden rounded-3xl border border-white/8 text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/30">
             <img

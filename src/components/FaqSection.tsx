@@ -38,7 +38,7 @@ const FaqSection = () => {
       aria-label="Perguntas frequentes"
     >
       <div className="mx-auto max-w-4xl">
-        <div className="mb-10 text-center">
+        <div className="mb-10 text-center" data-anim="fade-up">
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-gold/50 bg-white/80 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-gold shadow-sm backdrop-blur-sm">
             <HelpCircle className="h-3 w-3" />
             Tire suas dúvidas
@@ -57,7 +57,7 @@ const FaqSection = () => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3" data-anim-stagger>
           {faqs.map((item, i) => {
             const isOpen = open === i;
             return (
