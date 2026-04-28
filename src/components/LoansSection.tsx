@@ -473,7 +473,7 @@ const LoansSection = () => {
                 className={`group relative flex flex-col overflow-hidden rounded-2xl border bg-white transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-gold)] ${
                   p.tag === "Mais pedido"
                     ? "border-brand-gold/45 ring-1 ring-brand-gold/30 hover:border-brand-gold/70"
-                    : "border-foreground/8 hover:border-brand-gold/40"
+                    : "border-foreground/10 hover:border-brand-gold/40"
                 }`}
               >
                 {/* Illustration */}
@@ -515,7 +515,7 @@ const LoansSection = () => {
                   <p className="mt-2 flex-1 text-xs leading-relaxed text-foreground/75">
                     {p.desc}
                   </p>
-                  <div className="mt-4 inline-flex items-center justify-between gap-2 border-t border-foreground/8 pt-3">
+                  <div className="mt-4 inline-flex items-center justify-between gap-2 border-t border-foreground/10 pt-3">
                     <span className="inline-flex items-center gap-1 text-xs font-semibold text-brand-gold transition-all group-hover:gap-2">
                       Falar no WhatsApp
                       <ChevronRight className="h-3.5 w-3.5" />
@@ -535,7 +535,7 @@ const LoansSection = () => {
           </div>
 
           {/* Reassurance bar */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 rounded-2xl border border-foreground/8 bg-white/60 px-4 py-3 text-[11px] font-medium text-foreground/70 backdrop-blur-sm">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 rounded-2xl border border-foreground/10 bg-white/60 px-4 py-3 text-[11px] font-medium text-foreground/70 backdrop-blur-sm">
             <span className="inline-flex items-center gap-1.5">
               <ShieldCheck className="h-3.5 w-3.5 text-brand-gold" /> Autorizada pelo Banco Central
             </span>
