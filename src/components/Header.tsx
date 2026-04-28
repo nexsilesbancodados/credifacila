@@ -20,6 +20,7 @@ import {
   Smartphone,
   Sparkles,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-credifacil.jpg";
 import heroSlide2 from "@/assets/hero-slide-2.jpg";
 import heroSlide3 from "@/assets/hero-slide-3.jpg";
@@ -348,8 +349,15 @@ const Header = () => {
                     key={`cta-${activeSlide}`}
                     className="mt-8 flex animate-fade-in flex-wrap items-center gap-3"
                   >
-                    <a
-                      href={slide.ctaPrimary.href}
+                    {(() => {
+                      const isInternal = slide.ctaPrimary.href.startsWith("/");
+                      const PrimaryEl: any = isInternal ? Link : "a";
+                      const primaryProps = isInternal
+                        ? { to: slide.ctaPrimary.href }
+                        : { href: slide.ctaPrimary.href };
+                      return (
+                    <PrimaryEl
+                      {...primaryProps}
                       className="group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl px-7 py-4 text-base font-bold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.03] hover:brightness-110"
                       style={{ background: "var(--gradient-gold)" }}
                     >
@@ -361,13 +369,24 @@ const Header = () => {
                       <PrimaryIcon className="relative h-5 w-5" strokeWidth={2.4} />
                       <span className="relative">{slide.ctaPrimary.label}</span>
                       <ChevronRight className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
-                    </a>
-                    <a
-                      href={slide.ctaSecondary.href}
-                      className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/[0.06] px-5 py-4 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-brand-gold/60 hover:bg-white/10 hover:text-brand-gold"
-                    >
-                      {slide.ctaSecondary.label}
-                    </a>
+                    </PrimaryEl>
+                      );
+                    })()}
+                    {(() => {
+                      const isInternal = slide.ctaSecondary.href.startsWith("/");
+                      const SecondaryEl: any = isInternal ? Link : "a";
+                      const secondaryProps = isInternal
+                        ? { to: slide.ctaSecondary.href }
+                        : { href: slide.ctaSecondary.href };
+                      return (
+                        <SecondaryEl
+                          {...secondaryProps}
+                          className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/[0.06] px-5 py-4 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-brand-gold/60 hover:bg-white/10 hover:text-brand-gold"
+                        >
+                          {slide.ctaSecondary.label}
+                        </SecondaryEl>
+                      );
+                    })()}
                   </div>
 
                   {/* Trust chips */}
