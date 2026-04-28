@@ -127,7 +127,7 @@ const Header = () => {
             <img
               src={heroImage}
               alt="Casal sorridente representando clientes satisfeitos da Credifácil"
-              className="h-[560px] w-full object-cover"
+              className="h-[560px] w-full object-cover object-[64%_center]"
               width={1920}
               height={1080}
             />
@@ -136,7 +136,7 @@ const Header = () => {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(90deg, hsl(40 30% 97% / 0.96) 0%, hsl(40 30% 97% / 0.85) 35%, hsl(40 30% 97% / 0.35) 60%, transparent 80%)",
+                  "linear-gradient(90deg, hsl(40 30% 97% / 0.9) 0%, hsl(40 30% 97% / 0.76) 22%, hsl(40 30% 97% / 0.28) 42%, transparent 58%)",
               }}
               aria-hidden="true"
             />
@@ -152,8 +152,8 @@ const Header = () => {
 
             {/* Content */}
              <div className="absolute inset-0 flex items-center">
-               <div className="w-full pl-0 pr-6 md:pr-10">
-                 <div className="max-w-xl pl-0 md:ml-0">
+               <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
+                 <div className="max-w-xl">
                   <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-foreground md:text-[52px]">
                     O crédito que
                     <br />
