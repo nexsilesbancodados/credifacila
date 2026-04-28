@@ -10,6 +10,9 @@ import {
   Heart,
   ShieldAlert,
   Lock,
+  Star,
+  Clock,
+  CheckCircle2,
 } from "lucide-react";
 import heroImage from "@/assets/hero-credifacil.png";
 
@@ -120,41 +123,61 @@ const Header = () => {
       </div>
 
       {/* Hero */}
-      <div className="relative">
+      <div className="relative bg-background">
         {/* Hero image */}
         <div className="relative w-full">
           <div className="relative overflow-hidden">
             <img
               src={heroImage}
               alt="Casal sorridente representando clientes satisfeitos da Credifácil"
-              className="h-[560px] w-full object-cover object-[64%_center]"
+              className="h-[600px] w-full object-cover object-[64%_center] md:h-[640px]"
               width={1920}
               height={1080}
             />
-            {/* Light gradient overlay on the left for text */}
+            {/* Light gradient overlay on the left for text legibility */}
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(90deg, hsl(40 30% 97% / 0.9) 0%, hsl(40 30% 97% / 0.76) 22%, hsl(40 30% 97% / 0.28) 42%, transparent 58%)",
+                  "linear-gradient(90deg, hsl(40 30% 97% / 0.96) 0%, hsl(40 30% 97% / 0.85) 28%, hsl(40 30% 97% / 0.35) 50%, transparent 65%)",
               }}
               aria-hidden="true"
             />
-            {/* Decorative gold curves */}
+            {/* Decorative gold glow */}
             <div
-              className="pointer-events-none absolute -right-20 top-10 h-[500px] w-[700px] opacity-30"
+              className="pointer-events-none absolute -right-32 top-0 h-[600px] w-[800px] opacity-40"
               style={{
                 background:
-                  "radial-gradient(ellipse at center, hsl(35 75% 55% / 0.35), transparent 60%)",
+                  "radial-gradient(ellipse at center, hsl(35 75% 55% / 0.45), transparent 65%)",
               }}
               aria-hidden="true"
             />
+            {/* Subtle gold arc top-left */}
+            <svg
+              className="pointer-events-none absolute left-0 top-0 h-40 w-[60%] opacity-50"
+              viewBox="0 0 800 200"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M0,0 Q400,180 800,40 L800,0 Z"
+                fill="hsl(38 80% 55% / 0.08)"
+              />
+            </svg>
 
             {/* Content */}
-             <div className="absolute inset-0 flex items-center">
+             <div className="absolute inset-0 flex items-center animate-fade-in">
                <div className="w-full px-5 md:px-8 lg:px-10">
                  <div className="max-w-xl">
-                  <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-foreground md:text-[52px]">
+                  {/* Eyebrow badge */}
+                  <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-background/70 px-3 py-1.5 backdrop-blur-sm">
+                    <span className="flex h-1.5 w-1.5 rounded-full bg-brand-gold" />
+                    <span className="text-xs font-semibold uppercase tracking-wider text-brand-gold">
+                      Crédito sem complicação
+                    </span>
+                  </div>
+
+                  <h1 className="text-4xl font-bold leading-[1.05] tracking-tight text-foreground md:text-[56px]">
                     O crédito que
                     <br />
                     você precisa,
@@ -164,18 +187,47 @@ const Header = () => {
                     <span className="text-brand-gold">que você merece.</span>
                   </h1>
 
-                  <p className="mt-6 max-w-md text-base leading-relaxed text-foreground/75">
+                  <p className="mt-6 max-w-md text-base leading-relaxed text-foreground/75 md:text-lg">
                     Empréstimos rápidos, seguros e descomplicados para realizar seus planos e transformar sua vida.
                   </p>
 
-                  <a
-                    href="#simular"
-                    className="group mt-8 inline-flex items-center gap-3 rounded-2xl bg-brand-gold px-7 py-4 text-base font-semibold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.02] hover:brightness-105"
-                  >
-                    <TrendingUp className="h-5 w-5" strokeWidth={2.4} />
-                    Solicitar meu empréstimo
-                    <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </a>
+                  <div className="mt-8 flex flex-wrap items-center gap-4">
+                    <a
+                      href="#simular"
+                      className="group inline-flex items-center gap-3 rounded-2xl bg-brand-gold px-7 py-4 text-base font-semibold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.03] hover:brightness-110"
+                      style={{ background: "var(--gradient-gold)" }}
+                    >
+                      <TrendingUp className="h-5 w-5" strokeWidth={2.4} />
+                      Solicitar meu empréstimo
+                      <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </a>
+                    <a
+                      href="#simular"
+                      className="inline-flex items-center gap-2 rounded-2xl border border-foreground/15 bg-background/60 px-5 py-4 text-sm font-semibold text-foreground backdrop-blur-sm transition-all hover:border-brand-gold/60 hover:text-brand-gold"
+                    >
+                      Simular agora
+                    </a>
+                  </div>
+
+                  {/* Trust chips */}
+                  <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
+                    <div className="flex items-center gap-2 text-xs font-medium text-foreground/70">
+                      <CheckCircle2 className="h-4 w-4 text-brand-gold" />
+                      Aprovação em minutos
+                    </div>
+                    <div className="flex items-center gap-2 text-xs font-medium text-foreground/70">
+                      <Clock className="h-4 w-4 text-brand-gold" />
+                      Dinheiro na conta hoje
+                    </div>
+                    <div className="flex items-center gap-1.5 text-xs font-medium text-foreground/70">
+                      <div className="flex">
+                        {[0, 1, 2, 3, 4].map((i) => (
+                          <Star key={i} className="h-3.5 w-3.5 fill-brand-gold text-brand-gold" />
+                        ))}
+                      </div>
+                      +50 mil clientes
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -183,20 +235,27 @@ const Header = () => {
             {/* Carousel arrows */}
             <button
               aria-label="Anterior"
-              className="absolute left-4 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-foreground/10 text-foreground/70 backdrop-blur-sm transition hover:bg-foreground/20"
+              className="absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-foreground/10 bg-background/70 text-foreground/70 backdrop-blur-sm transition hover:border-brand-gold/40 hover:bg-background/90 hover:text-brand-gold"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
             <button
               aria-label="Próximo"
-              className="absolute right-4 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-foreground/10 text-foreground/70 backdrop-blur-sm transition hover:bg-foreground/20"
+              className="absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-foreground/10 bg-background/70 text-foreground/70 backdrop-blur-sm transition hover:border-brand-gold/40 hover:bg-background/90 hover:text-brand-gold"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
 
+            {/* Carousel dots */}
+            <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2">
+              <span className="h-1.5 w-6 rounded-full bg-brand-gold" />
+              <span className="h-1.5 w-1.5 rounded-full bg-foreground/30" />
+              <span className="h-1.5 w-1.5 rounded-full bg-foreground/30" />
+            </div>
+
             {/* Floating dark badge */}
-            <div className="absolute bottom-8 right-8 hidden max-w-xs items-start gap-3 rounded-xl bg-[hsl(var(--surface-dark))]/95 p-4 text-[hsl(40_30%_97%)] shadow-[var(--shadow-card)] backdrop-blur md:flex">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-gold/15 text-brand-gold">
+            <div className="absolute bottom-20 right-8 hidden max-w-xs items-start gap-3 rounded-2xl border border-brand-gold/20 bg-[hsl(var(--surface-dark))]/95 p-4 text-[hsl(40_30%_97%)] shadow-[var(--shadow-card)] backdrop-blur md:flex">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-gold">
                 <ShieldCheck className="h-5 w-5" />
               </div>
               <div className="leading-snug">
