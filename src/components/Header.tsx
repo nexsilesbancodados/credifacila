@@ -34,7 +34,7 @@ const features = [
 
 const Header = () => {
   return (
-    <header className="relative w-full overflow-hidden bg-background" aria-label="Cabeçalho Credifácil">
+    <header className="relative w-full overflow-hidden" aria-label="Cabeçalho Credifácil">
       {/* Top navigation - dark with gold arcs */}
       <div className="relative z-20 w-full bg-[hsl(30_15%_8%)]">
         {/* Top gold curve - thin, dipping down at the sides */}
@@ -123,7 +123,7 @@ const Header = () => {
       </div>
 
       {/* Hero */}
-      <div className="relative bg-background">
+      <div className="relative">
         {/* Hero image */}
         <div className="relative w-full">
           <div className="relative overflow-hidden">

@@ -28,7 +28,7 @@ const HowItWorks = () => {
   return (
     <section
       id="como-funciona"
-      className="relative w-full bg-background px-5 py-16 md:px-8 md:py-20 lg:px-10"
+      className="relative w-full px-5 py-16 md:px-8 md:py-20 lg:px-10"
       aria-label="Como funciona"
     >
       <div className="mx-auto max-w-7xl">
