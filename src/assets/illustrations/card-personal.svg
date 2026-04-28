@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none">
+  <defs>
+    <linearGradient id="cp-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a1410"/>
+      <stop offset="1" stop-color="#2a1f17"/>
+    </linearGradient>
+    <linearGradient id="cp-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3c969"/>
+      <stop offset="1" stop-color="#b8860b"/>
+    </linearGradient>
+    <radialGradient id="cp-glow" cx="0.85" cy="0.15" r="0.7">
+      <stop offset="0" stop-color="#daa520" stop-opacity="0.45"/>
+      <stop offset="0.7" stop-color="#daa520" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="280" rx="20" fill="url(#cp-bg)"/>
+  <rect width="400" height="280" rx="20" fill="url(#cp-glow)"/>
+
+  <!-- Credit card -->
+  <g transform="translate(70 65) rotate(-6)">
+    <rect width="260" height="160" rx="14" fill="url(#cp-gold)"/>
+    <circle cx="220" cy="35" r="14" fill="#1a1410" fill-opacity="0.4"/>
+    <circle cx="232" cy="35" r="14" fill="#1a1410" fill-opacity="0.25"/>
+    <rect x="22" y="60" width="44" height="32" rx="5" fill="#1a1410" fill-opacity="0.5"/>
+    <rect x="22" y="60" width="44" height="32" rx="5" stroke="#daa520" stroke-opacity="0.4" stroke-width="0.5"/>
+    <rect x="28" y="68" width="32" height="2" rx="1" fill="#daa520" fill-opacity="0.6"/>
+    <rect x="28" y="74" width="20" height="2" rx="1" fill="#daa520" fill-opacity="0.6"/>
+    <rect x="28" y="80" width="28" height="2" rx="1" fill="#daa520" fill-opacity="0.6"/>
+    <text x="22" y="125" fill="#1a1410" font-family="monospace" font-size="14" font-weight="700" letter-spacing="2">•••• •••• •••• 1234</text>
+    <text x="22" y="146" fill="#1a1410" fill-opacity="0.7" font-family="sans-serif" font-size="9" font-weight="600" letter-spacing="1">VOCÊ MERECE</text>
+  </g>
+
+  <!-- Coin -->
+  <g transform="translate(295 175)">
+    <circle r="32" fill="url(#cp-gold)" stroke="#1a1410" stroke-opacity="0.3" stroke-width="2"/>
+    <text y="6" text-anchor="middle" fill="#1a1410" font-family="serif" font-size="22" font-weight="800">$</text>
+  </g>
+  <g transform="translate(60 220)">
+    <circle r="22" fill="url(#cp-gold)" opacity="0.85"/>
+    <text y="4" text-anchor="middle" fill="#1a1410" font-family="serif" font-size="16" font-weight="800">R$</text>
+  </g>
+
+  <!-- Sparkles -->
+  <g fill="#daa520">
+    <circle cx="50" cy="50" r="2" opacity="0.7"/>
+    <circle cx="370" cy="60" r="1.5" opacity="0.6"/>
+    <circle cx="350" cy="240" r="2.5" opacity="0.5"/>
+    <circle cx="30" cy="160" r="1.5" opacity="0.5"/>
+  </g>
+</svg>

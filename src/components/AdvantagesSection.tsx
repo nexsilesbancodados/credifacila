@@ -14,11 +14,10 @@ import {
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
-import womanCoffee from "@/assets/woman-coffee.jpg";
-import juliana from "@/assets/testimonial-juliana.jpg";
-import carlos from "@/assets/testimonial-carlos.jpg";
-import advantagesBg from "@/assets/card-advantages.jpg";
-import storiesBg from "@/assets/card-stories.jpg";
+import { site, whatsappLink, telLink } from "@/config/site";
+import womanCoffee from "@/assets/woman-coffee.webp";
+import juliana from "@/assets/testimonial-juliana.webp";
+import carlos from "@/assets/testimonial-carlos.webp";
 
 const advantages = [
   { icon: Clock, title: "Liberação no mesmo dia", desc: "Dinheiro na conta em poucas horas após aprovação.", tag: "Rápido" },
@@ -59,19 +58,14 @@ const AdvantagesSection = () => {
       aria-label="Vantagens, propósito e depoimentos"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="mb-10 text-center" data-anim="fade-up">
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-gold/50 bg-white/80 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-gold shadow-sm backdrop-blur-sm">
+        <div className="mb-12 text-center" data-anim="fade-up">
+          <span className="pill-eyebrow">
             <Sparkles className="h-3 w-3" />
             Por que a Credifácil
           </span>
-          <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-[hsl(30_20%_15%)] md:text-4xl lg:text-[46px]">
+          <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight text-[hsl(30_20%_15%)] md:text-4xl lg:text-[46px]">
             Tudo que você precisa,{" "}
-            <span
-              className="bg-clip-text text-transparent"
-              style={{ backgroundImage: "var(--gradient-gold)" }}
-            >
-              em um só lugar
-            </span>
+            <span className="text-gold-gradient">em um só lugar</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[hsl(30_15%_30%)] md:text-base">
             Mais de <span className="font-bold text-[hsl(30_20%_15%)]">50 mil pessoas</span> já realizaram seus planos com a confiança e a agilidade da Credifácil.
@@ -80,75 +74,61 @@ const AdvantagesSection = () => {
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3" data-anim-stagger>
           {/* CARD 1 — Vantagens */}
-          <article className="group relative overflow-hidden rounded-3xl border border-white/8 text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/30">
-            <img
-              src={advantagesBg}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover object-center"
-              loading="lazy"
-              width={1024}
-              height={1280}
-            />
+          <article className="group relative overflow-hidden rounded-3xl border border-white/8 bg-[hsl(30_18%_8%)] p-7 text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/40">
+            {/* Decorative gold mesh */}
             <div
-              className="absolute inset-0"
+              className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full opacity-30"
               style={{
                 background:
-                  "linear-gradient(180deg, hsl(30 18% 7% / 0.92) 0%, hsl(30 18% 7% / 0.88) 60%, hsl(30 18% 7% / 0.96) 100%)",
+                  "radial-gradient(circle, hsl(35 90% 55% / 0.6), transparent 70%)",
               }}
-              aria-hidden="true"
+              aria-hidden
             />
-            <div className="relative p-7">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-gold/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold">
-              <ShieldCheck className="h-3 w-3" /> Diferenciais
-            </span>
-            <h3 className="mt-3 text-2xl font-bold leading-[1.15]">
-              Vantagens que
-              <br />
-              fazem <span className="text-brand-gold">a diferença</span>
-            </h3>
+            <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden />
+            <div className="relative">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-gold/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold">
+                <ShieldCheck className="h-3 w-3" /> Diferenciais
+              </span>
+              <h3 className="mt-3 font-display text-2xl font-bold leading-[1.15]">
+                Vantagens que
+                <br />
+                fazem <span className="text-brand-gold">a diferença</span>
+              </h3>
 
-            <ul className="mt-6 flex flex-col">
-              {advantages.map((a, i) => (
-                <li
-                  key={a.title}
-                  className={`group/item flex items-start gap-4 py-4 transition-colors ${
-                    i < advantages.length - 1 ? "border-b border-white/8" : ""
-                  }`}
-                >
-                  <div
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-brand-gold-foreground shadow-[0_4px_12px_-4px_hsl(var(--brand-gold)/0.5)] transition-transform group-hover/item:scale-110"
-                    style={{ background: "var(--gradient-gold)" }}
+              <ul className="mt-6 flex flex-col">
+                {advantages.map((a, i) => (
+                  <li
+                    key={a.title}
+                    className={`group/item flex items-start gap-4 py-4 transition-colors ${
+                      i < advantages.length - 1 ? "border-b border-white/8" : ""
+                    }`}
                   >
-                    <a.icon className="h-[18px] w-[18px]" strokeWidth={2.2} />
-                  </div>
-                  <div className="flex-1 leading-snug">
-                    <div className="flex items-center gap-2">
-                      <div className="text-sm font-bold">{a.title}</div>
+                    <div
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-brand-gold-foreground shadow-[var(--shadow-gold-sm)] transition-transform group-hover/item:scale-110"
+                      style={{ background: "var(--gradient-gold)" }}
+                    >
+                      <a.icon className="h-[18px] w-[18px]" strokeWidth={2.2} />
                     </div>
-                    <div className="mt-1 text-xs leading-relaxed text-white/60">{a.desc}</div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-
-            <a
-              href="#vantagens"
-              className="group/cta mt-6 inline-flex items-center gap-1.5 border-b border-brand-gold/30 pb-1 text-sm font-semibold text-brand-gold transition-all hover:gap-2.5 hover:border-brand-gold"
-            >
-              Conhecer todas as vantagens
-              <ChevronRight className="h-4 w-4 transition-transform group-hover/cta:translate-x-1" />
-            </a>
+                    <div className="flex-1 leading-snug">
+                      <div className="flex items-center gap-2">
+                        <div className="text-sm font-bold">{a.title}</div>
+                      </div>
+                      <div className="mt-1 text-xs leading-relaxed text-white/60">{a.desc}</div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </article>
 
-          {/* CARD 2 — Crédito para cada momento */}
-          <article className="relative overflow-hidden rounded-3xl border border-white/8 bg-[hsl(var(--surface-elevated))] text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/30">
+          {/* CARD 2 — Para sua vida (com foto) */}
+          <article className="relative overflow-hidden rounded-3xl border border-white/8 bg-[hsl(var(--surface-elevated))] text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/40">
             <img
               src={womanCoffee}
               alt="Mulher sorrindo segurando uma xícara, cliente Credifácil"
               className="absolute inset-0 h-full w-full object-cover object-[70%_center]"
               loading="lazy"
+              decoding="async"
               width={1024}
               height={1280}
             />
@@ -158,7 +138,7 @@ const AdvantagesSection = () => {
                 background:
                   "linear-gradient(90deg, hsl(30 18% 7% / 0.96) 0%, hsl(30 18% 7% / 0.85) 38%, hsl(30 18% 7% / 0.3) 70%, transparent 100%)",
               }}
-              aria-hidden="true"
+              aria-hidden
             />
 
             <div className="relative flex h-full flex-col justify-between p-7">
@@ -166,7 +146,7 @@ const AdvantagesSection = () => {
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-gold/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold">
                   <Heart className="h-3 w-3 fill-brand-gold" /> Para sua vida
                 </span>
-                <h3 className="mt-3 text-2xl font-bold leading-[1.15]">
+                <h3 className="mt-3 font-display text-2xl font-bold leading-[1.15]">
                   Crédito para
                   <br />
                   <span className="text-brand-gold">cada momento</span>
@@ -178,11 +158,9 @@ const AdvantagesSection = () => {
                 </p>
 
                 <a
-                  href="#emprestimos"
-                  className="group/btn relative mt-6 inline-flex items-center gap-2 overflow-hidden rounded-xl bg-brand-gold px-5 py-3 text-sm font-semibold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.03] hover:brightness-110"
-                  style={{ background: "var(--gradient-gold)" }}
+                  href="#solucoes"
+                  className="btn-gold group/btn mt-6"
                 >
-                  <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover/btn:translate-x-full" />
                   Ver opções de empréstimo
                   <ChevronRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5" />
                 </a>
@@ -202,103 +180,87 @@ const AdvantagesSection = () => {
           </article>
 
           {/* CARD 3 — Histórias reais */}
-          <article className="group relative overflow-hidden rounded-3xl border border-white/8 text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/30">
-            <img
-              src={storiesBg}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover object-center"
-              loading="lazy"
-              width={1024}
-              height={1280}
-            />
+          <article className="relative overflow-hidden rounded-3xl border border-white/8 bg-[hsl(30_18%_8%)] p-7 text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/40">
             <div
-              className="absolute inset-0"
+              className="pointer-events-none absolute -left-20 -bottom-20 h-60 w-60 rounded-full opacity-30"
               style={{
                 background:
-                  "linear-gradient(180deg, hsl(30 18% 7% / 0.93) 0%, hsl(30 18% 7% / 0.9) 60%, hsl(30 18% 7% / 0.96) 100%)",
+                  "radial-gradient(circle, hsl(35 90% 55% / 0.5), transparent 70%)",
               }}
-              aria-hidden="true"
+              aria-hidden
             />
-            <div className="relative p-7">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-gold/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold">
-              <Star className="h-3 w-3 fill-brand-gold" /> 4.9 / 5 — +12 mil avaliações
-            </span>
-            <h3 className="mt-3 text-2xl font-bold leading-[1.15]">
-              Histórias reais,
-              <br />
-              <span className="text-brand-gold">resultados reais</span>
-            </h3>
+            <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden />
+            <div className="relative">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-gold/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold">
+                <Star className="h-3 w-3 fill-brand-gold" /> 4,9 / 5 — +12 mil avaliações
+              </span>
+              <h3 className="mt-3 font-display text-2xl font-bold leading-[1.15]">
+                Histórias reais,
+                <br />
+                <span className="text-brand-gold">resultados reais</span>
+              </h3>
 
-            <div className="mt-6 flex flex-col gap-4">
-              {testimonials.map((t) => (
-                <div
-                  key={t.name}
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur-sm transition-all hover:border-brand-gold/30 hover:bg-white/[0.05]"
-                >
-                  <div className="flex items-start gap-3">
-                    <Quote className="h-4 w-4 shrink-0 text-brand-gold" />
-                    <div className="flex-1">
-                      <div className="mb-1.5 flex gap-0.5">
-                        {Array.from({ length: t.rating }).map((_, idx) => (
-                          <Star key={idx} className="h-3 w-3 fill-brand-gold text-brand-gold" />
-                        ))}
-                      </div>
-                      <p className="text-xs leading-relaxed text-white/85">"{t.text}"</p>
-                      <div className="mt-3 flex items-center justify-between gap-3">
-                        <div className="leading-tight">
-                          <div className="text-xs font-bold">{t.name}</div>
-                          <div className="mt-0.5 text-[10px] text-white/50">{t.role}</div>
+              <div className="mt-6 flex flex-col gap-4">
+                {testimonials.map((t) => (
+                  <div
+                    key={t.name}
+                    className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur-sm transition-all hover:border-brand-gold/30 hover:bg-white/[0.05]"
+                  >
+                    <div className="flex items-start gap-3">
+                      <Quote className="h-4 w-4 shrink-0 text-brand-gold" />
+                      <div className="flex-1">
+                        <div className="mb-1.5 flex gap-0.5">
+                          {Array.from({ length: t.rating }).map((_, idx) => (
+                            <Star key={idx} className="h-3 w-3 fill-brand-gold text-brand-gold" />
+                          ))}
                         </div>
-                        <img
-                          src={t.avatar}
-                          alt={`Foto de ${t.name}`}
-                          className="h-12 w-12 rounded-full object-cover ring-1 ring-brand-gold/30"
-                          loading="lazy"
-                          width={512}
-                          height={512}
-                        />
+                        <p className="text-xs leading-relaxed text-white/85">"{t.text}"</p>
+                        <div className="mt-3 flex items-center justify-between gap-3">
+                          <div className="leading-tight">
+                            <div className="text-xs font-bold">{t.name}</div>
+                            <div className="mt-0.5 text-[10px] text-white/50">{t.role}</div>
+                          </div>
+                          <img
+                            src={t.avatar}
+                            alt={`Foto de ${t.name}`}
+                            className="h-12 w-12 rounded-full object-cover ring-1 ring-brand-gold/30"
+                            loading="lazy"
+                            decoding="async"
+                            width={512}
+                            height={512}
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-
-            <a
-              href="#depoimentos"
-              className="group/cta mt-5 inline-flex items-center gap-1.5 border-b border-brand-gold/30 pb-1 text-sm font-semibold text-brand-gold transition-all hover:gap-2.5 hover:border-brand-gold"
-            >
-              Veja mais histórias de clientes
-              <ChevronRight className="h-4 w-4 transition-transform group-hover/cta:translate-x-1" />
-            </a>
+                ))}
+              </div>
             </div>
           </article>
         </div>
 
         {/* Bottom golden CTA bar */}
         <div
-          className="relative mt-6 flex flex-col items-stretch gap-5 overflow-hidden rounded-3xl px-6 py-5 shadow-[var(--shadow-gold)] md:flex-row md:items-center md:justify-between md:px-8"
+          className="relative mt-8 flex flex-col items-stretch gap-5 overflow-hidden rounded-3xl px-6 py-5 shadow-[var(--shadow-gold)] md:flex-row md:items-center md:justify-between md:px-8"
           style={{
             background:
               "linear-gradient(100deg, hsl(40 85% 88%) 0%, hsl(38 80% 78%) 50%, hsl(35 75% 70%) 100%)",
           }}
         >
-          {/* Decorative blob */}
           <div
             className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full opacity-40"
             style={{
               background:
                 "radial-gradient(circle, hsl(35 90% 60% / 0.6), transparent 70%)",
             }}
-            aria-hidden="true"
+            aria-hidden
           />
           <div className="flex items-center gap-4">
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-[hsl(30_15%_15%)] shadow-md">
               <MessageCircle className="h-5 w-5" />
             </span>
             <div className="leading-tight">
-              <div className="text-base font-bold text-[hsl(30_15%_15%)] md:text-lg">
+              <div className="font-display text-base font-bold text-[hsl(30_15%_15%)] md:text-lg">
                 Ficou com alguma dúvida?
               </div>
               <div className="text-xs text-[hsl(30_15%_15%)]/75 md:text-sm">
@@ -307,20 +269,24 @@ const AdvantagesSection = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <a
+            href={telLink(site.contact.phone)}
+            className="flex items-center gap-3 transition-opacity hover:opacity-80"
+          >
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/70 text-[hsl(30_15%_15%)]">
               <Phone className="h-5 w-5" />
             </span>
             <div className="leading-tight">
               <div className="text-[11px] font-medium text-[hsl(30_15%_15%)]/70">Ligue para nós</div>
-              <div className="text-sm font-bold text-[hsl(30_15%_15%)]">(11) 4000-1234</div>
+              <div className="text-sm font-bold text-[hsl(30_15%_15%)]">{site.contact.phoneDisplay}</div>
             </div>
-          </div>
+          </a>
 
           <a
-            href="#whatsapp"
-            className="inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3.5 text-sm font-semibold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.02] hover:brightness-110"
-            style={{ background: "var(--gradient-gold)" }}
+            href={whatsappLink("Olá! Tenho dúvidas sobre os créditos.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-gold"
           >
             <MessageCircle className="h-4 w-4" />
             Falar no WhatsApp

@@ -7,7 +7,7 @@ import {
   Globe2,
 } from "lucide-react";
 import SolutionPage from "@/components/SolutionPage";
-import heroImg from "@/assets/sol-luri.jpg";
+import heroImg from "@/assets/illustrations/sol-luri.svg";
 
 const ContaDigitalLuri = () => (
   <SolutionPage
@@ -15,7 +15,7 @@ const ContaDigitalLuri = () => (
     title="A conta digital"
     titleGold="do futuro do seu negócio."
     description="Gestão financeira completa, sem taxas abusivas e com a tecnologia que sua empresa merece. Tudo o que você precisa, em um só lugar."
-    heroImg={heroImg}
+    heroIllustration={heroImg}
     heroAlt="Smartphone exibindo aplicativo bancário Luri com gráficos dourados"
     metaTitle="Conta Digital Luri | Credifácil Securitizadora"
     metaDescription="Conheça a Conta Digital Luri da Credifácil: PJ 100% digital, Pix grátis, cartão empresarial, gestão de cobrança e zero taxas escondidas."

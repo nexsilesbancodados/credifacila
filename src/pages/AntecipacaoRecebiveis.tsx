@@ -7,7 +7,7 @@ import {
   LineChart,
 } from "lucide-react";
 import SolutionPage from "@/components/SolutionPage";
-import heroImg from "@/assets/sol-antecipacao.jpg";
+import heroImg from "@/assets/illustrations/sol-antecipacao.svg";
 
 const AntecipacaoRecebiveis = () => (
   <SolutionPage
@@ -15,7 +15,7 @@ const AntecipacaoRecebiveis = () => (
     title="Capital de giro"
     titleGold="quando você precisa."
     description="Transforme seus recebíveis futuros em dinheiro hoje. Acesso rápido ao capital sem comprometer o endividamento da sua empresa."
-    heroImg={heroImg}
+    heroIllustration={heroImg}
     heroAlt="Documento de fatura com moedas e gráfico de crescimento financeiro"
     metaTitle="Antecipação de Recebíveis | Credifácil Securitizadora"
     metaDescription="Antecipe duplicatas, cheques e recebíveis com a Credifácil Securitizadora. Liberação rápida, taxas competitivas e zero burocracia para sua empresa."

@@ -1,23 +1,91 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { ArrowLeft, Home, Search, Calculator, MessageCircle } from "lucide-react";
+import { useSeo } from "@/hooks/useSeo";
+import { whatsappLink } from "@/config/site";
 
 const NotFound = () => {
   const location = useLocation();
 
+  useSeo({
+    title: "Página não encontrada | Credifácil",
+    description: "A página que você procura não existe ou foi movida.",
+  });
+
   useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
+    if (typeof console !== "undefined") {
+      console.warn("404: rota inexistente acessada:", location.pathname);
+    }
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
-        <a href="/" className="text-primary underline hover:text-primary/90">
-          Return to Home
-        </a>
+    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[hsl(30_22%_5%)] px-5 py-16 text-white">
+      {/* Decorative gold glows */}
+      <div
+        className="pointer-events-none absolute -right-40 -top-40 h-[600px] w-[600px] rounded-full opacity-50"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.4), transparent 65%)",
+        }}
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute -bottom-40 -left-40 h-[600px] w-[600px] rounded-full opacity-30"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.5), transparent 70%)",
+        }}
+        aria-hidden
+      />
+      <div className="pointer-events-none absolute inset-0 bg-noise opacity-[0.06]" aria-hidden />
+
+      <div className="relative z-10 mx-auto max-w-2xl text-center">
+        <span className="pill-eyebrow-dark">
+          <Search className="h-3.5 w-3.5" />
+          Erro 404
+        </span>
+        <h1
+          className="mt-6 font-display text-[120px] font-extrabold leading-none tracking-tighter text-gold-flow md:text-[180px]"
+          aria-label="404"
+        >
+          404
+        </h1>
+        <p className="mx-auto mt-2 max-w-md text-lg font-bold text-white md:text-xl">
+          Essa página decidiu tirar férias.
+        </p>
+        <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-white/65 md:text-base">
+          Mas seu crédito não precisa esperar. Volte para a página inicial ou faça uma simulação agora.
+        </p>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <Link to="/" className="btn-gold">
+            <Home className="h-4 w-4" />
+            Voltar ao início
+          </Link>
+          <Link to="/simular" className="btn-ghost-light">
+            <Calculator className="h-4 w-4" />
+            Simular agora
+          </Link>
+          <a
+            href={whatsappLink("Olá! Não consegui encontrar uma página no site.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-ghost-light"
+          >
+            <MessageCircle className="h-4 w-4" />
+            Falar conosco
+          </a>
+        </div>
+
+        <Link
+          to="/"
+          className="mt-10 inline-flex items-center gap-2 text-xs font-medium text-white/50 transition-colors hover:text-brand-gold"
+        >
+          <ArrowLeft className="h-3 w-3" />
+          ou volte usando o navegador
+        </Link>
       </div>
-    </div>
+    </main>
   );
 };
 

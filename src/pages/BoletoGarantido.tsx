@@ -7,7 +7,7 @@ import {
   FileCheck,
 } from "lucide-react";
 import SolutionPage from "@/components/SolutionPage";
-import heroImg from "@/assets/sol-boleto.jpg";
+import heroImg from "@/assets/illustrations/sol-boleto.svg";
 
 const BoletoGarantido = () => (
   <SolutionPage
@@ -15,7 +15,7 @@ const BoletoGarantido = () => (
     title="Receba no prazo,"
     titleGold="sempre."
     description="A garantia de recebimento que sua empresa precisa. Mais previsibilidade, menos inadimplência e fluxo de caixa estável todos os meses."
-    heroImg={heroImg}
+    heroIllustration={heroImg}
     heroAlt="Boleto bancário com cadeado dourado simbolizando segurança"
     metaTitle="Boleto Garantido | Credifácil Securitizadora"
     metaDescription="Garanta o recebimento dos seus boletos com a Credifácil Securitizadora. Reduza inadimplência e tenha previsibilidade no fluxo de caixa do seu negócio."

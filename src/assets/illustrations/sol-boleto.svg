@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" fill="none">
+  <defs>
+    <linearGradient id="sb-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3c969"/>
+      <stop offset="1" stop-color="#b8860b"/>
+    </linearGradient>
+    <radialGradient id="sb-glow" cx="0.5" cy="0.5" r="0.55">
+      <stop offset="0" stop-color="#daa520" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#daa520" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="300" cy="250" r="220" fill="url(#sb-glow)"/>
+
+  <!-- Boleto -->
+  <g transform="translate(120 130)">
+    <rect width="280" height="240" rx="12" fill="#1a1410" stroke="url(#sb-gold)" stroke-width="1.5"/>
+    <!-- Header strip -->
+    <rect width="280" height="40" rx="12" fill="url(#sb-gold)"/>
+    <rect width="280" height="40" fill="url(#sb-gold)" opacity="0"/>
+    <text x="20" y="26" fill="#1a1410" font-family="sans-serif" font-size="13" font-weight="800" letter-spacing="2">BOLETO GARANTIDO</text>
+    <!-- Barcode -->
+    <g transform="translate(20 60)" fill="#daa520">
+      <rect width="3" height="50" opacity="0.85"/>
+      <rect x="6" width="2" height="50" opacity="0.85"/>
+      <rect x="11" width="4" height="50" opacity="0.85"/>
+      <rect x="18" width="2" height="50" opacity="0.85"/>
+      <rect x="23" width="3" height="50" opacity="0.85"/>
+      <rect x="29" width="5" height="50" opacity="0.85"/>
+      <rect x="37" width="2" height="50" opacity="0.85"/>
+      <rect x="42" width="3" height="50" opacity="0.85"/>
+      <rect x="48" width="2" height="50" opacity="0.85"/>
+      <rect x="53" width="4" height="50" opacity="0.85"/>
+      <rect x="60" width="3" height="50" opacity="0.85"/>
+      <rect x="66" width="2" height="50" opacity="0.85"/>
+      <rect x="71" width="5" height="50" opacity="0.85"/>
+      <rect x="79" width="3" height="50" opacity="0.85"/>
+      <rect x="85" width="2" height="50" opacity="0.85"/>
+      <rect x="90" width="3" height="50" opacity="0.85"/>
+      <rect x="96" width="5" height="50" opacity="0.85"/>
+      <rect x="104" width="2" height="50" opacity="0.85"/>
+      <rect x="109" width="4" height="50" opacity="0.85"/>
+      <rect x="116" width="3" height="50" opacity="0.85"/>
+      <rect x="122" width="2" height="50" opacity="0.85"/>
+      <rect x="127" width="5" height="50" opacity="0.85"/>
+      <rect x="135" width="3" height="50" opacity="0.85"/>
+      <rect x="141" width="2" height="50" opacity="0.85"/>
+      <rect x="146" width="4" height="50" opacity="0.85"/>
+      <rect x="153" width="3" height="50" opacity="0.85"/>
+      <rect x="159" width="5" height="50" opacity="0.85"/>
+      <rect x="167" width="2" height="50" opacity="0.85"/>
+      <rect x="172" width="3" height="50" opacity="0.85"/>
+      <rect x="178" width="2" height="50" opacity="0.85"/>
+      <rect x="183" width="5" height="50" opacity="0.85"/>
+      <rect x="191" width="3" height="50" opacity="0.85"/>
+      <rect x="197" width="2" height="50" opacity="0.85"/>
+      <rect x="202" width="4" height="50" opacity="0.85"/>
+      <rect x="209" width="2" height="50" opacity="0.85"/>
+      <rect x="214" width="5" height="50" opacity="0.85"/>
+      <rect x="222" width="3" height="50" opacity="0.85"/>
+      <rect x="228" width="2" height="50" opacity="0.85"/>
+      <rect x="233" width="3" height="50" opacity="0.85"/>
+    </g>
+    <!-- Lines -->
+    <g fill="#daa520" fill-opacity="0.4">
+      <rect x="20" y="130" width="200" height="3" rx="1.5"/>
+      <rect x="20" y="142" width="160" height="3" rx="1.5"/>
+    </g>
+    <!-- Total amount -->
+    <g transform="translate(20 162)">
+      <rect width="240" height="46" rx="6" fill="url(#sb-gold)"/>
+      <text x="14" y="18" fill="#1a1410" font-family="sans-serif" font-size="9" font-weight="700">VALOR</text>
+      <text x="14" y="36" fill="#1a1410" font-family="sans-serif" font-size="18" font-weight="800">R$ 1.250,00</text>
+      <text x="226" y="28" text-anchor="end" fill="#1a1410" font-family="sans-serif" font-size="9" font-weight="700">VENC. 15/06</text>
+    </g>
+  </g>
+
+  <!-- Shield with check (garantia) -->
+  <g transform="translate(450 130)">
+    <path d="M 0 0 L 0 50 Q 0 80 38 92 Q 76 80 76 50 L 76 0 L 38 -10 Z" fill="url(#sb-gold)" stroke="#1a1410" stroke-opacity="0.3" stroke-width="1.5"/>
+    <path d="M 22 44 L 34 56 L 56 30" stroke="#1a1410" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Sparkles -->
+  <g fill="#daa520">
+    <circle cx="80" cy="100" r="2.5" opacity="0.55"/>
+    <circle cx="540" cy="80" r="2" opacity="0.5"/>
+    <circle cx="60" cy="380" r="2" opacity="0.5"/>
+    <circle cx="540" cy="400" r="2.5" opacity="0.5"/>
+  </g>
+</svg>

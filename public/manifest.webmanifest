@@ -1,0 +1,14 @@
+{
+  "name": "Credifácil",
+  "short_name": "Credifácil",
+  "description": "Crédito rápido, seguro e descomplicado.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0b0a",
+  "theme_color": "#0d0b0a",
+  "icons": [
+    { "src": "/og-image.png", "sizes": "1200x630", "type": "image/png", "purpose": "any" }
+  ],
+  "lang": "pt-BR",
+  "categories": ["finance"]
+}

@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useSeo } from "@/hooks/useSeo";
 import {
   ArrowLeft,
   ArrowRight,
@@ -27,11 +27,12 @@ import {
   BarChart3,
   Lock,
 } from "lucide-react";
-import logo from "@/assets/credifacil-logo.png";
-import heroImg from "@/assets/hero-securitizadora.jpg";
-import bannerImg from "@/assets/securitizadora-banner.jpg";
-import teamImg from "@/assets/securitizadora-team.jpg";
-import meetingImg from "@/assets/securitizadora-meeting.jpg";
+import { whatsappLink } from "@/config/site";
+import logo from "@/assets/credifacil-logo.webp";
+import heroIllo from "@/assets/illustrations/hero-securitizadora.svg";
+import bannerImg from "@/assets/securitizadora-banner.webp";
+import teamImg from "@/assets/securitizadora-team.webp";
+import meetingImg from "@/assets/securitizadora-meeting.webp";
 
 const stats = [
   { icon: Award, value: "+30", label: "Anos de experiência" },
@@ -122,20 +123,11 @@ const sectors = [
 ];
 
 const Securitizadora = () => {
-  useEffect(() => {
-    document.title = "Securitizadora | Credifácil — Soluções para empresas";
-    const meta = document.querySelector('meta[name="description"]');
-    const desc =
-      "Conheça nossa securitizadora: 30 anos de experiência, +100 agências e R$ 2 bilhões movimentados por mês em soluções financeiras para empresas brasileiras.";
-    if (meta) meta.setAttribute("content", desc);
-    else {
-      const m = document.createElement("meta");
-      m.name = "description";
-      m.content = desc;
-      document.head.appendChild(m);
-    }
-    window.scrollTo({ top: 0, behavior: "auto" });
-  }, []);
+  useSeo({
+    title: "Securitizadora | Credifácil — Soluções para empresas",
+    description:
+      "Conheça nossa securitizadora: 30 anos de experiência, +100 agências e R$ 2 bilhões movimentados por mês em soluções financeiras para empresas brasileiras.",
+  });
 
   return (
     <div className="min-h-screen bg-[hsl(40_30%_98%)]">
@@ -162,43 +154,29 @@ const Securitizadora = () => {
       </header>
 
       {/* Hero */}
-      <section className="relative h-[680px] w-full overflow-hidden md:h-[760px]">
-        <img
-          src={heroImg}
-          alt="Edifício corporativo moderno representando solidez da securitizadora"
-          className="absolute inset-0 h-full w-full object-cover"
-          width={1920}
-          height={1080}
-          fetchPriority="high"
-        />
+      <section className="relative overflow-hidden bg-[hsl(30_18%_6%)] pb-24 pt-32 text-white md:pt-40">
         <div
-          className="absolute inset-0"
+          className="pointer-events-none absolute -right-32 top-10 h-[600px] w-[600px] opacity-50"
           style={{
             background:
-              "linear-gradient(95deg, hsl(30 22% 5% / 0.95) 0%, hsl(30 22% 5% / 0.78) 35%, hsl(30 22% 5% / 0.45) 65%, transparent 100%)",
+              "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.4), transparent 65%)",
           }}
+          aria-hidden
         />
-        <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-5 md:px-8">
-          <div className="max-w-2xl pt-20">
-            <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-brand-gold/40 bg-brand-gold/[0.08] px-3.5 py-1.5 backdrop-blur-md">
-              <Sparkles className="h-3.5 w-3.5 text-brand-gold" strokeWidth={2.4} />
-              <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-brand-gold">
-                Securitizadora Credifácil
-              </span>
+        <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden />
+        <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-10 px-5 md:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div data-anim="fade-right">
+            <div className="pill-eyebrow-dark">
+              <Sparkles className="h-3.5 w-3.5" />
+              Securitizadora Credifácil
             </div>
             <h1
-              className="text-[42px] font-bold leading-[1.02] tracking-tight text-white md:text-[64px] lg:text-[72px]"
+              className="mt-6 font-display text-[42px] font-extrabold leading-[1.02] tracking-tight text-white md:text-[58px] lg:text-[64px]"
               style={{ textShadow: "0 2px 24px hsl(30 30% 4% / 0.45)" }}
             >
-              Mais de 30 anos
-              <br />
-              <span
-                className="bg-clip-text text-transparent"
-                style={{ backgroundImage: "var(--gradient-gold)" }}
-              >
-                impulsionando o
-                <br />
-                Brasil que produz.
+              Mais de 30 anos{" "}
+              <span className="text-gold-gradient">
+                impulsionando o Brasil que produz.
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-white/80 md:text-[17px]">
@@ -209,22 +187,26 @@ const Securitizadora = () => {
               </span>
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a
-                href="#contato"
-                className="group inline-flex items-center gap-3 rounded-2xl px-7 py-4 text-base font-bold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.03] hover:brightness-110"
-                style={{ background: "var(--gradient-gold)" }}
-              >
+              <a href="#contato" className="btn-gold group">
                 <Briefcase className="h-5 w-5" strokeWidth={2.4} />
                 Falar com especialista
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </a>
-              <a
-                href="#solucoes"
-                className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/[0.06] px-5 py-4 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-brand-gold/60 hover:bg-white/10 hover:text-brand-gold"
-              >
+              <a href="#solucoes" className="btn-ghost-light">
                 Conhecer soluções
               </a>
             </div>
+          </div>
+          {/* Right: hero illustration */}
+          <div className="relative hidden lg:block" data-anim="fade-left">
+            <img
+              src={heroIllo}
+              alt="Skyline corporativo dourado representando 30 anos da securitizadora"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className="mx-auto h-auto w-full max-w-lg drop-shadow-[0_10px_40px_rgba(218,165,32,0.25)]"
+            />
           </div>
         </div>
       </section>
@@ -618,7 +600,9 @@ const Securitizadora = () => {
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <a
-                href="#whatsapp"
+                href={whatsappLink("Olá! Quero falar com a Credifácil Securitizadora.")}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-2xl border border-white/30 bg-white/10 px-7 py-4 text-base font-bold text-white backdrop-blur-md transition-all hover:bg-white/20"
               >
                 Falar no WhatsApp

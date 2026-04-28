@@ -1,30 +1,28 @@
 import {
-  Heart,
   ShieldCheck,
   Clock,
   Headphones,
   ChevronRight,
   Star,
   Quote,
-  Wallet,
-  HomeIcon,
-  Repeat,
-  Building2,
   Award,
   HandCoins,
   Lock,
   MessageCircle,
   Sparkles,
-  TrendingUp,
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import loansHero from "@/assets/loans-hero.jpg";
-import supportAgent from "@/assets/support-agent.jpg";
-import cardPersonal from "@/assets/card-personal.jpg";
-import cardCollateral from "@/assets/card-collateral.jpg";
-import cardPortability from "@/assets/card-portability.jpg";
-import cardBusiness from "@/assets/card-business.jpg";
+import { whatsappLink } from "@/config/site";
+import { Counter } from "@/components/ui/Counter";
+import loansHero from "@/assets/loans-hero.webp";
+import loansHeroMd from "@/assets/loans-hero-md.webp";
+import loansHeroSm from "@/assets/loans-hero-sm.webp";
+import supportAgent from "@/assets/support-agent.webp";
+import cardPersonalIllo from "@/assets/illustrations/card-personal.svg";
+import cardCollateralIllo from "@/assets/illustrations/card-collateral.svg";
+import cardPortabilityIllo from "@/assets/illustrations/card-portability.svg";
+import cardBusinessIllo from "@/assets/illustrations/card-business.svg";
 
 const trustItems = [
   { icon: ShieldCheck, title: "100% seguro", desc: "Criptografia bancária\ne dados protegidos." },
@@ -34,32 +32,32 @@ const trustItems = [
 
 const products = [
   {
-    icon: Wallet,
+    illo: cardPersonalIllo,
     title: "Crédito Pessoal",
     desc: "Dinheiro livre na sua conta para realizar o que você quiser, sem precisar justificar.",
     tag: "Mais pedido",
-    bg: cardPersonal,
+    href: "/simular",
   },
   {
-    icon: HomeIcon,
+    illo: cardCollateralIllo,
     title: "Crédito com Garantia",
     desc: "Use um imóvel ou veículo como garantia e tenha as menores taxas do mercado.",
     tag: "Menor taxa",
-    bg: cardCollateral,
+    href: "/simular",
   },
   {
-    icon: Repeat,
+    illo: cardPortabilityIllo,
     title: "Portabilidade de Crédito",
     desc: "Traga seu contrato de outro banco para a Credifácil e reduza sua parcela hoje mesmo.",
     tag: null,
-    bg: cardPortability,
+    href: "/simular",
   },
   {
-    icon: Building2,
+    illo: cardBusinessIllo,
     title: "Para Empresas",
     desc: "Capital de giro e linhas de crédito sob medida para impulsionar o seu negócio.",
     tag: "PJ",
-    bg: cardBusiness,
+    href: "/simular",
   },
 ];
 
@@ -72,21 +70,24 @@ const partnerItems = [
 const LoansSection = () => {
   return (
     <section
-      id="emprestimos"
+      id="solucoes"
       className="relative w-full px-5 py-16 md:px-8 md:py-20 lg:px-10"
       aria-label="Empréstimos e simulador"
     >
       <div className="mx-auto max-w-7xl">
         {/* HERO row: text + simulator + image */}
-        <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-[1.1fr_1fr_0.85fr]" data-anim-stagger>
+        <div
+          className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-[1.1fr_1fr_0.85fr]"
+          data-anim-stagger
+        >
           {/* Left text */}
           <div className="flex flex-col justify-center">
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-gold/30 bg-brand-gold/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-brand-gold">
-              <Sparkles className="h-3.5 w-3.5" />
+            <span className="pill-eyebrow w-fit">
+              <Sparkles className="h-3 w-3" />
               Crédito sob medida pra você
             </span>
 
-            <h2 className="mt-5 text-4xl font-bold leading-[1.02] tracking-tight text-foreground md:text-[52px]">
+            <h2 className="mt-5 font-display text-4xl font-bold leading-[1.02] tracking-tight text-foreground md:text-[52px]">
               Simule, aprove e
               <br />
               receba{" "}
@@ -96,9 +97,16 @@ const LoansSection = () => {
                   className="absolute -bottom-1 left-0 h-2 w-full"
                   viewBox="0 0 200 8"
                   preserveAspectRatio="none"
-                  aria-hidden="true"
+                  aria-hidden
                 >
-                  <path d="M2,5 Q100,1 198,5" stroke="hsl(var(--brand-gold))" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.5" />
+                  <path
+                    d="M2,5 Q100,1 198,5"
+                    stroke="hsl(var(--brand-gold))"
+                    strokeWidth="2.5"
+                    fill="none"
+                    strokeLinecap="round"
+                    opacity="0.5"
+                  />
                 </svg>
               </span>
               .
@@ -115,12 +123,14 @@ const LoansSection = () => {
                   className="group rounded-2xl border border-foreground/8 bg-white/60 p-3.5 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-brand-gold/30 hover:bg-white hover:shadow-[var(--shadow-card)]"
                 >
                   <span
-                    className="flex h-10 w-10 items-center justify-center rounded-xl text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-transform group-hover:scale-105"
+                    className="flex h-10 w-10 items-center justify-center rounded-xl text-brand-gold-foreground shadow-[var(--shadow-gold-sm)] transition-transform group-hover:scale-105"
                     style={{ background: "var(--gradient-gold)" }}
                   >
                     <t.icon className="h-[18px] w-[18px]" strokeWidth={2.2} />
                   </span>
-                  <div className="mt-3 text-[13px] font-bold leading-tight text-foreground">{t.title}</div>
+                  <div className="mt-3 text-[13px] font-bold leading-tight text-foreground">
+                    {t.title}
+                  </div>
                   <div className="mt-1 whitespace-pre-line text-[11px] leading-relaxed text-foreground/60">
                     {t.desc}
                   </div>
@@ -131,38 +141,49 @@ const LoansSection = () => {
             {/* Mini stats */}
             <div className="mt-8 flex items-center gap-5 rounded-2xl border border-brand-gold/15 bg-gradient-to-br from-white/80 to-[hsl(40_50%_94%)]/60 px-5 py-4 backdrop-blur-sm">
               <div>
-                <div className="text-2xl font-bold leading-none text-foreground">+50 mil</div>
-                <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-foreground/55">clientes</div>
+                <div className="font-display text-2xl font-bold leading-none text-foreground">
+                  <Counter value={50} prefix="+" suffix=" mil" />
+                </div>
+                <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-foreground/55">
+                  clientes
+                </div>
               </div>
               <div className="h-10 w-px bg-foreground/15" />
               <div>
-                <div className="flex items-baseline gap-0.5 text-2xl font-bold leading-none text-foreground">
-                  4,9
+                <div className="flex items-baseline gap-0.5 font-display text-2xl font-bold leading-none text-foreground">
+                  <Counter value={4.9} decimals={1} />
                   <Star className="h-4 w-4 fill-brand-gold text-brand-gold" />
                 </div>
-                <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-foreground/55">avaliação</div>
+                <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-foreground/55">
+                  avaliação
+                </div>
               </div>
               <div className="h-10 w-px bg-foreground/15" />
               <div>
-                <div className="text-2xl font-bold leading-none text-foreground">R$ 1bi+</div>
-                <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-foreground/55">liberados</div>
+                <div className="font-display text-2xl font-bold leading-none text-foreground">R$ 1bi+</div>
+                <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-foreground/55">
+                  liberados
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Simulator CTA card (lightweight) */}
+          {/* Simulator CTA card */}
           <div className="relative flex flex-col justify-between overflow-hidden rounded-3xl border border-brand-gold/25 bg-gradient-to-br from-[hsl(40_70%_96%)] to-[hsl(38_60%_88%)] p-7 shadow-[var(--shadow-card)]">
             <div
               className="pointer-events-none absolute -right-12 -top-12 h-44 w-44 rounded-full opacity-40"
-              style={{ background: "radial-gradient(circle, hsl(var(--brand-gold) / 0.45), transparent 70%)" }}
-              aria-hidden="true"
+              style={{
+                background:
+                  "radial-gradient(circle, hsl(var(--brand-gold) / 0.45), transparent 70%)",
+              }}
+              aria-hidden
             />
             <div className="relative">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold shadow-sm">
                 <Sparkles className="h-3 w-3" />
                 Simulador grátis
               </span>
-              <h3 className="mt-4 text-2xl font-bold leading-tight text-foreground">
+              <h3 className="mt-4 font-display text-2xl font-bold leading-tight text-foreground">
                 Descubra sua parcela em <span className="text-brand-gold">30 segundos</span>.
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground/70">
@@ -182,11 +203,7 @@ const LoansSection = () => {
               </ul>
             </div>
 
-            <Link
-              to="/simular"
-              className="group relative mt-7 inline-flex w-full items-center justify-center gap-2 rounded-2xl py-4 text-[15px] font-bold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.02] hover:brightness-110"
-              style={{ background: "var(--gradient-gold)" }}
-            >
+            <Link to="/simular" className="btn-gold group mt-7 w-full">
               Simular meu empréstimo
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
@@ -201,9 +218,12 @@ const LoansSection = () => {
           <div className="relative hidden overflow-hidden rounded-3xl shadow-[var(--shadow-card)] lg:block">
             <img
               src={loansHero}
+              srcSet={`${loansHeroSm} 640w, ${loansHeroMd} 1200w, ${loansHero} 1920w`}
+              sizes="(max-width: 1024px) 0px, 24vw"
               alt="Cliente satisfeita simulando empréstimo no celular"
               className="absolute inset-0 h-full w-full object-cover object-[60%_center]"
               loading="lazy"
+              decoding="async"
               width={1024}
               height={1024}
             />
@@ -213,16 +233,12 @@ const LoansSection = () => {
                 background:
                   "linear-gradient(180deg, transparent 35%, hsl(30 18% 7% / 0.85) 100%)",
               }}
-              aria-hidden="true"
+              aria-hidden
             />
-
-            {/* Top floating badge */}
             <div className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-foreground shadow-md backdrop-blur">
               <span className="flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
               Aprovado em 3 min
             </div>
-
-            {/* Floating testimonial */}
             <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-[hsl(30_18%_7%)]/92 p-4 text-white shadow-lg backdrop-blur-md">
               <Quote className="h-4 w-4 text-brand-gold" />
               <p className="mt-2 text-xs leading-relaxed text-white/90">
@@ -244,75 +260,65 @@ const LoansSection = () => {
         </div>
 
         {/* PRODUCTS row */}
-        <div className="mt-12 rounded-3xl border border-foreground/10 bg-white/80 p-6 shadow-[var(--shadow-card)] backdrop-blur-sm md:p-8" data-anim="fade-up">
+        <div
+          className="mt-12 rounded-3xl border border-foreground/10 bg-white/80 p-6 shadow-[var(--shadow-card)] backdrop-blur-sm md:p-8"
+          data-anim="fade-up"
+        >
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <span className="text-[11px] font-semibold uppercase tracking-wider text-brand-gold">
                 Linhas de crédito
               </span>
-              <h3 className="mt-1 text-2xl font-bold leading-tight text-foreground md:text-[28px]">
+              <h3 className="mt-1 font-display text-2xl font-bold leading-tight text-foreground md:text-[28px]">
                 A solução certa para{" "}
                 <span className="text-brand-gold">cada necessidade</span>
               </h3>
             </div>
-            <a
-              href="#emprestimos"
+            <Link
+              to="/simular"
               className="group inline-flex items-center gap-1.5 rounded-full border border-brand-gold/40 px-4 py-2 text-xs font-semibold text-brand-gold transition-all hover:bg-brand-gold/10 hover:gap-2.5"
             >
-              Ver todas as linhas
+              Simular agora
               <ChevronRight className="h-3.5 w-3.5" />
-            </a>
+            </Link>
           </div>
 
           <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4" data-anim-stagger>
             {products.map((p) => (
-              <article
+              <Link
                 key={p.title}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-foreground/8 bg-white p-5 transition-all hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-[var(--shadow-gold)]"
+                to={p.href}
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-foreground/8 bg-white transition-all hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-[var(--shadow-gold)]"
               >
-                {/* Background image */}
-                <img
-                  src={p.bg}
-                  alt=""
-                  aria-hidden="true"
-                  loading="lazy"
-                  width={800}
-                  height={800}
-                  className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.18] transition-all duration-700 group-hover:scale-110 group-hover:opacity-30"
-                />
-                {/* Gradient overlay for legibility */}
-                <div
-                  className="pointer-events-none absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, hsl(0 0% 100% / 0.92) 0%, hsl(0 0% 100% / 0.78) 45%, hsl(0 0% 100% / 0.95) 100%)",
-                  }}
-                  aria-hidden="true"
-                />
-                {/* Content wrapper */}
-                <div className="relative flex flex-col">
-                {p.tag && (
-                  <span className="absolute right-0 top-0 rounded-full bg-brand-gold px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-gold-foreground shadow-[var(--shadow-gold)]">
-                    {p.tag}
-                  </span>
-                )}
-                <div
-                  className="flex h-12 w-12 items-center justify-center rounded-2xl text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-transform group-hover:scale-110 group-hover:rotate-3"
-                  style={{ background: "var(--gradient-gold)" }}
-                >
-                  <p.icon className="h-5 w-5" strokeWidth={2.2} />
+                {/* Illustration */}
+                <div className="relative h-44 overflow-hidden">
+                  <img
+                    src={p.illo}
+                    alt=""
+                    aria-hidden
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  {p.tag && (
+                    <span className="absolute right-3 top-3 rounded-full bg-brand-gold px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold-foreground shadow-[var(--shadow-gold-sm)]">
+                      {p.tag}
+                    </span>
+                  )}
                 </div>
-                <h4 className="mt-5 text-[16px] font-bold text-foreground">{p.title}</h4>
-                <p className="mt-2 text-xs leading-relaxed text-foreground/65">{p.desc}</p>
-                <Link
-                  to="/simular"
-                  className="mt-5 inline-flex items-center gap-1 text-xs font-semibold text-brand-gold transition-all group-hover:gap-2"
-                >
-                  Simular agora
-                  <ChevronRight className="h-3.5 w-3.5" />
-                </Link>
+                {/* Content */}
+                <div className="flex flex-1 flex-col p-5">
+                  <h4 className="font-display text-[16px] font-bold text-foreground">
+                    {p.title}
+                  </h4>
+                  <p className="mt-2 flex-1 text-xs leading-relaxed text-foreground/65">
+                    {p.desc}
+                  </p>
+                  <div className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-brand-gold transition-all group-hover:gap-2">
+                    Simular agora
+                    <ChevronRight className="h-3.5 w-3.5" />
+                  </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
@@ -324,7 +330,7 @@ const LoansSection = () => {
               <span className="text-[11px] font-semibold uppercase tracking-wider text-brand-gold">
                 Nosso compromisso
               </span>
-              <h3 className="mt-1 text-2xl font-bold leading-tight text-foreground md:text-[26px]">
+              <h3 className="mt-1 font-display text-2xl font-bold leading-tight text-foreground md:text-[26px]">
                 Mais que crédito,
                 <br />
                 um parceiro para{" "}
@@ -371,7 +377,9 @@ const LoansSection = () => {
                   Online agora · resposta na hora
                 </div>
                 <a
-                  href="#whatsapp"
+                  href={whatsappLink("Olá! Quero falar com um especialista da Credifácil.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-2.5 inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[11px] font-bold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.03] hover:brightness-110"
                   style={{ background: "var(--gradient-gold)" }}
                 >
@@ -382,11 +390,10 @@ const LoansSection = () => {
             </div>
           </div>
 
-          {/* sparkle deco */}
           <Sparkles
             className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 text-brand-gold/15"
             strokeWidth={1}
-            aria-hidden="true"
+            aria-hidden
           />
         </div>
       </div>

@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useSeo } from "@/hooks/useSeo";
 import {
   ArrowLeft,
   ArrowRight,
@@ -26,11 +26,12 @@ import {
   Lock,
   Phone,
 } from "lucide-react";
-import logo from "@/assets/credifacil-logo.png";
-import heroImg from "@/assets/hero-consignado.jpg";
-import seniorImg from "@/assets/consignado-senior.jpg";
-import servidorImg from "@/assets/consignado-servidor.jpg";
-import bannerImg from "@/assets/consignado-banner.jpg";
+import { whatsappLink } from "@/config/site";
+import logo from "@/assets/credifacil-logo.webp";
+import heroIllo from "@/assets/illustrations/hero-consignado.svg";
+import seniorImg from "@/assets/consignado-senior.webp";
+import servidorImg from "@/assets/consignado-servidor.webp";
+import bannerImg from "@/assets/consignado-banner.webp";
 
 const benefits = [
   {
@@ -204,20 +205,11 @@ const benefitsExtra = [
 ];
 
 const Consignado = () => {
-  useEffect(() => {
-    document.title = "Empréstimo Consignado | Credifácil — Menores taxas";
-    const meta = document.querySelector('meta[name="description"]');
-    const desc =
-      "Empréstimo consignado para aposentados, pensionistas, servidores públicos e CLT. Taxas a partir de 1,49% a.m., até 96x e dinheiro na conta no mesmo dia.";
-    if (meta) meta.setAttribute("content", desc);
-    else {
-      const m = document.createElement("meta");
-      m.name = "description";
-      m.content = desc;
-      document.head.appendChild(m);
-    }
-    window.scrollTo({ top: 0, behavior: "auto" });
-  }, []);
+  useSeo({
+    title: "Empréstimo Consignado | Credifácil — Menores taxas",
+    description:
+      "Empréstimo consignado para aposentados, pensionistas, servidores públicos e CLT. Taxas a partir de 1,49% a.m., até 96x e dinheiro na conta no mesmo dia.",
+  });
 
   return (
     <div className="min-h-screen bg-[hsl(40_30%_98%)]">
@@ -244,44 +236,30 @@ const Consignado = () => {
       </header>
 
       {/* Hero */}
-      <section className="relative h-[680px] w-full overflow-hidden md:h-[760px]">
-        <img
-          src={heroImg}
-          alt="Casal de aposentados sorrindo após contratar empréstimo consignado"
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: "60% center" }}
-          width={1920}
-          height={1080}
-          fetchPriority="high"
-        />
+      <section className="relative overflow-hidden bg-[hsl(30_18%_6%)] pb-16 pt-32 text-white md:pt-40">
         <div
-          className="absolute inset-0"
+          className="pointer-events-none absolute -right-32 top-10 h-[600px] w-[600px] opacity-50"
           style={{
             background:
-              "linear-gradient(95deg, hsl(30 22% 5% / 0.95) 0%, hsl(30 22% 5% / 0.78) 35%, hsl(30 22% 5% / 0.4) 65%, transparent 100%)",
+              "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.4), transparent 65%)",
           }}
+          aria-hidden
         />
-        <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-5 md:px-8">
-          <div className="max-w-2xl pt-20">
-            <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-brand-gold/40 bg-brand-gold/[0.08] px-3.5 py-1.5 backdrop-blur-md">
-              <Sparkles className="h-3.5 w-3.5 text-brand-gold" strokeWidth={2.4} />
-              <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-brand-gold">
-                Empréstimo Consignado
-              </span>
+        <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden />
+        <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-10 px-5 md:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div data-anim="fade-right">
+            <div className="pill-eyebrow-dark">
+              <Sparkles className="h-3.5 w-3.5" />
+              Empréstimo Consignado
             </div>
             <h1
-              className="text-[42px] font-bold leading-[1.02] tracking-tight text-white md:text-[64px] lg:text-[72px]"
+              className="mt-6 font-display text-[42px] font-extrabold leading-[1.02] tracking-tight text-white md:text-[58px] lg:text-[64px]"
               style={{ textShadow: "0 2px 24px hsl(30 30% 4% / 0.45)" }}
             >
               Crédito consignado
               <br />
-              <span
-                className="bg-clip-text text-transparent"
-                style={{ backgroundImage: "var(--gradient-gold)" }}
-              >
-                com as menores
-                <br />
-                taxas do Brasil.
+              <span className="text-gold-gradient">
+                com as menores taxas do Brasil.
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-white/80 md:text-[17px]">
@@ -291,19 +269,12 @@ const Consignado = () => {
               <span className="font-semibold text-white">96 meses</span>.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link
-                to="/simular"
-                className="group inline-flex items-center gap-3 rounded-2xl px-7 py-4 text-base font-bold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.03] hover:brightness-110"
-                style={{ background: "var(--gradient-gold)" }}
-              >
+              <Link to="/simular" className="btn-gold group">
                 <Wallet className="h-5 w-5" strokeWidth={2.4} />
                 Simular meu consignado
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
-              <a
-                href="#beneficios"
-                className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/[0.06] px-5 py-4 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-brand-gold/60 hover:bg-white/10 hover:text-brand-gold"
-              >
+              <a href="#beneficios" className="btn-ghost-light">
                 Ver vantagens
               </a>
             </div>
@@ -323,6 +294,18 @@ const Consignado = () => {
                 Contrato 100% digital
               </div>
             </div>
+          </div>
+
+          {/* Right: hero illustration */}
+          <div className="relative hidden lg:block" data-anim="fade-left">
+            <img
+              src={heroIllo}
+              alt="Documento de consignado aprovado, moedas e carteira douradas"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className="mx-auto h-auto w-full max-w-lg drop-shadow-[0_10px_40px_rgba(218,165,32,0.25)]"
+            />
           </div>
         </div>
       </section>
@@ -753,7 +736,9 @@ const Consignado = () => {
             </div>
           </div>
           <a
-            href="#whatsapp"
+            href={whatsappLink("Olá! Quero saber mais sobre o crédito consignado.")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-xl border border-brand-gold/40 bg-brand-gold/5 px-4 py-2.5 text-xs font-bold text-brand-gold transition-all hover:bg-brand-gold/10"
           >
             Falar no WhatsApp
@@ -786,7 +771,9 @@ const Consignado = () => {
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <a
-                href="#whatsapp"
+                href={whatsappLink("Olá! Quero falar com um especialista em consignado.")}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-2xl border border-white/30 bg-white/10 px-7 py-4 text-base font-bold text-white backdrop-blur-md transition-all hover:bg-white/20"
               >
                 Falar com especialista
