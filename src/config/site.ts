@@ -75,25 +75,3 @@ export const mailLink = (subject?: string, body?: string): string => {
   const qs = params.toString();
   return `mailto:${site.contact.email}${qs ? `?${qs}` : ""}`;
 };
-
-/** Formata BRL */
-export const formatBRL = (n: number): string =>
-  n.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-    minimumFractionDigits: 2,
-  });
-
-/** Cálculo Price (parcela fixa) */
-export const computeMonthly = (
-  principal: number,
-  installments: number,
-  monthlyRate: number = site.product.rateMonthly
-): number => {
-  if (installments <= 0) return principal;
-  if (monthlyRate === 0) return principal / installments;
-  const factor =
-    (monthlyRate * Math.pow(1 + monthlyRate, installments)) /
-    (Math.pow(1 + monthlyRate, installments) - 1);
-  return principal * factor;
-};
