@@ -401,6 +401,76 @@
   [data-anim="reveal-up"] { transform: translateY(80px); filter: blur(8px); }
   [data-anim].anim-visible { opacity: 1; transform: none; filter: none; }
 
+  /* ---------- Parallax (driven by useScrollAnimations rAF loop) ---------- */
+  [data-parallax] {
+    will-change: transform;
+    transform: translate3d(0, var(--parallax-y, 0px), 0);
+    transition: transform .12s linear;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-parallax] { transform: none !important; }
+  }
+
+  /* ---------- Premium gradient utilities ---------- */
+  .gradient-mesh-gold {
+    background:
+      radial-gradient(ellipse 60% 50% at 20% 20%, hsl(40 90% 70% / 0.35) 0%, transparent 60%),
+      radial-gradient(ellipse 55% 45% at 85% 30%, hsl(38 85% 58% / 0.30) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 50% at 50% 100%, hsl(35 80% 50% / 0.25) 0%, transparent 65%);
+  }
+  .gradient-mesh-dark {
+    background:
+      radial-gradient(ellipse 70% 50% at 15% 20%, hsl(220 30% 18% / 0.9) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 90% 80%, hsl(38 60% 30% / 0.45) 0%, transparent 60%),
+      linear-gradient(180deg, hsl(220 18% 8%) 0%, hsl(220 16% 5%) 100%);
+  }
+  .gradient-divider-gold {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, hsl(var(--brand-gold) / 0.55) 50%, transparent 100%);
+  }
+  .gradient-text-gold-anim {
+    background: linear-gradient(90deg, hsl(40 92% 64%), hsl(38 82% 52%), hsl(40 92% 64%));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gold-flow 6s ease-in-out infinite;
+  }
+
+  /* Soft gold glow on hover (cards) */
+  .glow-gold-hover {
+    transition: box-shadow .4s ease, transform .4s ease, border-color .4s ease;
+  }
+  .glow-gold-hover:hover {
+    box-shadow:
+      0 20px 40px -20px hsl(38 80% 50% / 0.35),
+      0 0 0 1px hsl(var(--brand-gold) / 0.25);
+  }
+
+  /* Animated underline used on links/eyebrows */
+  .gold-underline {
+    position: relative;
+  }
+  .gold-underline::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -4px;
+    height: 2px; width: 100%;
+    background: var(--gradient-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .5s cubic-bezier(.22,1,.36,1);
+  }
+  .gold-underline:hover::after,
+  .gold-underline.is-active::after { transform: scaleX(1); }
+
+  /* Section gradient overlays (use as ::before via a wrapper) */
+  .section-fade-top::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 120px;
+    background: linear-gradient(180deg, hsl(220 16% 6%) 0%, transparent 100%);
+    pointer-events: none;
+  }
+
   [data-anim-stagger] > * {
     opacity: 0;
     transform: translateY(36px);
