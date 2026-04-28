@@ -8,8 +8,8 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 30 15% 8%;
-    --foreground: 40 30% 96%;
+    --background: 40 35% 96%;
+    --foreground: 30 18% 12%;
 
     --brand-gold: 35 75% 48%;
     --brand-gold-soft: 38 85% 60%;
@@ -22,13 +22,13 @@ All colors MUST be HSL.
     --surface-elevated: 30 12% 14%;
     --surface-light: 40 30% 96%;
 
-    /* Single page background — dark with warm gold glows */
+    /* Single page background — light cream with warm gold glows */
     --gradient-page:
-      radial-gradient(ellipse 70% 45% at 80% 5%, hsl(35 75% 35% / 0.28) 0%, transparent 55%),
-      radial-gradient(ellipse 60% 40% at 10% 35%, hsl(38 80% 40% / 0.18) 0%, transparent 55%),
-      radial-gradient(ellipse 70% 35% at 90% 70%, hsl(35 70% 30% / 0.15) 0%, transparent 55%),
-      radial-gradient(ellipse 80% 50% at 20% 100%, hsl(35 70% 35% / 0.12) 0%, transparent 60%),
-      linear-gradient(180deg, hsl(30 18% 9%) 0%, hsl(30 14% 7%) 50%, hsl(30 18% 9%) 100%);
+      radial-gradient(ellipse 70% 45% at 80% 5%, hsl(38 85% 82%) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 40% at 10% 35%, hsl(40 80% 88%) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 35% at 90% 70%, hsl(35 75% 85%) 0%, transparent 55%),
+      radial-gradient(ellipse 80% 50% at 20% 100%, hsl(38 70% 88%) 0%, transparent 60%),
+      linear-gradient(180deg, hsl(40 50% 97%) 0%, hsl(38 40% 95%) 50%, hsl(35 35% 93%) 100%);
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
