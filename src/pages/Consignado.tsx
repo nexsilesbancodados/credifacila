@@ -276,16 +276,18 @@ const Consignado = () => {
 
       {/* Hero */}
       <section className="relative min-h-[680px] overflow-hidden bg-[hsl(220_16%_6%)] pb-20 pt-32 text-white md:min-h-[760px] md:pt-40">
-        <img
-          src={heroIllo}
-          alt="Casal aposentado sorrindo enquanto consulta consignado em tablet em sala iluminada por luz dourada"
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-          width={1920}
-          height={1080}
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-right"
-        />
+        <div data-parallax="0.18" className="pointer-events-none absolute inset-0 -top-12 -bottom-12">
+          <img
+            src={heroIllo}
+            alt="Casal aposentado sorrindo enquanto consulta consignado em tablet em sala iluminada por luz dourada"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            width={1920}
+            height={1080}
+            className="h-full w-full scale-105 object-cover object-right"
+          />
+        </div>
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -480,24 +482,28 @@ const Consignado = () => {
       </section>
 
       {/* Audiences */}
-      <section className="bg-[hsl(220_16%_6%)] py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-5 md:px-8">
+      <section className="relative overflow-hidden bg-[hsl(220_16%_6%)] py-20 md:py-28">
+        <div className="gradient-mesh-gold pointer-events-none absolute inset-0 opacity-50" aria-hidden />
+        <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.04]" aria-hidden />
+        <div className="gradient-divider-gold absolute inset-x-10 top-0" aria-hidden />
+        <div className="gradient-divider-gold absolute inset-x-10 bottom-0" aria-hidden />
+        <div className="relative mx-auto max-w-7xl px-5 md:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">
               Para quem é
             </span>
             <h2 className="mt-3 text-4xl font-bold leading-tight text-white md:text-5xl">
-              O consignado é <span className="text-brand-gold">para você?</span>
+              O consignado é <span className="gradient-text-gold-anim">para você?</span>
             </h2>
             <p className="mt-4 text-[15px] leading-relaxed text-white/80">
               Atendemos as principais categorias com convênios em todo o Brasil.
             </p>
           </div>
-          <div className="mt-14 grid gap-5 md:grid-cols-2">
+          <div className="mt-14 grid gap-5 md:grid-cols-2" data-anim-stagger>
             {audiences.map((a) => (
               <div
                 key={a.title}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-brand-gold/40 hover:bg-white/[0.06]"
+                className="glow-gold-hover group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-sm hover:-translate-y-1 hover:border-brand-gold/40 hover:bg-white/[0.06]"
               >
                 {/* Image */}
                 <div className="relative h-56 w-full overflow-hidden md:h-64">
@@ -605,15 +611,17 @@ const Consignado = () => {
 
       {/* Banner */}
       <section className="relative h-[400px] w-full overflow-hidden md:h-[500px]">
-        <img
-          src={bannerImg}
-          alt="Casal de aposentados aproveitando viagem após contratar consignado"
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: "center 30%" }}
-          width={1920}
-          height={1024}
-          loading="lazy"
-        />
+        <div data-parallax="0.22" className="absolute inset-0 -top-16 -bottom-16">
+          <img
+            src={bannerImg}
+            alt="Casal de aposentados aproveitando viagem após contratar consignado"
+            className="h-full w-full scale-110 object-cover"
+            style={{ objectPosition: "center 30%" }}
+            width={1920}
+            height={1024}
+            loading="lazy"
+          />
+        </div>
         <div
           className="absolute inset-0"
           style={{
