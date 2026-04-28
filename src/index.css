@@ -135,3 +135,8 @@ All colors MUST be HSL.
     -webkit-font-smoothing: antialiased;
   }
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0.6; }
+  50% { transform: translateY(-12px) translateX(6px); opacity: 1; }
+}
