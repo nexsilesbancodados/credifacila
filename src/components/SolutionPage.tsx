@@ -32,6 +32,17 @@ export interface SolutionPageProps {
   faq: { q: string; a: string }[];
   ctaTitle: string;
   ctaSubtitle: string;
+  /** Bloco visual opcional entre Benefícios e Como Funciona */
+  showcase?: {
+    image: string;
+    alt: string;
+    eyebrow?: string;
+    heading: string;
+    text: string;
+    stats?: { value: string; label: string }[];
+    /** "left" = imagem à esquerda, texto à direita (default). "right" = inverso */
+    imagePosition?: "left" | "right";
+  };
 }
 
 const SolutionPage = ({
@@ -50,6 +61,7 @@ const SolutionPage = ({
   faq,
   ctaTitle,
   ctaSubtitle,
+  showcase,
 }: SolutionPageProps) => {
   useSeo({ title: metaTitle, description: metaDescription });
 
@@ -192,6 +204,80 @@ const SolutionPage = ({
           </div>
         </div>
       </section>
+
+      {/* Showcase visual (opcional) */}
+      {showcase && (
+        <section className="relative overflow-hidden bg-white py-20 md:py-28">
+          <div
+            className="pointer-events-none absolute -right-40 top-10 h-[420px] w-[420px] opacity-30"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.35), transparent 65%)",
+            }}
+            aria-hidden
+          />
+          <div
+            className={`relative mx-auto grid max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-2 lg:gap-16 ${
+              showcase.imagePosition === "right" ? "lg:[&>*:first-child]:order-2" : ""
+            }`}
+          >
+            <div
+              data-anim="zoom-out"
+              className="relative overflow-hidden rounded-3xl shadow-[var(--shadow-card)] ring-1 ring-brand-gold/15"
+            >
+              <img
+                src={showcase.image}
+                alt={showcase.alt}
+                loading="lazy"
+                decoding="async"
+                width={1600}
+                height={1024}
+                className="h-[420px] w-full object-cover md:h-[520px]"
+              />
+              <div
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(180deg, transparent 55%, hsl(220 16% 6% / 0.55) 100%)",
+                }}
+                aria-hidden
+              />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent" aria-hidden />
+            </div>
+            <div data-anim="fade-right">
+              {showcase.eyebrow && (
+                <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
+                  {showcase.eyebrow}
+                </span>
+              )}
+              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(220_16%_12%)] md:text-[40px] md:leading-[1.1]">
+                {showcase.heading}
+              </h2>
+              <div className="mt-4 h-1 w-14 rounded-full bg-brand-gold" />
+              <p className="mt-6 text-[15px] leading-relaxed text-[hsl(220_15%_30%)] md:text-[17px]">
+                {showcase.text}
+              </p>
+              {showcase.stats && showcase.stats.length > 0 && (
+                <div
+                  className="mt-8 grid grid-cols-3 gap-4 border-t border-[hsl(220_15%_88%)] pt-6"
+                  data-anim-stagger
+                >
+                  {showcase.stats.map((s) => (
+                    <div key={s.label}>
+                      <div className="font-display text-2xl font-extrabold text-gold-gradient md:text-3xl">
+                        {s.value}
+                      </div>
+                      <div className="mt-1 text-[12px] font-medium uppercase tracking-wider text-[hsl(220_15%_45%)]">
+                        {s.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* How it works */}
       <section id="como" className="bg-white py-20 md:py-24">
