@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import LoansSection from "@/components/LoansSection";
 import HowItWorks from "@/components/HowItWorks";
 import AdvantagesSection from "@/components/AdvantagesSection";
+import PartnerBanks from "@/components/PartnerBanks";
 import AboutSection from "@/components/AboutSection";
 import FaqSection from "@/components/FaqSection";
 import ContactFooter from "@/components/ContactFooter";
@@ -18,9 +19,11 @@ const Index = () => (
       <HowItWorks />
       {/* 3. Vantagens + propósito + depoimentos */}
       <AdvantagesSection />
-      {/* 4. Sobre nós + estatísticas com counters */}
+      {/* 4. Bancos parceiros */}
+      <PartnerBanks />
+      {/* 5. Sobre nós + estatísticas com counters */}
       <AboutSection />
-      {/* 5. FAQ */}
+      {/* 6. FAQ */}
       <FaqSection />
     </main>
     <ContactFooter />
