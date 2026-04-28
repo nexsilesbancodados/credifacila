@@ -37,6 +37,7 @@ import audServidores from "@/assets/audience-servidores.jpg";
 import audProfissionais from "@/assets/audience-profissionais.jpg";
 import audClt from "@/assets/audience-clt.jpg";
 import TestimonialsMarquee, { type MarqueeTestimonial } from "@/components/TestimonialsMarquee";
+import PromoBanner from "@/components/PromoBanner";
 
 const benefits = [
   {
