@@ -37,6 +37,7 @@ import audServidores from "@/assets/audience-servidores.jpg";
 import audProfissionais from "@/assets/audience-profissionais.jpg";
 import audClt from "@/assets/audience-clt.jpg";
 import TestimonialsMarquee, { type MarqueeTestimonial } from "@/components/TestimonialsMarquee";
+import PromoBanner from "@/components/PromoBanner";
 
 const benefits = [
   {
@@ -737,6 +738,16 @@ const Consignado = () => {
         titleHighlight="de quem confia na Credifácil"
         subtitle="Aposentados, servidores e profissionais de todo o Brasil compartilham por que escolheram o consignado da Credifácil."
         testimonials={testimonialsMarquee}
+      />
+
+      {/* Promo Banner */}
+      <PromoBanner
+        eyebrow="Crédito Consignado"
+        title="Simule agora e descubra"
+        highlight="quanto cabe no seu bolso."
+        description="A partir de 1,49% a.m., até 96 meses para pagar e dinheiro liberado em até 24h."
+        ctaLabel="Simular pelo WhatsApp"
+        ctaHref={whatsappLink("Olá! Quero simular o crédito consignado.")}
       />
 
       {/* FAQ */}

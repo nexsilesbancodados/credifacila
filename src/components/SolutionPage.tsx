@@ -12,6 +12,7 @@ import {
 import { site, whatsappLink, telLink, mailLink } from "@/config/site";
 import { useSeo } from "@/hooks/useSeo";
 import logo from "@/assets/credifacil-logo.webp";
+import PromoBanner from "@/components/PromoBanner";
 
 type IconType = LucideIcon;
 
@@ -282,6 +283,16 @@ const SolutionPage = ({
           </div>
         </section>
       )}
+
+      {/* Promo Banner */}
+      <PromoBanner
+        eyebrow={eyebrow}
+        title="Pronto para acelerar?"
+        highlight="Fale com um especialista hoje."
+        description="Atendimento humano, resposta rápida e condições sob medida para o seu negócio."
+        ctaLabel="Falar no WhatsApp"
+        ctaHref={whatsappLink(`Olá! Tenho interesse em ${eyebrow}.`)}
+      />
 
       {/* How it works */}
       <section id="como" className="bg-white py-20 md:py-24">
