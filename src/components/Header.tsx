@@ -63,9 +63,9 @@ const Header = () => {
             <img
               src={logo}
               alt="Credifácil"
-              className="h-12 w-auto md:h-14"
-              width={400}
-              height={120}
+              className="h-10 w-auto md:h-12"
+              width={1795}
+              height={605}
             />
           </a>
 
