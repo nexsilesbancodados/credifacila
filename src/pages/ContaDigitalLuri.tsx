@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import SolutionPage from "@/components/SolutionPage";
 import heroImg from "@/assets/illustrations/sol-luri.svg";
-import showcaseImg from "@/assets/showcase-luri.jpg";
+import showcaseImg from "@/assets/luri-humanizada.jpg";
 
 const ContaDigitalLuri = () => (
   <div className="theme-purple">
