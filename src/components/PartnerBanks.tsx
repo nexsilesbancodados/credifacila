@@ -40,7 +40,7 @@ const PartnerBanks = () => (
           className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full opacity-40"
           style={{
             background:
-              "radial-gradient(circle, hsl(35 90% 60% / 0.45), transparent 70%)",
+              "radial-gradient(circle, hsl(199 90% 60% / 0.45), transparent 70%)",
           }}
           aria-hidden
         />
@@ -48,7 +48,7 @@ const PartnerBanks = () => (
           className="pointer-events-none absolute -left-20 -bottom-20 h-64 w-64 rounded-full opacity-30"
           style={{
             background:
-              "radial-gradient(circle, hsl(35 90% 60% / 0.35), transparent 70%)",
+              "radial-gradient(circle, hsl(199 90% 60% / 0.35), transparent 70%)",
           }}
           aria-hidden
         />

@@ -276,7 +276,7 @@ const Consignado = () => {
       </header>
 
       {/* Hero */}
-      <section className="relative min-h-[680px] overflow-hidden bg-[hsl(220_16%_6%)] pb-20 pt-32 text-white md:min-h-[760px] md:pt-40">
+      <section className="relative min-h-[680px] overflow-hidden bg-[hsl(215_48%_16%)] pb-20 pt-32 text-white md:min-h-[760px] md:pt-40">
         <div data-parallax="0.18" className="pointer-events-none absolute inset-0 -top-12 -bottom-12">
           <img
             src={heroIllo}
@@ -293,7 +293,7 @@ const Consignado = () => {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, hsl(220 16% 4% / 0.95) 0%, hsl(220 16% 4% / 0.85) 35%, hsl(220 16% 4% / 0.55) 60%, hsl(220 16% 4% / 0.25) 100%)",
+              "linear-gradient(90deg, hsl(215 52% 12% / 0.95) 0%, hsl(215 52% 12% / 0.85) 35%, hsl(215 52% 12% / 0.55) 60%, hsl(215 52% 12% / 0.25) 100%)",
           }}
           aria-hidden
         />
@@ -301,7 +301,7 @@ const Consignado = () => {
           className="pointer-events-none absolute inset-0 lg:hidden"
           style={{
             background:
-              "linear-gradient(180deg, hsl(220 16% 4% / 0.85) 0%, hsl(220 16% 4% / 0.55) 50%, hsl(220 16% 4% / 0.85) 100%)",
+              "linear-gradient(180deg, hsl(215 52% 12% / 0.85) 0%, hsl(215 52% 12% / 0.55) 50%, hsl(215 52% 12% / 0.85) 100%)",
           }}
           aria-hidden
         />
@@ -309,7 +309,7 @@ const Consignado = () => {
           className="pointer-events-none absolute -left-40 top-1/3 h-[500px] w-[500px] opacity-40"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.35), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.35), transparent 65%)",
           }}
           aria-hidden
         />
@@ -322,7 +322,7 @@ const Consignado = () => {
             </div>
             <h1
               className="mt-6 font-display text-[40px] font-extrabold leading-[1.02] tracking-tight text-white md:text-[56px] lg:text-[60px]"
-              style={{ textShadow: "0 2px 24px hsl(220 16% 4% / 0.45)" }}
+              style={{ textShadow: "0 2px 24px hsl(215 52% 12% / 0.45)" }}
             >
               Crédito consignado
               <br />
@@ -434,7 +434,7 @@ const Consignado = () => {
             <div
               className="absolute inset-x-0 bottom-0 p-6"
               style={{
-                background: "linear-gradient(180deg, transparent, hsl(220 16% 5% / 0.95))",
+                background: "linear-gradient(180deg, transparent, hsl(215 50% 14% / 0.95))",
               }}
             >
               <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-md">
@@ -483,7 +483,7 @@ const Consignado = () => {
       </section>
 
       {/* Audiences */}
-      <section className="relative overflow-hidden bg-[hsl(220_16%_6%)] py-20 md:py-28">
+      <section className="relative overflow-hidden bg-[hsl(215_48%_16%)] py-20 md:py-28">
         <div className="gradient-mesh-gold pointer-events-none absolute inset-0 opacity-50" aria-hidden />
         <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.04]" aria-hidden />
         <div className="gradient-divider-gold absolute inset-x-10 top-0" aria-hidden />
@@ -521,7 +521,7 @@ const Consignado = () => {
                     className="pointer-events-none absolute inset-0"
                     style={{
                       background:
-                        "linear-gradient(180deg, hsl(220 16% 6% / 0.15) 0%, hsl(220 16% 6% / 0.55) 70%, hsl(220 16% 6% / 0.95) 100%)",
+                        "linear-gradient(180deg, hsl(215 48% 16% / 0.15) 0%, hsl(215 48% 16% / 0.55) 70%, hsl(215 48% 16% / 0.95) 100%)",
                     }}
                     aria-hidden
                   />
@@ -533,7 +533,7 @@ const Consignado = () => {
                     <a.icon className="h-6 w-6" strokeWidth={2} />
                   </div>
                   {a.badge && (
-                    <span className="absolute right-5 top-5 rounded-full bg-brand-gold/95 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-[hsl(220_16%_6%)] shadow-md">
+                    <span className="absolute right-5 top-5 rounded-full bg-brand-gold/95 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-[hsl(215_48%_16%)] shadow-md">
                       {a.badge}
                     </span>
                   )}
@@ -627,7 +627,7 @@ const Consignado = () => {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(95deg, hsl(220 16% 5% / 0.92) 0%, hsl(220 16% 5% / 0.6) 50%, transparent 100%)",
+              "linear-gradient(95deg, hsl(215 50% 14% / 0.92) 0%, hsl(215 50% 14% / 0.6) 50%, transparent 100%)",
           }}
         />
         <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-5 md:px-8">
@@ -832,7 +832,7 @@ const Consignado = () => {
                 href={whatsappLink("Olá! Quero contratar o crédito consignado.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-2xl bg-[hsl(220_16%_5%)] px-7 py-4 text-base font-bold text-white transition-all hover:scale-[1.03]"
+                className="inline-flex items-center gap-2 rounded-2xl bg-[hsl(215_50%_14%)] px-7 py-4 text-base font-bold text-white transition-all hover:scale-[1.03]"
               >
                 <Wallet className="h-5 w-5" />
                 Quero meu consignado

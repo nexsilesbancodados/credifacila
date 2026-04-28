@@ -86,12 +86,12 @@ const ContactFooter = () => {
           className="relative overflow-hidden rounded-[32px] border border-white/10 p-8 shadow-[var(--shadow-card)] md:p-10"
           style={{
             background:
-              "linear-gradient(135deg, hsl(220 16% 11%) 0%, hsl(220 14% 14%) 100%)",
+              "linear-gradient(135deg, hsl(215 45% 17%) 0%, hsl(215 38% 22%) 100%)",
           }}
         >
           <div
             className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full opacity-30"
-            style={{ background: "radial-gradient(circle, hsl(35 90% 60% / 0.6), transparent 70%)" }}
+            style={{ background: "radial-gradient(circle, hsl(199 90% 60% / 0.6), transparent 70%)" }}
             aria-hidden="true"
           />
           <div className="relative grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">

@@ -154,12 +154,12 @@ const PerguntasFrequentes = () => {
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[hsl(220_16%_6%)] pb-24 pt-32 text-white md:pt-40">
+      <section className="relative overflow-hidden bg-[hsl(215_48%_16%)] pb-24 pt-32 text-white md:pt-40">
         <div
           className="pointer-events-none absolute -right-40 -top-40 h-[600px] w-[600px] opacity-50"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.4), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.4), transparent 65%)",
           }}
           aria-hidden
         />
@@ -294,7 +294,7 @@ const PerguntasFrequentes = () => {
             className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full opacity-40"
             style={{
               background:
-                "radial-gradient(circle, hsl(35 85% 58% / 0.55), transparent 70%)",
+                "radial-gradient(circle, hsl(199 85% 58% / 0.55), transparent 70%)",
             }}
             aria-hidden
           />

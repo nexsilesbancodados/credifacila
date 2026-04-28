@@ -55,12 +55,12 @@ const LegalPage = ({
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[hsl(220_16%_6%)] pb-16 pt-28 text-white md:pt-36">
+      <section className="relative overflow-hidden bg-[hsl(215_48%_16%)] pb-16 pt-28 text-white md:pt-36">
         <div
           className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] opacity-50"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.4), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.4), transparent 65%)",
           }}
           aria-hidden
         />

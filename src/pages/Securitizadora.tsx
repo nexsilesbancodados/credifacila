@@ -157,7 +157,7 @@ const Securitizadora = () => {
       </header>
 
       {/* Hero */}
-      <section className="relative min-h-[680px] overflow-hidden bg-[hsl(220_16%_6%)] pb-24 pt-32 text-white md:min-h-[760px] md:pt-40">
+      <section className="relative min-h-[680px] overflow-hidden bg-[hsl(215_48%_16%)] pb-24 pt-32 text-white md:min-h-[760px] md:pt-40">
         {/* Background image full-bleed (parallax) */}
         <div data-parallax="0.18" className="pointer-events-none absolute inset-0 -top-12 -bottom-12">
           <img
@@ -175,7 +175,7 @@ const Securitizadora = () => {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, hsl(220 16% 4% / 0.95) 0%, hsl(220 16% 4% / 0.85) 35%, hsl(220 16% 4% / 0.55) 60%, hsl(220 16% 4% / 0.25) 100%)",
+              "linear-gradient(90deg, hsl(215 52% 12% / 0.95) 0%, hsl(215 52% 12% / 0.85) 35%, hsl(215 52% 12% / 0.55) 60%, hsl(215 52% 12% / 0.25) 100%)",
           }}
           aria-hidden
         />
@@ -183,7 +183,7 @@ const Securitizadora = () => {
           className="pointer-events-none absolute inset-0 lg:hidden"
           style={{
             background:
-              "linear-gradient(180deg, hsl(220 16% 4% / 0.85) 0%, hsl(220 16% 4% / 0.55) 50%, hsl(220 16% 4% / 0.85) 100%)",
+              "linear-gradient(180deg, hsl(215 52% 12% / 0.85) 0%, hsl(215 52% 12% / 0.55) 50%, hsl(215 52% 12% / 0.85) 100%)",
           }}
           aria-hidden
         />
@@ -191,7 +191,7 @@ const Securitizadora = () => {
           className="pointer-events-none absolute -left-40 bottom-0 h-[420px] w-[420px] opacity-40"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.35), transparent 70%)",
+              "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.35), transparent 70%)",
           }}
           aria-hidden
         />
@@ -204,7 +204,7 @@ const Securitizadora = () => {
             </div>
             <h1
               className="mt-6 font-display text-[40px] font-extrabold leading-[1.02] tracking-tight text-white md:text-[56px] lg:text-[60px]"
-              style={{ textShadow: "0 2px 24px hsl(220 16% 4% / 0.45)" }}
+              style={{ textShadow: "0 2px 24px hsl(215 52% 12% / 0.45)" }}
             >
               Soluções financeiras{" "}
               <span className="text-gold-gradient">
@@ -312,7 +312,7 @@ const Securitizadora = () => {
                 className="absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(90deg, hsl(220 16% 5% / 0.85) 0%, hsl(220 16% 5% / 0.3) 60%, transparent 100%)",
+                    "linear-gradient(90deg, hsl(215 50% 14% / 0.85) 0%, hsl(215 50% 14% / 0.3) 60%, transparent 100%)",
                 }}
               />
               <div className="absolute inset-0 flex items-center p-6">
@@ -331,7 +331,7 @@ const Securitizadora = () => {
       </section>
 
       {/* Solutions */}
-      <section id="solucoes" className="bg-[hsl(220_16%_6%)] py-20 md:py-28">
+      <section id="solucoes" className="bg-[hsl(215_48%_16%)] py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">
@@ -356,7 +356,7 @@ const Securitizadora = () => {
                   className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-0 transition-opacity group-hover:opacity-100"
                   style={{
                     background:
-                      "radial-gradient(circle, hsl(38 90% 55% / 0.25), transparent 70%)",
+                      "radial-gradient(circle, hsl(199 90% 55% / 0.25), transparent 70%)",
                   }}
                 />
                 <div className="relative flex items-start gap-5">
@@ -430,7 +430,7 @@ const Securitizadora = () => {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, hsl(220 16% 5% / 0.6) 0%, hsl(220 16% 5% / 0.9) 100%)",
+              "linear-gradient(180deg, hsl(215 50% 14% / 0.6) 0%, hsl(215 50% 14% / 0.9) 100%)",
           }}
         />
         <div className="relative z-10 mx-auto flex h-full max-w-5xl items-center justify-center px-5 text-center">
@@ -494,7 +494,7 @@ const Securitizadora = () => {
       </section>
 
       {/* Contact form + info */}
-      <section id="contato" className="bg-[hsl(220_16%_6%)] py-20 md:py-28">
+      <section id="contato" className="bg-[hsl(215_48%_16%)] py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start">
             {/* Info */}

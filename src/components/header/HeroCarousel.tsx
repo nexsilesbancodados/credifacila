@@ -222,7 +222,7 @@ const HeroCarousel = () => {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(95deg, hsl(220 16% 5% / 0.97) 0%, hsl(220 16% 5% / 0.85) 28%, hsl(220 16% 5% / 0.4) 58%, transparent 82%), radial-gradient(ellipse 80% 50% at 85% 50%, hsl(35 85% 58% / 0.35), transparent 65%)",
+            "linear-gradient(95deg, hsl(215 50% 14% / 0.97) 0%, hsl(215 50% 14% / 0.85) 28%, hsl(215 50% 14% / 0.4) 58%, transparent 82%), radial-gradient(ellipse 80% 50% at 85% 50%, hsl(199 85% 58% / 0.35), transparent 65%)",
         }}
         aria-hidden
       />
@@ -254,7 +254,7 @@ const HeroCarousel = () => {
             <h1
               key={`title-${active}`}
               className="animate-fade-in font-display text-[42px] font-extrabold leading-[1.02] tracking-tight text-white md:text-[64px] lg:text-[72px]"
-              style={{ textShadow: "0 2px 24px hsl(220 16% 4% / 0.45)" }}
+              style={{ textShadow: "0 2px 24px hsl(215 52% 12% / 0.45)" }}
             >
               {slide.title.map((line, idx) => {
                 const isGold = idx >= slide.goldFromLine;
@@ -357,10 +357,10 @@ const HeroCarousel = () => {
               <div className="hidden h-3 w-px bg-white/15 sm:block" />
               <div className="flex items-center gap-2 text-xs font-medium text-white/75">
                 <div className="flex -space-x-2">
-                  {["hsl(35 80% 55%)", "hsl(15 70% 50%)", "hsl(45 85% 60%)"].map((c, i) => (
+                  {["hsl(199 80% 55%)", "hsl(212 90% 50%)", "hsl(200 85% 60%)"].map((c, i) => (
                     <span
                       key={i}
-                      className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-[hsl(220_16%_5%)] text-[9px] font-bold text-white"
+                      className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-[hsl(215_50%_14%)] text-[9px] font-bold text-white"
                       style={{ background: c }}
                     >
                       {["AC", "JM", "RS"][i]}

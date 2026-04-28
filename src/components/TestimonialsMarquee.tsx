@@ -133,7 +133,7 @@ const TestimonialsMarquee = ({
   return (
     <section
       className={`relative w-full px-5 py-20 md:px-8 md:py-24 lg:px-10 ${
-        isDark ? "bg-[hsl(220_16%_6%)] text-white" : ""
+        isDark ? "bg-[hsl(215_48%_16%)] text-white" : ""
       }`}
       aria-label="Depoimentos de clientes"
     >

@@ -212,7 +212,7 @@ const InvistaConosco = () => {
           className="pointer-events-none absolute -right-32 -top-20 h-[600px] w-[600px] opacity-50"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(35 90% 65% / 0.25), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(199 90% 65% / 0.25), transparent 65%)",
           }}
           aria-hidden
         />
@@ -220,7 +220,7 @@ const InvistaConosco = () => {
           className="pointer-events-none absolute -left-40 top-40 h-[480px] w-[480px] opacity-40"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(40 90% 70% / 0.22), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(198 90% 70% / 0.22), transparent 65%)",
           }}
           aria-hidden
         />
@@ -266,7 +266,7 @@ const InvistaConosco = () => {
             >
               <path
                 d="M0,16 L1440,16 L1440,9 Q720,-4 0,9 Z"
-                fill="hsl(38 90% 55% / 0.5)"
+                fill="hsl(199 90% 55% / 0.5)"
               />
             </svg>
           </div>
@@ -328,7 +328,7 @@ const InvistaConosco = () => {
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
               Por que investir com a Credifácil
             </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(220_16%_12%)] md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-4xl">
               Solidez, transparência e atendimento humano
             </h2>
             <p className="mt-4 text-[15px] leading-relaxed text-[hsl(220_15%_38%)]">
@@ -350,7 +350,7 @@ const InvistaConosco = () => {
                   >
                     <Icon className="h-6 w-6" strokeWidth={2.2} />
                   </div>
-                  <h3 className="mb-2 font-display text-lg font-bold text-[hsl(220_16%_12%)]">
+                  <h3 className="mb-2 font-display text-lg font-bold text-[hsl(215_42%_18%)]">
                     {b.title}
                   </h3>
                   <p className="text-[14px] leading-relaxed text-[hsl(220_15%_38%)]">{b.desc}</p>
@@ -368,7 +368,7 @@ const InvistaConosco = () => {
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
               Passo a passo
             </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(220_16%_12%)] md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-4xl">
               Como começar a investir
             </h2>
           </div>
@@ -390,7 +390,7 @@ const InvistaConosco = () => {
                   >
                     {s.step}
                   </div>
-                  <h3 className="mb-2 font-display text-lg font-bold text-[hsl(220_16%_12%)]">
+                  <h3 className="mb-2 font-display text-lg font-bold text-[hsl(215_42%_18%)]">
                     {s.title}
                   </h3>
                   <p className="mx-auto max-w-[260px] text-[14px] leading-relaxed text-[hsl(220_15%_38%)]">
@@ -404,12 +404,12 @@ const InvistaConosco = () => {
       </section>
 
       {/* For who */}
-      <section className="relative overflow-hidden bg-[hsl(220_16%_6%)] py-20 md:py-24">
+      <section className="relative overflow-hidden bg-[hsl(215_48%_16%)] py-20 md:py-24">
         <div
           className="pointer-events-none absolute -left-32 -top-32 h-[500px] w-[500px] opacity-30"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.5), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.5), transparent 65%)",
           }}
           aria-hidden
         />
@@ -444,7 +444,7 @@ const InvistaConosco = () => {
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
               Quero ser contatado
             </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(220_16%_12%)] md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-4xl">
               Vamos conversar sobre o seu próximo investimento
             </h2>
             <p className="mt-5 text-[15px] leading-relaxed text-[hsl(220_15%_38%)]">
@@ -463,7 +463,7 @@ const InvistaConosco = () => {
                   <MessageCircle className="h-5 w-5" />
                 </span>
                 <div className="leading-tight">
-                  <div className="text-sm font-bold text-[hsl(220_16%_12%)]">Prefere falar agora?</div>
+                  <div className="text-sm font-bold text-[hsl(215_42%_18%)]">Prefere falar agora?</div>
                   <div className="mt-0.5 text-xs text-[hsl(220_15%_38%)]">
                     Atendimento na hora pelo WhatsApp
                   </div>
@@ -477,7 +477,7 @@ const InvistaConosco = () => {
                   <Phone className="h-5 w-5" />
                 </span>
                 <div className="leading-tight">
-                  <div className="text-sm font-bold text-[hsl(220_16%_12%)]">{site.contact.phoneDisplay}</div>
+                  <div className="text-sm font-bold text-[hsl(215_42%_18%)]">{site.contact.phoneDisplay}</div>
                   <div className="mt-0.5 text-xs text-[hsl(220_15%_38%)]">{site.contact.hours}</div>
                 </div>
               </a>
@@ -498,7 +498,7 @@ const InvistaConosco = () => {
                   >
                     <CheckCircle2 className="h-7 w-7" />
                   </span>
-                  <h3 className="font-display text-xl font-bold text-[hsl(220_16%_12%)]">
+                  <h3 className="font-display text-xl font-bold text-[hsl(215_42%_18%)]">
                     Recebemos seu interesse!
                   </h3>
                   <p className="mt-2 max-w-sm text-sm text-[hsl(220_15%_38%)]">
@@ -634,7 +634,7 @@ const InvistaConosco = () => {
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
               Dúvidas frequentes
             </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(220_16%_12%)] md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-4xl">
               Perguntas comuns sobre investir
             </h2>
           </div>
@@ -644,7 +644,7 @@ const InvistaConosco = () => {
                 key={f.q}
                 className="group rounded-2xl border border-[hsl(220_15%_88%)] bg-white p-6 transition-all open:border-brand-gold/40 open:shadow-md"
               >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 font-display text-[15px] font-semibold text-[hsl(220_16%_12%)] md:text-base">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 font-display text-[15px] font-semibold text-[hsl(215_42%_18%)] md:text-base">
                   {f.q}
                   <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-brand-gold/40 text-brand-gold transition-transform group-open:rotate-45">
                     +

@@ -19,13 +19,13 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[hsl(220_16%_5%)] px-5 py-16 text-white">
+    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[hsl(215_50%_14%)] px-5 py-16 text-white">
       {/* Decorative gold glows */}
       <div
         className="pointer-events-none absolute -right-40 -top-40 h-[600px] w-[600px] rounded-full opacity-50"
         style={{
           background:
-            "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.4), transparent 65%)",
+            "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.4), transparent 65%)",
         }}
         aria-hidden
       />
@@ -33,7 +33,7 @@ const NotFound = () => {
         className="pointer-events-none absolute -bottom-40 -left-40 h-[600px] w-[600px] rounded-full opacity-30"
         style={{
           background:
-            "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.5), transparent 70%)",
+            "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.5), transparent 70%)",
         }}
         aria-hidden
       />

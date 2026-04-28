@@ -188,7 +188,7 @@ const LoansSection = () => {
               className="absolute inset-x-0 top-0 h-36"
               style={{
                 background:
-                  "linear-gradient(180deg, hsl(220 16% 7% / 0.7) 0%, hsl(220 16% 7% / 0.25) 60%, transparent 100%)",
+                  "linear-gradient(180deg, hsl(215 45% 18% / 0.7) 0%, hsl(215 45% 18% / 0.25) 60%, transparent 100%)",
               }}
               aria-hidden
             />
@@ -197,7 +197,7 @@ const LoansSection = () => {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(180deg, transparent 35%, hsl(220 16% 7% / 0.88) 100%)",
+                  "linear-gradient(180deg, transparent 35%, hsl(215 45% 18% / 0.88) 100%)",
               }}
               aria-hidden
             />
@@ -212,7 +212,7 @@ const LoansSection = () => {
             </div>
 
             {/* Top-right floating chip — live counter */}
-            <div className="anim-pop-in absolute right-4 top-4 flex items-center gap-2 rounded-full border border-white/25 bg-[hsl(220_16%_7%)]/85 px-3 py-1.5 text-[10px] font-semibold text-white shadow-md backdrop-blur-md transition-transform hover:-translate-y-0.5" style={{ animationDelay: "350ms" }}>
+            <div className="anim-pop-in absolute right-4 top-4 flex items-center gap-2 rounded-full border border-white/25 bg-[hsl(215_45%_18%)]/85 px-3 py-1.5 text-[10px] font-semibold text-white shadow-md backdrop-blur-md transition-transform hover:-translate-y-0.5" style={{ animationDelay: "350ms" }}>
               <Users className="h-3 w-3 text-brand-gold" />
               <span className="text-white/95">
                 <span className="font-bold text-white">2.341</span> aprovados hoje

@@ -47,7 +47,7 @@ const HowItWorks = () => (
   >
     <div className="mx-auto max-w-7xl">
       <div
-        className="relative overflow-hidden rounded-[36px] border border-brand-gold/15 bg-[hsl(220_16%_5%)] shadow-[0_30px_80px_-30px_hsl(30_30%_4%/0.6)]"
+        className="relative overflow-hidden rounded-[36px] border border-brand-gold/15 bg-[hsl(215_50%_14%)] shadow-[0_30px_80px_-30px_hsl(30_30%_4%/0.6)]"
         data-anim="fade-up"
       >
         {/* subtle noise + ambient glow */}
@@ -56,7 +56,7 @@ const HowItWorks = () => (
           className="pointer-events-none absolute -left-32 top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full opacity-40"
           style={{
             background:
-              "radial-gradient(circle, hsl(38 90% 55% / 0.18), transparent 65%)",
+              "radial-gradient(circle, hsl(199 90% 55% / 0.18), transparent 65%)",
           }}
           aria-hidden
         />
@@ -72,7 +72,7 @@ const HowItWorks = () => (
 
             <h2
               className="mt-6 font-display text-[36px] font-extrabold leading-[1.05] tracking-tight text-white md:text-[52px] lg:text-[58px]"
-              style={{ textShadow: "0 2px 24px hsl(220 16% 4% / 0.45)" }}
+              style={{ textShadow: "0 2px 24px hsl(215 52% 12% / 0.45)" }}
             >
               Do primeiro clique
               <br />
@@ -130,7 +130,7 @@ const HowItWorks = () => (
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(90deg, hsl(220 16% 5%) 0%, hsl(220 16% 5% / 0.7) 18%, hsl(220 16% 5% / 0.15) 45%, transparent 75%)",
+                  "linear-gradient(90deg, hsl(215 50% 14%) 0%, hsl(215 50% 14% / 0.7) 18%, hsl(215 50% 14% / 0.15) 45%, transparent 75%)",
               }}
               aria-hidden
             />
@@ -138,7 +138,7 @@ const HowItWorks = () => (
               className="pointer-events-none absolute inset-x-0 bottom-0 h-32"
               style={{
                 background:
-                  "linear-gradient(180deg, transparent, hsl(220 16% 5%) 95%)",
+                  "linear-gradient(180deg, transparent, hsl(215 50% 14%) 95%)",
               }}
               aria-hidden
             />
@@ -155,7 +155,7 @@ const HowItWorks = () => (
           >
             <path
               d="M0,8 Q300,0 600,8 T1200,8"
-              stroke="hsl(38 90% 55%)"
+              stroke="hsl(199 90% 55%)"
               strokeWidth="1"
               fill="none"
               opacity="0.7"
@@ -191,7 +191,7 @@ const HowItWorks = () => (
               className="pointer-events-none absolute left-[10%] right-[10%] top-[34px] hidden h-px lg:block"
               style={{
                 background:
-                  "linear-gradient(90deg, transparent, hsl(38 90% 55% / 0.4) 15%, hsl(38 90% 55% / 0.4) 85%, transparent)",
+                  "linear-gradient(90deg, transparent, hsl(199 90% 55% / 0.4) 15%, hsl(199 90% 55% / 0.4) 85%, transparent)",
               }}
               aria-hidden
             />
@@ -204,7 +204,7 @@ const HowItWorks = () => (
                 <div className="relative">
                   <div
                     className="absolute inset-0 -m-2 rounded-2xl opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100"
-                    style={{ background: "hsl(38 90% 55% / 0.35)" }}
+                    style={{ background: "hsl(199 90% 55% / 0.35)" }}
                     aria-hidden
                   />
                   <div
@@ -212,7 +212,7 @@ const HowItWorks = () => (
                   >
                     <step.icon className="h-7 w-7" strokeWidth={1.8} />
                   </div>
-                  <span className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full border border-brand-gold/40 bg-[hsl(220_16%_5%)] font-display text-[10px] font-extrabold text-brand-gold">
+                  <span className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full border border-brand-gold/40 bg-[hsl(215_50%_14%)] font-display text-[10px] font-extrabold text-brand-gold">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>

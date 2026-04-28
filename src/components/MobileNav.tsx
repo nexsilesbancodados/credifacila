@@ -81,7 +81,7 @@ const MobileNav = () => {
         role="dialog"
         aria-modal="true"
         aria-label="Menu principal"
-        className={`fixed right-0 top-0 z-[81] flex h-[100dvh] w-[88%] max-w-sm flex-col overflow-hidden bg-[hsl(220_16%_8%)] text-white shadow-[0_0_60px_-10px_rgba(0,0,0,0.6)] transition-transform duration-300 ease-out lg:hidden ${
+        className={`fixed right-0 top-0 z-[81] flex h-[100dvh] w-[88%] max-w-sm flex-col overflow-hidden bg-[hsl(215_42%_20%)] text-white shadow-[0_0_60px_-10px_rgba(0,0,0,0.6)] transition-transform duration-300 ease-out lg:hidden ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -90,7 +90,7 @@ const MobileNav = () => {
           className="pointer-events-none absolute -right-24 -top-24 h-[400px] w-[400px] opacity-40"
           style={{
             background:
-              "radial-gradient(circle, hsl(35 85% 58% / 0.5), transparent 70%)",
+              "radial-gradient(circle, hsl(199 85% 58% / 0.5), transparent 70%)",
           }}
           aria-hidden
         />

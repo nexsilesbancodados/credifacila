@@ -55,7 +55,7 @@ const AdvantagesSection = () => {
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2" data-anim-stagger>
           {/* CARD 1 — Vantagens */}
-          <article className="group relative overflow-hidden rounded-3xl border border-white/8 bg-[hsl(220_16%_8%)] p-7 text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/40">
+          <article className="group relative overflow-hidden rounded-3xl border border-white/8 bg-[hsl(215_42%_20%)] p-7 text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/40">
             <img
               src={cardAdvantages}
               alt=""
@@ -68,7 +68,7 @@ const AdvantagesSection = () => {
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(180deg, hsl(220 16% 8% / 0.85) 0%, hsl(220 16% 8% / 0.95) 60%, hsl(220 16% 8% / 0.98) 100%)",
+                  "linear-gradient(180deg, hsl(215 42% 20% / 0.85) 0%, hsl(215 42% 20% / 0.95) 60%, hsl(215 42% 20% / 0.98) 100%)",
               }}
               aria-hidden
             />
@@ -77,7 +77,7 @@ const AdvantagesSection = () => {
               className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full opacity-30"
               style={{
                 background:
-                  "radial-gradient(circle, hsl(35 90% 55% / 0.6), transparent 70%)",
+                  "radial-gradient(circle, hsl(199 90% 55% / 0.6), transparent 70%)",
               }}
               aria-hidden
             />
@@ -133,7 +133,7 @@ const AdvantagesSection = () => {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(90deg, hsl(220 16% 7% / 0.96) 0%, hsl(220 16% 7% / 0.85) 38%, hsl(220 16% 7% / 0.3) 70%, transparent 100%)",
+                  "linear-gradient(90deg, hsl(215 45% 18% / 0.96) 0%, hsl(215 45% 18% / 0.85) 38%, hsl(215 45% 18% / 0.3) 70%, transparent 100%)",
               }}
               aria-hidden
             />
@@ -183,14 +183,14 @@ const AdvantagesSection = () => {
           className="relative mt-8 flex flex-col items-stretch gap-5 overflow-hidden rounded-3xl px-6 py-5 shadow-[var(--shadow-gold)] md:flex-row md:items-center md:justify-between md:px-8"
           style={{
             background:
-              "linear-gradient(100deg, hsl(40 85% 88%) 0%, hsl(38 80% 78%) 50%, hsl(35 75% 70%) 100%)",
+              "linear-gradient(100deg, hsl(198 85% 88%) 0%, hsl(199 80% 78%) 50%, hsl(199 75% 70%) 100%)",
           }}
         >
           <div
             className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full opacity-40"
             style={{
               background:
-                "radial-gradient(circle, hsl(35 90% 60% / 0.6), transparent 70%)",
+                "radial-gradient(circle, hsl(199 90% 60% / 0.6), transparent 70%)",
             }}
             aria-hidden
           />

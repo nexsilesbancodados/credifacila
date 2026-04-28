@@ -45,7 +45,7 @@ const PromoBanner = ({
             className="pointer-events-none absolute inset-0"
             style={{
               background:
-                "linear-gradient(90deg, hsl(220 16% 6% / 0.94) 0%, hsl(220 16% 6% / 0.82) 45%, hsl(220 16% 6% / 0.55) 100%)",
+                "linear-gradient(90deg, hsl(215 48% 16% / 0.94) 0%, hsl(215 48% 16% / 0.82) 45%, hsl(215 48% 16% / 0.55) 100%)",
             }}
             aria-hidden
           />
@@ -54,7 +54,7 @@ const PromoBanner = ({
             className="pointer-events-none absolute -right-32 -top-20 h-[420px] w-[420px] opacity-50"
             style={{
               background:
-                "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.45), transparent 65%)",
+                "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.45), transparent 65%)",
             }}
             aria-hidden
           />
