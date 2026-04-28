@@ -168,7 +168,7 @@ const LoansSection = () => {
                   <div className="mt-3 text-[13px] font-bold leading-tight text-foreground">
                     {t.title}
                   </div>
-                  <div className="mt-1 whitespace-pre-line text-[11px] leading-relaxed text-foreground/60">
+                  <div className="mt-1 whitespace-pre-line text-[11px] leading-relaxed text-foreground/72">
                     {t.desc}
                   </div>
                   <span className="pointer-events-none absolute -right-6 -bottom-6 h-16 w-16 rounded-full bg-brand-gold/0 transition-colors group-hover:bg-brand-gold/10" />
@@ -183,7 +183,7 @@ const LoansSection = () => {
                   <div className="font-display text-2xl font-bold leading-none text-foreground md:text-[26px]">
                     <Counter value={50} prefix="+" suffix=" mil" />
                   </div>
-                  <div className="mt-1.5 text-[10px] font-semibold uppercase tracking-wider text-foreground/55">
+                  <div className="mt-1.5 text-[10px] font-semibold uppercase tracking-wider text-foreground/70">
                     clientes
                   </div>
                 </div>
@@ -193,7 +193,7 @@ const LoansSection = () => {
                     <Counter value={4.9} decimals={1} />
                     <Star className="h-4 w-4 fill-brand-gold text-brand-gold" />
                   </div>
-                  <div className="mt-1.5 text-[10px] font-semibold uppercase tracking-wider text-foreground/55">
+                  <div className="mt-1.5 text-[10px] font-semibold uppercase tracking-wider text-foreground/70">
                     avaliação
                   </div>
                 </div>
@@ -202,7 +202,7 @@ const LoansSection = () => {
                   <div className="font-display text-2xl font-bold leading-none text-foreground md:text-[26px]">
                     R$ 1bi<span className="text-brand-gold">+</span>
                   </div>
-                  <div className="mt-1.5 text-[10px] font-semibold uppercase tracking-wider text-foreground/55">
+                  <div className="mt-1.5 text-[10px] font-semibold uppercase tracking-wider text-foreground/70">
                     liberados
                   </div>
                 </div>
@@ -283,7 +283,7 @@ const LoansSection = () => {
                 </span>
                 <div className="leading-tight">
                   <div className="text-xs font-bold">Camila R.</div>
-                  <div className="text-[10px] text-white/55">Cliente desde 2024 · São Paulo</div>
+                  <div className="text-[10px] text-white/75">Cliente desde 2024 · São Paulo</div>
                 </div>
               </div>
             </div>
@@ -346,7 +346,7 @@ const LoansSection = () => {
                   <h4 className="font-display text-[16px] font-bold text-foreground">
                     {p.title}
                   </h4>
-                  <p className="mt-2 flex-1 text-xs leading-relaxed text-foreground/65">
+                  <p className="mt-2 flex-1 text-xs leading-relaxed text-foreground/75">
                     {p.desc}
                   </p>
                   <div className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-brand-gold transition-all group-hover:gap-2">
@@ -372,7 +372,7 @@ const LoansSection = () => {
                 um parceiro para{" "}
                 <span className="text-brand-gold">seus sonhos.</span>
               </h3>
-              <p className="mt-3 text-sm text-foreground/65">
+              <p className="mt-3 text-sm text-foreground/75">
                 Conte com a Credifácil em todas as suas conquistas — do primeiro sonho ao próximo grande passo.
               </p>
             </div>
@@ -385,7 +385,7 @@ const LoansSection = () => {
                   </span>
                   <div className="leading-snug">
                     <div className="text-[13px] font-bold text-foreground">{p.title}</div>
-                    <div className="mt-1 whitespace-pre-line text-[11px] leading-relaxed text-foreground/60">
+                    <div className="mt-1 whitespace-pre-line text-[11px] leading-relaxed text-foreground/72">
                       {p.desc}
                     </div>
                   </div>
@@ -409,7 +409,7 @@ const LoansSection = () => {
               </div>
               <div>
                 <div className="text-sm font-bold text-foreground">Fale com a gente</div>
-                <div className="mt-0.5 text-[11px] text-foreground/60">
+                <div className="mt-0.5 text-[11px] text-foreground/72">
                   Online agora · resposta na hora
                 </div>
                 <a

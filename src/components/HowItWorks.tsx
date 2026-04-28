@@ -84,7 +84,7 @@ const HowItWorks = () => (
               </span>
             </h2>
 
-            <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/70 md:text-base">
+            <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/82 md:text-base">
               Um caminho{" "}
               <span className="font-semibold text-brand-gold">
                 claro, rápido e sem burocracia
@@ -220,7 +220,7 @@ const HowItWorks = () => (
                 <h4 className="mt-5 font-display text-[15px] font-bold tracking-tight text-white md:text-base">
                   {step.title}
                 </h4>
-                <p className="mx-auto mt-2 max-w-[180px] text-[12px] leading-relaxed text-white/60 md:text-[13px]">
+                <p className="mx-auto mt-2 max-w-[180px] text-[12px] leading-relaxed text-white/78 md:text-[13px]">
                   {step.desc}
                 </p>
               </li>

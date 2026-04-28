@@ -47,7 +47,7 @@ const CookieBanner = () => {
           <h3 id="cookie-title" className="text-sm font-bold text-foreground">
             Cuidamos da sua privacidade
           </h3>
-          <p className="mt-1 text-[12px] leading-relaxed text-foreground/65">
+          <p className="mt-1 text-[12px] leading-relaxed text-foreground/75">
             Usamos cookies para melhorar sua experiência e personalizar conteúdos. Ao continuar navegando, você concorda com nossa{" "}
             <a href="/privacidade" className="font-semibold text-brand-gold hover:underline">
               Política de Privacidade

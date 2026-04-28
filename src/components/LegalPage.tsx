@@ -73,8 +73,8 @@ const LegalPage = ({
           <h1 className="mt-6 font-display text-3xl font-extrabold leading-[1.1] tracking-tight md:text-5xl">
             {title}
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70">{intro}</p>
-          <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3 py-1 text-[11px] font-medium text-white/60 backdrop-blur-md">
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/82">{intro}</p>
+          <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3 py-1 text-[11px] font-medium text-white/78 backdrop-blur-md">
             <ShieldCheck className="h-3 w-3 text-brand-gold" />
             Última atualização: {lastUpdated}
           </div>
@@ -112,7 +112,7 @@ const LegalPage = ({
           <h2 className="font-display text-lg font-bold text-foreground md:text-xl">
             Precisa falar com a gente sobre este tema?
           </h2>
-          <p className="mt-2 text-sm leading-relaxed text-foreground/65">
+          <p className="mt-2 text-sm leading-relaxed text-foreground/75">
             Nossa equipe responde em até 1 dia útil. Entre em contato pelo canal preferido.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">

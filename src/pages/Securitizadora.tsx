@@ -224,7 +224,7 @@ const Securitizadora = () => {
               </div>
               <div>
                 <div className="text-2xl font-bold text-foreground md:text-3xl">{s.value}</div>
-                <div className="text-xs font-medium text-foreground/60">{s.label}</div>
+                <div className="text-xs font-medium text-foreground/72">{s.label}</div>
               </div>
             </div>
           ))}
@@ -283,7 +283,7 @@ const Securitizadora = () => {
                   <v.icon className="h-5 w-5" strokeWidth={2} />
                 </div>
                 <h3 className="text-lg font-bold text-foreground">{v.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-foreground/65">{v.desc}</p>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/75">{v.desc}</p>
               </div>
             ))}
             <div className="relative col-span-full overflow-hidden rounded-3xl">
@@ -362,7 +362,7 @@ const Securitizadora = () => {
             <h2 className="mt-3 text-4xl font-bold leading-tight text-white md:text-5xl">
               Soluções para <span className="text-brand-gold">o seu negócio</span>
             </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-white/65">
+            <p className="mt-4 text-[15px] leading-relaxed text-white/80">
               Oferecemos uma gama completa de produtos para fortalecer a saúde financeira da sua
               empresa, com atendimento personalizado e tecnologia de ponta.
             </p>
@@ -389,7 +389,7 @@ const Securitizadora = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white">{s.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-white/70">{s.desc}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-white/82">{s.desc}</p>
                   </div>
                 </div>
               </div>
@@ -439,7 +439,7 @@ const Securitizadora = () => {
             <h2 className="mt-3 text-4xl font-bold leading-tight text-foreground md:text-5xl">
               Por que <span className="text-brand-gold">escolher a Credifácil?</span>
             </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-foreground/65">
+            <p className="mt-4 text-[15px] leading-relaxed text-foreground/75">
               Mais que um fornecedor de crédito, somos um parceiro estratégico para o
               crescimento do seu negócio.
             </p>
@@ -457,7 +457,7 @@ const Securitizadora = () => {
                   </div>
                   <div>
                     <h3 className="text-sm font-bold text-foreground">{d.title}</h3>
-                    <p className="mt-1 text-xs leading-relaxed text-foreground/60">{d.desc}</p>
+                    <p className="mt-1 text-xs leading-relaxed text-foreground/72">{d.desc}</p>
                   </div>
                 </div>
               ))}
@@ -496,7 +496,7 @@ const Securitizadora = () => {
                       {t.year}
                     </div>
                     <h3 className="mt-2 text-base font-bold text-foreground">{t.title}</h3>
-                    <p className="mt-2 text-xs leading-relaxed text-foreground/60">{t.desc}</p>
+                    <p className="mt-2 text-xs leading-relaxed text-foreground/72">{t.desc}</p>
                   </div>
                 </div>
               ))}
@@ -532,7 +532,7 @@ const Securitizadora = () => {
                 </div>
                 <div>
                   <div className="text-sm font-bold text-foreground">{t.name}</div>
-                  <div className="text-xs text-foreground/55">{t.role}</div>
+                  <div className="text-xs text-foreground/70">{t.role}</div>
                 </div>
               </div>
               <div className="mt-3 flex">
@@ -565,7 +565,7 @@ const Securitizadora = () => {
                   <c.icon className="h-6 w-6" strokeWidth={2} />
                 </div>
                 <h3 className="text-base font-bold text-white">{c.title}</h3>
-                <p className="mt-2 text-sm text-white/65">{c.desc}</p>
+                <p className="mt-2 text-sm text-white/80">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -628,10 +628,10 @@ const Securitizadora = () => {
       {/* Footer */}
       <footer className="border-t border-foreground/10 bg-white/40 py-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 md:flex-row md:px-8">
-          <p className="text-xs text-foreground/55">
+          <p className="text-xs text-foreground/70">
             © {new Date().getFullYear()} Credifácil — Securitizadora. Todos os direitos reservados.
           </p>
-          <div className="flex items-center gap-5 text-xs font-medium text-foreground/65">
+          <div className="flex items-center gap-5 text-xs font-medium text-foreground/75">
             <Link to="/" className="hover:text-brand-gold">Início</Link>
             <Link to="/consignado" className="hover:text-brand-gold">Consignado</Link>
           </div>

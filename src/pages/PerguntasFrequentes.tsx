@@ -173,7 +173,7 @@ const PerguntasFrequentes = () => {
             Como podemos{" "}
             <span className="text-gold-gradient">te ajudar?</span>
           </h1>
-          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
+          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/82 md:text-lg">
             Reunimos as principais dúvidas dos nossos clientes. Pesquise pela palavra-chave ou navegue por categoria.
           </p>
 
@@ -204,7 +204,7 @@ const PerguntasFrequentes = () => {
                 className={`rounded-xl px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all ${
                   isActive
                     ? "text-brand-gold-foreground shadow-[var(--shadow-gold-sm)]"
-                    : "text-foreground/65 hover:bg-foreground/5 hover:text-foreground"
+                    : "text-foreground/75 hover:bg-foreground/5 hover:text-foreground"
                 }`}
                 style={isActive ? { background: "var(--gradient-gold)" } : undefined}
               >
@@ -221,7 +221,7 @@ const PerguntasFrequentes = () => {
           <div className="rounded-2xl border border-brand-gold/20 bg-white/80 p-10 text-center backdrop-blur-sm">
             <Sparkles className="mx-auto mb-3 h-8 w-8 text-brand-gold" />
             <h3 className="text-lg font-bold text-foreground">Nada encontrado</h3>
-            <p className="mt-2 text-sm text-foreground/60">
+            <p className="mt-2 text-sm text-foreground/72">
               Não achamos nada para "{query}". Tente outra palavra ou fale com a gente abaixo.
             </p>
           </div>
@@ -309,7 +309,7 @@ const PerguntasFrequentes = () => {
                 <br />
                 <span className="text-gold-gradient">Estamos aqui para você.</span>
               </h2>
-              <div className="mt-3 flex items-center gap-2 text-xs text-white/60">
+              <div className="mt-3 flex items-center gap-2 text-xs text-white/78">
                 <Clock className="h-4 w-4 text-brand-gold" />
                 {site.contact.hours}
               </div>
@@ -332,7 +332,7 @@ const PerguntasFrequentes = () => {
                 <Mail className="h-4 w-4" />
                 <span className="flex-1 text-left">{site.contact.email}</span>
               </a>
-              <div className="mt-1 inline-flex items-center gap-1.5 text-[11px] font-medium text-white/55">
+              <div className="mt-1 inline-flex items-center gap-1.5 text-[11px] font-medium text-white/75">
                 <ShieldCheck className="h-3 w-3 text-brand-gold" />
                 Atendimento humano · resposta na hora
               </div>
