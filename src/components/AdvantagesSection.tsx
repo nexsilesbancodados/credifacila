@@ -18,6 +18,8 @@ import { site, whatsappLink, telLink } from "@/config/site";
 import womanCoffee from "@/assets/woman-coffee.webp";
 import juliana from "@/assets/testimonial-juliana.webp";
 import carlos from "@/assets/testimonial-carlos.webp";
+import cardAdvantages from "@/assets/card-advantages.webp";
+import cardStories from "@/assets/card-stories.webp";
 
 const advantages = [
   { icon: Clock, title: "Liberação no mesmo dia", desc: "Dinheiro na conta em poucas horas após aprovação.", tag: "Rápido" },
@@ -75,6 +77,22 @@ const AdvantagesSection = () => {
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3" data-anim-stagger>
           {/* CARD 1 — Vantagens */}
           <article className="group relative overflow-hidden rounded-3xl border border-white/8 bg-[hsl(30_18%_8%)] p-7 text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/40">
+            <img
+              src={cardAdvantages}
+              alt=""
+              aria-hidden
+              className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-25 transition-opacity duration-500 group-hover:opacity-35"
+              loading="lazy"
+              decoding="async"
+            />
+            <div
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(180deg, hsl(30 18% 8% / 0.85) 0%, hsl(30 18% 8% / 0.95) 60%, hsl(30 18% 8% / 0.98) 100%)",
+              }}
+              aria-hidden
+            />
             {/* Decorative gold mesh */}
             <div
               className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full opacity-30"
@@ -181,6 +199,22 @@ const AdvantagesSection = () => {
 
           {/* CARD 3 — Histórias reais */}
           <article className="relative overflow-hidden rounded-3xl border border-white/8 bg-[hsl(30_18%_8%)] p-7 text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/40">
+            <img
+              src={cardStories}
+              alt=""
+              aria-hidden
+              className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-25 transition-opacity duration-500 hover:opacity-35"
+              loading="lazy"
+              decoding="async"
+            />
+            <div
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(180deg, hsl(30 18% 8% / 0.88) 0%, hsl(30 18% 8% / 0.95) 60%, hsl(30 18% 8% / 0.98) 100%)",
+              }}
+              aria-hidden
+            />
             <div
               className="pointer-events-none absolute -left-20 -bottom-20 h-60 w-60 rounded-full opacity-30"
               style={{
