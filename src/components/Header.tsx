@@ -151,9 +151,9 @@ const Header = () => {
             />
 
             {/* Content */}
-            <div className="absolute inset-0 flex items-center">
-              <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
-                <div className="max-w-xl">
+             <div className="absolute inset-0 flex items-center">
+               <div className="w-full pl-0 pr-6 md:pr-10">
+                 <div className="max-w-xl pl-0 md:ml-0">
                   <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-foreground md:text-[52px]">
                     O crédito que
                     <br />
@@ -210,7 +210,7 @@ const Header = () => {
         </div>
 
         {/* Features card */}
-        <div className="relative z-10 mx-auto -mt-10 max-w-7xl px-6">
+        <div className="relative z-10 -mt-10 w-full px-0">
           <div className="rounded-2xl border border-foreground/8 bg-background p-6 shadow-[var(--shadow-card)]">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
               {features.map((f, i) => (
@@ -236,7 +236,7 @@ const Header = () => {
         </div>
 
         {/* Bottom dark bar */}
-        <div className="mx-auto mt-5 max-w-7xl px-6 pb-10">
+        <div className="mt-5 w-full px-0 pb-10">
           <div className="flex flex-col items-center justify-between gap-4 rounded-2xl bg-[hsl(var(--surface-dark))] px-6 py-4 text-[hsl(40_30%_97%)] md:flex-row">
             <div className="flex items-center gap-3">
               <Heart className="h-5 w-5 text-brand-gold" />
