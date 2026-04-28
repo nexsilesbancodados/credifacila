@@ -11,6 +11,7 @@ import heroImg from "@/assets/illustrations/sol-luri.svg";
 import showcaseImg from "@/assets/showcase-luri.jpg";
 
 const ContaDigitalLuri = () => (
+  <div className="theme-purple">
   <SolutionPage
     eyebrow="Conta Digital Luri"
     title="A conta digital"
@@ -70,6 +71,7 @@ const ContaDigitalLuri = () => (
       ],
     }}
   />
+  </div>
 );
 
 export default ContaDigitalLuri;
