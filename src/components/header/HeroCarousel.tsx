@@ -1,4 +1,4 @@
-import { useEffect, useState, type ComponentType, type SVGProps } from "react";
+import { useEffect, useRef, useState, type ComponentType, type SVGProps } from "react";
 import { Link } from "react-router-dom";
 import {
   Sparkles,
@@ -149,20 +149,41 @@ const slides: Slide[] = [
 const HeroCarousel = () => {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [hiddenTab, setHiddenTab] = useState(false);
+  const [offscreen, setOffscreen] = useState(false);
+  const rootRef = useRef<HTMLDivElement | null>(null);
   const slide = slides[active];
   const EyebrowIcon = slide.eyebrowIcon;
   const PrimaryIcon = slide.ctaPrimary.icon;
 
   useEffect(() => {
-    if (paused) return;
+    if (paused || hiddenTab || offscreen) return;
     const id = setInterval(() => {
       setActive((p) => (p + 1) % slides.length);
     }, 5500);
     return () => clearInterval(id);
-  }, [paused]);
+  }, [paused, hiddenTab, offscreen]);
+
+  useEffect(() => {
+    const onVis = () => setHiddenTab(document.hidden);
+    document.addEventListener("visibilitychange", onVis);
+    return () => document.removeEventListener("visibilitychange", onVis);
+  }, []);
+
+  useEffect(() => {
+    const el = rootRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    const io = new IntersectionObserver(
+      (entries) => setOffscreen(!entries[0]?.isIntersecting),
+      { threshold: 0.1 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   return (
     <div
+      ref={rootRef}
       className="relative h-[680px] overflow-hidden md:h-[760px] lg:h-[820px]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
