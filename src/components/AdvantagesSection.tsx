@@ -131,7 +131,7 @@ const AdvantagesSection = () => {
                       <div className="flex items-center gap-2">
                         <div className="text-sm font-bold">{a.title}</div>
                       </div>
-                      <div className="mt-1 text-xs leading-relaxed text-white/60">{a.desc}</div>
+                      <div className="mt-1 text-xs leading-relaxed text-white/78">{a.desc}</div>
                     </div>
                   </li>
                 ))}

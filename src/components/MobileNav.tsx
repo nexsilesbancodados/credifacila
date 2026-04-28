@@ -103,7 +103,7 @@ const MobileNav = () => {
             type="button"
             onClick={() => setOpen(false)}
             aria-label="Fechar menu"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-brand-gold hover:text-brand-gold"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/82 transition-colors hover:border-brand-gold hover:text-brand-gold"
           >
             <X className="h-5 w-5" />
           </button>
@@ -130,7 +130,7 @@ const MobileNav = () => {
                         onClick={() => setExpanded(isExpanded ? null : item.label)}
                         aria-expanded={isExpanded}
                         aria-label={`Expandir ${item.label}`}
-                        className="ml-1 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-all hover:border-brand-gold hover:text-brand-gold"
+                        className="ml-1 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/82 transition-all hover:border-brand-gold hover:text-brand-gold"
                       >
                         <ChevronRight
                           className={`h-4 w-4 transition-transform ${isExpanded ? "rotate-90" : ""}`}
@@ -150,7 +150,7 @@ const MobileNav = () => {
                             <Link
                               to={s.href}
                               onClick={() => setOpen(false)}
-                              className="block rounded-xl px-7 py-3 text-[13px] font-medium text-white/65 transition-colors hover:bg-white/5 hover:text-brand-gold"
+                              className="block rounded-xl px-7 py-3 text-[13px] font-medium text-white/80 transition-colors hover:bg-white/5 hover:text-brand-gold"
                             >
                               {s.label}
                             </Link>

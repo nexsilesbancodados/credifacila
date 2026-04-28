@@ -46,7 +46,7 @@ const Newsletter = () => {
           </span>
           <div>
             <div className="text-sm font-bold text-foreground">Inscrição confirmada!</div>
-            <div className="mt-1 text-[12px] leading-relaxed text-foreground/65">
+            <div className="mt-1 text-[12px] leading-relaxed text-foreground/75">
               Você receberá no e-mail novidades, dicas de crédito e ofertas exclusivas. Pode cancelar quando quiser.
             </div>
           </div>

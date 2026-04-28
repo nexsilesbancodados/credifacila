@@ -53,7 +53,7 @@ const NotFound = () => {
         <p className="mx-auto mt-2 max-w-md text-lg font-bold text-white md:text-xl">
           Essa página decidiu tirar férias.
         </p>
-        <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-white/65 md:text-base">
+        <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-white/80 md:text-base">
           Mas seu crédito não precisa esperar. Volte para a página inicial ou fale com a gente agora.
         </p>
 

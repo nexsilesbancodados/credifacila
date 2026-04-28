@@ -109,10 +109,10 @@ const ContactFooter = () => {
                   seus planos?
                 </span>
               </h2>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-white/70 md:text-base">
+              <p className="mt-4 max-w-md text-sm leading-relaxed text-white/82 md:text-base">
                 Nossa equipe está pronta para te atender pelo canal de sua preferência. Atendimento humano, rápido e sem compromisso.
               </p>
-              <div className="mt-6 flex items-center gap-2 text-xs text-white/60">
+              <div className="mt-6 flex items-center gap-2 text-xs text-white/78">
                 <Clock className="h-4 w-4 text-brand-gold" />
                 {site.contact.hours}
               </div>
@@ -137,7 +137,7 @@ const ContactFooter = () => {
                     </span>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <div className="text-[11px] font-semibold uppercase tracking-wider text-white/55">
+                        <div className="text-[11px] font-semibold uppercase tracking-wider text-white/75">
                           {c.label}
                         </div>
                         {c.badge && (
@@ -167,7 +167,7 @@ const ContactFooter = () => {
               Fique por dentro das{" "}
               <span className="text-gold-gradient">melhores condições</span>
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-foreground/65">
+            <p className="mt-2 text-sm leading-relaxed text-foreground/75">
               Conteúdos sobre crédito consciente, ofertas exclusivas e novidades — direto no seu e-mail.
             </p>
           </div>

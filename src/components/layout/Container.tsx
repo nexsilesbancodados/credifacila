@@ -98,7 +98,7 @@ export const SectionTitle = ({
         className={cn(
           "mt-4 text-sm leading-relaxed md:text-base",
           align === "center" ? "mx-auto max-w-xl" : "max-w-2xl",
-          invert ? "text-white/70" : "text-[hsl(220_15%_30%)]"
+          invert ? "text-white/82" : "text-[hsl(220_15%_30%)]"
         )}
       >
         {description}

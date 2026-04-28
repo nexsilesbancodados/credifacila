@@ -13,13 +13,13 @@ type FieldProps = {
 export const Field = ({ label, hint, error, required, className, children }: FieldProps) => (
   <label className={cn("flex flex-col gap-1.5", className)}>
     {label && (
-      <span className="text-[11px] font-semibold uppercase tracking-wider text-foreground/60">
+      <span className="text-[11px] font-semibold uppercase tracking-wider text-foreground/72">
         {label}
         {required && <span className="text-brand-gold"> *</span>}
       </span>
     )}
     {children}
-    {hint && !error && <span className="text-[11px] text-foreground/55">{hint}</span>}
+    {hint && !error && <span className="text-[11px] text-foreground/70">{hint}</span>}
     {error && <span className="text-[11px] font-medium text-destructive">{error}</span>}
   </label>
 );

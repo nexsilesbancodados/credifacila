@@ -324,7 +324,7 @@ const Consignado = () => {
           <h2 className="mt-3 text-4xl font-bold leading-tight text-foreground md:text-5xl">
             Vantagens do <span className="text-brand-gold">consignado Credifácil</span>
           </h2>
-          <p className="mt-4 text-[15px] leading-relaxed text-foreground/65">
+          <p className="mt-4 text-[15px] leading-relaxed text-foreground/75">
             A modalidade de crédito mais segura e barata do mercado, agora 100% digital e
             descomplicada.
           </p>
@@ -342,7 +342,7 @@ const Consignado = () => {
                 <b.icon className="h-6 w-6" strokeWidth={2} />
               </div>
               <h3 className="text-base font-bold text-foreground">{b.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-foreground/65">{b.desc}</p>
+              <p className="mt-2 text-sm leading-relaxed text-foreground/75">{b.desc}</p>
             </div>
           ))}
         </div>
@@ -357,7 +357,7 @@ const Consignado = () => {
               >
                 {s.value}
               </div>
-              <div className="mt-2 text-xs font-medium text-foreground/60">{s.label}</div>
+              <div className="mt-2 text-xs font-medium text-foreground/72">{s.label}</div>
             </div>
           ))}
         </div>
@@ -399,7 +399,7 @@ const Consignado = () => {
             <h2 className="mt-3 text-4xl font-bold leading-tight text-foreground md:text-5xl">
               Soluções <span className="text-brand-gold">extras para você</span>
             </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-foreground/65">
+            <p className="mt-4 text-[15px] leading-relaxed text-foreground/75">
               Além do consignado tradicional, oferecemos opções para quem quer renegociar,
               portar ou contratar mais.
             </p>
@@ -417,7 +417,7 @@ const Consignado = () => {
                   </div>
                   <div>
                     <h3 className="text-sm font-bold text-foreground">{b.title}</h3>
-                    <p className="mt-1 text-xs leading-relaxed text-foreground/60">{b.desc}</p>
+                    <p className="mt-1 text-xs leading-relaxed text-foreground/72">{b.desc}</p>
                   </div>
                 </div>
               ))}
@@ -436,7 +436,7 @@ const Consignado = () => {
             <h2 className="mt-3 text-4xl font-bold leading-tight text-white md:text-5xl">
               O consignado é <span className="text-brand-gold">para você?</span>
             </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-white/65">
+            <p className="mt-4 text-[15px] leading-relaxed text-white/80">
               Atendemos as principais categorias com convênios em todo o Brasil.
             </p>
           </div>
@@ -460,7 +460,7 @@ const Consignado = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white">{a.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-white/70">{a.desc}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-white/82">{a.desc}</p>
                   </div>
                 </div>
               </div>
@@ -502,7 +502,7 @@ const Consignado = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-bold text-foreground">{m.title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-foreground/65">{m.desc}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-foreground/75">{m.desc}</p>
                 </div>
               </div>
               <div className="mt-5 grid grid-cols-3 gap-3 border-t border-foreground/10 pt-5">
@@ -602,7 +602,7 @@ const Consignado = () => {
                   </span>
                 </div>
                 <h3 className="mt-4 text-base font-bold text-foreground">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-foreground/65">{s.desc}</p>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/75">{s.desc}</p>
               </div>
             </div>
           ))}
@@ -628,7 +628,7 @@ const Consignado = () => {
             <h3 className="mt-3 text-2xl font-bold leading-tight text-foreground md:text-3xl">
               O que você precisa para contratar?
             </h3>
-            <p className="mt-3 text-sm text-foreground/65">
+            <p className="mt-3 text-sm text-foreground/75">
               Tenha em mãos para acelerar sua aprovação. Tudo é enviado digitalmente, com
               segurança e sigilo.
             </p>
@@ -677,7 +677,7 @@ const Consignado = () => {
                   </div>
                   <div>
                     <div className="text-sm font-bold text-foreground">{t.name}</div>
-                    <div className="text-xs text-foreground/55">{t.role}</div>
+                    <div className="text-xs text-foreground/70">{t.role}</div>
                   </div>
                 </div>
                 <div className="mt-3 flex">
@@ -737,7 +737,7 @@ const Consignado = () => {
               <div className="text-sm font-bold text-foreground">
                 Ainda tem dúvidas?
               </div>
-              <div className="text-xs text-foreground/60">
+              <div className="text-xs text-foreground/72">
                 Nossos especialistas estão prontos para te atender.
               </div>
             </div>
@@ -795,10 +795,10 @@ const Consignado = () => {
       {/* Footer */}
       <footer className="border-t border-foreground/10 bg-white/40 py-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 md:flex-row md:px-8">
-          <p className="text-xs text-foreground/55">
+          <p className="text-xs text-foreground/70">
             © {new Date().getFullYear()} Credifácil — Empréstimo Consignado. Todos os direitos reservados.
           </p>
-          <div className="flex items-center gap-5 text-xs font-medium text-foreground/65">
+          <div className="flex items-center gap-5 text-xs font-medium text-foreground/75">
             <Link to="/" className="hover:text-brand-gold">Início</Link>
             <Link to="/securitizadora" className="hover:text-brand-gold">Securitizadora</Link>
           </div>

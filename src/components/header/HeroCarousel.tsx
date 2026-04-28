@@ -353,7 +353,7 @@ const HeroCarousel = () => {
                     ))}
                     <span className="ml-1 text-[11px] font-bold text-white">4,9</span>
                   </div>
-                  <span className="text-[10px] text-white/60">
+                  <span className="text-[10px] text-white/78">
                     <span className="font-bold text-white">+50 mil</span> clientes felizes
                   </span>
                 </div>
@@ -383,7 +383,7 @@ const HeroCarousel = () => {
 
       {/* Carousel dots + counter */}
       <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 items-center gap-3 rounded-full border border-white/10 bg-black/40 px-4 py-2 backdrop-blur-md">
-        <span className="text-[10px] font-bold tabular-nums text-white/70">
+        <span className="text-[10px] font-bold tabular-nums text-white/82">
           <span className="text-brand-gold">{String(active + 1).padStart(2, "0")}</span>
           <span className="mx-1 text-white/30">/</span>
           {String(slides.length).padStart(2, "0")}

@@ -297,7 +297,7 @@ const SolutionPage = ({
           <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-5xl">
             {ctaTitle}
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-relaxed text-white/70 md:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-relaxed text-white/82 md:text-lg">
             {ctaSubtitle}
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
