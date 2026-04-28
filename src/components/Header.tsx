@@ -134,6 +134,9 @@ const features = [
 
 const Header = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const slide = heroSlides[activeSlide];
+  const EyebrowIcon = slide.eyebrowIcon;
+  const PrimaryIcon = slide.ctaPrimary.icon;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -295,46 +298,58 @@ const Header = () => {
                <div className="w-full px-5 md:px-8 lg:px-12">
                  <div className="max-w-[600px]">
                   {/* Eyebrow badge */}
-                  <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-brand-gold/40 bg-brand-gold/[0.08] px-3.5 py-1.5 backdrop-blur-md">
+                  <div
+                    key={`eyebrow-${activeSlide}`}
+                    className="mb-6 inline-flex animate-fade-in items-center gap-2.5 rounded-full border border-brand-gold/40 bg-brand-gold/[0.08] px-3.5 py-1.5 backdrop-blur-md"
+                  >
                     <span className="relative flex h-2 w-2">
                       <span className="absolute inset-0 animate-ping rounded-full bg-brand-gold/60" />
                       <span className="relative h-2 w-2 rounded-full bg-brand-gold" />
                     </span>
+                    <EyebrowIcon className="h-3.5 w-3.5 text-brand-gold" strokeWidth={2.4} />
                     <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-brand-gold">
-                      Crédito sem complicação
+                      {slide.eyebrow}
                     </span>
                   </div>
 
-                  <h1 className="text-[40px] font-bold leading-[1.02] tracking-tight text-white md:text-[62px]">
-                    O crédito que
-                    <br />
-                    você precisa,
-                    <br />
-                    <span className="relative inline-block">
-                      <span
-                        className="bg-clip-text text-transparent"
-                        style={{ backgroundImage: "var(--gradient-gold)" }}
-                      >
-                        com a confiança
-                      </span>
-                    </span>
-                    <br />
-                    <span
-                      className="bg-clip-text text-transparent"
-                      style={{ backgroundImage: "var(--gradient-gold)" }}
-                    >
-                      que você merece.
-                    </span>
+                  <h1
+                    key={`title-${activeSlide}`}
+                    className="animate-fade-in text-[40px] font-bold leading-[1.02] tracking-tight text-white md:text-[62px]"
+                  >
+                    {slide.title.map((line, idx) => {
+                      const isGold = idx >= slide.goldFromLine;
+                      return (
+                        <span key={idx}>
+                          {isGold ? (
+                            <span
+                              className="bg-clip-text text-transparent"
+                              style={{ backgroundImage: "var(--gradient-gold)" }}
+                            >
+                              {line}
+                            </span>
+                          ) : (
+                            line
+                          )}
+                          {idx < slide.title.length - 1 && <br />}
+                        </span>
+                      );
+                    })}
                   </h1>
 
-                  <p className="mt-6 max-w-md text-base leading-relaxed text-white/75 md:text-[17px]">
-                    Empréstimos rápidos, seguros e descomplicados para realizar seus planos e{" "}
-                    <span className="font-semibold text-white">transformar sua vida</span>.
+                  <p
+                    key={`desc-${activeSlide}`}
+                    className="mt-6 max-w-md animate-fade-in text-base leading-relaxed text-white/75 md:text-[17px]"
+                  >
+                    {slide.description}{" "}
+                    <span className="font-semibold text-white">{slide.descriptionHighlight}</span>.
                   </p>
 
-                  <div className="mt-8 flex flex-wrap items-center gap-3">
+                  <div
+                    key={`cta-${activeSlide}`}
+                    className="mt-8 flex animate-fade-in flex-wrap items-center gap-3"
+                  >
                     <a
-                      href="#simular"
+                      href={slide.ctaPrimary.href}
                       className="group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl px-7 py-4 text-base font-bold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.03] hover:brightness-110"
                       style={{ background: "var(--gradient-gold)" }}
                     >
@@ -343,15 +358,15 @@ const Header = () => {
                         className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full"
                         aria-hidden="true"
                       />
-                      <TrendingUp className="relative h-5 w-5" strokeWidth={2.4} />
-                      <span className="relative">Solicitar meu empréstimo</span>
+                      <PrimaryIcon className="relative h-5 w-5" strokeWidth={2.4} />
+                      <span className="relative">{slide.ctaPrimary.label}</span>
                       <ChevronRight className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
                     </a>
                     <a
-                      href="#simular"
+                      href={slide.ctaSecondary.href}
                       className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/[0.06] px-5 py-4 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-brand-gold/60 hover:bg-white/10 hover:text-brand-gold"
                     >
-                      Simular agora
+                      {slide.ctaSecondary.label}
                     </a>
                   </div>
 
