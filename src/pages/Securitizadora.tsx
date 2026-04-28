@@ -28,7 +28,7 @@ import {
 } from "lucide-react";
 import { whatsappLink } from "@/config/site";
 import logo from "@/assets/credifacil-logo.webp";
-import heroIllo from "@/assets/hero-securitizadora-photo.jpg";
+import heroIllo from "@/assets/hero-securitizadora-wide.jpg";
 import bannerImg from "@/assets/securitizadora-banner.webp";
 import meetingImg from "@/assets/securitizadora-meeting.webp";
 
@@ -157,17 +157,36 @@ const Securitizadora = () => {
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[hsl(220_16%_6%)] pb-32 pt-32 text-white md:pt-40">
+      <section className="relative min-h-[680px] overflow-hidden bg-[hsl(220_16%_6%)] pb-24 pt-32 text-white md:min-h-[760px] md:pt-40">
+        {/* Background image full-bleed */}
+        <img
+          src={heroIllo}
+          alt="Executivo brasileiro em escritório corporativo com vista da cidade ao pôr do sol"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          width={1920}
+          height={1080}
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-right"
+        />
         <div
-          className="pointer-events-none absolute -right-32 top-10 h-[600px] w-[600px] opacity-50"
+          className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.4), transparent 65%)",
+              "linear-gradient(90deg, hsl(220 16% 4% / 0.95) 0%, hsl(220 16% 4% / 0.85) 35%, hsl(220 16% 4% / 0.55) 60%, hsl(220 16% 4% / 0.25) 100%)",
           }}
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute -left-40 bottom-0 h-[420px] w-[420px] opacity-30"
+          className="pointer-events-none absolute inset-0 lg:hidden"
+          style={{
+            background:
+              "linear-gradient(180deg, hsl(220 16% 4% / 0.85) 0%, hsl(220 16% 4% / 0.55) 50%, hsl(220 16% 4% / 0.85) 100%)",
+          }}
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute -left-40 bottom-0 h-[420px] w-[420px] opacity-40"
           style={{
             background:
               "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.35), transparent 70%)",
@@ -175,14 +194,14 @@ const Securitizadora = () => {
           aria-hidden
         />
         <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden />
-        <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-10 px-5 md:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div data-anim="fade-right">
+        <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 px-5 md:px-8 lg:grid-cols-2 lg:items-center">
+          <div data-anim="fade-right" className="max-w-xl">
             <div className="pill-eyebrow-dark">
               <Sparkles className="h-3.5 w-3.5" />
               Securitizadora Credifácil
             </div>
             <h1
-              className="mt-6 font-display text-[42px] font-extrabold leading-[1.02] tracking-tight text-white md:text-[58px] lg:text-[64px]"
+              className="mt-6 font-display text-[40px] font-extrabold leading-[1.02] tracking-tight text-white md:text-[56px] lg:text-[60px]"
               style={{ textShadow: "0 2px 24px hsl(220 16% 4% / 0.45)" }}
             >
               Soluções financeiras{" "}
@@ -190,7 +209,7 @@ const Securitizadora = () => {
                 feitas para o Brasil que produz.
               </span>
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-white/80 md:text-[17px]">
+            <p className="mt-6 max-w-lg text-base leading-relaxed text-white/85 md:text-[17px]">
               Somos uma securitizadora completa, com soluções personalizadas para empresas
               de todos os portes —{" "}
               <span className="font-semibold text-white">
@@ -219,28 +238,6 @@ const Securitizadora = () => {
               <span className="inline-flex items-center gap-1.5">
                 <Award className="h-4 w-4 text-brand-gold" /> Tradição no mercado
               </span>
-            </div>
-          </div>
-          <div className="relative hidden lg:block" data-anim="fade-left">
-            <div className="relative mx-auto w-full max-w-lg">
-              <div
-                className="pointer-events-none absolute -inset-4 rounded-[32px] opacity-60 blur-2xl"
-                style={{
-                  background:
-                    "radial-gradient(circle at 30% 30%, hsl(38 90% 55% / 0.45), transparent 70%)",
-                }}
-                aria-hidden
-              />
-              <img
-                src={heroIllo}
-                alt="Executivo brasileiro em escritório corporativo com vista da cidade ao pôr do sol"
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                width={1024}
-                height={1024}
-                className="relative aspect-square w-full rounded-[28px] border border-white/10 object-cover shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]"
-              />
             </div>
           </div>
         </div>
