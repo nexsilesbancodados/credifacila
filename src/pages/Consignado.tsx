@@ -293,7 +293,7 @@ const Consignado = () => {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, hsl(215 52% 12% / 0.95) 0%, hsl(215 52% 12% / 0.85) 35%, hsl(215 52% 12% / 0.55) 60%, hsl(215 52% 12% / 0.25) 100%)",
+              "linear-gradient(90deg, hsl(215 52% 12% / 0.55) 0%, hsl(215 52% 12% / 0.30) 40%, transparent 70%)",
           }}
           aria-hidden
         />
@@ -301,7 +301,7 @@ const Consignado = () => {
           className="pointer-events-none absolute inset-0 lg:hidden"
           style={{
             background:
-              "linear-gradient(180deg, hsl(215 52% 12% / 0.85) 0%, hsl(215 52% 12% / 0.55) 50%, hsl(215 52% 12% / 0.85) 100%)",
+              "linear-gradient(180deg, hsl(215 52% 12% / 0.50) 0%, transparent 40%, hsl(215 52% 12% / 0.50) 100%)",
           }}
           aria-hidden
         />
@@ -516,12 +516,12 @@ const Consignado = () => {
                     height={1024}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
-                  {/* Dark gradient for legibility */}
+                  {/* Soft fade only at the bottom for badge legibility */}
                   <div
-                    className="pointer-events-none absolute inset-0"
+                    className="pointer-events-none absolute inset-x-0 bottom-0 h-20"
                     style={{
                       background:
-                        "linear-gradient(180deg, hsl(215 48% 16% / 0.15) 0%, hsl(215 48% 16% / 0.55) 70%, hsl(215 48% 16% / 0.95) 100%)",
+                        "linear-gradient(180deg, transparent, hsl(215 48% 16% / 0.45) 100%)",
                     }}
                     aria-hidden
                   />

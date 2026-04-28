@@ -45,7 +45,7 @@ const PromoBanner = ({
             className="pointer-events-none absolute inset-0"
             style={{
               background:
-                "linear-gradient(90deg, hsl(215 48% 16% / 0.94) 0%, hsl(215 48% 16% / 0.82) 45%, hsl(215 48% 16% / 0.55) 100%)",
+              "linear-gradient(90deg, hsl(215 48% 16% / 0.60) 0%, hsl(215 48% 16% / 0.35) 50%, transparent 90%)",
             }}
             aria-hidden
           />

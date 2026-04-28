@@ -222,7 +222,7 @@ const HeroCarousel = () => {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(95deg, hsl(215 50% 14% / 0.97) 0%, hsl(215 50% 14% / 0.85) 28%, hsl(215 50% 14% / 0.4) 58%, transparent 82%), radial-gradient(ellipse 80% 50% at 85% 50%, hsl(199 85% 58% / 0.35), transparent 65%)",
+            "linear-gradient(95deg, hsl(215 50% 14% / 0.55) 0%, hsl(215 50% 14% / 0.30) 35%, transparent 65%)",
         }}
         aria-hidden
       />
