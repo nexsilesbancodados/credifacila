@@ -1,16 +1,11 @@
 import { useEffect, useState } from "react";
 import {
   MessageCircle,
-  Zap,
   ShieldCheck,
-  User,
-  Handshake,
   TrendingUp,
   ChevronRight,
   ChevronLeft,
   Heart,
-  ShieldAlert,
-  Lock,
   Star,
   Clock,
   CheckCircle2,
@@ -103,33 +98,6 @@ const heroSlides = [
     descriptionHighlight: "condições especiais",
     ctaPrimary: { label: "Quero crédito empresarial", href: "/simular", icon: Briefcase },
     ctaSecondary: { label: "Falar com especialista", href: "#whatsapp" },
-  },
-];
-
-const features = [
-  {
-    icon: Zap,
-    title: "Aprovação em minutos",
-    desc: "Simule, assine e receba\no dinheiro no mesmo dia.",
-    metric: "3 min",
-  },
-  {
-    icon: ShieldCheck,
-    title: "100% seguro",
-    desc: "Criptografia bancária\ne zero burocracia.",
-    metric: "SSL 256",
-  },
-  {
-    icon: User,
-    title: "Atendimento humano",
-    desc: "Especialistas reais\nte acompanham do início ao fim.",
-    metric: "24/7",
-  },
-  {
-    icon: Handshake,
-    title: "Confiança comprovada",
-    desc: "Mais de 50 mil clientes\njá realizaram seus sonhos.",
-    metric: "+50k",
   },
 ];
 
