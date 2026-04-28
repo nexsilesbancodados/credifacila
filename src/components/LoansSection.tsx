@@ -87,62 +87,99 @@ const LoansSection = () => {
           {/* Left text */}
           <div className="flex flex-col justify-center">
             <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-gold/30 bg-brand-gold/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-brand-gold">
-              <Heart className="h-3.5 w-3.5" />
+              <Sparkles className="h-3.5 w-3.5" />
               Crédito sob medida pra você
             </span>
 
-            <h2 className="mt-5 text-4xl font-bold leading-[1.05] tracking-tight text-foreground md:text-[48px]">
+            <h2 className="mt-5 text-4xl font-bold leading-[1.02] tracking-tight text-foreground md:text-[52px]">
               Simule, aprove e
               <br />
-              receba <span className="text-brand-gold">no mesmo dia</span>.
+              receba{" "}
+              <span className="relative inline-block text-brand-gold">
+                no mesmo dia
+                <svg
+                  className="absolute -bottom-1 left-0 h-2 w-full"
+                  viewBox="0 0 200 8"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+                  <path d="M2,5 Q100,1 198,5" stroke="hsl(var(--brand-gold))" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.5" />
+                </svg>
+              </span>
+              .
             </h2>
 
             <p className="mt-5 max-w-md text-base leading-relaxed text-foreground/70 md:text-lg">
               Sem fila, sem papelada e sem surpresas. Descubra em segundos a parcela que cabe no seu bolso.
             </p>
 
-            <ul className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-3">
+            <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
               {trustItems.map((t) => (
-                <li key={t.title} className="flex items-start gap-3">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-brand-gold/30 bg-gradient-to-br from-brand-gold/15 to-brand-gold/5 text-brand-gold">
-                    <t.icon className="h-[18px] w-[18px]" strokeWidth={2} />
+                <li
+                  key={t.title}
+                  className="group rounded-2xl border border-foreground/8 bg-white/60 p-3.5 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-brand-gold/30 hover:bg-white hover:shadow-[var(--shadow-card)]"
+                >
+                  <span
+                    className="flex h-10 w-10 items-center justify-center rounded-xl text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-transform group-hover:scale-105"
+                    style={{ background: "var(--gradient-gold)" }}
+                  >
+                    <t.icon className="h-[18px] w-[18px]" strokeWidth={2.2} />
                   </span>
-                  <div className="leading-snug">
-                    <div className="text-[13px] font-bold text-foreground">{t.title}</div>
-                    <div className="mt-1 whitespace-pre-line text-[11px] leading-relaxed text-foreground/60">
-                      {t.desc}
-                    </div>
+                  <div className="mt-3 text-[13px] font-bold leading-tight text-foreground">{t.title}</div>
+                  <div className="mt-1 whitespace-pre-line text-[11px] leading-relaxed text-foreground/60">
+                    {t.desc}
                   </div>
                 </li>
               ))}
             </ul>
 
             {/* Mini stats */}
-            <div className="mt-8 flex items-center gap-6">
+            <div className="mt-8 flex items-center gap-5 rounded-2xl border border-brand-gold/15 bg-gradient-to-br from-white/80 to-[hsl(40_50%_94%)]/60 px-5 py-4 backdrop-blur-sm">
               <div>
-                <div className="text-2xl font-bold text-foreground">+50 mil</div>
-                <div className="text-[11px] uppercase tracking-wider text-foreground/55">clientes</div>
+                <div className="text-2xl font-bold leading-none text-foreground">+50 mil</div>
+                <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-foreground/55">clientes</div>
               </div>
               <div className="h-10 w-px bg-foreground/15" />
               <div>
-                <div className="text-2xl font-bold text-foreground">4,9<span className="text-brand-gold">★</span></div>
-                <div className="text-[11px] uppercase tracking-wider text-foreground/55">avaliação</div>
+                <div className="flex items-baseline gap-0.5 text-2xl font-bold leading-none text-foreground">
+                  4,9
+                  <Star className="h-4 w-4 fill-brand-gold text-brand-gold" />
+                </div>
+                <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-foreground/55">avaliação</div>
               </div>
               <div className="h-10 w-px bg-foreground/15" />
               <div>
-                <div className="text-2xl font-bold text-foreground">R$ 1bi+</div>
-                <div className="text-[11px] uppercase tracking-wider text-foreground/55">liberados</div>
+                <div className="text-2xl font-bold leading-none text-foreground">R$ 1bi+</div>
+                <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-foreground/55">liberados</div>
               </div>
             </div>
           </div>
 
           {/* Simulator card */}
           <div className="relative rounded-3xl border border-foreground/10 bg-white p-7 shadow-[var(--shadow-card)]">
-            <div className="absolute -top-3 left-7 rounded-full bg-brand-gold px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold-foreground shadow-[var(--shadow-gold)]">
+            {/* gold top accent */}
+            <div
+              className="pointer-events-none absolute inset-x-6 top-0 h-px"
+              style={{ background: "linear-gradient(90deg, transparent, hsl(var(--brand-gold)), transparent)" }}
+              aria-hidden="true"
+            />
+            <div
+              className="absolute -top-3 left-7 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold-foreground shadow-[var(--shadow-gold)]"
+              style={{ background: "var(--gradient-gold)" }}
+            >
+              <Sparkles className="h-3 w-3" />
               Simulador grátis
             </div>
-            <h3 className="text-xl font-bold text-foreground">Simule seu empréstimo</h3>
-            <p className="mt-1 text-xs text-foreground/55">Em 30 segundos você tem sua resposta.</p>
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <h3 className="text-xl font-bold text-foreground">Simule seu empréstimo</h3>
+                <p className="mt-1 text-xs text-foreground/55">Em 30 segundos você tem sua resposta.</p>
+              </div>
+              <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-1 text-[10px] font-bold text-emerald-700">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                Online
+              </span>
+            </div>
 
             <div className="mt-6">
               <label className="text-[11px] font-semibold uppercase tracking-wider text-foreground/60">
@@ -192,21 +229,36 @@ const LoansSection = () => {
               </div>
             </div>
 
-            <div className="mt-6 flex items-center justify-between rounded-2xl border border-brand-gold/20 bg-gradient-to-br from-[hsl(40_70%_94%)] to-[hsl(38_60%_88%)] p-4">
-              <div>
-                <div className="text-[10px] font-semibold uppercase tracking-wider text-foreground/60">
-                  Parcela estimada
+            <div className="relative mt-6 overflow-hidden rounded-2xl border border-brand-gold/25 bg-gradient-to-br from-[hsl(40_70%_94%)] to-[hsl(38_60%_88%)] p-4">
+              <div
+                className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full opacity-40"
+                style={{ background: "radial-gradient(circle, hsl(var(--brand-gold) / 0.4), transparent 70%)" }}
+                aria-hidden="true"
+              />
+              <div className="relative flex items-center justify-between">
+                <div>
+                  <div className="text-[10px] font-semibold uppercase tracking-wider text-foreground/60">
+                    Parcela estimada
+                  </div>
+                  <div className="mt-1 text-[26px] font-bold leading-none text-foreground">
+                    {formatBRL(monthly)}
+                  </div>
+                  <div className="mt-1.5 inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-700">
+                    <CheckCircle2 className="h-3 w-3" />
+                    Cabe no seu bolso
+                  </div>
                 </div>
-                <div className="mt-1 text-2xl font-bold text-foreground">
-                  {formatBRL(monthly)}
-                </div>
-              </div>
-              <div className="text-right">
-                <div className="text-[10px] font-semibold uppercase tracking-wider text-foreground/60">
-                  Taxa a partir de
-                </div>
-                <div className="mt-1 text-2xl font-bold text-brand-gold">
-                  1,49<span className="text-xs">% a.m.</span>
+                <div className="h-12 w-px bg-foreground/10" />
+                <div className="text-right">
+                  <div className="text-[10px] font-semibold uppercase tracking-wider text-foreground/60">
+                    Taxa a partir de
+                  </div>
+                  <div className="mt-1 text-[26px] font-bold leading-none text-brand-gold">
+                    1,49<span className="text-xs">% a.m.</span>
+                  </div>
+                  <div className="mt-1.5 text-[10px] font-semibold text-foreground/55">
+                    CET sob consulta
+                  </div>
                 </div>
               </div>
             </div>
