@@ -140,11 +140,11 @@ const modalities = [
   },
   {
     icon: GraduationCap,
-    title: "Forças Armadas",
+    title: "Profissionais Liberais",
     rate: "1,52% a.m.",
     term: "Até 96x",
     value: "Até R$ 150 mil",
-    desc: "Exército, Marinha, Aeronáutica e Polícia Militar com condições exclusivas.",
+    desc: "Profissionais conveniados a entidades de classe com condições exclusivas.",
     badge: "Exclusivo",
   },
   {
@@ -177,9 +177,9 @@ const testimonials = [
     text: "Quitei outras dívidas com taxas altíssimas e ainda economizei. Em menos de 3 horas o dinheiro estava na minha conta.",
   },
   {
-    name: "Sgt. Roberto Lima",
-    role: "Polícia Militar",
-    text: "Processo 100% digital, sem sair de casa. A diferença na taxa em relação ao banco onde recebo foi enorme.",
+    name: "Roberto Lima",
+    role: "Profissional Liberal",
+    text: "Processo 100% digital, sem sair de casa. A diferença na taxa em relação ao meu banco foi enorme.",
   },
 ];
 
