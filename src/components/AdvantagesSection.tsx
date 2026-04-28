@@ -8,7 +8,6 @@ import {
   Coins,
   TrendingUp,
   Heart,
-  Quote,
   Phone,
   MessageCircle,
   ShieldCheck,
@@ -16,10 +15,7 @@ import {
 } from "lucide-react";
 import { site, whatsappLink, telLink } from "@/config/site";
 import womanCoffee from "@/assets/woman-coffee.webp";
-import juliana from "@/assets/testimonial-juliana.webp";
-import carlos from "@/assets/testimonial-carlos.webp";
 import cardAdvantages from "@/assets/card-advantages.webp";
-import cardStories from "@/assets/card-stories.webp";
 
 const advantages = [
   { icon: Clock, title: "Liberação no mesmo dia", desc: "Dinheiro na conta em poucas horas após aprovação.", tag: "Rápido" },
@@ -33,23 +29,6 @@ const purposes = [
   { icon: Coins, label: "Quite\ndívidas" },
   { icon: TrendingUp, label: "Invista no\nseu futuro" },
   { icon: Heart, label: "Tenha mais\ntranquilidade" },
-];
-
-const testimonials = [
-  {
-    text: "Consegui o crédito que precisava e fui muito bem atendida do início ao fim. Em menos de 24h o dinheiro estava na conta!",
-    name: "Juliana S.",
-    role: "São Paulo, SP",
-    avatar: juliana,
-    rating: 5,
-  },
-  {
-    text: "Processo rápido, seguro e sem letras miúdas. As parcelas couberam direitinho no orçamento da família.",
-    name: "Carlos M.",
-    role: "Belo Horizonte, MG",
-    avatar: carlos,
-    rating: 5,
-  },
 ];
 
 const AdvantagesSection = () => {
@@ -74,7 +53,7 @@ const AdvantagesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3" data-anim-stagger>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2" data-anim-stagger>
           {/* CARD 1 — Vantagens */}
           <article className="group relative overflow-hidden rounded-3xl border border-white/8 bg-[hsl(220_16%_8%)] p-7 text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/40">
             <img
