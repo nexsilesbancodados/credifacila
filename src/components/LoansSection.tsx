@@ -2,7 +2,6 @@ import {
   ShieldCheck,
   ChevronRight,
   Star,
-  Quote,
   HandCoins,
   Lock,
   MessageCircle,
@@ -10,9 +9,7 @@ import {
   ArrowRight,
   CheckCircle2,
   Users,
-  ChevronLeft,
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 import { whatsappLink } from "@/config/site";
 import loansHero from "@/assets/loans-hero.webp";
 import loansHeroMd from "@/assets/loans-hero-md.webp";
@@ -65,47 +62,7 @@ const products = [
   },
 ];
 
-const testimonials = [
-  {
-    initials: "CR",
-    name: "Camila R.",
-    meta: "Cliente desde 2024 · São Paulo",
-    text: "Em poucos cliques resolvi tudo. Simples, rápido e sem stress!",
-  },
-  {
-    initials: "JM",
-    name: "João M.",
-    meta: "Cliente desde 2023 · Belo Horizonte",
-    text: "Aprovaram em minutos e o dinheiro caiu no mesmo dia. Recomendo demais!",
-  },
-  {
-    initials: "AP",
-    name: "Ana P.",
-    meta: "Cliente desde 2025 · Curitiba",
-    text: "Atendimento humano de verdade. Me explicaram tudo sem letrinha miúda.",
-  },
-];
-
 const LoansSection = () => {
-  const [tIndex, setTIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const timerRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    if (paused) return;
-    timerRef.current = window.setInterval(() => {
-      setTIndex((i) => (i + 1) % testimonials.length);
-    }, 5500);
-    return () => {
-      if (timerRef.current) window.clearInterval(timerRef.current);
-    };
-  }, [paused]);
-
-  const goTo = (i: number) =>
-    setTIndex(((i % testimonials.length) + testimonials.length) % testimonials.length);
-  const prev = () => goTo(tIndex - 1);
-  const next = () => goTo(tIndex + 1);
-
   return (
     <section
       id="solucoes"
