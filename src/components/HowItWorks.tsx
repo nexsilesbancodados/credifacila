@@ -41,30 +41,32 @@ const HowItWorks = () => {
           </p>
         </div>
 
-        <div className="mt-10 rounded-3xl border border-foreground/8 bg-gradient-to-br from-[hsl(40_60%_96%)] to-background p-6 shadow-[var(--shadow-card)] md:p-8">
-          <ol className="flex flex-col items-stretch gap-8 md:grid md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] md:items-center md:gap-4">
+        <div className="mt-10 rounded-[28px] border border-[hsl(38_60%_85%)] bg-[hsl(40_60%_97%)] p-6 shadow-[var(--shadow-card)] md:p-8">
+          <ol className="flex flex-col items-stretch gap-8 md:grid md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] md:items-center md:gap-3">
             {steps.map((step, i) => (
               <Fragment key={step.title}>
-                <li className="flex flex-col items-center text-center">
-                  <div className="relative">
-                    <div className="flex h-20 w-20 items-center justify-center rounded-full bg-brand-gold/10 text-brand-gold ring-1 ring-brand-gold/20">
-                      <step.icon className="h-9 w-9" strokeWidth={1.8} />
-                    </div>
-                    <span className="absolute -right-1 -top-1 flex h-7 w-7 items-center justify-center rounded-full bg-brand-gold text-xs font-bold text-brand-gold-foreground shadow-md">
-                      {i + 1}
-                    </span>
+                <li className="flex items-start gap-4 text-left">
+                  <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-[hsl(40_70%_92%)] text-brand-gold">
+                    <step.icon className="h-10 w-10" strokeWidth={1.6} />
                   </div>
-                  <h3 className="mt-4 text-base font-bold text-foreground">{step.title}</h3>
-                  <p className="mt-1.5 max-w-[220px] text-sm leading-relaxed text-foreground/65">
-                    {step.desc}
-                  </p>
+                  <div className="min-w-0 flex-1 pt-1">
+                    <div className="flex items-center gap-2">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-gold text-[11px] font-bold text-brand-gold-foreground">
+                        {i + 1}
+                      </span>
+                      <h3 className="text-[15px] font-bold text-foreground">{step.title}</h3>
+                    </div>
+                    <p className="mt-2 text-[13px] leading-relaxed text-foreground/65">
+                      {step.desc}
+                    </p>
+                  </div>
                 </li>
                 {i < steps.length - 1 && (
                   <li
                     aria-hidden="true"
                     className="hidden items-center justify-center md:flex"
                   >
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[hsl(30_15%_15%)] text-[hsl(40_30%_97%)]">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[hsl(30_15%_10%)] text-[hsl(40_30%_97%)]">
                       <ChevronRight className="h-4 w-4" strokeWidth={2.5} />
                     </span>
                   </li>
