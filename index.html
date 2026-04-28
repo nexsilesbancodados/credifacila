@@ -3,9 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
-    <title>Lovable App</title>
-    <meta name="description" content="Lovable Generated Project" />
+     <title>Credifácil | Crédito Rápido e Seguro</title>
+     <meta name="description" content="Crédito rápido, seguro e descomplicado para realizar seus planos. Simule agora e receba em minutos." />
+     <style>
+       #initial-loader {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: #0d0b0a;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         z-index: 9999;
+         transition: opacity 0.5s ease-out, visibility 0.5s;
+       }
+       .loader-logo {
+         width: 180px;
+         margin-bottom: 24px;
+         opacity: 0;
+         animation: fadeIn 0.8s ease-out forwards;
+       }
+       .loader-bar-container {
+         width: 200px;
+         height: 2px;
+         background: rgba(255, 255, 255, 0.1);
+         border-radius: 4px;
+         overflow: hidden;
+       }
+       .loader-bar {
+         width: 0%;
+         height: 100%;
+         background: linear-gradient(90deg, #b8860b, #daa520, #ffd700);
+         animation: loading 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+       }
+       @keyframes fadeIn {
+         from { opacity: 0; transform: translateY(10px); }
+         to { opacity: 1; transform: translateY(0); }
+       }
+       @keyframes loading {
+         0% { width: 0%; transform: translateX(-100%); }
+         50% { width: 100%; transform: translateX(0); }
+         100% { width: 0%; transform: translateX(100%); }
+       }
+       body.loaded #initial-loader {
+         opacity: 0;
+         visibility: hidden;
+       }
+     </style>
+   </head>
+ 
+   <body>
+     <div id="initial-loader">
+       <div class="loader-bar-container">
+         <div class="loader-bar"></div>
+       </div>
+     </div>
+     <div id="root"></div>
     <meta name="author" content="Lovable" />
 
     <!-- TODO: Update og:title to match your application name -->
@@ -16,7 +72,33 @@
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+       .scroll-progress-container {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 3px;
+         z-index: 10000;
+         pointer-events: none;
+       }
+       .scroll-progress-bar {
+         height: 100%;
+         width: 0%;
+         background: linear-gradient(90deg, #b8860b, #daa520, #ffd700);
+         transition: width 0.1s ease-out;
+       }
+     <div class="scroll-progress-container">
+       <div id="scroll-bar" class="scroll-progress-bar"></div>
+     </div>
+     <script>
+       window.addEventListener('scroll', () => {
+         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+         const scrolled = (winScroll / height) * 100;
+         document.getElementById("scroll-bar").style.width = scrolled + "%";
+       });
+     </script>
   </head>
 
   <body>
