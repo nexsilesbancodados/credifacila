@@ -32,6 +32,10 @@ import heroIllo from "@/assets/hero-consignado-wide.jpg";
 import seniorImg from "@/assets/consignado-senior.webp";
 import servidorImg from "@/assets/consignado-servidor.webp";
 import bannerImg from "@/assets/consignado-banner.webp";
+import audAposentados from "@/assets/audience-aposentados.jpg";
+import audServidores from "@/assets/audience-servidores.jpg";
+import audMilitares from "@/assets/audience-militares.jpg";
+import audClt from "@/assets/audience-clt.jpg";
 import TestimonialsMarquee, { type MarqueeTestimonial } from "@/components/TestimonialsMarquee";
 
 const benefits = [
@@ -63,21 +67,25 @@ const audiences = [
     title: "Aposentados e pensionistas do INSS",
     desc: "Crédito com as melhores taxas para quem recebe pelo INSS, com aprovação rápida.",
     badge: "Mais procurado",
+    image: audAposentados,
   },
   {
     icon: Building2,
     title: "Servidores públicos",
     desc: "Federal, estadual e municipal — convênio com mais de 500 órgãos do país.",
+    image: audServidores,
   },
   {
     icon: GraduationCap,
     title: "Militares (Forças Armadas)",
     desc: "Condições exclusivas para Exército, Marinha, Aeronáutica e Polícia Militar.",
+    image: audMilitares,
   },
   {
     icon: Users,
     title: "Trabalhadores CLT",
     desc: "Empresas conveniadas oferecem consignado privado com taxas reduzidas.",
+    image: audClt,
   },
 ];
 
