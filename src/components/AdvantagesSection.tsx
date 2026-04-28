@@ -60,7 +60,7 @@ const AdvantagesSection = () => {
               src={cardAdvantages}
               alt=""
               aria-hidden
-              className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-25 transition-opacity duration-500 group-hover:opacity-35"
+              className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-50 transition-opacity duration-500 group-hover:opacity-65"
               loading="lazy"
               decoding="async"
             />
@@ -68,7 +68,7 @@ const AdvantagesSection = () => {
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(180deg, hsl(215 42% 20% / 0.85) 0%, hsl(215 42% 20% / 0.95) 60%, hsl(215 42% 20% / 0.98) 100%)",
+                  "linear-gradient(180deg, hsl(215 42% 20% / 0.40) 0%, hsl(215 42% 20% / 0.65) 60%, hsl(215 42% 20% / 0.85) 100%)",
               }}
               aria-hidden
             />

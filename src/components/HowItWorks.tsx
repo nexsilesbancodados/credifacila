@@ -127,18 +127,10 @@ const HowItWorks = () => (
             />
             {/* Cinematic blend into the dark left side */}
             <div
-              className="pointer-events-none absolute inset-0"
+              className="pointer-events-none absolute inset-0 lg:hidden"
               style={{
                 background:
-                  "linear-gradient(90deg, hsl(215 50% 14%) 0%, hsl(215 50% 14% / 0.7) 18%, hsl(215 50% 14% / 0.15) 45%, transparent 75%)",
-              }}
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute inset-x-0 bottom-0 h-32"
-              style={{
-                background:
-                  "linear-gradient(180deg, transparent, hsl(215 50% 14%) 95%)",
+                  "linear-gradient(180deg, transparent 60%, hsl(215 50% 14% / 0.4) 100%)",
               }}
               aria-hidden
             />
