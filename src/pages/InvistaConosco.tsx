@@ -11,7 +11,6 @@ import {
   ShieldCheck,
   TrendingUp,
   Lock,
-  HandCoins,
   Users,
   Clock,
   Award,
