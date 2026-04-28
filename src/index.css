@@ -313,7 +313,7 @@
   .stat-tile:hover .stat-value { animation: count-glow 1.4s ease-in-out infinite; }
 
   .trust-card {
-    @apply relative overflow-hidden rounded-2xl border border-foreground/8 bg-white/70 p-4 backdrop-blur-sm;
+    @apply relative overflow-hidden rounded-2xl border border-foreground/10 bg-white/70 p-4 backdrop-blur-sm;
     transition: transform .35s cubic-bezier(.22,1,.36,1),
                 box-shadow .35s ease,
                 border-color .25s ease,
