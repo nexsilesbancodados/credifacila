@@ -184,19 +184,22 @@ const InvistaConosco = () => {
 
   return (
     <div className="min-h-screen bg-[hsl(220_16%_98%)]">
-      {/* Top bar */}
+      {/* Top bar (light variant for light hero) */}
       <header className="absolute top-0 z-50 w-full bg-transparent">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 md:px-8">
           <Link to="/" className="flex items-center gap-3" aria-label="Credifácil">
             <img
               src={logo}
               alt="Credifácil"
-              className="h-9 w-auto brightness-0 invert md:h-10"
+              className="h-9 w-auto md:h-10"
               width={1795}
               height={605}
             />
           </Link>
-          <Link to="/" className="btn-ghost-light">
+          <Link
+            to="/"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl border border-brand-gold/40 bg-white/80 px-5 py-3 text-sm font-semibold text-[hsl(220_16%_15%)] backdrop-blur-md transition-all hover:border-brand-gold hover:bg-white hover:text-brand-gold"
+          >
             <ArrowLeft className="h-3.5 w-3.5" />
             Voltar ao início
           </Link>
@@ -204,109 +207,115 @@ const InvistaConosco = () => {
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[hsl(220_16%_6%)] pb-20 pt-32 text-white md:pt-40">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-[hsl(40_60%_97%)] to-[hsl(220_16%_98%)] pb-16 pt-28 md:pt-32 lg:pt-36">
+        {/* Soft golden ambient glow */}
         <div
-          className="pointer-events-none absolute -right-32 top-10 h-[600px] w-[600px] opacity-50"
+          className="pointer-events-none absolute -right-32 -top-20 h-[600px] w-[600px] opacity-50"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.4), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(35 90% 65% / 0.25), transparent 65%)",
           }}
           aria-hidden
         />
-        <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden />
+        <div
+          className="pointer-events-none absolute -left-40 top-40 h-[480px] w-[480px] opacity-40"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, hsl(40 90% 70% / 0.22), transparent 65%)",
+          }}
+          aria-hidden
+        />
 
-        <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-10 px-5 md:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div data-anim="fade-right">
-            <span className="pill-eyebrow-dark">
-              <Sparkles className="h-3.5 w-3.5" />
+        <div className="relative mx-auto max-w-7xl px-5 md:px-8">
+          {/* Eyebrow */}
+          <div className="text-center" data-anim="fade-up">
+            <span className="pill-eyebrow">
+              <Sparkles className="h-3 w-3" />
               Invista Conosco
             </span>
-            <h1 className="mt-6 font-display text-[42px] font-extrabold leading-[1.02] tracking-tight md:text-[58px] lg:text-[64px]">
-              Faça seu dinheiro{" "}
-              <span className="text-gold-gradient">render com segurança</span>
-            </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 md:text-lg">
-              Coloque seu capital para trabalhar ao lado de quem entende de crédito há mais de 12 anos.
-              Rentabilidade competitiva, contratos transparentes e atendimento humano de verdade.
-            </p>
-
-            <ul className="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-[13px] text-white/80">
-              {[
-                "Lastreado em recebíveis reais",
-                "Autorizada pelo Banco Central",
-                "Especialista dedicado",
-              ].map((b) => (
-                <li key={b} className="inline-flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-brand-gold" strokeWidth={2.4} />
-                  <span className="font-medium">{b}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a
-                href={whatsappLink("Olá! Quero saber como investir com a Credifácil.")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-gold group"
-              >
-                <MessageCircle className="h-5 w-5" />
-                Falar com especialista
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </a>
-              <a href="#interesse" className="btn-ghost-light">
-                Quero ser contatado
-              </a>
-            </div>
           </div>
 
-          {/* Highlight card */}
-          <div className="relative" data-anim="fade-left">
-            <div className="relative overflow-hidden rounded-3xl border border-brand-gold/30 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-7 backdrop-blur-md shadow-[0_30px_80px_-30px_hsl(30_30%_4%/0.6)]">
-              <div
-                className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full opacity-50"
-                style={{
-                  background:
-                    "radial-gradient(circle, hsl(35 90% 60% / 0.45), transparent 70%)",
-                }}
-                aria-hidden
+          {/* Hero image (contains its own headline + copy) */}
+          <div
+            className="relative mt-6 overflow-hidden rounded-[28px] border border-brand-gold/15 bg-white shadow-[0_40px_80px_-40px_hsl(30_30%_20%/0.35)]"
+            data-anim="fade-up"
+          >
+            <h1 className="sr-only">
+              Faça seu dinheiro render com segurança — Credifácil
+            </h1>
+            <picture>
+              <source media="(max-width: 640px)" srcSet={heroInvistaSm} />
+              <source media="(max-width: 1100px)" srcSet={heroInvistaMd} />
+              <img
+                src={heroInvista}
+                alt="Faça seu dinheiro render com segurança. Coloque seu capital para trabalhar ao lado de quem entende de crédito há mais de 12 anos. Segurança e solidez, rentabilidade competitiva, atendimento humano."
+                className="block h-auto w-full"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                width={1600}
+                height={1067}
               />
-              <div className="relative">
-                <span
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-2xl text-brand-gold-foreground shadow-[var(--shadow-gold)]"
-                  style={{ background: "var(--gradient-gold)" }}
-                >
-                  <HandCoins className="h-6 w-6" strokeWidth={2.2} />
-                </span>
-                <h2 className="mt-5 font-display text-2xl font-bold leading-tight md:text-[26px]">
-                  Um modelo pensado para quem busca{" "}
-                  <span className="text-brand-gold">tranquilidade e retorno</span>.
-                </h2>
-                <p className="mt-4 text-sm leading-relaxed text-white/75">
-                  Trabalhamos com aportes personalizados, taxas combinadas em contrato e total
-                  transparência sobre onde o seu capital está sendo aplicado.
-                </p>
+            </picture>
 
-                <div className="mt-6 grid grid-cols-3 gap-3 border-t border-white/10 pt-5">
-                  <div>
-                    <div className="font-display text-xl font-bold text-brand-gold">12+</div>
-                    <div className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-white/60">
-                      anos de mercado
-                    </div>
-                  </div>
-                  <div>
-                    <div className="font-display text-xl font-bold text-brand-gold">R$ 1bi+</div>
-                    <div className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-white/60">
-                      operados
-                    </div>
-                  </div>
-                  <div>
-                    <div className="font-display text-xl font-bold text-brand-gold">100%</div>
-                    <div className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-white/60">
-                      transparente
-                    </div>
-                  </div>
-                </div>
+            {/* Subtle gold curve accent at bottom */}
+            <svg
+              className="pointer-events-none absolute -bottom-px left-0 h-3 w-full md:h-4"
+              viewBox="0 0 1440 16"
+              preserveAspectRatio="none"
+              aria-hidden
+            >
+              <path
+                d="M0,16 L1440,16 L1440,9 Q720,-4 0,9 Z"
+                fill="hsl(38 90% 55% / 0.5)"
+              />
+            </svg>
+          </div>
+
+          {/* CTAs */}
+          <div
+            className="mt-8 flex flex-wrap items-center justify-center gap-3"
+            data-anim="fade-up"
+          >
+            <a
+              href={whatsappLink("Olá! Quero saber como investir com a Credifácil.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold group"
+            >
+              <MessageCircle className="h-5 w-5" />
+              Falar com especialista
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </a>
+            <a
+              href="#interesse"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border border-brand-gold/40 bg-white/85 px-5 py-3.5 text-sm font-semibold text-[hsl(220_16%_15%)] backdrop-blur-md transition-all hover:border-brand-gold hover:bg-white hover:text-brand-gold"
+            >
+              Quero ser contatado
+            </a>
+          </div>
+
+          {/* Quick proof strip */}
+          <div
+            className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-3 rounded-2xl border border-brand-gold/20 bg-white/80 px-5 py-4 backdrop-blur-sm md:gap-6 md:px-7"
+            data-anim="fade-up"
+          >
+            <div className="text-center">
+              <div className="font-display text-xl font-bold text-brand-gold md:text-2xl">12+</div>
+              <div className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-[hsl(220_15%_45%)]">
+                anos de mercado
+              </div>
+            </div>
+            <div className="border-x border-brand-gold/15 text-center">
+              <div className="font-display text-xl font-bold text-brand-gold md:text-2xl">R$ 1bi+</div>
+              <div className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-[hsl(220_15%_45%)]">
+                operados
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="font-display text-xl font-bold text-brand-gold md:text-2xl">100%</div>
+              <div className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-[hsl(220_15%_45%)]">
+                transparente
               </div>
             </div>
           </div>
