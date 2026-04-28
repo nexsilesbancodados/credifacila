@@ -27,7 +27,7 @@ const navItems: {
 ];
 
 const TopNav = () => (
-  <div className="relative z-20 w-full bg-[hsl(30_18%_6%)]">
+  <div className="relative z-20 w-full bg-[hsl(220_16%_6%)]">
     {/* Top + bottom gold curves */}
     <svg
       className="pointer-events-none absolute -top-px left-0 h-2 w-full"
@@ -77,7 +77,7 @@ const TopNav = () => (
                   <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
                 </Link>
                 <div className="invisible absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2 translate-y-1 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                  <div className="rounded-2xl border border-brand-gold/30 bg-[hsl(30_22%_8%)]/95 p-2 shadow-2xl backdrop-blur-xl">
+                  <div className="rounded-2xl border border-brand-gold/30 bg-[hsl(220_16%_8%)]/95 p-2 shadow-2xl backdrop-blur-xl">
                     <Link
                       to={item.href}
                       className="block rounded-xl px-4 py-2.5 text-[13px] font-semibold uppercase tracking-wider text-brand-gold transition-colors hover:bg-brand-gold/10"

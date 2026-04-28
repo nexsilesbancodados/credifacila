@@ -34,7 +34,7 @@ const LegalPage = ({
   useSeo({ title: metaTitle, description: metaDescription });
 
   return (
-    <div className="min-h-screen bg-[hsl(40_30%_98%)]">
+    <div className="min-h-screen bg-[hsl(220_16%_98%)]">
       {/* Top bar */}
       <header className="absolute top-0 z-50 w-full bg-transparent">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-6 md:px-8">
@@ -55,7 +55,7 @@ const LegalPage = ({
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[hsl(30_18%_6%)] pb-16 pt-28 text-white md:pt-36">
+      <section className="relative overflow-hidden bg-[hsl(220_16%_6%)] pb-16 pt-28 text-white md:pt-36">
         <div
           className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] opacity-50"
           style={{

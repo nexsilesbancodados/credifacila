@@ -46,11 +46,11 @@ const AboutSection = () => {
               <Sparkles className="h-3 w-3" />
               Sobre a Credifácil
             </span>
-            <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight text-[hsl(30_20%_15%)] md:text-4xl lg:text-[46px]">
+            <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight text-[hsl(220_16%_15%)] md:text-4xl lg:text-[46px]">
               Crédito que respeita{" "}
               <span className="text-gold-gradient">a sua história</span>
             </h2>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-[hsl(30_15%_30%)]">
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-[hsl(220_15%_30%)]">
               Há mais de uma década, a Credifácil acredita que crédito bom é aquele que cabe na sua vida — com taxa justa, processo simples e atendimento humano de verdade. Nosso compromisso é abrir portas, não criar dívidas.
             </p>
 
@@ -68,8 +68,8 @@ const AboutSection = () => {
                       <ShieldCheck className="h-3.5 w-3.5" strokeWidth={2.4} />
                     </span>
                     <div>
-                      <h3 className="font-display text-sm font-bold text-[hsl(30_20%_15%)]">{p.title}</h3>
-                      <p className="mt-1 text-sm leading-relaxed text-[hsl(30_15%_35%)]">{p.desc}</p>
+                      <h3 className="font-display text-sm font-bold text-[hsl(220_16%_15%)]">{p.title}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-[hsl(220_15%_35%)]">{p.desc}</p>
                     </div>
                   </div>
                 </li>
@@ -122,7 +122,7 @@ const AboutSection = () => {
                       />
                     )}
                   </div>
-                  <div className="relative mt-1 text-xs font-medium leading-tight text-[hsl(30_15%_35%)]">
+                  <div className="relative mt-1 text-xs font-medium leading-tight text-[hsl(220_15%_35%)]">
                     {s.label}
                   </div>
                 </div>

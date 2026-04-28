@@ -212,7 +212,7 @@ const Consignado = () => {
   });
 
   return (
-    <div className="min-h-screen bg-[hsl(40_30%_98%)]">
+    <div className="min-h-screen bg-[hsl(220_16%_98%)]">
       {/* Top bar */}
       <header className="absolute top-0 z-50 w-full bg-transparent">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 md:px-8">
@@ -236,7 +236,7 @@ const Consignado = () => {
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[hsl(30_18%_6%)] pb-16 pt-32 text-white md:pt-40">
+      <section className="relative overflow-hidden bg-[hsl(220_16%_6%)] pb-16 pt-32 text-white md:pt-40">
         <div
           className="pointer-events-none absolute -right-32 top-10 h-[600px] w-[600px] opacity-50"
           style={{
@@ -254,7 +254,7 @@ const Consignado = () => {
             </div>
             <h1
               className="mt-6 font-display text-[42px] font-extrabold leading-[1.02] tracking-tight text-white md:text-[58px] lg:text-[64px]"
-              style={{ textShadow: "0 2px 24px hsl(30 30% 4% / 0.45)" }}
+              style={{ textShadow: "0 2px 24px hsl(220 16% 4% / 0.45)" }}
             >
               Crédito consignado
               <br />
@@ -378,7 +378,7 @@ const Consignado = () => {
             <div
               className="absolute inset-x-0 bottom-0 p-6"
               style={{
-                background: "linear-gradient(180deg, transparent, hsl(30 22% 5% / 0.95))",
+                background: "linear-gradient(180deg, transparent, hsl(220 16% 5% / 0.95))",
               }}
             >
               <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-md">
@@ -427,7 +427,7 @@ const Consignado = () => {
       </section>
 
       {/* Audiences */}
-      <section className="bg-[hsl(30_18%_6%)] py-20 md:py-28">
+      <section className="bg-[hsl(220_16%_6%)] py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">
@@ -545,7 +545,7 @@ const Consignado = () => {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(95deg, hsl(30 22% 5% / 0.92) 0%, hsl(30 22% 5% / 0.6) 50%, transparent 100%)",
+              "linear-gradient(95deg, hsl(220 16% 5% / 0.92) 0%, hsl(220 16% 5% / 0.6) 50%, transparent 100%)",
           }}
         />
         <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-5 md:px-8">
@@ -650,7 +650,7 @@ const Consignado = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="bg-gradient-to-b from-transparent to-[hsl(40_50%_94%)] py-20 md:py-28">
+      <section className="bg-gradient-to-b from-transparent to-[hsl(220_14%_94%)] py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">
@@ -773,7 +773,7 @@ const Consignado = () => {
                 href={whatsappLink("Olá! Quero contratar o crédito consignado.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-2xl bg-[hsl(30_22%_5%)] px-7 py-4 text-base font-bold text-white transition-all hover:scale-[1.03]"
+                className="inline-flex items-center gap-2 rounded-2xl bg-[hsl(220_16%_5%)] px-7 py-4 text-base font-bold text-white transition-all hover:scale-[1.03]"
               >
                 <Wallet className="h-5 w-5" />
                 Quero meu consignado

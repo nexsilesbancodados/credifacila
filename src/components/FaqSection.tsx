@@ -43,7 +43,7 @@ const FaqSection = () => {
             <HelpCircle className="h-3 w-3" />
             Tire suas dúvidas
           </span>
-          <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-[hsl(30_20%_15%)] md:text-4xl lg:text-[46px]">
+          <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-[hsl(220_16%_15%)] md:text-4xl lg:text-[46px]">
             Perguntas{" "}
             <span
               className="bg-clip-text text-transparent"
@@ -52,7 +52,7 @@ const FaqSection = () => {
               frequentes
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[hsl(30_15%_30%)] md:text-base">
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[hsl(220_15%_30%)] md:text-base">
             Reunimos as principais dúvidas para você decidir com clareza e tranquilidade.
           </p>
         </div>
@@ -75,7 +75,7 @@ const FaqSection = () => {
                   aria-expanded={isOpen}
                   className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left md:px-6 md:py-5"
                 >
-                  <span className="text-sm font-bold text-[hsl(30_20%_15%)] md:text-base">
+                  <span className="text-sm font-bold text-[hsl(220_16%_15%)] md:text-base">
                     {item.q}
                   </span>
                   <span
@@ -93,7 +93,7 @@ const FaqSection = () => {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-5 pb-5 pr-14 text-sm leading-relaxed text-[hsl(30_15%_35%)] md:px-6 md:pb-6 md:text-[15px]">
+                    <p className="px-5 pb-5 pr-14 text-sm leading-relaxed text-[hsl(220_15%_35%)] md:px-6 md:pb-6 md:text-[15px]">
                       {item.a}
                     </p>
                   </div>
@@ -107,10 +107,10 @@ const FaqSection = () => {
           className="mt-10 flex flex-col items-center gap-4 rounded-3xl border border-brand-gold/30 bg-white/70 p-6 text-center backdrop-blur-sm md:flex-row md:justify-between md:text-left"
         >
           <div>
-            <h3 className="text-base font-bold text-[hsl(30_20%_15%)] md:text-lg">
+            <h3 className="text-base font-bold text-[hsl(220_16%_15%)] md:text-lg">
               Ainda ficou com alguma dúvida?
             </h3>
-            <p className="mt-1 text-sm text-[hsl(30_15%_35%)]">
+            <p className="mt-1 text-sm text-[hsl(220_15%_35%)]">
               Fale com um especialista agora mesmo, sem compromisso.
             </p>
           </div>

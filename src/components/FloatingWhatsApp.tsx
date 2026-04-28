@@ -44,7 +44,7 @@ const FloatingWhatsApp = () => {
               <X className="h-4 w-4" />
             </button>
           </div>
-          <div className="bg-[hsl(40_30%_97%)] p-4">
+          <div className="bg-[hsl(220_16%_97%)] p-4">
             <div className="rounded-2xl rounded-tl-sm bg-white p-3 text-[13px] leading-relaxed text-foreground/85 shadow-sm">
               👋 Olá! Posso te ajudar a contratar o seu crédito agora mesmo. Em quanto tempo precisa do dinheiro?
             </div>

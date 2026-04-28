@@ -65,18 +65,18 @@ const AdvantagesSection = () => {
             <Sparkles className="h-3 w-3" />
             Por que a Credifácil
           </span>
-          <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight text-[hsl(30_20%_15%)] md:text-4xl lg:text-[46px]">
+          <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight text-[hsl(220_16%_15%)] md:text-4xl lg:text-[46px]">
             Tudo que você precisa,{" "}
             <span className="text-gold-gradient">em um só lugar</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[hsl(30_15%_30%)] md:text-base">
-            Mais de <span className="font-bold text-[hsl(30_20%_15%)]">50 mil pessoas</span> já realizaram seus planos com a confiança e a agilidade da Credifácil.
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[hsl(220_15%_30%)] md:text-base">
+            Mais de <span className="font-bold text-[hsl(220_16%_15%)]">50 mil pessoas</span> já realizaram seus planos com a confiança e a agilidade da Credifácil.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3" data-anim-stagger>
           {/* CARD 1 — Vantagens */}
-          <article className="group relative overflow-hidden rounded-3xl border border-white/8 bg-[hsl(30_18%_8%)] p-7 text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/40">
+          <article className="group relative overflow-hidden rounded-3xl border border-white/8 bg-[hsl(220_16%_8%)] p-7 text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/40">
             <img
               src={cardAdvantages}
               alt=""
@@ -89,7 +89,7 @@ const AdvantagesSection = () => {
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(180deg, hsl(30 18% 8% / 0.85) 0%, hsl(30 18% 8% / 0.95) 60%, hsl(30 18% 8% / 0.98) 100%)",
+                  "linear-gradient(180deg, hsl(220 16% 8% / 0.85) 0%, hsl(220 16% 8% / 0.95) 60%, hsl(220 16% 8% / 0.98) 100%)",
               }}
               aria-hidden
             />
@@ -154,7 +154,7 @@ const AdvantagesSection = () => {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(90deg, hsl(30 18% 7% / 0.96) 0%, hsl(30 18% 7% / 0.85) 38%, hsl(30 18% 7% / 0.3) 70%, transparent 100%)",
+                  "linear-gradient(90deg, hsl(220 16% 7% / 0.96) 0%, hsl(220 16% 7% / 0.85) 38%, hsl(220 16% 7% / 0.3) 70%, transparent 100%)",
               }}
               aria-hidden
             />
@@ -198,7 +198,7 @@ const AdvantagesSection = () => {
           </article>
 
           {/* CARD 3 — Histórias reais */}
-          <article className="relative overflow-hidden rounded-3xl border border-white/8 bg-[hsl(30_18%_8%)] p-7 text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/40">
+          <article className="relative overflow-hidden rounded-3xl border border-white/8 bg-[hsl(220_16%_8%)] p-7 text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/40">
             <img
               src={cardStories}
               alt=""
@@ -211,7 +211,7 @@ const AdvantagesSection = () => {
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(180deg, hsl(30 18% 8% / 0.88) 0%, hsl(30 18% 8% / 0.95) 60%, hsl(30 18% 8% / 0.98) 100%)",
+                  "linear-gradient(180deg, hsl(220 16% 8% / 0.88) 0%, hsl(220 16% 8% / 0.95) 60%, hsl(220 16% 8% / 0.98) 100%)",
               }}
               aria-hidden
             />
@@ -290,14 +290,14 @@ const AdvantagesSection = () => {
             aria-hidden
           />
           <div className="flex items-center gap-4">
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-[hsl(30_15%_15%)] shadow-md">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-[hsl(220_15%_15%)] shadow-md">
               <MessageCircle className="h-5 w-5" />
             </span>
             <div className="leading-tight">
-              <div className="font-display text-base font-bold text-[hsl(30_15%_15%)] md:text-lg">
+              <div className="font-display text-base font-bold text-[hsl(220_15%_15%)] md:text-lg">
                 Ficou com alguma dúvida?
               </div>
-              <div className="text-xs text-[hsl(30_15%_15%)]/75 md:text-sm">
+              <div className="text-xs text-[hsl(220_15%_15%)]/75 md:text-sm">
                 Nossa equipe está pronta para te ajudar!
               </div>
             </div>
@@ -307,12 +307,12 @@ const AdvantagesSection = () => {
             href={telLink(site.contact.phone)}
             className="flex items-center gap-3 transition-opacity hover:opacity-80"
           >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/70 text-[hsl(30_15%_15%)]">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/70 text-[hsl(220_15%_15%)]">
               <Phone className="h-5 w-5" />
             </span>
             <div className="leading-tight">
-              <div className="text-[11px] font-medium text-[hsl(30_15%_15%)]/70">Ligue para nós</div>
-              <div className="text-sm font-bold text-[hsl(30_15%_15%)]">{site.contact.phoneDisplay}</div>
+              <div className="text-[11px] font-medium text-[hsl(220_15%_15%)]/70">Ligue para nós</div>
+              <div className="text-sm font-bold text-[hsl(220_15%_15%)]">{site.contact.phoneDisplay}</div>
             </div>
           </a>
 

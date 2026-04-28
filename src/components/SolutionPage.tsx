@@ -54,7 +54,7 @@ const SolutionPage = ({
   useSeo({ title: metaTitle, description: metaDescription });
 
   return (
-    <div className="min-h-screen bg-[hsl(40_30%_98%)]">
+    <div className="min-h-screen bg-[hsl(220_16%_98%)]">
       {/* Top bar */}
       <header className="absolute top-0 z-50 w-full bg-transparent">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 md:px-8">
@@ -75,7 +75,7 @@ const SolutionPage = ({
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[hsl(30_18%_6%)] pb-16 pt-32 text-white md:pt-40">
+      <section className="relative overflow-hidden bg-[hsl(220_16%_6%)] pb-16 pt-32 text-white md:pt-40">
         <div
           className="pointer-events-none absolute -right-32 top-10 h-[600px] w-[600px] opacity-50"
           style={{
@@ -127,11 +127,11 @@ const SolutionPage = ({
       {/* Intro */}
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center md:px-8">
-          <h2 className="font-display text-3xl font-bold tracking-tight text-[hsl(30_22%_12%)] md:text-4xl">
+          <h2 className="font-display text-3xl font-bold tracking-tight text-[hsl(220_16%_12%)] md:text-4xl">
             {intro.heading}
           </h2>
           <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-brand-gold" />
-          <div className="mt-8 space-y-5 text-left text-[15px] leading-relaxed text-[hsl(30_15%_30%)] md:text-[17px]">
+          <div className="mt-8 space-y-5 text-left text-[15px] leading-relaxed text-[hsl(220_15%_30%)] md:text-[17px]">
             {intro.paragraphs.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
@@ -140,13 +140,13 @@ const SolutionPage = ({
       </section>
 
       {/* Benefits */}
-      <section className="bg-[hsl(40_30%_96%)] py-20 md:py-24">
+      <section className="bg-[hsl(220_16%_96%)] py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
               Benefícios
             </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(30_22%_12%)] md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(220_16%_12%)] md:text-4xl">
               Por que escolher essa solução
             </h2>
           </div>
@@ -156,7 +156,7 @@ const SolutionPage = ({
               return (
                 <div
                   key={b.title}
-                  className="group rounded-2xl border border-[hsl(30_15%_88%)] bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-gold/50 hover:shadow-[var(--shadow-gold)]"
+                  className="group rounded-2xl border border-[hsl(220_15%_88%)] bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-gold/50 hover:shadow-[var(--shadow-gold)]"
                 >
                   <div
                     className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl text-brand-gold-foreground shadow-[var(--shadow-gold-sm)] transition-transform group-hover:rotate-6 group-hover:scale-110"
@@ -164,8 +164,8 @@ const SolutionPage = ({
                   >
                     <Icon className="h-6 w-6" strokeWidth={2.2} />
                   </div>
-                  <h3 className="mb-2 font-display text-lg font-bold text-[hsl(30_22%_12%)]">{b.title}</h3>
-                  <p className="text-[14px] leading-relaxed text-[hsl(30_15%_38%)]">{b.desc}</p>
+                  <h3 className="mb-2 font-display text-lg font-bold text-[hsl(220_16%_12%)]">{b.title}</h3>
+                  <p className="text-[14px] leading-relaxed text-[hsl(220_15%_38%)]">{b.desc}</p>
                 </div>
               );
             })}
@@ -180,7 +180,7 @@ const SolutionPage = ({
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
               Passo a passo
             </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(30_22%_12%)] md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(220_16%_12%)] md:text-4xl">
               Como funciona
             </h2>
           </div>
@@ -202,8 +202,8 @@ const SolutionPage = ({
                   >
                     {s.step}
                   </div>
-                  <h3 className="mb-2 font-display text-lg font-bold text-[hsl(30_22%_12%)]">{s.title}</h3>
-                  <p className="mx-auto max-w-[260px] text-[14px] leading-relaxed text-[hsl(30_15%_38%)]">
+                  <h3 className="mb-2 font-display text-lg font-bold text-[hsl(220_16%_12%)]">{s.title}</h3>
+                  <p className="mx-auto max-w-[260px] text-[14px] leading-relaxed text-[hsl(220_15%_38%)]">
                     {s.desc}
                   </p>
                 </div>
@@ -214,7 +214,7 @@ const SolutionPage = ({
       </section>
 
       {/* For who */}
-      <section className="relative overflow-hidden bg-[hsl(30_18%_6%)] py-20 md:py-24">
+      <section className="relative overflow-hidden bg-[hsl(220_16%_6%)] py-20 md:py-24">
         <div
           className="pointer-events-none absolute -left-32 -top-32 h-[500px] w-[500px] opacity-30"
           style={{
@@ -257,7 +257,7 @@ const SolutionPage = ({
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
               Dúvidas frequentes
             </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(30_22%_12%)] md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(220_16%_12%)] md:text-4xl">
               Perguntas comuns
             </h2>
           </div>
@@ -265,15 +265,15 @@ const SolutionPage = ({
             {faq.map((f) => (
               <details
                 key={f.q}
-                className="group rounded-2xl border border-[hsl(30_15%_88%)] bg-[hsl(40_30%_98%)] p-6 transition-all open:border-brand-gold/40 open:shadow-md"
+                className="group rounded-2xl border border-[hsl(220_15%_88%)] bg-[hsl(220_16%_98%)] p-6 transition-all open:border-brand-gold/40 open:shadow-md"
               >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 font-display text-[15px] font-semibold text-[hsl(30_22%_12%)] md:text-base">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 font-display text-[15px] font-semibold text-[hsl(220_16%_12%)] md:text-base">
                   {f.q}
                   <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-brand-gold/40 text-brand-gold transition-transform group-open:rotate-45">
                     +
                   </span>
                 </summary>
-                <p className="mt-4 text-[14px] leading-relaxed text-[hsl(30_15%_38%)]">{f.a}</p>
+                <p className="mt-4 text-[14px] leading-relaxed text-[hsl(220_15%_38%)]">{f.a}</p>
               </details>
             ))}
           </div>
@@ -283,7 +283,7 @@ const SolutionPage = ({
       {/* CTA / Contact */}
       <section
         id="contato"
-        className="relative overflow-hidden bg-[hsl(30_22%_8%)] py-20 md:py-24"
+        className="relative overflow-hidden bg-[hsl(220_16%_8%)] py-20 md:py-24"
       >
         <div
           className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] opacity-30"
