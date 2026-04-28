@@ -1,11 +1,8 @@
 import {
   ShieldCheck,
-  Clock,
-  Headphones,
   ChevronRight,
   Star,
   Quote,
-  Award,
   HandCoins,
   Lock,
   MessageCircle,
