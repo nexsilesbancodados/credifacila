@@ -28,7 +28,7 @@ import {
 } from "lucide-react";
 import { whatsappLink } from "@/config/site";
 import logo from "@/assets/credifacil-logo.webp";
-import heroIllo from "@/assets/illustrations/hero-securitizadora.svg";
+import heroIllo from "@/assets/hero-securitizadora-photo.jpg";
 import bannerImg from "@/assets/securitizadora-banner.webp";
 import meetingImg from "@/assets/securitizadora-meeting.webp";
 
