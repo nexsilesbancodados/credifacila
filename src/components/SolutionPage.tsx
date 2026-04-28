@@ -1,9 +1,9 @@
-import { useEffect, type ComponentType } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight, CheckCircle2, Sparkles, Phone, Mail, MessageCircle } from "lucide-react";
+import { useEffect } from "react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Sparkles, Phone, Mail, MessageCircle, type LucideIcon } from "lucide-react";
 import logo from "@/assets/credifacil-logo.png";
 
-type IconType = ComponentType<{ className?: string; strokeWidth?: number }>;
+type IconType = LucideIcon;
 
 export interface SolutionPageProps {
   eyebrow: string;
