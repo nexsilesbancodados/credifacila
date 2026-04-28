@@ -88,7 +88,7 @@ const SolutionPage = ({
       </header>
 
       {/* Hero */}
-      <section className="relative min-h-[640px] overflow-hidden bg-[hsl(220_16%_6%)] pb-20 pt-32 text-white md:min-h-[720px] md:pt-40">
+      <section className="relative min-h-[640px] overflow-hidden bg-[hsl(215_48%_16%)] pb-20 pt-32 text-white md:min-h-[720px] md:pt-40">
         {/* Background image full-bleed (with subtle parallax) */}
         <div data-parallax="0.16" className="pointer-events-none absolute inset-0 -top-12 -bottom-12">
           <img
@@ -107,7 +107,7 @@ const SolutionPage = ({
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, hsl(220 16% 4% / 0.95) 0%, hsl(220 16% 4% / 0.85) 35%, hsl(220 16% 4% / 0.55) 60%, hsl(220 16% 4% / 0.25) 100%)",
+              "linear-gradient(90deg, hsl(215 52% 12% / 0.95) 0%, hsl(215 52% 12% / 0.85) 35%, hsl(215 52% 12% / 0.55) 60%, hsl(215 52% 12% / 0.25) 100%)",
           }}
           aria-hidden
         />
@@ -116,7 +116,7 @@ const SolutionPage = ({
           className="pointer-events-none absolute inset-0 lg:hidden"
           style={{
             background:
-              "linear-gradient(180deg, hsl(220 16% 4% / 0.85) 0%, hsl(220 16% 4% / 0.55) 50%, hsl(220 16% 4% / 0.85) 100%)",
+              "linear-gradient(180deg, hsl(215 52% 12% / 0.85) 0%, hsl(215 52% 12% / 0.55) 50%, hsl(215 52% 12% / 0.85) 100%)",
           }}
           aria-hidden
         />
@@ -138,7 +138,7 @@ const SolutionPage = ({
             </span>
             <h1
               className="mt-6 font-display text-[40px] font-extrabold leading-[1.02] tracking-tight md:text-[56px] lg:text-[60px]"
-              style={{ textShadow: "0 2px 24px hsl(220 16% 4% / 0.5)" }}
+              style={{ textShadow: "0 2px 24px hsl(215 52% 12% / 0.5)" }}
             >
               {title}{" "}
               <span className="text-gold-gradient">{titleGold}</span>
@@ -162,7 +162,7 @@ const SolutionPage = ({
       {/* Intro */}
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center md:px-8">
-          <h2 className="font-display text-3xl font-bold tracking-tight text-[hsl(220_16%_12%)] md:text-4xl">
+          <h2 className="font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-4xl">
             {intro.heading}
           </h2>
           <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-brand-gold" />
@@ -181,7 +181,7 @@ const SolutionPage = ({
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
               Benefícios
             </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(220_16%_12%)] md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-4xl">
               Por que escolher essa solução
             </h2>
           </div>
@@ -229,7 +229,7 @@ const SolutionPage = ({
                         <Icon className="h-6 w-6" strokeWidth={2.2} />
                       </div>
                     )}
-                    <h3 className="mb-2 font-display text-lg font-bold text-[hsl(220_16%_12%)]">{b.title}</h3>
+                    <h3 className="mb-2 font-display text-lg font-bold text-[hsl(215_42%_18%)]">{b.title}</h3>
                     <p className="text-[14px] leading-relaxed text-[hsl(220_15%_38%)]">{b.desc}</p>
                   </div>
                 </div>
@@ -274,7 +274,7 @@ const SolutionPage = ({
                 className="pointer-events-none absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(180deg, transparent 55%, hsl(220 16% 6% / 0.55) 100%)",
+                    "linear-gradient(180deg, transparent 55%, hsl(215 48% 16% / 0.55) 100%)",
                 }}
                 aria-hidden
               />
@@ -286,7 +286,7 @@ const SolutionPage = ({
                   {showcase.eyebrow}
                 </span>
               )}
-              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(220_16%_12%)] md:text-[40px] md:leading-[1.1]">
+              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-[40px] md:leading-[1.1]">
                 {showcase.heading}
               </h2>
               <div className="mt-4 h-1 w-14 rounded-full bg-brand-gold" />
@@ -332,7 +332,7 @@ const SolutionPage = ({
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
               Passo a passo
             </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(220_16%_12%)] md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-4xl">
               Como funciona
             </h2>
           </div>
@@ -354,7 +354,7 @@ const SolutionPage = ({
                   >
                     {s.step}
                   </div>
-                  <h3 className="mb-2 font-display text-lg font-bold text-[hsl(220_16%_12%)]">{s.title}</h3>
+                  <h3 className="mb-2 font-display text-lg font-bold text-[hsl(215_42%_18%)]">{s.title}</h3>
                   <p className="mx-auto max-w-[260px] text-[14px] leading-relaxed text-[hsl(220_15%_38%)]">
                     {s.desc}
                   </p>
@@ -366,7 +366,7 @@ const SolutionPage = ({
       </section>
 
       {/* For who */}
-      <section className="relative overflow-hidden bg-[hsl(220_16%_6%)] py-20 md:py-24">
+      <section className="relative overflow-hidden bg-[hsl(215_48%_16%)] py-20 md:py-24">
         <div
           className="pointer-events-none absolute -left-32 -top-32 h-[500px] w-[500px] opacity-30"
           style={{
@@ -409,7 +409,7 @@ const SolutionPage = ({
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
               Dúvidas frequentes
             </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(220_16%_12%)] md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-4xl">
               Perguntas comuns
             </h2>
           </div>
@@ -419,7 +419,7 @@ const SolutionPage = ({
                 key={f.q}
                 className="group rounded-2xl border border-[hsl(220_15%_88%)] bg-[hsl(220_16%_98%)] p-6 transition-all open:border-brand-gold/40 open:shadow-md"
               >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 font-display text-[15px] font-semibold text-[hsl(220_16%_12%)] md:text-base">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 font-display text-[15px] font-semibold text-[hsl(215_42%_18%)] md:text-base">
                   {f.q}
                   <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-brand-gold/40 text-brand-gold transition-transform group-open:rotate-45">
                     +
@@ -435,7 +435,7 @@ const SolutionPage = ({
       {/* CTA / Contact */}
       <section
         id="contato"
-        className="relative overflow-hidden bg-[hsl(220_16%_8%)] py-20 md:py-24"
+        className="relative overflow-hidden bg-[hsl(215_42%_20%)] py-20 md:py-24"
       >
         <div
           className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] opacity-30"
