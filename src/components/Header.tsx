@@ -15,6 +15,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import heroImage from "@/assets/hero-credifacil.png";
+import logo from "@/assets/credifacil-logo.png";
 
 const navItems = [
   { label: "Início", href: "#inicio", active: true },
@@ -58,36 +59,14 @@ const Header = () => {
 
         <nav className="relative flex w-full items-center justify-between px-5 py-4 md:px-8 lg:px-10">
           {/* Logo */}
-          <a href="#inicio" className="flex items-center gap-3">
-            <svg viewBox="0 0 64 56" className="h-11 w-14" aria-hidden="true">
-              <defs>
-                <linearGradient id="logoGold" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="hsl(45 95% 65%)" />
-                  <stop offset="100%" stopColor="hsl(35 85% 45%)" />
-                </linearGradient>
-              </defs>
-              {/* Outer C swoosh */}
-              <path
-                d="M62 10 Q34 -4 6 14 Q2 18 6 22 Q30 8 56 18 Q60 14 62 10 Z"
-                fill="url(#logoGold)"
-              />
-              {/* Middle ribbon */}
-              <path
-                d="M58 26 Q32 16 8 30 Q6 34 10 36 Q32 24 54 32 Q58 30 58 26 Z"
-                fill="url(#logoGold)"
-              />
-              {/* Bottom small swoosh */}
-              <path
-                d="M50 44 Q30 38 12 48"
-                stroke="url(#logoGold)"
-                strokeWidth="3.5"
-                fill="none"
-                strokeLinecap="round"
-              />
-            </svg>
-            <span className="text-[28px] font-extrabold tracking-tight text-brand-gold">
-              Credifácil
-            </span>
+          <a href="#inicio" className="flex items-center" aria-label="Credifácil">
+            <img
+              src={logo}
+              alt="Credifácil"
+              className="h-12 w-auto md:h-14"
+              width={400}
+              height={120}
+            />
           </a>
 
           {/* Menu */}
