@@ -49,7 +49,7 @@ const AdvantagesSection = () => {
   return (
     <section
       id="vantagens"
-      className="relative w-full bg-[hsl(30_15%_8%)] px-5 py-16 md:px-8 md:py-20 lg:px-10"
+      className="relative w-full px-5 py-16 md:px-8 md:py-20 lg:px-10"
       aria-label="Vantagens, propósito e depoimentos"
     >
       <div className="mx-auto max-w-7xl">
