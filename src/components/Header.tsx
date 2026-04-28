@@ -34,52 +34,55 @@ const Header = () => {
     <header className="relative w-full overflow-hidden bg-background" aria-label="Cabeçalho Credifácil">
       {/* Top navigation - dark with gold arcs */}
       <div className="relative z-20 w-full bg-[hsl(30_15%_8%)]">
-        {/* Top gold arc */}
+        {/* Top gold curve - thin, dipping down at the sides */}
         <svg
-          className="pointer-events-none absolute -top-px left-0 h-3 w-full"
-          viewBox="0 0 1440 12"
+          className="pointer-events-none absolute -top-px left-0 h-2 w-full"
+          viewBox="0 0 1440 8"
           preserveAspectRatio="none"
           aria-hidden="true"
         >
-          <path
-            d="M0,12 Q720,-6 1440,12 L1440,12 L0,12 Z"
-            fill="hsl(35 85% 50%)"
-          />
+          <path d="M0,0 L1440,0 L1440,2 Q720,10 0,2 Z" fill="hsl(38 90% 50%)" />
         </svg>
-        {/* Bottom gold arc */}
+        {/* Bottom gold curve - thicker, dipping up at the sides */}
         <svg
-          className="pointer-events-none absolute -bottom-px left-0 h-3 w-full"
-          viewBox="0 0 1440 12"
+          className="pointer-events-none absolute -bottom-px left-0 h-4 w-full"
+          viewBox="0 0 1440 16"
           preserveAspectRatio="none"
           aria-hidden="true"
         >
-          <path
-            d="M0,0 Q720,18 1440,0 L1440,0 L0,0 Z"
-            fill="hsl(35 85% 50%)"
-          />
+          <path d="M0,16 L1440,16 L1440,8 Q720,-6 0,8 Z" fill="hsl(38 90% 50%)" />
         </svg>
 
-        <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-8 py-4">
           {/* Logo */}
-          <a href="#inicio" className="flex items-center gap-2">
-            <svg viewBox="0 0 60 48" className="h-10 w-12" aria-hidden="true">
+          <a href="#inicio" className="flex items-center gap-3">
+            <svg viewBox="0 0 64 56" className="h-11 w-14" aria-hidden="true">
+              <defs>
+                <linearGradient id="logoGold" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="hsl(45 95% 65%)" />
+                  <stop offset="100%" stopColor="hsl(35 85% 45%)" />
+                </linearGradient>
+              </defs>
+              {/* Outer C swoosh */}
               <path
-                d="M55 8 Q30 -2 5 12 Q20 18 38 16 Q48 15 55 8 Z"
-                fill="hsl(35 85% 50%)"
+                d="M62 10 Q34 -4 6 14 Q2 18 6 22 Q30 8 56 18 Q60 14 62 10 Z"
+                fill="url(#logoGold)"
               />
+              {/* Middle ribbon */}
               <path
-                d="M55 22 Q30 14 5 28 Q22 32 40 30 Q50 29 55 22 Z"
-                fill="hsl(40 90% 55%)"
+                d="M58 26 Q32 16 8 30 Q6 34 10 36 Q32 24 54 32 Q58 30 58 26 Z"
+                fill="url(#logoGold)"
               />
+              {/* Bottom small swoosh */}
               <path
-                d="M50 38 Q28 32 8 42"
-                stroke="hsl(35 85% 50%)"
-                strokeWidth="3"
+                d="M50 44 Q30 38 12 48"
+                stroke="url(#logoGold)"
+                strokeWidth="3.5"
                 fill="none"
                 strokeLinecap="round"
               />
             </svg>
-            <span className="text-3xl font-extrabold tracking-tight text-brand-gold">
+            <span className="text-[28px] font-extrabold tracking-tight text-brand-gold">
               Credifácil
             </span>
           </a>
@@ -106,10 +109,10 @@ const Header = () => {
           {/* WhatsApp button */}
           <a
             href="#whatsapp"
-            className="group flex items-center gap-2 rounded-full border border-brand-gold/70 px-5 py-2.5 text-sm font-medium text-[hsl(40_30%_95%)] transition-all hover:bg-brand-gold/10 hover:text-brand-gold"
+            className="group flex items-center gap-2.5 rounded-full border border-brand-gold/80 py-2 pl-2 pr-5 text-sm font-medium text-[hsl(40_30%_95%)] transition-all hover:bg-brand-gold/10 hover:text-brand-gold"
           >
-            <span className="flex h-6 w-6 items-center justify-center rounded-full border border-brand-gold/70">
-              <MessageCircle className="h-3.5 w-3.5 text-brand-gold" />
+            <span className="flex h-7 w-7 items-center justify-center rounded-full border border-brand-gold/80">
+              <MessageCircle className="h-4 w-4 text-brand-gold" />
             </span>
             Fale no WhatsApp
           </a>
