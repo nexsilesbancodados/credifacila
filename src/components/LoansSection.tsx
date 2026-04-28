@@ -1,11 +1,9 @@
-import { useState } from "react";
 import {
   Heart,
   ShieldCheck,
   Clock,
   Headphones,
   ChevronRight,
-  ChevronDown,
   Star,
   Quote,
   Wallet,
@@ -18,9 +16,9 @@ import {
   MessageCircle,
   Sparkles,
   TrendingUp,
-  CheckCircle2,
   ArrowRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import loansHero from "@/assets/loans-hero.jpg";
 import supportAgent from "@/assets/support-agent.jpg";
 import cardPersonal from "@/assets/card-personal.jpg";
@@ -71,18 +69,7 @@ const partnerItems = [
   { icon: Lock, title: "Compromisso real", desc: "Estamos do seu lado\nem cada etapa." },
 ];
 
-const formatBRL = (n: number) =>
-  n.toLocaleString("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: 2 });
-
 const LoansSection = () => {
-  const [amount, setAmount] = useState(15000);
-  const [installments, setInstallments] = useState(36);
-
-  // Simple illustrative calculation (1.49% a.m.)
-  const rate = 0.0149;
-  const factor = (rate * Math.pow(1 + rate, installments)) / (Math.pow(1 + rate, installments) - 1);
-  const monthly = amount * factor;
-
   return (
     <section
       id="emprestimos"
@@ -163,126 +150,50 @@ const LoansSection = () => {
             </div>
           </div>
 
-          {/* Simulator card */}
-          <div className="relative rounded-3xl border border-foreground/10 bg-white p-7 shadow-[var(--shadow-card)]">
-            {/* gold top accent */}
+          {/* Simulator CTA card (lightweight) */}
+          <div className="relative flex flex-col justify-between overflow-hidden rounded-3xl border border-brand-gold/25 bg-gradient-to-br from-[hsl(40_70%_96%)] to-[hsl(38_60%_88%)] p-7 shadow-[var(--shadow-card)]">
             <div
-              className="pointer-events-none absolute inset-x-6 top-0 h-px"
-              style={{ background: "linear-gradient(90deg, transparent, hsl(var(--brand-gold)), transparent)" }}
+              className="pointer-events-none absolute -right-12 -top-12 h-44 w-44 rounded-full opacity-40"
+              style={{ background: "radial-gradient(circle, hsl(var(--brand-gold) / 0.45), transparent 70%)" }}
               aria-hidden="true"
             />
-            <div
-              className="absolute -top-3 left-7 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold-foreground shadow-[var(--shadow-gold)]"
-              style={{ background: "var(--gradient-gold)" }}
-            >
-              <Sparkles className="h-3 w-3" />
-              Simulador grátis
-            </div>
-            <div className="flex items-start justify-between gap-3">
-              <div>
-                <h3 className="text-xl font-bold text-foreground">Simule seu empréstimo</h3>
-                <p className="mt-1 text-xs text-foreground/55">Em 30 segundos você tem sua resposta.</p>
-              </div>
-              <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-1 text-[10px] font-bold text-emerald-700">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                Online
+            <div className="relative">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold shadow-sm">
+                <Sparkles className="h-3 w-3" />
+                Simulador grátis
               </span>
+              <h3 className="mt-4 text-2xl font-bold leading-tight text-foreground">
+                Descubra sua parcela em <span className="text-brand-gold">30 segundos</span>.
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-foreground/70">
+                Simule até <strong>R$ 50.000</strong> em até <strong>60x</strong>, com taxas a partir de{" "}
+                <strong>1,49% a.m.</strong>
+              </p>
+
+              <ul className="mt-5 space-y-2 text-[13px] text-foreground/75">
+                {["Sem afetar seu score", "Aprovação em minutos", "100% online e seguro"].map((t) => (
+                  <li key={t} className="flex items-center gap-2">
+                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold/20 text-brand-gold">
+                      <ShieldCheck className="h-3 w-3" strokeWidth={2.6} />
+                    </span>
+                    {t}
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div className="mt-6">
-              <label className="text-[11px] font-semibold uppercase tracking-wider text-foreground/60">
-                Quanto você precisa?
-              </label>
-              <div className="mt-1 text-[32px] font-bold leading-none text-foreground">
-                {formatBRL(amount)}
-              </div>
-              <input
-                type="range"
-                min={1000}
-                max={50000}
-                step={500}
-                value={amount}
-                onChange={(e) => setAmount(Number(e.target.value))}
-                aria-label="Valor do empréstimo"
-                className="mt-3 h-1.5 w-full cursor-pointer appearance-none rounded-full bg-foreground/10 accent-brand-gold"
-                style={{
-                  background: `linear-gradient(to right, hsl(var(--brand-gold)) 0%, hsl(var(--brand-gold)) ${
-                    ((amount - 1000) / 49000) * 100
-                  }%, hsl(30 10% 90%) ${((amount - 1000) / 49000) * 100}%, hsl(30 10% 90%) 100%)`,
-                }}
-              />
-              <div className="mt-2 flex justify-between text-[10px] font-medium text-foreground/50">
-                <span>R$ 1.000</span>
-                <span>R$ 50.000</span>
-              </div>
-            </div>
-
-            <div className="mt-5">
-              <label className="text-[11px] font-semibold uppercase tracking-wider text-foreground/60">
-                Em quantas parcelas?
-              </label>
-              <div className="relative mt-2">
-                <select
-                  value={installments}
-                  onChange={(e) => setInstallments(Number(e.target.value))}
-                  className="w-full appearance-none rounded-xl border border-foreground/15 bg-[hsl(40_30%_98%)] px-4 py-3 pr-10 text-sm font-semibold text-foreground transition-colors focus:border-brand-gold focus:outline-none"
-                >
-                  {[12, 24, 36, 48, 60].map((n) => (
-                    <option key={n} value={n}>
-                      {n}x mensais
-                    </option>
-                  ))}
-                </select>
-                <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-foreground/50" />
-              </div>
-            </div>
-
-            <div className="relative mt-6 overflow-hidden rounded-2xl border border-brand-gold/25 bg-gradient-to-br from-[hsl(40_70%_94%)] to-[hsl(38_60%_88%)] p-4">
-              <div
-                className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full opacity-40"
-                style={{ background: "radial-gradient(circle, hsl(var(--brand-gold) / 0.4), transparent 70%)" }}
-                aria-hidden="true"
-              />
-              <div className="relative flex items-center justify-between">
-                <div>
-                  <div className="text-[10px] font-semibold uppercase tracking-wider text-foreground/60">
-                    Parcela estimada
-                  </div>
-                  <div className="mt-1 text-[26px] font-bold leading-none text-foreground">
-                    {formatBRL(monthly)}
-                  </div>
-                  <div className="mt-1.5 inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-700">
-                    <CheckCircle2 className="h-3 w-3" />
-                    Cabe no seu bolso
-                  </div>
-                </div>
-                <div className="h-12 w-px bg-foreground/10" />
-                <div className="text-right">
-                  <div className="text-[10px] font-semibold uppercase tracking-wider text-foreground/60">
-                    Taxa a partir de
-                  </div>
-                  <div className="mt-1 text-[26px] font-bold leading-none text-brand-gold">
-                    1,49<span className="text-xs">% a.m.</span>
-                  </div>
-                  <div className="mt-1.5 text-[10px] font-semibold text-foreground/55">
-                    CET sob consulta
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <button
-              type="button"
-              className="group mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl py-4 text-[15px] font-bold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.02] hover:brightness-110"
+            <Link
+              to="/simular"
+              className="group relative mt-7 inline-flex w-full items-center justify-center gap-2 rounded-2xl py-4 text-[15px] font-bold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.02] hover:brightness-110"
               style={{ background: "var(--gradient-gold)" }}
             >
-              Quero esse empréstimo
+              Simular meu empréstimo
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </button>
+            </Link>
 
-            <div className="mt-3 flex items-center justify-center gap-1.5 text-[11px] font-medium text-foreground/55">
+            <div className="relative mt-3 flex items-center justify-center gap-1.5 text-[11px] font-medium text-foreground/55">
               <Lock className="h-3 w-3" />
-              Simulação 100% gratuita · Não afeta seu score
+              Simulação 100% gratuita
             </div>
           </div>
 
@@ -393,13 +304,13 @@ const LoansSection = () => {
                 </div>
                 <h4 className="mt-5 text-[16px] font-bold text-foreground">{p.title}</h4>
                 <p className="mt-2 text-xs leading-relaxed text-foreground/65">{p.desc}</p>
-                <a
-                  href="#simular"
+                <Link
+                  to="/simular"
                   className="mt-5 inline-flex items-center gap-1 text-xs font-semibold text-brand-gold transition-all group-hover:gap-2"
                 >
                   Simular agora
                   <ChevronRight className="h-3.5 w-3.5" />
-                </a>
+                </Link>
                 </div>
               </article>
             ))}
