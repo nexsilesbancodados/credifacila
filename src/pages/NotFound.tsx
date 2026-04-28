@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { ArrowLeft, Home, Search, Calculator, MessageCircle } from "lucide-react";
+import { ArrowLeft, Home, Search, MessageCircle } from "lucide-react";
 import { useSeo } from "@/hooks/useSeo";
 import { whatsappLink } from "@/config/site";
 
@@ -54,17 +54,13 @@ const NotFound = () => {
           Essa página decidiu tirar férias.
         </p>
         <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-white/65 md:text-base">
-          Mas seu crédito não precisa esperar. Volte para a página inicial ou faça uma simulação agora.
+          Mas seu crédito não precisa esperar. Volte para a página inicial ou fale com a gente agora.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link to="/" className="btn-gold">
             <Home className="h-4 w-4" />
             Voltar ao início
-          </Link>
-          <Link to="/simular" className="btn-ghost-light">
-            <Calculator className="h-4 w-4" />
-            Simular agora
           </Link>
           <a
             href={whatsappLink("Olá! Não consegui encontrar uma página no site.")}

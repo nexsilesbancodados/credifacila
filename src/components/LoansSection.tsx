@@ -10,9 +10,7 @@ import {
   Lock,
   MessageCircle,
   Sparkles,
-  ArrowRight,
 } from "lucide-react";
-import { Link } from "react-router-dom";
 import { whatsappLink } from "@/config/site";
 import { Counter } from "@/components/ui/Counter";
 import loansHero from "@/assets/loans-hero.webp";
@@ -36,28 +34,28 @@ const products = [
     title: "Crédito Pessoal",
     desc: "Dinheiro livre na sua conta para realizar o que você quiser, sem precisar justificar.",
     tag: "Mais pedido",
-    href: "/simular",
+    href: whatsappLink("Olá! Quero contratar Crédito Pessoal."),
   },
   {
     illo: cardCollateralIllo,
     title: "Crédito com Garantia",
     desc: "Use um imóvel ou veículo como garantia e tenha as menores taxas do mercado.",
     tag: "Menor taxa",
-    href: "/simular",
+    href: whatsappLink("Olá! Quero contratar Crédito com Garantia."),
   },
   {
     illo: cardPortabilityIllo,
     title: "Portabilidade de Crédito",
     desc: "Traga seu contrato de outro banco para a Credifácil e reduza sua parcela hoje mesmo.",
     tag: null,
-    href: "/simular",
+    href: whatsappLink("Olá! Quero fazer Portabilidade de Crédito."),
   },
   {
     illo: cardBusinessIllo,
     title: "Para Empresas",
     desc: "Capital de giro e linhas de crédito sob medida para impulsionar o seu negócio.",
     tag: "PJ",
-    href: "/simular",
+    href: whatsappLink("Olá! Quero crédito para minha empresa."),
   },
 ];
 
@@ -72,12 +70,12 @@ const LoansSection = () => {
     <section
       id="solucoes"
       className="relative w-full px-5 py-16 md:px-8 md:py-20 lg:px-10"
-      aria-label="Empréstimos e simulador"
+      aria-label="Linhas de crédito Credifácil"
     >
       <div className="mx-auto max-w-7xl">
-        {/* HERO row: text + simulator + image */}
+        {/* HERO row: text + image */}
         <div
-          className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-[1.1fr_1fr_0.85fr]"
+          className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-[1.2fr_1fr]"
           data-anim-stagger
         >
           {/* Left text */}
@@ -88,7 +86,7 @@ const LoansSection = () => {
             </span>
 
             <h2 className="mt-5 font-display text-4xl font-bold leading-[1.02] tracking-tight text-foreground md:text-[52px]">
-              Simule, aprove e
+              Solicite, aprove e
               <br />
               receba{" "}
               <span className="relative inline-block text-brand-gold">
@@ -168,58 +166,12 @@ const LoansSection = () => {
             </div>
           </div>
 
-          {/* Simulator CTA card */}
-          <div className="relative flex flex-col justify-between overflow-hidden rounded-3xl border border-brand-gold/25 bg-gradient-to-br from-[hsl(40_70%_96%)] to-[hsl(38_60%_88%)] p-7 shadow-[var(--shadow-card)]">
-            <div
-              className="pointer-events-none absolute -right-12 -top-12 h-44 w-44 rounded-full opacity-40"
-              style={{
-                background:
-                  "radial-gradient(circle, hsl(var(--brand-gold) / 0.45), transparent 70%)",
-              }}
-              aria-hidden
-            />
-            <div className="relative">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold shadow-sm">
-                <Sparkles className="h-3 w-3" />
-                Simulador grátis
-              </span>
-              <h3 className="mt-4 font-display text-2xl font-bold leading-tight text-foreground">
-                Descubra sua parcela em <span className="text-brand-gold">30 segundos</span>.
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-foreground/70">
-                Simule até <strong>R$ 50.000</strong> em até <strong>60x</strong>, com taxas a partir de{" "}
-                <strong>1,49% a.m.</strong>
-              </p>
-
-              <ul className="mt-5 space-y-2 text-[13px] text-foreground/75">
-                {["Sem afetar seu score", "Aprovação em minutos", "100% online e seguro"].map((t) => (
-                  <li key={t} className="flex items-center gap-2">
-                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold/20 text-brand-gold">
-                      <ShieldCheck className="h-3 w-3" strokeWidth={2.6} />
-                    </span>
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <Link to="/simular" className="btn-gold group mt-7 w-full">
-              Simular meu empréstimo
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-
-            <div className="relative mt-3 flex items-center justify-center gap-1.5 text-[11px] font-medium text-foreground/55">
-              <Lock className="h-3 w-3" />
-              Simulação 100% gratuita
-            </div>
-          </div>
-
           {/* Right image with floating testimonial */}
-          <div className="relative hidden overflow-hidden rounded-3xl shadow-[var(--shadow-card)] lg:block">
+          <div className="relative hidden overflow-hidden rounded-3xl shadow-[var(--shadow-card)] lg:block min-h-[520px]">
             <img
               src={loansHero}
               srcSet={`${loansHeroSm} 640w, ${loansHeroMd} 1200w, ${loansHero} 1920w`}
-              sizes="(max-width: 1024px) 0px, 24vw"
+              sizes="(max-width: 1024px) 0px, 40vw"
               alt="Cliente satisfeita simulando empréstimo no celular"
               className="absolute inset-0 h-full w-full object-cover object-[60%_center]"
               loading="lazy"
@@ -274,20 +226,24 @@ const LoansSection = () => {
                 <span className="text-brand-gold">cada necessidade</span>
               </h3>
             </div>
-            <Link
-              to="/simular"
+            <a
+              href={whatsappLink("Olá! Quero contratar um crédito Credifácil.")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center gap-1.5 rounded-full border border-brand-gold/40 px-4 py-2 text-xs font-semibold text-brand-gold transition-all hover:bg-brand-gold/10 hover:gap-2.5"
             >
-              Simular agora
+              Falar no WhatsApp
               <ChevronRight className="h-3.5 w-3.5" />
-            </Link>
+            </a>
           </div>
 
           <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4" data-anim-stagger>
             {products.map((p) => (
-              <Link
+              <a
                 key={p.title}
-                to={p.href}
+                href={p.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative flex flex-col overflow-hidden rounded-2xl border border-foreground/8 bg-white transition-all hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-[var(--shadow-gold)]"
               >
                 {/* Illustration */}
@@ -314,11 +270,11 @@ const LoansSection = () => {
                     {p.desc}
                   </p>
                   <div className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-brand-gold transition-all group-hover:gap-2">
-                    Simular agora
+                    Falar no WhatsApp
                     <ChevronRight className="h-3.5 w-3.5" />
                   </div>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
         </div>

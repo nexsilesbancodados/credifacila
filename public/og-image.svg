@@ -49,7 +49,7 @@
   <!-- CTA badge -->
   <g transform="translate(80 530)">
     <rect x="0" y="0" width="240" height="56" rx="28" fill="url(#gold)"/>
-    <text x="120" y="36" font-family="Manrope, system-ui, sans-serif" font-size="18" font-weight="800" fill="#1a1614" text-anchor="middle">SIMULAR AGORA →</text>
+    <text x="120" y="36" font-family="Manrope, system-ui, sans-serif" font-size="18" font-weight="800" fill="#1a1614" text-anchor="middle">FALAR CONOSCO →</text>
   </g>
   <g transform="translate(340 540)">
     <text x="0" y="22" font-family="Manrope, system-ui, sans-serif" font-size="14" fill="#ffffff" fill-opacity="0.6">★★★★★  4,9 / 5</text>

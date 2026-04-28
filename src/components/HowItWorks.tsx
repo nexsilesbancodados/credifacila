@@ -1,11 +1,11 @@
-import { Calculator, FileText, ShieldCheck, Banknote, Sparkles } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Calculator, FileText, ShieldCheck, Banknote, Sparkles, MessageCircle } from "lucide-react";
+import { whatsappLink } from "@/config/site";
 
 const steps = [
   {
     icon: Calculator,
-    title: "Simule",
-    desc: "Escolha o valor e o prazo. Veja sua parcela na hora — sem afetar seu score.",
+    title: "Solicite",
+    desc: "Fale com nosso time pelo WhatsApp e conte o que precisa — sem afetar seu score.",
     time: "30 segundos",
   },
   {
@@ -101,10 +101,15 @@ const HowItWorks = () => (
       </div>
 
       <div className="mt-12 text-center">
-        <Link to="/simular" className="btn-gold">
-          <Sparkles className="h-4 w-4" />
-          Começar minha simulação
-        </Link>
+        <a
+          href={whatsappLink("Olá! Quero começar minha solicitação de crédito.")}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-gold"
+        >
+          <MessageCircle className="h-4 w-4" />
+          Falar com a Credifácil
+        </a>
       </div>
     </div>
   </section>

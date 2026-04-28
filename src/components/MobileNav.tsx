@@ -29,7 +29,6 @@ const items: Item[] = [
       { label: "Conta Digital Luri", href: "/securitizadora/conta-digital-luri" },
     ],
   },
-  { label: "Simular", href: "/simular" },
   { label: "Perguntas frequentes", href: "/perguntas-frequentes" },
 ];
 
@@ -166,14 +165,16 @@ const MobileNav = () => {
           </ul>
 
           <div className="mt-6 px-3">
-            <Link
-              to="/simular"
+            <a
+              href={whatsappLink("Olá! Quero contratar um crédito Credifácil.")}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="btn-gold w-full !py-3.5"
             >
               <Sparkles className="h-4 w-4" />
-              Simular agora
-            </Link>
+              Falar no WhatsApp
+            </a>
           </div>
 
           <div className="mt-4 grid grid-cols-2 gap-2 px-3">

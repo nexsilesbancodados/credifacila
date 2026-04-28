@@ -15,7 +15,6 @@ import {
   Star,
 } from "lucide-react";
 import { whatsappLink } from "@/config/site";
-import MiniSimulator from "@/components/header/MiniSimulator";
 import heroImage from "@/assets/hero-credifacil.webp";
 import heroImageMd from "@/assets/hero-credifacil-md.webp";
 import heroImageSm from "@/assets/hero-credifacil-sm.webp";
@@ -63,8 +62,12 @@ const slides: Slide[] = [
     goldFromLine: 2,
     description: "Empréstimos rápidos, seguros e descomplicados para realizar seus planos e",
     descriptionHighlight: "transformar sua vida",
-    ctaPrimary: { label: "Solicitar meu empréstimo", href: "/simular", icon: TrendingUp },
-    ctaSecondary: { label: "Simular agora", href: "/simular" },
+    ctaPrimary: {
+      label: "Solicitar meu empréstimo",
+      href: whatsappLink("Olá! Quero solicitar um empréstimo na Credifácil."),
+      icon: TrendingUp,
+    },
+    ctaSecondary: { label: "Falar no WhatsApp", href: whatsappLink("Olá! Quero saber mais sobre os créditos da Credifácil.") },
   },
   {
     src: heroSlide2,
@@ -78,7 +81,11 @@ const slides: Slide[] = [
     goldFromLine: 2,
     description: "Simule, contrate e receba o dinheiro pelo app em poucos minutos, com",
     descriptionHighlight: "zero burocracia",
-    ctaPrimary: { label: "Simular pelo celular", href: "/simular", icon: Smartphone },
+    ctaPrimary: {
+      label: "Contratar pelo celular",
+      href: whatsappLink("Olá! Quero contratar meu crédito pelo celular."),
+      icon: Smartphone,
+    },
     ctaSecondary: { label: "Ver como funciona", href: "#como-funciona" },
   },
   {
@@ -93,7 +100,11 @@ const slides: Slide[] = [
     goldFromLine: 2,
     description: "Use seu empréstimo para reformar a casa, viajar ou organizar as finanças com",
     descriptionHighlight: "parcelas que cabem no bolso",
-    ctaPrimary: { label: "Quero realizar meu sonho", href: "/simular", icon: Heart },
+    ctaPrimary: {
+      label: "Quero realizar meu sonho",
+      href: whatsappLink("Olá! Quero realizar meu sonho com a Credifácil."),
+      icon: Heart,
+    },
     ctaSecondary: { label: "Ver opções", href: "#solucoes" },
   },
   {
@@ -108,7 +119,11 @@ const slides: Slide[] = [
     goldFromLine: 2,
     description: "Use seu veículo como garantia e libere até R$ 150 mil com as",
     descriptionHighlight: "menores taxas do mercado",
-    ctaPrimary: { label: "Simular crédito com veículo", href: "/simular", icon: Car },
+    ctaPrimary: {
+      label: "Solicitar crédito com veículo",
+      href: whatsappLink("Olá! Quero crédito com garantia de veículo."),
+      icon: Car,
+    },
     ctaSecondary: { label: "Saber mais", href: "#solucoes" },
   },
   {
@@ -123,7 +138,7 @@ const slides: Slide[] = [
     goldFromLine: 2,
     description: "Para servidores, aposentados e pensionistas do INSS — desconto direto em folha com",
     descriptionHighlight: "as menores taxas do mercado",
-    ctaPrimary: { label: "Simular meu consignado", href: "/consignado", icon: Briefcase },
+    ctaPrimary: { label: "Quero meu consignado", href: "/consignado", icon: Briefcase },
     ctaSecondary: {
       label: "Saber mais",
       href: "/consignado",
@@ -365,9 +380,6 @@ const HeroCarousel = () => {
       >
         <ChevronRight className="h-5 w-5" />
       </button>
-
-      {/* Mini simulator (desktop only) */}
-      <MiniSimulator />
 
       {/* Carousel dots + counter */}
       <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 items-center gap-3 rounded-full border border-white/10 bg-black/40 px-4 py-2 backdrop-blur-md">

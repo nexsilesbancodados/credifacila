@@ -6,7 +6,7 @@ const Termos = () => (
     title="Termos e condições de uso"
     metaTitle="Termos de Uso | Credifácil"
     metaDescription="Leia os termos e condições para uso do site e dos serviços da Credifácil."
-    intro="Estes Termos de Uso regulam o acesso e a utilização do site, do simulador e de demais canais digitais da Credifácil. Ao navegar, você declara estar de acordo com as condições abaixo."
+    intro="Estes Termos de Uso regulam o acesso e a utilização do site e dos demais canais digitais da Credifácil. Ao navegar, você declara estar de acordo com as condições abaixo."
     lastUpdated="abril/2026"
     contactSubject="Termos de Uso — dúvida"
     sections={[
