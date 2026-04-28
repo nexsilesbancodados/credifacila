@@ -740,6 +740,16 @@ const Consignado = () => {
         testimonials={testimonialsMarquee}
       />
 
+      {/* Promo Banner */}
+      <PromoBanner
+        eyebrow="Crédito Consignado"
+        title="Simule agora e descubra"
+        highlight="quanto cabe no seu bolso."
+        description="A partir de 1,49% a.m., até 96 meses para pagar e dinheiro liberado em até 24h."
+        ctaLabel="Simular pelo WhatsApp"
+        ctaHref={whatsappLink("Olá! Quero simular o crédito consignado.")}
+      />
+
       {/* FAQ */}
       <section className="mx-auto max-w-4xl px-5 py-20 md:px-8 md:py-28">
         <div className="text-center">
