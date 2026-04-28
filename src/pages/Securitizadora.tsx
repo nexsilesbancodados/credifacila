@@ -222,14 +222,26 @@ const Securitizadora = () => {
             </div>
           </div>
           <div className="relative hidden lg:block" data-anim="fade-left">
-            <img
-              src={heroIllo}
-              alt="Skyline corporativo dourado representando a securitizadora"
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-              className="mx-auto h-auto w-full max-w-lg drop-shadow-[0_10px_40px_rgba(218,165,32,0.25)]"
-            />
+            <div className="relative mx-auto w-full max-w-lg">
+              <div
+                className="pointer-events-none absolute -inset-4 rounded-[32px] opacity-60 blur-2xl"
+                style={{
+                  background:
+                    "radial-gradient(circle at 30% 30%, hsl(38 90% 55% / 0.45), transparent 70%)",
+                }}
+                aria-hidden
+              />
+              <img
+                src={heroIllo}
+                alt="Executivo brasileiro em escritório corporativo com vista da cidade ao pôr do sol"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                width={1024}
+                height={1024}
+                className="relative aspect-square w-full rounded-[28px] border border-white/10 object-cover shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]"
+              />
+            </div>
           </div>
         </div>
       </section>
