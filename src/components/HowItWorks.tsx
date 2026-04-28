@@ -33,20 +33,23 @@ const HowItWorks = () => {
     >
       <div className="mx-auto max-w-7xl">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-[40px]">
+          <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-gold backdrop-blur-sm">
+            Processo simples
+          </span>
+          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-[44px]">
             Como funciona é <span className="text-brand-gold">simples!</span>
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-base text-foreground/70">
+          <p className="mx-auto mt-3 max-w-2xl text-base text-white/65">
             Em poucos passos, você solicita e recebe o crédito que precisa.
           </p>
         </div>
 
-        <div className="mt-10 rounded-[28px] border border-[hsl(38_60%_85%)] bg-[hsl(40_60%_97%)] p-6 shadow-[var(--shadow-card)] md:p-8">
+        <div className="mt-10 rounded-[28px] border border-white/8 bg-[hsl(var(--surface-elevated))]/70 p-6 shadow-[var(--shadow-card)] backdrop-blur-md md:p-8">
           <ol className="flex flex-col items-stretch gap-8 md:grid md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] md:items-center md:gap-3">
             {steps.map((step, i) => (
               <Fragment key={step.title}>
                 <li className="flex items-start gap-4 text-left">
-                  <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-[hsl(40_70%_92%)] text-brand-gold">
+                  <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full border border-brand-gold/25 bg-brand-gold/10 text-brand-gold">
                     <step.icon className="h-10 w-10" strokeWidth={1.6} />
                   </div>
                   <div className="min-w-0 flex-1 pt-1">
@@ -54,9 +57,9 @@ const HowItWorks = () => {
                       <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-gold text-[11px] font-bold text-brand-gold-foreground">
                         {i + 1}
                       </span>
-                      <h3 className="text-[15px] font-bold text-foreground">{step.title}</h3>
+                      <h3 className="text-[15px] font-bold text-white">{step.title}</h3>
                     </div>
-                    <p className="mt-2 text-[13px] leading-relaxed text-foreground/65">
+                    <p className="mt-2 text-[13px] leading-relaxed text-white/60">
                       {step.desc}
                     </p>
                   </div>
@@ -66,7 +69,7 @@ const HowItWorks = () => {
                     aria-hidden="true"
                     className="hidden items-center justify-center md:flex"
                   >
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[hsl(30_15%_10%)] text-[hsl(40_30%_97%)]">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-brand-gold/30 bg-brand-gold/10 text-brand-gold">
                       <ChevronRight className="h-4 w-4" strokeWidth={2.5} />
                     </span>
                   </li>
