@@ -30,6 +30,7 @@ const items: Item[] = [
     ],
   },
   { label: "Perguntas frequentes", href: "/perguntas-frequentes" },
+  { label: "Invista Conosco", href: "/invista-conosco" },
 ];
 
 const MobileNav = () => {
