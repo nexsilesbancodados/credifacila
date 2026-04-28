@@ -89,7 +89,7 @@ const AdvantagesSection = () => {
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(180deg, hsl(30 18% 8% / 0.85) 0%, hsl(30 18% 8% / 0.95) 60%, hsl(30 18% 8% / 0.98) 100%)",
+                  "linear-gradient(180deg, hsl(220 16% 8% / 0.85) 0%, hsl(220 16% 8% / 0.95) 60%, hsl(220 16% 8% / 0.98) 100%)",
               }}
               aria-hidden
             />
@@ -154,7 +154,7 @@ const AdvantagesSection = () => {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(90deg, hsl(30 18% 7% / 0.96) 0%, hsl(30 18% 7% / 0.85) 38%, hsl(30 18% 7% / 0.3) 70%, transparent 100%)",
+                  "linear-gradient(90deg, hsl(220 16% 7% / 0.96) 0%, hsl(220 16% 7% / 0.85) 38%, hsl(220 16% 7% / 0.3) 70%, transparent 100%)",
               }}
               aria-hidden
             />
@@ -211,7 +211,7 @@ const AdvantagesSection = () => {
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(180deg, hsl(30 18% 8% / 0.88) 0%, hsl(30 18% 8% / 0.95) 60%, hsl(30 18% 8% / 0.98) 100%)",
+                  "linear-gradient(180deg, hsl(220 16% 8% / 0.88) 0%, hsl(220 16% 8% / 0.95) 60%, hsl(220 16% 8% / 0.98) 100%)",
               }}
               aria-hidden
             />

@@ -183,7 +183,7 @@ const LoansSection = () => {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(180deg, transparent 35%, hsl(30 18% 7% / 0.85) 100%)",
+                  "linear-gradient(180deg, transparent 35%, hsl(220 16% 7% / 0.85) 100%)",
               }}
               aria-hidden
             />

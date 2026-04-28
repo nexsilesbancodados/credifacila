@@ -72,7 +72,7 @@ const HowItWorks = () => (
 
             <h2
               className="mt-6 font-display text-[36px] font-extrabold leading-[1.05] tracking-tight text-white md:text-[52px] lg:text-[58px]"
-              style={{ textShadow: "0 2px 24px hsl(30 30% 4% / 0.45)" }}
+              style={{ textShadow: "0 2px 24px hsl(220 16% 4% / 0.45)" }}
             >
               Do primeiro clique
               <br />
@@ -130,7 +130,7 @@ const HowItWorks = () => (
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(90deg, hsl(30 22% 5%) 0%, hsl(30 22% 5% / 0.7) 18%, hsl(30 22% 5% / 0.15) 45%, transparent 75%)",
+                  "linear-gradient(90deg, hsl(220 16% 5%) 0%, hsl(220 16% 5% / 0.7) 18%, hsl(220 16% 5% / 0.15) 45%, transparent 75%)",
               }}
               aria-hidden
             />
@@ -138,7 +138,7 @@ const HowItWorks = () => (
               className="pointer-events-none absolute inset-x-0 bottom-0 h-32"
               style={{
                 background:
-                  "linear-gradient(180deg, transparent, hsl(30 22% 5%) 95%)",
+                  "linear-gradient(180deg, transparent, hsl(220 16% 5%) 95%)",
               }}
               aria-hidden
             />

@@ -172,7 +172,7 @@ const Securitizadora = () => {
             </div>
             <h1
               className="mt-6 font-display text-[42px] font-extrabold leading-[1.02] tracking-tight text-white md:text-[58px] lg:text-[64px]"
-              style={{ textShadow: "0 2px 24px hsl(30 30% 4% / 0.45)" }}
+              style={{ textShadow: "0 2px 24px hsl(220 16% 4% / 0.45)" }}
             >
               Mais de 30 anos{" "}
               <span className="text-gold-gradient">
@@ -299,7 +299,7 @@ const Securitizadora = () => {
                 className="absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(90deg, hsl(30 22% 5% / 0.85) 0%, hsl(30 22% 5% / 0.3) 60%, transparent 100%)",
+                    "linear-gradient(90deg, hsl(220 16% 5% / 0.85) 0%, hsl(220 16% 5% / 0.3) 60%, transparent 100%)",
                 }}
               />
               <div className="absolute inset-0 flex items-center p-6">
@@ -331,7 +331,7 @@ const Securitizadora = () => {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, hsl(30 22% 5% / 0.55) 0%, hsl(30 22% 5% / 0.85) 100%)",
+              "linear-gradient(180deg, hsl(220 16% 5% / 0.55) 0%, hsl(220 16% 5% / 0.85) 100%)",
           }}
         />
         <div className="relative z-10 mx-auto flex h-full max-w-5xl items-center justify-center px-5 text-center">
@@ -414,7 +414,7 @@ const Securitizadora = () => {
               className="absolute inset-x-0 bottom-0 p-6"
               style={{
                 background:
-                  "linear-gradient(180deg, transparent, hsl(30 22% 5% / 0.95))",
+                  "linear-gradient(180deg, transparent, hsl(220 16% 5% / 0.95))",
               }}
             >
               <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-md">

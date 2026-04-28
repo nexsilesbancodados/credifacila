@@ -201,7 +201,7 @@ const HeroCarousel = () => {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(95deg, hsl(30 22% 5% / 0.97) 0%, hsl(30 22% 5% / 0.85) 28%, hsl(30 22% 5% / 0.4) 58%, transparent 82%), radial-gradient(ellipse 80% 50% at 85% 50%, hsl(35 85% 58% / 0.35), transparent 65%)",
+            "linear-gradient(95deg, hsl(220 16% 5% / 0.97) 0%, hsl(220 16% 5% / 0.85) 28%, hsl(220 16% 5% / 0.4) 58%, transparent 82%), radial-gradient(ellipse 80% 50% at 85% 50%, hsl(35 85% 58% / 0.35), transparent 65%)",
         }}
         aria-hidden
       />
@@ -233,7 +233,7 @@ const HeroCarousel = () => {
             <h1
               key={`title-${active}`}
               className="animate-fade-in font-display text-[42px] font-extrabold leading-[1.02] tracking-tight text-white md:text-[64px] lg:text-[72px]"
-              style={{ textShadow: "0 2px 24px hsl(30 30% 4% / 0.45)" }}
+              style={{ textShadow: "0 2px 24px hsl(220 16% 4% / 0.45)" }}
             >
               {slide.title.map((line, idx) => {
                 const isGold = idx >= slide.goldFromLine;
