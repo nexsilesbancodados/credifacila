@@ -107,7 +107,7 @@ const SolutionPage = ({
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, hsl(215 52% 12% / 0.95) 0%, hsl(215 52% 12% / 0.85) 35%, hsl(215 52% 12% / 0.55) 60%, hsl(215 52% 12% / 0.25) 100%)",
+              "linear-gradient(90deg, hsl(215 52% 12% / 0.55) 0%, hsl(215 52% 12% / 0.30) 40%, transparent 70%)",
           }}
           aria-hidden
         />
@@ -116,7 +116,7 @@ const SolutionPage = ({
           className="pointer-events-none absolute inset-0 lg:hidden"
           style={{
             background:
-              "linear-gradient(180deg, hsl(215 52% 12% / 0.85) 0%, hsl(215 52% 12% / 0.55) 50%, hsl(215 52% 12% / 0.85) 100%)",
+              "linear-gradient(180deg, hsl(215 52% 12% / 0.50) 0%, transparent 40%, hsl(215 52% 12% / 0.50) 100%)",
           }}
           aria-hidden
         />
@@ -205,14 +205,6 @@ const SolutionPage = ({
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       <div
-                        className="pointer-events-none absolute inset-0"
-                        style={{
-                          background:
-                            "linear-gradient(180deg, transparent 60%, hsl(0 0% 100% / 0.85) 100%)",
-                        }}
-                        aria-hidden
-                      />
-                      <div
                         className="absolute -bottom-5 left-6 inline-flex h-12 w-12 items-center justify-center rounded-xl text-brand-gold-foreground shadow-[var(--shadow-gold-sm)] ring-4 ring-white transition-transform group-hover:rotate-6 group-hover:scale-110"
                         style={{ background: "var(--gradient-gold)" }}
                       >
@@ -270,14 +262,6 @@ const SolutionPage = ({
                   className="h-full w-full scale-110 object-cover"
                 />
               </div>
-              <div
-                className="pointer-events-none absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(180deg, transparent 55%, hsl(215 48% 16% / 0.55) 100%)",
-                }}
-                aria-hidden
-              />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent" aria-hidden />
             </div>
             <div data-anim="fade-right">
