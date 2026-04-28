@@ -32,6 +32,7 @@ import heroIllo from "@/assets/hero-consignado-wide.jpg";
 import seniorImg from "@/assets/consignado-senior.webp";
 import servidorImg from "@/assets/consignado-servidor.webp";
 import bannerImg from "@/assets/consignado-banner.webp";
+import TestimonialsMarquee, { type MarqueeTestimonial } from "@/components/TestimonialsMarquee";
 
 const benefits = [
   {
@@ -171,6 +172,36 @@ const testimonials = [
     name: "Sgt. Roberto Lima",
     role: "Polícia Militar",
     text: "Processo 100% digital, sem sair de casa. A diferença na taxa em relação ao banco onde recebo foi enorme.",
+  },
+];
+
+const initials = (name: string) =>
+  name.split(" ").map((n) => n[0]).slice(0, 2).join("").toUpperCase();
+
+const testimonialsMarquee: MarqueeTestimonial[] = [
+  ...testimonials.map((t) => ({
+    initials: initials(t.name),
+    name: t.name,
+    meta: t.role,
+    text: t.text,
+  })),
+  {
+    initials: "AS",
+    name: "Antônia S.",
+    meta: "Pensionista INSS · Salvador",
+    text: "Adorei a praticidade — fiz tudo pelo celular e o dinheiro caiu antes do almoço.",
+  },
+  {
+    initials: "JP",
+    name: "José P.",
+    meta: "Servidor Estadual · Recife",
+    text: "A simulação foi clara, sem letrinha miúda. Recomendo de olhos fechados.",
+  },
+  {
+    initials: "LM",
+    name: "Luiza M.",
+    meta: "Aposentada · Porto Alegre",
+    text: "Atendimento educado e paciente. Me explicaram cada detalhe com calma.",
   },
 ];
 
@@ -664,46 +695,13 @@ const Consignado = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="bg-gradient-to-b from-transparent to-[hsl(220_14%_94%)] py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">
-              Quem já contratou
-            </span>
-            <h2 className="mt-3 text-4xl font-bold leading-tight text-foreground md:text-5xl">
-              Histórias <span className="text-brand-gold">reais de quem confia</span>
-            </h2>
-          </div>
-          <div className="mt-14 grid gap-5 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <div
-                key={t.name}
-                className="group relative rounded-3xl border border-brand-gold/15 bg-white p-7 shadow-[0_10px_30px_-15px_hsl(30_30%_4%/0.15)] transition-all hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-[0_20px_40px_-15px_hsl(30_30%_4%/0.25)]"
-              >
-                <Quote className="h-8 w-8 text-brand-gold/40" strokeWidth={2} />
-                <p className="mt-4 text-sm leading-relaxed text-foreground/80">"{t.text}"</p>
-                <div className="mt-6 flex items-center gap-3 border-t border-foreground/10 pt-5">
-                  <div
-                    className="flex h-11 w-11 items-center justify-center rounded-full text-sm font-bold text-white"
-                    style={{ background: "var(--gradient-gold)" }}
-                  >
-                    {t.name.split(" ").map((n) => n[0]).slice(0, 2).join("")}
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-foreground">{t.name}</div>
-                    <div className="text-xs text-foreground/70">{t.role}</div>
-                  </div>
-                </div>
-                <div className="mt-3 flex">
-                  {[0, 1, 2, 3, 4].map((i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-brand-gold text-brand-gold" />
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsMarquee
+        eyebrow="Quem já contratou"
+        title="Histórias reais"
+        titleHighlight="de quem confia na Credifácil"
+        subtitle="Aposentados, servidores e militares de todo o Brasil compartilham por que escolheram o consignado da Credifácil."
+        testimonials={testimonialsMarquee}
+      />
 
       {/* FAQ */}
       <section className="mx-auto max-w-4xl px-5 py-20 md:px-8 md:py-28">

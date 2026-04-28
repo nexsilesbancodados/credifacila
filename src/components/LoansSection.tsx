@@ -2,7 +2,6 @@ import {
   ShieldCheck,
   ChevronRight,
   Star,
-  Quote,
   HandCoins,
   Lock,
   MessageCircle,
@@ -10,9 +9,7 @@ import {
   ArrowRight,
   CheckCircle2,
   Users,
-  ChevronLeft,
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 import { whatsappLink } from "@/config/site";
 import loansHero from "@/assets/loans-hero.webp";
 import loansHeroMd from "@/assets/loans-hero-md.webp";
@@ -65,47 +62,7 @@ const products = [
   },
 ];
 
-const testimonials = [
-  {
-    initials: "CR",
-    name: "Camila R.",
-    meta: "Cliente desde 2024 · São Paulo",
-    text: "Em poucos cliques resolvi tudo. Simples, rápido e sem stress!",
-  },
-  {
-    initials: "JM",
-    name: "João M.",
-    meta: "Cliente desde 2023 · Belo Horizonte",
-    text: "Aprovaram em minutos e o dinheiro caiu no mesmo dia. Recomendo demais!",
-  },
-  {
-    initials: "AP",
-    name: "Ana P.",
-    meta: "Cliente desde 2025 · Curitiba",
-    text: "Atendimento humano de verdade. Me explicaram tudo sem letrinha miúda.",
-  },
-];
-
 const LoansSection = () => {
-  const [tIndex, setTIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const timerRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    if (paused) return;
-    timerRef.current = window.setInterval(() => {
-      setTIndex((i) => (i + 1) % testimonials.length);
-    }, 5500);
-    return () => {
-      if (timerRef.current) window.clearInterval(timerRef.current);
-    };
-  }, [paused]);
-
-  const goTo = (i: number) =>
-    setTIndex(((i % testimonials.length) + testimonials.length) % testimonials.length);
-  const prev = () => goTo(tIndex - 1);
-  const next = () => goTo(tIndex + 1);
-
   return (
     <section
       id="solucoes"
@@ -260,92 +217,6 @@ const LoansSection = () => {
               <span className="text-white/95">
                 <span className="font-bold text-white">2.341</span> aprovados hoje
               </span>
-            </div>
-
-            {/* Testimonial carousel */}
-            <div
-              className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-[hsl(220_16%_7%)]/92 p-4 text-white shadow-lg backdrop-blur-md"
-              onMouseEnter={() => setPaused(true)}
-              onMouseLeave={() => setPaused(false)}
-              role="region"
-              aria-roledescription="carousel"
-              aria-label="Depoimentos de clientes"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <Quote className="h-5 w-5 shrink-0 text-brand-gold" />
-                <div className="flex">
-                  {[0, 1, 2, 3, 4].map((i) => (
-                    <Star key={i} className="h-3 w-3 fill-brand-gold text-brand-gold" />
-                  ))}
-                </div>
-              </div>
-
-              {/* Slides */}
-              <div className="relative mt-2 min-h-[88px]">
-                {testimonials.map((t, i) => (
-                  <div
-                    key={t.name}
-                    aria-hidden={i !== tIndex}
-                    className={`transition-all duration-500 ${
-                      i === tIndex
-                        ? "relative opacity-100 translate-y-0"
-                        : "pointer-events-none absolute inset-0 opacity-0 translate-y-1"
-                    }`}
-                  >
-                    <p className="text-sm leading-relaxed text-white/90">
-                      "{t.text}"
-                    </p>
-                    <div className="mt-3 flex items-center gap-2.5 border-t border-white/10 pt-3">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-brand-gold to-brand-gold-soft text-[11px] font-bold text-brand-gold-foreground">
-                        {t.initials}
-                      </span>
-                      <div className="leading-tight">
-                        <div className="text-xs font-bold">{t.name}</div>
-                        <div className="text-[10px] text-white/75">{t.meta}</div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Controls */}
-              <div className="mt-3 flex items-center justify-between gap-3 border-t border-white/10 pt-2.5">
-                <div className="flex items-center gap-1.5" role="tablist" aria-label="Selecionar depoimento">
-                  {testimonials.map((_, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      role="tab"
-                      aria-selected={i === tIndex}
-                      aria-label={`Depoimento ${i + 1} de ${testimonials.length}`}
-                      onClick={() => goTo(i)}
-                      className={`h-1.5 rounded-full transition-all ${
-                        i === tIndex
-                          ? "w-6 bg-brand-gold"
-                          : "w-1.5 bg-white/30 hover:bg-white/55"
-                      }`}
-                    />
-                  ))}
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <button
-                    type="button"
-                    onClick={prev}
-                    aria-label="Depoimento anterior"
-                    className="flex h-7 w-7 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/82 transition-all hover:border-brand-gold/60 hover:bg-brand-gold/15 hover:text-brand-gold"
-                  >
-                    <ChevronLeft className="h-3.5 w-3.5" />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={next}
-                    aria-label="Próximo depoimento"
-                    className="flex h-7 w-7 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/82 transition-all hover:border-brand-gold/60 hover:bg-brand-gold/15 hover:text-brand-gold"
-                  >
-                    <ChevronRight className="h-3.5 w-3.5" />
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
