@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import SolutionPage from "@/components/SolutionPage";
 import heroImg from "@/assets/hero-antecipacao-wide.jpg";
+import showcaseImg from "@/assets/showcase-antecipacao.jpg";
 
 const AntecipacaoRecebiveis = () => (
   <SolutionPage
@@ -56,6 +57,18 @@ const AntecipacaoRecebiveis = () => (
     ]}
     ctaTitle="Pronto para destravar seu fluxo de caixa?"
     ctaSubtitle="Fale com um especialista da Credifácil Securitizadora e receba uma proposta personalizada para o seu negócio."
+    showcase={{
+      image: showcaseImg,
+      alt: "Empresário analisando recebíveis em tablet dentro de armazém",
+      eyebrow: "Resultado real",
+      heading: "Capital de giro sem comprometer o crescimento",
+      text: "Mais de 30 anos transformando duplicatas, cheques e contratos em liquidez imediata para indústrias, comércios e prestadores de serviço de todo o Brasil.",
+      stats: [
+        { value: "24h", label: "Liberação média" },
+        { value: "+30", label: "Anos de mercado" },
+        { value: "R$ 10k+", label: "Operações a partir de" },
+      ],
+    }}
   />
 );
 
