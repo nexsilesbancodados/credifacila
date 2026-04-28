@@ -28,14 +28,14 @@ import {
 } from "lucide-react";
 import { whatsappLink } from "@/config/site";
 import logo from "@/assets/credifacil-logo.webp";
-import heroIllo from "@/assets/hero-consignado-wide.jpg";
+import heroIllo from "@/assets/hero-consignado-wide.webp";
 import seniorImg from "@/assets/consignado-senior.webp";
 import servidorImg from "@/assets/consignado-servidor.webp";
 import bannerImg from "@/assets/consignado-banner.webp";
-import audAposentados from "@/assets/audience-aposentados.jpg";
-import audServidores from "@/assets/audience-servidores.jpg";
-import audProfissionais from "@/assets/audience-profissionais.jpg";
-import audClt from "@/assets/audience-clt.jpg";
+import audAposentados from "@/assets/audience-aposentados.webp";
+import audServidores from "@/assets/audience-servidores.webp";
+import audProfissionais from "@/assets/audience-profissionais.webp";
+import audClt from "@/assets/audience-clt.webp";
 import TestimonialsMarquee, { type MarqueeTestimonial } from "@/components/TestimonialsMarquee";
 import PromoBanner from "@/components/PromoBanner";
 

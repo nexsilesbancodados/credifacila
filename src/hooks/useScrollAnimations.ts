@@ -6,6 +6,9 @@ const useScrollAnimations = () => {
   useEffect(() => {
     if (typeof window === "undefined") return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+    // Skip parallax on mobile (jank) and when reduced motion is requested
+    const skipParallax = reduce || isMobile;
     if (reduce) {
       document.querySelectorAll<HTMLElement>("[data-anim], [data-anim-stagger]").forEach((el) => {
         el.classList.add(VISIBLE_CLASS);
@@ -69,7 +72,7 @@ const useScrollAnimations = () => {
     );
 
     const observeParallax = (root: ParentNode = document) => {
-      if (reduce) return;
+      if (skipParallax) return;
       root.querySelectorAll<HTMLElement>("[data-parallax]").forEach((el) => {
         if (parallaxEls.has(el)) return;
         parallaxEls.add(el);
@@ -78,7 +81,7 @@ const useScrollAnimations = () => {
     };
 
     observeParallax();
-    if (!reduce) {
+    if (!skipParallax) {
       window.addEventListener("scroll", onScroll, { passive: true });
       window.addEventListener("resize", onScroll, { passive: true });
     }

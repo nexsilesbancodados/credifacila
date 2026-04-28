@@ -7,14 +7,14 @@ import {
   Globe2,
 } from "lucide-react";
 import SolutionPage from "@/components/SolutionPage";
-import heroImg from "@/assets/luri-hero.jpg";
-import showcaseImg from "@/assets/luri-humanizada.jpg";
-import benefitNoFee from "@/assets/luri/benefit-no-fee.jpg";
-import benefitPix from "@/assets/luri/benefit-pix.jpg";
-import benefitCard from "@/assets/luri/benefit-card.jpg";
-import benefitSecurity from "@/assets/luri/benefit-security.jpg";
-import benefitApp from "@/assets/luri/benefit-app.jpg";
-import benefitIntegration from "@/assets/luri/benefit-integration.jpg";
+import heroImg from "@/assets/luri-hero.webp";
+import showcaseImg from "@/assets/luri-humanizada.webp";
+import benefitNoFee from "@/assets/luri/benefit-no-fee.webp";
+import benefitPix from "@/assets/luri/benefit-pix.webp";
+import benefitCard from "@/assets/luri/benefit-card.webp";
+import benefitSecurity from "@/assets/luri/benefit-security.webp";
+import benefitApp from "@/assets/luri/benefit-app.webp";
+import benefitIntegration from "@/assets/luri/benefit-integration.webp";
 
 const ContaDigitalLuri = () => (
   <div className="theme-purple">
