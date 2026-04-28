@@ -1,16 +1,11 @@
 import { useEffect, useState } from "react";
 import {
   MessageCircle,
-  Zap,
   ShieldCheck,
-  User,
-  Handshake,
   TrendingUp,
   ChevronRight,
   ChevronLeft,
   Heart,
-  ShieldAlert,
-  Lock,
   Star,
   Clock,
   CheckCircle2,
@@ -103,33 +98,6 @@ const heroSlides = [
     descriptionHighlight: "condições especiais",
     ctaPrimary: { label: "Quero crédito empresarial", href: "/simular", icon: Briefcase },
     ctaSecondary: { label: "Falar com especialista", href: "#whatsapp" },
-  },
-];
-
-const features = [
-  {
-    icon: Zap,
-    title: "Aprovação em minutos",
-    desc: "Simule, assine e receba\no dinheiro no mesmo dia.",
-    metric: "3 min",
-  },
-  {
-    icon: ShieldCheck,
-    title: "100% seguro",
-    desc: "Criptografia bancária\ne zero burocracia.",
-    metric: "SSL 256",
-  },
-  {
-    icon: User,
-    title: "Atendimento humano",
-    desc: "Especialistas reais\nte acompanham do início ao fim.",
-    metric: "24/7",
-  },
-  {
-    icon: Handshake,
-    title: "Confiança comprovada",
-    desc: "Mais de 50 mil clientes\njá realizaram seus sonhos.",
-    metric: "+50k",
   },
 ];
 
@@ -587,79 +555,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Features card */}
-        <div className="relative z-10 -mt-12 w-full px-0">
-          <div className="relative overflow-hidden rounded-2xl border border-brand-gold/15 bg-[hsl(var(--surface-elevated))]/90 p-5 shadow-[var(--shadow-card)] backdrop-blur-md md:p-7">
-            {/* subtle gold top accent */}
-            <div
-              className="pointer-events-none absolute inset-x-0 top-0 h-px"
-              style={{ background: "linear-gradient(90deg, transparent, hsl(38 90% 55% / 0.6), transparent)" }}
-              aria-hidden="true"
-            />
-            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-2">
-              {features.map((f, i) => (
-                <div
-                  key={f.title}
-                  className={`group relative flex items-start gap-4 rounded-xl p-3 transition-all hover:bg-white/[0.03] ${
-                    i < 3 ? "lg:border-r lg:border-white/10" : ""
-                  }`}
-                >
-                  <div
-                    className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-transform group-hover:scale-105"
-                    style={{ background: "var(--gradient-gold)" }}
-                  >
-                    <f.icon className="h-[22px] w-[22px]" strokeWidth={2.4} />
-                  </div>
-                  <div className="min-w-0 leading-snug">
-                    <div className="flex items-center gap-2">
-                      <div className="text-[15px] font-bold text-white">{f.title}</div>
-                      <span className="rounded-full bg-brand-gold/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-gold">
-                        {f.metric}
-                      </span>
-                    </div>
-                    <div className="mt-1.5 whitespace-pre-line text-[13px] leading-relaxed text-white/65">
-                      {f.desc}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom dark bar */}
-        <div className="mt-4 w-full px-0 pb-10">
-          <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border border-brand-gold/15 bg-[hsl(var(--surface-dark))]/85 px-6 py-4 text-white backdrop-blur-md md:flex-row">
-            <div className="flex items-center gap-3">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-gold/15">
-                <Heart className="h-4 w-4 fill-brand-gold text-brand-gold" />
-              </span>
-              <span className="text-sm font-semibold tracking-tight">
-                Aqui o seu sonho <span className="text-brand-gold">tem crédito</span>.
-              </span>
-            </div>
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-              <div className="flex items-center gap-2 text-xs font-medium text-white/80">
-                <ShieldAlert className="h-4 w-4 text-brand-gold" />
-                Empresa autorizada e regulamentada
-              </div>
-              <div className="hidden h-4 w-px bg-white/15 md:block" />
-              <div className="flex items-center gap-2 text-xs font-medium text-white/80">
-                <Lock className="h-4 w-4 text-brand-gold" />
-                Dados protegidos com criptografia
-              </div>
-              <div className="hidden h-4 w-px bg-white/15 md:block" />
-              <div className="flex items-center gap-1.5 text-xs font-medium text-white/80">
-                <div className="flex">
-                  {[0, 1, 2, 3, 4].map((i) => (
-                    <Star key={i} className="h-3 w-3 fill-brand-gold text-brand-gold" />
-                  ))}
-                </div>
-                4,9 no Reclame Aqui
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </header>
   );
