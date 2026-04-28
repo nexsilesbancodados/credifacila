@@ -8,6 +8,7 @@ import AntecipacaoRecebiveis from "./pages/AntecipacaoRecebiveis.tsx";
 import BoletoGarantido from "./pages/BoletoGarantido.tsx";
 import ContaDigitalLuri from "./pages/ContaDigitalLuri.tsx";
 import PerguntasFrequentes from "./pages/PerguntasFrequentes.tsx";
+import InvistaConosco from "./pages/InvistaConosco.tsx";
 import Privacidade from "./pages/Privacidade.tsx";
 import Termos from "./pages/Termos.tsx";
 import Lgpd from "./pages/Lgpd.tsx";
@@ -55,6 +56,7 @@ const App = () => (
       <Route path="/securitizadora/conta-digital-luri" element={<ContaDigitalLuri />} />
       <Route path="/perguntas-frequentes" element={<PerguntasFrequentes />} />
       <Route path="/faq" element={<PerguntasFrequentes />} />
+      <Route path="/invista-conosco" element={<InvistaConosco />} />
       <Route path="/privacidade" element={<Privacidade />} />
       <Route path="/termos" element={<Termos />} />
       <Route path="/lgpd" element={<Lgpd />} />
