@@ -104,7 +104,7 @@
     z-index: -1;
     pointer-events: none;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
-    opacity: 0.04;
+    opacity: 0.025;
     mix-blend-mode: multiply;
   }
   ::selection { background: hsl(var(--brand-gold) / 0.3); }
@@ -263,6 +263,16 @@
   .sheen-divider {
     background: linear-gradient(90deg, transparent, hsl(var(--brand-gold) / 0.5), transparent);
     height: 1px;
+  }
+
+  /* Legibility boost for text rendered over photos / dark gradients */
+  .text-on-image {
+    text-shadow: 0 1px 2px hsl(220 16% 4% / 0.55), 0 0 18px hsl(220 16% 4% / 0.25);
+  }
+
+  /* Ensure surfaces over the animated gradient stay readable */
+  .surface-soft {
+    @apply bg-white/85 backdrop-blur-sm;
   }
 }
 
