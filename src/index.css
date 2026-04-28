@@ -8,22 +8,27 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 40 30% 97%;
-    --foreground: 30 15% 15%;
+    --background: 30 15% 8%;
+    --foreground: 40 30% 96%;
 
     --brand-gold: 35 75% 48%;
+    --brand-gold-soft: 38 85% 60%;
     --brand-gold-foreground: 0 0% 100%;
-    --gradient-gold: linear-gradient(90deg, hsl(35 75% 48%), hsl(38 80% 55%));
-    --header-overlay: linear-gradient(180deg, hsl(40 30% 97% / 0.7), hsl(40 30% 97% / 0.35));
-    --shadow-gold: 0 10px 40px -10px hsl(35 75% 48% / 0.4);
-    --shadow-card: 0 20px 50px -20px hsl(30 20% 30% / 0.25);
-    --surface-dark: 30 12% 18%;
+    --gradient-gold: linear-gradient(135deg, hsl(38 85% 58%) 0%, hsl(35 80% 48%) 100%);
+    --shadow-gold: 0 12px 40px -10px hsl(35 80% 50% / 0.5);
+    --shadow-card: 0 30px 60px -25px hsl(0 0% 0% / 0.5);
+    --shadow-soft: 0 10px 30px -10px hsl(0 0% 0% / 0.3);
+    --surface-dark: 30 14% 11%;
+    --surface-elevated: 30 12% 14%;
+    --surface-light: 40 30% 96%;
 
+    /* Single page background — dark with warm gold glows */
     --gradient-page:
-      radial-gradient(ellipse 80% 50% at 50% 0%, hsl(40 70% 92%) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 40% at 100% 30%, hsl(35 75% 88% / 0.6) 0%, transparent 55%),
-      radial-gradient(ellipse 70% 50% at 0% 60%, hsl(38 65% 90% / 0.5) 0%, transparent 55%),
-      linear-gradient(180deg, hsl(40 50% 96%) 0%, hsl(40 35% 94%) 50%, hsl(30 20% 90%) 100%);
+      radial-gradient(ellipse 70% 45% at 80% 5%, hsl(35 75% 35% / 0.28) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 40% at 10% 35%, hsl(38 80% 40% / 0.18) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 35% at 90% 70%, hsl(35 70% 30% / 0.15) 0%, transparent 55%),
+      radial-gradient(ellipse 80% 50% at 20% 100%, hsl(35 70% 35% / 0.12) 0%, transparent 60%),
+      linear-gradient(180deg, hsl(30 18% 9%) 0%, hsl(30 14% 7%) 50%, hsl(30 18% 9%) 100%);
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -123,9 +128,11 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
     background: var(--gradient-page);
+    background-color: hsl(var(--background));
     background-attachment: fixed;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
   }
 }
