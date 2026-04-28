@@ -13,7 +13,9 @@ import {
   ArrowRight,
   CheckCircle2,
   Users,
+  ChevronLeft,
 } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { whatsappLink } from "@/config/site";
 import { Counter } from "@/components/ui/Counter";
 import loansHero from "@/assets/loans-hero.webp";
@@ -68,7 +70,47 @@ const partnerItems = [
   { icon: Lock, title: "Compromisso real", desc: "Estamos do seu lado\nem cada etapa." },
 ];
 
+const testimonials = [
+  {
+    initials: "CR",
+    name: "Camila R.",
+    meta: "Cliente desde 2024 · São Paulo",
+    text: "Em poucos cliques resolvi tudo. Simples, rápido e sem stress!",
+  },
+  {
+    initials: "JM",
+    name: "João M.",
+    meta: "Cliente desde 2023 · Belo Horizonte",
+    text: "Aprovaram em minutos e o dinheiro caiu no mesmo dia. Recomendo demais!",
+  },
+  {
+    initials: "AP",
+    name: "Ana P.",
+    meta: "Cliente desde 2025 · Curitiba",
+    text: "Atendimento humano de verdade. Me explicaram tudo sem letrinha miúda.",
+  },
+];
+
 const LoansSection = () => {
+  const [tIndex, setTIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const timerRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (paused) return;
+    timerRef.current = window.setInterval(() => {
+      setTIndex((i) => (i + 1) % testimonials.length);
+    }, 5500);
+    return () => {
+      if (timerRef.current) window.clearInterval(timerRef.current);
+    };
+  }, [paused]);
+
+  const goTo = (i: number) =>
+    setTIndex(((i % testimonials.length) + testimonials.length) % testimonials.length);
+  const prev = () => goTo(tIndex - 1);
+  const next = () => goTo(tIndex + 1);
+
   return (
     <section
       id="solucoes"
@@ -132,23 +174,45 @@ const LoansSection = () => {
             </ul>
 
             {/* CTAs */}
-            <div className="mt-7 flex flex-wrap items-center gap-3">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-stretch">
               <a
                 href={whatsappLink("Olá! Quero solicitar meu crédito Credifácil.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-gold group"
+                className="btn-gold group sm:self-start"
               >
                 <MessageCircle className="h-4 w-4" />
                 Solicitar agora
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>
+
+              {/* Discover-lines card CTA */}
               <a
                 href="#linhas"
-                className="inline-flex items-center gap-1.5 rounded-2xl px-3.5 py-3.5 text-sm font-semibold text-foreground/80 transition-colors hover:text-brand-gold"
+                className="group relative flex flex-1 items-center gap-3 overflow-hidden rounded-2xl border border-foreground/10 bg-white/75 px-4 py-3 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-brand-gold/45 hover:bg-white hover:shadow-[var(--shadow-card)] sm:max-w-md"
               >
-                Conhecer linhas de crédito
-                <ChevronRight className="h-4 w-4" />
+                <span
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-brand-gold/30 bg-brand-gold/10 text-brand-gold transition-transform group-hover:scale-105 group-hover:rotate-[-3deg]"
+                  aria-hidden
+                >
+                  <HandCoins className="h-[18px] w-[18px]" strokeWidth={2.2} />
+                </span>
+                <div className="min-w-0 flex-1 leading-tight">
+                  <div className="text-[13px] font-bold text-foreground">
+                    Veja todas as linhas de crédito
+                  </div>
+                  <div className="mt-0.5 text-[11px] text-foreground/72">
+                    Pessoal, com garantia, portabilidade e PJ — escolha a sua.
+                  </div>
+                </div>
+                <span className="inline-flex shrink-0 items-center gap-1 rounded-full border border-brand-gold/40 bg-white px-2.5 py-1.5 text-[11px] font-bold text-brand-gold transition-all group-hover:gap-1.5 group-hover:bg-brand-gold group-hover:text-brand-gold-foreground">
+                  Ver
+                  <ChevronRight className="h-3.5 w-3.5" />
+                </span>
+                <span
+                  className="pointer-events-none absolute inset-y-0 -left-10 w-10 -skew-x-12 bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-0 transition-all duration-700 group-hover:left-[110%] group-hover:opacity-100"
+                  aria-hidden
+                />
               </a>
             </div>
 
@@ -268,8 +332,15 @@ const LoansSection = () => {
               </span>
             </div>
 
-            {/* Testimonial card */}
-            <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-[hsl(220_16%_7%)]/92 p-4 text-white shadow-lg backdrop-blur-md">
+            {/* Testimonial carousel */}
+            <div
+              className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-[hsl(220_16%_7%)]/92 p-4 text-white shadow-lg backdrop-blur-md"
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="Depoimentos de clientes"
+            >
               <div className="flex items-start justify-between gap-3">
                 <Quote className="h-5 w-5 shrink-0 text-brand-gold" />
                 <div className="flex">
@@ -278,16 +349,71 @@ const LoansSection = () => {
                   ))}
                 </div>
               </div>
-              <p className="mt-2 text-sm leading-relaxed text-white/90">
-                "Em poucos cliques resolvi tudo. Simples, rápido e sem stress!"
-              </p>
-              <div className="mt-3 flex items-center gap-2.5 border-t border-white/10 pt-3">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-brand-gold to-brand-gold-soft text-[11px] font-bold text-brand-gold-foreground">
-                  CR
-                </span>
-                <div className="leading-tight">
-                  <div className="text-xs font-bold">Camila R.</div>
-                  <div className="text-[10px] text-white/75">Cliente desde 2024 · São Paulo</div>
+
+              {/* Slides */}
+              <div className="relative mt-2 min-h-[88px]">
+                {testimonials.map((t, i) => (
+                  <div
+                    key={t.name}
+                    aria-hidden={i !== tIndex}
+                    className={`transition-all duration-500 ${
+                      i === tIndex
+                        ? "relative opacity-100 translate-y-0"
+                        : "pointer-events-none absolute inset-0 opacity-0 translate-y-1"
+                    }`}
+                  >
+                    <p className="text-sm leading-relaxed text-white/90">
+                      "{t.text}"
+                    </p>
+                    <div className="mt-3 flex items-center gap-2.5 border-t border-white/10 pt-3">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-brand-gold to-brand-gold-soft text-[11px] font-bold text-brand-gold-foreground">
+                        {t.initials}
+                      </span>
+                      <div className="leading-tight">
+                        <div className="text-xs font-bold">{t.name}</div>
+                        <div className="text-[10px] text-white/75">{t.meta}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Controls */}
+              <div className="mt-3 flex items-center justify-between gap-3 border-t border-white/10 pt-2.5">
+                <div className="flex items-center gap-1.5" role="tablist" aria-label="Selecionar depoimento">
+                  {testimonials.map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      role="tab"
+                      aria-selected={i === tIndex}
+                      aria-label={`Depoimento ${i + 1} de ${testimonials.length}`}
+                      onClick={() => goTo(i)}
+                      className={`h-1.5 rounded-full transition-all ${
+                        i === tIndex
+                          ? "w-6 bg-brand-gold"
+                          : "w-1.5 bg-white/30 hover:bg-white/55"
+                      }`}
+                    />
+                  ))}
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <button
+                    type="button"
+                    onClick={prev}
+                    aria-label="Depoimento anterior"
+                    className="flex h-7 w-7 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/82 transition-all hover:border-brand-gold/60 hover:bg-brand-gold/15 hover:text-brand-gold"
+                  >
+                    <ChevronLeft className="h-3.5 w-3.5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={next}
+                    aria-label="Próximo depoimento"
+                    className="flex h-7 w-7 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/82 transition-all hover:border-brand-gold/60 hover:bg-brand-gold/15 hover:text-brand-gold"
+                  >
+                    <ChevronRight className="h-3.5 w-3.5" />
+                  </button>
                 </div>
               </div>
             </div>
