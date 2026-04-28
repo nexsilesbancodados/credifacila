@@ -28,7 +28,7 @@ import {
 } from "lucide-react";
 import { whatsappLink } from "@/config/site";
 import logo from "@/assets/credifacil-logo.webp";
-import heroIllo from "@/assets/illustrations/hero-consignado.svg";
+import heroIllo from "@/assets/hero-consignado-photo.jpg";
 import seniorImg from "@/assets/consignado-senior.webp";
 import servidorImg from "@/assets/consignado-servidor.webp";
 import bannerImg from "@/assets/consignado-banner.webp";
@@ -303,14 +303,26 @@ const Consignado = () => {
 
           {/* Right: hero illustration */}
           <div className="relative hidden lg:block" data-anim="fade-left">
-            <img
-              src={heroIllo}
-              alt="Documento de consignado aprovado, moedas e carteira douradas"
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-              className="mx-auto h-auto w-full max-w-lg drop-shadow-[0_10px_40px_rgba(218,165,32,0.25)]"
-            />
+            <div className="relative mx-auto w-full max-w-lg">
+              <div
+                className="pointer-events-none absolute -inset-4 rounded-[32px] opacity-60 blur-2xl"
+                style={{
+                  background:
+                    "radial-gradient(circle at 30% 30%, hsl(38 90% 55% / 0.45), transparent 70%)",
+                }}
+                aria-hidden
+              />
+              <img
+                src={heroIllo}
+                alt="Casal aposentado sorrindo enquanto consulta consignado em tablet"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                width={1024}
+                height={1024}
+                className="relative aspect-square w-full rounded-[28px] border border-white/10 object-cover shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]"
+              />
+            </div>
           </div>
         </div>
       </section>
