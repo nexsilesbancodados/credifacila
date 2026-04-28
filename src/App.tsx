@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from "react";
+ import { lazy, Suspense, useEffect, useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -25,6 +25,20 @@ const AnimationsBoot = () => {
   return null;
 };
 
+ const LoadingScreen = () => (
+   <div className="flex min-h-screen w-full flex-col items-center justify-center bg-[hsl(30_22%_5%)] text-white">
+     <div className="relative mb-8 h-12 w-12">
+       <div className="absolute inset-0 animate-ping rounded-full bg-brand-gold/20" />
+       <div className="relative flex h-12 w-12 items-center justify-center rounded-full border border-brand-gold/30">
+         <div className="h-6 w-6 animate-spin rounded-full border-2 border-brand-gold border-t-transparent" />
+       </div>
+     </div>
+     <p className="animate-pulse text-sm font-medium tracking-widest text-brand-gold/80 uppercase">
+       Carregando Experiência
+     </p>
+   </div>
+ );
+ 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -33,7 +47,7 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <AnimationsBoot />
-        <Suspense fallback={<div className="min-h-screen bg-[hsl(40_30%_97%)]" />}>
+         <Suspense fallback={<LoadingScreen />}>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/simular" element={<Simular />} />

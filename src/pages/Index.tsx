@@ -13,27 +13,40 @@ type DeferredSectionProps = {
   minHeight: string;
 };
 
-const DeferredSection = ({ children, minHeight }: DeferredSectionProps) => {
-  const [shouldLoad, setShouldLoad] = useState(false);
+ const DeferredSection = ({ children, minHeight }: DeferredSectionProps) => {
+   const [shouldLoad, setShouldLoad] = useState(false);
+   const [hasInteracted, setHasInteracted] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+     // Pre-load if user scrolls or interacts
+     const handleInteraction = () => setHasInteracted(true);
+     window.addEventListener("scroll", handleInteraction, { passive: true });
+     window.addEventListener("touchstart", handleInteraction, { passive: true });
+ 
     const node = ref.current;
-    if (!node || shouldLoad) return;
+     if (!node || shouldLoad) return () => {
+       window.removeEventListener("scroll", handleInteraction);
+       window.removeEventListener("touchstart", handleInteraction);
+     };
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+         if (entry.isIntersecting || hasInteracted) {
           setShouldLoad(true);
           observer.disconnect();
         }
       },
-      { rootMargin: "320px 0px" },
+       { rootMargin: "600px 0px" }, // Load sooner
     );
 
     observer.observe(node);
-    return () => observer.disconnect();
-  }, [shouldLoad]);
+     return () => {
+       observer.disconnect();
+       window.removeEventListener("scroll", handleInteraction);
+       window.removeEventListener("touchstart", handleInteraction);
+     };
+   }, [shouldLoad, hasInteracted]);
 
   return (
     <div ref={ref} style={{ minHeight }}>
