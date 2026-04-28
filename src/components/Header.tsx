@@ -219,7 +219,7 @@ const Header = () => {
       <div className="relative">
         {/* Hero image */}
         <div className="relative w-full">
-          <div className="relative h-[640px] overflow-hidden md:h-[700px]">
+          <div className="relative h-[680px] overflow-hidden md:h-[760px] lg:h-[820px]">
             {/* Carousel slides */}
             {heroSlides.map((slide, i) => (
               <img
@@ -229,8 +229,8 @@ const Header = () => {
                 fetchPriority={i === 0 ? "high" : "low"}
                 src={slide.src}
                 alt={slide.alt}
-                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1400ms] ease-in-out ${
-                  activeSlide === i ? "opacity-100" : "opacity-0"
+                className={`absolute inset-0 h-full w-full object-cover transition-all duration-[1600ms] ease-in-out ${
+                  activeSlide === i ? "scale-100 opacity-100" : "scale-105 opacity-0"
                 }`}
                 style={{ objectPosition: slide.objectPosition }}
                 width={1920}
@@ -238,12 +238,29 @@ const Header = () => {
                 aria-hidden={activeSlide !== i}
               />
             ))}
-            {/* Dark gradient overlay on the left for text legibility */}
+            {/* Cinematic overlays — combined for depth and legibility */}
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(90deg, hsl(30 18% 6% / 0.97) 0%, hsl(30 18% 6% / 0.88) 28%, hsl(30 18% 6% / 0.45) 55%, transparent 78%)",
+                  "linear-gradient(95deg, hsl(30 22% 5% / 0.97) 0%, hsl(30 22% 5% / 0.88) 28%, hsl(30 22% 5% / 0.42) 58%, transparent 82%)",
+              }}
+              aria-hidden="true"
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "radial-gradient(ellipse 80% 60% at 20% 50%, hsl(30 30% 4% / 0.55), transparent 70%)",
+              }}
+              aria-hidden="true"
+            />
+            {/* Subtle film grain texture */}
+            <div
+              className="pointer-events-none absolute inset-0 opacity-[0.07] mix-blend-overlay"
+              style={{
+                backgroundImage:
+                  "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
               }}
               aria-hidden="true"
             />
@@ -315,7 +332,8 @@ const Header = () => {
 
                   <h1
                     key={`title-${activeSlide}`}
-                    className="animate-fade-in text-[40px] font-bold leading-[1.02] tracking-tight text-white md:text-[62px]"
+                    className="animate-fade-in text-[42px] font-bold leading-[1.02] tracking-tight text-white md:text-[64px] lg:text-[72px]"
+                    style={{ textShadow: "0 2px 24px hsl(30 30% 4% / 0.45)" }}
                   >
                     {slide.title.map((line, idx) => {
                       const isGold = idx >= slide.goldFromLine;
@@ -401,13 +419,34 @@ const Header = () => {
                       Dinheiro na conta <span className="font-bold text-white">hoje</span>
                     </div>
                     <div className="hidden h-3 w-px bg-white/15 sm:block" />
-                    <div className="flex items-center gap-1.5 text-xs font-medium text-white/75">
-                      <div className="flex">
-                        {[0, 1, 2, 3, 4].map((i) => (
-                          <Star key={i} className="h-3.5 w-3.5 fill-brand-gold text-brand-gold" />
+                    <div className="flex items-center gap-2 text-xs font-medium text-white/75">
+                      {/* Mini avatars stack */}
+                      <div className="flex -space-x-2">
+                        {[
+                          "hsl(35 80% 55%)",
+                          "hsl(15 70% 50%)",
+                          "hsl(45 85% 60%)",
+                        ].map((c, i) => (
+                          <span
+                            key={i}
+                            className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-[hsl(30_22%_5%)] text-[9px] font-bold text-white"
+                            style={{ background: c }}
+                          >
+                            {["AC", "JM", "RS"][i]}
+                          </span>
                         ))}
                       </div>
-                      <span className="font-bold text-white">+50 mil</span> clientes
+                      <div className="flex flex-col leading-tight">
+                        <div className="flex items-center gap-0.5">
+                          {[0, 1, 2, 3, 4].map((i) => (
+                            <Star key={i} className="h-3 w-3 fill-brand-gold text-brand-gold" />
+                          ))}
+                          <span className="ml-1 text-[11px] font-bold text-white">4,9</span>
+                        </div>
+                        <span className="text-[10px] text-white/60">
+                          <span className="font-bold text-white">+50 mil</span> clientes felizes
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -421,7 +460,7 @@ const Header = () => {
                 setActiveSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
               }
               aria-label="Anterior"
-              className="absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white/70 backdrop-blur-sm transition hover:border-brand-gold/50 hover:bg-black/60 hover:text-brand-gold"
+              className="absolute left-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/30 text-white/80 backdrop-blur-md transition-all hover:scale-110 hover:border-brand-gold/60 hover:bg-black/60 hover:text-brand-gold"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
@@ -429,35 +468,119 @@ const Header = () => {
               type="button"
               onClick={() => setActiveSlide((prev) => (prev + 1) % heroSlides.length)}
               aria-label="Próximo"
-              className="absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white/70 backdrop-blur-sm transition hover:border-brand-gold/50 hover:bg-black/60 hover:text-brand-gold"
+              className="absolute right-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/30 text-white/80 backdrop-blur-md transition-all hover:scale-110 hover:border-brand-gold/60 hover:bg-black/60 hover:text-brand-gold"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
 
-            {/* Carousel dots */}
-            <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2">
-              {heroSlides.map((_, i) => (
-                <button
-                  key={i}
-                  type="button"
-                  onClick={() => setActiveSlide(i)}
-                  aria-label={`Ir para slide ${i + 1}`}
-                  className={`h-1.5 rounded-full transition-all duration-500 ${
-                    activeSlide === i ? "w-6 bg-brand-gold" : "w-1.5 bg-white/30 hover:bg-white/60"
-                  }`}
-                />
-              ))}
+            {/* Carousel dots + counter */}
+            <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 items-center gap-3 rounded-full border border-white/10 bg-black/40 px-4 py-2 backdrop-blur-md">
+              <span className="text-[10px] font-bold tabular-nums text-white/70">
+                <span className="text-brand-gold">
+                  {String(activeSlide + 1).padStart(2, "0")}
+                </span>
+                <span className="mx-1 text-white/30">/</span>
+                {String(heroSlides.length).padStart(2, "0")}
+              </span>
+              <div className="h-3 w-px bg-white/15" />
+              <div className="flex items-center gap-1.5">
+                {heroSlides.map((_, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => setActiveSlide(i)}
+                    aria-label={`Ir para slide ${i + 1}`}
+                    className={`relative h-1.5 overflow-hidden rounded-full transition-all duration-500 ${
+                      activeSlide === i
+                        ? "w-8 bg-white/15"
+                        : "w-1.5 bg-white/30 hover:bg-white/60"
+                    }`}
+                  >
+                    {activeSlide === i && (
+                      <span
+                        key={`progress-${activeSlide}`}
+                        className="absolute inset-y-0 left-0 bg-brand-gold"
+                        style={{
+                          animation: "heroProgress 5500ms linear forwards",
+                        }}
+                      />
+                    )}
+                  </button>
+                ))}
+              </div>
             </div>
 
-            {/* Floating dark badge */}
-            <div className="absolute bottom-20 right-8 hidden max-w-xs items-start gap-3 rounded-2xl border border-brand-gold/25 bg-[hsl(var(--surface-elevated))]/90 p-4 text-white shadow-[var(--shadow-card)] backdrop-blur-md md:flex">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-gold">
-                <ShieldCheck className="h-5 w-5" />
-              </div>
-              <div className="leading-snug">
-                <div className="text-sm font-semibold">Segurança e transparência</div>
-                <div className="mt-0.5 text-xs opacity-80">
-                  Atendimento humanizado e condições justas para você.
+            {/* Floating mini-simulator preview card */}
+            <div className="pointer-events-auto absolute right-6 top-1/2 z-10 hidden w-[280px] -translate-y-1/2 lg:block">
+              <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-[hsl(30_22%_5%)]/85 p-5 shadow-[0_30px_80px_-20px_hsl(30_30%_4%/0.7)] backdrop-blur-xl">
+                {/* gold accent */}
+                <div
+                  className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-50"
+                  style={{
+                    background:
+                      "radial-gradient(circle, hsl(38 90% 55% / 0.4), transparent 70%)",
+                  }}
+                  aria-hidden="true"
+                />
+                <div className="relative">
+                  <div className="flex items-center justify-between">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-emerald-300">
+                      <span className="relative flex h-1.5 w-1.5">
+                        <span className="absolute inset-0 animate-ping rounded-full bg-emerald-400/70" />
+                        <span className="relative h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                      </span>
+                      Ao vivo
+                    </span>
+                    <span className="text-[9px] font-semibold uppercase tracking-wider text-white/50">
+                      Simulador
+                    </span>
+                  </div>
+
+                  <div className="mt-4">
+                    <div className="text-[10px] font-semibold uppercase tracking-wider text-white/50">
+                      Você recebe
+                    </div>
+                    <div className="mt-1 text-[28px] font-bold leading-none text-white">
+                      R$ 15.000
+                    </div>
+                  </div>
+
+                  <div className="mt-4 rounded-xl border border-white/10 bg-white/[0.04] p-3">
+                    <div className="flex items-end justify-between">
+                      <div>
+                        <div className="text-[9px] font-semibold uppercase tracking-wider text-white/50">
+                          Parcela
+                        </div>
+                        <div className="text-base font-bold leading-tight text-white">
+                          R$ 542<span className="text-xs text-white/60">,30</span>
+                        </div>
+                        <div className="text-[10px] text-white/50">em 36x</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-[9px] font-semibold uppercase tracking-wider text-white/50">
+                          Taxa
+                        </div>
+                        <div className="text-base font-bold leading-tight text-brand-gold">
+                          1,49<span className="text-[10px]">%</span>
+                        </div>
+                        <div className="text-[10px] text-white/50">a.m.</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <Link
+                    to="/simular"
+                    className="group mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl py-3 text-xs font-bold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.02] hover:brightness-110"
+                    style={{ background: "var(--gradient-gold)" }}
+                  >
+                    Simular agora
+                    <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                  </Link>
+
+                  <div className="mt-3 flex items-center justify-center gap-1.5 text-[9px] font-medium text-white/50">
+                    <ShieldCheck className="h-3 w-3 text-brand-gold" />
+                    Não afeta seu score
+                  </div>
                 </div>
               </div>
             </div>
