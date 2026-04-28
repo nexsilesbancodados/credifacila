@@ -16,9 +16,10 @@ import heroImage from "@/assets/hero-credifacil.png";
 const navItems = [
   { label: "Início", href: "#inicio", active: true },
   { label: "Empréstimos", href: "#emprestimos" },
-  { label: "Como Funciona", href: "#como-funciona" },
-  { label: "Quem Somos", href: "#sobre" },
+  { label: "Como funciona", href: "#como-funciona" },
+  { label: "Sobre nós", href: "#sobre" },
   { label: "Dúvidas", href: "#duvidas" },
+  { label: "Fale conosco", href: "#contato" },
 ];
 
 const features = [
