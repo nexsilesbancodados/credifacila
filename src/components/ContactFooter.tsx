@@ -86,7 +86,7 @@ const ContactFooter = () => {
           className="relative overflow-hidden rounded-[32px] border border-white/10 p-8 shadow-[var(--shadow-card)] md:p-10"
           style={{
             background:
-              "linear-gradient(135deg, hsl(220 16% 11%) 0%, hsl(220 14% 14%) 100%)",
+              "linear-gradient(135deg, hsl(215 45% 17%) 0%, hsl(215 38% 22%) 100%)",
           }}
         >
           <div
