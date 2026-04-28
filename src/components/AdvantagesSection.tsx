@@ -60,11 +60,11 @@ const AdvantagesSection = () => {
     >
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 text-center">
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-white/5 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-gold backdrop-blur-sm">
+          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-gold/50 bg-white/80 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-gold shadow-sm backdrop-blur-sm">
             <Sparkles className="h-3 w-3" />
             Por que a Credifácil
           </span>
-          <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white md:text-4xl lg:text-[46px]">
+          <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-[hsl(30_20%_15%)] md:text-4xl lg:text-[46px]">
             Tudo que você precisa,{" "}
             <span
               className="bg-clip-text text-transparent"
@@ -73,8 +73,8 @@ const AdvantagesSection = () => {
               em um só lugar
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/65 md:text-base">
-            Mais de <span className="font-semibold text-white">50 mil pessoas</span> já realizaram seus planos com a confiança e a agilidade da Credifácil.
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[hsl(30_15%_30%)] md:text-base">
+            Mais de <span className="font-bold text-[hsl(30_20%_15%)]">50 mil pessoas</span> já realizaram seus planos com a confiança e a agilidade da Credifácil.
           </p>
         </div>
 
