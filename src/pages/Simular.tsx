@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import logo from "@/assets/credifacil-logo.png";
 import SimulatorCard from "@/components/SimulatorCard";
-import heroImg from "@/assets/simulator-hero.jpg";
+import heroImg from "@/assets/hero-slide-3.jpg";
 
 const trust = [
   {
