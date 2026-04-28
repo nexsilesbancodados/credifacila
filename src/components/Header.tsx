@@ -31,40 +31,89 @@ const features = [
 const Header = () => {
   return (
     <header className="relative w-full overflow-hidden bg-background" aria-label="Cabeçalho Credifácil">
-      {/* Top navigation */}
-      <nav className="relative z-20 mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <a href="#inicio" className="flex items-center gap-2">
-          <span className="text-3xl font-extrabold tracking-tight text-brand-gold">
-            Credifácil
-          </span>
-        </a>
-
-        <ul className="hidden items-center gap-9 lg:flex">
-          {navItems.map((item) => (
-            <li key={item.label}>
-              <a
-                href={item.href}
-                className={`relative text-sm font-medium transition-colors hover:text-brand-gold ${
-                  item.active ? "text-brand-gold" : "text-foreground/80"
-                }`}
-              >
-                {item.label}
-                {item.active && (
-                  <span className="absolute -bottom-2 left-1/2 h-[3px] w-7 -translate-x-1/2 rounded-full bg-brand-gold" />
-                )}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        <a
-          href="#whatsapp"
-          className="group flex items-center gap-2 rounded-full bg-brand-gold px-5 py-2.5 text-sm font-semibold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.02] hover:brightness-105"
+      {/* Top navigation - dark with gold arcs */}
+      <div className="relative z-20 w-full bg-[hsl(30_15%_8%)]">
+        {/* Top gold arc */}
+        <svg
+          className="pointer-events-none absolute -top-px left-0 h-3 w-full"
+          viewBox="0 0 1440 12"
+          preserveAspectRatio="none"
+          aria-hidden="true"
         >
-          <MessageCircle className="h-4 w-4" />
-          Fale com um especialista
-        </a>
-      </nav>
+          <path
+            d="M0,12 Q720,-6 1440,12 L1440,12 L0,12 Z"
+            fill="hsl(35 85% 50%)"
+          />
+        </svg>
+        {/* Bottom gold arc */}
+        <svg
+          className="pointer-events-none absolute -bottom-px left-0 h-3 w-full"
+          viewBox="0 0 1440 12"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M0,0 Q720,18 1440,0 L1440,0 L0,0 Z"
+            fill="hsl(35 85% 50%)"
+          />
+        </svg>
+
+        <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          {/* Logo */}
+          <a href="#inicio" className="flex items-center gap-2">
+            <svg viewBox="0 0 60 48" className="h-10 w-12" aria-hidden="true">
+              <path
+                d="M55 8 Q30 -2 5 12 Q20 18 38 16 Q48 15 55 8 Z"
+                fill="hsl(35 85% 50%)"
+              />
+              <path
+                d="M55 22 Q30 14 5 28 Q22 32 40 30 Q50 29 55 22 Z"
+                fill="hsl(40 90% 55%)"
+              />
+              <path
+                d="M50 38 Q28 32 8 42"
+                stroke="hsl(35 85% 50%)"
+                strokeWidth="3"
+                fill="none"
+                strokeLinecap="round"
+              />
+            </svg>
+            <span className="text-3xl font-extrabold tracking-tight text-brand-gold">
+              Credifácil
+            </span>
+          </a>
+
+          {/* Menu */}
+          <ul className="hidden items-center gap-8 lg:flex">
+            {navItems.map((item) => (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  className={`relative text-sm font-medium transition-colors hover:text-brand-gold ${
+                    item.active ? "text-brand-gold" : "text-[hsl(40_30%_92%)]"
+                  }`}
+                >
+                  {item.label}
+                  {item.active && (
+                    <span className="absolute -bottom-2 left-1/2 h-[2px] w-7 -translate-x-1/2 rounded-full bg-brand-gold" />
+                  )}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {/* WhatsApp button */}
+          <a
+            href="#whatsapp"
+            className="group flex items-center gap-2 rounded-full border border-brand-gold/70 px-5 py-2.5 text-sm font-medium text-[hsl(40_30%_95%)] transition-all hover:bg-brand-gold/10 hover:text-brand-gold"
+          >
+            <span className="flex h-6 w-6 items-center justify-center rounded-full border border-brand-gold/70">
+              <MessageCircle className="h-3.5 w-3.5 text-brand-gold" />
+            </span>
+            Fale no WhatsApp
+          </a>
+        </nav>
+      </div>
 
       {/* Hero */}
       <div className="relative">
