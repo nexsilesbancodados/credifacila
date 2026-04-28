@@ -145,3 +145,19 @@ All colors MUST be HSL.
   from { width: 0%; }
   to { width: 100%; }
 }
+
+@layer utilities {
+  a[href*="lovable.app"], 
+  iframe[src*="lovable.app"], 
+  a[href*="lovable.dev"], 
+  iframe[src*="lovable.dev"], 
+  div[style*="Edit with Lovable"],
+  .lovable-badge {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    z-index: -9999 !important;
+  }
+}
