@@ -1,4 +1,4 @@
- import { lazy, Suspense, useEffect, useState } from "react";
+import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -6,14 +6,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import Simular from "./pages/Simular.tsx";
+import Securitizadora from "./pages/Securitizadora.tsx";
+import Consignado from "./pages/Consignado.tsx";
+import AntecipacaoRecebiveis from "./pages/AntecipacaoRecebiveis.tsx";
+import BoletoGarantido from "./pages/BoletoGarantido.tsx";
+import ContaDigitalLuri from "./pages/ContaDigitalLuri.tsx";
 import useScrollAnimations from "./hooks/useScrollAnimations";
-
-const Simular = lazy(() => import("./pages/Simular.tsx"));
-const Securitizadora = lazy(() => import("./pages/Securitizadora.tsx"));
-const Consignado = lazy(() => import("./pages/Consignado.tsx"));
-const AntecipacaoRecebiveis = lazy(() => import("./pages/AntecipacaoRecebiveis.tsx"));
-const BoletoGarantido = lazy(() => import("./pages/BoletoGarantido.tsx"));
-const ContaDigitalLuri = lazy(() => import("./pages/ContaDigitalLuri.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -65,20 +64,18 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <AnimationsBoot />
-         <Suspense fallback={<LoadingScreen />}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/simular" element={<Simular />} />
-            <Route path="/securitizadora" element={<Securitizadora />} />
-            <Route path="/consignado" element={<Consignado />} />
-            <Route path="/securitizadora/antecipacao-de-recebiveis" element={<AntecipacaoRecebiveis />} />
-            <Route path="/securitizadora/boleto-garantido" element={<BoletoGarantido />} />
-            <Route path="/securitizadora/conta-digital-luri" element={<ContaDigitalLuri />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
+         <AnimationsBoot />
+         <Routes>
+           <Route path="/" element={<Index />} />
+           <Route path="/simular" element={<Simular />} />
+           <Route path="/securitizadora" element={<Securitizadora />} />
+           <Route path="/consignado" element={<Consignado />} />
+           <Route path="/securitizadora/antecipacao-de-recebiveis" element={<AntecipacaoRecebiveis />} />
+           <Route path="/securitizadora/boleto-garantido" element={<BoletoGarantido />} />
+           <Route path="/securitizadora/conta-digital-luri" element={<ContaDigitalLuri />} />
+           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+           <Route path="*" element={<NotFound />} />
+         </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
