@@ -29,8 +29,9 @@ const SimulatorCard = ({ variant = "card" }: Props) => {
 
   return (
     <div
-      className={`relative rounded-3xl border border-foreground/10 bg-white p-7 shadow-[var(--shadow-card)] ${
-        isPage ? "md:p-9" : ""
+      data-anim="scale-in"
+      className={`relative rounded-[32px] border border-white bg-white/95 p-7 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] backdrop-blur-xl ${
+        isPage ? "md:p-10" : ""
       }`}
     >
       <div
