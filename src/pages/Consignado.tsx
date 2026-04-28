@@ -34,7 +34,7 @@ import servidorImg from "@/assets/consignado-servidor.webp";
 import bannerImg from "@/assets/consignado-banner.webp";
 import audAposentados from "@/assets/audience-aposentados.jpg";
 import audServidores from "@/assets/audience-servidores.jpg";
-import audMilitares from "@/assets/audience-militares.jpg";
+import audProfissionais from "@/assets/audience-profissionais.jpg";
 import audClt from "@/assets/audience-clt.jpg";
 import TestimonialsMarquee, { type MarqueeTestimonial } from "@/components/TestimonialsMarquee";
 
@@ -77,9 +77,9 @@ const audiences = [
   },
   {
     icon: GraduationCap,
-    title: "Militares (Forças Armadas)",
-    desc: "Condições exclusivas para Exército, Marinha, Aeronáutica e Polícia Militar.",
-    image: audMilitares,
+    title: "Profissionais liberais",
+    desc: "Condições exclusivas para profissionais com vínculo em entidades conveniadas.",
+    image: audProfissionais,
   },
   {
     icon: Users,
@@ -140,11 +140,11 @@ const modalities = [
   },
   {
     icon: GraduationCap,
-    title: "Forças Armadas",
+    title: "Profissionais Liberais",
     rate: "1,52% a.m.",
     term: "Até 96x",
     value: "Até R$ 150 mil",
-    desc: "Exército, Marinha, Aeronáutica e Polícia Militar com condições exclusivas.",
+    desc: "Profissionais conveniados a entidades de classe com condições exclusivas.",
     badge: "Exclusivo",
   },
   {
@@ -177,9 +177,9 @@ const testimonials = [
     text: "Quitei outras dívidas com taxas altíssimas e ainda economizei. Em menos de 3 horas o dinheiro estava na minha conta.",
   },
   {
-    name: "Sgt. Roberto Lima",
-    role: "Polícia Militar",
-    text: "Processo 100% digital, sem sair de casa. A diferença na taxa em relação ao banco onde recebo foi enorme.",
+    name: "Roberto Lima",
+    role: "Profissional Liberal",
+    text: "Processo 100% digital, sem sair de casa. A diferença na taxa em relação ao meu banco foi enorme.",
   },
 ];
 
@@ -220,7 +220,7 @@ const faqs = [
   },
   {
     q: "Quem pode contratar?",
-    a: "Aposentados e pensionistas do INSS, servidores públicos (federais, estaduais e municipais), militares e trabalhadores CLT de empresas conveniadas.",
+    a: "Aposentados e pensionistas do INSS, servidores públicos (federais, estaduais e municipais), profissionais liberais e trabalhadores CLT de empresas conveniadas.",
   },
   {
     q: "Posso contratar mesmo com nome sujo?",
@@ -328,7 +328,7 @@ const Consignado = () => {
               </span>
             </h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-white/85 md:text-[17px]">
-              Para aposentados, pensionistas do INSS, servidores públicos e militares —
+              Para aposentados, pensionistas do INSS, servidores públicos e profissionais conveniados —
               parcelas a partir de{" "}
               <span className="font-semibold text-white">1,49% a.m.</span> em até{" "}
               <span className="font-semibold text-white">96 meses</span>.
@@ -686,7 +686,7 @@ const Consignado = () => {
           <div className="relative overflow-hidden rounded-2xl">
             <img
               src={servidorImg}
-              alt="Militar brasileiro sorrindo após contratar consignado"
+              alt="Profissional brasileiro sorrindo após contratar consignado"
               className="h-[320px] w-full object-cover"
               width={1024}
               height={1024}
@@ -727,7 +727,7 @@ const Consignado = () => {
         eyebrow="Quem já contratou"
         title="Histórias reais"
         titleHighlight="de quem confia na Credifácil"
-        subtitle="Aposentados, servidores e militares de todo o Brasil compartilham por que escolheram o consignado da Credifácil."
+        subtitle="Aposentados, servidores e profissionais de todo o Brasil compartilham por que escolheram o consignado da Credifácil."
         testimonials={testimonialsMarquee}
       />
 
