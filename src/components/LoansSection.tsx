@@ -230,10 +230,10 @@ const LoansSection = () => {
             />
             {/* Top fade for badge legibility */}
             <div
-              className="absolute inset-x-0 top-0 h-32"
+              className="absolute inset-x-0 top-0 h-36"
               style={{
                 background:
-                  "linear-gradient(180deg, hsl(220 16% 7% / 0.55) 0%, transparent 100%)",
+                  "linear-gradient(180deg, hsl(220 16% 7% / 0.7) 0%, hsl(220 16% 7% / 0.25) 60%, transparent 100%)",
               }}
               aria-hidden
             />
@@ -257,9 +257,9 @@ const LoansSection = () => {
             </div>
 
             {/* Top-right floating chip — live counter */}
-            <div className="absolute right-4 top-4 flex items-center gap-2 rounded-full border border-white/20 bg-[hsl(220_16%_7%)]/70 px-3 py-1.5 text-[10px] font-semibold text-white backdrop-blur-md">
+            <div className="absolute right-4 top-4 flex items-center gap-2 rounded-full border border-white/25 bg-[hsl(220_16%_7%)]/85 px-3 py-1.5 text-[10px] font-semibold text-white shadow-md backdrop-blur-md">
               <Users className="h-3 w-3 text-brand-gold" />
-              <span className="text-white/85">
+              <span className="text-white/95">
                 <span className="font-bold text-white">2.341</span> aprovados hoje
               </span>
             </div>
