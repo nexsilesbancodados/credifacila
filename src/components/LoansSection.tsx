@@ -39,6 +39,9 @@ const products = [
     title: "Crédito Pessoal",
     desc: "Dinheiro livre na sua conta para realizar o que você quiser, sem precisar justificar.",
     tag: "Mais pedido",
+    rate: "1,79%",
+    rateLabel: "a.m. a partir de",
+    term: "até 60x",
     href: whatsappLink("Olá! Quero contratar Crédito Pessoal."),
   },
   {
@@ -46,6 +49,9 @@ const products = [
     title: "Crédito com Garantia",
     desc: "Use um imóvel ou veículo como garantia e tenha as menores taxas do mercado.",
     tag: "Menor taxa",
+    rate: "0,89%",
+    rateLabel: "a.m. a partir de",
+    term: "até 240x",
     href: whatsappLink("Olá! Quero contratar Crédito com Garantia."),
   },
   {
@@ -53,6 +59,9 @@ const products = [
     title: "Portabilidade de Crédito",
     desc: "Traga seu contrato de outro banco para a Credifácil e reduza sua parcela hoje mesmo.",
     tag: null,
+    rate: "−40%",
+    rateLabel: "na parcela em média",
+    term: "sem custo",
     href: whatsappLink("Olá! Quero fazer Portabilidade de Crédito."),
   },
   {
@@ -60,6 +69,9 @@ const products = [
     title: "Para Empresas",
     desc: "Capital de giro e linhas de crédito sob medida para impulsionar o seu negócio.",
     tag: "PJ",
+    rate: "1,49%",
+    rateLabel: "a.m. a partir de",
+    term: "até 36x",
     href: whatsappLink("Olá! Quero crédito para minha empresa."),
   },
 ];
