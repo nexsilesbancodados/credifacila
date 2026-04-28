@@ -69,8 +69,8 @@ const Header = () => {
       {/* Hero */}
       <div className="relative">
         {/* Hero image */}
-        <div className="relative mx-auto max-w-[1400px] px-6">
-          <div className="relative overflow-hidden rounded-3xl">
+        <div className="relative w-full">
+          <div className="relative overflow-hidden">
             <img
               src={heroImage}
               alt="Casal sorridente representando clientes satisfeitos da Credifácil"
@@ -99,7 +99,7 @@ const Header = () => {
 
             {/* Content */}
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full px-8 md:px-14">
+              <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
                 <div className="max-w-xl">
                   <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-foreground md:text-[52px]">
                     O crédito que
