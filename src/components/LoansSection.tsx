@@ -68,12 +68,6 @@ const products = [
   },
 ];
 
-const partnerItems = [
-  { icon: Award, title: "Transparência total", desc: "Contratos simples e\nsem letras miúdas." },
-  { icon: HandCoins, title: "Zero taxa escondida", desc: "Você sabe exatamente\no que vai pagar." },
-  { icon: Lock, title: "Compromisso real", desc: "Estamos do seu lado\nem cada etapa." },
-];
-
 const testimonials = [
   {
     initials: "CR",
