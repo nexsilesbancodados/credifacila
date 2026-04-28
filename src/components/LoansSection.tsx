@@ -554,7 +554,8 @@ const LoansSection = () => {
         <div className="relative mt-6 overflow-hidden rounded-3xl border border-brand-gold/20 bg-gradient-to-br from-white/80 to-[hsl(40_60%_94%)]/80 p-6 shadow-[var(--shadow-card)] backdrop-blur-sm md:p-8">
           <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.1fr_2fr_auto]">
             <div>
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-brand-gold">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-gold/30 bg-white/70 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold">
+                <Award className="h-3 w-3" />
                 Nosso compromisso
               </span>
               <h3 className="mt-1 font-display text-2xl font-bold leading-tight text-foreground md:text-[26px]">
@@ -570,12 +571,12 @@ const LoansSection = () => {
 
             <ul className="grid grid-cols-1 gap-5 sm:grid-cols-3">
               {partnerItems.map((p) => (
-                <li key={p.title} className="flex items-start gap-3">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-brand-gold/30 bg-gradient-to-br from-brand-gold/15 to-brand-gold/5 text-brand-gold">
+                <li key={p.title} className="group flex items-start gap-3 rounded-2xl p-2 transition-colors hover:bg-white/55">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-brand-gold/30 bg-gradient-to-br from-brand-gold/15 to-brand-gold/5 text-brand-gold transition-transform duration-300 group-hover:scale-105 group-hover:rotate-[-3deg]">
                     <p.icon className="h-[18px] w-[18px]" strokeWidth={2} />
                   </span>
                   <div className="leading-snug">
-                    <div className="text-[13px] font-bold text-foreground">{p.title}</div>
+                    <div className="text-[13px] font-bold text-foreground transition-colors group-hover:text-brand-gold">{p.title}</div>
                     <div className="mt-1 whitespace-pre-line text-[11px] leading-relaxed text-foreground/72">
                       {p.desc}
                     </div>
@@ -599,8 +600,12 @@ const LoansSection = () => {
                 </span>
               </div>
               <div>
-                <div className="text-sm font-bold text-foreground">Fale com a gente</div>
-                <div className="mt-0.5 text-[11px] text-foreground/72">
+                <div className="text-sm font-bold text-foreground">Fale com um especialista</div>
+                <div className="mt-0.5 inline-flex items-center gap-1 text-[11px] text-foreground/72">
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-70" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                  </span>
                   Online agora · resposta na hora
                 </div>
                 <a
