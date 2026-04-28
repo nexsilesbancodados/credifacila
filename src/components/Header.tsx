@@ -37,7 +37,7 @@ const Header = () => {
   return (
     <header className="relative w-full overflow-hidden" aria-label="Cabeçalho Credifácil">
       {/* Top navigation - dark with gold arcs */}
-      <div className="relative z-20 w-full bg-[hsl(30_18%_6%)]/95 backdrop-blur-md">
+      <div className="relative z-20 w-full bg-[hsl(30_18%_6%)]">
         {/* Top gold curve - thin, dipping down at the sides */}
         <svg
           className="pointer-events-none absolute -top-px left-0 h-2 w-full"
@@ -57,31 +57,33 @@ const Header = () => {
           <path d="M0,16 L1440,16 L1440,8 Q720,-6 0,8 Z" fill="hsl(38 90% 50%)" />
         </svg>
 
-        <nav className="relative flex w-full items-center justify-between px-5 py-4 md:px-8 lg:px-10">
+        <nav className="relative flex w-full items-center justify-between px-5 py-3.5 md:px-8 md:py-4 lg:px-12">
           {/* Logo */}
-          <a href="#inicio" className="flex items-center" aria-label="Credifácil">
+          <a href="#inicio" className="flex items-center transition-opacity hover:opacity-90" aria-label="Credifácil">
             <img
               src={logo}
               alt="Credifácil"
-              className="h-10 w-auto md:h-12"
+              className="h-9 w-auto md:h-11"
               width={1795}
               height={605}
             />
           </a>
 
           {/* Menu */}
-          <ul className="hidden items-center gap-8 lg:flex">
+          <ul className="hidden items-center gap-9 lg:flex">
             {navItems.map((item) => (
               <li key={item.label}>
                 <a
                   href={item.href}
-                  className={`relative text-sm font-medium transition-colors hover:text-brand-gold ${
-                    item.active ? "text-brand-gold" : "text-[hsl(40_30%_92%)]"
+                  className={`relative text-[15px] font-medium transition-colors hover:text-brand-gold ${
+                    item.active
+                      ? "text-brand-gold"
+                      : "text-white/85"
                   }`}
                 >
                   {item.label}
                   {item.active && (
-                    <span className="absolute -bottom-2 left-1/2 h-[2px] w-7 -translate-x-1/2 rounded-full bg-brand-gold" />
+                    <span className="absolute -bottom-2 left-1/2 h-[2px] w-8 -translate-x-1/2 rounded-full bg-brand-gold" />
                   )}
                 </a>
               </li>
@@ -91,9 +93,9 @@ const Header = () => {
           {/* WhatsApp button */}
           <a
             href="#whatsapp"
-            className="group flex items-center gap-2.5 rounded-full border border-brand-gold/80 py-2 pl-2 pr-5 text-sm font-medium text-[hsl(40_30%_95%)] transition-all hover:bg-brand-gold/10 hover:text-brand-gold"
+            className="group flex items-center gap-2.5 rounded-full border border-brand-gold/80 py-2 pl-2 pr-5 text-sm font-semibold text-white transition-all hover:border-brand-gold hover:bg-brand-gold/15 hover:text-brand-gold"
           >
-            <span className="flex h-7 w-7 items-center justify-center rounded-full border border-brand-gold/80">
+            <span className="flex h-7 w-7 items-center justify-center rounded-full border border-brand-gold/80 transition-colors group-hover:bg-brand-gold/20">
               <MessageCircle className="h-4 w-4 text-brand-gold" />
             </span>
             Fale no WhatsApp
