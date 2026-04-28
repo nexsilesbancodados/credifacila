@@ -11,6 +11,9 @@ import useScrollAnimations from "./hooks/useScrollAnimations";
 const Simular = lazy(() => import("./pages/Simular.tsx"));
 const Securitizadora = lazy(() => import("./pages/Securitizadora.tsx"));
 const Consignado = lazy(() => import("./pages/Consignado.tsx"));
+const AntecipacaoRecebiveis = lazy(() => import("./pages/AntecipacaoRecebiveis.tsx"));
+const BoletoGarantido = lazy(() => import("./pages/BoletoGarantido.tsx"));
+const ContaDigitalLuri = lazy(() => import("./pages/ContaDigitalLuri.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -69,6 +72,9 @@ const App = () => (
             <Route path="/simular" element={<Simular />} />
             <Route path="/securitizadora" element={<Securitizadora />} />
             <Route path="/consignado" element={<Consignado />} />
+            <Route path="/securitizadora/antecipacao-de-recebiveis" element={<AntecipacaoRecebiveis />} />
+            <Route path="/securitizadora/boleto-garantido" element={<BoletoGarantido />} />
+            <Route path="/securitizadora/conta-digital-luri" element={<ContaDigitalLuri />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

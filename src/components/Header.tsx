@@ -14,6 +14,7 @@ import {
   Briefcase,
   Smartphone,
   Sparkles,
+  ChevronDown,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-credifacil.jpg";
@@ -26,7 +27,15 @@ import logo from "@/assets/credifacil-logo.png";
 const navItems = [
   { label: "Início", href: "#inicio", active: true },
   { label: "Consignado", href: "/consignado" },
-  { label: "Securitizadora", href: "/securitizadora" },
+  {
+    label: "Securitizadora",
+    href: "/securitizadora",
+    submenu: [
+      { label: "Antecipação de Recebíveis", href: "/securitizadora/antecipacao-de-recebiveis" },
+      { label: "Boleto Garantido", href: "/securitizadora/boleto-garantido" },
+      { label: "Conta Digital Luri", href: "/securitizadora/conta-digital-luri" },
+    ],
+  },
   { label: "Como funciona", href: "#como-funciona" },
   { label: "Sobre nós", href: "#sobre" },
   { label: "Dúvidas", href: "#duvidas" },
@@ -153,8 +162,40 @@ const Header = () => {
           {/* Menu */}
           <ul className="hidden items-center gap-9 lg:flex">
             {navItems.map((item) => (
-              <li key={item.label}>
-                {item.href.startsWith("/") ? (
+              <li key={item.label} className={item.submenu ? "group relative" : ""}>
+                {item.submenu ? (
+                  <>
+                    <Link
+                      to={item.href}
+                      className="relative inline-flex items-center gap-1 text-[15px] font-medium text-white/85 transition-colors hover:text-brand-gold"
+                    >
+                      {item.label}
+                      <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
+                    </Link>
+                    <div
+                      className="invisible absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2 translate-y-1 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+                    >
+                      <div className="rounded-2xl border border-brand-gold/30 bg-[hsl(30_22%_8%)]/95 p-2 shadow-2xl backdrop-blur-xl">
+                        <Link
+                          to={item.href}
+                          className="block rounded-xl px-4 py-2.5 text-[13px] font-semibold uppercase tracking-wider text-brand-gold transition-colors hover:bg-brand-gold/10"
+                        >
+                          Visão geral
+                        </Link>
+                        <div className="my-1 h-px bg-white/10" />
+                        {item.submenu.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            to={sub.href}
+                            className="block rounded-xl px-4 py-2.5 text-[14px] font-medium text-white/85 transition-all hover:bg-white/5 hover:pl-5 hover:text-brand-gold"
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                ) : item.href.startsWith("/") ? (
                   <Link
                     to={item.href}
                     className="relative text-[15px] font-medium text-white/85 transition-colors hover:text-brand-gold"
