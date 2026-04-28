@@ -108,7 +108,7 @@ const Header = () => {
         {/* Hero image */}
         <div className="relative w-full">
           <div className="relative overflow-hidden">
-            <img loading="lazy" decoding="async"
+            <img loading="eager" decoding="async" fetchPriority="high"
               src={heroImage}
               alt="Casal sorridente representando clientes satisfeitos da Credifácil"
               className="h-[600px] w-full object-cover object-[64%_center] md:h-[640px]"
