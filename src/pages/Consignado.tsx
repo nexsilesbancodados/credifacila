@@ -727,7 +727,7 @@ const Consignado = () => {
         eyebrow="Quem já contratou"
         title="Histórias reais"
         titleHighlight="de quem confia na Credifácil"
-        subtitle="Aposentados, servidores e militares de todo o Brasil compartilham por que escolheram o consignado da Credifácil."
+        subtitle="Aposentados, servidores e profissionais de todo o Brasil compartilham por que escolheram o consignado da Credifácil."
         testimonials={testimonialsMarquee}
       />
 
