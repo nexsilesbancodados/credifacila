@@ -19,6 +19,12 @@ All colors MUST be HSL.
     --shadow-card: 0 20px 50px -20px hsl(30 20% 30% / 0.25);
     --surface-dark: 30 12% 18%;
 
+    --gradient-page:
+      radial-gradient(ellipse 80% 50% at 50% 0%, hsl(40 70% 92%) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 100% 30%, hsl(35 75% 88% / 0.6) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 50% at 0% 60%, hsl(38 65% 90% / 0.5) 0%, transparent 55%),
+      linear-gradient(180deg, hsl(40 50% 96%) 0%, hsl(40 35% 94%) 50%, hsl(30 20% 90%) 100%);
+
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
 
@@ -118,5 +124,8 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background: var(--gradient-page);
+    background-attachment: fixed;
+    min-height: 100vh;
   }
 }
