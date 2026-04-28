@@ -178,10 +178,10 @@ const ContactFooter = () => {
         <div className="mt-12 grid grid-cols-2 gap-8 border-t border-brand-gold/20 pt-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="col-span-2 md:col-span-1">
             <img src={logo} alt="Credifácil" className="h-9 w-auto" loading="lazy" />
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-[hsl(30_15%_35%)]">
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-[hsl(220_15%_35%)]">
               Crédito justo, rápido e humano. Há mais de {site.metrics.yearsInMarket} anos ajudando pessoas a realizarem seus planos com tranquilidade.
             </p>
-            <div className="mt-5 flex items-center gap-2 text-xs font-medium text-[hsl(30_15%_30%)]">
+            <div className="mt-5 flex items-center gap-2 text-xs font-medium text-[hsl(220_15%_30%)]">
               <ShieldCheck className="h-4 w-4 text-brand-gold" />
               CNPJ {site.legal.cnpj} · {site.legal.bcb}
             </div>
@@ -215,7 +215,7 @@ const ContactFooter = () => {
                   <li key={l.label}>
                     <a
                       href={l.href}
-                      className="text-sm text-[hsl(30_15%_30%)] transition-colors hover:text-brand-gold"
+                      className="text-sm text-[hsl(220_15%_30%)] transition-colors hover:text-brand-gold"
                     >
                       {l.label}
                     </a>
@@ -227,7 +227,7 @@ const ContactFooter = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-brand-gold/15 py-6 text-xs text-[hsl(30_15%_40%)] md:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-brand-gold/15 py-6 text-xs text-[hsl(220_15%_40%)] md:flex-row">
           <div>© {new Date().getFullYear()} Credifácil. Todos os direitos reservados.</div>
           <div className="flex items-center gap-1.5">
             Feito com <span className="text-brand-gold">♥</span> para quem realiza sonhos.

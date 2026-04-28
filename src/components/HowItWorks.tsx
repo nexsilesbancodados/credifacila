@@ -47,7 +47,7 @@ const HowItWorks = () => (
   >
     <div className="mx-auto max-w-7xl">
       <div
-        className="relative overflow-hidden rounded-[36px] border border-brand-gold/15 bg-[hsl(30_22%_5%)] shadow-[0_30px_80px_-30px_hsl(30_30%_4%/0.6)]"
+        className="relative overflow-hidden rounded-[36px] border border-brand-gold/15 bg-[hsl(220_16%_5%)] shadow-[0_30px_80px_-30px_hsl(30_30%_4%/0.6)]"
         data-anim="fade-up"
       >
         {/* subtle noise + ambient glow */}
@@ -212,7 +212,7 @@ const HowItWorks = () => (
                   >
                     <step.icon className="h-7 w-7" strokeWidth={1.8} />
                   </div>
-                  <span className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full border border-brand-gold/40 bg-[hsl(30_22%_5%)] font-display text-[10px] font-extrabold text-brand-gold">
+                  <span className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full border border-brand-gold/40 bg-[hsl(220_16%_5%)] font-display text-[10px] font-extrabold text-brand-gold">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>

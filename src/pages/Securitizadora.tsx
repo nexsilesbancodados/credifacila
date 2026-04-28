@@ -130,7 +130,7 @@ const Securitizadora = () => {
   });
 
   return (
-    <div className="min-h-screen bg-[hsl(40_30%_98%)]">
+    <div className="min-h-screen bg-[hsl(220_16%_98%)]">
       {/* Top bar */}
       <header className="absolute top-0 z-50 w-full bg-transparent">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 md:px-8">
@@ -154,7 +154,7 @@ const Securitizadora = () => {
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[hsl(30_18%_6%)] pb-24 pt-32 text-white md:pt-40">
+      <section className="relative overflow-hidden bg-[hsl(220_16%_6%)] pb-24 pt-32 text-white md:pt-40">
         <div
           className="pointer-events-none absolute -right-32 top-10 h-[600px] w-[600px] opacity-50"
           style={{
@@ -353,7 +353,7 @@ const Securitizadora = () => {
       </section>
 
       {/* Solutions */}
-      <section id="solucoes" className="bg-[hsl(30_18%_6%)] py-20 md:py-28">
+      <section id="solucoes" className="bg-[hsl(220_16%_6%)] py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">
@@ -546,7 +546,7 @@ const Securitizadora = () => {
       </section>
 
       {/* Contact info */}
-      <section className="bg-[hsl(30_18%_6%)] py-20 md:py-24">
+      <section className="bg-[hsl(220_16%_6%)] py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="grid gap-6 md:grid-cols-3">
             {[
@@ -595,7 +595,7 @@ const Securitizadora = () => {
                 href={whatsappLink("Olá! Quero contratar uma solução da Securitizadora.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-2xl bg-[hsl(30_22%_5%)] px-7 py-4 text-base font-bold text-white transition-all hover:scale-[1.03]"
+                className="inline-flex items-center gap-2 rounded-2xl bg-[hsl(220_16%_5%)] px-7 py-4 text-base font-bold text-white transition-all hover:scale-[1.03]"
               >
                 <TrendingUp className="h-5 w-5" />
                 Solicitar agora

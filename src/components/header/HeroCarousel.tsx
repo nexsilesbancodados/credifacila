@@ -339,7 +339,7 @@ const HeroCarousel = () => {
                   {["hsl(35 80% 55%)", "hsl(15 70% 50%)", "hsl(45 85% 60%)"].map((c, i) => (
                     <span
                       key={i}
-                      className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-[hsl(30_22%_5%)] text-[9px] font-bold text-white"
+                      className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-[hsl(220_16%_5%)] text-[9px] font-bold text-white"
                       style={{ background: c }}
                     >
                       {["AC", "JM", "RS"][i]}

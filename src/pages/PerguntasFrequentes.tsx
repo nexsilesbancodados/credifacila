@@ -133,7 +133,7 @@ const PerguntasFrequentes = () => {
   const totalShown = filtered.reduce((acc, c) => acc + c.questions.length, 0);
 
   return (
-    <div className="min-h-screen bg-[hsl(40_30%_98%)]">
+    <div className="min-h-screen bg-[hsl(220_16%_98%)]">
       {/* Top bar */}
       <header className="absolute top-0 z-50 w-full bg-transparent">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 md:px-8">
@@ -154,7 +154,7 @@ const PerguntasFrequentes = () => {
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[hsl(30_18%_6%)] pb-24 pt-32 text-white md:pt-40">
+      <section className="relative overflow-hidden bg-[hsl(220_16%_6%)] pb-24 pt-32 text-white md:pt-40">
         <div
           className="pointer-events-none absolute -right-40 -top-40 h-[600px] w-[600px] opacity-50"
           style={{
@@ -251,7 +251,7 @@ const PerguntasFrequentes = () => {
                           aria-expanded={isOpen}
                           className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left md:px-6 md:py-5"
                         >
-                          <span className="text-sm font-bold text-[hsl(30_20%_15%)] md:text-base">
+                          <span className="text-sm font-bold text-[hsl(220_16%_15%)] md:text-base">
                             {qq.q}
                           </span>
                           <span
@@ -269,7 +269,7 @@ const PerguntasFrequentes = () => {
                           }`}
                         >
                           <div className="overflow-hidden">
-                            <p className="px-5 pb-5 pr-14 text-sm leading-relaxed text-[hsl(30_15%_35%)] md:px-6 md:pb-6 md:text-[15px]">
+                            <p className="px-5 pb-5 pr-14 text-sm leading-relaxed text-[hsl(220_15%_35%)] md:px-6 md:pb-6 md:text-[15px]">
                               {qq.a}
                             </p>
                           </div>

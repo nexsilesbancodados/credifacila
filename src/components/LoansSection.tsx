@@ -191,7 +191,7 @@ const LoansSection = () => {
               <span className="flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
               Aprovado em 3 min
             </div>
-            <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-[hsl(30_18%_7%)]/92 p-4 text-white shadow-lg backdrop-blur-md">
+            <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-[hsl(220_16%_7%)]/92 p-4 text-white shadow-lg backdrop-blur-md">
               <Quote className="h-4 w-4 text-brand-gold" />
               <p className="mt-2 text-xs leading-relaxed text-white/90">
                 "Em poucos cliques resolvi tudo. Simples, rápido e sem stress!"

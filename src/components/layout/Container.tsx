@@ -88,7 +88,7 @@ export const SectionTitle = ({
     <h2
       className={cn(
         "text-3xl font-bold leading-[1.1] tracking-tight md:text-4xl lg:text-[46px]",
-        invert ? "text-white" : "text-[hsl(30_20%_15%)]"
+        invert ? "text-white" : "text-[hsl(220_16%_15%)]"
       )}
     >
       {children}
@@ -98,7 +98,7 @@ export const SectionTitle = ({
         className={cn(
           "mt-4 text-sm leading-relaxed md:text-base",
           align === "center" ? "mx-auto max-w-xl" : "max-w-2xl",
-          invert ? "text-white/70" : "text-[hsl(30_15%_30%)]"
+          invert ? "text-white/70" : "text-[hsl(220_15%_30%)]"
         )}
       >
         {description}
