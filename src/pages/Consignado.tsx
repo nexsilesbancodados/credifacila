@@ -497,24 +497,44 @@ const Consignado = () => {
             {audiences.map((a) => (
               <div
                 key={a.title}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-brand-gold/40 hover:bg-white/[0.06]"
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-brand-gold/40 hover:bg-white/[0.06]"
               >
-                {a.badge && (
-                  <span className="absolute right-5 top-5 rounded-full bg-brand-gold/20 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-brand-gold">
-                    {a.badge}
-                  </span>
-                )}
-                <div className="flex items-start gap-5">
+                {/* Image */}
+                <div className="relative h-56 w-full overflow-hidden md:h-64">
+                  <img
+                    src={a.image}
+                    alt={a.title}
+                    loading="lazy"
+                    width={1024}
+                    height={1024}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+                  {/* Dark gradient for legibility */}
                   <div
-                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-white"
+                    className="pointer-events-none absolute inset-0"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, hsl(220 16% 6% / 0.15) 0%, hsl(220 16% 6% / 0.55) 70%, hsl(220 16% 6% / 0.95) 100%)",
+                    }}
+                    aria-hidden
+                  />
+                  {/* Floating gold icon */}
+                  <div
+                    className="absolute left-5 top-5 flex h-12 w-12 items-center justify-center rounded-2xl text-white shadow-[0_10px_30px_-8px_hsl(38_85%_55%/0.55)]"
                     style={{ background: "var(--gradient-gold)" }}
                   >
                     <a.icon className="h-6 w-6" strokeWidth={2} />
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-white">{a.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-white/82">{a.desc}</p>
-                  </div>
+                  {a.badge && (
+                    <span className="absolute right-5 top-5 rounded-full bg-brand-gold/95 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-[hsl(220_16%_6%)] shadow-md">
+                      {a.badge}
+                    </span>
+                  )}
+                </div>
+                {/* Content */}
+                <div className="p-6 md:p-7">
+                  <h3 className="text-lg font-bold text-white md:text-xl">{a.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-white/82">{a.desc}</p>
                 </div>
               </div>
             ))}
