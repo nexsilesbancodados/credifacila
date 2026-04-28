@@ -394,7 +394,7 @@ const LoansSection = () => {
                 <h4 className="mt-5 text-[16px] font-bold text-foreground">{p.title}</h4>
                 <p className="mt-2 text-xs leading-relaxed text-foreground/65">{p.desc}</p>
                 <a
-                  href="#simular"
+                  href="/simular"
                   className="mt-5 inline-flex items-center gap-1 text-xs font-semibold text-brand-gold transition-all group-hover:gap-2"
                 >
                   Simular agora

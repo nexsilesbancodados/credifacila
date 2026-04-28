@@ -48,8 +48,8 @@ const heroSlides = [
     description:
       "Empréstimos rápidos, seguros e descomplicados para realizar seus planos e",
     descriptionHighlight: "transformar sua vida",
-    ctaPrimary: { label: "Solicitar meu empréstimo", href: "#simular", icon: TrendingUp },
-    ctaSecondary: { label: "Simular agora", href: "#simular" },
+    ctaPrimary: { label: "Solicitar meu empréstimo", href: "/simular", icon: TrendingUp },
+    ctaSecondary: { label: "Simular agora", href: "/simular" },
   },
   {
     src: heroSlide2,
@@ -61,7 +61,7 @@ const heroSlides = [
     goldFromLine: 2,
     description: "Simule, contrate e receba o dinheiro pelo app em poucos minutos, com",
     descriptionHighlight: "zero burocracia",
-    ctaPrimary: { label: "Simular pelo celular", href: "#simular", icon: Smartphone },
+    ctaPrimary: { label: "Simular pelo celular", href: "/simular", icon: Smartphone },
     ctaSecondary: { label: "Ver como funciona", href: "#como-funciona" },
   },
   {
@@ -74,7 +74,7 @@ const heroSlides = [
     goldFromLine: 2,
     description: "Use seu empréstimo para reformar a casa, viajar ou organizar as finanças com",
     descriptionHighlight: "parcelas que cabem no bolso",
-    ctaPrimary: { label: "Quero realizar meu sonho", href: "#simular", icon: Heart },
+    ctaPrimary: { label: "Quero realizar meu sonho", href: "/simular", icon: Heart },
     ctaSecondary: { label: "Ver opções", href: "#emprestimos" },
   },
   {
@@ -87,7 +87,7 @@ const heroSlides = [
     goldFromLine: 2,
     description: "Use seu veículo como garantia e libere até R$ 150 mil com as",
     descriptionHighlight: "menores taxas do mercado",
-    ctaPrimary: { label: "Simular crédito com veículo", href: "#simular", icon: Car },
+    ctaPrimary: { label: "Simular crédito com veículo", href: "/simular", icon: Car },
     ctaSecondary: { label: "Saber mais", href: "#emprestimos" },
   },
   {
@@ -100,7 +100,7 @@ const heroSlides = [
     goldFromLine: 2,
     description: "Empréstimo PJ rápido para investir, expandir ou equilibrar o caixa com",
     descriptionHighlight: "condições especiais",
-    ctaPrimary: { label: "Quero crédito empresarial", href: "#simular", icon: Briefcase },
+    ctaPrimary: { label: "Quero crédito empresarial", href: "/simular", icon: Briefcase },
     ctaSecondary: { label: "Falar com especialista", href: "#whatsapp" },
   },
 ];
