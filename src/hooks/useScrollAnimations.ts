@@ -60,4 +60,3 @@ const useScrollAnimations = () => {
 };
 
 export default useScrollAnimations;
-export { useScrollAnimations };
