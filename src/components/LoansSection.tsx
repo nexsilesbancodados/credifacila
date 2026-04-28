@@ -154,33 +154,37 @@ const LoansSection = () => {
 
             {/* Trust cards */}
             <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
-              {trustItems.map((t) => (
+              {trustItems.map((t, i) => (
                 <li
                   key={t.title}
-                  className="group relative overflow-hidden rounded-2xl border border-foreground/8 bg-white/70 p-4 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-brand-gold/40 hover:bg-white hover:shadow-[var(--shadow-card)]"
+                  className="trust-card group anim-pop-in"
+                  style={{ animationDelay: `${120 + i * 90}ms` }}
                 >
                   <span
-                    className="flex h-10 w-10 items-center justify-center rounded-xl text-brand-gold-foreground shadow-[var(--shadow-gold-sm)] transition-transform group-hover:scale-105 group-hover:rotate-[-3deg]"
+                    className="trust-icon flex h-10 w-10 items-center justify-center rounded-xl text-brand-gold-foreground shadow-[var(--shadow-gold-sm)]"
                     style={{ background: "var(--gradient-gold)" }}
                   >
                     <t.icon className="h-[18px] w-[18px]" strokeWidth={2.2} />
                   </span>
-                  <div className="mt-3 text-[13px] font-bold leading-tight text-foreground">
+                  <div className="mt-3 text-[13px] font-bold leading-tight text-foreground transition-colors group-hover:text-brand-gold">
                     {t.title}
                   </div>
                   <div className="mt-1 whitespace-pre-line text-[11px] leading-relaxed text-foreground/72">
                     {t.desc}
                   </div>
-                  <span className="pointer-events-none absolute -right-6 -bottom-6 h-16 w-16 rounded-full bg-brand-gold/0 transition-colors group-hover:bg-brand-gold/10" />
+                  <span className="pointer-events-none absolute -right-6 -bottom-6 h-16 w-16 rounded-full bg-brand-gold/0 transition-colors duration-500 group-hover:bg-brand-gold/10" />
                 </li>
               ))}
             </ul>
 
             {/* Mini stats — refined */}
-            <div className="relative mt-8 overflow-hidden rounded-2xl border border-brand-gold/20 bg-gradient-to-br from-white/85 via-white/70 to-[hsl(40_60%_95%)]/70 px-5 py-4 shadow-[var(--shadow-soft)] backdrop-blur-sm">
+            <div
+              className="relative mt-8 overflow-hidden rounded-2xl border border-brand-gold/20 bg-gradient-to-br from-white/85 via-white/70 to-[hsl(40_60%_95%)]/70 px-5 py-4 shadow-[var(--shadow-soft)] backdrop-blur-sm anim-pop-in"
+              style={{ animationDelay: "420ms" }}
+            >
               <div className="flex items-center gap-5">
-                <div>
-                  <div className="font-display text-2xl font-bold leading-none text-foreground md:text-[26px]">
+                <div className="stat-tile">
+                  <div className="stat-value font-display text-2xl font-bold leading-none text-foreground md:text-[26px]">
                     <Counter value={50} prefix="+" suffix=" mil" />
                   </div>
                   <div className="mt-1.5 text-[10px] font-semibold uppercase tracking-wider text-foreground/70">
@@ -188,18 +192,18 @@ const LoansSection = () => {
                   </div>
                 </div>
                 <div className="h-10 w-px bg-foreground/15" />
-                <div>
-                  <div className="flex items-baseline gap-1 font-display text-2xl font-bold leading-none text-foreground md:text-[26px]">
+                <div className="stat-tile">
+                  <div className="stat-value flex items-baseline gap-1 font-display text-2xl font-bold leading-none text-foreground md:text-[26px]">
                     <Counter value={4.9} decimals={1} />
-                    <Star className="h-4 w-4 fill-brand-gold text-brand-gold" />
+                    <Star className="h-4 w-4 fill-brand-gold text-brand-gold transition-transform duration-500 [.stat-tile:hover_&]:rotate-[18deg] [.stat-tile:hover_&]:scale-110" />
                   </div>
                   <div className="mt-1.5 text-[10px] font-semibold uppercase tracking-wider text-foreground/70">
                     avaliação
                   </div>
                 </div>
                 <div className="h-10 w-px bg-foreground/15" />
-                <div>
-                  <div className="font-display text-2xl font-bold leading-none text-foreground md:text-[26px]">
+                <div className="stat-tile">
+                  <div className="stat-value font-display text-2xl font-bold leading-none text-foreground md:text-[26px]">
                     R$ 1bi<span className="text-brand-gold">+</span>
                   </div>
                   <div className="mt-1.5 text-[10px] font-semibold uppercase tracking-wider text-foreground/70">
@@ -208,7 +212,7 @@ const LoansSection = () => {
                 </div>
               </div>
               <Sparkles
-                className="pointer-events-none absolute -right-3 -top-3 h-14 w-14 text-brand-gold/15"
+                className="pointer-events-none absolute -right-3 -top-3 h-14 w-14 text-brand-gold/15 [animation:float_6s_ease-in-out_infinite]"
                 strokeWidth={1}
                 aria-hidden
               />
@@ -248,7 +252,7 @@ const LoansSection = () => {
             />
 
             {/* Top-left status badge */}
-            <div className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-foreground shadow-md backdrop-blur">
+            <div className="badge-live anim-pop-in absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-foreground shadow-md backdrop-blur" style={{ animationDelay: "200ms" }}>
               <span className="relative flex h-1.5 w-1.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
@@ -257,7 +261,7 @@ const LoansSection = () => {
             </div>
 
             {/* Top-right floating chip — live counter */}
-            <div className="absolute right-4 top-4 flex items-center gap-2 rounded-full border border-white/25 bg-[hsl(220_16%_7%)]/85 px-3 py-1.5 text-[10px] font-semibold text-white shadow-md backdrop-blur-md">
+            <div className="anim-pop-in absolute right-4 top-4 flex items-center gap-2 rounded-full border border-white/25 bg-[hsl(220_16%_7%)]/85 px-3 py-1.5 text-[10px] font-semibold text-white shadow-md backdrop-blur-md transition-transform hover:-translate-y-0.5" style={{ animationDelay: "350ms" }}>
               <Users className="h-3 w-3 text-brand-gold" />
               <span className="text-white/95">
                 <span className="font-bold text-white">2.341</span> aprovados hoje
