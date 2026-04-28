@@ -3,6 +3,10 @@ import Header from "@/components/Header";
 
 const AdvantagesSection = lazy(() => import("@/components/AdvantagesSection"));
 const LoansSection = lazy(() => import("@/components/LoansSection"));
+const HowItWorks = lazy(() => import("@/components/HowItWorks"));
+const AboutSection = lazy(() => import("@/components/AboutSection"));
+const FaqSection = lazy(() => import("@/components/FaqSection"));
+const ContactFooter = lazy(() => import("@/components/ContactFooter"));
 
 type DeferredSectionProps = {
   children: ReactNode;
@@ -53,6 +57,18 @@ const Index = () => {
       </DeferredSection>
       <DeferredSection minHeight="1120px">
         <LoansSection />
+      </DeferredSection>
+      <DeferredSection minHeight="640px">
+        <HowItWorks />
+      </DeferredSection>
+      <DeferredSection minHeight="780px">
+        <AboutSection />
+      </DeferredSection>
+      <DeferredSection minHeight="900px">
+        <FaqSection />
+      </DeferredSection>
+      <DeferredSection minHeight="700px">
+        <ContactFooter />
       </DeferredSection>
     </div>
   );
