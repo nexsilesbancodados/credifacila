@@ -5,9 +5,11 @@ import AdvantagesSection from "@/components/AdvantagesSection";
 import AboutSection from "@/components/AboutSection";
 import FaqSection from "@/components/FaqSection";
 import ContactFooter from "@/components/ContactFooter";
+import AnimatedBackdrop from "@/components/AnimatedBackdrop";
 
 const Index = () => (
-  <div className="min-h-screen">
+  <div className="relative min-h-screen">
+    <AnimatedBackdrop variant="soft" />
     <Header />
     <main id="main">
       {/* 1. Soluções (linhas de crédito) — primeiro contato com produtos */}
