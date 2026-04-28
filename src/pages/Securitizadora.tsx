@@ -158,17 +158,19 @@ const Securitizadora = () => {
 
       {/* Hero */}
       <section className="relative min-h-[680px] overflow-hidden bg-[hsl(220_16%_6%)] pb-24 pt-32 text-white md:min-h-[760px] md:pt-40">
-        {/* Background image full-bleed */}
-        <img
-          src={heroIllo}
-          alt="Executivo brasileiro em escritório corporativo com vista da cidade ao pôr do sol"
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-          width={1920}
-          height={1080}
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-right"
-        />
+        {/* Background image full-bleed (parallax) */}
+        <div data-parallax="0.18" className="pointer-events-none absolute inset-0 -top-12 -bottom-12">
+          <img
+            src={heroIllo}
+            alt="Executivo brasileiro em escritório corporativo com vista da cidade ao pôr do sol"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            width={1920}
+            height={1080}
+            className="h-full w-full scale-105 object-cover object-right"
+          />
+        </div>
         <div
           className="pointer-events-none absolute inset-0"
           style={{
