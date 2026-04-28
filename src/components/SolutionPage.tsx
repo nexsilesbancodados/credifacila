@@ -27,7 +27,7 @@ export interface SolutionPageProps {
   metaTitle: string;
   metaDescription: string;
   intro: { heading: string; paragraphs: string[] };
-  benefits: { icon: IconType; title: string; desc: string }[];
+  benefits: { icon: IconType; title: string; desc: string; image?: string }[];
   howItWorks: { step: string; title: string; desc: string }[];
   forWho: string[];
   faq: { q: string; a: string }[];
@@ -191,16 +191,47 @@ const SolutionPage = ({
               return (
                 <div
                   key={b.title}
-                  className="group rounded-2xl border border-[hsl(220_15%_88%)] bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-gold/50 hover:shadow-[var(--shadow-gold)]"
+                  className="group overflow-hidden rounded-2xl border border-[hsl(220_15%_88%)] bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-brand-gold/50 hover:shadow-[var(--shadow-gold)]"
                 >
-                  <div
-                    className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl text-brand-gold-foreground shadow-[var(--shadow-gold-sm)] transition-transform group-hover:rotate-6 group-hover:scale-110"
-                    style={{ background: "var(--gradient-gold)" }}
-                  >
-                    <Icon className="h-6 w-6" strokeWidth={2.2} />
+                  {b.image && (
+                    <div className="relative h-40 w-full overflow-hidden bg-[hsl(220_16%_96%)]">
+                      <img
+                        src={b.image}
+                        alt={b.title}
+                        loading="lazy"
+                        decoding="async"
+                        width={1024}
+                        height={768}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div
+                        className="pointer-events-none absolute inset-0"
+                        style={{
+                          background:
+                            "linear-gradient(180deg, transparent 60%, hsl(0 0% 100% / 0.85) 100%)",
+                        }}
+                        aria-hidden
+                      />
+                      <div
+                        className="absolute -bottom-5 left-6 inline-flex h-12 w-12 items-center justify-center rounded-xl text-brand-gold-foreground shadow-[var(--shadow-gold-sm)] ring-4 ring-white transition-transform group-hover:rotate-6 group-hover:scale-110"
+                        style={{ background: "var(--gradient-gold)" }}
+                      >
+                        <Icon className="h-6 w-6" strokeWidth={2.2} />
+                      </div>
+                    </div>
+                  )}
+                  <div className={b.image ? "p-7 pt-9" : "p-7"}>
+                    {!b.image && (
+                      <div
+                        className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl text-brand-gold-foreground shadow-[var(--shadow-gold-sm)] transition-transform group-hover:rotate-6 group-hover:scale-110"
+                        style={{ background: "var(--gradient-gold)" }}
+                      >
+                        <Icon className="h-6 w-6" strokeWidth={2.2} />
+                      </div>
+                    )}
+                    <h3 className="mb-2 font-display text-lg font-bold text-[hsl(220_16%_12%)]">{b.title}</h3>
+                    <p className="text-[14px] leading-relaxed text-[hsl(220_15%_38%)]">{b.desc}</p>
                   </div>
-                  <h3 className="mb-2 font-display text-lg font-bold text-[hsl(220_16%_12%)]">{b.title}</h3>
-                  <p className="text-[14px] leading-relaxed text-[hsl(220_15%_38%)]">{b.desc}</p>
                 </div>
               );
             })}

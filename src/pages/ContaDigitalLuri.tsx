@@ -7,8 +7,14 @@ import {
   Globe2,
 } from "lucide-react";
 import SolutionPage from "@/components/SolutionPage";
-import heroImg from "@/assets/illustrations/sol-luri.svg";
+import heroImg from "@/assets/luri-hero.jpg";
 import showcaseImg from "@/assets/luri-humanizada.jpg";
+import benefitNoFee from "@/assets/luri/benefit-no-fee.jpg";
+import benefitPix from "@/assets/luri/benefit-pix.jpg";
+import benefitCard from "@/assets/luri/benefit-card.jpg";
+import benefitSecurity from "@/assets/luri/benefit-security.jpg";
+import benefitApp from "@/assets/luri/benefit-app.jpg";
+import benefitIntegration from "@/assets/luri/benefit-integration.jpg";
 
 const ContaDigitalLuri = () => (
   <div className="theme-purple">
@@ -29,12 +35,12 @@ const ContaDigitalLuri = () => (
       ],
     }}
     benefits={[
-      { icon: Banknote, title: "Sem taxa de manutenção", desc: "Conta PJ 100% digital, sem mensalidade escondida." },
-      { icon: Zap, title: "Pix ilimitado e grátis", desc: "Envie e receba quantos Pix quiser, sem cobrança por transação." },
-      { icon: CreditCard, title: "Cartão empresarial", desc: "Cartão Visa Business com cashback e controle por colaborador." },
-      { icon: ShieldCheck, title: "Segurança bancária", desc: "Tecnologia de criptografia e dupla autenticação em todas as operações." },
-      { icon: Smartphone, title: "App completo", desc: "Toda gestão financeira na palma da mão, 24 horas por dia." },
-      { icon: Globe2, title: "Integrada às soluções", desc: "Conectada à antecipação, boleto garantido e cobrança da Credifácil." },
+      { icon: Banknote, title: "Sem taxa de manutenção", desc: "Conta PJ 100% digital, sem mensalidade escondida.", image: benefitNoFee },
+      { icon: Zap, title: "Pix ilimitado e grátis", desc: "Envie e receba quantos Pix quiser, sem cobrança por transação.", image: benefitPix },
+      { icon: CreditCard, title: "Cartão empresarial", desc: "Cartão Visa Business com cashback e controle por colaborador.", image: benefitCard },
+      { icon: ShieldCheck, title: "Segurança bancária", desc: "Tecnologia de criptografia e dupla autenticação em todas as operações.", image: benefitSecurity },
+      { icon: Smartphone, title: "App completo", desc: "Toda gestão financeira na palma da mão, 24 horas por dia.", image: benefitApp },
+      { icon: Globe2, title: "Integrada às soluções", desc: "Conectada à antecipação, boleto garantido e cobrança da Credifácil.", image: benefitIntegration },
     ]}
     howItWorks={[
       { step: "1", title: "Solicite a abertura", desc: "Cadastro 100% digital, sem ir à agência." },
