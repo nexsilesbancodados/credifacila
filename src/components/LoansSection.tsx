@@ -17,21 +17,13 @@ import {
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { whatsappLink } from "@/config/site";
-import { Counter } from "@/components/ui/Counter";
 import loansHero from "@/assets/loans-hero.webp";
 import loansHeroMd from "@/assets/loans-hero-md.webp";
 import loansHeroSm from "@/assets/loans-hero-sm.webp";
-import supportAgent from "@/assets/support-agent.webp";
 import cardPersonalIllo from "@/assets/illustrations/card-personal.svg";
 import cardCollateralIllo from "@/assets/illustrations/card-collateral.svg";
 import cardPortabilityIllo from "@/assets/illustrations/card-portability.svg";
 import cardBusinessIllo from "@/assets/illustrations/card-business.svg";
-
-const trustItems = [
-  { icon: ShieldCheck, title: "100% seguro", desc: "Criptografia bancária\ne dados protegidos." },
-  { icon: Clock, title: "Aprovação em minutos", desc: "Resposta rápida\ne dinheiro no mesmo dia." },
-  { icon: Headphones, title: "Atendimento humano", desc: "Pessoas reais para\nresolver de verdade." },
-];
 
 const products = [
   {
