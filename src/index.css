@@ -169,6 +169,40 @@
   0% { background-position: -150% 0; }
   100% { background-position: 250% 0; }
 }
+@keyframes bg-pan {
+  0% {
+    background-position:
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%,
+      0% 0%;
+  }
+  50% {
+    background-position:
+      40% 30%,
+      60% 40%,
+      30% 60%,
+      70% 30%,
+      0% 0%;
+  }
+  100% {
+    background-position:
+      100% 100%,
+      0% 100%,
+      0% 0%,
+      100% 0%,
+      0% 0%;
+  }
+}
+@keyframes gold-flow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before { animation: none !important; }
+}
 
 @layer components {
   /* Skip-link (acessibilidade) */
