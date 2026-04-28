@@ -32,7 +32,7 @@ const HowItWorks = () => {
       aria-label="Como funciona"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="text-center">
+        <div className="text-center" data-anim="fade-up">
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-gold/50 bg-white/80 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-gold shadow-sm backdrop-blur-sm">
             <Sparkles className="h-3 w-3" />
             Processo simples
@@ -51,7 +51,7 @@ const HowItWorks = () => {
           </p>
         </div>
 
-        <div className="mt-10 rounded-[28px] border border-brand-gold/20 bg-white/80 p-6 shadow-[var(--shadow-soft)] backdrop-blur-md md:p-8">
+        <div className="mt-10 rounded-[28px] border border-brand-gold/20 bg-white/80 p-6 shadow-[var(--shadow-soft)] backdrop-blur-md md:p-8" data-anim="scale-in">
           <ol className="flex flex-col items-stretch gap-8 md:grid md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] md:items-center md:gap-3">
             {steps.map((step, i) => (
               <Fragment key={step.title}>

@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import useScrollAnimations from "./hooks/useScrollAnimations";
 
 const Simular = lazy(() => import("./pages/Simular.tsx"));
 
@@ -19,6 +20,11 @@ const ScrollToTop = () => {
   return null;
 };
 
+const AnimationsBoot = () => {
+  useScrollAnimations();
+  return null;
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -26,6 +32,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <AnimationsBoot />
         <Suspense fallback={<div className="min-h-screen bg-[hsl(40_30%_97%)]" />}>
           <Routes>
             <Route path="/" element={<Index />} />

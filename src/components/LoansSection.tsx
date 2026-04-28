@@ -78,7 +78,7 @@ const LoansSection = () => {
     >
       <div className="mx-auto max-w-7xl">
         {/* HERO row: text + simulator + image */}
-        <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-[1.1fr_1fr_0.85fr]">
+        <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-[1.1fr_1fr_0.85fr]" data-anim-stagger>
           {/* Left text */}
           <div className="flex flex-col justify-center">
             <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-gold/30 bg-brand-gold/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-brand-gold">
@@ -244,7 +244,7 @@ const LoansSection = () => {
         </div>
 
         {/* PRODUCTS row */}
-        <div className="mt-12 rounded-3xl border border-foreground/10 bg-white/80 p-6 shadow-[var(--shadow-card)] backdrop-blur-sm md:p-8">
+        <div className="mt-12 rounded-3xl border border-foreground/10 bg-white/80 p-6 shadow-[var(--shadow-card)] backdrop-blur-sm md:p-8" data-anim="fade-up">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <span className="text-[11px] font-semibold uppercase tracking-wider text-brand-gold">
@@ -264,7 +264,7 @@ const LoansSection = () => {
             </a>
           </div>
 
-          <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4" data-anim-stagger>
             {products.map((p) => (
               <article
                 key={p.title}
