@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import SolutionPage from "@/components/SolutionPage";
 import heroImg from "@/assets/illustrations/sol-luri.svg";
+import showcaseImg from "@/assets/showcase-luri.jpg";
 
 const ContaDigitalLuri = () => (
   <SolutionPage
@@ -56,6 +57,18 @@ const ContaDigitalLuri = () => (
     ]}
     ctaTitle="Abra sua conta Luri agora"
     ctaSubtitle="Em poucos minutos sua empresa terá acesso à conta digital mais completa do mercado, com a solidez de quem tem 30 anos de história."
+    showcase={{
+      image: showcaseImg,
+      alt: "Empreendedora sorrindo enquanto usa o app da conta Luri no celular",
+      eyebrow: "Tudo na palma da mão",
+      heading: "Sua conta PJ, simples como deveria ser",
+      text: "Pix ilimitado, cartão empresarial sem anuidade e integração nativa com cobrança e antecipação de recebíveis. Toda gestão financeira do seu negócio em um único app.",
+      stats: [
+        { value: "0", label: "Tarifa de manutenção" },
+        { value: "∞", label: "Pix ilimitado" },
+        { value: "48h", label: "Aprovação rápida" },
+      ],
+    }}
   />
 );
 

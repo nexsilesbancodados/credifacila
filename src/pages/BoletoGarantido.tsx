@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import SolutionPage from "@/components/SolutionPage";
 import heroImg from "@/assets/hero-boleto-photo.jpg";
+import showcaseImg from "@/assets/showcase-boleto.jpg";
 
 const BoletoGarantido = () => (
   <SolutionPage
@@ -56,6 +57,19 @@ const BoletoGarantido = () => (
     ]}
     ctaTitle="Acabe com a inadimplência hoje mesmo"
     ctaSubtitle="Converse com um consultor e descubra como o Boleto Garantido pode transformar a previsibilidade do seu negócio."
+    showcase={{
+      image: showcaseImg,
+      alt: "Pagamento de boleto sendo confirmado em smartphone",
+      eyebrow: "Previsibilidade real",
+      heading: "Caixa estável, mês após mês",
+      text: "Empresas que adotam o Boleto Garantido reduzem drasticamente a inadimplência e ganham previsibilidade total para investir, contratar e crescer com tranquilidade.",
+      stats: [
+        { value: "100%", label: "Recebimento garantido" },
+        { value: "-80%", label: "Redução de inadimplência" },
+        { value: "API", label: "Integração com ERPs" },
+      ],
+      imagePosition: "right",
+    }}
   />
 );
 
