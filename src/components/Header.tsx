@@ -53,7 +53,7 @@ const Header = () => {
           <path d="M0,16 L1440,16 L1440,8 Q720,-6 0,8 Z" fill="hsl(38 90% 50%)" />
         </svg>
 
-        <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-8 py-4">
+        <nav className="relative flex w-full items-center justify-between px-5 py-4 md:px-8 lg:px-10">
           {/* Logo */}
           <a href="#inicio" className="flex items-center gap-3">
             <svg viewBox="0 0 64 56" className="h-11 w-14" aria-hidden="true">
@@ -152,7 +152,7 @@ const Header = () => {
 
             {/* Content */}
              <div className="absolute inset-0 flex items-center">
-               <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
+               <div className="w-full px-5 md:px-8 lg:px-10">
                  <div className="max-w-xl">
                   <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-foreground md:text-[52px]">
                     O crédito que
