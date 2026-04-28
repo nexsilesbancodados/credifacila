@@ -21,6 +21,9 @@ import { z } from "zod";
 import { site, whatsappLink, telLink, mailLink } from "@/config/site";
 import { useSeo } from "@/hooks/useSeo";
 import logo from "@/assets/credifacil-logo.webp";
+import heroInvista from "@/assets/invista-hero.webp";
+import heroInvistaMd from "@/assets/invista-hero-md.webp";
+import heroInvistaSm from "@/assets/invista-hero-sm.webp";
 
 const benefits = [
   {
