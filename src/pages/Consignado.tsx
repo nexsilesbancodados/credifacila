@@ -276,16 +276,18 @@ const Consignado = () => {
 
       {/* Hero */}
       <section className="relative min-h-[680px] overflow-hidden bg-[hsl(220_16%_6%)] pb-20 pt-32 text-white md:min-h-[760px] md:pt-40">
-        <img
-          src={heroIllo}
-          alt="Casal aposentado sorrindo enquanto consulta consignado em tablet em sala iluminada por luz dourada"
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-          width={1920}
-          height={1080}
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-right"
-        />
+        <div data-parallax="0.18" className="pointer-events-none absolute inset-0 -top-12 -bottom-12">
+          <img
+            src={heroIllo}
+            alt="Casal aposentado sorrindo enquanto consulta consignado em tablet em sala iluminada por luz dourada"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            width={1920}
+            height={1080}
+            className="h-full w-full scale-105 object-cover object-right"
+          />
+        </div>
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -605,15 +607,17 @@ const Consignado = () => {
 
       {/* Banner */}
       <section className="relative h-[400px] w-full overflow-hidden md:h-[500px]">
-        <img
-          src={bannerImg}
-          alt="Casal de aposentados aproveitando viagem após contratar consignado"
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: "center 30%" }}
-          width={1920}
-          height={1024}
-          loading="lazy"
-        />
+        <div data-parallax="0.22" className="absolute inset-0 -top-16 -bottom-16">
+          <img
+            src={bannerImg}
+            alt="Casal de aposentados aproveitando viagem após contratar consignado"
+            className="h-full w-full scale-110 object-cover"
+            style={{ objectPosition: "center 30%" }}
+            width={1920}
+            height={1024}
+            loading="lazy"
+          />
+        </div>
         <div
           className="absolute inset-0"
           style={{

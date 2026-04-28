@@ -88,17 +88,19 @@ const SolutionPage = ({
 
       {/* Hero */}
       <section className="relative min-h-[640px] overflow-hidden bg-[hsl(220_16%_6%)] pb-20 pt-32 text-white md:min-h-[720px] md:pt-40">
-        {/* Background image full-bleed */}
-        <img
-          src={heroIllustration}
-          alt={heroAlt}
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-          width={1920}
-          height={1080}
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-right"
-        />
+        {/* Background image full-bleed (with subtle parallax) */}
+        <div data-parallax="0.16" className="pointer-events-none absolute inset-0 -top-12 -bottom-12">
+          <img
+            src={heroIllustration}
+            alt={heroAlt}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            width={1920}
+            height={1080}
+            className="h-full w-full scale-105 object-cover object-right"
+          />
+        </div>
         {/* Dark overlay (stronger on the left for text legibility) */}
         <div
           className="pointer-events-none absolute inset-0"
