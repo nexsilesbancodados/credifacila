@@ -9,6 +9,8 @@ import NotFound from "./pages/NotFound.tsx";
 import useScrollAnimations from "./hooks/useScrollAnimations";
 
 const Simular = lazy(() => import("./pages/Simular.tsx"));
+const Securitizadora = lazy(() => import("./pages/Securitizadora.tsx"));
+const Consignado = lazy(() => import("./pages/Consignado.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -65,6 +67,8 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/simular" element={<Simular />} />
+            <Route path="/securitizadora" element={<Securitizadora />} />
+            <Route path="/consignado" element={<Consignado />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

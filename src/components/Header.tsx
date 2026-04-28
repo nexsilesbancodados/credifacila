@@ -25,7 +25,8 @@ import logo from "@/assets/credifacil-logo.png";
 
 const navItems = [
   { label: "Início", href: "#inicio", active: true },
-  { label: "Empréstimos", href: "#emprestimos" },
+  { label: "Consignado", href: "/consignado" },
+  { label: "Securitizadora", href: "/securitizadora" },
   { label: "Como funciona", href: "#como-funciona" },
   { label: "Sobre nós", href: "#sobre" },
   { label: "Dúvidas", href: "#duvidas" },
@@ -153,19 +154,26 @@ const Header = () => {
           <ul className="hidden items-center gap-9 lg:flex">
             {navItems.map((item) => (
               <li key={item.label}>
-                <a
-                  href={item.href}
-                  className={`relative text-[15px] font-medium transition-colors hover:text-brand-gold ${
-                    item.active
-                      ? "text-brand-gold"
-                      : "text-white/85"
-                  }`}
-                >
-                  {item.label}
-                  {item.active && (
-                    <span className="absolute -bottom-2 left-1/2 h-[2px] w-8 -translate-x-1/2 rounded-full bg-brand-gold" />
-                  )}
-                </a>
+                {item.href.startsWith("/") ? (
+                  <Link
+                    to={item.href}
+                    className="relative text-[15px] font-medium text-white/85 transition-colors hover:text-brand-gold"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <a
+                    href={item.href}
+                    className={`relative text-[15px] font-medium transition-colors hover:text-brand-gold ${
+                      item.active ? "text-brand-gold" : "text-white/85"
+                    }`}
+                  >
+                    {item.label}
+                    {item.active && (
+                      <span className="absolute -bottom-2 left-1/2 h-[2px] w-8 -translate-x-1/2 rounded-full bg-brand-gold" />
+                    )}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
