@@ -97,7 +97,7 @@ const AboutSection = () => {
                     className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full opacity-20"
                     style={{
                       background:
-                        "radial-gradient(circle, hsl(35 90% 60% / 0.6), transparent 70%)",
+                        "radial-gradient(circle, hsl(199 90% 60% / 0.6), transparent 70%)",
                     }}
                     aria-hidden
                   />

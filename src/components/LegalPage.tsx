@@ -60,7 +60,7 @@ const LegalPage = ({
           className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] opacity-50"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.4), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.4), transparent 65%)",
           }}
           aria-hidden
         />

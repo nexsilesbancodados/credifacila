@@ -91,7 +91,7 @@ const ContactFooter = () => {
         >
           <div
             className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full opacity-30"
-            style={{ background: "radial-gradient(circle, hsl(35 90% 60% / 0.6), transparent 70%)" }}
+            style={{ background: "radial-gradient(circle, hsl(199 90% 60% / 0.6), transparent 70%)" }}
             aria-hidden="true"
           />
           <div className="relative grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">

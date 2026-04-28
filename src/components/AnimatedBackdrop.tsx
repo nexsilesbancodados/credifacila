@@ -9,18 +9,18 @@ type Variant = "default" | "dark" | "soft";
 
 const paletteByVariant: Record<Variant, { primary: string; secondary: string; opacity: number }> = {
   default: {
-    primary: "hsl(35 90% 60% / 0.22)",
-    secondary: "hsl(40 80% 70% / 0.18)",
+    primary: "hsl(199 90% 60% / 0.22)",
+    secondary: "hsl(198 80% 70% / 0.18)",
     opacity: 1,
   },
   dark: {
-    primary: "hsl(35 90% 55% / 0.18)",
-    secondary: "hsl(40 85% 65% / 0.12)",
+    primary: "hsl(199 90% 55% / 0.18)",
+    secondary: "hsl(198 85% 65% / 0.12)",
     opacity: 1,
   },
   soft: {
-    primary: "hsl(35 85% 62% / 0.14)",
-    secondary: "hsl(40 80% 72% / 0.10)",
+    primary: "hsl(199 85% 62% / 0.14)",
+    secondary: "hsl(198 80% 72% / 0.10)",
     opacity: 1,
   },
 };

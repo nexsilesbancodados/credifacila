@@ -54,7 +54,7 @@ const PromoBanner = ({
             className="pointer-events-none absolute -right-32 -top-20 h-[420px] w-[420px] opacity-50"
             style={{
               background:
-                "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.45), transparent 65%)",
+                "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.45), transparent 65%)",
             }}
             aria-hidden
           />

@@ -25,7 +25,7 @@ const NotFound = () => {
         className="pointer-events-none absolute -right-40 -top-40 h-[600px] w-[600px] rounded-full opacity-50"
         style={{
           background:
-            "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.4), transparent 65%)",
+            "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.4), transparent 65%)",
         }}
         aria-hidden
       />
@@ -33,7 +33,7 @@ const NotFound = () => {
         className="pointer-events-none absolute -bottom-40 -left-40 h-[600px] w-[600px] rounded-full opacity-30"
         style={{
           background:
-            "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.5), transparent 70%)",
+            "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.5), transparent 70%)",
         }}
         aria-hidden
       />

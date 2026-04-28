@@ -191,7 +191,7 @@ const Securitizadora = () => {
           className="pointer-events-none absolute -left-40 bottom-0 h-[420px] w-[420px] opacity-40"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.35), transparent 70%)",
+              "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.35), transparent 70%)",
           }}
           aria-hidden
         />
@@ -356,7 +356,7 @@ const Securitizadora = () => {
                   className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-0 transition-opacity group-hover:opacity-100"
                   style={{
                     background:
-                      "radial-gradient(circle, hsl(38 90% 55% / 0.25), transparent 70%)",
+                      "radial-gradient(circle, hsl(199 90% 55% / 0.25), transparent 70%)",
                   }}
                 />
                 <div className="relative flex items-start gap-5">

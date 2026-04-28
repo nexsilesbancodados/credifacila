@@ -212,7 +212,7 @@ const InvistaConosco = () => {
           className="pointer-events-none absolute -right-32 -top-20 h-[600px] w-[600px] opacity-50"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(35 90% 65% / 0.25), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(199 90% 65% / 0.25), transparent 65%)",
           }}
           aria-hidden
         />
@@ -220,7 +220,7 @@ const InvistaConosco = () => {
           className="pointer-events-none absolute -left-40 top-40 h-[480px] w-[480px] opacity-40"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(40 90% 70% / 0.22), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(198 90% 70% / 0.22), transparent 65%)",
           }}
           aria-hidden
         />
@@ -266,7 +266,7 @@ const InvistaConosco = () => {
             >
               <path
                 d="M0,16 L1440,16 L1440,9 Q720,-4 0,9 Z"
-                fill="hsl(38 90% 55% / 0.5)"
+                fill="hsl(199 90% 55% / 0.5)"
               />
             </svg>
           </div>
@@ -409,7 +409,7 @@ const InvistaConosco = () => {
           className="pointer-events-none absolute -left-32 -top-32 h-[500px] w-[500px] opacity-30"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.5), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.5), transparent 65%)",
           }}
           aria-hidden
         />

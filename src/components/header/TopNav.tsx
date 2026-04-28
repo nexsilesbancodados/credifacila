@@ -36,7 +36,7 @@ const TopNav = () => (
       preserveAspectRatio="none"
       aria-hidden
     >
-      <path d="M0,0 L1440,0 L1440,2 Q720,10 0,2 Z" fill="hsl(38 90% 50%)" />
+      <path d="M0,0 L1440,0 L1440,2 Q720,10 0,2 Z" fill="hsl(199 90% 50%)" />
     </svg>
     <svg
       className="pointer-events-none absolute -bottom-px left-0 h-4 w-full"
@@ -44,7 +44,7 @@ const TopNav = () => (
       preserveAspectRatio="none"
       aria-hidden
     >
-      <path d="M0,16 L1440,16 L1440,8 Q720,-6 0,8 Z" fill="hsl(38 90% 50%)" />
+      <path d="M0,16 L1440,16 L1440,8 Q720,-6 0,8 Z" fill="hsl(199 90% 50%)" />
     </svg>
 
     <nav className="relative flex w-full items-center justify-between px-5 py-3.5 md:px-8 md:py-4 lg:px-12">

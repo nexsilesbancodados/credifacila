@@ -309,7 +309,7 @@ const Consignado = () => {
           className="pointer-events-none absolute -left-40 top-1/3 h-[500px] w-[500px] opacity-40"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.35), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.35), transparent 65%)",
           }}
           aria-hidden
         />

@@ -56,7 +56,7 @@ const HowItWorks = () => (
           className="pointer-events-none absolute -left-32 top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full opacity-40"
           style={{
             background:
-              "radial-gradient(circle, hsl(38 90% 55% / 0.18), transparent 65%)",
+              "radial-gradient(circle, hsl(199 90% 55% / 0.18), transparent 65%)",
           }}
           aria-hidden
         />
@@ -155,7 +155,7 @@ const HowItWorks = () => (
           >
             <path
               d="M0,8 Q300,0 600,8 T1200,8"
-              stroke="hsl(38 90% 55%)"
+              stroke="hsl(199 90% 55%)"
               strokeWidth="1"
               fill="none"
               opacity="0.7"
@@ -191,7 +191,7 @@ const HowItWorks = () => (
               className="pointer-events-none absolute left-[10%] right-[10%] top-[34px] hidden h-px lg:block"
               style={{
                 background:
-                  "linear-gradient(90deg, transparent, hsl(38 90% 55% / 0.4) 15%, hsl(38 90% 55% / 0.4) 85%, transparent)",
+                  "linear-gradient(90deg, transparent, hsl(199 90% 55% / 0.4) 15%, hsl(199 90% 55% / 0.4) 85%, transparent)",
               }}
               aria-hidden
             />
@@ -204,7 +204,7 @@ const HowItWorks = () => (
                 <div className="relative">
                   <div
                     className="absolute inset-0 -m-2 rounded-2xl opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100"
-                    style={{ background: "hsl(38 90% 55% / 0.35)" }}
+                    style={{ background: "hsl(199 90% 55% / 0.35)" }}
                     aria-hidden
                   />
                   <div

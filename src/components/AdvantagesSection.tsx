@@ -77,7 +77,7 @@ const AdvantagesSection = () => {
               className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full opacity-30"
               style={{
                 background:
-                  "radial-gradient(circle, hsl(35 90% 55% / 0.6), transparent 70%)",
+                  "radial-gradient(circle, hsl(199 90% 55% / 0.6), transparent 70%)",
               }}
               aria-hidden
             />
@@ -183,14 +183,14 @@ const AdvantagesSection = () => {
           className="relative mt-8 flex flex-col items-stretch gap-5 overflow-hidden rounded-3xl px-6 py-5 shadow-[var(--shadow-gold)] md:flex-row md:items-center md:justify-between md:px-8"
           style={{
             background:
-              "linear-gradient(100deg, hsl(40 85% 88%) 0%, hsl(38 80% 78%) 50%, hsl(35 75% 70%) 100%)",
+              "linear-gradient(100deg, hsl(198 85% 88%) 0%, hsl(199 80% 78%) 50%, hsl(199 75% 70%) 100%)",
           }}
         >
           <div
             className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full opacity-40"
             style={{
               background:
-                "radial-gradient(circle, hsl(35 90% 60% / 0.6), transparent 70%)",
+                "radial-gradient(circle, hsl(199 90% 60% / 0.6), transparent 70%)",
             }}
             aria-hidden
           />

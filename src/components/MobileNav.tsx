@@ -90,7 +90,7 @@ const MobileNav = () => {
           className="pointer-events-none absolute -right-24 -top-24 h-[400px] w-[400px] opacity-40"
           style={{
             background:
-              "radial-gradient(circle, hsl(35 85% 58% / 0.5), transparent 70%)",
+              "radial-gradient(circle, hsl(199 85% 58% / 0.5), transparent 70%)",
           }}
           aria-hidden
         />

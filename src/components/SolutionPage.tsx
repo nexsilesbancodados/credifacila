@@ -124,7 +124,7 @@ const SolutionPage = ({
           className="pointer-events-none absolute -left-40 top-1/3 h-[500px] w-[500px] opacity-40"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.35), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.35), transparent 65%)",
           }}
           aria-hidden
         />
@@ -246,7 +246,7 @@ const SolutionPage = ({
             className="pointer-events-none absolute -right-40 top-10 h-[420px] w-[420px] opacity-30"
             style={{
               background:
-                "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.35), transparent 65%)",
+                "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.35), transparent 65%)",
             }}
             aria-hidden
           />
@@ -371,7 +371,7 @@ const SolutionPage = ({
           className="pointer-events-none absolute -left-32 -top-32 h-[500px] w-[500px] opacity-30"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.5), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.5), transparent 65%)",
           }}
           aria-hidden
         />
@@ -441,7 +441,7 @@ const SolutionPage = ({
           className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] opacity-30"
           style={{
             background:
-              "radial-gradient(circle, hsl(38 90% 55% / 0.4), transparent 70%)",
+              "radial-gradient(circle, hsl(199 90% 55% / 0.4), transparent 70%)",
           }}
           aria-hidden
         />
