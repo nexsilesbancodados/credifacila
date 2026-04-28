@@ -32,6 +32,7 @@ import heroIllo from "@/assets/hero-consignado-wide.jpg";
 import seniorImg from "@/assets/consignado-senior.webp";
 import servidorImg from "@/assets/consignado-servidor.webp";
 import bannerImg from "@/assets/consignado-banner.webp";
+import TestimonialsMarquee, { type MarqueeTestimonial } from "@/components/TestimonialsMarquee";
 
 const benefits = [
   {
@@ -171,6 +172,36 @@ const testimonials = [
     name: "Sgt. Roberto Lima",
     role: "Polícia Militar",
     text: "Processo 100% digital, sem sair de casa. A diferença na taxa em relação ao banco onde recebo foi enorme.",
+  },
+];
+
+const initials = (name: string) =>
+  name.split(" ").map((n) => n[0]).slice(0, 2).join("").toUpperCase();
+
+const testimonialsMarquee: MarqueeTestimonial[] = [
+  ...testimonials.map((t) => ({
+    initials: initials(t.name),
+    name: t.name,
+    meta: t.role,
+    text: t.text,
+  })),
+  {
+    initials: "AS",
+    name: "Antônia S.",
+    meta: "Pensionista INSS · Salvador",
+    text: "Adorei a praticidade — fiz tudo pelo celular e o dinheiro caiu antes do almoço.",
+  },
+  {
+    initials: "JP",
+    name: "José P.",
+    meta: "Servidor Estadual · Recife",
+    text: "A simulação foi clara, sem letrinha miúda. Recomendo de olhos fechados.",
+  },
+  {
+    initials: "LM",
+    name: "Luiza M.",
+    meta: "Aposentada · Porto Alegre",
+    text: "Atendimento educado e paciente. Me explicaram cada detalhe com calma.",
   },
 ];
 
