@@ -61,20 +61,20 @@ const Header = () => {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(90deg, hsl(0 0% 3% / 0.97) 0%, hsl(0 0% 3% / 0.85) 40%, hsl(0 0% 3% / 0.35) 70%, hsl(0 0% 3% / 0.1) 100%)",
+            "linear-gradient(90deg, hsl(220 25% 12% / 0.92) 0%, hsl(220 22% 16% / 0.75) 40%, hsl(220 20% 20% / 0.3) 70%, hsl(220 15% 25% / 0.05) 100%)",
         }}
         aria-hidden="true"
       />
       {/* Gold ambient glow */}
       <div
-        className="pointer-events-none absolute -left-40 top-20 h-[480px] w-[480px] rounded-full opacity-25 blur-[120px]"
-        style={{ background: "radial-gradient(circle, hsl(42 95% 55%) 0%, transparent 70%)" }}
+        className="pointer-events-none absolute -left-40 top-20 h-[520px] w-[520px] rounded-full opacity-30 blur-[130px]"
+        style={{ background: "radial-gradient(circle, hsl(42 95% 62%) 0%, transparent 70%)" }}
         aria-hidden="true"
       />
       {/* Bottom fade */}
       <div
         className="absolute inset-x-0 bottom-0 h-40"
-        style={{ background: "linear-gradient(180deg, transparent, hsl(0 0% 4%) 95%)" }}
+        style={{ background: "linear-gradient(180deg, transparent, hsl(220 18% 16%) 95%)" }}
         aria-hidden="true"
       />
 
@@ -194,7 +194,7 @@ const Header = () => {
 
       {/* Products strip */}
       <div className="relative z-10 mx-auto max-w-7xl px-6 pb-5">
-        <div className="rounded-2xl border border-brand-gold/15 bg-black/75 p-7 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-xl">
+        <div className="rounded-2xl border border-brand-gold/20 bg-[hsl(220_20%_18%/0.78)] p-7 shadow-[0_20px_60px_-20px_hsl(220_30%_5%/0.55)] backdrop-blur-xl">
           <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-4">
             {products.map((p, i) => (
               <div
