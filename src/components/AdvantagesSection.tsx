@@ -15,6 +15,8 @@ import {
 import womanCoffee from "@/assets/woman-coffee.jpg";
 import juliana from "@/assets/testimonial-juliana.jpg";
 import carlos from "@/assets/testimonial-carlos.jpg";
+import advantagesBg from "@/assets/card-advantages.jpg";
+import storiesBg from "@/assets/card-stories.jpg";
 
 const advantages = [
   { icon: Clock, title: "Liberação rápida", desc: "Dinheiro na sua conta em pouco tempo." },
@@ -65,7 +67,25 @@ const AdvantagesSection = () => {
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           {/* CARD 1 — Vantagens */}
-          <article className="group rounded-3xl border border-white/8 bg-[hsl(var(--surface-elevated))]/75 p-7 text-white shadow-[var(--shadow-card)] backdrop-blur-md transition-all hover:border-brand-gold/25">
+          <article className="group relative overflow-hidden rounded-3xl border border-white/8 text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/30">
+            <img
+              src={advantagesBg}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover object-center"
+              loading="lazy"
+              width={1024}
+              height={1280}
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(180deg, hsl(30 18% 7% / 0.92) 0%, hsl(30 18% 7% / 0.88) 60%, hsl(30 18% 7% / 0.96) 100%)",
+              }}
+              aria-hidden="true"
+            />
+            <div className="relative p-7">
             <h3 className="text-2xl font-bold leading-tight">
               Vantagens que
               <br />
@@ -98,6 +118,7 @@ const AdvantagesSection = () => {
               Quero conhecer todas as vantagens
               <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
+            </div>
           </article>
 
           {/* CARD 2 — Crédito para cada momento */}
@@ -156,7 +177,25 @@ const AdvantagesSection = () => {
           </article>
 
           {/* CARD 3 — Histórias reais */}
-          <article className="group rounded-3xl border border-white/8 bg-[hsl(var(--surface-elevated))]/75 p-7 text-white shadow-[var(--shadow-card)] backdrop-blur-md transition-all hover:border-brand-gold/25">
+          <article className="group relative overflow-hidden rounded-3xl border border-white/8 text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/30">
+            <img
+              src={storiesBg}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover object-center"
+              loading="lazy"
+              width={1024}
+              height={1280}
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(180deg, hsl(30 18% 7% / 0.93) 0%, hsl(30 18% 7% / 0.9) 60%, hsl(30 18% 7% / 0.96) 100%)",
+              }}
+              aria-hidden="true"
+            />
+            <div className="relative p-7">
             <h3 className="text-2xl font-bold leading-tight">
               Histórias reais,
               <br />
@@ -200,6 +239,7 @@ const AdvantagesSection = () => {
               Veja mais histórias de clientes
               <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
+            </div>
           </article>
         </div>
 
