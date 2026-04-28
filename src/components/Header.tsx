@@ -512,10 +512,7 @@ const Header = () => {
 
             {/* Floating mini-simulator preview card */}
             <div className="pointer-events-auto absolute right-6 top-1/2 z-10 hidden w-[280px] -translate-y-1/2 lg:block">
-              <div
-                className="relative overflow-hidden rounded-3xl border border-white/15 bg-[hsl(30_22%_5%)]/85 p-5 shadow-[0_30px_80px_-20px_hsl(30_30%_4%/0.7)] backdrop-blur-xl"
-                style={{ animation: "float 6s ease-in-out infinite" }}
-              >
+              <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-[hsl(30_22%_5%)]/85 p-5 shadow-[0_30px_80px_-20px_hsl(30_30%_4%/0.7)] backdrop-blur-xl">
                 {/* gold accent */}
                 <div
                   className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-50"
