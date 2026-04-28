@@ -175,7 +175,7 @@ const Securitizadora = () => {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, hsl(215 52% 12% / 0.95) 0%, hsl(215 52% 12% / 0.85) 35%, hsl(215 52% 12% / 0.55) 60%, hsl(215 52% 12% / 0.25) 100%)",
+              "linear-gradient(90deg, hsl(215 52% 12% / 0.55) 0%, hsl(215 52% 12% / 0.30) 40%, transparent 70%)",
           }}
           aria-hidden
         />
@@ -183,7 +183,7 @@ const Securitizadora = () => {
           className="pointer-events-none absolute inset-0 lg:hidden"
           style={{
             background:
-              "linear-gradient(180deg, hsl(215 52% 12% / 0.85) 0%, hsl(215 52% 12% / 0.55) 50%, hsl(215 52% 12% / 0.85) 100%)",
+              "linear-gradient(180deg, hsl(215 52% 12% / 0.50) 0%, transparent 40%, hsl(215 52% 12% / 0.50) 100%)",
           }}
           aria-hidden
         />
