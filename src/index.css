@@ -131,7 +131,6 @@ All colors MUST be HSL.
     @apply text-foreground;
     background: var(--gradient-page);
     background-color: hsl(var(--background));
-    background-attachment: fixed;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
   }
