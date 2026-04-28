@@ -23,6 +23,10 @@ import {
 } from "lucide-react";
 import loansHero from "@/assets/loans-hero.jpg";
 import supportAgent from "@/assets/support-agent.jpg";
+import cardPersonal from "@/assets/card-personal.jpg";
+import cardCollateral from "@/assets/card-collateral.jpg";
+import cardPortability from "@/assets/card-portability.jpg";
+import cardBusiness from "@/assets/card-business.jpg";
 
 const trustItems = [
   { icon: ShieldCheck, title: "100% seguro", desc: "Criptografia bancária\ne dados protegidos." },
@@ -36,24 +40,28 @@ const products = [
     title: "Crédito Pessoal",
     desc: "Dinheiro livre na sua conta para realizar o que você quiser, sem precisar justificar.",
     tag: "Mais pedido",
+    bg: cardPersonal,
   },
   {
     icon: HomeIcon,
     title: "Crédito com Garantia",
     desc: "Use um imóvel ou veículo como garantia e tenha as menores taxas do mercado.",
     tag: "Menor taxa",
+    bg: cardCollateral,
   },
   {
     icon: Repeat,
     title: "Portabilidade de Crédito",
     desc: "Traga seu contrato de outro banco para a Credifácil e reduza sua parcela hoje mesmo.",
     tag: null,
+    bg: cardPortability,
   },
   {
     icon: Building2,
     title: "Para Empresas",
     desc: "Capital de giro e linhas de crédito sob medida para impulsionar o seu negócio.",
     tag: "PJ",
+    bg: cardBusiness,
   },
 ];
 
@@ -349,15 +357,39 @@ const LoansSection = () => {
             {products.map((p) => (
               <article
                 key={p.title}
-                className="group relative flex flex-col rounded-2xl border border-foreground/8 bg-white p-5 transition-all hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-[var(--shadow-gold)]"
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-foreground/8 bg-white p-5 transition-all hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-[var(--shadow-gold)]"
               >
+                {/* Background image */}
+                <img
+                  src={p.bg}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  width={800}
+                  height={800}
+                  className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.18] transition-all duration-700 group-hover:scale-110 group-hover:opacity-30"
+                />
+                {/* Gradient overlay for legibility */}
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, hsl(0 0% 100% / 0.92) 0%, hsl(0 0% 100% / 0.78) 45%, hsl(0 0% 100% / 0.95) 100%)",
+                  }}
+                  aria-hidden="true"
+                />
+                {/* Content wrapper */}
+                <div className="relative flex flex-col">
                 {p.tag && (
-                  <span className="absolute right-4 top-4 rounded-full bg-brand-gold/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-gold">
+                  <span className="absolute right-0 top-0 rounded-full bg-brand-gold px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-gold-foreground shadow-[var(--shadow-gold)]">
                     {p.tag}
                   </span>
                 )}
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-gold/20 to-brand-gold/5 text-brand-gold transition-transform group-hover:scale-110 group-hover:rotate-3">
-                  <p.icon className="h-5 w-5" strokeWidth={2} />
+                <div
+                  className="flex h-12 w-12 items-center justify-center rounded-2xl text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-transform group-hover:scale-110 group-hover:rotate-3"
+                  style={{ background: "var(--gradient-gold)" }}
+                >
+                  <p.icon className="h-5 w-5" strokeWidth={2.2} />
                 </div>
                 <h4 className="mt-5 text-[16px] font-bold text-foreground">{p.title}</h4>
                 <p className="mt-2 text-xs leading-relaxed text-foreground/65">{p.desc}</p>
@@ -368,6 +400,7 @@ const LoansSection = () => {
                   Simular agora
                   <ChevronRight className="h-3.5 w-3.5" />
                 </a>
+                </div>
               </article>
             ))}
           </div>
