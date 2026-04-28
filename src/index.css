@@ -8,15 +8,16 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 18% 16%;
-    --foreground: 40 30% 98%;
+    --background: 40 30% 97%;
+    --foreground: 30 15% 15%;
 
-    --brand-gold: 42 95% 62%;
-    --brand-gold-foreground: 0 0% 8%;
-    --gradient-gold: linear-gradient(90deg, hsl(38 95% 58%), hsl(45 100% 70%));
-    --header-overlay: linear-gradient(180deg, hsl(220 20% 12% / 0.7), hsl(220 20% 12% / 0.35));
-    --shadow-gold: 0 10px 40px -10px hsl(42 95% 62% / 0.5);
-    --shadow-card: 0 20px 60px -20px hsl(220 30% 5% / 0.5);
+    --brand-gold: 35 75% 48%;
+    --brand-gold-foreground: 0 0% 100%;
+    --gradient-gold: linear-gradient(90deg, hsl(35 75% 48%), hsl(38 80% 55%));
+    --header-overlay: linear-gradient(180deg, hsl(40 30% 97% / 0.7), hsl(40 30% 97% / 0.35));
+    --shadow-gold: 0 10px 40px -10px hsl(35 75% 48% / 0.4);
+    --shadow-card: 0 20px 50px -20px hsl(30 20% 30% / 0.25);
+    --surface-dark: 30 12% 18%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
