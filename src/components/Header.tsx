@@ -14,7 +14,7 @@ import {
   Clock,
   CheckCircle2,
 } from "lucide-react";
-import heroImage from "@/assets/hero-credifacil.png";
+import heroImage from "@/assets/hero-credifacil.jpg";
 import logo from "@/assets/credifacil-logo.png";
 
 const navItems = [
@@ -60,7 +60,7 @@ const Header = () => {
         <nav className="relative flex w-full items-center justify-between px-5 py-3.5 md:px-8 md:py-4 lg:px-12">
           {/* Logo */}
           <a href="#inicio" className="flex items-center transition-opacity hover:opacity-90" aria-label="Credifácil">
-            <img
+            <img loading="lazy" decoding="async"
               src={logo}
               alt="Credifácil"
               className="h-9 w-auto md:h-11"
@@ -108,7 +108,7 @@ const Header = () => {
         {/* Hero image */}
         <div className="relative w-full">
           <div className="relative overflow-hidden">
-            <img
+            <img loading="eager" decoding="async" fetchPriority="high"
               src={heroImage}
               alt="Casal sorridente representando clientes satisfeitos da Credifácil"
               className="h-[600px] w-full object-cover object-[64%_center] md:h-[640px]"
