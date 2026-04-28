@@ -131,7 +131,7 @@ const Header = () => {
             <img loading="eager" decoding="async" fetchPriority="high"
               src={heroImage}
               alt="Casal sorridente representando clientes satisfeitos da Credifácil"
-              className="h-[600px] w-full object-cover object-[64%_center] md:h-[640px]"
+              className="h-[640px] w-full object-cover object-[64%_center] md:h-[700px]"
               width={1920}
               height={1080}
             />
@@ -140,17 +140,42 @@ const Header = () => {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(90deg, hsl(30 18% 6% / 0.96) 0%, hsl(30 18% 6% / 0.85) 30%, hsl(30 18% 6% / 0.4) 55%, transparent 75%)",
+                  "linear-gradient(90deg, hsl(30 18% 6% / 0.97) 0%, hsl(30 18% 6% / 0.88) 28%, hsl(30 18% 6% / 0.45) 55%, transparent 78%)",
+              }}
+              aria-hidden="true"
+            />
+            {/* Bottom vignette for blending into features card */}
+            <div
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-40"
+              style={{
+                background:
+                  "linear-gradient(180deg, transparent, hsl(30 18% 6% / 0.55))",
               }}
               aria-hidden="true"
             />
             {/* Decorative gold glow */}
             <div
-              className="pointer-events-none absolute -right-32 top-0 h-[600px] w-[800px] opacity-40"
+              className="pointer-events-none absolute -right-32 top-0 h-[700px] w-[820px] opacity-50"
               style={{
                 background:
-                  "radial-gradient(ellipse at center, hsl(35 80% 55% / 0.55), transparent 65%)",
+                  "radial-gradient(ellipse at center, hsl(35 85% 58% / 0.55), transparent 65%)",
               }}
+              aria-hidden="true"
+            />
+            {/* Animated floating gold orbs */}
+            <div
+              className="pointer-events-none absolute left-[12%] top-[18%] h-2 w-2 rounded-full bg-brand-gold/70 blur-[1px]"
+              style={{ animation: "float 6s ease-in-out infinite" }}
+              aria-hidden="true"
+            />
+            <div
+              className="pointer-events-none absolute left-[42%] top-[68%] h-1.5 w-1.5 rounded-full bg-brand-gold/60 blur-[1px]"
+              style={{ animation: "float 8s ease-in-out infinite 1s" }}
+              aria-hidden="true"
+            />
+            <div
+              className="pointer-events-none absolute left-[28%] top-[35%] h-1 w-1 rounded-full bg-brand-gold/50"
+              style={{ animation: "float 7s ease-in-out infinite 2s" }}
               aria-hidden="true"
             />
             {/* Subtle gold arc top-left */}
@@ -168,65 +193,88 @@ const Header = () => {
 
             {/* Content */}
              <div className="absolute inset-0 flex items-center animate-fade-in">
-               <div className="w-full px-5 md:px-8 lg:px-10">
-                 <div className="max-w-xl">
+               <div className="w-full px-5 md:px-8 lg:px-12">
+                 <div className="max-w-[600px]">
                   {/* Eyebrow badge */}
-                  <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-white/5 px-3 py-1.5 backdrop-blur-sm">
-                    <span className="flex h-1.5 w-1.5 rounded-full bg-brand-gold" />
-                    <span className="text-xs font-semibold uppercase tracking-wider text-brand-gold">
+                  <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-brand-gold/40 bg-brand-gold/[0.08] px-3.5 py-1.5 backdrop-blur-md">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inset-0 animate-ping rounded-full bg-brand-gold/60" />
+                      <span className="relative h-2 w-2 rounded-full bg-brand-gold" />
+                    </span>
+                    <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-brand-gold">
                       Crédito sem complicação
                     </span>
                   </div>
 
-                  <h1 className="text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-[58px]">
+                  <h1 className="text-[40px] font-bold leading-[1.02] tracking-tight text-white md:text-[62px]">
                     O crédito que
                     <br />
                     você precisa,
                     <br />
-                    <span className="text-brand-gold">com a confiança</span>
+                    <span className="relative inline-block">
+                      <span
+                        className="bg-clip-text text-transparent"
+                        style={{ backgroundImage: "var(--gradient-gold)" }}
+                      >
+                        com a confiança
+                      </span>
+                    </span>
                     <br />
-                    <span className="text-brand-gold">que você merece.</span>
+                    <span
+                      className="bg-clip-text text-transparent"
+                      style={{ backgroundImage: "var(--gradient-gold)" }}
+                    >
+                      que você merece.
+                    </span>
                   </h1>
 
-                  <p className="mt-6 max-w-md text-base leading-relaxed text-white/70 md:text-lg">
-                    Empréstimos rápidos, seguros e descomplicados para realizar seus planos e transformar sua vida.
+                  <p className="mt-6 max-w-md text-base leading-relaxed text-white/75 md:text-[17px]">
+                    Empréstimos rápidos, seguros e descomplicados para realizar seus planos e{" "}
+                    <span className="font-semibold text-white">transformar sua vida</span>.
                   </p>
 
-                  <div className="mt-8 flex flex-wrap items-center gap-4">
+                  <div className="mt-8 flex flex-wrap items-center gap-3">
                     <a
                       href="#simular"
-                      className="group inline-flex items-center gap-3 rounded-2xl bg-brand-gold px-7 py-4 text-base font-semibold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.03] hover:brightness-110"
+                      className="group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl px-7 py-4 text-base font-bold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.03] hover:brightness-110"
                       style={{ background: "var(--gradient-gold)" }}
                     >
-                      <TrendingUp className="h-5 w-5" strokeWidth={2.4} />
-                      Solicitar meu empréstimo
-                      <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                      {/* shine sweep */}
+                      <span
+                        className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full"
+                        aria-hidden="true"
+                      />
+                      <TrendingUp className="relative h-5 w-5" strokeWidth={2.4} />
+                      <span className="relative">Solicitar meu empréstimo</span>
+                      <ChevronRight className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
                     </a>
                     <a
                       href="#simular"
-                      className="inline-flex items-center gap-2 rounded-2xl border border-white/15 bg-white/5 px-5 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:border-brand-gold/60 hover:text-brand-gold"
+                      className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/[0.06] px-5 py-4 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-brand-gold/60 hover:bg-white/10 hover:text-brand-gold"
                     >
                       Simular agora
                     </a>
                   </div>
 
                   {/* Trust chips */}
-                  <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
-                    <div className="flex items-center gap-2 text-xs font-medium text-white/65">
+                  <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-white/10 pt-5">
+                    <div className="flex items-center gap-2 text-xs font-medium text-white/75">
                       <CheckCircle2 className="h-4 w-4 text-brand-gold" />
-                      Aprovação em minutos
+                      Aprovação em <span className="font-bold text-white">3 minutos</span>
                     </div>
-                    <div className="flex items-center gap-2 text-xs font-medium text-white/65">
+                    <div className="hidden h-3 w-px bg-white/15 sm:block" />
+                    <div className="flex items-center gap-2 text-xs font-medium text-white/75">
                       <Clock className="h-4 w-4 text-brand-gold" />
-                      Dinheiro na conta hoje
+                      Dinheiro na conta <span className="font-bold text-white">hoje</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs font-medium text-white/65">
+                    <div className="hidden h-3 w-px bg-white/15 sm:block" />
+                    <div className="flex items-center gap-1.5 text-xs font-medium text-white/75">
                       <div className="flex">
                         {[0, 1, 2, 3, 4].map((i) => (
                           <Star key={i} className="h-3.5 w-3.5 fill-brand-gold text-brand-gold" />
                         ))}
                       </div>
-                      +50 mil clientes
+                      <span className="font-bold text-white">+50 mil</span> clientes
                     </div>
                   </div>
                 </div>
