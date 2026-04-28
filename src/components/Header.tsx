@@ -14,7 +14,7 @@ import {
   Clock,
   CheckCircle2,
 } from "lucide-react";
-import heroImage from "@/assets/hero-credifacil.png";
+import heroImage from "@/assets/hero-credifacil.jpg";
 import logo from "@/assets/credifacil-logo.png";
 
 const navItems = [
