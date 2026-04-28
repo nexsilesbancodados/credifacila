@@ -220,7 +220,7 @@ const faqs = [
   },
   {
     q: "Quem pode contratar?",
-    a: "Aposentados e pensionistas do INSS, servidores públicos (federais, estaduais e municipais), militares e trabalhadores CLT de empresas conveniadas.",
+    a: "Aposentados e pensionistas do INSS, servidores públicos (federais, estaduais e municipais), profissionais liberais e trabalhadores CLT de empresas conveniadas.",
   },
   {
     q: "Posso contratar mesmo com nome sujo?",
@@ -328,7 +328,7 @@ const Consignado = () => {
               </span>
             </h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-white/85 md:text-[17px]">
-              Para aposentados, pensionistas do INSS, servidores públicos e militares —
+              Para aposentados, pensionistas do INSS, servidores públicos e profissionais conveniados —
               parcelas a partir de{" "}
               <span className="font-semibold text-white">1,49% a.m.</span> em até{" "}
               <span className="font-semibold text-white">96 meses</span>.
