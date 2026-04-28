@@ -18,6 +18,8 @@ import {
 import heroImage from "@/assets/hero-credifacil.jpg";
 import heroSlide2 from "@/assets/hero-slide-2.jpg";
 import heroSlide3 from "@/assets/hero-slide-3.jpg";
+import heroSlide4 from "@/assets/hero-slide-4.jpg";
+import heroSlide5 from "@/assets/hero-slide-5.jpg";
 import logo from "@/assets/credifacil-logo.png";
 
 const navItems = [
@@ -43,6 +45,16 @@ const heroSlides = [
   {
     src: heroSlide3,
     alt: "Família comemorando a aprovação do crédito Credifácil em casa",
+    objectPosition: "60% center",
+  },
+  {
+    src: heroSlide4,
+    alt: "Homem feliz segurando as chaves de um carro novo financiado pela Credifácil",
+    objectPosition: "55% center",
+  },
+  {
+    src: heroSlide5,
+    alt: "Empreendedora sorridente em seu pequeno negócio impulsionado pelo crédito Credifácil",
     objectPosition: "60% center",
   },
 ];
