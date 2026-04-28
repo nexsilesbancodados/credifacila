@@ -10,6 +10,9 @@ import {
   Lock,
   MessageCircle,
   Sparkles,
+  ArrowRight,
+  CheckCircle2,
+  Users,
 } from "lucide-react";
 import { whatsappLink } from "@/config/site";
 import { Counter } from "@/components/ui/Counter";
@@ -75,7 +78,7 @@ const LoansSection = () => {
       <div className="mx-auto max-w-7xl">
         {/* HERO row: text + image */}
         <div
-          className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-[1.2fr_1fr]"
+          className="grid grid-cols-1 items-stretch gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-12"
           data-anim-stagger
         >
           {/* Left text */}
@@ -85,14 +88,14 @@ const LoansSection = () => {
               Crédito sob medida pra você
             </span>
 
-            <h2 className="mt-5 font-display text-4xl font-bold leading-[1.02] tracking-tight text-foreground md:text-[52px]">
+            <h2 className="mt-5 font-display text-[40px] font-bold leading-[1.02] tracking-tight text-foreground md:text-[56px]">
               Solicite, aprove e
               <br />
               receba{" "}
-              <span className="relative inline-block text-brand-gold">
-                no mesmo dia
+              <span className="relative inline-block">
+                <span className="relative z-10 text-gold-gradient">no mesmo dia</span>
                 <svg
-                  className="absolute -bottom-1 left-0 h-2 w-full"
+                  className="absolute -bottom-1 left-0 h-2.5 w-full"
                   viewBox="0 0 200 8"
                   preserveAspectRatio="none"
                   aria-hidden
@@ -103,25 +106,61 @@ const LoansSection = () => {
                     strokeWidth="2.5"
                     fill="none"
                     strokeLinecap="round"
-                    opacity="0.5"
+                    opacity="0.55"
                   />
                 </svg>
               </span>
               .
             </h2>
 
-            <p className="mt-5 max-w-md text-base leading-relaxed text-foreground/70 md:text-lg">
+            <p className="mt-6 max-w-md text-base leading-relaxed text-foreground/70 md:text-lg">
               Sem fila, sem papelada e sem surpresas. Descubra em segundos a parcela que cabe no seu bolso.
             </p>
 
+            {/* Bullet checklist */}
+            <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[13px] text-foreground/75">
+              {[
+                "Resposta em até 3 minutos",
+                "Sem consulta ao SPC/Serasa",
+                "100% online",
+              ].map((b) => (
+                <li key={b} className="inline-flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-brand-gold" strokeWidth={2.4} />
+                  <span className="font-medium">{b}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* CTAs */}
+            <div className="mt-7 flex flex-wrap items-center gap-3">
+              <a
+                href={whatsappLink("Olá! Quero solicitar meu crédito Credifácil.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-gold group"
+              >
+                <MessageCircle className="h-4 w-4" />
+                Solicitar agora
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </a>
+              <a
+                href="#linhas"
+                className="inline-flex items-center gap-1.5 rounded-2xl px-3.5 py-3.5 text-sm font-semibold text-foreground/80 transition-colors hover:text-brand-gold"
+              >
+                Conhecer linhas de crédito
+                <ChevronRight className="h-4 w-4" />
+              </a>
+            </div>
+
+            {/* Trust cards */}
             <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
               {trustItems.map((t) => (
                 <li
                   key={t.title}
-                  className="group rounded-2xl border border-foreground/8 bg-white/60 p-3.5 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-brand-gold/30 hover:bg-white hover:shadow-[var(--shadow-card)]"
+                  className="group relative overflow-hidden rounded-2xl border border-foreground/8 bg-white/70 p-4 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-brand-gold/40 hover:bg-white hover:shadow-[var(--shadow-card)]"
                 >
                   <span
-                    className="flex h-10 w-10 items-center justify-center rounded-xl text-brand-gold-foreground shadow-[var(--shadow-gold-sm)] transition-transform group-hover:scale-105"
+                    className="flex h-10 w-10 items-center justify-center rounded-xl text-brand-gold-foreground shadow-[var(--shadow-gold-sm)] transition-transform group-hover:scale-105 group-hover:rotate-[-3deg]"
                     style={{ background: "var(--gradient-gold)" }}
                   >
                     <t.icon className="h-[18px] w-[18px]" strokeWidth={2.2} />
@@ -132,79 +171,119 @@ const LoansSection = () => {
                   <div className="mt-1 whitespace-pre-line text-[11px] leading-relaxed text-foreground/60">
                     {t.desc}
                   </div>
+                  <span className="pointer-events-none absolute -right-6 -bottom-6 h-16 w-16 rounded-full bg-brand-gold/0 transition-colors group-hover:bg-brand-gold/10" />
                 </li>
               ))}
             </ul>
 
-            {/* Mini stats */}
-            <div className="mt-8 flex items-center gap-5 rounded-2xl border border-brand-gold/15 bg-gradient-to-br from-white/80 to-[hsl(40_50%_94%)]/60 px-5 py-4 backdrop-blur-sm">
-              <div>
-                <div className="font-display text-2xl font-bold leading-none text-foreground">
-                  <Counter value={50} prefix="+" suffix=" mil" />
+            {/* Mini stats — refined */}
+            <div className="relative mt-8 overflow-hidden rounded-2xl border border-brand-gold/20 bg-gradient-to-br from-white/85 via-white/70 to-[hsl(40_60%_95%)]/70 px-5 py-4 shadow-[var(--shadow-soft)] backdrop-blur-sm">
+              <div className="flex items-center gap-5">
+                <div>
+                  <div className="font-display text-2xl font-bold leading-none text-foreground md:text-[26px]">
+                    <Counter value={50} prefix="+" suffix=" mil" />
+                  </div>
+                  <div className="mt-1.5 text-[10px] font-semibold uppercase tracking-wider text-foreground/55">
+                    clientes
+                  </div>
                 </div>
-                <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-foreground/55">
-                  clientes
+                <div className="h-10 w-px bg-foreground/15" />
+                <div>
+                  <div className="flex items-baseline gap-1 font-display text-2xl font-bold leading-none text-foreground md:text-[26px]">
+                    <Counter value={4.9} decimals={1} />
+                    <Star className="h-4 w-4 fill-brand-gold text-brand-gold" />
+                  </div>
+                  <div className="mt-1.5 text-[10px] font-semibold uppercase tracking-wider text-foreground/55">
+                    avaliação
+                  </div>
+                </div>
+                <div className="h-10 w-px bg-foreground/15" />
+                <div>
+                  <div className="font-display text-2xl font-bold leading-none text-foreground md:text-[26px]">
+                    R$ 1bi<span className="text-brand-gold">+</span>
+                  </div>
+                  <div className="mt-1.5 text-[10px] font-semibold uppercase tracking-wider text-foreground/55">
+                    liberados
+                  </div>
                 </div>
               </div>
-              <div className="h-10 w-px bg-foreground/15" />
-              <div>
-                <div className="flex items-baseline gap-0.5 font-display text-2xl font-bold leading-none text-foreground">
-                  <Counter value={4.9} decimals={1} />
-                  <Star className="h-4 w-4 fill-brand-gold text-brand-gold" />
-                </div>
-                <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-foreground/55">
-                  avaliação
-                </div>
-              </div>
-              <div className="h-10 w-px bg-foreground/15" />
-              <div>
-                <div className="font-display text-2xl font-bold leading-none text-foreground">R$ 1bi+</div>
-                <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-foreground/55">
-                  liberados
-                </div>
-              </div>
+              <Sparkles
+                className="pointer-events-none absolute -right-3 -top-3 h-14 w-14 text-brand-gold/15"
+                strokeWidth={1}
+                aria-hidden
+              />
             </div>
           </div>
 
           {/* Right image with floating testimonial */}
-          <div className="relative hidden overflow-hidden rounded-3xl shadow-[var(--shadow-card)] lg:block min-h-[520px]">
+          <div className="relative hidden overflow-hidden rounded-[28px] shadow-[var(--shadow-card)] lg:block min-h-[560px] ring-1 ring-foreground/10">
             <img
               src={loansHero}
               srcSet={`${loansHeroSm} 640w, ${loansHeroMd} 1200w, ${loansHero} 1920w`}
               sizes="(max-width: 1024px) 0px, 40vw"
               alt="Cliente satisfeita simulando empréstimo no celular"
-              className="absolute inset-0 h-full w-full object-cover object-[60%_center]"
+              className="absolute inset-0 h-full w-full object-cover object-[60%_center] transition-transform duration-[1200ms] ease-out hover:scale-[1.03]"
               loading="lazy"
               decoding="async"
               width={1024}
               height={1024}
             />
+            {/* Top fade for badge legibility */}
+            <div
+              className="absolute inset-x-0 top-0 h-32"
+              style={{
+                background:
+                  "linear-gradient(180deg, hsl(220 16% 7% / 0.55) 0%, transparent 100%)",
+              }}
+              aria-hidden
+            />
+            {/* Bottom fade for testimonial */}
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(180deg, transparent 35%, hsl(220 16% 7% / 0.85) 100%)",
+                  "linear-gradient(180deg, transparent 35%, hsl(220 16% 7% / 0.88) 100%)",
               }}
               aria-hidden
             />
+
+            {/* Top-left status badge */}
             <div className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-foreground shadow-md backdrop-blur">
-              <span className="flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              </span>
               Aprovado em 3 min
             </div>
+
+            {/* Top-right floating chip — live counter */}
+            <div className="absolute right-4 top-4 flex items-center gap-2 rounded-full border border-white/20 bg-[hsl(220_16%_7%)]/70 px-3 py-1.5 text-[10px] font-semibold text-white backdrop-blur-md">
+              <Users className="h-3 w-3 text-brand-gold" />
+              <span className="text-white/85">
+                <span className="font-bold text-white">2.341</span> aprovados hoje
+              </span>
+            </div>
+
+            {/* Testimonial card */}
             <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-[hsl(220_16%_7%)]/92 p-4 text-white shadow-lg backdrop-blur-md">
-              <Quote className="h-4 w-4 text-brand-gold" />
-              <p className="mt-2 text-xs leading-relaxed text-white/90">
-                "Em poucos cliques resolvi tudo. Simples, rápido e sem stress!"
-              </p>
-              <div className="mt-3 flex items-center justify-between border-t border-white/10 pt-3">
-                <div className="leading-tight">
-                  <div className="text-xs font-bold">Camila R.</div>
-                  <div className="text-[10px] text-white/55">Cliente desde 2024</div>
-                </div>
+              <div className="flex items-start justify-between gap-3">
+                <Quote className="h-5 w-5 shrink-0 text-brand-gold" />
                 <div className="flex">
                   {[0, 1, 2, 3, 4].map((i) => (
                     <Star key={i} className="h-3 w-3 fill-brand-gold text-brand-gold" />
                   ))}
+                </div>
+              </div>
+              <p className="mt-2 text-sm leading-relaxed text-white/90">
+                "Em poucos cliques resolvi tudo. Simples, rápido e sem stress!"
+              </p>
+              <div className="mt-3 flex items-center gap-2.5 border-t border-white/10 pt-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-brand-gold to-brand-gold-soft text-[11px] font-bold text-brand-gold-foreground">
+                  CR
+                </span>
+                <div className="leading-tight">
+                  <div className="text-xs font-bold">Camila R.</div>
+                  <div className="text-[10px] text-white/55">Cliente desde 2024 · São Paulo</div>
                 </div>
               </div>
             </div>
@@ -213,7 +292,8 @@ const LoansSection = () => {
 
         {/* PRODUCTS row */}
         <div
-          className="mt-12 rounded-3xl border border-foreground/10 bg-white/80 p-6 shadow-[var(--shadow-card)] backdrop-blur-sm md:p-8"
+          id="linhas"
+          className="mt-12 scroll-mt-20 rounded-3xl border border-foreground/10 bg-white/80 p-6 shadow-[var(--shadow-card)] backdrop-blur-sm md:p-8"
           data-anim="fade-up"
         >
           <div className="flex flex-wrap items-end justify-between gap-4">
