@@ -467,7 +467,7 @@ const Securitizadora = () => {
       </section>
 
       {/* Timeline */}
-      <section className="bg-gradient-to-b from-transparent to-[hsl(40_50%_94%)] py-20 md:py-28">
+      <section className="bg-gradient-to-b from-transparent to-[hsl(220_14%_94%)] py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">
