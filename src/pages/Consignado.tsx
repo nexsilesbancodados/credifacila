@@ -34,7 +34,7 @@ import servidorImg from "@/assets/consignado-servidor.webp";
 import bannerImg from "@/assets/consignado-banner.webp";
 import audAposentados from "@/assets/audience-aposentados.jpg";
 import audServidores from "@/assets/audience-servidores.jpg";
-import audMilitares from "@/assets/audience-militares.jpg";
+import audProfissionais from "@/assets/audience-profissionais.jpg";
 import audClt from "@/assets/audience-clt.jpg";
 import TestimonialsMarquee, { type MarqueeTestimonial } from "@/components/TestimonialsMarquee";
 
@@ -77,9 +77,9 @@ const audiences = [
   },
   {
     icon: GraduationCap,
-    title: "Militares (Forças Armadas)",
-    desc: "Condições exclusivas para Exército, Marinha, Aeronáutica e Polícia Militar.",
-    image: audMilitares,
+    title: "Profissionais liberais",
+    desc: "Condições exclusivas para profissionais com vínculo em entidades conveniadas.",
+    image: audProfissionais,
   },
   {
     icon: Users,
@@ -686,7 +686,7 @@ const Consignado = () => {
           <div className="relative overflow-hidden rounded-2xl">
             <img
               src={servidorImg}
-              alt="Militar brasileiro sorrindo após contratar consignado"
+              alt="Profissional brasileiro sorrindo após contratar consignado"
               className="h-[320px] w-full object-cover"
               width={1024}
               height={1024}
