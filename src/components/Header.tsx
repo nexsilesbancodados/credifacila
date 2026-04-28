@@ -324,12 +324,18 @@ const Header = () => {
 
             {/* Carousel arrows */}
             <button
+              type="button"
+              onClick={() =>
+                setActiveSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
+              }
               aria-label="Anterior"
               className="absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white/70 backdrop-blur-sm transition hover:border-brand-gold/50 hover:bg-black/60 hover:text-brand-gold"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
             <button
+              type="button"
+              onClick={() => setActiveSlide((prev) => (prev + 1) % heroSlides.length)}
               aria-label="Próximo"
               className="absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white/70 backdrop-blur-sm transition hover:border-brand-gold/50 hover:bg-black/60 hover:text-brand-gold"
             >
@@ -338,9 +344,17 @@ const Header = () => {
 
             {/* Carousel dots */}
             <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2">
-              <span className="h-1.5 w-6 rounded-full bg-brand-gold" />
-              <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
-              <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
+              {heroSlides.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => setActiveSlide(i)}
+                  aria-label={`Ir para slide ${i + 1}`}
+                  className={`h-1.5 rounded-full transition-all duration-500 ${
+                    activeSlide === i ? "w-6 bg-brand-gold" : "w-1.5 bg-white/30 hover:bg-white/60"
+                  }`}
+                />
+              ))}
             </div>
 
             {/* Floating dark badge */}
