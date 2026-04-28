@@ -514,4 +514,25 @@
   .bg-noise {
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
   }
+
+  /* =====================================================
+     Theme override: Purple & White (used on Conta Luri)
+     Re-maps the gold tokens to a vivid purple palette so
+     all shared components inherit the new accent color
+     without touching their markup.
+     ===================================================== */
+  .theme-purple {
+    --brand-gold: 270 75% 55%;
+    --brand-gold-soft: 275 90% 72%;
+    --brand-gold-foreground: 0 0% 100%;
+
+    --gradient-gold: linear-gradient(135deg, hsl(275 90% 72%) 0%, hsl(270 78% 58%) 50%, hsl(265 72% 46%) 100%);
+    --gradient-gold-soft: linear-gradient(135deg, hsl(275 90% 95%) 0%, hsl(270 80% 88%) 100%);
+
+    --shadow-gold: 0 14px 44px -12px hsl(270 80% 55% / 0.45);
+    --shadow-gold-sm: 0 4px 12px -4px hsl(270 80% 55% / 0.4);
+  }
+  /* Tailwind utility classes that reference brand-gold via class names
+     (text-brand-gold, bg-brand-gold, border-brand-gold, ring-brand-gold)
+     are generated from the CSS variable, so they update automatically. */
 }
