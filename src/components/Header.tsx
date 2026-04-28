@@ -219,7 +219,7 @@ const Header = () => {
       <div className="relative">
         {/* Hero image */}
         <div className="relative w-full">
-          <div className="relative h-[640px] overflow-hidden md:h-[700px]">
+          <div className="relative h-[680px] overflow-hidden md:h-[760px] lg:h-[820px]">
             {/* Carousel slides */}
             {heroSlides.map((slide, i) => (
               <img
@@ -229,8 +229,8 @@ const Header = () => {
                 fetchPriority={i === 0 ? "high" : "low"}
                 src={slide.src}
                 alt={slide.alt}
-                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1400ms] ease-in-out ${
-                  activeSlide === i ? "opacity-100" : "opacity-0"
+                className={`absolute inset-0 h-full w-full object-cover transition-all duration-[1600ms] ease-in-out ${
+                  activeSlide === i ? "scale-100 opacity-100" : "scale-105 opacity-0"
                 }`}
                 style={{ objectPosition: slide.objectPosition }}
                 width={1920}
@@ -238,12 +238,29 @@ const Header = () => {
                 aria-hidden={activeSlide !== i}
               />
             ))}
-            {/* Dark gradient overlay on the left for text legibility */}
+            {/* Cinematic overlays — combined for depth and legibility */}
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(90deg, hsl(30 18% 6% / 0.97) 0%, hsl(30 18% 6% / 0.88) 28%, hsl(30 18% 6% / 0.45) 55%, transparent 78%)",
+                  "linear-gradient(95deg, hsl(30 22% 5% / 0.97) 0%, hsl(30 22% 5% / 0.88) 28%, hsl(30 22% 5% / 0.42) 58%, transparent 82%)",
+              }}
+              aria-hidden="true"
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "radial-gradient(ellipse 80% 60% at 20% 50%, hsl(30 30% 4% / 0.55), transparent 70%)",
+              }}
+              aria-hidden="true"
+            />
+            {/* Subtle film grain texture */}
+            <div
+              className="pointer-events-none absolute inset-0 opacity-[0.07] mix-blend-overlay"
+              style={{
+                backgroundImage:
+                  "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
               }}
               aria-hidden="true"
             />
@@ -315,7 +332,8 @@ const Header = () => {
 
                   <h1
                     key={`title-${activeSlide}`}
-                    className="animate-fade-in text-[40px] font-bold leading-[1.02] tracking-tight text-white md:text-[62px]"
+                    className="animate-fade-in text-[42px] font-bold leading-[1.02] tracking-tight text-white md:text-[64px] lg:text-[72px]"
+                    style={{ textShadow: "0 2px 24px hsl(30 30% 4% / 0.45)" }}
                   >
                     {slide.title.map((line, idx) => {
                       const isGold = idx >= slide.goldFromLine;
