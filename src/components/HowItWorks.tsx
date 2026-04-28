@@ -9,7 +9,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { whatsappLink } from "@/config/site";
-import portrait from "@/assets/howitworks-portrait.jpg";
+import portrait from "@/assets/howitworks-portrait.webp";
 
 const steps = [
   {
