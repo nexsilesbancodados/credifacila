@@ -116,25 +116,39 @@ export const useScrollAnimations = () => {
     // Initial scan
     scan();
 
-    // Re-scan when lazy sections mount
+    // Re-scan when lazy sections mount. Debounced + ignores attribute/text changes
+    // (GSAP itself mutates inline styles and would otherwise create an infinite loop).
+    let pending = false;
+    let refreshTimer: number | undefined;
     const observer = new MutationObserver((mutations) => {
+      let hasNew = false;
       for (const m of mutations) {
-        m.addedNodes.forEach((node) => {
-          if (node.nodeType === 1) {
-            const el = node as HTMLElement;
-            if (el.matches?.("[data-anim], [data-anim-stagger], [data-parallax]")) {
-              if (el.hasAttribute("data-anim")) animate(el);
-              if (el.hasAttribute("data-anim-stagger")) animateStagger(el);
-              if (el.hasAttribute("data-parallax")) setupParallax(el);
+        if (m.addedNodes.length > 0) {
+          for (const node of m.addedNodes) {
+            if (node.nodeType === 1) {
+              hasNew = true;
+              break;
             }
-            scan(el);
           }
-        });
+        }
+        if (hasNew) break;
       }
-      ScrollTrigger.refresh();
+      if (!hasNew || pending) return;
+      pending = true;
+      window.requestAnimationFrame(() => {
+        scan();
+        pending = false;
+        if (refreshTimer) window.clearTimeout(refreshTimer);
+        refreshTimer = window.setTimeout(() => ScrollTrigger.refresh(), 200);
+      });
     });
 
-    observer.observe(document.body, { childList: true, subtree: true });
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: false,
+      characterData: false,
+    });
 
     // Refresh on load
     const onLoad = () => ScrollTrigger.refresh();
@@ -142,6 +156,7 @@ export const useScrollAnimations = () => {
 
     return () => {
       observer.disconnect();
+      if (refreshTimer) window.clearTimeout(refreshTimer);
       window.removeEventListener("load", onLoad);
     };
   }, []);
