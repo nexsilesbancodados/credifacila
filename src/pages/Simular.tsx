@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, Suspense, lazy } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowLeft,
@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import logo from "@/assets/credifacil-logo.png";
 import SimulatorCard from "@/components/SimulatorCard";
+import heroImg from "@/assets/hero-slide-3.jpg";
 
 const trust = [
   {
@@ -53,22 +54,22 @@ const Simular = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[hsl(40_30%_97%)]">
+    <div className="min-h-screen bg-[hsl(40_30%_98%)]">
       {/* Top bar */}
-      <header className="w-full bg-[hsl(30_18%_6%)]">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-          <Link to="/" className="flex items-center gap-3 text-white" aria-label="Voltar para a página inicial">
+      <header className="absolute top-0 z-50 w-full bg-transparent">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 md:px-8">
+          <Link to="/" className="flex items-center gap-3" aria-label="Voltar para a página inicial">
             <img
               src={logo}
               alt="Credifácil"
-              className="h-9 w-auto md:h-10"
+              className="h-9 w-auto brightness-0 invert md:h-10"
               width={1795}
               height={605}
             />
           </Link>
           <Link
             to="/"
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-xs font-semibold text-white/85 transition-colors hover:border-brand-gold/60 hover:text-brand-gold"
+            className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:text-brand-gold"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             Voltar ao início
@@ -76,9 +77,34 @@ const Simular = () => {
         </div>
       </header>
 
-      {/* Content */}
-      <main className="mx-auto max-w-6xl px-5 py-10 md:px-8 md:py-16">
-        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1.05fr_1fr]">
+      {/* Hero Section */}
+      <section className="relative h-[480px] w-full overflow-hidden">
+        <img
+          src={heroImg}
+          alt="Escritório moderno"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(30_18%_6%/0.95)] via-[hsl(30_18%_6%/0.8)] to-transparent" />
+        <div className="relative mx-auto flex h-full max-w-7xl items-center px-5 md:px-8">
+          <div className="max-w-2xl pt-16" data-anim="fade-right">
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand-gold/20 px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-brand-gold backdrop-blur-md">
+              <Sparkles className="h-4 w-4" />
+              Simulador de Crédito
+            </span>
+            <h1 className="mt-6 text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-[58px]">
+              O crédito que você precisa,
+              <br />
+              <span className="text-brand-gold">com a agilidade que você merece.</span>
+            </h1>
+            <p className="mt-6 max-w-lg text-lg text-white/80">
+              Descubra em segundos as melhores condições para o seu empréstimo pessoal, sem compromisso e sem burocracia.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <main className="mx-auto -mt-20 max-w-6xl px-5 pb-16 md:px-8">
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1.1fr_1fr]">
           {/* Left: copy + steps */}
           <div className="flex flex-col">
             <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-gold/30 bg-brand-gold/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-brand-gold">
