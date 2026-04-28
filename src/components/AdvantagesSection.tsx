@@ -53,9 +53,19 @@ const AdvantagesSection = () => {
       aria-label="Vantagens, propósito e depoimentos"
     >
       <div className="mx-auto max-w-7xl">
+        <div className="mb-10 text-center">
+          <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-gold backdrop-blur-sm">
+            Por que a Credifácil
+          </span>
+          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-[44px]">
+            Tudo que você precisa,{" "}
+            <span className="text-brand-gold">em um só lugar</span>
+          </h2>
+        </div>
+
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           {/* CARD 1 — Vantagens */}
-          <article className="rounded-3xl border border-white/5 bg-[hsl(30_12%_12%)] p-7 text-[hsl(40_30%_97%)] shadow-[var(--shadow-card)]">
+          <article className="group rounded-3xl border border-white/8 bg-[hsl(var(--surface-elevated))]/75 p-7 text-white shadow-[var(--shadow-card)] backdrop-blur-md transition-all hover:border-brand-gold/25">
             <h3 className="text-2xl font-bold leading-tight">
               Vantagens que
               <br />
@@ -91,7 +101,7 @@ const AdvantagesSection = () => {
           </article>
 
           {/* CARD 2 — Crédito para cada momento */}
-          <article className="relative overflow-hidden rounded-3xl border border-white/5 bg-[hsl(30_12%_12%)] text-[hsl(40_30%_97%)] shadow-[var(--shadow-card)]">
+          <article className="relative overflow-hidden rounded-3xl border border-white/8 bg-[hsl(var(--surface-elevated))] text-white shadow-[var(--shadow-card)] transition-all hover:border-brand-gold/30">
             <img
               src={womanCoffee}
               alt="Mulher sorrindo segurando uma xícara, cliente Credifácil"
@@ -104,7 +114,7 @@ const AdvantagesSection = () => {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(90deg, hsl(30 15% 8% / 0.95) 0%, hsl(30 15% 8% / 0.82) 35%, hsl(30 15% 8% / 0.25) 65%, transparent 100%)",
+                  "linear-gradient(90deg, hsl(30 18% 7% / 0.96) 0%, hsl(30 18% 7% / 0.85) 38%, hsl(30 18% 7% / 0.3) 70%, transparent 100%)",
               }}
               aria-hidden="true"
             />
@@ -146,7 +156,7 @@ const AdvantagesSection = () => {
           </article>
 
           {/* CARD 3 — Histórias reais */}
-          <article className="rounded-3xl border border-white/5 bg-[hsl(30_12%_12%)] p-7 text-[hsl(40_30%_97%)] shadow-[var(--shadow-card)]">
+          <article className="group rounded-3xl border border-white/8 bg-[hsl(var(--surface-elevated))]/75 p-7 text-white shadow-[var(--shadow-card)] backdrop-blur-md transition-all hover:border-brand-gold/25">
             <h3 className="text-2xl font-bold leading-tight">
               Histórias reais,
               <br />
@@ -195,12 +205,21 @@ const AdvantagesSection = () => {
 
         {/* Bottom golden CTA bar */}
         <div
-          className="mt-6 flex flex-col items-stretch gap-5 rounded-3xl px-6 py-5 md:flex-row md:items-center md:justify-between md:px-8"
+          className="relative mt-6 flex flex-col items-stretch gap-5 overflow-hidden rounded-3xl px-6 py-5 shadow-[var(--shadow-gold)] md:flex-row md:items-center md:justify-between md:px-8"
           style={{
             background:
-              "linear-gradient(90deg, hsl(40 80% 88%) 0%, hsl(40 75% 80%) 100%)",
+              "linear-gradient(100deg, hsl(40 85% 88%) 0%, hsl(38 80% 78%) 50%, hsl(35 75% 70%) 100%)",
           }}
         >
+          {/* Decorative blob */}
+          <div
+            className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full opacity-40"
+            style={{
+              background:
+                "radial-gradient(circle, hsl(35 90% 60% / 0.6), transparent 70%)",
+            }}
+            aria-hidden="true"
+          />
           <div className="flex items-center gap-4">
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-[hsl(30_15%_15%)] shadow-md">
               <MessageCircle className="h-5 w-5" />
