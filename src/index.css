@@ -8,8 +8,13 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 6%;
+    --foreground: 0 0% 100%;
+
+    --brand-gold: 42 95% 55%;
+    --brand-gold-foreground: 0 0% 8%;
+    --gradient-gold: linear-gradient(90deg, hsl(38 90% 50%), hsl(45 95% 60%));
+    --header-overlay: linear-gradient(180deg, hsl(0 0% 4% / 0.85), hsl(0 0% 4% / 0.55));
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
