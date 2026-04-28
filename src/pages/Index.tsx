@@ -1,11 +1,11 @@
-import { Suspense, lazy, useEffect, useRef, useState } from "react";
+import { Suspense, lazy, useEffect, useRef, useState, type ReactNode } from "react";
 import Header from "@/components/Header";
 
 const AdvantagesSection = lazy(() => import("@/components/AdvantagesSection"));
 const LoansSection = lazy(() => import("@/components/LoansSection"));
 
 type DeferredSectionProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   minHeight: string;
 };
 
