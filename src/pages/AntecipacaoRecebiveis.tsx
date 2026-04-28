@@ -7,7 +7,7 @@ import {
   LineChart,
 } from "lucide-react";
 import SolutionPage from "@/components/SolutionPage";
-import heroImg from "@/assets/hero-antecipacao-photo.jpg";
+import heroImg from "@/assets/hero-antecipacao-wide.jpg";
 
 const AntecipacaoRecebiveis = () => (
   <SolutionPage
