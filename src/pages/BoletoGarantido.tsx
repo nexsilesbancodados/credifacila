@@ -7,7 +7,7 @@ import {
   FileCheck,
 } from "lucide-react";
 import SolutionPage from "@/components/SolutionPage";
-import heroImg from "@/assets/hero-boleto-photo.webp";
+import heroImg from "@/assets/banner-boleto-garantido.webp";
 import showcaseImg from "@/assets/showcase-boleto.webp";
 
 const BoletoGarantido = () => (
