@@ -161,9 +161,9 @@ const SolutionPage = ({
       </section>
 
       {/* Intro */}
-      <section className="bg-card py-20 md:py-24">
+      <section className="py-20 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center md:px-8">
-          <h2 className="font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-4xl">
+          <h2 className="font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             {intro.heading}
           </h2>
           <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-brand-gold" />
@@ -182,7 +182,7 @@ const SolutionPage = ({
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
               Benefícios
             </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
               Por que escolher essa solução
             </h2>
           </div>
@@ -222,8 +222,8 @@ const SolutionPage = ({
                         <Icon className="h-6 w-6" strokeWidth={2.2} />
                       </div>
                     )}
-                    <h3 className="mb-2 font-display text-lg font-bold text-[hsl(215_42%_18%)]">{b.title}</h3>
-                    <p className="text-[14px] leading-relaxed text-[hsl(220_15%_38%)]">{b.desc}</p>
+                    <h3 className="mb-2 font-display text-lg font-bold text-foreground">{b.title}</h3>
+                    <p className="text-[14px] leading-relaxed text-muted-foreground">{b.desc}</p>
                   </div>
                 </div>
               );
@@ -271,7 +271,7 @@ const SolutionPage = ({
                   {showcase.eyebrow}
                 </span>
               )}
-              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-[40px] md:leading-[1.1]">
+              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground md:text-[40px] md:leading-[1.1]">
                 {showcase.heading}
               </h2>
               <div className="mt-4 h-1 w-14 rounded-full bg-brand-gold" />
@@ -288,7 +288,7 @@ const SolutionPage = ({
                       <div className="font-display text-2xl font-extrabold text-gold-gradient md:text-3xl">
                         {s.value}
                       </div>
-                      <div className="mt-1 text-[12px] font-medium uppercase tracking-wider text-[hsl(220_15%_45%)]">
+                      <div className="mt-1 text-[12px] font-medium uppercase tracking-wider text-muted-foreground">
                         {s.label}
                       </div>
                     </div>
@@ -311,13 +311,13 @@ const SolutionPage = ({
       />
 
       {/* How it works */}
-      <section id="como" className="bg-card py-20 md:py-24">
+      <section id="como" className="py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
               Passo a passo
             </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
               Como funciona
             </h2>
           </div>
@@ -339,8 +339,8 @@ const SolutionPage = ({
                   >
                     {s.step}
                   </div>
-                  <h3 className="mb-2 font-display text-lg font-bold text-[hsl(215_42%_18%)]">{s.title}</h3>
-                  <p className="mx-auto max-w-[260px] text-[14px] leading-relaxed text-[hsl(220_15%_38%)]">
+                  <h3 className="mb-2 font-display text-lg font-bold text-foreground">{s.title}</h3>
+                  <p className="mx-auto max-w-[260px] text-[14px] leading-relaxed text-muted-foreground">
                     {s.desc}
                   </p>
                 </div>
@@ -388,13 +388,13 @@ const SolutionPage = ({
       </section>
 
       {/* FAQ */}
-      <section className="bg-card py-20 md:py-24">
+      <section className="py-20 md:py-24">
         <div className="mx-auto max-w-3xl px-5 md:px-8">
           <div className="text-center" data-anim="fade-up">
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
               Dúvidas frequentes
             </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
               Perguntas comuns
             </h2>
           </div>
@@ -404,13 +404,13 @@ const SolutionPage = ({
                 key={f.q}
                 className="group rounded-2xl border border-border bg-[hsl(220_16%_98%)] p-6 transition-all open:border-brand-gold/40 open:shadow-md"
               >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 font-display text-[15px] font-semibold text-[hsl(215_42%_18%)] md:text-base">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 font-display text-[15px] font-semibold text-foreground md:text-base">
                   {f.q}
                   <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-brand-gold/40 text-brand-gold transition-transform group-open:rotate-45">
                     +
                   </span>
                 </summary>
-                <p className="mt-4 text-[14px] leading-relaxed text-[hsl(220_15%_38%)]">{f.a}</p>
+                <p className="mt-4 text-[14px] leading-relaxed text-muted-foreground">{f.a}</p>
               </details>
             ))}
           </div>

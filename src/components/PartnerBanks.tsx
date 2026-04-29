@@ -86,7 +86,7 @@ const PartnerBanks = () => (
               <div className="text-[14px] font-bold text-foreground transition-colors group-hover:text-brand-gold">
                 {t.title}
               </div>
-              <div className="mt-1 text-[12px] leading-relaxed text-[hsl(220_15%_38%)]">
+              <div className="mt-1 text-[12px] leading-relaxed text-muted-foreground">
                 {t.desc}
               </div>
             </div>

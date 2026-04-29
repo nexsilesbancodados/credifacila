@@ -21,7 +21,7 @@ const PromoBanner = ({
   ctaTarget = "_blank",
 }: PromoBannerProps) => {
   return (
-    <section className="bg-card py-14 md:py-20">
+    <section className="py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div
           data-anim="fade-up"
