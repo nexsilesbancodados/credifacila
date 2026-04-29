@@ -49,16 +49,6 @@ const SolutionsSection = () => (
     aria-label="Soluções e como funciona"
     className="relative w-full overflow-hidden py-24 md:py-32"
   >
-    <div
-      className="pointer-events-none absolute inset-0 opacity-[0.025]"
-      style={{
-        backgroundImage:
-          "linear-gradient(hsl(42 78% 55%) 1px, transparent 1px), linear-gradient(90deg, hsl(42 78% 55%) 1px, transparent 1px)",
-        backgroundSize: "64px 64px",
-      }}
-      aria-hidden
-    />
-
     <div className="relative mx-auto flex max-w-7xl flex-col gap-16 px-5 md:px-8 md:gap-24">
       {/* === Bloco 1: Benefícios === */}
       <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
