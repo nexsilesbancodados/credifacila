@@ -93,8 +93,8 @@ const HowItWorks = () => {
     const compute = () => {
       ticking = false;
       const rect = section.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const total = section.offsetHeight - vh;
+      const stickyH = Math.max(520, window.innerHeight * 0.7);
+      const total = section.offsetHeight - stickyH;
       const scrolled = Math.min(Math.max(-rect.top, 0), total);
       const p = total > 0 ? scrolled / total : 0;
       setProgress(p);
@@ -132,11 +132,11 @@ const HowItWorks = () => {
       <div
         ref={sectionRef}
         className="relative hidden lg:block"
-        style={{ height: `${panels.length * 100}vh` }}
+        style={{ height: `${panels.length * 60}vh` }}
       >
-        <div className="sticky top-0 h-screen w-full overflow-hidden">
+        <div className="sticky top-0 h-[70vh] min-h-[520px] w-full overflow-hidden">
           {/* Section eyebrow + nav */}
-          <div className="pointer-events-none absolute left-0 right-0 top-0 z-30 flex items-center justify-between px-10 py-8">
+          <div className="pointer-events-none absolute left-0 right-0 top-0 z-30 flex items-center justify-between px-8 py-5">
             <div className="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-black/30 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-gold backdrop-blur-md">
               <ShieldCheck className="h-3 w-3" />
               Jornada Credifácil
@@ -164,8 +164,8 @@ const HowItWorks = () => {
           </div>
 
           {/* Progress bar */}
-          <div className="pointer-events-none absolute bottom-10 left-1/2 z-30 w-[320px] -translate-x-1/2">
-            <div className="mb-3 flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.22em] text-white/55">
+          <div className="pointer-events-none absolute bottom-5 left-1/2 z-30 w-[280px] -translate-x-1/2">
+            <div className="mb-2 flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.22em] text-white/55">
               <span>{String(activeIndex + 1).padStart(2, "0")} / {String(panels.length).padStart(2, "0")}</span>
               <span>{panels[activeIndex].eyebrow.split("·")[1]?.trim()}</span>
             </div>
@@ -186,12 +186,12 @@ const HowItWorks = () => {
 
       {/* ====== MOBILE: stacked panels ====== */}
       <div className="lg:hidden">
-        <div className="px-5 pb-4 pt-14 text-center">
+        <div className="px-5 pb-3 pt-10 text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-brand-gold/[0.08] px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-gold">
             <ShieldCheck className="h-3 w-3" />
             Jornada Credifácil
           </span>
-          <h2 className="mt-5 font-display text-[34px] font-extrabold leading-[1.05] tracking-tight text-white">
+          <h2 className="mt-4 font-display text-[28px] font-extrabold leading-[1.05] tracking-tight text-white">
             Do primeiro clique
             <br />
             <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-gold)" }}>
@@ -207,28 +207,28 @@ const HowItWorks = () => {
       </div>
 
       {/* Final CTA strip */}
-      <div className="relative overflow-hidden border-t border-white/5 bg-[hsl(215_50%_10%)] px-5 py-16 md:px-10 md:py-24">
+      <div className="relative overflow-hidden border-t border-white/5 bg-[hsl(215_50%_10%)] px-5 py-10 md:px-10 md:py-14">
         <div
           className="pointer-events-none absolute -left-32 top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full opacity-40"
           style={{ background: "radial-gradient(circle, hsl(199 90% 55% / 0.18), transparent 65%)" }}
           aria-hidden
         />
-        <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-6 text-center">
-          <h3 className="font-display text-[28px] font-extrabold leading-[1.1] tracking-tight text-white md:text-[44px]">
+        <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-4 text-center">
+          <h3 className="font-display text-[24px] font-extrabold leading-[1.1] tracking-tight text-white md:text-[34px]">
             Pronto para iniciar a{" "}
             <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-gold)" }}>
               sua jornada?
             </span>
           </h3>
-          <p className="max-w-xl text-[15px] leading-relaxed text-white/75 md:text-base">
+          <p className="max-w-xl text-[14px] leading-relaxed text-white/75 md:text-[15px]">
             Atendimento humano, processo 100% digital e sem burocracia. Em 24h úteis seu plano vira realidade.
           </p>
-          <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-1 flex flex-wrap items-center justify-center gap-3">
             <a
               href={whatsappLink("Olá! Quero começar minha solicitação de crédito.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2.5 rounded-2xl px-7 py-4 text-sm font-bold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.03] hover:brightness-110"
+              className="group inline-flex items-center gap-2.5 rounded-2xl px-6 py-3 text-sm font-bold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.03] hover:brightness-110"
               style={{ background: "var(--gradient-gold)" }}
             >
               <MessageCircle className="h-4 w-4" />
@@ -237,7 +237,7 @@ const HowItWorks = () => {
             </a>
             <a
               href="#solucoes"
-              className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/[0.05] px-6 py-4 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-brand-gold/60 hover:bg-white/10 hover:text-brand-gold"
+              className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/[0.05] px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-brand-gold/60 hover:bg-white/10 hover:text-brand-gold"
             >
               Ver linhas de crédito
             </a>
@@ -264,7 +264,7 @@ const PanelCinematic = ({
   return (
     <article
       className={`relative flex flex-shrink-0 items-center justify-center overflow-hidden ${
-        mobile ? "h-[88vh] w-full" : "h-screen w-screen"
+        mobile ? "h-[62vh] min-h-[420px] w-full" : "h-full w-screen"
       }`}
     >
       {/* Background image */}
@@ -307,8 +307,8 @@ const PanelCinematic = ({
       <div
         className={`pointer-events-none absolute select-none font-display font-extrabold leading-none text-white/[0.06] ${
           mobile
-            ? "right-4 top-6 text-[140px]"
-            : "right-[4vw] top-1/2 -translate-y-1/2 text-[clamp(14rem,28vw,28rem)]"
+            ? "right-3 top-4 text-[100px]"
+            : "right-[4vw] top-1/2 -translate-y-1/2 text-[clamp(10rem,20vw,20rem)]"
         }`}
         aria-hidden
       >
@@ -319,18 +319,18 @@ const PanelCinematic = ({
       <div
         className={`relative z-10 ${
           mobile
-            ? "flex h-full w-full flex-col justify-end px-6 pb-10"
-            : "ml-[8vw] max-w-[640px] px-10"
+            ? "flex h-full w-full flex-col justify-end px-6 pb-8"
+            : "ml-[7vw] max-w-[520px] px-8"
         }`}
       >
-        <div className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-gold/40 bg-black/30 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-brand-gold backdrop-blur-md">
+        <div className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-gold/40 bg-black/30 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-brand-gold backdrop-blur-md">
           <Icon className="h-3 w-3" strokeWidth={2.2} />
           {panel.eyebrow}
         </div>
 
         <h3
           className={`mt-6 font-display font-extrabold tracking-tight text-white ${
-            mobile ? "text-[44px] leading-[0.98]" : "text-[clamp(48px,6.4vw,96px)] leading-[0.95]"
+            mobile ? "text-[34px] leading-[0.98]" : "text-[clamp(36px,4.6vw,68px)] leading-[0.95]"
           }`}
           style={{ textShadow: "0 4px 32px hsl(215 52% 4% / 0.7)" }}
         >
@@ -341,14 +341,14 @@ const PanelCinematic = ({
         </h3>
 
         <div
-          className="mt-5 h-[2px] w-16 rounded-full"
+          className="mt-4 h-[2px] w-12 rounded-full"
           style={{ background: "var(--gradient-gold)" }}
           aria-hidden
         />
 
         <p
-          className={`mt-6 max-w-lg leading-relaxed text-white/82 ${
-            mobile ? "text-[15px]" : "text-[16px] md:text-[17px]"
+          className={`mt-4 max-w-md leading-relaxed text-white/82 ${
+            mobile ? "text-[13.5px]" : "text-[14px] md:text-[15px]"
           }`}
         >
           {panel.desc}
