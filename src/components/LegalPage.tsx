@@ -61,7 +61,7 @@ const LegalPage = ({
           className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] opacity-50"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.4), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.4, transparent 65%)",
           }}
           aria-hidden
         />
@@ -109,7 +109,7 @@ const LegalPage = ({
         </article>
 
         {/* CTA contato */}
-        <div className="mt-16 rounded-3xl border border-brand-gold/30 bg-white/80 p-6 backdrop-blur-sm md:p-8">
+        <div className="mt-16 rounded-3xl border border-brand-gold/30 bg-card/80 p-6 backdrop-blur-sm md:p-8">
           <h2 className="font-display text-lg font-bold text-foreground md:text-xl">
             Precisa falar com a gente sobre este tema?
           </h2>

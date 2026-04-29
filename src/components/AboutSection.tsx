@@ -46,7 +46,7 @@ const AboutSection = () => {
               <Sparkles className="h-3 w-3" />
               Sobre a Credifácil
             </span>
-            <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight text-[hsl(220_16%_15%)] md:text-4xl lg:text-[46px]">
+            <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight text-foreground md:text-4xl lg:text-[46px]">
               Crédito que respeita{" "}
               <span className="text-gold-gradient">a sua história</span>
             </h2>
@@ -58,7 +58,7 @@ const AboutSection = () => {
               {pillars.map((p) => (
                 <li
                   key={p.title}
-                  className="rounded-2xl border border-brand-gold/20 bg-white/70 p-4 backdrop-blur-sm transition-all hover:border-brand-gold/50 hover:bg-white/90"
+                  className="rounded-2xl border border-brand-gold/20 bg-card/70 p-4 backdrop-blur-sm transition-all hover:border-brand-gold/50 hover:bg-card/90"
                 >
                   <div className="flex items-start gap-3">
                     <span
@@ -68,7 +68,7 @@ const AboutSection = () => {
                       <ShieldCheck className="h-3.5 w-3.5" strokeWidth={2.4} />
                     </span>
                     <div>
-                      <h3 className="font-display text-sm font-bold text-[hsl(220_16%_15%)]">{p.title}</h3>
+                      <h3 className="font-display text-sm font-bold text-foreground">{p.title}</h3>
                       <p className="mt-1 text-sm leading-relaxed text-[hsl(220_15%_35%)]">{p.desc}</p>
                     </div>
                   </div>
@@ -91,13 +91,13 @@ const AboutSection = () => {
               {stats.map((s) => (
                 <div
                   key={s.label}
-                  className="group relative overflow-hidden rounded-3xl border border-brand-gold/25 bg-white/85 p-6 shadow-[var(--shadow-soft)] backdrop-blur-md transition-all hover:-translate-y-1 hover:border-brand-gold/60 hover:shadow-[var(--shadow-gold)]"
+                  className="group relative overflow-hidden rounded-3xl border border-brand-gold/25 bg-card/85 p-6 shadow-[var(--shadow-soft)] backdrop-blur-md transition-all hover:-translate-y-1 hover:border-brand-gold/60 hover:shadow-[var(--shadow-gold)]"
                 >
                   <div
                     className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full opacity-20"
                     style={{
                       background:
-                        "radial-gradient(circle, hsl(199 90% 60% / 0.6), transparent 70%)",
+                        "radial-gradient(circle, hsl(42 78% 60% / 0.6, transparent 70%)",
                     }}
                     aria-hidden
                   />

@@ -259,15 +259,15 @@
   }
 
   .btn-ghost-dark {
-    @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-foreground/15 bg-white/70 px-5 py-3.5 text-sm font-semibold text-foreground backdrop-blur-md transition-all hover:border-brand-gold hover:bg-white;
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-brand-gold/30 bg-card/70 px-5 py-3.5 text-sm font-semibold text-foreground backdrop-blur-md transition-all hover:border-brand-gold hover:bg-card;
   }
 
   /* ---------- Form controls ---------- */
   .form-label {
-    @apply mb-1.5 block text-[12px] font-semibold uppercase tracking-wider text-[hsl(220_15%_35%)];
+    @apply mb-1.5 block text-[12px] font-semibold uppercase tracking-wider text-muted-foreground;
   }
   .form-input {
-    @apply w-full rounded-xl border border-[hsl(220_15%_85%)] bg-white px-4 py-3 text-[14px] text-[hsl(220_16%_12%)] outline-none transition-all placeholder:text-[hsl(220_15%_55%)] focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20;
+    @apply w-full rounded-xl border border-border bg-card/80 px-4 py-3 text-[14px] text-foreground outline-none transition-all placeholder:text-muted-foreground focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20;
   }
   .form-input-error {
     @apply border-red-500 focus:border-red-500 focus:ring-red-500/20;
@@ -277,7 +277,7 @@
   }
 
   .pill-eyebrow {
-    @apply mb-4 inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-white/80 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-gold shadow-sm backdrop-blur-sm;
+    @apply mb-4 inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-brand-gold/[0.08] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-gold shadow-sm backdrop-blur-sm;
   }
 
   .pill-eyebrow-dark {
@@ -297,7 +297,7 @@
   }
 
   .card-glass {
-    @apply rounded-3xl border border-white/8 bg-white/95 shadow-[var(--shadow-elev)] backdrop-blur-xl;
+    @apply rounded-3xl border border-brand-gold/15 bg-card/85 shadow-[var(--shadow-elev)] backdrop-blur-xl;
   }
 
   /* Sheen line over text */
@@ -313,7 +313,7 @@
 
   /* Ensure surfaces over the animated gradient stay readable */
   .surface-soft {
-    @apply bg-white/85 backdrop-blur-sm;
+    @apply bg-card/85 backdrop-blur-sm;
   }
 
   /* ---------- Micro-anim utility classes ---------- */
@@ -330,7 +330,7 @@
   .stat-tile:hover .stat-value { animation: count-glow 1.4s ease-in-out infinite; }
 
   .trust-card {
-    @apply relative overflow-hidden rounded-2xl border border-foreground/10 bg-white/70 p-4 backdrop-blur-sm;
+    @apply relative overflow-hidden rounded-2xl border border-brand-gold/15 bg-card/70 p-4 backdrop-blur-sm;
     transition: transform .35s cubic-bezier(.22,1,.36,1),
                 box-shadow .35s ease,
                 border-color .25s ease,
@@ -338,7 +338,7 @@
   }
   .trust-card:hover {
     transform: translateY(-3px);
-    @apply border-brand-gold/40 bg-white shadow-[var(--shadow-card)];
+    @apply border-brand-gold/40 bg-card shadow-[var(--shadow-card)];
   }
   .trust-card:hover .trust-icon { animation: icon-tilt .6s cubic-bezier(.22,1,.36,1) forwards; }
   /* Sweeping shine over icon on hover */
@@ -470,7 +470,7 @@
   /* Section gradient overlays (use as ::before via a wrapper) */
   .section-fade-top::before {
     content: ""; position: absolute; inset: 0 0 auto 0; height: 120px;
-    background: linear-gradient(180deg, hsl(220 16% 6%) 0%, transparent 100%);
+    background: linear-gradient(180deg, hsl(0 0% 4%) 0%, transparent 100%);
     pointer-events: none;
   }
 

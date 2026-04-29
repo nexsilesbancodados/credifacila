@@ -86,17 +86,17 @@ const ContactFooter = () => {
           className="relative overflow-hidden rounded-[32px] border border-white/10 p-8 shadow-[var(--shadow-card)] md:p-10"
           style={{
             background:
-              "linear-gradient(135deg, hsl(215 45% 17%) 0%, hsl(215 38% 22%) 100%)",
+              "linear-gradient(135deg, hsl(0 0% 8% 0%, hsl(0 0% 8% 100%)",
           }}
         >
           <div
             className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full opacity-30"
-            style={{ background: "radial-gradient(circle, hsl(199 90% 60% / 0.6), transparent 70%)" }}
+            style={{ background: "radial-gradient(circle, hsl(42 78% 60% / 0.6, transparent 70%)" }}
             aria-hidden="true"
           />
           <div className="relative grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <div>
-              <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-white/5 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-gold backdrop-blur-sm">
+              <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-card/5 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-gold backdrop-blur-sm">
                 <MessageCircle className="h-3 w-3" />
                 Fale com a gente
               </span>
@@ -161,7 +161,7 @@ const ContactFooter = () => {
         </div>
 
         {/* Newsletter strip */}
-        <div className="mt-10 grid grid-cols-1 items-start gap-6 rounded-3xl border border-brand-gold/20 bg-white/80 p-6 backdrop-blur-sm md:p-8 lg:grid-cols-[1.2fr_1.4fr]">
+        <div className="mt-10 grid grid-cols-1 items-start gap-6 rounded-3xl border border-brand-gold/20 bg-card/80 p-6 backdrop-blur-sm md:p-8 lg:grid-cols-[1.2fr_1.4fr]">
           <div>
             <h3 className="font-display text-2xl font-bold leading-tight tracking-tight text-foreground md:text-[26px]">
               Fique por dentro das{" "}
@@ -197,7 +197,7 @@ const ContactFooter = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-brand-gold/30 bg-white/70 text-brand-gold transition-all hover:scale-110 hover:bg-brand-gold hover:text-brand-gold-foreground"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-brand-gold/30 bg-card/70 text-brand-gold transition-all hover:scale-110 hover:bg-brand-gold hover:text-brand-gold-foreground"
                 >
                   <Icon className="h-4 w-4" />
                 </a>

@@ -108,7 +108,7 @@ const SolutionPage = ({
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, hsl(215 52% 12% / 0.55) 0%, hsl(215 52% 12% / 0.30) 40%, transparent 70%)",
+              "linear-gradient(90deg, hsl(0 0% 8% / 0.55 0%, hsl(0 0% 8% / 0.30 40%, transparent 70%)",
           }}
           aria-hidden
         />
@@ -117,7 +117,7 @@ const SolutionPage = ({
           className="pointer-events-none absolute inset-0 lg:hidden"
           style={{
             background:
-              "linear-gradient(180deg, hsl(215 52% 12% / 0.50) 0%, transparent 40%, hsl(215 52% 12% / 0.50) 100%)",
+              "linear-gradient(180deg, hsl(0 0% 8% / 0.50 0%, transparent 40%, hsl(0 0% 8% / 0.50 100%)",
           }}
           aria-hidden
         />
@@ -125,7 +125,7 @@ const SolutionPage = ({
           className="pointer-events-none absolute -left-40 top-1/3 h-[500px] w-[500px] opacity-40"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.35), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.35, transparent 65%)",
           }}
           aria-hidden
         />
@@ -139,7 +139,7 @@ const SolutionPage = ({
             </span>
             <h1
               className="mt-6 font-display text-[40px] font-extrabold leading-[1.02] tracking-tight md:text-[56px] lg:text-[60px]"
-              style={{ textShadow: "0 2px 24px hsl(215 52% 12% / 0.5)" }}
+              style={{ textShadow: "0 2px 24px hsl(0 0% 8% / 0.5" }}
             >
               {title}{" "}
               <span className="text-gold-gradient">{titleGold}</span>
@@ -161,7 +161,7 @@ const SolutionPage = ({
       </section>
 
       {/* Intro */}
-      <section className="bg-white py-20 md:py-24">
+      <section className="bg-card py-20 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center md:px-8">
           <h2 className="font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-4xl">
             {intro.heading}
@@ -192,7 +192,7 @@ const SolutionPage = ({
               return (
                 <div
                   key={b.title}
-                  className="group overflow-hidden rounded-2xl border border-[hsl(220_15%_88%)] bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-brand-gold/50 hover:shadow-[var(--shadow-gold)]"
+                  className="group overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:border-brand-gold/50 hover:shadow-[var(--shadow-gold)]"
                 >
                   {b.image && (
                     <div className="relative h-40 w-full overflow-hidden bg-[hsl(220_16%_96%)]">
@@ -234,12 +234,12 @@ const SolutionPage = ({
 
       {/* Showcase visual (opcional) */}
       {showcase && (
-        <section className="relative overflow-hidden bg-white py-20 md:py-28">
+        <section className="relative overflow-hidden bg-card py-20 md:py-28">
           <div
             className="pointer-events-none absolute -right-40 top-10 h-[420px] w-[420px] opacity-30"
             style={{
               background:
-                "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.35), transparent 65%)",
+                "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.35, transparent 65%)",
             }}
             aria-hidden
           />
@@ -280,7 +280,7 @@ const SolutionPage = ({
               </p>
               {showcase.stats && showcase.stats.length > 0 && (
                 <div
-                  className="mt-8 grid grid-cols-3 gap-4 border-t border-[hsl(220_15%_88%)] pt-6"
+                  className="mt-8 grid grid-cols-3 gap-4 border-t border-border pt-6"
                   data-anim-stagger
                 >
                   {showcase.stats.map((s) => (
@@ -311,7 +311,7 @@ const SolutionPage = ({
       />
 
       {/* How it works */}
-      <section id="como" className="bg-white py-20 md:py-24">
+      <section id="como" className="bg-card py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
@@ -356,7 +356,7 @@ const SolutionPage = ({
           className="pointer-events-none absolute -left-32 -top-32 h-[500px] w-[500px] opacity-30"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.5), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.5, transparent 65%)",
           }}
           aria-hidden
         />
@@ -388,7 +388,7 @@ const SolutionPage = ({
       </section>
 
       {/* FAQ */}
-      <section className="bg-white py-20 md:py-24">
+      <section className="bg-card py-20 md:py-24">
         <div className="mx-auto max-w-3xl px-5 md:px-8">
           <div className="text-center" data-anim="fade-up">
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
@@ -402,7 +402,7 @@ const SolutionPage = ({
             {faq.map((f) => (
               <details
                 key={f.q}
-                className="group rounded-2xl border border-[hsl(220_15%_88%)] bg-[hsl(220_16%_98%)] p-6 transition-all open:border-brand-gold/40 open:shadow-md"
+                className="group rounded-2xl border border-border bg-[hsl(220_16%_98%)] p-6 transition-all open:border-brand-gold/40 open:shadow-md"
               >
                 <summary className="flex cursor-pointer items-center justify-between gap-4 font-display text-[15px] font-semibold text-[hsl(215_42%_18%)] md:text-base">
                   {f.q}
@@ -426,7 +426,7 @@ const SolutionPage = ({
           className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] opacity-30"
           style={{
             background:
-              "radial-gradient(circle, hsl(199 90% 55% / 0.4), transparent 70%)",
+              "radial-gradient(circle, hsl(42 78% 55% / 0.4, transparent 70%)",
           }}
           aria-hidden
         />

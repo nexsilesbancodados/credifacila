@@ -267,7 +267,7 @@ const Consignado = () => {
           </Link>
           <Link
             to="/"
-            className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:text-brand-gold"
+            className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-card/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur-md transition-all hover:bg-card/20 hover:text-brand-gold"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             Voltar ao início
@@ -293,7 +293,7 @@ const Consignado = () => {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, hsl(215 52% 12% / 0.55) 0%, hsl(215 52% 12% / 0.30) 40%, transparent 70%)",
+              "linear-gradient(90deg, hsl(0 0% 8% / 0.55 0%, hsl(0 0% 8% / 0.30 40%, transparent 70%)",
           }}
           aria-hidden
         />
@@ -301,7 +301,7 @@ const Consignado = () => {
           className="pointer-events-none absolute inset-0 lg:hidden"
           style={{
             background:
-              "linear-gradient(180deg, hsl(215 52% 12% / 0.50) 0%, transparent 40%, hsl(215 52% 12% / 0.50) 100%)",
+              "linear-gradient(180deg, hsl(0 0% 8% / 0.50 0%, transparent 40%, hsl(0 0% 8% / 0.50 100%)",
           }}
           aria-hidden
         />
@@ -309,7 +309,7 @@ const Consignado = () => {
           className="pointer-events-none absolute -left-40 top-1/3 h-[500px] w-[500px] opacity-40"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.35), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.35, transparent 65%)",
           }}
           aria-hidden
         />
@@ -322,7 +322,7 @@ const Consignado = () => {
             </div>
             <h1
               className="mt-6 font-display text-[40px] font-extrabold leading-[1.02] tracking-tight text-white md:text-[56px] lg:text-[60px]"
-              style={{ textShadow: "0 2px 24px hsl(215 52% 12% / 0.45)" }}
+              style={{ textShadow: "0 2px 24px hsl(0 0% 8% / 0.45" }}
             >
               Crédito consignado
               <br />
@@ -356,12 +356,12 @@ const Consignado = () => {
                 <CheckCircle2 className="h-4 w-4 text-brand-gold" />
                 Sem consulta ao SPC/Serasa
               </div>
-              <div className="hidden h-3 w-px bg-white/15 sm:block" />
+              <div className="hidden h-3 w-px bg-card/15 sm:block" />
               <div className="flex items-center gap-2 text-xs font-medium text-white/75">
                 <Clock className="h-4 w-4 text-brand-gold" />
                 Dinheiro <span className="font-bold text-white">no mesmo dia</span>
               </div>
-              <div className="hidden h-3 w-px bg-white/15 sm:block" />
+              <div className="hidden h-3 w-px bg-card/15 sm:block" />
               <div className="flex items-center gap-2 text-xs font-medium text-white/75">
                 <ShieldCheck className="h-4 w-4 text-brand-gold" />
                 Contrato 100% digital
@@ -389,7 +389,7 @@ const Consignado = () => {
           {benefits.map((b) => (
             <div
               key={b.title}
-              className="group rounded-3xl border border-brand-gold/15 bg-white p-6 shadow-[0_10px_30px_-15px_hsl(30_30%_4%/0.15)] transition-all hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-[0_20px_40px_-15px_hsl(30_30%_4%/0.25)]"
+              className="group rounded-3xl border border-brand-gold/15 bg-card p-6 shadow-[0_10px_30px_-15px_hsl(30_30%_4%/0.15)] transition-all hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-[0_20px_40px_-15px_hsl(30_30%_4%/0.25)]"
             >
               <div
                 className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl text-white"
@@ -404,7 +404,7 @@ const Consignado = () => {
         </div>
 
         {/* Stats bar */}
-        <div className="mt-12 grid gap-4 rounded-3xl border border-brand-gold/15 bg-white p-6 shadow-[var(--shadow-card)] md:grid-cols-4 md:p-8">
+        <div className="mt-12 grid gap-4 rounded-3xl border border-brand-gold/15 bg-card p-6 shadow-[var(--shadow-card)] md:grid-cols-4 md:p-8">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
               <div
@@ -434,10 +434,10 @@ const Consignado = () => {
             <div
               className="absolute inset-x-0 bottom-0 p-6"
               style={{
-                background: "linear-gradient(180deg, transparent, hsl(215 50% 14% / 0.95))",
+                background: "linear-gradient(180deg, transparent, hsl(0 0% 8% / 0.95)",
               }}
             >
-              <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-md">
+              <div className="rounded-2xl border border-white/15 bg-card/10 p-4 backdrop-blur-md">
                 <Quote className="h-5 w-5 text-brand-gold" />
                 <p className="mt-2 text-sm leading-relaxed text-white">
                   "Em 3 horas o dinheiro estava na minha conta. Mudou minha vida!"
@@ -463,7 +463,7 @@ const Consignado = () => {
               {benefitsExtra.map((b) => (
                 <div
                   key={b.title}
-                  className="flex items-start gap-3 rounded-2xl border border-brand-gold/15 bg-white p-4 transition-all hover:border-brand-gold/40"
+                  className="flex items-start gap-3 rounded-2xl border border-brand-gold/15 bg-card p-4 transition-all hover:border-brand-gold/40"
                 >
                   <div
                     className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white"
@@ -521,7 +521,7 @@ const Consignado = () => {
                     className="pointer-events-none absolute inset-x-0 bottom-0 h-20"
                     style={{
                       background:
-                        "linear-gradient(180deg, transparent, hsl(215 48% 16% / 0.45) 100%)",
+                        "linear-gradient(180deg, transparent, hsl(0 0% 8% / 0.45 100%)",
                     }}
                     aria-hidden
                   />
@@ -563,7 +563,7 @@ const Consignado = () => {
           {modalities.map((m) => (
             <div
               key={m.title}
-              className="group relative overflow-hidden rounded-3xl border border-brand-gold/15 bg-white p-7 shadow-[0_10px_30px_-15px_hsl(30_30%_4%/0.15)] transition-all hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-[0_20px_40px_-15px_hsl(30_30%_4%/0.25)]"
+              className="group relative overflow-hidden rounded-3xl border border-brand-gold/15 bg-card p-7 shadow-[0_10px_30px_-15px_hsl(30_30%_4%/0.15)] transition-all hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-[0_20px_40px_-15px_hsl(30_30%_4%/0.25)]"
             >
               {m.badge && (
                 <span
@@ -627,7 +627,7 @@ const Consignado = () => {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(95deg, hsl(215 50% 14% / 0.92) 0%, hsl(215 50% 14% / 0.6) 50%, transparent 100%)",
+              "linear-gradient(95deg, hsl(0 0% 8% / 0.92 0%, hsl(0 0% 8% / 0.6 50%, transparent 100%)",
           }}
         />
         <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-5 md:px-8">
@@ -671,7 +671,7 @@ const Consignado = () => {
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (
             <div key={s.title} className="relative">
-              <div className="rounded-3xl border border-brand-gold/15 bg-white p-6 shadow-[0_10px_30px_-15px_hsl(30_30%_4%/0.15)]">
+              <div className="rounded-3xl border border-brand-gold/15 bg-card p-6 shadow-[0_10px_30px_-15px_hsl(30_30%_4%/0.15)]">
                 <div className="flex items-center justify-between">
                   <div
                     className="flex h-12 w-12 items-center justify-center rounded-2xl text-white"
@@ -691,7 +691,7 @@ const Consignado = () => {
         </div>
 
         {/* Documents needed */}
-        <div className="mt-12 grid gap-8 rounded-3xl border border-brand-gold/15 bg-white p-8 shadow-[var(--shadow-card)] lg:grid-cols-[1fr_1.2fr] lg:items-center">
+        <div className="mt-12 grid gap-8 rounded-3xl border border-brand-gold/15 bg-card p-8 shadow-[var(--shadow-card)] lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <div className="relative overflow-hidden rounded-2xl">
             <img
               src={servidorImg}
@@ -764,7 +764,7 @@ const Consignado = () => {
           {faqs.map((f, i) => (
             <details
               key={f.q}
-              className="group rounded-2xl border border-brand-gold/15 bg-white p-5 shadow-[0_10px_30px_-15px_hsl(30_30%_4%/0.1)] transition-all open:border-brand-gold/40"
+              className="group rounded-2xl border border-brand-gold/15 bg-card p-5 shadow-[0_10px_30px_-15px_hsl(30_30%_4%/0.1)] transition-all open:border-brand-gold/40"
             >
               <summary className="flex cursor-pointer items-center justify-between gap-4 list-none">
                 <div className="flex items-center gap-3">
@@ -784,7 +784,7 @@ const Consignado = () => {
         </div>
 
         {/* Need help */}
-        <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-brand-gold/15 bg-white/60 p-5 backdrop-blur">
+        <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-brand-gold/15 bg-card/60 p-5 backdrop-blur">
           <div className="flex items-center gap-3">
             <div
               className="flex h-11 w-11 items-center justify-center rounded-xl text-white"
@@ -842,7 +842,7 @@ const Consignado = () => {
                 href={whatsappLink("Olá! Quero falar com um especialista em consignado.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-2xl border border-white/30 bg-white/10 px-7 py-4 text-base font-bold text-white backdrop-blur-md transition-all hover:bg-white/20"
+                className="inline-flex items-center gap-2 rounded-2xl border border-white/30 bg-card/10 px-7 py-4 text-base font-bold text-white backdrop-blur-md transition-all hover:bg-card/20"
               >
                 Falar com especialista
               </a>

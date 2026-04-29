@@ -160,7 +160,7 @@ const PerguntasFrequentes = () => {
           className="pointer-events-none absolute -right-40 -top-40 h-[600px] w-[600px] opacity-50"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.4), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.4, transparent 65%)",
           }}
           aria-hidden
         />
@@ -194,7 +194,7 @@ const PerguntasFrequentes = () => {
 
       {/* Categorias */}
       <section className="mx-auto max-w-5xl px-5 -mt-8 md:px-8">
-        <div className="flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-foreground/10 bg-white/95 p-3 shadow-[var(--shadow-soft)] backdrop-blur-md">
+        <div className="flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-foreground/10 bg-card/95 p-3 shadow-[var(--shadow-soft)] backdrop-blur-md">
           {[{ id: "all", label: "Todas" }, ...categories.map((c) => ({ id: c.id, label: c.label }))].map((c) => {
             const isActive = activeCat === c.id;
             return (
@@ -219,7 +219,7 @@ const PerguntasFrequentes = () => {
       {/* Lista de FAQs */}
       <section className="mx-auto max-w-3xl px-5 pb-16 pt-10 md:px-8 md:pb-24">
         {totalShown === 0 ? (
-          <div className="rounded-2xl border border-brand-gold/20 bg-white/80 p-10 text-center backdrop-blur-sm">
+          <div className="rounded-2xl border border-brand-gold/20 bg-card/80 p-10 text-center backdrop-blur-sm">
             <Sparkles className="mx-auto mb-3 h-8 w-8 text-brand-gold" />
             <h3 className="text-lg font-bold text-foreground">Nada encontrado</h3>
             <p className="mt-2 text-sm text-foreground/72">
@@ -240,7 +240,7 @@ const PerguntasFrequentes = () => {
                     return (
                       <div
                         key={id}
-                        className={`overflow-hidden rounded-2xl border bg-white/85 backdrop-blur-sm transition-all ${
+                        className={`overflow-hidden rounded-2xl border bg-card/85 backdrop-blur-sm transition-all ${
                           isOpen
                             ? "border-brand-gold/60 shadow-[var(--shadow-soft)]"
                             : "border-brand-gold/15 hover:border-brand-gold/40"
@@ -252,7 +252,7 @@ const PerguntasFrequentes = () => {
                           aria-expanded={isOpen}
                           className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left md:px-6 md:py-5"
                         >
-                          <span className="text-sm font-bold text-[hsl(220_16%_15%)] md:text-base">
+                          <span className="text-sm font-bold text-foreground md:text-base">
                             {qq.q}
                           </span>
                           <span
@@ -295,7 +295,7 @@ const PerguntasFrequentes = () => {
             className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full opacity-40"
             style={{
               background:
-                "radial-gradient(circle, hsl(199 85% 58% / 0.55), transparent 70%)",
+                "radial-gradient(circle, hsl(42 78% 58% / 0.55, transparent 70%)",
             }}
             aria-hidden
           />

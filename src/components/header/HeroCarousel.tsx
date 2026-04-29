@@ -59,7 +59,7 @@ const HeroCarousel = () => {
   return (
     <div
       ref={rootRef}
-      className="relative w-full overflow-hidden bg-[hsl(205_100%_96%)]"
+      className="relative w-full overflow-hidden bg-[hsl(0_0%_4%)]"
       style={{ aspectRatio: "3 / 2" }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}

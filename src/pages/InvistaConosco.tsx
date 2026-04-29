@@ -198,7 +198,7 @@ const InvistaConosco = () => {
           </Link>
           <Link
             to="/"
-            className="inline-flex items-center justify-center gap-2 rounded-2xl border border-brand-gold/40 bg-white/80 px-5 py-3 text-sm font-semibold text-[hsl(220_16%_15%)] backdrop-blur-md transition-all hover:border-brand-gold hover:bg-white hover:text-brand-gold"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl border border-brand-gold/40 bg-card/80 px-5 py-3 text-sm font-semibold text-foreground backdrop-blur-md transition-all hover:border-brand-gold hover:bg-card hover:text-brand-gold"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             Voltar ao início
@@ -213,7 +213,7 @@ const InvistaConosco = () => {
           className="pointer-events-none absolute -right-32 -top-20 h-[600px] w-[600px] opacity-50"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(199 90% 65% / 0.25), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(42 78% 60% / 0.25, transparent 65%)",
           }}
           aria-hidden
         />
@@ -221,7 +221,7 @@ const InvistaConosco = () => {
           className="pointer-events-none absolute -left-40 top-40 h-[480px] w-[480px] opacity-40"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(198 90% 70% / 0.22), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(42 78% 60% / 0.22, transparent 65%)",
           }}
           aria-hidden
         />
@@ -237,7 +237,7 @@ const InvistaConosco = () => {
 
           {/* Hero image (contains its own headline + copy) */}
           <div
-            className="relative mt-6 overflow-hidden rounded-[28px] border border-brand-gold/15 bg-white shadow-[0_40px_80px_-40px_hsl(30_30%_20%/0.35)]"
+            className="relative mt-6 overflow-hidden rounded-[28px] border border-brand-gold/15 bg-card shadow-[0_40px_80px_-40px_hsl(30_30%_20%/0.35)]"
             data-anim="fade-up"
           >
             <h1 className="sr-only">
@@ -267,7 +267,7 @@ const InvistaConosco = () => {
             >
               <path
                 d="M0,16 L1440,16 L1440,9 Q720,-4 0,9 Z"
-                fill="hsl(199 90% 55% / 0.5)"
+                fill="hsl(42 78% 55% / 0.5"
               />
             </svg>
           </div>
@@ -289,7 +289,7 @@ const InvistaConosco = () => {
             </a>
             <a
               href="#interesse"
-              className="inline-flex items-center justify-center gap-2 rounded-2xl border border-brand-gold/40 bg-white/85 px-5 py-3.5 text-sm font-semibold text-[hsl(220_16%_15%)] backdrop-blur-md transition-all hover:border-brand-gold hover:bg-white hover:text-brand-gold"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border border-brand-gold/40 bg-card/85 px-5 py-3.5 text-sm font-semibold text-foreground backdrop-blur-md transition-all hover:border-brand-gold hover:bg-card hover:text-brand-gold"
             >
               Quero ser contatado
             </a>
@@ -297,7 +297,7 @@ const InvistaConosco = () => {
 
           {/* Quick proof strip */}
           <div
-            className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-3 rounded-2xl border border-brand-gold/20 bg-white/80 px-5 py-4 backdrop-blur-sm md:gap-6 md:px-7"
+            className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-3 rounded-2xl border border-brand-gold/20 bg-card/80 px-5 py-4 backdrop-blur-sm md:gap-6 md:px-7"
             data-anim="fade-up"
           >
             <div className="text-center">
@@ -323,7 +323,7 @@ const InvistaConosco = () => {
       </section>
 
       {/* Benefits */}
-      <section className="bg-white py-20 md:py-24">
+      <section className="bg-card py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
@@ -343,7 +343,7 @@ const InvistaConosco = () => {
               return (
                 <div
                   key={b.title}
-                  className="group rounded-2xl border border-[hsl(220_15%_88%)] bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-gold/50 hover:shadow-[var(--shadow-gold)]"
+                  className="group rounded-2xl border border-border bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-gold/50 hover:shadow-[var(--shadow-gold)]"
                 >
                   <div
                     className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl text-brand-gold-foreground shadow-[var(--shadow-gold-sm)] transition-transform group-hover:rotate-6 group-hover:scale-110"
@@ -410,7 +410,7 @@ const InvistaConosco = () => {
           className="pointer-events-none absolute -left-32 -top-32 h-[500px] w-[500px] opacity-30"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.5), transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.5, transparent 65%)",
           }}
           aria-hidden
         />
@@ -439,7 +439,7 @@ const InvistaConosco = () => {
       </section>
 
       {/* Form */}
-      <section id="interesse" className="bg-white py-20 md:py-24">
+      <section id="interesse" className="bg-card py-20 md:py-24">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-5 md:px-8 lg:grid-cols-[1fr_1.1fr]">
           <div data-anim="fade-right">
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
@@ -489,7 +489,7 @@ const InvistaConosco = () => {
             <form
               onSubmit={onSubmit}
               noValidate
-              className="rounded-3xl border border-[hsl(220_15%_88%)] bg-[hsl(220_16%_98%)] p-6 shadow-sm md:p-8"
+              className="rounded-3xl border border-border bg-[hsl(220_16%_98%)] p-6 shadow-sm md:p-8"
             >
               {submitted ? (
                 <div className="flex flex-col items-center justify-center py-8 text-center">
@@ -643,7 +643,7 @@ const InvistaConosco = () => {
             {faq.map((f) => (
               <details
                 key={f.q}
-                className="group rounded-2xl border border-[hsl(220_15%_88%)] bg-white p-6 transition-all open:border-brand-gold/40 open:shadow-md"
+                className="group rounded-2xl border border-border bg-card p-6 transition-all open:border-brand-gold/40 open:shadow-md"
               >
                 <summary className="flex cursor-pointer items-center justify-between gap-4 font-display text-[15px] font-semibold text-[hsl(215_42%_18%)] md:text-base">
                   {f.q}

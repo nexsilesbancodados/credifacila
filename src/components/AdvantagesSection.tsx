@@ -44,12 +44,12 @@ const AdvantagesSection = () => {
             <Sparkles className="h-3 w-3" />
             Por que a Credifácil
           </span>
-          <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight text-[hsl(220_16%_15%)] md:text-4xl lg:text-[46px]">
+          <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight text-foreground md:text-4xl lg:text-[46px]">
             Tudo que você precisa,{" "}
             <span className="text-gold-gradient">em um só lugar</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[hsl(220_15%_30%)] md:text-base">
-            Mais de <span className="font-bold text-[hsl(220_16%_15%)]">50 mil pessoas</span> já realizaram seus planos com a confiança e a agilidade da Credifácil.
+            Mais de <span className="font-bold text-foreground">50 mil pessoas</span> já realizaram seus planos com a confiança e a agilidade da Credifácil.
           </p>
         </div>
 
@@ -68,7 +68,7 @@ const AdvantagesSection = () => {
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(180deg, hsl(215 42% 20% / 0.40) 0%, hsl(215 42% 20% / 0.65) 60%, hsl(215 42% 20% / 0.85) 100%)",
+                  "linear-gradient(180deg, hsl(0 0% 8% / 0.40 0%, hsl(0 0% 8% / 0.65 60%, hsl(0 0% 8% / 0.85 100%)",
               }}
               aria-hidden
             />
@@ -77,7 +77,7 @@ const AdvantagesSection = () => {
               className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full opacity-30"
               style={{
                 background:
-                  "radial-gradient(circle, hsl(199 90% 55% / 0.6), transparent 70%)",
+                  "radial-gradient(circle, hsl(42 78% 55% / 0.6, transparent 70%)",
               }}
               aria-hidden
             />
@@ -133,7 +133,7 @@ const AdvantagesSection = () => {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(90deg, hsl(215 45% 18% / 0.96) 0%, hsl(215 45% 18% / 0.85) 38%, hsl(215 45% 18% / 0.3) 70%, transparent 100%)",
+                  "linear-gradient(90deg, hsl(0 0% 8% / 0.96 0%, hsl(0 0% 8% / 0.85 38%, hsl(0 0% 8% / 0.3 70%, transparent 100%)",
               }}
               aria-hidden
             />
@@ -183,19 +183,19 @@ const AdvantagesSection = () => {
           className="relative mt-8 flex flex-col items-stretch gap-5 overflow-hidden rounded-3xl px-6 py-5 shadow-[var(--shadow-gold)] md:flex-row md:items-center md:justify-between md:px-8"
           style={{
             background:
-              "linear-gradient(100deg, hsl(198 85% 88%) 0%, hsl(199 80% 78%) 50%, hsl(199 75% 70%) 100%)",
+              "linear-gradient(100deg, hsl(42 78% 60% 0%, hsl(42 78% 60% 50%, hsl(42 78% 60% 100%)",
           }}
         >
           <div
             className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full opacity-40"
             style={{
               background:
-                "radial-gradient(circle, hsl(199 90% 60% / 0.6), transparent 70%)",
+                "radial-gradient(circle, hsl(42 78% 60% / 0.6, transparent 70%)",
             }}
             aria-hidden
           />
           <div className="flex items-center gap-4">
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-[hsl(220_15%_15%)] shadow-md">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-card text-[hsl(220_15%_15%)] shadow-md">
               <MessageCircle className="h-5 w-5" />
             </span>
             <div className="leading-tight">
@@ -212,7 +212,7 @@ const AdvantagesSection = () => {
             href={telLink(site.contact.phone)}
             className="flex items-center gap-3 transition-opacity hover:opacity-80"
           >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/70 text-[hsl(220_15%_15%)]">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-card/70 text-[hsl(220_15%_15%)]">
               <Phone className="h-5 w-5" />
             </span>
             <div className="leading-tight">

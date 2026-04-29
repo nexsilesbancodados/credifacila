@@ -36,7 +36,7 @@ const TopNav = () => (
       preserveAspectRatio="none"
       aria-hidden
     >
-      <path d="M0,0 L1440,0 L1440,2 Q720,10 0,2 Z" fill="hsl(199 90% 50%)" />
+      <path d="M0,0 L1440,0 L1440,2 Q720,10 0,2 Z" fill="hsl(42 78% 50%" />
     </svg>
     <svg
       className="pointer-events-none absolute -bottom-px left-0 h-4 w-full"
@@ -44,7 +44,7 @@ const TopNav = () => (
       preserveAspectRatio="none"
       aria-hidden
     >
-      <path d="M0,16 L1440,16 L1440,8 Q720,-6 0,8 Z" fill="hsl(199 90% 50%)" />
+      <path d="M0,16 L1440,16 L1440,8 Q720,-6 0,8 Z" fill="hsl(42 78% 50%" />
     </svg>
 
     <nav className="relative flex w-full items-center justify-between px-5 py-3.5 md:px-8 md:py-4 lg:px-12">
@@ -85,12 +85,12 @@ const TopNav = () => (
                     >
                       Visão geral
                     </Link>
-                    <div className="my-1 h-px bg-white/10" />
+                    <div className="my-1 h-px bg-card/10" />
                     {item.submenu.map((sub) => (
                       <Link
                         key={sub.href}
                         to={sub.href}
-                        className="block rounded-xl px-4 py-2.5 text-[14px] font-medium text-white/85 transition-all hover:bg-white/5 hover:pl-5 hover:text-brand-gold"
+                        className="block rounded-xl px-4 py-2.5 text-[14px] font-medium text-white/85 transition-all hover:bg-card/5 hover:pl-5 hover:text-brand-gold"
                       >
                         {sub.label}
                       </Link>

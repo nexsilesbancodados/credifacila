@@ -19,13 +19,13 @@ const FloatingWhatsApp = () => {
     <div className="fixed bottom-5 right-5 z-[60] flex flex-col items-end gap-3 md:bottom-8 md:right-8">
       {open && (
         <div
-          className="animate-fade-in w-[280px] overflow-hidden rounded-2xl border border-emerald-500/20 bg-white shadow-[0_24px_60px_-12px_rgba(0,0,0,0.25)]"
+          className="animate-fade-in w-[280px] overflow-hidden rounded-2xl border border-emerald-500/20 bg-card shadow-[0_24px_60px_-12px_rgba(0,0,0,0.25)]"
           role="dialog"
           aria-label="Falar no WhatsApp"
         >
           <div className="flex items-center justify-between gap-3 bg-emerald-600 px-4 py-3 text-white">
             <div className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-card/15">
                 <MessageCircle className="h-4 w-4" />
               </span>
               <div className="leading-tight">
@@ -45,7 +45,7 @@ const FloatingWhatsApp = () => {
             </button>
           </div>
           <div className="bg-[hsl(220_16%_97%)] p-4">
-            <div className="rounded-2xl rounded-tl-sm bg-white p-3 text-[13px] leading-relaxed text-foreground/85 shadow-sm">
+            <div className="rounded-2xl rounded-tl-sm bg-card p-3 text-[13px] leading-relaxed text-foreground/85 shadow-sm">
               👋 Olá! Posso te ajudar a contratar o seu crédito agora mesmo. Em quanto tempo precisa do dinheiro?
             </div>
           </div>
