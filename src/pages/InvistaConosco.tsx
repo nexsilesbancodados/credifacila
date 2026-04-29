@@ -302,19 +302,19 @@ const InvistaConosco = () => {
           >
             <div className="text-center">
               <div className="font-display text-xl font-bold text-brand-gold md:text-2xl">12+</div>
-              <div className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-[hsl(220_15%_45%)]">
+              <div className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
                 anos de mercado
               </div>
             </div>
             <div className="border-x border-brand-gold/15 text-center">
               <div className="font-display text-xl font-bold text-brand-gold md:text-2xl">R$ 1bi+</div>
-              <div className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-[hsl(220_15%_45%)]">
+              <div className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
                 operados
               </div>
             </div>
             <div className="text-center">
               <div className="font-display text-xl font-bold text-brand-gold md:text-2xl">100%</div>
-              <div className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-[hsl(220_15%_45%)]">
+              <div className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
                 transparente
               </div>
             </div>
@@ -323,16 +323,16 @@ const InvistaConosco = () => {
       </section>
 
       {/* Benefits */}
-      <section className="bg-card py-20 md:py-24">
+      <section className="py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
               Por que investir com a Credifácil
             </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
               Solidez, transparência e atendimento humano
             </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-[hsl(220_15%_38%)]">
+            <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
               Mais que rentabilidade — uma parceria de longo prazo com quem cuida do seu capital
               com a mesma seriedade que cuida dos próprios negócios.
             </p>
@@ -351,10 +351,10 @@ const InvistaConosco = () => {
                   >
                     <Icon className="h-6 w-6" strokeWidth={2.2} />
                   </div>
-                  <h3 className="mb-2 font-display text-lg font-bold text-[hsl(215_42%_18%)]">
+                  <h3 className="mb-2 font-display text-lg font-bold text-foreground">
                     {b.title}
                   </h3>
-                  <p className="text-[14px] leading-relaxed text-[hsl(220_15%_38%)]">{b.desc}</p>
+                  <p className="text-[14px] leading-relaxed text-muted-foreground">{b.desc}</p>
                 </div>
               );
             })}
@@ -369,7 +369,7 @@ const InvistaConosco = () => {
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
               Passo a passo
             </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
               Como começar a investir
             </h2>
           </div>
@@ -391,10 +391,10 @@ const InvistaConosco = () => {
                   >
                     {s.step}
                   </div>
-                  <h3 className="mb-2 font-display text-lg font-bold text-[hsl(215_42%_18%)]">
+                  <h3 className="mb-2 font-display text-lg font-bold text-foreground">
                     {s.title}
                   </h3>
-                  <p className="mx-auto max-w-[260px] text-[14px] leading-relaxed text-[hsl(220_15%_38%)]">
+                  <p className="mx-auto max-w-[260px] text-[14px] leading-relaxed text-muted-foreground">
                     {s.desc}
                   </p>
                 </div>
@@ -439,16 +439,16 @@ const InvistaConosco = () => {
       </section>
 
       {/* Form */}
-      <section id="interesse" className="bg-card py-20 md:py-24">
+      <section id="interesse" className="py-20 md:py-24">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-5 md:px-8 lg:grid-cols-[1fr_1.1fr]">
           <div data-anim="fade-right">
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
               Quero ser contatado
             </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
               Vamos conversar sobre o seu próximo investimento
             </h2>
-            <p className="mt-5 text-[15px] leading-relaxed text-[hsl(220_15%_38%)]">
+            <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground">
               Preencha o formulário e um especialista da Credifácil entra em contato em até 1 dia útil
               com uma proposta sob medida para o seu objetivo. Sem compromisso.
             </p>
@@ -464,8 +464,8 @@ const InvistaConosco = () => {
                   <MessageCircle className="h-5 w-5" />
                 </span>
                 <div className="leading-tight">
-                  <div className="text-sm font-bold text-[hsl(215_42%_18%)]">Prefere falar agora?</div>
-                  <div className="mt-0.5 text-xs text-[hsl(220_15%_38%)]">
+                  <div className="text-sm font-bold text-foreground">Prefere falar agora?</div>
+                  <div className="mt-0.5 text-xs text-muted-foreground">
                     Atendimento na hora pelo WhatsApp
                   </div>
                 </div>
@@ -478,8 +478,8 @@ const InvistaConosco = () => {
                   <Phone className="h-5 w-5" />
                 </span>
                 <div className="leading-tight">
-                  <div className="text-sm font-bold text-[hsl(215_42%_18%)]">{site.contact.phoneDisplay}</div>
-                  <div className="mt-0.5 text-xs text-[hsl(220_15%_38%)]">{site.contact.hours}</div>
+                  <div className="text-sm font-bold text-foreground">{site.contact.phoneDisplay}</div>
+                  <div className="mt-0.5 text-xs text-muted-foreground">{site.contact.hours}</div>
                 </div>
               </a>
             </div>
@@ -499,10 +499,10 @@ const InvistaConosco = () => {
                   >
                     <CheckCircle2 className="h-7 w-7" />
                   </span>
-                  <h3 className="font-display text-xl font-bold text-[hsl(215_42%_18%)]">
+                  <h3 className="font-display text-xl font-bold text-foreground">
                     Recebemos seu interesse!
                   </h3>
-                  <p className="mt-2 max-w-sm text-sm text-[hsl(220_15%_38%)]">
+                  <p className="mt-2 max-w-sm text-sm text-muted-foreground">
                     Seu cliente de e-mail foi aberto com os dados preenchidos. Caso prefira, fale conosco
                     diretamente no WhatsApp.
                   </p>
@@ -618,7 +618,7 @@ const InvistaConosco = () => {
                     )}
                   </button>
 
-                  <p className="mt-4 text-center text-[11px] text-[hsl(220_15%_45%)]">
+                  <p className="mt-4 text-center text-[11px] text-muted-foreground">
                     Seus dados são tratados conforme a LGPD e não são compartilhados com terceiros.
                   </p>
                 </>
@@ -635,7 +635,7 @@ const InvistaConosco = () => {
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
               Dúvidas frequentes
             </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[hsl(215_42%_18%)] md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
               Perguntas comuns sobre investir
             </h2>
           </div>
@@ -645,13 +645,13 @@ const InvistaConosco = () => {
                 key={f.q}
                 className="group rounded-2xl border border-border bg-card p-6 transition-all open:border-brand-gold/40 open:shadow-md"
               >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 font-display text-[15px] font-semibold text-[hsl(215_42%_18%)] md:text-base">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 font-display text-[15px] font-semibold text-foreground md:text-base">
                   {f.q}
                   <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-brand-gold/40 text-brand-gold transition-transform group-open:rotate-45">
                     +
                   </span>
                 </summary>
-                <p className="mt-4 text-[14px] leading-relaxed text-[hsl(220_15%_38%)]">{f.a}</p>
+                <p className="mt-4 text-[14px] leading-relaxed text-muted-foreground">{f.a}</p>
               </details>
             ))}
           </div>

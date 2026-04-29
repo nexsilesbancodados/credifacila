@@ -60,7 +60,7 @@ const Newsletter = () => {
       <h4 className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-brand-gold">
         Newsletter
       </h4>
-      <p className="text-[13px] leading-relaxed text-[hsl(220_15%_30%)]">
+      <p className="text-[13px] leading-relaxed text-muted-foreground">
         Receba dicas de crédito e ofertas no seu e-mail.
       </p>
       <form onSubmit={submit} className="mt-3 flex flex-col gap-2 sm:flex-row">

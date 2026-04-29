@@ -48,7 +48,7 @@ const AdvantagesSection = () => {
             Tudo que você precisa,{" "}
             <span className="text-gold-gradient">em um só lugar</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[hsl(220_15%_30%)] md:text-base">
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
             Mais de <span className="font-bold text-foreground">50 mil pessoas</span> já realizaram seus planos com a confiança e a agilidade da Credifácil.
           </p>
         </div>
@@ -195,14 +195,14 @@ const AdvantagesSection = () => {
             aria-hidden
           />
           <div className="flex items-center gap-4">
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-card text-[hsl(220_15%_15%)] shadow-md">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-card text-foreground shadow-md">
               <MessageCircle className="h-5 w-5" />
             </span>
             <div className="leading-tight">
-              <div className="font-display text-base font-bold text-[hsl(220_15%_15%)] md:text-lg">
+              <div className="font-display text-base font-bold text-foreground md:text-lg">
                 Ficou com alguma dúvida?
               </div>
-              <div className="text-xs text-[hsl(220_15%_15%)]/75 md:text-sm">
+              <div className="text-xs text-foreground/75 md:text-sm">
                 Nossa equipe está pronta para te ajudar!
               </div>
             </div>
@@ -212,12 +212,12 @@ const AdvantagesSection = () => {
             href={telLink(site.contact.phone)}
             className="flex items-center gap-3 transition-opacity hover:opacity-80"
           >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-card/70 text-[hsl(220_15%_15%)]">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-card/70 text-foreground">
               <Phone className="h-5 w-5" />
             </span>
             <div className="leading-tight">
-              <div className="text-[11px] font-medium text-[hsl(220_15%_15%)]/70">Ligue para nós</div>
-              <div className="text-sm font-bold text-[hsl(220_15%_15%)]">{site.contact.phoneDisplay}</div>
+              <div className="text-[11px] font-medium text-foreground/70">Ligue para nós</div>
+              <div className="text-sm font-bold text-foreground">{site.contact.phoneDisplay}</div>
             </div>
           </a>
 

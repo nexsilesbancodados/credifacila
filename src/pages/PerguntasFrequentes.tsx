@@ -270,7 +270,7 @@ const PerguntasFrequentes = () => {
                           }`}
                         >
                           <div className="overflow-hidden">
-                            <p className="px-5 pb-5 pr-14 text-sm leading-relaxed text-[hsl(220_15%_35%)] md:px-6 md:pb-6 md:text-[15px]">
+                            <p className="px-5 pb-5 pr-14 text-sm leading-relaxed text-muted-foreground md:px-6 md:pb-6 md:text-[15px]">
                               {qq.a}
                             </p>
                           </div>

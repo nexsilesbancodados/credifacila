@@ -533,7 +533,7 @@ const Consignado = () => {
                     <a.icon className="h-6 w-6" strokeWidth={2} />
                   </div>
                   {a.badge && (
-                    <span className="absolute right-5 top-5 rounded-full bg-brand-gold/95 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-[hsl(215_48%_16%)] shadow-md">
+                    <span className="absolute right-5 top-5 rounded-full bg-brand-gold/95 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-brand-gold-foreground shadow-md">
                       {a.badge}
                     </span>
                   )}
