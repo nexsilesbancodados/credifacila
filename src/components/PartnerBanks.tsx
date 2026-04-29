@@ -21,7 +21,7 @@ const PartnerBanks = () => (
           <Sparkles className="h-3 w-3" />
           Nossos parceiros
         </span>
-        <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight text-[hsl(220_16%_15%)] md:text-4xl lg:text-[46px]">
+        <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight text-foreground md:text-4xl lg:text-[46px]">
           Trabalhamos com{" "}
           <span className="text-gold-gradient">os melhores bancos do Brasil</span>
         </h2>
@@ -32,7 +32,7 @@ const PartnerBanks = () => (
       </div>
 
       <div
-        className="relative overflow-hidden rounded-[28px] border border-brand-gold/20 bg-white/85 shadow-[var(--shadow-card)] backdrop-blur-sm"
+        className="relative overflow-hidden rounded-[28px] border border-brand-gold/20 bg-card/85 shadow-[var(--shadow-card)] backdrop-blur-sm"
         data-anim="fade-up"
       >
         {/* Decorative gold glow */}
@@ -40,7 +40,7 @@ const PartnerBanks = () => (
           className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full opacity-40"
           style={{
             background:
-              "radial-gradient(circle, hsl(199 90% 60% / 0.45), transparent 70%)",
+              "radial-gradient(circle, hsl(42 78% 60% / 0.45, transparent 70%)",
           }}
           aria-hidden
         />
@@ -48,7 +48,7 @@ const PartnerBanks = () => (
           className="pointer-events-none absolute -left-20 -bottom-20 h-64 w-64 rounded-full opacity-30"
           style={{
             background:
-              "radial-gradient(circle, hsl(199 90% 60% / 0.35), transparent 70%)",
+              "radial-gradient(circle, hsl(42 78% 60% / 0.35, transparent 70%)",
           }}
           aria-hidden
         />
@@ -74,7 +74,7 @@ const PartnerBanks = () => (
         {trust.map((t) => (
           <li
             key={t.title}
-            className="group relative flex items-start gap-4 rounded-2xl border border-brand-gold/20 bg-white/80 p-4 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-brand-gold/50 hover:bg-white hover:shadow-[var(--shadow-card)]"
+            className="group relative flex items-start gap-4 rounded-2xl border border-brand-gold/20 bg-card/80 p-4 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-brand-gold/50 hover:bg-card hover:shadow-[var(--shadow-card)]"
           >
             <span
               className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-brand-gold-foreground shadow-[var(--shadow-gold-sm)] transition-transform duration-300 group-hover:scale-105 group-hover:rotate-[-3deg]"
@@ -83,7 +83,7 @@ const PartnerBanks = () => (
               <t.icon className="h-5 w-5" strokeWidth={2.2} />
             </span>
             <div className="leading-snug">
-              <div className="text-[14px] font-bold text-[hsl(220_16%_15%)] transition-colors group-hover:text-brand-gold">
+              <div className="text-[14px] font-bold text-foreground transition-colors group-hover:text-brand-gold">
                 {t.title}
               </div>
               <div className="mt-1 text-[12px] leading-relaxed text-[hsl(220_15%_38%)]">

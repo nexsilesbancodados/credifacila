@@ -90,7 +90,7 @@ const MobileNav = () => {
           className="pointer-events-none absolute -right-24 -top-24 h-[400px] w-[400px] opacity-40"
           style={{
             background:
-              "radial-gradient(circle, hsl(199 85% 58% / 0.5), transparent 70%)",
+              "radial-gradient(circle, hsl(42 78% 58% / 0.5, transparent 70%)",
           }}
           aria-hidden
         />
@@ -121,7 +121,7 @@ const MobileNav = () => {
                     <Link
                       to={item.href}
                       onClick={() => setOpen(false)}
-                      className="flex flex-1 items-center justify-between gap-3 rounded-xl px-3 py-4 text-[15px] font-semibold text-white/85 transition-colors hover:bg-white/5 hover:text-brand-gold"
+                      className="flex flex-1 items-center justify-between gap-3 rounded-xl px-3 py-4 text-[15px] font-semibold text-white/85 transition-colors hover:bg-card/5 hover:text-brand-gold"
                     >
                       {item.label}
                     </Link>
@@ -151,7 +151,7 @@ const MobileNav = () => {
                             <Link
                               to={s.href}
                               onClick={() => setOpen(false)}
-                              className="block rounded-xl px-7 py-3 text-[13px] font-medium text-white/80 transition-colors hover:bg-white/5 hover:text-brand-gold"
+                              className="block rounded-xl px-7 py-3 text-[13px] font-medium text-white/80 transition-colors hover:bg-card/5 hover:text-brand-gold"
                             >
                               {s.label}
                             </Link>

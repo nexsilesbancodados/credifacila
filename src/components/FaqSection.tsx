@@ -39,11 +39,11 @@ const FaqSection = () => {
     >
       <div className="mx-auto max-w-4xl">
         <div className="mb-10 text-center" data-anim="fade-up">
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-gold/50 bg-white/80 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-gold shadow-sm backdrop-blur-sm">
+          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-gold/50 bg-card/80 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-gold shadow-sm backdrop-blur-sm">
             <HelpCircle className="h-3 w-3" />
             Tire suas dúvidas
           </span>
-          <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-[hsl(220_16%_15%)] md:text-4xl lg:text-[46px]">
+          <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-foreground md:text-4xl lg:text-[46px]">
             Perguntas{" "}
             <span
               className="bg-clip-text text-transparent"
@@ -63,7 +63,7 @@ const FaqSection = () => {
             return (
               <div
                 key={item.q}
-                className={`overflow-hidden rounded-2xl border bg-white/80 backdrop-blur-sm transition-all ${
+                className={`overflow-hidden rounded-2xl border bg-card/80 backdrop-blur-sm transition-all ${
                   isOpen
                     ? "border-brand-gold/60 shadow-[var(--shadow-soft)]"
                     : "border-brand-gold/15 hover:border-brand-gold/40"
@@ -75,7 +75,7 @@ const FaqSection = () => {
                   aria-expanded={isOpen}
                   className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left md:px-6 md:py-5"
                 >
-                  <span className="text-sm font-bold text-[hsl(220_16%_15%)] md:text-base">
+                  <span className="text-sm font-bold text-foreground md:text-base">
                     {item.q}
                   </span>
                   <span
@@ -104,10 +104,10 @@ const FaqSection = () => {
         </div>
 
         <div
-          className="mt-10 flex flex-col items-center gap-4 rounded-3xl border border-brand-gold/30 bg-white/70 p-6 text-center backdrop-blur-sm md:flex-row md:justify-between md:text-left"
+          className="mt-10 flex flex-col items-center gap-4 rounded-3xl border border-brand-gold/30 bg-card/70 p-6 text-center backdrop-blur-sm md:flex-row md:justify-between md:text-left"
         >
           <div>
-            <h3 className="text-base font-bold text-[hsl(220_16%_15%)] md:text-lg">
+            <h3 className="text-base font-bold text-foreground md:text-lg">
               Ainda ficou com alguma dúvida?
             </h3>
             <p className="mt-1 text-sm text-[hsl(220_15%_35%)]">

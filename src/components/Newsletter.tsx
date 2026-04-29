@@ -77,7 +77,7 @@ const Newsletter = () => {
             aria-label="Seu e-mail"
             required
             autoComplete="email"
-            className="w-full rounded-xl border border-foreground/15 bg-white pl-10 pr-3 py-2.5 text-sm font-medium text-foreground transition-all placeholder:text-foreground/40 focus:border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/30"
+            className="w-full rounded-xl border border-foreground/15 bg-card pl-10 pr-3 py-2.5 text-sm font-medium text-foreground transition-all placeholder:text-foreground/40 focus:border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/30"
           />
         </label>
         <button

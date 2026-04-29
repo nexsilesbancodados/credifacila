@@ -21,7 +21,7 @@ const PromoBanner = ({
   ctaTarget = "_blank",
 }: PromoBannerProps) => {
   return (
-    <section className="bg-white py-14 md:py-20">
+    <section className="bg-card py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div
           data-anim="fade-up"
@@ -45,7 +45,7 @@ const PromoBanner = ({
             className="pointer-events-none absolute inset-0"
             style={{
               background:
-              "linear-gradient(90deg, hsl(215 48% 16% / 0.60) 0%, hsl(215 48% 16% / 0.35) 50%, transparent 90%)",
+              "linear-gradient(90deg, hsl(0 0% 8% / 0.60 0%, hsl(0 0% 8% / 0.35 50%, transparent 90%)",
             }}
             aria-hidden
           />
@@ -54,7 +54,7 @@ const PromoBanner = ({
             className="pointer-events-none absolute -right-32 -top-20 h-[420px] w-[420px] opacity-50"
             style={{
               background:
-                "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.45), transparent 65%)",
+                "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.45, transparent 65%)",
             }}
             aria-hidden
           />

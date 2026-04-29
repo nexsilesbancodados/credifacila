@@ -132,7 +132,7 @@ const LoansSection = () => {
               {/* Discover-lines card CTA */}
               <a
                 href="#linhas"
-                className="group relative flex flex-1 items-center gap-3 overflow-hidden rounded-2xl border border-foreground/10 bg-white/75 px-4 py-3 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-brand-gold/45 hover:bg-white hover:shadow-[var(--shadow-card)] sm:max-w-md"
+                className="group relative flex flex-1 items-center gap-3 overflow-hidden rounded-2xl border border-foreground/10 bg-card/75 px-4 py-3 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-brand-gold/45 hover:bg-card hover:shadow-[var(--shadow-card)] sm:max-w-md"
               >
                 <span
                   className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-brand-gold/30 bg-brand-gold/10 text-brand-gold transition-transform group-hover:scale-105 group-hover:rotate-[-3deg]"
@@ -148,7 +148,7 @@ const LoansSection = () => {
                     Pessoal, com garantia, portabilidade e PJ — escolha a sua.
                   </div>
                 </div>
-                <span className="inline-flex shrink-0 items-center gap-1 rounded-full border border-brand-gold/40 bg-white px-2.5 py-1.5 text-[11px] font-bold text-brand-gold transition-all group-hover:gap-1.5 group-hover:bg-brand-gold group-hover:text-brand-gold-foreground">
+                <span className="inline-flex shrink-0 items-center gap-1 rounded-full border border-brand-gold/40 bg-card px-2.5 py-1.5 text-[11px] font-bold text-brand-gold transition-all group-hover:gap-1.5 group-hover:bg-brand-gold group-hover:text-brand-gold-foreground">
                   Ver
                   <ChevronRight className="h-3.5 w-3.5" />
                 </span>
@@ -179,7 +179,7 @@ const LoansSection = () => {
               className="absolute inset-x-0 top-0 h-36"
               style={{
                 background:
-                  "linear-gradient(180deg, hsl(215 45% 18% / 0.7) 0%, hsl(215 45% 18% / 0.25) 60%, transparent 100%)",
+                  "linear-gradient(180deg, hsl(0 0% 8% / 0.7 0%, hsl(0 0% 8% / 0.25 60%, transparent 100%)",
               }}
               aria-hidden
             />
@@ -188,13 +188,13 @@ const LoansSection = () => {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(180deg, transparent 35%, hsl(215 45% 18% / 0.88) 100%)",
+                  "linear-gradient(180deg, transparent 35%, hsl(0 0% 8% / 0.88 100%)",
               }}
               aria-hidden
             />
 
             {/* Top-left status badge */}
-            <div className="badge-live anim-pop-in absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-foreground shadow-md backdrop-blur" style={{ animationDelay: "200ms" }}>
+            <div className="badge-live anim-pop-in absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-card/95 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-foreground shadow-md backdrop-blur" style={{ animationDelay: "200ms" }}>
               <span className="relative flex h-1.5 w-1.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
@@ -215,7 +215,7 @@ const LoansSection = () => {
         {/* PRODUCTS row */}
         <div
           id="linhas"
-          className="mt-12 scroll-mt-20 rounded-3xl border border-foreground/10 bg-white/80 p-6 shadow-[var(--shadow-card)] backdrop-blur-sm md:p-8"
+          className="mt-12 scroll-mt-20 rounded-3xl border border-foreground/10 bg-card/80 p-6 shadow-[var(--shadow-card)] backdrop-blur-sm md:p-8"
           data-anim="fade-up"
         >
           <div className="flex flex-wrap items-end justify-between gap-4">
@@ -250,7 +250,7 @@ const LoansSection = () => {
                 href={p.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group relative flex flex-col overflow-hidden rounded-2xl border bg-white transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-gold)] ${
+                className={`group relative flex flex-col overflow-hidden rounded-2xl border bg-card transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-gold)] ${
                   p.tag === "Mais pedido"
                     ? "border-brand-gold/45 ring-1 ring-brand-gold/30 hover:border-brand-gold/70"
                     : "border-foreground/10 hover:border-brand-gold/40"
@@ -268,7 +268,7 @@ const LoansSection = () => {
                 <div className="flex flex-1 flex-col p-5">
                   {/* Rate row */}
                   <div className="mb-4 flex items-center justify-between gap-2">
-                    <div className="rounded-xl border border-foreground/10 bg-white/95 px-2.5 py-1.5">
+                    <div className="rounded-xl border border-foreground/10 bg-card/95 px-2.5 py-1.5">
                       <div className="text-[9px] font-semibold uppercase tracking-wider text-foreground/55 leading-none">
                         {p.rateLabel}
                       </div>
@@ -276,7 +276,7 @@ const LoansSection = () => {
                         {p.rate}
                       </div>
                     </div>
-                    <span className="rounded-full border border-foreground/10 bg-white/95 px-2.5 py-1 text-[10px] font-bold text-foreground/75">
+                    <span className="rounded-full border border-foreground/10 bg-card/95 px-2.5 py-1 text-[10px] font-bold text-foreground/75">
                       {p.term}
                     </span>
                   </div>
@@ -306,7 +306,7 @@ const LoansSection = () => {
           </div>
 
           {/* Reassurance bar */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 rounded-2xl border border-foreground/10 bg-white/60 px-4 py-3 text-[11px] font-medium text-foreground/70 backdrop-blur-sm">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 rounded-2xl border border-foreground/10 bg-card/60 px-4 py-3 text-[11px] font-medium text-foreground/70 backdrop-blur-sm">
             <span className="inline-flex items-center gap-1.5">
               <ShieldCheck className="h-3.5 w-3.5 text-brand-gold" /> Autorizada pelo Banco Central
             </span>

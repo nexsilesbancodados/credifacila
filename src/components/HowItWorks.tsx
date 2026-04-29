@@ -143,7 +143,7 @@ const HowItWorks = () => {
             </div>
             <div className="pointer-events-auto flex items-center gap-6 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/60">
               <span>Início</span>
-              <div className="h-px w-16 bg-white/20" />
+              <div className="h-px w-16 bg-card/20" />
               <span>Realização</span>
             </div>
           </div>
@@ -169,7 +169,7 @@ const HowItWorks = () => {
               <span>{String(activeIndex + 1).padStart(2, "0")} / {String(panels.length).padStart(2, "0")}</span>
               <span>{panels[activeIndex].eyebrow.split("·")[1]?.trim()}</span>
             </div>
-            <div className="h-[2px] w-full overflow-hidden rounded-full bg-white/10">
+            <div className="h-[2px] w-full overflow-hidden rounded-full bg-card/10">
               <div
                 className="h-full rounded-full"
                 style={{
@@ -210,7 +210,7 @@ const HowItWorks = () => {
       <div className="relative overflow-hidden px-5 py-10 md:px-10 md:py-14">
         <div
           className="pointer-events-none absolute -left-32 top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full opacity-40"
-          style={{ background: "radial-gradient(circle, hsl(199 90% 55% / 0.18), transparent 65%)" }}
+          style={{ background: "radial-gradient(circle, hsl(42 78% 55% / 0.18, transparent 65%)" }}
           aria-hidden
         />
         <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-4 text-center">
@@ -237,7 +237,7 @@ const HowItWorks = () => {
             </a>
             <a
               href="#solucoes"
-              className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/[0.05] px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-brand-gold/60 hover:bg-white/10 hover:text-brand-gold"
+              className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/[0.05] px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-brand-gold/60 hover:bg-card/10 hover:text-brand-gold"
             >
               Ver linhas de crédito
             </a>
@@ -289,7 +289,7 @@ const PanelCinematic = ({
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, hsl(215 50% 8% / 0.55) 0%, hsl(215 50% 8% / 0.4) 40%, hsl(215 50% 6% / 0.85) 100%)",
+            "linear-gradient(180deg, hsl(0 0% 8% / 0.55 0%, hsl(0 0% 8% / 0.4 40%, hsl(0 0% 6% / 0.85 100%)",
         }}
         aria-hidden
       />
@@ -298,7 +298,7 @@ const PanelCinematic = ({
         className="absolute inset-0 hidden lg:block"
         style={{
           background:
-            "linear-gradient(90deg, hsl(215 50% 6% / 0.92) 0%, hsl(215 50% 6% / 0.7) 30%, hsl(215 50% 6% / 0.2) 55%, transparent 70%)",
+            "linear-gradient(90deg, hsl(0 0% 6% / 0.92 0%, hsl(0 0% 6% / 0.7 30%, hsl(0 0% 6% / 0.2 55%, transparent 70%)",
         }}
         aria-hidden
       />
@@ -334,7 +334,7 @@ const PanelCinematic = ({
           className={`mt-4 font-display font-extrabold tracking-tight text-white ${
             mobile ? "text-[28px] leading-[1]" : "text-[clamp(30px,3.6vw,52px)] leading-[1]"
           }`}
-          style={{ textShadow: "0 4px 32px hsl(215 52% 4% / 0.7)" }}
+          style={{ textShadow: "0 4px 32px hsl(0 0% 4% / 0.7" }}
         >
           {panel.title}{" "}
           <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-gold)" }}>

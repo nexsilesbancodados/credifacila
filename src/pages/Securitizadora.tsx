@@ -149,7 +149,7 @@ const Securitizadora = () => {
           </Link>
           <Link
             to="/"
-            className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:text-brand-gold"
+            className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-card/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur-md transition-all hover:bg-card/20 hover:text-brand-gold"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             Voltar ao início
@@ -176,7 +176,7 @@ const Securitizadora = () => {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, hsl(215 52% 12% / 0.55) 0%, hsl(215 52% 12% / 0.30) 40%, transparent 70%)",
+              "linear-gradient(90deg, hsl(0 0% 8% / 0.55 0%, hsl(0 0% 8% / 0.30 40%, transparent 70%)",
           }}
           aria-hidden
         />
@@ -184,7 +184,7 @@ const Securitizadora = () => {
           className="pointer-events-none absolute inset-0 lg:hidden"
           style={{
             background:
-              "linear-gradient(180deg, hsl(215 52% 12% / 0.50) 0%, transparent 40%, hsl(215 52% 12% / 0.50) 100%)",
+              "linear-gradient(180deg, hsl(0 0% 8% / 0.50 0%, transparent 40%, hsl(0 0% 8% / 0.50 100%)",
           }}
           aria-hidden
         />
@@ -192,7 +192,7 @@ const Securitizadora = () => {
           className="pointer-events-none absolute -left-40 bottom-0 h-[420px] w-[420px] opacity-40"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(199 85% 58% / 0.35), transparent 70%)",
+              "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.35, transparent 70%)",
           }}
           aria-hidden
         />
@@ -205,7 +205,7 @@ const Securitizadora = () => {
             </div>
             <h1
               className="mt-6 font-display text-[40px] font-extrabold leading-[1.02] tracking-tight text-white md:text-[56px] lg:text-[60px]"
-              style={{ textShadow: "0 2px 24px hsl(215 52% 12% / 0.45)" }}
+              style={{ textShadow: "0 2px 24px hsl(0 0% 8% / 0.45" }}
             >
               Soluções financeiras{" "}
               <span className="text-gold-gradient">
@@ -288,7 +288,7 @@ const Securitizadora = () => {
             {values.map((v) => (
               <div
                 key={v.title}
-                className="rounded-3xl border border-brand-gold/15 bg-white p-6 shadow-[0_10px_30px_-15px_hsl(30_30%_4%/0.15)] transition-all hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-[0_20px_40px_-15px_hsl(30_30%_4%/0.25)]"
+                className="rounded-3xl border border-brand-gold/15 bg-card p-6 shadow-[0_10px_30px_-15px_hsl(30_30%_4%/0.15)] transition-all hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-[0_20px_40px_-15px_hsl(30_30%_4%/0.25)]"
               >
                 <div
                   className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-2xl text-white"
@@ -313,7 +313,7 @@ const Securitizadora = () => {
                 className="absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(90deg, hsl(215 50% 14% / 0.85) 0%, hsl(215 50% 14% / 0.3) 60%, transparent 100%)",
+                    "linear-gradient(90deg, hsl(0 0% 8% / 0.85 0%, hsl(0 0% 8% / 0.3 60%, transparent 100%)",
                 }}
               />
               <div className="absolute inset-0 flex items-center p-6">
@@ -357,7 +357,7 @@ const Securitizadora = () => {
                   className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-0 transition-opacity group-hover:opacity-100"
                   style={{
                     background:
-                      "radial-gradient(circle, hsl(199 90% 55% / 0.25), transparent 70%)",
+                      "radial-gradient(circle, hsl(42 78% 55% / 0.25, transparent 70%)",
                   }}
                 />
                 <div className="relative flex items-start gap-5">
@@ -400,7 +400,7 @@ const Securitizadora = () => {
           {differentials.map((d) => (
             <div
               key={d.title}
-              className="flex items-start gap-4 rounded-2xl border border-brand-gold/15 bg-white p-5 transition-all hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-[0_20px_40px_-15px_hsl(30_30%_4%/0.2)]"
+              className="flex items-start gap-4 rounded-2xl border border-brand-gold/15 bg-card p-5 transition-all hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-[0_20px_40px_-15px_hsl(30_30%_4%/0.2)]"
             >
               <div
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-white"
@@ -431,7 +431,7 @@ const Securitizadora = () => {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, hsl(215 50% 14% / 0.6) 0%, hsl(215 50% 14% / 0.9) 100%)",
+              "linear-gradient(180deg, hsl(0 0% 8% / 0.6 0%, hsl(0 0% 8% / 0.9 100%)",
           }}
         />
         <div className="relative z-10 mx-auto flex h-full max-w-5xl items-center justify-center px-5 text-center">
@@ -468,7 +468,7 @@ const Securitizadora = () => {
             return (
               <div
                 key={f.q}
-                className="overflow-hidden rounded-2xl border border-brand-gold/15 bg-white shadow-[0_6px_20px_-12px_hsl(30_30%_4%/0.18)]"
+                className="overflow-hidden rounded-2xl border border-brand-gold/15 bg-card shadow-[0_6px_20px_-12px_hsl(30_30%_4%/0.18)]"
               >
                 <button
                   onClick={() => setOpenFaq(isOpen ? null : i)}
@@ -536,7 +536,7 @@ const Securitizadora = () => {
                 href={whatsappLink("Olá! Quero falar com a Credifácil Securitizadora.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 inline-flex items-center gap-2 rounded-2xl border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all hover:bg-white/20"
+                className="mt-8 inline-flex items-center gap-2 rounded-2xl border border-white/30 bg-card/10 px-6 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all hover:bg-card/20"
               >
                 <TrendingUp className="h-4 w-4" />
                 Falar direto no WhatsApp
@@ -569,7 +569,7 @@ const Securitizadora = () => {
                         required
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        className="form-input bg-white/5 text-white placeholder:text-white/40"
+                        className="form-input bg-card/5 text-white placeholder:text-white/40"
                         placeholder="Seu nome"
                       />
                     </div>
@@ -579,7 +579,7 @@ const Securitizadora = () => {
                         required
                         value={form.company}
                         onChange={(e) => setForm({ ...form, company: e.target.value })}
-                        className="form-input bg-white/5 text-white placeholder:text-white/40"
+                        className="form-input bg-card/5 text-white placeholder:text-white/40"
                         placeholder="Razão social"
                       />
                     </div>
@@ -592,7 +592,7 @@ const Securitizadora = () => {
                         type="email"
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        className="form-input bg-white/5 text-white placeholder:text-white/40"
+                        className="form-input bg-card/5 text-white placeholder:text-white/40"
                         placeholder="email@empresa.com"
                       />
                     </div>
@@ -602,7 +602,7 @@ const Securitizadora = () => {
                         required
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        className="form-input bg-white/5 text-white placeholder:text-white/40"
+                        className="form-input bg-card/5 text-white placeholder:text-white/40"
                         placeholder="(00) 00000-0000"
                       />
                     </div>
@@ -613,7 +613,7 @@ const Securitizadora = () => {
                       rows={4}
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="form-input bg-white/5 text-white placeholder:text-white/40"
+                      className="form-input bg-card/5 text-white placeholder:text-white/40"
                       placeholder="Conte um pouco sobre sua necessidade..."
                     />
                   </div>
