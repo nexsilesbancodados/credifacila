@@ -14,14 +14,9 @@ import { whatsappLink } from "@/config/site";
 import loansHero from "@/assets/loans-hero.webp";
 import loansHeroMd from "@/assets/loans-hero-md.webp";
 import loansHeroSm from "@/assets/loans-hero-sm.webp";
-import cardPersonalIllo from "@/assets/illustrations/card-personal.svg";
-import cardCollateralIllo from "@/assets/illustrations/card-collateral.svg";
-import cardPortabilityIllo from "@/assets/illustrations/card-portability.svg";
-import cardBusinessIllo from "@/assets/illustrations/card-business.svg";
 
 const products = [
   {
-    illo: cardPersonalIllo,
     title: "Crédito Pessoal",
     desc: "Dinheiro livre na sua conta para realizar o que você quiser, sem precisar justificar.",
     tag: "Mais pedido",
@@ -31,7 +26,6 @@ const products = [
     href: whatsappLink("Olá! Quero contratar Crédito Pessoal."),
   },
   {
-    illo: cardCollateralIllo,
     title: "Crédito com Garantia",
     desc: "Use um imóvel ou veículo como garantia e tenha as menores taxas do mercado.",
     tag: "Menor taxa",
@@ -41,7 +35,6 @@ const products = [
     href: whatsappLink("Olá! Quero contratar Crédito com Garantia."),
   },
   {
-    illo: cardPortabilityIllo,
     title: "Portabilidade de Crédito",
     desc: "Traga seu contrato de outro banco para a Credifácil e reduza sua parcela hoje mesmo.",
     tag: null,
@@ -51,7 +44,6 @@ const products = [
     href: whatsappLink("Olá! Quero fazer Portabilidade de Crédito."),
   },
   {
-    illo: cardBusinessIllo,
     title: "Para Empresas",
     desc: "Capital de giro e linhas de crédito sob medida para impulsionar o seu negócio.",
     tag: "PJ",
@@ -265,39 +257,30 @@ const LoansSection = () => {
                     : "border-foreground/10 hover:border-brand-gold/40"
                 }`}
               >
-                {/* Illustration */}
-                <div className="relative h-44 overflow-hidden">
-                  <img
-                    src={p.illo}
-                    alt=""
-                    aria-hidden
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  {p.tag && (
-                    <span
-                      className="absolute right-3 top-3 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold-foreground shadow-[var(--shadow-gold-sm)]"
-                      style={{ background: "var(--gradient-gold)" }}
-                    >
-                      {p.tag}
-                    </span>
-                  )}
-                  {/* Rate chip */}
-                  <div className="absolute bottom-3 left-3 rounded-xl border border-foreground/10 bg-white/95 px-2.5 py-1.5 shadow-sm backdrop-blur">
-                    <div className="text-[9px] font-semibold uppercase tracking-wider text-foreground/55 leading-none">
-                      {p.rateLabel}
-                    </div>
-                    <div className="mt-0.5 font-display text-[15px] font-bold leading-none text-foreground">
-                      {p.rate}
-                    </div>
-                  </div>
-                  {/* Term chip */}
-                  <div className="absolute bottom-3 right-3 rounded-full border border-foreground/10 bg-white/95 px-2.5 py-1 text-[10px] font-bold text-foreground/75 shadow-sm backdrop-blur">
-                    {p.term}
-                  </div>
-                </div>
+                {p.tag && (
+                  <span
+                    className="absolute right-3 top-3 z-10 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold-foreground shadow-[var(--shadow-gold-sm)]"
+                    style={{ background: "var(--gradient-gold)" }}
+                  >
+                    {p.tag}
+                  </span>
+                )}
                 {/* Content */}
                 <div className="flex flex-1 flex-col p-5">
+                  {/* Rate row */}
+                  <div className="mb-4 flex items-center justify-between gap-2">
+                    <div className="rounded-xl border border-foreground/10 bg-white/95 px-2.5 py-1.5">
+                      <div className="text-[9px] font-semibold uppercase tracking-wider text-foreground/55 leading-none">
+                        {p.rateLabel}
+                      </div>
+                      <div className="mt-0.5 font-display text-[15px] font-bold leading-none text-foreground">
+                        {p.rate}
+                      </div>
+                    </div>
+                    <span className="rounded-full border border-foreground/10 bg-white/95 px-2.5 py-1 text-[10px] font-bold text-foreground/75">
+                      {p.term}
+                    </span>
+                  </div>
                   <h4 className="font-display text-[16px] font-bold text-foreground transition-colors group-hover:text-brand-gold">
                     {p.title}
                   </h4>
