@@ -269,8 +269,8 @@ const PanelCinematic = ({
           : "h-full w-screen items-center justify-start"
       }`}
     >
-      {/* Background image */}
-      <div className="absolute inset-0">
+      {/* Background image — contain para não cortar */}
+      <div className="absolute inset-0 bg-[hsl(215_50%_4%)]">
         <img
           src={panel.image}
           alt={panel.title + " " + panel.highlight}
@@ -278,8 +278,8 @@ const PanelCinematic = ({
           decoding="async"
           width={1600}
           height={1000}
-          className={`h-full w-full object-cover transition-transform duration-[1200ms] ease-out ${
-            active || mobile ? "scale-100" : "scale-110"
+          className={`h-full w-full object-contain ${mobile ? "object-center" : "object-right"} transition-transform duration-[1200ms] ease-out ${
+            active || mobile ? "scale-100" : "scale-[1.02]"
           }`}
         />
       </div>
