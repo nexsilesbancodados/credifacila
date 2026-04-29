@@ -45,6 +45,8 @@ export interface SolutionPageProps {
     /** "left" = imagem à esquerda, texto à direita (default). "right" = inverso */
     imagePosition?: "left" | "right";
   };
+  /** Esconde o bloco de texto/CTA da hero, mantendo apenas a imagem */
+  hideHeroText?: boolean;
 }
 
 const SolutionPage = ({
@@ -64,6 +66,7 @@ const SolutionPage = ({
   ctaTitle,
   ctaSubtitle,
   showcase,
+  hideHeroText,
 }: SolutionPageProps) => {
   useSeo({ title: metaTitle, description: metaDescription });
 
@@ -132,6 +135,7 @@ const SolutionPage = ({
         <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden />
 
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 px-5 md:px-8 lg:grid-cols-2 lg:items-center">
+          {!hideHeroText && (
           <div data-anim="fade-right" className="max-w-xl">
             <span className="pill-eyebrow-dark">
               <Sparkles className="h-3.5 w-3.5" />
@@ -157,6 +161,7 @@ const SolutionPage = ({
               </a>
             </div>
           </div>
+          )}
         </div>
       </section>
 
