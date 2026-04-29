@@ -69,7 +69,7 @@ const AboutSection = () => {
                     </span>
                     <div>
                       <h3 className="font-display text-sm font-bold text-foreground">{p.title}</h3>
-                      <p className="mt-1 text-sm leading-relaxed text-[hsl(220_15%_35%)]">{p.desc}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
                     </div>
                   </div>
                 </li>
@@ -122,7 +122,7 @@ const AboutSection = () => {
                       />
                     )}
                   </div>
-                  <div className="relative mt-1 text-xs font-medium leading-tight text-[hsl(220_15%_35%)]">
+                  <div className="relative mt-1 text-xs font-medium leading-tight text-muted-foreground">
                     {s.label}
                   </div>
                 </div>

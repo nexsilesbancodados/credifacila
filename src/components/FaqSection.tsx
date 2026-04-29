@@ -93,7 +93,7 @@ const FaqSection = () => {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-5 pb-5 pr-14 text-sm leading-relaxed text-[hsl(220_15%_35%)] md:px-6 md:pb-6 md:text-[15px]">
+                    <p className="px-5 pb-5 pr-14 text-sm leading-relaxed text-muted-foreground md:px-6 md:pb-6 md:text-[15px]">
                       {item.a}
                     </p>
                   </div>
@@ -110,7 +110,7 @@ const FaqSection = () => {
             <h3 className="text-base font-bold text-foreground md:text-lg">
               Ainda ficou com alguma dúvida?
             </h3>
-            <p className="mt-1 text-sm text-[hsl(220_15%_35%)]">
+            <p className="mt-1 text-sm text-muted-foreground">
               Fale com um especialista agora mesmo, sem compromisso.
             </p>
           </div>

@@ -178,7 +178,7 @@ const ContactFooter = () => {
         <div className="mt-12 grid grid-cols-2 gap-8 border-t border-brand-gold/20 pt-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="col-span-2 md:col-span-1">
             <img src={logo} alt="Credifácil" className="h-9 w-auto" loading="lazy" />
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-[hsl(220_15%_35%)]">
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               Crédito justo, rápido e humano. Há mais de {site.metrics.yearsInMarket} anos ajudando pessoas a realizarem seus planos com tranquilidade.
             </p>
             <div className="mt-5 flex items-center gap-2 text-xs font-medium text-[hsl(220_15%_30%)]">
