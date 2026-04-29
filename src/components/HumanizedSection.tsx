@@ -22,7 +22,7 @@ const features = [
 const HumanizedSection = () => (
   <section
     aria-label="Atendimento humanizado Credifácil"
-    className="relative w-full overflow-hidden bg-[hsl(0_0%_4%)] py-20 md:py-28"
+    className="relative w-full overflow-hidden py-20 md:py-28"
   >
     {/* Soft gold ambient glow */}
     <div

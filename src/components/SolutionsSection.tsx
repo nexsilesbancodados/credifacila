@@ -47,17 +47,8 @@ const steps = [
 const SolutionsSection = () => (
   <section
     aria-label="Soluções e como funciona"
-    className="relative w-full overflow-hidden bg-[hsl(0_0%_3%)] py-24 md:py-32"
+    className="relative w-full overflow-hidden py-24 md:py-32"
   >
-    {/* Ambient backdrop */}
-    <div
-      className="pointer-events-none absolute inset-0 opacity-[0.4]"
-      style={{
-        backgroundImage:
-          "radial-gradient(circle at 15% 20%, hsl(42 78% 55% / 0.12), transparent 45%), radial-gradient(circle at 85% 80%, hsl(42 78% 55% / 0.08), transparent 50%)",
-      }}
-      aria-hidden
-    />
     <div
       className="pointer-events-none absolute inset-0 opacity-[0.025]"
       style={{
