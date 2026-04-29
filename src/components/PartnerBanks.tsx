@@ -5,75 +5,74 @@ import atendente from "@/assets/atendente-credifacil.jpg";
 type Bank = {
   name: string;
   tagline: string;
-  /** logo color (used for the brand name text) */
   color: string;
-  /** small mark — tailwind classes for a colored chip */
   markClass: string;
-  /** abbreviation shown inside the mark */
   mark: string;
+  isDark?: boolean;
 };
 
 const banks: Bank[] = [
   {
     name: "Itaú",
     tagline: "Feito para você",
-    color: "#0033A0",
-    markClass: "bg-[#0033A0] text-[#FF7A00]",
-    mark: "itaú",
+    color: "#ffffff",
+    markClass: "bg-[#0033A0]",
+    mark: "itau",
+    isDark: false,
   },
   {
     name: "bradesco",
     tagline: "Com você. Sempre.",
-    color: "#CC092F",
-    markClass: "bg-transparent text-[#CC092F]",
-    mark: "◐",
+    color: "#ff3e41",
+    markClass: "bg-transparent",
+    mark: "◑",
   },
   {
     name: "Santander",
     tagline: "O banco de todas as ideias",
-    color: "#EC0000",
-    markClass: "bg-transparent text-[#EC0000]",
-    mark: "🔥",
+    color: "#ec0000",
+    markClass: "bg-transparent",
+    mark: "S",
   },
   {
     name: "Banco do Brasil",
     tagline: "Do seu lado em todos os momentos",
-    color: "#FFEF38",
-    markClass: "bg-[#FFEF38] text-[#003DA5]",
+    color: "#fcf830",
+    markClass: "bg-[#003DA5]",
     mark: "BB",
   },
   {
     name: "SICOOB",
     tagline: "Cooperar para transformar",
-    color: "#7DB72F",
-    markClass: "bg-transparent text-[#7DB72F]",
-    mark: "▼",
+    color: "#7db72f",
+    markClass: "bg-transparent",
+    mark: "V",
   },
   {
     name: "CAIXA",
     tagline: "O banco de todos os brasileiros",
-    color: "#005CA9",
-    markClass: "bg-transparent text-[#005CA9]",
-    mark: "✦",
+    color: "#00a1e4",
+    markClass: "bg-transparent",
+    mark: "X",
   },
   {
     name: "Banrisul",
     tagline: "Nossa conexão transforma",
-    color: "#0E5BA8",
-    markClass: "bg-transparent text-[#0E5BA8]",
+    color: "#00a3e0",
+    markClass: "bg-transparent",
     mark: "B",
   },
 ];
 
-/** Positions for the 7 floating cards around the central portrait (desktop only). */
+/** Enhanced positions - wider spread to avoid covering the attendant */
 const positions = [
-  "top-[2%] left-1/2 -translate-x-1/2",                  // Itaú (top center)
-  "top-[18%] left-[2%]",                                 // Bradesco (upper-left)
-  "top-[18%] right-[2%]",                                // Santander (upper-right)
-  "top-[48%] left-0 -translate-y-1/2",                   // BB (mid-left)
-  "top-[48%] right-0 -translate-y-1/2",                  // Sicoob (mid-right)
-  "bottom-[6%] left-[12%]",                              // Caixa (bottom-left)
-  "bottom-[6%] right-[12%]",                             // Banrisul (bottom-right)
+  "top-[2%] left-1/2 -translate-x-1/2",                  // Itaú
+  "top-[20%] left-[-8%]",                                // Bradesco
+  "top-[20%] right-[-8%]",                               // Santander
+  "top-[52%] left-[-12%]",                               // BB
+  "top-[52%] right-[-12%]",                              // Sicoob
+  "bottom-[5%] left-[5%]",                               // Caixa
+  "bottom-[5%] right-[5%]",                              // Banrisul
 ];
 
 const features = [
@@ -83,122 +82,131 @@ const features = [
 ];
 
 const BankCard = ({ bank }: { bank: Bank }) => (
-  <div className="group relative w-[170px] rounded-2xl border border-brand-gold/25 bg-[hsl(0_0%_5%/0.85)] p-3 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-gold/60 hover:shadow-[var(--shadow-gold-sm)]">
-    <div className="flex items-center gap-2">
-      <span
-        className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-[11px] font-black ${bank.markClass}`}
-        aria-hidden
+  <div className="group relative w-[185px] overflow-hidden rounded-2xl border border-brand-gold/20 bg-[hsl(0_0%_4%/0.7)] p-3.5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-brand-gold/60 hover:shadow-[0_0_20px_rgba(212,164,52,0.15)]">
+    {/* Subtle inner glow */}
+    <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+      style={{ background: `radial-gradient(circle at center, ${bank.color}15 0%, transparent 70%)` }}
+    />
+    
+    <div className="flex items-center gap-3">
+      <div
+        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg shadow-sm transition-transform duration-500 group-hover:scale-110 ${bank.markClass}`}
+        style={!bank.markClass.includes('bg-') ? { color: bank.color } : {}}
       >
-        {bank.mark}
-      </span>
-      <span
-        className="font-display text-[15px] font-extrabold leading-none tracking-tight"
-        style={{ color: bank.color }}
-      >
-        {bank.name}
-      </span>
+        <span className="text-[12px] font-black uppercase tracking-tighter">{bank.mark}</span>
+      </div>
+      <div>
+        <div
+          className="font-display text-[16px] font-extrabold uppercase leading-none tracking-tight transition-colors"
+          style={{ color: bank.color }}
+        >
+          {bank.name}
+        </div>
+        <div className="mt-1 text-[10px] leading-tight text-muted-foreground/80 opacity-0 transition-all duration-500 group-hover:opacity-100">
+          {bank.tagline}
+        </div>
+      </div>
     </div>
-    <p className="mt-1.5 text-[11px] leading-tight text-muted-foreground">
-      {bank.tagline}
-    </p>
   </div>
 );
 
 const PartnerBanks = () => (
   <section
     id="bancos-parceiros"
-    className="relative w-full px-5 py-16 md:px-8 md:py-20 lg:px-10"
+    className="relative w-full overflow-hidden px-5 py-16 md:px-8 md:py-24 lg:px-10"
     aria-label="Bancos parceiros"
   >
     <div className="mx-auto max-w-7xl">
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.15fr] lg:items-center lg:gap-10">
-        {/* LEFT — copy */}
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.3fr] lg:items-center lg:gap-16">
+        {/* LEFT — Typography & Features */}
         <div data-anim="fade-right">
-          <span className="pill-eyebrow">
+          <span className="pill-eyebrow mb-6">
             <Sparkles className="h-3 w-3" />
             Parcerias que geram resultados
           </span>
-          <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight text-foreground md:text-4xl lg:text-[44px]">
+          <h2 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-foreground md:text-5xl lg:text-[52px]">
             Trabalhamos com{" "}
             <span className="text-gold-gradient">os melhores bancos</span>{" "}
             para você ir mais longe.
           </h2>
-          <div className="mt-4 h-1 w-16 rounded-full bg-gold-gradient" aria-hidden />
-          <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
+          <div className="mt-6 h-1 w-20 rounded-full bg-gold-gradient" aria-hidden />
+          <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground/90 md:text-lg">
             Nossa rede de parceiros nos permite oferecer as melhores condições, mais segurança
-            e soluções sob medida para o seu momento.
+            e soluções sob medida para o seu momento financeiro.
           </p>
 
-          <ul className="mt-8 grid grid-cols-3 gap-4" data-anim-stagger>
+          <ul className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3" data-anim-stagger>
             {features.map((f) => (
-              <li key={f.title} className="text-left">
-                <span
-                  className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl border border-brand-gold/30 bg-[hsl(0_0%_8%)] text-brand-gold"
+              <li key={f.title} className="group">
+                <div
+                  className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl border border-brand-gold/20 bg-surface-dark text-brand-gold transition-all duration-300 group-hover:border-brand-gold/50 group-hover:shadow-[0_0_15px_rgba(212,164,52,0.1)]"
                   aria-hidden
                 >
-                  <f.icon className="h-5 w-5" strokeWidth={2} />
-                </span>
-                <div className="text-[13px] font-bold text-foreground">{f.title}</div>
-                <p className="mt-1 text-[11px] leading-snug text-muted-foreground">{f.desc}</p>
+                  <f.icon className="h-6 w-6" strokeWidth={1.5} />
+                </div>
+                <div className="text-[14px] font-bold text-foreground">{f.title}</div>
+                <p className="mt-1.5 text-[12px] leading-relaxed text-muted-foreground/80">{f.desc}</p>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* RIGHT — portrait + floating bank cards */}
-        <div className="relative mx-auto w-full max-w-[640px]" data-anim="fade-left">
-          {/* Decorative concentric rings */}
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-center" aria-hidden>
-            <div className="absolute aspect-square w-[88%] rounded-full border border-dashed border-brand-gold/25" />
-            <div className="absolute aspect-square w-[64%] rounded-full border border-brand-gold/15" />
-            <div
-              className="absolute aspect-square w-[70%] rounded-full opacity-60 blur-2xl"
-              style={{ background: "radial-gradient(circle, hsl(42 78% 40% / 0.35), transparent 70%)" }}
-            />
-          </div>
+        {/* RIGHT — Attendant + Circular Layout */}
+        <div className="relative mx-auto w-full max-w-[680px]" data-anim="fade-left">
+          {/* Animated SVG Path for connections */}
+          <svg className="absolute inset-0 h-full w-full opacity-20" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="300" cy="300" r="240" stroke="url(#gold-grad)" strokeWidth="1" strokeDasharray="5 5" />
+            <defs>
+              <linearGradient id="gold-grad" x1="0" y1="0" x2="600" y2="600" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#D4A434" />
+                <stop offset="1" stopColor="#D4A434" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
 
-          {/* Portrait */}
-          <div className="relative mx-auto aspect-square w-[58%] sm:w-[52%] lg:w-[56%]">
+          {/* Central Portrait with better masking */}
+          <div className="relative mx-auto aspect-square w-[60%] sm:w-[55%]">
+            {/* Ambient gold glow behind portrait */}
             <div
-              className="absolute inset-0 rounded-full"
+              className="absolute inset-0 rounded-full opacity-40 blur-3xl"
               style={{
-                background: "radial-gradient(circle at 50% 60%, hsl(42 78% 35% / 0.55), transparent 70%)",
-                filter: "blur(20px)",
+                background: "radial-gradient(circle at 50% 50%, hsl(42 78% 45%) 0%, transparent 75%)",
               }}
               aria-hidden
             />
-            <img
-              src={atendente}
-              alt="Atendente Credifácil sorrindo, vestindo polo preta com detalhes dourados"
-              loading="lazy"
-              decoding="async"
-              width={1024}
-              height={1024}
-              className="relative mx-auto h-full w-full object-cover object-top"
-              style={{
-                WebkitMaskImage:
-                  "radial-gradient(ellipse 70% 90% at 50% 45%, #000 55%, transparent 90%)",
-                maskImage:
-                  "radial-gradient(ellipse 70% 90% at 50% 45%, #000 55%, transparent 90%)",
-              }}
-            />
+            
+            <div className="relative h-full w-full overflow-hidden rounded-full border border-brand-gold/10">
+              <img
+                src={atendente}
+                alt="Atendente Credifácil"
+                loading="lazy"
+                decoding="async"
+                width={1024}
+                height={1024}
+                className="h-full w-full object-cover object-top transition-transform duration-700 hover:scale-105"
+                style={{
+                  maskImage: "radial-gradient(circle at 50% 45%, black 40%, transparent 85%)",
+                  WebkitMaskImage: "radial-gradient(circle at 50% 45%, black 40%, transparent 85%)",
+                }}
+              />
+            </div>
           </div>
 
-          {/* Floating bank cards (desktop) */}
+          {/* Floating bank cards (Desktop) */}
           <div className="pointer-events-none absolute inset-0 hidden lg:block">
             {banks.map((b, i) => (
               <div
                 key={b.name}
                 className={`pointer-events-auto absolute ${positions[i]}`}
-                style={{ animation: `float 6s ease-in-out ${i * 0.4}s infinite` }}
+                style={{ animation: `float ${5 + i}s ease-in-out infinite alternate` }}
               >
                 <BankCard bank={b} />
               </div>
             ))}
           </div>
 
-          {/* Bank cards grid (mobile / tablet) */}
-          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:hidden">
+          {/* Grid Layout (Mobile) */}
+          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:hidden">
             {banks.map((b) => (
               <BankCard key={b.name} bank={b} />
             ))}
@@ -206,52 +214,48 @@ const PartnerBanks = () => (
         </div>
       </div>
 
-      {/* CTA strip */}
+      {/* Improved CTA Bar */}
       <div
-        className="mt-14 grid grid-cols-1 items-center gap-6 rounded-3xl border border-brand-gold/25 bg-[hsl(0_0%_6%/0.85)] p-6 backdrop-blur-md md:grid-cols-[auto_1fr_1fr_auto] md:gap-8 md:p-8"
+        className="mt-20 overflow-hidden rounded-[32px] border border-brand-gold/30 bg-surface-deep-2/60 p-1 backdrop-blur-md"
         data-anim="fade-up"
       >
-        <span
-          className="flex h-14 w-14 items-center justify-center rounded-2xl border border-brand-gold/40 text-brand-gold"
-          aria-hidden
-        >
-          <ShieldCheck className="h-7 w-7" strokeWidth={2} />
-        </span>
-        <div>
-          <h3 className="font-display text-xl leading-tight text-muted-foreground md:text-2xl">
-            Mais opções para você.
-            <br />
-            <span className="font-bold text-gold-gradient">Mais vantagens para conquistar.</span>
-          </h3>
-        </div>
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          Com as melhores instituições ao nosso lado, encontramos o crédito ideal para o seu perfil
-          e para os seus planos.
-        </p>
-        <Link
-          to="/simular"
-          className="group inline-flex items-center justify-between gap-4 rounded-2xl border border-brand-gold/40 px-5 py-4 transition-all hover:border-brand-gold hover:bg-brand-gold/5"
-        >
-          <span className="text-sm">
-            <span className="block font-bold text-foreground">Fale com um especialista</span>
-            <span className="block text-xs text-muted-foreground">
-              e descubra as melhores oportunidades para você.
-            </span>
-          </span>
-          <span
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-brand-gold/50 text-brand-gold transition-transform group-hover:translate-x-0.5"
-            aria-hidden
+        <div className="flex flex-col items-center gap-6 rounded-[30px] bg-gradient-to-r from-brand-ink to-surface-deep-2 p-8 md:flex-row md:justify-between md:p-10">
+          <div className="flex items-center gap-6">
+            <div className="hidden h-14 w-14 items-center justify-center rounded-2xl border border-brand-gold/30 bg-brand-gold/5 text-brand-gold sm:flex">
+              <ShieldCheck className="h-8 w-8" strokeWidth={1.5} />
+            </div>
+            <div>
+              <h3 className="font-display text-2xl font-semibold leading-tight text-foreground md:text-3xl">
+                Mais opções para <span className="text-gold-gradient">você.</span>
+              </h3>
+              <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground/80 md:text-base">
+                Com as melhores instituições ao nosso lado, encontramos o crédito ideal para o seu perfil e planos.
+              </p>
+            </div>
+          </div>
+          
+          <Link
+            to="/simular"
+            className="group flex w-full items-center justify-between gap-6 rounded-2xl border border-brand-gold/40 bg-brand-gold/5 px-6 py-5 transition-all duration-300 hover:border-brand-gold hover:bg-brand-gold/10 md:w-auto"
           >
-            <ChevronRight className="h-5 w-5" />
-          </span>
-        </Link>
+            <div>
+              <span className="block font-display text-lg font-bold text-foreground">Fale com um especialista</span>
+              <span className="block text-xs text-muted-foreground transition-colors group-hover:text-brand-gold/80">
+                Descubra as melhores oportunidades para você agora.
+              </span>
+            </div>
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold-gradient text-brand-ink transition-transform duration-300 group-hover:translate-x-1 group-hover:scale-110">
+              <ChevronRight className="h-6 w-6" strokeWidth={3} />
+            </div>
+          </Link>
+        </div>
       </div>
     </div>
 
     <style>{`
       @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-8px); }
+        0% { transform: translateY(0px) rotate(0deg); }
+        100% { transform: translateY(-12px) rotate(1deg); }
       }
     `}</style>
   </section>
