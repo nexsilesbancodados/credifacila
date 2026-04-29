@@ -16,7 +16,7 @@ const Termos = lazy(() => import("./pages/Termos.tsx"));
 const Lgpd = lazy(() => import("./pages/Lgpd.tsx"));
 const Ouvidoria = lazy(() => import("./pages/Ouvidoria.tsx"));
 
-import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import FloatingChatbot from "./components/FloatingChatbot";
 import CookieBanner from "./components/CookieBanner";
 import useScrollAnimations from "./hooks/useScrollAnimations";
 import { initAnalytics, trackEvent } from "./lib/analytics";
@@ -83,7 +83,7 @@ const App = () => (
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
-    <FloatingWhatsApp />
+    <FloatingChatbot />
     <CookieBanner />
   </BrowserRouter>
 );
