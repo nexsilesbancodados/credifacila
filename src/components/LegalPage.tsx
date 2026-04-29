@@ -3,6 +3,7 @@ import { ArrowLeft, FileText, ShieldCheck, MessageCircle, Mail } from "lucide-re
 import logo from "@/assets/credifacil-logo.webp";
 import { site, mailLink, whatsappLink } from "@/config/site";
 import { useSeo } from "@/hooks/useSeo";
+import ContactFooter from "@/components/ContactFooter";
 
 type Section = {
   title: string;
@@ -141,6 +142,7 @@ const LegalPage = ({
           {site.contact.address}
         </div>
       </main>
+      <ContactFooter />
     </div>
   );
 };
