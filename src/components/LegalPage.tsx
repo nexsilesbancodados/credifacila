@@ -35,7 +35,7 @@ const LegalPage = ({
   useSeo({ title: metaTitle, description: metaDescription });
 
   return (
-    <div className="min-h-screen bg-[hsl(220_16%_98%)]">
+    <div className="min-h-screen bg-[hsl(0_0%_4%)] text-white">
       {/* Top bar */}
       <header className="absolute top-0 z-50 w-full bg-transparent">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-6 md:px-8">
