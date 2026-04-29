@@ -42,6 +42,20 @@ const AnimationsBoot = () => {
   return null;
 };
 
+// Pré-busca rotas prováveis quando o navegador estiver ocioso (não bloqueia o LCP).
+const RoutePrefetcher = () => {
+  useEffect(() => {
+    const idle =
+      (window as unknown as { requestIdleCallback?: (cb: () => void) => number })
+        .requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1500));
+    idle(() => {
+      void import("./pages/Consignado.tsx");
+      void import("./pages/Securitizadora.tsx");
+    });
+  }, []);
+  return null;
+};
+
 const App = () => (
   <BrowserRouter>
     <a href="#main" className="skip-link">
@@ -50,6 +64,7 @@ const App = () => (
     <ScrollToTop />
     <AnimationsBoot />
     <AnalyticsBoot />
+    <RoutePrefetcher />
     <Suspense fallback={<div className="min-h-screen" aria-hidden="true" />}>
       <Routes>
         <Route path="/" element={<Index />} />
