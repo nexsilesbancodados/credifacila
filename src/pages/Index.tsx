@@ -8,6 +8,8 @@ import FaqSection from "@/components/FaqSection";
 import ContactFooter from "@/components/ContactFooter";
 import AnimatedBackdrop from "@/components/AnimatedBackdrop";
 import TestimonialsMarquee, { type MarqueeTestimonial } from "@/components/TestimonialsMarquee";
+import PromoBanner from "@/components/PromoBanner";
+import { whatsappLink } from "@/config/site";
 
 const homeTestimonials: MarqueeTestimonial[] = [
   { initials: "CR", name: "Camila R.", meta: "Cliente desde 2024 · São Paulo", text: "Em poucos cliques resolvi tudo. Simples, rápido e sem stress!" },
@@ -31,6 +33,15 @@ const Index = () => (
       <PartnerBanks />
       {/* 4. Como funciona — desmistifica o processo em 4 passos */}
       <HowItWorks />
+      {/* 4.5 Banner promocional — capital de giro PJ */}
+      <PromoBanner
+        eyebrow="Crédito empresarial"
+        title="Impulsione o seu negócio com"
+        highlight="capital de giro."
+        description="Empréstimo PJ rápido para investir, expandir ou equilibrar o caixa — com condições especiais e análise descomplicada."
+        ctaLabel="Quero crédito empresarial"
+        ctaHref={whatsappLink("Olá! Tenho interesse em capital de giro PJ.")}
+      />
       {/* 5. Sobre nós — história, propósito e estatísticas */}
       <AboutSection />
       {/* 6. Depoimentos — marquee em loop (penúltima seção) */}

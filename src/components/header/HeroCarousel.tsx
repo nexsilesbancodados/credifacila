@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import heroImage from "@/assets/hero-emprestimo-1.webp";
-import heroImageMd from "@/assets/hero-emprestimo-1-md.webp";
-import heroImageSm from "@/assets/hero-emprestimo-1-sm.webp";
+import heroImage from "@/assets/banner-hero-credifacil.webp";
+import heroImageMd from "@/assets/banner-hero-credifacil-md.webp";
+import heroImageSm from "@/assets/banner-hero-credifacil-sm.webp";
 import heroSlide2 from "@/assets/hero-pessoal.webp";
 import heroSlide2Md from "@/assets/hero-pessoal-md.webp";
 import heroSlide2Sm from "@/assets/hero-pessoal-sm.webp";
