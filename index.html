@@ -133,5 +133,11 @@
       }, { passive: true });
     </script>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Failsafe: nunca deixar o loader travado mais de 6s
+      setTimeout(function () {
+        document.body.classList.add('loaded');
+      }, 6000);
+    </script>
   </body>
 </html>
