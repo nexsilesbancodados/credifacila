@@ -18,7 +18,6 @@ import {
   Building2,
   GraduationCap,
   Quote,
-  Star,
   HelpCircle,
   TrendingDown,
   Zap,
