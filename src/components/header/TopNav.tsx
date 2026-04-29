@@ -47,10 +47,10 @@ const TopNav = () => (
       <path d="M0,16 L1440,16 L1440,8 Q720,-6 0,8 Z" fill="hsl(42 78% 50%" />
     </svg>
 
-    <nav className="relative flex w-full items-center justify-between px-5 py-3.5 md:px-8 md:py-4 lg:px-12">
+    <nav className="relative mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-5 py-3.5 md:px-8 md:py-4 lg:gap-10 lg:px-10">
       <Link
         to="/"
-        className="flex items-center transition-opacity hover:opacity-90"
+        className="flex shrink-0 items-center transition-opacity hover:opacity-90"
         aria-label="Credifácil"
       >
         <img
@@ -65,9 +65,9 @@ const TopNav = () => (
       </Link>
 
       {/* Desktop menu */}
-      <ul className="hidden items-center gap-9 lg:flex">
+      <ul className="hidden flex-1 items-center justify-center gap-7 xl:gap-9 lg:flex">
         {navItems.map((item) => (
-          <li key={item.label} className={item.submenu ? "group relative" : ""}>
+          <li key={item.label} className={`whitespace-nowrap ${item.submenu ? "group relative" : ""}`}>
             {item.submenu ? (
               <>
                 <Link
@@ -130,7 +130,7 @@ const TopNav = () => (
         href={whatsappLink("Olá! Quero saber mais sobre os créditos da Credifácil.")}
         target="_blank"
         rel="noopener noreferrer"
-        className="group hidden items-center gap-2.5 rounded-full border border-brand-gold/80 py-2 pl-2 pr-5 text-sm font-semibold text-white transition-all hover:border-brand-gold hover:bg-brand-gold/15 hover:text-brand-gold lg:flex"
+        className="group hidden shrink-0 items-center gap-2.5 whitespace-nowrap rounded-full border border-brand-gold/80 py-2 pl-2 pr-5 text-sm font-semibold text-white transition-all hover:border-brand-gold hover:bg-brand-gold/15 hover:text-brand-gold lg:inline-flex"
       >
         <span className="flex h-7 w-7 items-center justify-center rounded-full border border-brand-gold/80 transition-colors group-hover:bg-brand-gold/20">
           <MessageCircle className="h-4 w-4 text-brand-gold" />
