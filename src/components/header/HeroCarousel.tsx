@@ -12,9 +12,9 @@ import heroSlide3Sm from "@/assets/hero-parceiro-sm.webp";
 import heroSlide4 from "@/assets/hero-consignado.webp";
 import heroSlide4Md from "@/assets/hero-consignado-md.webp";
 import heroSlide4Sm from "@/assets/hero-consignado-sm.webp";
-import heroSlide5 from "@/assets/hero-emprestimo-2.webp";
-import heroSlide5Md from "@/assets/hero-emprestimo-2-md.webp";
-import heroSlide5Sm from "@/assets/hero-emprestimo-2-sm.webp";
+import heroSlide5 from "@/assets/hero-realizacao-familia.webp";
+import heroSlide5Md from "@/assets/hero-realizacao-familia-md.webp";
+import heroSlide5Sm from "@/assets/hero-realizacao-familia-sm.webp";
 
 type Slide = { src: string; srcMd: string; srcSm: string; alt: string };
 
@@ -23,7 +23,7 @@ const slides: Slide[] = [
   { src: heroSlide2, srcMd: heroSlide2Md, srcSm: heroSlide2Sm, alt: "Empréstimos do seu jeito — crédito pessoal aprovado em minutos" },
   { src: heroSlide3, srcMd: heroSlide3Md, srcSm: heroSlide3Sm, alt: "Mais que crédito, um parceiro para os seus melhores planos" },
   { src: heroSlide4, srcMd: heroSlide4Md, srcSm: heroSlide4Sm, alt: "Empréstimo consignado com condições especiais para renda fixa" },
-  { src: heroSlide5, srcMd: heroSlide5Md, srcSm: heroSlide5Sm, alt: "O crédito que você precisa, com as melhores condições" },
+  { src: heroSlide5, srcMd: heroSlide5Md, srcSm: heroSlide5Sm, alt: "Realize seus planos com o crédito certo para você" },
 ];
 
 const HeroCarousel = () => {
