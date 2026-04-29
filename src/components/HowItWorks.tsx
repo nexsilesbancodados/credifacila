@@ -132,7 +132,7 @@ const HowItWorks = () => {
       <div
         ref={sectionRef}
         className="relative hidden lg:block"
-        style={{ height: `${panels.length * 50}vh` }}
+        style={{ height: `calc(58vh + ${(panels.length - 1) * 70}vh)`, minHeight: `calc(440px + ${(panels.length - 1) * 70}vh)` }}
       >
         <div className="sticky top-0 h-[58vh] min-h-[440px] max-h-[600px] w-full overflow-hidden">
           {/* Section eyebrow + nav */}
