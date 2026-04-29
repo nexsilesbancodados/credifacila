@@ -1,18 +1,21 @@
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Index from "./pages/Index.tsx";
-import NotFound from "./pages/NotFound.tsx";
-import Securitizadora from "./pages/Securitizadora.tsx";
-import Consignado from "./pages/Consignado.tsx";
-import AntecipacaoRecebiveis from "./pages/AntecipacaoRecebiveis.tsx";
-import BoletoGarantido from "./pages/BoletoGarantido.tsx";
-import ContaDigitalLuri from "./pages/ContaDigitalLuri.tsx";
-import PerguntasFrequentes from "./pages/PerguntasFrequentes.tsx";
-import InvistaConosco from "./pages/InvistaConosco.tsx";
-import Privacidade from "./pages/Privacidade.tsx";
-import Termos from "./pages/Termos.tsx";
-import Lgpd from "./pages/Lgpd.tsx";
-import Ouvidoria from "./pages/Ouvidoria.tsx";
+
+// Code-splitting: rotas secundárias carregam sob demanda para acelerar o LCP da home.
+const NotFound = lazy(() => import("./pages/NotFound.tsx"));
+const Securitizadora = lazy(() => import("./pages/Securitizadora.tsx"));
+const Consignado = lazy(() => import("./pages/Consignado.tsx"));
+const AntecipacaoRecebiveis = lazy(() => import("./pages/AntecipacaoRecebiveis.tsx"));
+const BoletoGarantido = lazy(() => import("./pages/BoletoGarantido.tsx"));
+const ContaDigitalLuri = lazy(() => import("./pages/ContaDigitalLuri.tsx"));
+const PerguntasFrequentes = lazy(() => import("./pages/PerguntasFrequentes.tsx"));
+const InvistaConosco = lazy(() => import("./pages/InvistaConosco.tsx"));
+const Privacidade = lazy(() => import("./pages/Privacidade.tsx"));
+const Termos = lazy(() => import("./pages/Termos.tsx"));
+const Lgpd = lazy(() => import("./pages/Lgpd.tsx"));
+const Ouvidoria = lazy(() => import("./pages/Ouvidoria.tsx"));
+
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import CookieBanner from "./components/CookieBanner";
 import useScrollAnimations from "./hooks/useScrollAnimations";
@@ -47,22 +50,24 @@ const App = () => (
     <ScrollToTop />
     <AnimationsBoot />
     <AnalyticsBoot />
-    <Routes>
-      <Route path="/" element={<Index />} />
-      <Route path="/securitizadora" element={<Securitizadora />} />
-      <Route path="/consignado" element={<Consignado />} />
-      <Route path="/securitizadora/antecipacao-de-recebiveis" element={<AntecipacaoRecebiveis />} />
-      <Route path="/securitizadora/boleto-garantido" element={<BoletoGarantido />} />
-      <Route path="/securitizadora/conta-digital-luri" element={<ContaDigitalLuri />} />
-      <Route path="/perguntas-frequentes" element={<PerguntasFrequentes />} />
-      <Route path="/faq" element={<PerguntasFrequentes />} />
-      <Route path="/invista-conosco" element={<InvistaConosco />} />
-      <Route path="/privacidade" element={<Privacidade />} />
-      <Route path="/termos" element={<Termos />} />
-      <Route path="/lgpd" element={<Lgpd />} />
-      <Route path="/ouvidoria" element={<Ouvidoria />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <Suspense fallback={<div className="min-h-screen" aria-hidden="true" />}>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/securitizadora" element={<Securitizadora />} />
+        <Route path="/consignado" element={<Consignado />} />
+        <Route path="/securitizadora/antecipacao-de-recebiveis" element={<AntecipacaoRecebiveis />} />
+        <Route path="/securitizadora/boleto-garantido" element={<BoletoGarantido />} />
+        <Route path="/securitizadora/conta-digital-luri" element={<ContaDigitalLuri />} />
+        <Route path="/perguntas-frequentes" element={<PerguntasFrequentes />} />
+        <Route path="/faq" element={<PerguntasFrequentes />} />
+        <Route path="/invista-conosco" element={<InvistaConosco />} />
+        <Route path="/privacidade" element={<Privacidade />} />
+        <Route path="/termos" element={<Termos />} />
+        <Route path="/lgpd" element={<Lgpd />} />
+        <Route path="/ouvidoria" element={<Ouvidoria />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Suspense>
     <FloatingWhatsApp />
     <CookieBanner />
   </BrowserRouter>
