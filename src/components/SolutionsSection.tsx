@@ -47,146 +47,222 @@ const steps = [
 const SolutionsSection = () => (
   <section
     aria-label="Soluções e como funciona"
-    className="relative w-full overflow-hidden bg-[hsl(0_0%_4%)] py-20 md:py-24"
+    className="relative w-full overflow-hidden bg-[hsl(0_0%_3%)] py-24 md:py-32"
   >
-    <div className="mx-auto flex max-w-7xl flex-col gap-10 px-5 md:px-8">
-      {/* Card 1: Benefícios + foto */}
-      <div className="relative overflow-hidden rounded-[28px] border border-white/[0.06] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-7 md:p-10">
-        <div
-          className="pointer-events-none absolute -right-32 -top-32 h-[420px] w-[420px] opacity-40"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.25), transparent 65%)",
-          }}
-          aria-hidden
-        />
-        <div className="relative grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.15fr_1fr]">
-          {/* Left */}
-          <div>
-            <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-brand-gold">
+    {/* Ambient backdrop */}
+    <div
+      className="pointer-events-none absolute inset-0 opacity-[0.4]"
+      style={{
+        backgroundImage:
+          "radial-gradient(circle at 15% 20%, hsl(42 78% 55% / 0.12), transparent 45%), radial-gradient(circle at 85% 80%, hsl(42 78% 55% / 0.08), transparent 50%)",
+      }}
+      aria-hidden
+    />
+    <div
+      className="pointer-events-none absolute inset-0 opacity-[0.025]"
+      style={{
+        backgroundImage:
+          "linear-gradient(hsl(42 78% 55%) 1px, transparent 1px), linear-gradient(90deg, hsl(42 78% 55%) 1px, transparent 1px)",
+        backgroundSize: "64px 64px",
+      }}
+      aria-hidden
+    />
+
+    <div className="relative mx-auto flex max-w-7xl flex-col gap-16 px-5 md:px-8 md:gap-24">
+      {/* === Bloco 1: Benefícios === */}
+      <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
+        <div className="order-2 lg:order-1">
+          <div className="inline-flex items-center gap-2.5">
+            <span className="h-px w-8 bg-brand-gold" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.32em] text-brand-gold">
               Mais benefícios para você
             </span>
-            <h2 className="mt-4 font-display text-3xl font-extrabold leading-[1.05] tracking-tight text-white md:text-[44px]">
-              Soluções pensadas para facilitar{" "}
+          </div>
+          <h2 className="mt-6 font-display text-4xl font-extrabold leading-[0.98] tracking-tight text-white md:text-[56px]">
+            Soluções pensadas
+            <br />
+            para facilitar{" "}
+            <span className="relative inline-block">
               <span className="text-gold-gradient">sua vida financeira.</span>
-            </h2>
-            <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/70">
-              A Credifácil une tecnologia, atendimento humanizado e condições especiais
-              para oferecer a melhor experiência do início ao fim.
-            </p>
+              <span
+                className="absolute -bottom-1 left-0 h-[3px] w-full rounded-full opacity-60"
+                style={{
+                  background:
+                    "linear-gradient(90deg, hsl(42 78% 55%), transparent)",
+                }}
+              />
+            </span>
+          </h2>
+          <p className="mt-6 max-w-lg text-[16px] leading-relaxed text-white/65">
+            A <span className="font-semibold text-white">Credifácil</span> une tecnologia,
+            atendimento humanizado e condições especiais para oferecer a melhor
+            experiência do início ao fim.
+          </p>
 
-            <div className="mt-9 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
-              {benefits.map((b) => {
-                const Icon = b.icon;
-                return (
-                  <div
-                    key={b.title}
-                    className="group rounded-2xl border border-white/[0.06] bg-[hsl(0_0%_6%)] p-4 transition-all hover:-translate-y-0.5 hover:border-brand-gold/40"
-                  >
+          <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.06] sm:grid-cols-2">
+            {benefits.map((b) => {
+              const Icon = b.icon;
+              return (
+                <div
+                  key={b.title}
+                  className="group relative bg-[hsl(0_0%_5%)] p-6 transition-colors hover:bg-[hsl(0_0%_7%)]"
+                >
+                  <div className="flex items-start gap-4">
                     <span
-                      className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl border border-brand-gold/30 bg-brand-gold/10 text-brand-gold transition-colors group-hover:bg-brand-gold/20"
+                      className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-brand-gold"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, hsl(42 78% 55% / 0.18), hsl(42 78% 55% / 0.04))",
+                        boxShadow:
+                          "inset 0 0 0 1px hsl(42 78% 55% / 0.25), 0 0 20px -6px hsl(42 78% 55% / 0.4)",
+                      }}
                       aria-hidden
                     >
                       <Icon className="h-5 w-5" strokeWidth={1.8} />
                     </span>
-                    <h3 className="text-[13px] font-bold text-white">{b.title}</h3>
-                    <p className="mt-1.5 text-[12px] leading-relaxed text-white/55">
-                      {b.desc}
-                    </p>
+                    <div className="flex-1">
+                      <h3 className="text-[14px] font-bold text-white">{b.title}</h3>
+                      <p className="mt-1.5 text-[12.5px] leading-relaxed text-white/55">
+                        {b.desc}
+                      </p>
+                    </div>
                   </div>
-                );
-              })}
-            </div>
+                </div>
+              );
+            })}
           </div>
+        </div>
 
-          {/* Right image */}
-          <div className="relative">
-            <div
-              className="pointer-events-none absolute -inset-3 rounded-[24px] opacity-60"
-              style={{
-                background:
-                  "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.2), transparent 70%)",
-              }}
-              aria-hidden
-            />
-            <img
-              src={showcaseImg}
-              alt="Especialista Credifácil sorrindo enquanto atende cliente em laptop"
-              loading="lazy"
-              decoding="async"
-              width={1024}
-              height={1024}
-              className="relative aspect-[4/3] w-full rounded-[20px] border border-white/5 object-cover shadow-[0_30px_70px_-25px_hsl(0_0%_0%/0.7)]"
-            />
+        {/* Image */}
+        <div className="relative order-1 lg:order-2">
+          <div
+            className="pointer-events-none absolute -inset-6 rounded-[32px] opacity-70"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.3), transparent 70%)",
+            }}
+            aria-hidden
+          />
+          {/* Decorative gold corner brackets */}
+          <div className="absolute -left-3 -top-3 h-12 w-12 border-l-2 border-t-2 border-brand-gold/60" aria-hidden />
+          <div className="absolute -bottom-3 -right-3 h-12 w-12 border-b-2 border-r-2 border-brand-gold/60" aria-hidden />
+          <img
+            src={showcaseImg}
+            alt="Especialista Credifácil sorrindo enquanto atende cliente em laptop"
+            loading="lazy"
+            decoding="async"
+            width={1024}
+            height={1024}
+            className="relative aspect-[4/5] w-full rounded-[20px] border border-white/10 object-cover shadow-[0_40px_80px_-30px_hsl(0_0%_0%/0.8)]"
+          />
+          {/* Floating badge */}
+          <div
+            className="absolute -bottom-5 left-6 right-6 flex items-center justify-between gap-4 rounded-2xl border border-brand-gold/40 bg-[hsl(0_0%_5%/0.95)] px-5 py-4 backdrop-blur-md md:left-8 md:right-8"
+            style={{ boxShadow: "0 20px 50px -15px hsl(42 78% 50% / 0.35)" }}
+          >
+            <div>
+              <div className="font-display text-2xl font-extrabold text-brand-gold">+20 mil</div>
+              <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/60">
+                clientes atendidos
+              </div>
+            </div>
+            <div className="h-10 w-px bg-brand-gold/30" />
+            <div>
+              <div className="font-display text-2xl font-extrabold text-brand-gold">12+</div>
+              <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/60">
+                anos de mercado
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Card 2: Como funciona (steps) */}
-      <div className="relative overflow-hidden rounded-[28px] border border-white/[0.06] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-7 md:p-10">
-        <div
-          className="pointer-events-none absolute -left-32 -bottom-32 h-[420px] w-[420px] opacity-40"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.2), transparent 65%)",
-          }}
-          aria-hidden
-        />
-        <div className="relative grid grid-cols-1 gap-10 lg:grid-cols-[0.85fr_2.15fr] lg:items-center">
-          <div>
-            <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-brand-gold">
+      {/* === Bloco 2: Como funciona === */}
+      <div className="relative">
+        <div className="mx-auto max-w-2xl text-center">
+          <div className="inline-flex items-center gap-2.5">
+            <span className="h-px w-8 bg-brand-gold" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.32em] text-brand-gold">
               Simples do início ao fim
             </span>
-            <h2 className="mt-4 font-display text-3xl font-extrabold leading-[1.05] tracking-tight text-white md:text-[40px]">
-              Como funciona na prática
-            </h2>
-            <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-white/70">
-              Um processo 100% online,{" "}
-              <span className="font-semibold text-brand-gold">seguro e descomplicado</span>{" "}
-              feito pela Credifácil para você.
-            </p>
-            <Link
-              to="/perguntas-frequentes"
-              className="mt-7 inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-brand-gold/5 px-5 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-brand-gold transition-all hover:border-brand-gold hover:bg-brand-gold/15"
-            >
-              Tirar minhas dúvidas
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+            <span className="h-px w-8 bg-brand-gold" />
           </div>
+          <h2 className="mt-6 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-white md:text-[52px]">
+            Como funciona <span className="text-gold-gradient">na prática</span>
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-[16px] leading-relaxed text-white/65">
+            Um processo 100% online,{" "}
+            <span className="font-semibold text-brand-gold">seguro e descomplicado</span>,
+            feito pela Credifácil para você.
+          </p>
+        </div>
 
-          <div className="relative">
-            {/* Connector line */}
-            <div
-              className="pointer-events-none absolute left-0 right-0 top-7 hidden h-px md:block"
-              style={{
-                background:
-                  "linear-gradient(90deg, transparent, hsl(42 78% 55% / 0.4), hsl(42 78% 55% / 0.4), hsl(42 78% 55% / 0.4), transparent)",
-              }}
-              aria-hidden
-            />
-            <ol className="relative grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-5">
-              {steps.map((s) => {
-                const Icon = s.icon;
-                return (
-                  <li key={s.n} className="flex flex-col items-center text-center">
+        <div className="relative mt-16">
+          {/* Connector line */}
+          <div
+            className="pointer-events-none absolute left-[7%] right-[7%] top-10 hidden h-px md:block"
+            style={{
+              background:
+                "linear-gradient(90deg, transparent, hsl(42 78% 55% / 0.5) 10%, hsl(42 78% 55% / 0.5) 90%, transparent)",
+            }}
+            aria-hidden
+          />
+          <ol className="relative grid grid-cols-2 gap-x-5 gap-y-12 sm:grid-cols-3 md:grid-cols-5 md:gap-x-3">
+            {steps.map((s, i) => {
+              const Icon = s.icon;
+              return (
+                <li key={s.n} className="group flex flex-col items-center text-center">
+                  <div className="relative">
                     <span
-                      className="flex h-14 w-14 items-center justify-center rounded-full border border-brand-gold/40 bg-[hsl(0_0%_6%)] text-brand-gold shadow-[0_0_24px_-6px_hsl(42_78%_55%/0.5)]"
+                      className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full border border-brand-gold/40 bg-[hsl(0_0%_5%)] text-brand-gold transition-all duration-300 group-hover:scale-105 group-hover:border-brand-gold"
+                      style={{
+                        boxShadow:
+                          "0 0 30px -8px hsl(42 78% 55% / 0.5), inset 0 0 20px -10px hsl(42 78% 55% / 0.4)",
+                      }}
                       aria-hidden
                     >
-                      <Icon className="h-6 w-6" strokeWidth={1.8} />
+                      <Icon className="h-7 w-7" strokeWidth={1.6} />
                     </span>
-                    <div className="mt-3 font-display text-base font-bold text-brand-gold">
+                    <span
+                      className="absolute -right-1 -top-1 z-20 flex h-7 w-7 items-center justify-center rounded-full text-[11px] font-extrabold text-[hsl(0_0%_5%)]"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, hsl(42 90% 65%), hsl(42 78% 50%))",
+                        boxShadow: "0 4px 12px -2px hsl(42 78% 50% / 0.6)",
+                      }}
+                    >
                       {s.n}
-                    </div>
-                    <h3 className="mt-1 text-[13px] font-bold text-white">{s.title}</h3>
-                    <p className="mt-1.5 text-[11.5px] leading-relaxed text-white/55">
-                      {s.desc}
-                    </p>
-                  </li>
-                );
-              })}
-            </ol>
-          </div>
+                    </span>
+                  </div>
+                  <h3 className="mt-5 text-[14px] font-bold text-white">{s.title}</h3>
+                  <p className="mt-2 max-w-[180px] text-[12px] leading-relaxed text-white/55">
+                    {s.desc}
+                  </p>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+
+        {/* CTA */}
+        <div className="mt-16 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <Link
+            to="/consignado"
+            className="group inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.12em] text-[hsl(0_0%_5%)] shadow-[0_10px_30px_-8px_hsl(42_78%_55%/0.6)] transition-all hover:shadow-[0_14px_36px_-8px_hsl(42_78%_55%/0.8)]"
+            style={{
+              background:
+                "linear-gradient(135deg, hsl(42 90% 65%) 0%, hsl(42 78% 50%) 50%, hsl(38 75% 45%) 100%)",
+            }}
+          >
+            Simular meu crédito agora
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+          <Link
+            to="/perguntas-frequentes"
+            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.12em] text-white/85 transition-all hover:border-brand-gold/50 hover:bg-white/[0.06] hover:text-brand-gold"
+          >
+            Tirar dúvidas
+          </Link>
         </div>
       </div>
     </div>
