@@ -458,6 +458,7 @@ const SolutionPage = ({
           </div>
         </div>
       </section>
+      <ContactFooter />
     </div>
   );
 };
