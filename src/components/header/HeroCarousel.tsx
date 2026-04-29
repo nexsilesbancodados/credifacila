@@ -80,7 +80,7 @@ const HeroCarousel = () => {
             srcSet={`${s.srcSm} 640w, ${s.srcMd} 1200w, ${s.src} 1920w`}
             sizes="100vw"
             alt={s.alt}
-            className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-[1200ms] ease-in-out ${
+            className={`absolute inset-0 h-full w-full object-contain object-center transition-opacity duration-[1200ms] ease-in-out ${
               active === i ? "opacity-100" : "opacity-0"
             }`}
             width={1920}
