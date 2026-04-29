@@ -635,18 +635,7 @@ const Securitizadora = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-foreground/10 bg-white/40 py-8">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 md:flex-row md:px-8">
-          <p className="text-xs text-foreground/70">
-            © {new Date().getFullYear()} Credifácil — Securitizadora. Todos os direitos reservados.
-          </p>
-          <div className="flex items-center gap-5 text-xs font-medium text-foreground/75">
-            <Link to="/" className="hover:text-brand-gold">Início</Link>
-            <Link to="/consignado" className="hover:text-brand-gold">Consignado</Link>
-          </div>
-        </div>
-      </footer>
+      <ContactFooter />
     </div>
   );
 };

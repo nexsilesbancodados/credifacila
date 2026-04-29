@@ -340,6 +340,7 @@ const PerguntasFrequentes = () => {
           </div>
         </div>
       </section>
+      <ContactFooter />
     </div>
   );
 };
