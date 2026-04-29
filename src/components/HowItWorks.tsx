@@ -11,11 +11,11 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { whatsappLink } from "@/config/site";
-import img1 from "@/assets/journey-1-cadastro.webp";
-import img2 from "@/assets/journey-2-analise.webp";
-import img3 from "@/assets/journey-3-aprovacao.webp";
-import img4 from "@/assets/journey-4-liberacao.webp";
-import img5 from "@/assets/journey-5-realizacao.webp";
+import img1 from "@/assets/hero-atendimento.webp";
+import img2 from "@/assets/hero-empresario-gold.webp";
+import img3 from "@/assets/hero-solucoes.webp";
+import img4 from "@/assets/hero-pessoal.webp";
+import img5 from "@/assets/hero-realizacao-familia.webp";
 
 type Panel = {
   icon: LucideIcon;
