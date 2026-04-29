@@ -1,29 +1,29 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import heroImage from "@/assets/hero-credifacil.webp";
-import heroImageMd from "@/assets/hero-credifacil-md.webp";
-import heroImageSm from "@/assets/hero-credifacil-sm.webp";
-import heroSlide2 from "@/assets/hero-slide-2.webp";
-import heroSlide2Md from "@/assets/hero-slide-2-md.webp";
-import heroSlide2Sm from "@/assets/hero-slide-2-sm.webp";
-import heroSlide3 from "@/assets/hero-slide-3.webp";
-import heroSlide3Md from "@/assets/hero-slide-3-md.webp";
-import heroSlide3Sm from "@/assets/hero-slide-3-sm.webp";
-import heroSlide4 from "@/assets/hero-slide-4.webp";
-import heroSlide4Md from "@/assets/hero-slide-4-md.webp";
-import heroSlide4Sm from "@/assets/hero-slide-4-sm.webp";
-import heroSlide5 from "@/assets/hero-slide-5.webp";
-import heroSlide5Md from "@/assets/hero-slide-5-md.webp";
-import heroSlide5Sm from "@/assets/hero-slide-5-sm.webp";
+import heroImage from "@/assets/hero-emprestimo-1.webp";
+import heroImageMd from "@/assets/hero-emprestimo-1-md.webp";
+import heroImageSm from "@/assets/hero-emprestimo-1-sm.webp";
+import heroSlide2 from "@/assets/hero-pessoal.webp";
+import heroSlide2Md from "@/assets/hero-pessoal-md.webp";
+import heroSlide2Sm from "@/assets/hero-pessoal-sm.webp";
+import heroSlide3 from "@/assets/hero-parceiro.webp";
+import heroSlide3Md from "@/assets/hero-parceiro-md.webp";
+import heroSlide3Sm from "@/assets/hero-parceiro-sm.webp";
+import heroSlide4 from "@/assets/hero-consignado.webp";
+import heroSlide4Md from "@/assets/hero-consignado-md.webp";
+import heroSlide4Sm from "@/assets/hero-consignado-sm.webp";
+import heroSlide5 from "@/assets/hero-emprestimo-2.webp";
+import heroSlide5Md from "@/assets/hero-emprestimo-2-md.webp";
+import heroSlide5Sm from "@/assets/hero-emprestimo-2-sm.webp";
 
 type Slide = { src: string; srcMd: string; srcSm: string; alt: string };
 
 const slides: Slide[] = [
-  { src: heroImage, srcMd: heroImageMd, srcSm: heroImageSm, alt: "O crédito que você precisa, com a confiança que você merece" },
-  { src: heroSlide2, srcMd: heroSlide2Md, srcSm: heroSlide2Sm, alt: "Tudo pelo celular, sem sair de casa" },
-  { src: heroSlide3, srcMd: heroSlide3Md, srcSm: heroSlide3Sm, alt: "Realize os sonhos da sua família com tranquilidade" },
-  { src: heroSlide4, srcMd: heroSlide4Md, srcSm: heroSlide4Sm, alt: "O carro novo mais perto do que você imagina" },
-  { src: heroSlide5, srcMd: heroSlide5Md, srcSm: heroSlide5Sm, alt: "As menores taxas do mercado no seu consignado" },
+  { src: heroImage, srcMd: heroImageMd, srcSm: heroImageSm, alt: "Empréstimo rápido, fácil e seguro com a Credifácil" },
+  { src: heroSlide2, srcMd: heroSlide2Md, srcSm: heroSlide2Sm, alt: "Empréstimos do seu jeito — crédito pessoal aprovado em minutos" },
+  { src: heroSlide3, srcMd: heroSlide3Md, srcSm: heroSlide3Sm, alt: "Mais que crédito, um parceiro para os seus melhores planos" },
+  { src: heroSlide4, srcMd: heroSlide4Md, srcSm: heroSlide4Sm, alt: "Empréstimo consignado com condições especiais para renda fixa" },
+  { src: heroSlide5, srcMd: heroSlide5Md, srcSm: heroSlide5Sm, alt: "O crédito que você precisa, com as melhores condições" },
 ];
 
 const HeroCarousel = () => {
