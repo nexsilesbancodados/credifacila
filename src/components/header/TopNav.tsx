@@ -28,26 +28,30 @@ const navItems: {
 ];
 
 const TopNav = () => (
-  <div className="relative z-20 w-full bg-[hsl(215_48%_16%)]">
-    {/* Top + bottom gold curves */}
-    <svg
-      className="pointer-events-none absolute -top-px left-0 h-2 w-full"
-      viewBox="0 0 1440 8"
-      preserveAspectRatio="none"
+  <div className="relative z-20 w-full bg-[hsl(0_0%_4%)]">
+    {/* Subtle gold ambient glow */}
+    <div
+      className="pointer-events-none absolute inset-x-0 top-0 h-px"
+      style={{
+        background:
+          "linear-gradient(90deg, transparent 0%, hsl(42 78% 55% / 0.4) 50%, transparent 100%)",
+      }}
       aria-hidden
-    >
-      <path d="M0,0 L1440,0 L1440,2 Q720,10 0,2 Z" fill="hsl(42 78% 50%" />
-    </svg>
-    <svg
-      className="pointer-events-none absolute -bottom-px left-0 h-4 w-full"
-      viewBox="0 0 1440 16"
-      preserveAspectRatio="none"
+    />
+    <div
+      className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-brand-gold/20"
       aria-hidden
-    >
-      <path d="M0,16 L1440,16 L1440,8 Q720,-6 0,8 Z" fill="hsl(42 78% 50%" />
-    </svg>
+    />
+    <div
+      className="pointer-events-none absolute left-1/2 top-0 h-24 w-[60%] -translate-x-1/2 opacity-40"
+      style={{
+        background:
+          "radial-gradient(ellipse at top, hsl(42 78% 55% / 0.18), transparent 70%)",
+      }}
+      aria-hidden
+    />
 
-    <nav className="relative mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-5 py-3.5 md:px-8 md:py-4 lg:gap-10 lg:px-10">
+    <nav className="relative mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-5 py-4 md:px-8 lg:gap-10 lg:px-10 lg:py-5">
       <Link
         to="/"
         className="flex shrink-0 items-center transition-opacity hover:opacity-90"
@@ -65,32 +69,32 @@ const TopNav = () => (
       </Link>
 
       {/* Desktop menu */}
-      <ul className="hidden flex-1 items-center justify-center gap-7 xl:gap-9 lg:flex">
+      <ul className="hidden flex-1 items-center justify-center gap-1 lg:flex">
         {navItems.map((item) => (
           <li key={item.label} className={`whitespace-nowrap ${item.submenu ? "group relative" : ""}`}>
             {item.submenu ? (
               <>
                 <Link
                   to={item.href}
-                  className="relative inline-flex items-center gap-1 text-[15px] font-medium text-white/85 transition-colors hover:text-brand-gold"
+                  className="relative inline-flex items-center gap-1 rounded-full px-3.5 py-2 text-[13px] font-medium uppercase tracking-[0.08em] text-white/70 transition-colors hover:text-brand-gold xl:text-[13.5px]"
                 >
                   {item.label}
                   <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
                 </Link>
-                <div className="invisible absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2 translate-y-1 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                  <div className="rounded-2xl border border-brand-gold/30 bg-[hsl(215_42%_20%/0.97)] p-2 shadow-2xl backdrop-blur-xl">
+                <div className="invisible absolute left-1/2 top-full z-50 mt-2 w-72 -translate-x-1/2 translate-y-1 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  <div className="rounded-2xl border border-brand-gold/30 bg-[hsl(0_0%_6%/0.98)] p-2 shadow-[0_20px_60px_-15px_hsl(42_78%_50%/0.25)] backdrop-blur-xl">
                     <Link
                       to={item.href}
-                      className="block rounded-xl px-4 py-2.5 text-[13px] font-semibold uppercase tracking-wider text-brand-gold transition-colors hover:bg-brand-gold/10"
+                      className="block rounded-xl px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-gold transition-colors hover:bg-brand-gold/10"
                     >
                       Visão geral
                     </Link>
-                    <div className="my-1 h-px bg-card/10" />
+                    <div className="my-1 h-px bg-brand-gold/15" />
                     {item.submenu.map((sub) => (
                       <Link
                         key={sub.href}
                         to={sub.href}
-                        className="block rounded-xl px-4 py-2.5 text-[14px] font-medium text-white/85 transition-all hover:bg-card/5 hover:pl-5 hover:text-brand-gold"
+                        className="block rounded-xl px-4 py-2.5 text-[14px] font-medium text-white/80 transition-all hover:bg-brand-gold/5 hover:pl-5 hover:text-brand-gold"
                       >
                         {sub.label}
                       </Link>
@@ -101,20 +105,27 @@ const TopNav = () => (
             ) : item.href.startsWith("/") ? (
               <Link
                 to={item.href}
-                className="relative text-[15px] font-medium text-white/85 transition-colors hover:text-brand-gold"
+                className="relative rounded-full px-3.5 py-2 text-[13px] font-medium uppercase tracking-[0.08em] text-white/70 transition-colors hover:text-brand-gold xl:text-[13.5px]"
               >
                 {item.label}
               </Link>
             ) : (
               <a
                 href={item.href}
-                className={`relative text-[15px] font-medium transition-colors hover:text-brand-gold ${
-                  item.active ? "text-brand-gold" : "text-white/85"
+                className={`relative rounded-full px-3.5 py-2 text-[13px] font-medium uppercase tracking-[0.08em] transition-colors hover:text-brand-gold xl:text-[13.5px] ${
+                  item.active ? "text-brand-gold" : "text-white/70"
                 }`}
               >
                 {item.label}
                 {item.active && (
-                  <span className="absolute -bottom-2 left-1/2 h-[2px] w-8 -translate-x-1/2 rounded-full bg-brand-gold" />
+                  <span
+                    className="absolute -bottom-1 left-1/2 h-[2px] w-6 -translate-x-1/2 rounded-full"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, transparent, hsl(42 78% 55%), transparent)",
+                      boxShadow: "0 0 8px hsl(42 78% 55% / 0.6)",
+                    }}
+                  />
                 )}
               </a>
             )}
@@ -130,10 +141,14 @@ const TopNav = () => (
         href={whatsappLink("Olá! Quero saber mais sobre os créditos da Credifácil.")}
         target="_blank"
         rel="noopener noreferrer"
-        className="group hidden shrink-0 items-center gap-2.5 whitespace-nowrap rounded-full border border-brand-gold/80 py-2 pl-2 pr-5 text-sm font-semibold text-white transition-all hover:border-brand-gold hover:bg-brand-gold/15 hover:text-brand-gold lg:inline-flex"
+        className="group relative hidden shrink-0 items-center gap-2.5 overflow-hidden whitespace-nowrap rounded-full px-5 py-2.5 text-[13px] font-bold uppercase tracking-[0.1em] text-[hsl(0_0%_6%)] shadow-[0_8px_24px_-8px_hsl(42_78%_55%/0.6)] transition-all hover:shadow-[0_12px_32px_-8px_hsl(42_78%_55%/0.8)] lg:inline-flex"
+        style={{
+          background:
+            "linear-gradient(135deg, hsl(42 90% 65%) 0%, hsl(42 78% 50%) 50%, hsl(38 75% 45%) 100%)",
+        }}
       >
-        <span className="flex h-7 w-7 items-center justify-center rounded-full border border-brand-gold/80 transition-colors group-hover:bg-brand-gold/20">
-          <MessageCircle className="h-4 w-4 text-brand-gold" />
+        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[hsl(0_0%_6%/0.15)]">
+          <MessageCircle className="h-3.5 w-3.5" strokeWidth={2.4} />
         </span>
         Fale no WhatsApp
       </a>
