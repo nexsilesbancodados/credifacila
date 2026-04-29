@@ -45,8 +45,8 @@ const AdvantagesSection = () => {
             Por que a Credifácil
           </span>
           <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight text-foreground md:text-4xl lg:text-[46px]">
-            Tudo que você precisa,{" "}
-            <span className="text-gold-gradient">em um só lugar</span>
+            Na <span className="text-gold-gradient">Credifácil</span>, tudo
+            que você precisa em um só lugar
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
             Mais de <span className="font-bold text-foreground">50 mil pessoas</span> já realizaram seus planos com a confiança e a agilidade da Credifácil.

@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import heroSlide1 from "@/assets/banner-hero-principal.webp";
+import heroSlide1Md from "@/assets/banner-hero-principal-md.webp";
+import heroSlide1Sm from "@/assets/banner-hero-principal-sm.webp";
 import heroSlide2 from "@/assets/hero-pessoal.webp";
 import heroSlide2Md from "@/assets/hero-pessoal-md.webp";
 import heroSlide2Sm from "@/assets/hero-pessoal-sm.webp";
@@ -12,6 +15,7 @@ import heroSlide4Sm from "@/assets/hero-consignado-sm.webp";
 type Slide = { src: string; srcMd: string; srcSm: string; alt: string };
 
 const slides: Slide[] = [
+  { src: heroSlide1, srcMd: heroSlide1Md, srcSm: heroSlide1Sm, alt: "Empréstimo rápido, fácil e seguro com a Credifácil" },
   { src: heroSlide2, srcMd: heroSlide2Md, srcSm: heroSlide2Sm, alt: "Empréstimos do seu jeito — crédito pessoal aprovado em minutos" },
   { src: heroSlide3, srcMd: heroSlide3Md, srcSm: heroSlide3Sm, alt: "Mais que crédito, um parceiro para os seus melhores planos" },
   { src: heroSlide4, srcMd: heroSlide4Md, srcSm: heroSlide4Sm, alt: "Empréstimo consignado com condições especiais para renda fixa" },

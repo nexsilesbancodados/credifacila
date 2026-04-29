@@ -22,12 +22,12 @@ const PartnerBanks = () => (
           Nossos parceiros
         </span>
         <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight text-foreground md:text-4xl lg:text-[46px]">
-          Trabalhamos com{" "}
-          <span className="text-gold-gradient">os melhores bancos do Brasil</span>
+          A <span className="text-gold-gradient">Credifácil</span> trabalha com
+          os melhores bancos do Brasil
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
-          Convênios diretos com as maiores instituições financeiras do país para garantir as melhores
-          taxas, mais segurança e aprovação ágil para você.
+          A Credifácil mantém convênios diretos com as maiores instituições financeiras do país para
+          entregar as melhores taxas, mais segurança e aprovação ágil para você.
         </p>
       </div>
 

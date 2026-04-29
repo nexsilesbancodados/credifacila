@@ -74,9 +74,9 @@ const LoansSection = () => {
             </span>
 
             <h2 className="mt-5 font-display text-[40px] font-bold leading-[1.02] tracking-tight text-foreground md:text-[56px]">
-              Solicite, aprove e
+              Com a <span className="text-gold-gradient">Credifácil</span>,
               <br />
-              receba{" "}
+              você recebe{" "}
               <span className="relative inline-block">
                 <span className="relative z-10 text-gold-gradient">no mesmo dia</span>
                 <svg
@@ -99,7 +99,7 @@ const LoansSection = () => {
             </h2>
 
             <p className="mt-6 max-w-md text-base leading-relaxed text-foreground/70 md:text-lg">
-              Sem fila, sem papelada e sem surpresas. Descubra em segundos a parcela que cabe no seu bolso.
+              Sem fila, sem papelada e sem surpresas. A Credifácil descobre em segundos a parcela ideal para o seu bolso.
             </p>
 
             {/* Bullet checklist */}

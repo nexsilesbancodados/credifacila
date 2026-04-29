@@ -44,16 +44,16 @@ const FaqSection = () => {
             Tire suas dúvidas
           </span>
           <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-foreground md:text-4xl lg:text-[46px]">
-            Perguntas{" "}
+            Perguntas frequentes sobre a{" "}
             <span
               className="bg-clip-text text-transparent"
               style={{ backgroundImage: "var(--gradient-gold)" }}
             >
-              frequentes
+              Credifácil
             </span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
-            Reunimos as principais dúvidas para você decidir com clareza e tranquilidade.
+            Reunimos as principais dúvidas dos clientes Credifácil para você decidir com clareza e tranquilidade.
           </p>
         </div>
 
