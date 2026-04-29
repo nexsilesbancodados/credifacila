@@ -314,61 +314,6 @@ const Consignado = () => {
           aria-hidden
         />
         <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden />
-        <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 px-5 md:px-8 lg:grid-cols-2 lg:items-center">
-          <div data-anim="fade-right" className="max-w-xl">
-            <div className="pill-eyebrow-dark">
-              <Sparkles className="h-3.5 w-3.5" />
-              Empréstimo Consignado
-            </div>
-            <h1
-              className="mt-6 font-display text-[40px] font-extrabold leading-[1.02] tracking-tight text-white md:text-[56px] lg:text-[60px]"
-              style={{ textShadow: "0 2px 24px hsl(0 0% 8% / 0.45" }}
-            >
-              Crédito consignado
-              <br />
-              <span className="text-gold-gradient">
-                com as menores taxas do Brasil.
-              </span>
-            </h1>
-            <p className="mt-6 max-w-lg text-base leading-relaxed text-white/85 md:text-[17px]">
-              Para aposentados, pensionistas do INSS, servidores públicos e profissionais conveniados —
-              parcelas a partir de{" "}
-              <span className="font-semibold text-white">1,49% a.m.</span> em até{" "}
-              <span className="font-semibold text-white">96 meses</span>.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a
-                href={whatsappLink("Olá! Quero contratar o crédito consignado.")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-gold group"
-              >
-                <Wallet className="h-5 w-5" strokeWidth={2.4} />
-                Quero meu consignado
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </a>
-              <a href="#beneficios" className="btn-ghost-light">
-                Ver vantagens
-              </a>
-            </div>
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-white/10 pt-5">
-              <div className="flex items-center gap-2 text-xs font-medium text-white/75">
-                <CheckCircle2 className="h-4 w-4 text-brand-gold" />
-                Sem consulta ao SPC/Serasa
-              </div>
-              <div className="hidden h-3 w-px bg-card/15 sm:block" />
-              <div className="flex items-center gap-2 text-xs font-medium text-white/75">
-                <Clock className="h-4 w-4 text-brand-gold" />
-                Dinheiro <span className="font-bold text-white">no mesmo dia</span>
-              </div>
-              <div className="hidden h-3 w-px bg-card/15 sm:block" />
-              <div className="flex items-center gap-2 text-xs font-medium text-white/75">
-                <ShieldCheck className="h-4 w-4 text-brand-gold" />
-                Contrato 100% digital
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* Benefits */}

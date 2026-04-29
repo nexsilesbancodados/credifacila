@@ -70,6 +70,7 @@ const BoletoGarantido = () => (
       ],
       imagePosition: "right",
     }}
+    hideHeroText
   />
 );
 
