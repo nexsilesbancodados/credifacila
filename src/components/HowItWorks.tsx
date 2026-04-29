@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import {
   FileSignature,
   Search,
@@ -7,221 +8,364 @@ import {
   ShieldCheck,
   MessageCircle,
   ArrowRight,
+  type LucideIcon,
 } from "lucide-react";
 import { whatsappLink } from "@/config/site";
-import portrait from "@/assets/howitworks-portrait.webp";
+import img1 from "@/assets/journey-1-cadastro.webp";
+import img2 from "@/assets/journey-2-analise.webp";
+import img3 from "@/assets/journey-3-aprovacao.webp";
+import img4 from "@/assets/journey-4-liberacao.webp";
+import img5 from "@/assets/journey-5-realizacao.webp";
 
-const steps = [
+type Panel = {
+  icon: LucideIcon;
+  eyebrow: string;
+  title: string;
+  highlight: string;
+  desc: string;
+  image: string;
+};
+
+const panels: Panel[] = [
   {
     icon: FileSignature,
-    title: "Cadastro",
-    desc: "Preencha seus dados em poucos minutos, 100% online.",
+    eyebrow: "Etapa 01 · Cadastro",
+    title: "O clique",
+    highlight: "inicial.",
+    desc: "Tudo começa com uma intenção clara. Preenchimento simples, 100% online — em poucos minutos sua jornada está em movimento.",
+    image: img1,
   },
   {
     icon: Search,
-    title: "Análise",
-    desc: "Avaliamos seu perfil com tecnologia e cuidado humano.",
+    eyebrow: "Etapa 02 · Análise",
+    title: "Caminho",
+    highlight: "claro.",
+    desc: "Tecnologia e cuidado humano avaliam seu perfil. Eliminamos as sombras para que cada passo seja dado com total segurança e transparência.",
+    image: img2,
   },
   {
     icon: CheckCircle2,
-    title: "Aprovação",
-    desc: "Resposta ágil e transparente sobre as condições.",
+    eyebrow: "Etapa 03 · Aprovação",
+    title: "Zero",
+    highlight: "burocracia.",
+    desc: "Resposta ágil e transparente sobre as condições. Removemos as barreiras desnecessárias para acelerar a sua chegada ao objetivo.",
+    image: img3,
   },
   {
     icon: Banknote,
-    title: "Liberação",
-    desc: "Dinheiro na sua conta em até 24 horas úteis.",
+    eyebrow: "Etapa 04 · Liberação",
+    title: "Crédito",
+    highlight: "no ar.",
+    desc: "Dinheiro na sua conta em até 24 horas úteis. A energia da aprovação se converte em liquidez real para o seu projeto.",
+    image: img4,
   },
   {
     icon: Smile,
-    title: "Realização",
-    desc: "Você conquista seus objetivos com tranquilidade.",
+    eyebrow: "Etapa 05 · Realização",
+    title: "A",
+    highlight: "realização.",
+    desc: "O destino final é apenas o começo. Planos transformados em conquistas tangíveis, rápidas e impactantes para quem você ama.",
+    image: img5,
   },
 ];
 
-const HowItWorks = () => (
-  <section
-    id="como-funciona"
-    aria-label="Como funciona"
-    className="relative w-full px-5 py-16 md:px-8 md:py-24 lg:px-10"
-  >
-    <div className="mx-auto max-w-7xl">
+const HowItWorks = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [progress, setProgress] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [reduceMotion, setReduceMotion] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduceMotion(mq.matches);
+    const onChange = () => setReduceMotion(mq.matches);
+    mq.addEventListener?.("change", onChange);
+    return () => mq.removeEventListener?.("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const track = trackRef.current;
+    if (!section || !track) return;
+
+    let ticking = false;
+    const compute = () => {
+      ticking = false;
+      const rect = section.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const total = section.offsetHeight - vh;
+      const scrolled = Math.min(Math.max(-rect.top, 0), total);
+      const p = total > 0 ? scrolled / total : 0;
+      setProgress(p);
+      const idx = Math.min(panels.length - 1, Math.floor(p * panels.length + 0.0001));
+      setActiveIndex(idx);
+      // Translate horizontal track based on scroll
+      const maxX = track.scrollWidth - window.innerWidth;
+      track.style.transform = `translate3d(${-(p * maxX)}px, 0, 0)`;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(compute);
+      }
+    };
+
+    compute();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", compute);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", compute);
+    };
+  }, []);
+
+  // Mobile fallback: vertical stacked panels (no sticky horizontal)
+  return (
+    <section
+      id="como-funciona"
+      aria-label="Como funciona — jornada visual"
+      className="relative w-full bg-[hsl(215_50%_8%)]"
+    >
+      {/* ====== DESKTOP / TABLET: sticky horizontal scroll ====== */}
       <div
-        className="relative overflow-hidden rounded-[36px] border border-brand-gold/15 bg-[hsl(215_50%_14%)] shadow-[0_30px_80px_-30px_hsl(30_30%_4%/0.6)]"
-        data-anim="fade-up"
+        ref={sectionRef}
+        className="relative hidden lg:block"
+        style={{ height: `${panels.length * 100}vh` }}
       >
-        {/* subtle noise + ambient glow */}
-        <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden />
-        <div
-          className="pointer-events-none absolute -left-32 top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full opacity-40"
-          style={{
-            background:
-              "radial-gradient(circle, hsl(199 90% 55% / 0.18), transparent 65%)",
-          }}
-          aria-hidden
-        />
-
-        {/* HERO ROW */}
-        <div className="relative grid grid-cols-1 gap-0 lg:grid-cols-[1.05fr_1fr]">
-          {/* Left text */}
-          <div className="relative z-10 px-7 pb-12 pt-12 md:px-12 md:pt-16 lg:pb-16 lg:pl-14 lg:pr-8 lg:pt-20">
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-brand-gold/[0.08] px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-gold backdrop-blur-md">
+        <div className="sticky top-0 h-screen w-full overflow-hidden">
+          {/* Section eyebrow + nav */}
+          <div className="pointer-events-none absolute left-0 right-0 top-0 z-30 flex items-center justify-between px-10 py-8">
+            <div className="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-black/30 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-gold backdrop-blur-md">
               <ShieldCheck className="h-3 w-3" />
-              Processo simples e seguro
-            </span>
-
-            <h2
-              className="mt-6 font-display text-[36px] font-extrabold leading-[1.05] tracking-tight text-white md:text-[52px] lg:text-[58px]"
-              style={{ textShadow: "0 2px 24px hsl(215 52% 12% / 0.45)" }}
-            >
-              Do primeiro clique
-              <br />
-              <span
-                className="bg-clip-text text-transparent"
-                style={{ backgroundImage: "var(--gradient-gold)" }}
-              >
-                até a realização.
-              </span>
-            </h2>
-
-            <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/82 md:text-base">
-              Um caminho{" "}
-              <span className="font-semibold text-brand-gold">
-                claro, rápido e sem burocracia
-              </span>{" "}
-              para transformar planos em conquistas reais.
-            </p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a
-                href={whatsappLink("Olá! Quero começar minha solicitação de crédito.")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2.5 rounded-2xl px-6 py-3.5 text-sm font-bold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.03] hover:brightness-110"
-                style={{ background: "var(--gradient-gold)" }}
-              >
-                <MessageCircle className="h-4 w-4" />
-                Começar agora
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-              <a
-                href="#solucoes"
-                className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/[0.05] px-5 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-brand-gold/60 hover:bg-white/10 hover:text-brand-gold"
-              >
-                Ver linhas de crédito
-              </a>
+              Jornada Credifácil
+            </div>
+            <div className="pointer-events-auto flex items-center gap-6 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/60">
+              <span>Início</span>
+              <div className="h-px w-16 bg-white/20" />
+              <span>Realização</span>
             </div>
           </div>
 
-          {/* Right portrait */}
-          <div className="relative h-[320px] overflow-hidden md:h-[440px] lg:h-auto lg:min-h-[520px]">
-            <img
-              src={portrait}
-              alt="Cliente Credifácil em ambiente sofisticado, refletindo confiança e tranquilidade"
-              loading="lazy"
-              decoding="async"
-              width={1536}
-              height={1280}
-              className="absolute inset-0 h-full w-full object-cover"
-              style={{ objectPosition: "60% center" }}
-            />
-            {/* Cinematic blend into the dark left side */}
-            <div
-              className="pointer-events-none absolute inset-0 lg:hidden"
-              style={{
-                background:
-                  "linear-gradient(180deg, transparent 60%, hsl(215 50% 14% / 0.4) 100%)",
-              }}
-              aria-hidden
-            />
-          </div>
-        </div>
-
-        {/* Decorative gold curve divider */}
-        <div className="relative px-6 md:px-12">
-          <svg
-            className="h-3 w-full opacity-60 md:h-4"
-            viewBox="0 0 1200 16"
-            preserveAspectRatio="none"
-            aria-hidden
+          {/* Horizontal track */}
+          <div
+            ref={trackRef}
+            className="flex h-full"
+            style={{
+              width: `${panels.length * 100}vw`,
+              willChange: "transform",
+              transition: reduceMotion ? "transform 0.3s ease" : undefined,
+            }}
           >
-            <path
-              d="M0,8 Q300,0 600,8 T1200,8"
-              stroke="hsl(199 90% 55%)"
-              strokeWidth="1"
-              fill="none"
-              opacity="0.7"
-            />
-          </svg>
-        </div>
-
-        {/* STEPS ROW */}
-        <div className="relative px-6 pb-14 pt-6 md:px-12 md:pb-20 lg:px-14">
-          <div className="text-center" data-anim="fade-up">
-            <h3 className="font-display text-[26px] font-bold leading-tight tracking-tight text-white md:text-[34px]">
-              Cinco etapas para você{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{ backgroundImage: "var(--gradient-gold)" }}
-              >
-                conquistar mais.
-              </span>
-            </h3>
-            <div
-              className="mx-auto mt-4 h-[2px] w-16 rounded-full"
-              style={{ background: "var(--gradient-gold)" }}
-              aria-hidden
-            />
-          </div>
-
-          <ol
-            className="relative mt-12 grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-6"
-            data-anim-stagger
-          >
-            {/* connector line */}
-            <div
-              className="pointer-events-none absolute left-[10%] right-[10%] top-[34px] hidden h-px lg:block"
-              style={{
-                background:
-                  "linear-gradient(90deg, transparent, hsl(199 90% 55% / 0.4) 15%, hsl(199 90% 55% / 0.4) 85%, transparent)",
-              }}
-              aria-hidden
-            />
-
-            {steps.map((step, i) => (
-              <li
-                key={step.title}
-                className="group relative flex flex-col items-center text-center"
-              >
-                <div className="relative">
-                  <div
-                    className="absolute inset-0 -m-2 rounded-2xl opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100"
-                    style={{ background: "hsl(199 90% 55% / 0.35)" }}
-                    aria-hidden
-                  />
-                  <div
-                    className="relative flex h-[68px] w-[68px] items-center justify-center rounded-2xl border border-brand-gold/40 bg-brand-gold/[0.08] text-brand-gold transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brand-gold group-hover:bg-brand-gold/[0.14]"
-                  >
-                    <step.icon className="h-7 w-7" strokeWidth={1.8} />
-                  </div>
-                  <span className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full border border-brand-gold/40 bg-[hsl(215_50%_14%)] font-display text-[10px] font-extrabold text-brand-gold">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
-
-                <h4 className="mt-5 font-display text-[15px] font-bold tracking-tight text-white md:text-base">
-                  {step.title}
-                </h4>
-                <p className="mx-auto mt-2 max-w-[180px] text-[12px] leading-relaxed text-white/78 md:text-[13px]">
-                  {step.desc}
-                </p>
-              </li>
+            {panels.map((p, i) => (
+              <PanelCinematic key={p.eyebrow} panel={p} index={i} active={activeIndex === i} />
             ))}
-          </ol>
+          </div>
+
+          {/* Progress bar */}
+          <div className="pointer-events-none absolute bottom-10 left-1/2 z-30 w-[320px] -translate-x-1/2">
+            <div className="mb-3 flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.22em] text-white/55">
+              <span>{String(activeIndex + 1).padStart(2, "0")} / {String(panels.length).padStart(2, "0")}</span>
+              <span>{panels[activeIndex].eyebrow.split("·")[1]?.trim()}</span>
+            </div>
+            <div className="h-[2px] w-full overflow-hidden rounded-full bg-white/10">
+              <div
+                className="h-full rounded-full"
+                style={{
+                  width: `${Math.max(2, progress * 100)}%`,
+                  background: "var(--gradient-gold)",
+                  boxShadow: "0 0 16px hsl(var(--brand-gold) / 0.55)",
+                  transition: "width 120ms linear",
+                }}
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+
+      {/* ====== MOBILE: stacked panels ====== */}
+      <div className="lg:hidden">
+        <div className="px-5 pb-4 pt-14 text-center">
+          <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-brand-gold/[0.08] px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-gold">
+            <ShieldCheck className="h-3 w-3" />
+            Jornada Credifácil
+          </span>
+          <h2 className="mt-5 font-display text-[34px] font-extrabold leading-[1.05] tracking-tight text-white">
+            Do primeiro clique
+            <br />
+            <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-gold)" }}>
+              até a realização.
+            </span>
+          </h2>
+        </div>
+        <div className="flex flex-col">
+          {panels.map((p) => (
+            <PanelCinematic key={p.eyebrow} panel={p} mobile />
+          ))}
+        </div>
+      </div>
+
+      {/* Final CTA strip */}
+      <div className="relative overflow-hidden border-t border-white/5 bg-[hsl(215_50%_10%)] px-5 py-16 md:px-10 md:py-24">
+        <div
+          className="pointer-events-none absolute -left-32 top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full opacity-40"
+          style={{ background: "radial-gradient(circle, hsl(199 90% 55% / 0.18), transparent 65%)" }}
+          aria-hidden
+        />
+        <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-6 text-center">
+          <h3 className="font-display text-[28px] font-extrabold leading-[1.1] tracking-tight text-white md:text-[44px]">
+            Pronto para iniciar a{" "}
+            <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-gold)" }}>
+              sua jornada?
+            </span>
+          </h3>
+          <p className="max-w-xl text-[15px] leading-relaxed text-white/75 md:text-base">
+            Atendimento humano, processo 100% digital e sem burocracia. Em 24h úteis seu plano vira realidade.
+          </p>
+          <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href={whatsappLink("Olá! Quero começar minha solicitação de crédito.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2.5 rounded-2xl px-7 py-4 text-sm font-bold text-brand-gold-foreground shadow-[var(--shadow-gold)] transition-all hover:scale-[1.03] hover:brightness-110"
+              style={{ background: "var(--gradient-gold)" }}
+            >
+              <MessageCircle className="h-4 w-4" />
+              Iniciar minha jornada
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
+            <a
+              href="#solucoes"
+              className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/[0.05] px-6 py-4 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-brand-gold/60 hover:bg-white/10 hover:text-brand-gold"
+            >
+              Ver linhas de crédito
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const PanelCinematic = ({
+  panel,
+  index = 0,
+  active = false,
+  mobile = false,
+}: {
+  panel: Panel;
+  index?: number;
+  active?: boolean;
+  mobile?: boolean;
+}) => {
+  const Icon = panel.icon;
+  const num = String(index + 1).padStart(2, "0");
+  return (
+    <article
+      className={`relative flex flex-shrink-0 items-center justify-center overflow-hidden ${
+        mobile ? "h-[88vh] w-full" : "h-screen w-screen"
+      }`}
+    >
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src={panel.image}
+          alt={panel.title + " " + panel.highlight}
+          loading={mobile || index > 0 ? "lazy" : "eager"}
+          decoding="async"
+          width={1600}
+          height={1000}
+          className={`h-full w-full object-cover transition-transform duration-[1200ms] ease-out ${
+            active || mobile ? "scale-100" : "scale-110"
+          }`}
+        />
+      </div>
+
+      {/* Cinematic dark overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, hsl(215 50% 8% / 0.55) 0%, hsl(215 50% 8% / 0.4) 40%, hsl(215 50% 6% / 0.85) 100%)",
+        }}
+        aria-hidden
+      />
+      {/* Side gradient for text legibility */}
+      <div
+        className="absolute inset-0 hidden lg:block"
+        style={{
+          background:
+            "linear-gradient(90deg, hsl(215 50% 6% / 0.85) 0%, hsl(215 50% 6% / 0.55) 35%, transparent 60%)",
+        }}
+        aria-hidden
+      />
+      {/* Noise */}
+      <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.06]" aria-hidden />
+
+      {/* Giant section number */}
+      <div
+        className={`pointer-events-none absolute select-none font-display font-extrabold leading-none text-white/[0.06] ${
+          mobile
+            ? "right-4 top-6 text-[140px]"
+            : "right-[4vw] top-1/2 -translate-y-1/2 text-[clamp(14rem,28vw,28rem)]"
+        }`}
+        aria-hidden
+      >
+        {num}
+      </div>
+
+      {/* Content */}
+      <div
+        className={`relative z-10 ${
+          mobile
+            ? "flex h-full w-full flex-col justify-end px-6 pb-10"
+            : "ml-[8vw] max-w-[640px] px-10"
+        }`}
+      >
+        <div className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-gold/40 bg-black/30 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-brand-gold backdrop-blur-md">
+          <Icon className="h-3 w-3" strokeWidth={2.2} />
+          {panel.eyebrow}
+        </div>
+
+        <h3
+          className={`mt-6 font-display font-extrabold tracking-tight text-white ${
+            mobile ? "text-[44px] leading-[0.98]" : "text-[clamp(48px,6.4vw,96px)] leading-[0.95]"
+          }`}
+          style={{ textShadow: "0 4px 32px hsl(215 52% 4% / 0.7)" }}
+        >
+          {panel.title}{" "}
+          <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-gold)" }}>
+            {panel.highlight}
+          </span>
+        </h3>
+
+        <div
+          className="mt-5 h-[2px] w-16 rounded-full"
+          style={{ background: "var(--gradient-gold)" }}
+          aria-hidden
+        />
+
+        <p
+          className={`mt-6 max-w-lg leading-relaxed text-white/82 ${
+            mobile ? "text-[15px]" : "text-[16px] md:text-[17px]"
+          }`}
+        >
+          {panel.desc}
+        </p>
+      </div>
+
+      {/* Bottom hairline gold accent */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-px"
+        style={{
+          background:
+            "linear-gradient(90deg, transparent, hsl(var(--brand-gold) / 0.55), transparent)",
+        }}
+        aria-hidden
+      />
+    </article>
+  );
+};
 
 export default HowItWorks;
