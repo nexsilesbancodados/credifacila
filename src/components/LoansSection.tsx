@@ -1,7 +1,6 @@
 import {
   ShieldCheck,
   ChevronRight,
-  Star,
   HandCoins,
   Lock,
   MessageCircle,
