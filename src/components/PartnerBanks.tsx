@@ -1,6 +1,6 @@
 import { ChevronRight, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
-import parceirosImage from "@/assets/parceiros-bancos.png";
+import parceirosImage from "@/assets/parceiros-bancos-clean.png";
 
 const PartnerBanks = () => (
   <section
