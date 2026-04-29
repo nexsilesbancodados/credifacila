@@ -126,7 +126,7 @@ const HowItWorks = () => {
     <section
       id="como-funciona"
       aria-label="Como funciona — jornada visual"
-      className="relative w-full bg-[hsl(215_50%_8%)]"
+      className="relative w-full"
     >
       {/* ====== DESKTOP / TABLET: sticky horizontal scroll ====== */}
       <div
@@ -207,7 +207,7 @@ const HowItWorks = () => {
       </div>
 
       {/* Final CTA strip */}
-      <div className="relative overflow-hidden border-t border-white/5 bg-[hsl(215_50%_10%)] px-5 py-10 md:px-10 md:py-14">
+      <div className="relative overflow-hidden px-5 py-10 md:px-10 md:py-14">
         <div
           className="pointer-events-none absolute -left-32 top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full opacity-40"
           style={{ background: "radial-gradient(circle, hsl(199 90% 55% / 0.18), transparent 65%)" }}
