@@ -265,39 +265,30 @@ const LoansSection = () => {
                     : "border-foreground/10 hover:border-brand-gold/40"
                 }`}
               >
-                {/* Illustration */}
-                <div className="relative h-44 overflow-hidden">
-                  <img
-                    src={p.illo}
-                    alt=""
-                    aria-hidden
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  {p.tag && (
-                    <span
-                      className="absolute right-3 top-3 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold-foreground shadow-[var(--shadow-gold-sm)]"
-                      style={{ background: "var(--gradient-gold)" }}
-                    >
-                      {p.tag}
-                    </span>
-                  )}
-                  {/* Rate chip */}
-                  <div className="absolute bottom-3 left-3 rounded-xl border border-foreground/10 bg-white/95 px-2.5 py-1.5 shadow-sm backdrop-blur">
-                    <div className="text-[9px] font-semibold uppercase tracking-wider text-foreground/55 leading-none">
-                      {p.rateLabel}
-                    </div>
-                    <div className="mt-0.5 font-display text-[15px] font-bold leading-none text-foreground">
-                      {p.rate}
-                    </div>
-                  </div>
-                  {/* Term chip */}
-                  <div className="absolute bottom-3 right-3 rounded-full border border-foreground/10 bg-white/95 px-2.5 py-1 text-[10px] font-bold text-foreground/75 shadow-sm backdrop-blur">
-                    {p.term}
-                  </div>
-                </div>
+                {p.tag && (
+                  <span
+                    className="absolute right-3 top-3 z-10 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold-foreground shadow-[var(--shadow-gold-sm)]"
+                    style={{ background: "var(--gradient-gold)" }}
+                  >
+                    {p.tag}
+                  </span>
+                )}
                 {/* Content */}
                 <div className="flex flex-1 flex-col p-5">
+                  {/* Rate row */}
+                  <div className="mb-4 flex items-center justify-between gap-2">
+                    <div className="rounded-xl border border-foreground/10 bg-white/95 px-2.5 py-1.5">
+                      <div className="text-[9px] font-semibold uppercase tracking-wider text-foreground/55 leading-none">
+                        {p.rateLabel}
+                      </div>
+                      <div className="mt-0.5 font-display text-[15px] font-bold leading-none text-foreground">
+                        {p.rate}
+                      </div>
+                    </div>
+                    <span className="rounded-full border border-foreground/10 bg-white/95 px-2.5 py-1 text-[10px] font-bold text-foreground/75">
+                      {p.term}
+                    </span>
+                  </div>
                   <h4 className="font-display text-[16px] font-bold text-foreground transition-colors group-hover:text-brand-gold">
                     {p.title}
                   </h4>
