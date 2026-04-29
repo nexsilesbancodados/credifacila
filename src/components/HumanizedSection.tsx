@@ -1,0 +1,102 @@
+import { Users, ShieldCheck, Clock } from "lucide-react";
+import showcaseImg from "@/assets/atendimento-humanizado.png";
+
+const features = [
+  {
+    icon: Users,
+    title: "Especialistas de verdade",
+    desc: "Atendimento próximo e consultivo da Credifácil para entender o que você precisa.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Processos simples e seguros",
+    desc: "Tecnologia avançada que garante agilidade e proteção dos seus dados.",
+  },
+  {
+    icon: Clock,
+    title: "Respostas mais rápidas",
+    desc: "Análise de crédito ágil para você tomar decisões com confiança.",
+  },
+];
+
+const HumanizedSection = () => (
+  <section
+    aria-label="Atendimento humanizado Credifácil"
+    className="relative w-full overflow-hidden bg-[hsl(0_0%_4%)] py-20 md:py-28"
+  >
+    {/* Soft gold ambient glow */}
+    <div
+      className="pointer-events-none absolute -left-32 top-1/3 h-[480px] w-[480px] opacity-30"
+      style={{
+        background:
+          "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.35), transparent 65%)",
+      }}
+      aria-hidden
+    />
+    <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 md:px-8 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
+      {/* Left: copy */}
+      <div>
+        <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-brand-gold/5 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-gold">
+          Atendimento que faz a diferença
+        </span>
+        <h2 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-white md:text-5xl">
+          Atendimento humanizado em cada etapa da{" "}
+          <span className="text-gold-gradient">sua jornada.</span>
+        </h2>
+        <p className="mt-5 max-w-xl text-base leading-relaxed text-white/75 md:text-[17px]">
+          Na Credifácil, unimos tecnologia e pessoas para oferecer uma experiência{" "}
+          <span className="font-semibold text-white">simples, rápida e segura</span>. Do
+          primeiro contato à realização do seu crédito, você conta com especialistas
+          prontos para te ajudar.
+        </p>
+
+        <ul className="mt-10 flex flex-col gap-7">
+          {features.map((f) => {
+            const Icon = f.icon;
+            return (
+              <li key={f.title} className="flex items-start gap-4">
+                <span
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-brand-gold/30 bg-brand-gold/10 text-brand-gold"
+                  aria-hidden
+                >
+                  <Icon className="h-5 w-5" strokeWidth={1.8} />
+                </span>
+                <div>
+                  <h3 className="font-display text-lg font-bold text-white md:text-xl">
+                    {f.title}
+                  </h3>
+                  <p className="mt-1.5 max-w-md text-sm leading-relaxed text-white/65 md:text-[15px]">
+                    {f.desc}
+                  </p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      {/* Right: image */}
+      <div className="relative">
+        <div
+          className="pointer-events-none absolute -inset-6 rounded-[32px] opacity-60"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.18), transparent 70%)",
+          }}
+          aria-hidden
+        />
+        <img
+          src={showcaseImg}
+          alt="Painel Credifácil aberto em laptop e aplicativo de simulação de crédito no celular"
+          loading="lazy"
+          decoding="async"
+          width={1024}
+          height={1024}
+          className="relative w-full rounded-[28px] border border-white/5 object-cover shadow-[0_40px_80px_-30px_hsl(0_0%_0%/0.7)]"
+        />
+      </div>
+    </div>
+  </section>
+);
+
+export default HumanizedSection;
