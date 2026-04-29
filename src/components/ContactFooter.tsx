@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import logo from "@/assets/credifacil-logo.webp";
 import { site, whatsappLink, telLink, mailLink } from "@/config/site";
-import Newsletter from "@/components/Newsletter";
+
 
 const channels = [
   {
@@ -158,20 +158,6 @@ const ContactFooter = () => {
               })}
             </div>
           </div>
-        </div>
-
-        {/* Newsletter strip */}
-        <div className="mt-10 grid grid-cols-1 items-start gap-6 rounded-3xl border border-brand-gold/20 bg-card/80 p-6 backdrop-blur-sm md:p-8 lg:grid-cols-[1.2fr_1.4fr]">
-          <div>
-            <h3 className="font-display text-2xl font-bold leading-tight tracking-tight text-foreground md:text-[26px]">
-              Fique por dentro das{" "}
-              <span className="text-gold-gradient">melhores condições</span>
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-              Conteúdos sobre crédito consciente, ofertas exclusivas e novidades — direto no seu e-mail.
-            </p>
-          </div>
-          <Newsletter />
         </div>
 
         {/* Footer nav */}
