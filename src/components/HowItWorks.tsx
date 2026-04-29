@@ -93,8 +93,8 @@ const HowItWorks = () => {
     const compute = () => {
       ticking = false;
       const rect = section.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const total = section.offsetHeight - vh;
+      const stickyH = Math.max(520, window.innerHeight * 0.7);
+      const total = section.offsetHeight - stickyH;
       const scrolled = Math.min(Math.max(-rect.top, 0), total);
       const p = total > 0 ? scrolled / total : 0;
       setProgress(p);
@@ -264,7 +264,7 @@ const PanelCinematic = ({
   return (
     <article
       className={`relative flex flex-shrink-0 items-center justify-center overflow-hidden ${
-        mobile ? "h-[88vh] w-full" : "h-screen w-screen"
+        mobile ? "h-[62vh] min-h-[420px] w-full" : "h-full w-screen"
       }`}
     >
       {/* Background image */}
@@ -307,8 +307,8 @@ const PanelCinematic = ({
       <div
         className={`pointer-events-none absolute select-none font-display font-extrabold leading-none text-white/[0.06] ${
           mobile
-            ? "right-4 top-6 text-[140px]"
-            : "right-[4vw] top-1/2 -translate-y-1/2 text-[clamp(14rem,28vw,28rem)]"
+            ? "right-3 top-4 text-[100px]"
+            : "right-[4vw] top-1/2 -translate-y-1/2 text-[clamp(10rem,20vw,20rem)]"
         }`}
         aria-hidden
       >
@@ -319,18 +319,18 @@ const PanelCinematic = ({
       <div
         className={`relative z-10 ${
           mobile
-            ? "flex h-full w-full flex-col justify-end px-6 pb-10"
-            : "ml-[8vw] max-w-[640px] px-10"
+            ? "flex h-full w-full flex-col justify-end px-6 pb-8"
+            : "ml-[7vw] max-w-[520px] px-8"
         }`}
       >
-        <div className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-gold/40 bg-black/30 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-brand-gold backdrop-blur-md">
+        <div className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-gold/40 bg-black/30 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-brand-gold backdrop-blur-md">
           <Icon className="h-3 w-3" strokeWidth={2.2} />
           {panel.eyebrow}
         </div>
 
         <h3
           className={`mt-6 font-display font-extrabold tracking-tight text-white ${
-            mobile ? "text-[44px] leading-[0.98]" : "text-[clamp(48px,6.4vw,96px)] leading-[0.95]"
+            mobile ? "text-[34px] leading-[0.98]" : "text-[clamp(36px,4.6vw,68px)] leading-[0.95]"
           }`}
           style={{ textShadow: "0 4px 32px hsl(215 52% 4% / 0.7)" }}
         >
@@ -341,14 +341,14 @@ const PanelCinematic = ({
         </h3>
 
         <div
-          className="mt-5 h-[2px] w-16 rounded-full"
+          className="mt-4 h-[2px] w-12 rounded-full"
           style={{ background: "var(--gradient-gold)" }}
           aria-hidden
         />
 
         <p
-          className={`mt-6 max-w-lg leading-relaxed text-white/82 ${
-            mobile ? "text-[15px]" : "text-[16px] md:text-[17px]"
+          className={`mt-4 max-w-md leading-relaxed text-white/82 ${
+            mobile ? "text-[13.5px]" : "text-[14px] md:text-[15px]"
           }`}
         >
           {panel.desc}
