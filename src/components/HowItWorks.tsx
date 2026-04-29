@@ -134,7 +134,7 @@ const HowItWorks = () => {
         className="relative hidden lg:block"
         style={{ height: `${panels.length * 50}vh` }}
       >
-        <div className="sticky top-16 h-[58vh] min-h-[440px] max-h-[600px] w-full overflow-hidden">
+        <div className="sticky top-0 h-[58vh] min-h-[440px] max-h-[600px] w-full overflow-hidden">
           {/* Section eyebrow + nav */}
           <div className="pointer-events-none absolute left-0 right-0 top-0 z-30 flex items-center justify-between px-8 py-4">
             <div className="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-black/30 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-gold backdrop-blur-md">
