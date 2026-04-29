@@ -1,125 +1,22 @@
-import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import heroSlide1 from "@/assets/banner-hero-principal.webp";
-import heroSlide1Md from "@/assets/banner-hero-principal-md.webp";
-import heroSlide1Sm from "@/assets/banner-hero-principal-sm.webp";
-import heroSlide2 from "@/assets/hero-pessoal.webp";
-import heroSlide2Md from "@/assets/hero-pessoal-md.webp";
-import heroSlide2Sm from "@/assets/hero-pessoal-sm.webp";
-import heroSlide3 from "@/assets/hero-parceiro.webp";
-import heroSlide3Md from "@/assets/hero-parceiro-md.webp";
-import heroSlide3Sm from "@/assets/hero-parceiro-sm.webp";
-import heroSlide4 from "@/assets/hero-consignado.webp";
-import heroSlide4Md from "@/assets/hero-consignado-md.webp";
-import heroSlide4Sm from "@/assets/hero-consignado-sm.webp";
-type Slide = { src: string; srcMd: string; srcSm: string; alt: string };
+import heroPrincipal from "@/assets/hero-principal.png";
 
-const slides: Slide[] = [
-  { src: heroSlide1, srcMd: heroSlide1Md, srcSm: heroSlide1Sm, alt: "Empréstimo rápido, fácil e seguro com a Credifácil" },
-  { src: heroSlide2, srcMd: heroSlide2Md, srcSm: heroSlide2Sm, alt: "Empréstimos do seu jeito — crédito pessoal aprovado em minutos" },
-  { src: heroSlide3, srcMd: heroSlide3Md, srcSm: heroSlide3Sm, alt: "Mais que crédito, um parceiro para os seus melhores planos" },
-  { src: heroSlide4, srcMd: heroSlide4Md, srcSm: heroSlide4Sm, alt: "Empréstimo consignado com condições especiais para renda fixa" },
-];
-
-const HeroCarousel = () => {
-  const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const [hiddenTab, setHiddenTab] = useState(false);
-  const [offscreen, setOffscreen] = useState(false);
-  const rootRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (paused || hiddenTab || offscreen) return;
-    const id = setInterval(() => setActive((p) => (p + 1) % slides.length), 5500);
-    return () => clearInterval(id);
-  }, [paused, hiddenTab, offscreen]);
-
-  useEffect(() => {
-    const onVis = () => setHiddenTab(document.hidden);
-    document.addEventListener("visibilitychange", onVis);
-    return () => document.removeEventListener("visibilitychange", onVis);
-  }, []);
-
-  useEffect(() => {
-    const el = rootRef.current;
-    if (!el || typeof IntersectionObserver === "undefined") return;
-    const io = new IntersectionObserver(
-      (entries) => setOffscreen(!entries[0]?.isIntersecting),
-      { threshold: 0.1 }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={rootRef}
-      className="relative w-full overflow-hidden bg-[hsl(0_0%_4%)]"
-      style={{ aspectRatio: "16 / 9" }}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      aria-roledescription="carousel"
-      aria-label="Destaques Credifácil"
-    >
-      {slides.map((s, i) => {
-        const next = (active + 1) % slides.length;
-        const shouldRender = i === active || i === next;
-        if (!shouldRender) return null;
-        return (
-          <img
-            key={s.src}
-            loading={i === 0 ? "eager" : "lazy"}
-            decoding="async"
-            fetchPriority={i === active ? "high" : "low"}
-            src={s.src}
-            srcSet={`${s.srcSm} 640w, ${s.srcMd} 1200w, ${s.src} 1920w`}
-            sizes="100vw"
-            alt={s.alt}
-            className={`absolute inset-0 h-full w-full object-cover ${
-              i === 0 ? "" : "scale-[1.18]"
-            } object-center transition-opacity duration-[1200ms] ease-in-out ${
-              active === i ? "opacity-100" : "opacity-0"
-            }`}
-            width={1920}
-            height={1080}
-            aria-hidden={active !== i}
-          />
-        );
-      })}
-
-      <button
-        type="button"
-        onClick={() => setActive((p) => (p - 1 + slides.length) % slides.length)}
-        aria-label="Slide anterior"
-        className="absolute left-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-foreground/10 bg-background/70 text-foreground/80 backdrop-blur-md transition-all hover:scale-110 hover:bg-background"
-      >
-        <ChevronLeft className="h-5 w-5" />
-      </button>
-      <button
-        type="button"
-        onClick={() => setActive((p) => (p + 1) % slides.length)}
-        aria-label="Próximo slide"
-        className="absolute right-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-foreground/10 bg-background/70 text-foreground/80 backdrop-blur-md transition-all hover:scale-110 hover:bg-background"
-      >
-        <ChevronRight className="h-5 w-5" />
-      </button>
-
-      <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-foreground/10 bg-background/70 px-3 py-2 backdrop-blur-md">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            type="button"
-            onClick={() => setActive(i)}
-            aria-label={`Ir para slide ${i + 1}`}
-            aria-current={active === i ? "true" : undefined}
-            className={`h-1.5 rounded-full transition-all duration-500 ${
-              active === i ? "w-8 bg-primary" : "w-1.5 bg-foreground/30 hover:bg-foreground/60"
-            }`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
+const HeroCarousel = () => (
+  <div
+    className="relative w-full overflow-hidden bg-[hsl(0_0%_4%)]"
+    style={{ aspectRatio: "16 / 9" }}
+    aria-label="Credifácil — Mais que crédito, um parceiro para seus melhores planos"
+  >
+    <img
+      src={heroPrincipal}
+      alt="Mais que crédito. Um parceiro para seus melhores planos — Credifácil"
+      loading="eager"
+      decoding="async"
+      fetchPriority="high"
+      className="absolute inset-0 h-full w-full object-cover object-center"
+      width={1920}
+      height={1080}
+    />
+  </div>
+);
 
 export default HeroCarousel;
