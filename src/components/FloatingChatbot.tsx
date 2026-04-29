@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Sparkles, Send, X, Loader2, MessageCircle } from "lucide-react";
+import { Sparkles, Send, X, Loader2 } from "lucide-react";
+import luriAvatar from "@/assets/luri-avatar.png";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -214,14 +215,22 @@ const FloatingChatbot = () => {
             />
             <div className="flex items-center gap-3">
               <span
-                className="relative flex h-10 w-10 items-center justify-center rounded-full text-[hsl(0_0%_5%)]"
+                className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full"
                 style={{
                   background:
-                    "linear-gradient(135deg, hsl(44 92% 70%), hsl(42 78% 55%) 50%, hsl(38 75% 42%))",
-                  boxShadow: "0 6px 20px -4px hsl(42 78% 55% / 0.6)",
+                    "radial-gradient(circle at center, hsl(42 78% 55% / 0.35), hsl(0 0% 8%) 70%)",
+                  boxShadow:
+                    "0 6px 20px -4px hsl(42 78% 55% / 0.6), inset 0 0 0 1.5px hsl(42 78% 55% / 0.5)",
                 }}
               >
-                <Sparkles className="h-5 w-5" strokeWidth={2.2} />
+                <img
+                  src={luriAvatar}
+                  alt="Luri"
+                  className="h-full w-full object-cover object-top"
+                  loading="lazy"
+                  width={88}
+                  height={88}
+                />
               </span>
               <div className="leading-tight">
                 <div className="font-display text-[14px] font-extrabold tracking-tight text-white">
@@ -258,8 +267,28 @@ const FloatingChatbot = () => {
             {messages.map((m, i) => (
               <div
                 key={i}
-                className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
+                className={`flex items-end gap-2 ${m.role === "user" ? "justify-end" : "justify-start"}`}
               >
+                {m.role === "assistant" && (
+                  <span
+                    className="flex h-7 w-7 shrink-0 overflow-hidden rounded-full"
+                    style={{
+                      background:
+                        "radial-gradient(circle at center, hsl(42 78% 55% / 0.3), hsl(0 0% 6%) 70%)",
+                      boxShadow: "inset 0 0 0 1px hsl(42 78% 55% / 0.4)",
+                    }}
+                    aria-hidden
+                  >
+                    <img
+                      src={luriAvatar}
+                      alt=""
+                      className="h-full w-full object-cover object-top"
+                      loading="lazy"
+                      width={56}
+                      height={56}
+                    />
+                  </span>
+                )}
                 <div
                   className={
                     m.role === "user"
@@ -281,7 +310,25 @@ const FloatingChatbot = () => {
             ))}
 
             {loading && messages[messages.length - 1]?.role === "user" && (
-              <div className="flex justify-start">
+              <div className="flex items-end gap-2 justify-start">
+                <span
+                  className="flex h-7 w-7 shrink-0 overflow-hidden rounded-full"
+                  style={{
+                    background:
+                      "radial-gradient(circle at center, hsl(42 78% 55% / 0.3), hsl(0 0% 6%) 70%)",
+                    boxShadow: "inset 0 0 0 1px hsl(42 78% 55% / 0.4)",
+                  }}
+                  aria-hidden
+                >
+                  <img
+                    src={luriAvatar}
+                    alt=""
+                    className="h-full w-full object-cover object-top"
+                    loading="lazy"
+                    width={56}
+                    height={56}
+                  />
+                </span>
                 <div className="flex items-center gap-2 rounded-2xl rounded-bl-md border border-white/8 bg-white/[0.04] px-3.5 py-3 text-[13px] text-white/60">
                   <Loader2 className="h-3.5 w-3.5 animate-spin text-brand-gold" />
                   <span className="flex gap-1">
@@ -369,7 +416,7 @@ const FloatingChatbot = () => {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Fechar assistente" : "Abrir assistente Credifácil"}
-        className="group relative flex h-14 w-14 items-center justify-center rounded-full text-[hsl(0_0%_5%)] transition-all hover:scale-110"
+        className="group relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-full text-[hsl(0_0%_5%)] transition-all hover:scale-110"
         style={{
           background:
             "linear-gradient(135deg, hsl(44 92% 70%) 0%, hsl(42 78% 55%) 50%, hsl(38 75% 42%) 100%)",
@@ -385,15 +432,22 @@ const FloatingChatbot = () => {
         {open ? (
           <X className="h-5 w-5" strokeWidth={2.4} />
         ) : (
-          <div className="relative">
-            <Sparkles className="h-6 w-6" strokeWidth={2.2} />
+          <>
+            <img
+              src={luriAvatar}
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover object-top"
+              loading="lazy"
+              width={128}
+              height={128}
+            />
             <span
-              className="absolute -right-1 -top-1 flex h-3.5 w-3.5 items-center justify-center rounded-full border-2 border-[hsl(0_0%_5%)] bg-[hsl(0_0%_5%)] text-brand-gold"
+              className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full border-2 border-[hsl(0_0%_5%)] bg-brand-gold text-[hsl(0_0%_5%)]"
               aria-hidden
             >
-              <MessageCircle className="h-2 w-2" strokeWidth={3} fill="currentColor" />
+              <Sparkles className="h-2 w-2" strokeWidth={3} />
             </span>
-          </div>
+          </>
         )}
       </button>
     </div>
