@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { site, whatsappLink, telLink } from "@/config/site";
 import womanCoffee from "@/assets/woman-coffee.webp";
-import cardAdvantages from "@/assets/card-advantages.webp";
+import cardAdvantages from "@/assets/advantages-humanizada.webp";
 
 const advantages = [
   { icon: Clock, title: "Liberação no mesmo dia", desc: "Dinheiro na conta em poucas horas após aprovação.", tag: "Rápido" },
