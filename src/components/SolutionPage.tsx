@@ -167,7 +167,7 @@ const SolutionPage = ({
             {intro.heading}
           </h2>
           <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-brand-gold" />
-          <div className="mt-8 space-y-5 text-left text-[15px] leading-relaxed text-[hsl(220_15%_30%)] md:text-[17px]">
+          <div className="mt-8 space-y-5 text-left text-[15px] leading-relaxed text-muted-foreground md:text-[17px]">
             {intro.paragraphs.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
@@ -275,7 +275,7 @@ const SolutionPage = ({
                 {showcase.heading}
               </h2>
               <div className="mt-4 h-1 w-14 rounded-full bg-brand-gold" />
-              <p className="mt-6 text-[15px] leading-relaxed text-[hsl(220_15%_30%)] md:text-[17px]">
+              <p className="mt-6 text-[15px] leading-relaxed text-muted-foreground md:text-[17px]">
                 {showcase.text}
               </p>
               {showcase.stats && showcase.stats.length > 0 && (

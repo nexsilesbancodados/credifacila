@@ -155,7 +155,7 @@ const TestimonialsMarquee = ({
           {subtitle && (
             <p
               className={`mt-4 max-w-md text-sm leading-relaxed md:text-base ${
-                isDark ? "text-white/75" : "text-[hsl(220_15%_30%)]"
+                isDark ? "text-white/75" : "text-muted-foreground"
               }`}
             >
               {subtitle}

@@ -48,7 +48,7 @@ const AdvantagesSection = () => {
             Tudo que você precisa,{" "}
             <span className="text-gold-gradient">em um só lugar</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[hsl(220_15%_30%)] md:text-base">
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
             Mais de <span className="font-bold text-foreground">50 mil pessoas</span> já realizaram seus planos com a confiança e a agilidade da Credifácil.
           </p>
         </div>

@@ -25,7 +25,7 @@ const PartnerBanks = () => (
           Trabalhamos com{" "}
           <span className="text-gold-gradient">os melhores bancos do Brasil</span>
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[hsl(220_15%_30%)] md:text-base">
+        <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
           Convênios diretos com as maiores instituições financeiras do país para garantir as melhores
           taxas, mais segurança e aprovação ágil para você.
         </p>

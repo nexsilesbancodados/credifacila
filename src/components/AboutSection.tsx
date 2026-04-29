@@ -50,7 +50,7 @@ const AboutSection = () => {
               Crédito que respeita{" "}
               <span className="text-gold-gradient">a sua história</span>
             </h2>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-[hsl(220_15%_30%)]">
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
               Há mais de uma década, a Credifácil acredita que crédito bom é aquele que cabe na sua vida — com taxa justa, processo simples e atendimento humano de verdade. Nosso compromisso é abrir portas, não criar dívidas.
             </p>
 

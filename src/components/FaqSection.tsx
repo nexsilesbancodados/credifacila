@@ -52,7 +52,7 @@ const FaqSection = () => {
               frequentes
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[hsl(220_15%_30%)] md:text-base">
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
             Reunimos as principais dúvidas para você decidir com clareza e tranquilidade.
           </p>
         </div>
