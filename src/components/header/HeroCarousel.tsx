@@ -59,7 +59,7 @@ const HeroCarousel = () => {
   return (
     <div
       ref={rootRef}
-      className="relative aspect-[3/2] w-full overflow-hidden bg-background md:aspect-[16/9] lg:aspect-[21/9]"
+      className="relative h-[520px] w-full overflow-hidden bg-background md:h-[640px] lg:h-[760px]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
@@ -79,7 +79,7 @@ const HeroCarousel = () => {
             srcSet={`${s.srcSm} 640w, ${s.srcMd} 1200w, ${s.src} 1920w`}
             sizes="100vw"
             alt={s.alt}
-            className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-[1200ms] ease-in-out ${
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1200ms] ease-in-out ${
               active === i ? "opacity-100" : "opacity-0"
             }`}
             width={1920}
