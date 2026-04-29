@@ -93,7 +93,7 @@ const HowItWorks = () => {
     const compute = () => {
       ticking = false;
       const rect = section.getBoundingClientRect();
-      const stickyH = Math.max(520, window.innerHeight * 0.7);
+      const stickyH = Math.min(600, Math.max(440, window.innerHeight * 0.58));
       const total = section.offsetHeight - stickyH;
       const scrolled = Math.min(Math.max(-rect.top, 0), total);
       const p = total > 0 ? scrolled / total : 0;
@@ -132,11 +132,11 @@ const HowItWorks = () => {
       <div
         ref={sectionRef}
         className="relative hidden lg:block"
-        style={{ height: `${panels.length * 60}vh` }}
+        style={{ height: `${panels.length * 50}vh` }}
       >
-        <div className="sticky top-0 h-[70vh] min-h-[520px] w-full overflow-hidden">
+        <div className="sticky top-16 h-[58vh] min-h-[440px] max-h-[600px] w-full overflow-hidden">
           {/* Section eyebrow + nav */}
-          <div className="pointer-events-none absolute left-0 right-0 top-0 z-30 flex items-center justify-between px-8 py-5">
+          <div className="pointer-events-none absolute left-0 right-0 top-0 z-30 flex items-center justify-between px-8 py-4">
             <div className="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-black/30 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-gold backdrop-blur-md">
               <ShieldCheck className="h-3 w-3" />
               Jornada Credifácil
@@ -164,7 +164,7 @@ const HowItWorks = () => {
           </div>
 
           {/* Progress bar */}
-          <div className="pointer-events-none absolute bottom-5 left-1/2 z-30 w-[280px] -translate-x-1/2">
+          <div className="pointer-events-none absolute bottom-4 left-1/2 z-30 w-[260px] -translate-x-1/2">
             <div className="mb-2 flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.22em] text-white/55">
               <span>{String(activeIndex + 1).padStart(2, "0")} / {String(panels.length).padStart(2, "0")}</span>
               <span>{panels[activeIndex].eyebrow.split("·")[1]?.trim()}</span>
