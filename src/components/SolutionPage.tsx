@@ -13,6 +13,7 @@ import { site, whatsappLink, telLink, mailLink } from "@/config/site";
 import { useSeo } from "@/hooks/useSeo";
 import logo from "@/assets/credifacil-logo.webp";
 import PromoBanner from "@/components/PromoBanner";
+import ContactFooter from "@/components/ContactFooter";
 
 type IconType = LucideIcon;
 
@@ -418,7 +419,7 @@ const SolutionPage = ({
 
       {/* CTA / Contact */}
       <section
-        id="contato"
+        id="cta-contato"
         className="relative overflow-hidden bg-[hsl(215_42%_20%)] py-20 md:py-24"
       >
         <div
@@ -457,6 +458,7 @@ const SolutionPage = ({
           </div>
         </div>
       </section>
+      <ContactFooter />
     </div>
   );
 };

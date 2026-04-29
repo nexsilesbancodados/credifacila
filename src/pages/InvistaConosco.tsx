@@ -1,3 +1,4 @@
+import ContactFooter from "@/components/ContactFooter";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -656,6 +657,7 @@ const InvistaConosco = () => {
           </div>
         </div>
       </section>
+      <ContactFooter />
     </div>
   );
 };
