@@ -14,14 +14,9 @@ import { whatsappLink } from "@/config/site";
 import loansHero from "@/assets/loans-hero.webp";
 import loansHeroMd from "@/assets/loans-hero-md.webp";
 import loansHeroSm from "@/assets/loans-hero-sm.webp";
-import cardPersonalIllo from "@/assets/illustrations/card-personal.svg";
-import cardCollateralIllo from "@/assets/illustrations/card-collateral.svg";
-import cardPortabilityIllo from "@/assets/illustrations/card-portability.svg";
-import cardBusinessIllo from "@/assets/illustrations/card-business.svg";
 
 const products = [
   {
-    illo: cardPersonalIllo,
     title: "Crédito Pessoal",
     desc: "Dinheiro livre na sua conta para realizar o que você quiser, sem precisar justificar.",
     tag: "Mais pedido",
@@ -31,7 +26,6 @@ const products = [
     href: whatsappLink("Olá! Quero contratar Crédito Pessoal."),
   },
   {
-    illo: cardCollateralIllo,
     title: "Crédito com Garantia",
     desc: "Use um imóvel ou veículo como garantia e tenha as menores taxas do mercado.",
     tag: "Menor taxa",
@@ -41,7 +35,6 @@ const products = [
     href: whatsappLink("Olá! Quero contratar Crédito com Garantia."),
   },
   {
-    illo: cardPortabilityIllo,
     title: "Portabilidade de Crédito",
     desc: "Traga seu contrato de outro banco para a Credifácil e reduza sua parcela hoje mesmo.",
     tag: null,
@@ -51,7 +44,6 @@ const products = [
     href: whatsappLink("Olá! Quero fazer Portabilidade de Crédito."),
   },
   {
-    illo: cardBusinessIllo,
     title: "Para Empresas",
     desc: "Capital de giro e linhas de crédito sob medida para impulsionar o seu negócio.",
     tag: "PJ",
