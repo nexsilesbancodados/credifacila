@@ -49,6 +49,8 @@ export interface SolutionPageProps {
   hideHeroText?: boolean;
   /** Substitui o bloco de intro por uma imagem full-bleed */
   introImage?: { src: string; alt: string };
+  /** Substitui o bloco de benefícios por uma imagem full-bleed */
+  benefitsImage?: { src: string; alt: string };
 }
 
 const SolutionPage = ({
@@ -70,6 +72,7 @@ const SolutionPage = ({
   showcase,
   hideHeroText,
   introImage,
+  benefitsImage,
 }: SolutionPageProps) => {
   useSeo({ title: metaTitle, description: metaDescription });
 
@@ -211,6 +214,19 @@ const SolutionPage = ({
       )}
 
       {/* Benefits */}
+      {benefitsImage ? (
+        <section className="bg-[hsl(0_0%_4%)]">
+          <img
+            src={benefitsImage.src}
+            alt={benefitsImage.alt}
+            loading="lazy"
+            decoding="async"
+            width={1920}
+            height={1280}
+            className="block h-auto w-full"
+          />
+        </section>
+      ) : (
       <section className="bg-[hsl(0_0%_4%)] py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" data-anim-stagger>
@@ -258,6 +274,7 @@ const SolutionPage = ({
           </div>
         </div>
       </section>
+      )}
 
       {/* Showcase visual (opcional) */}
       {showcase && (
