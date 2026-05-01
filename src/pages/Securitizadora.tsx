@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Banknote, ShieldCheck, FileCheck2, Sparkles, MessageCircle } from "lucide-react";
-import Header from "@/components/Header";
+import TopNav from "@/components/header/TopNav";
 import ContactFooter from "@/components/ContactFooter";
 import AnimatedBackdrop from "@/components/AnimatedBackdrop";
 import { useSeo } from "@/hooks/useSeo";
