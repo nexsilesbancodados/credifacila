@@ -11,12 +11,14 @@ export const site = {
     bcb: "Autorizada pelo Banco Central do Brasil",
   },
   contact: {
-    whatsapp: "5511900001234", // TODO: número real (formato internacional, sem +)
-    whatsappDisplay: "(11) 90000-1234",
-    phone: "+551140001234", // TODO: telefone fixo real
-    phoneDisplay: "(11) 4000-1234",
-    phone0800: "08000000000",
-    phone0800Display: "0800 000 0000",
+    whatsapp: "5511976451758",
+    whatsappDisplay: "(11) 97645-1758",
+    whatsappSecondary: "5511960248795",
+    whatsappSecondaryDisplay: "(11) 96024-8795",
+    phone: "+5511976451758",
+    phoneDisplay: "(11) 97645-1758",
+    phone0800: "5511960248795",
+    phone0800Display: "(11) 96024-8795",
     email: "contato@credifacil.com.br",
     address: "Av. Paulista, 1000 — São Paulo, SP",
     hours: "Seg. a sáb., das 8h às 20h",

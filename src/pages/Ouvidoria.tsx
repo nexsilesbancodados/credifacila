@@ -22,7 +22,7 @@ const Ouvidoria = () => (
       {
         title: "Canais de contato",
         list: [
-          "Telefone exclusivo: 0800 000 0000 (seg-sex, 8h-18h).",
+          "Telefone exclusivo: (11) 96024-8795 (seg-sex, 8h-18h).",
           "E-mail: ouvidoria@credifacil.com.br",
           "Formulário online: credifacil.com.br/ouvidoria",
           "Carta: Av. Paulista, 1000, Bela Vista, São Paulo/SP — A/C Ouvidoria.",
