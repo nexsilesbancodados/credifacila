@@ -274,6 +274,7 @@ const SolutionPage = ({
           </div>
         </div>
       </section>
+      )}
 
       {/* Showcase visual (opcional) */}
       {showcase && (
