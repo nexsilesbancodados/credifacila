@@ -47,6 +47,8 @@ export interface SolutionPageProps {
   };
   /** Esconde o bloco de texto/CTA da hero, mantendo apenas a imagem */
   hideHeroText?: boolean;
+  /** Substitui o bloco de intro por uma imagem full-bleed */
+  introImage?: { src: string; alt: string };
 }
 
 const SolutionPage = ({
@@ -67,6 +69,7 @@ const SolutionPage = ({
   ctaSubtitle,
   showcase,
   hideHeroText,
+  introImage,
 }: SolutionPageProps) => {
   useSeo({ title: metaTitle, description: metaDescription });
 
@@ -179,6 +182,19 @@ const SolutionPage = ({
       )}
 
       {/* Intro */}
+      {introImage ? (
+        <section className="bg-[hsl(0_0%_4%)]">
+          <img
+            src={introImage.src}
+            alt={introImage.alt}
+            loading="lazy"
+            decoding="async"
+            width={1920}
+            height={1280}
+            className="block h-auto w-full"
+          />
+        </section>
+      ) : (
       <section className="py-20 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center md:px-8">
           <h2 className="font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
@@ -192,6 +208,7 @@ const SolutionPage = ({
           </div>
         </div>
       </section>
+      )}
 
       {/* Benefits */}
       <section className="bg-[hsl(220_16%_96%)] py-20 md:py-24">

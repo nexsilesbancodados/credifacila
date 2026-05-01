@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import SolutionPage from "@/components/SolutionPage";
 import heroConsignado from "@/assets/hero-consignado-banner.png";
+import introBanner from "@/assets/consignado-solucoes-banner.png";
 import showcaseSenior from "@/assets/consignado-senior.webp";
 
 const Consignado = () => (
@@ -19,6 +20,7 @@ const Consignado = () => (
     heroIllustration={heroConsignado}
     heroAlt="Casal de aposentados sorrindo após contratar consignado"
     hideHeroText
+    introImage={{ src: introBanner, alt: "Soluções que cabem no seu momento — Credifácil" }}
     metaTitle="Crédito Consignado — Menores taxas | Credifácil"
     metaDescription="Empréstimo consignado para INSS, servidores públicos e CLT com taxas a partir de 1,19% a.m., aprovação rápida e atendimento humano."
     intro={{
