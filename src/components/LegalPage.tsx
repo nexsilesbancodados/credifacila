@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
-import { ArrowLeft, FileText, ShieldCheck, MessageCircle, Mail } from "lucide-react";
-import logo from "@/assets/credifacil-logo.webp";
+import { FileText, ShieldCheck, MessageCircle, Mail } from "lucide-react";
 import { site, mailLink, whatsappLink } from "@/config/site";
 import { useSeo } from "@/hooks/useSeo";
 import ContactFooter from "@/components/ContactFooter";
+import TopNav from "@/components/header/TopNav";
 
 type Section = {
   title: string;
@@ -36,24 +35,7 @@ const LegalPage = ({
 
   return (
     <div className="min-h-screen bg-[hsl(0_0%_4%)] text-white">
-      {/* Top bar */}
-      <header className="absolute top-0 z-50 w-full bg-transparent">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-6 md:px-8">
-          <Link to="/" className="flex items-center gap-3" aria-label="Credifácil">
-            <img
-              src={logo}
-              alt="Credifácil"
-              className="h-9 w-auto brightness-0 invert md:h-10"
-              width={1795}
-              height={605}
-            />
-          </Link>
-          <Link to="/" className="btn-ghost-light">
-            <ArrowLeft className="h-3.5 w-3.5" />
-            Voltar ao início
-          </Link>
-        </div>
-      </header>
+      <TopNav />
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-[hsl(215_48%_16%)] pb-16 pt-28 text-white md:pt-36">

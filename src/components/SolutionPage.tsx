@@ -11,9 +11,9 @@ import {
 } from "lucide-react";
 import { site, whatsappLink, telLink, mailLink } from "@/config/site";
 import { useSeo } from "@/hooks/useSeo";
-import logo from "@/assets/credifacil-logo.webp";
 import PromoBanner from "@/components/PromoBanner";
 import ContactFooter from "@/components/ContactFooter";
+import TopNav from "@/components/header/TopNav";
 
 type IconType = LucideIcon;
 
@@ -78,24 +78,7 @@ const SolutionPage = ({
 
   return (
     <div className="min-h-screen bg-[hsl(0_0%_4%)] text-white">
-      {/* Top bar */}
-      <header className="absolute top-0 z-50 w-full bg-transparent">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 md:px-8">
-          <Link to="/" className="flex items-center gap-3" aria-label="Credifácil">
-            <img
-              src={logo}
-              alt="Credifácil"
-              className="h-9 w-auto brightness-0 invert md:h-10"
-              width={1795}
-              height={605}
-            />
-          </Link>
-          <Link to="/securitizadora" className="btn-ghost-light">
-            <ArrowLeft className="h-3.5 w-3.5" />
-            Voltar à Securitizadora
-          </Link>
-        </div>
-      </header>
+      <TopNav />
 
       {/* Hero */}
       {hideHeroText ? (

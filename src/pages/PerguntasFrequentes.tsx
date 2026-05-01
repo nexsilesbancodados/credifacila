@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Search, HelpCircle, Sparkles, MessageCircle } from "lucide-react";
-import Header from "@/components/Header";
+import TopNav from "@/components/header/TopNav";
 import ContactFooter from "@/components/ContactFooter";
 import AnimatedBackdrop from "@/components/AnimatedBackdrop";
 import { useSeo } from "@/hooks/useSeo";
@@ -61,7 +61,7 @@ const PerguntasFrequentes = () => {
 
   return (
     <div className="relative min-h-screen">
-      <Header />
+      <TopNav />
       <main id="main">
         <section className="relative overflow-hidden py-20 md:py-28">
           <AnimatedBackdrop variant="dark" />

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { TrendingUp, ShieldCheck, BarChart3, Lock, Sparkles, ArrowRight, MessageCircle } from "lucide-react";
-import Header from "@/components/Header";
+import TopNav from "@/components/header/TopNav";
 import ContactFooter from "@/components/ContactFooter";
 import AnimatedBackdrop from "@/components/AnimatedBackdrop";
 import { useSeo } from "@/hooks/useSeo";
@@ -30,7 +30,7 @@ const InvistaConosco = () => {
 
   return (
     <div className="relative min-h-screen">
-      <Header />
+      <TopNav />
       <main id="main">
         {/* Hero */}
         <section className="relative overflow-hidden py-24 md:py-32">
