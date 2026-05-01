@@ -1,5 +1,5 @@
 import { ArrowRight, Sparkles } from "lucide-react";
-import bannerImg from "@/assets/banner-capital-giro.webp";
+import bannerImg from "@/assets/promo-especialista-credifacil.jpg";
 
 export interface PromoBannerProps {
   eyebrow?: string;
