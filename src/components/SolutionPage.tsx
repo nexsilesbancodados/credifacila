@@ -415,13 +415,13 @@ const SolutionPage = ({
       </section>
 
       {/* FAQ */}
-      <section className="py-20 md:py-24">
+      <section className="bg-[hsl(0_0%_4%)] py-20 md:py-24">
         <div className="mx-auto max-w-3xl px-5 md:px-8">
           <div className="text-center" data-anim="fade-up">
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
               Dúvidas frequentes
             </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
               Perguntas comuns
             </h2>
           </div>
@@ -429,15 +429,15 @@ const SolutionPage = ({
             {faq.map((f) => (
               <details
                 key={f.q}
-                className="group rounded-2xl border border-border bg-[hsl(220_16%_98%)] p-6 transition-all open:border-brand-gold/40 open:shadow-md"
+                className="group rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-md transition-all hover:border-brand-gold/30 open:border-brand-gold/50 open:bg-white/[0.06] open:shadow-[var(--shadow-gold-sm)]"
               >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 font-display text-[15px] font-semibold text-foreground md:text-base">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 font-display text-[15px] font-semibold text-white md:text-base">
                   {f.q}
                   <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-brand-gold/40 text-brand-gold transition-transform group-open:rotate-45">
                     +
                   </span>
                 </summary>
-                <p className="mt-4 text-[14px] leading-relaxed text-muted-foreground">{f.a}</p>
+                <p className="mt-4 text-[14px] leading-relaxed text-white/75">{f.a}</p>
               </details>
             ))}
           </div>
