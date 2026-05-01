@@ -109,12 +109,12 @@ const SolutionPage = ({
             className="h-full w-full scale-105 object-cover object-right"
           />
         </div>
-        {/* Dark overlay (stronger on the left for text legibility) */}
+        {/* Dark overlay (very strong on the left so the typography is fully legible) */}
         <div
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, hsl(0 0% 8% / 0.55 0%, hsl(0 0% 8% / 0.30 40%, transparent 70%)",
+              "linear-gradient(90deg, hsl(0 0% 4% / 0.95) 0%, hsl(0 0% 4% / 0.80) 35%, hsl(0 0% 4% / 0.40) 60%, transparent 85%)",
           }}
           aria-hidden
         />
@@ -123,7 +123,7 @@ const SolutionPage = ({
           className="pointer-events-none absolute inset-0 lg:hidden"
           style={{
             background:
-              "linear-gradient(180deg, hsl(0 0% 8% / 0.50 0%, transparent 40%, hsl(0 0% 8% / 0.50 100%)",
+              "linear-gradient(180deg, hsl(0 0% 4% / 0.85) 0%, hsl(0 0% 4% / 0.55) 50%, hsl(0 0% 4% / 0.85) 100%)",
           }}
           aria-hidden
         />
@@ -131,7 +131,7 @@ const SolutionPage = ({
           className="pointer-events-none absolute -left-40 top-1/3 h-[500px] w-[500px] opacity-40"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.35, transparent 65%)",
+              "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.35) 0%, transparent 65%)",
           }}
           aria-hidden
         />
@@ -145,7 +145,7 @@ const SolutionPage = ({
             </span>
             <h1
               className="mt-6 font-display text-[40px] font-extrabold leading-[1.02] tracking-tight md:text-[56px] lg:text-[60px]"
-              style={{ textShadow: "0 2px 24px hsl(0 0% 8% / 0.5" }}
+              style={{ textShadow: "0 4px 24px hsl(0 0% 0% / 0.7)" }}
             >
               {title}{" "}
               <span className="text-gold-gradient">{titleGold}</span>
