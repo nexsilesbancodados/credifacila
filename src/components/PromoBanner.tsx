@@ -36,7 +36,7 @@ const PromoBanner = ({
               decoding="async"
               width={1920}
               height={640}
-              className="h-full w-full scale-110 object-cover"
+              className="h-full w-full scale-110 object-cover object-[80%_25%]"
               aria-hidden
             />
           </div>
