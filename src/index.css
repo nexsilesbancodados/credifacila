@@ -539,3 +539,25 @@
      (text-brand-gold, bg-brand-gold, border-brand-gold, ring-brand-gold)
      are generated from the CSS variable, so they update automatically. */
 }
+
+/* =====================================================
+   Global black-canvas override.
+   Make every section transparent so the single fixed
+   black/gold backdrop on <body> shows through across
+   all pages. Cards keep their own surfaces.
+   ===================================================== */
+@layer utilities {
+  /* Light/blue legacy section backgrounds -> transparent */
+  .bg-\[hsl\(220_16\%_96\%\)\],
+  .bg-\[hsl\(220_16\%_97\%\)\],
+  .bg-\[hsl\(220_16\%_98\%\)\],
+  .bg-\[hsl\(215_48\%_16\%\)\],
+  .bg-\[hsl\(215_42\%_20\%\)\] {
+    background-color: transparent !important;
+  }
+  /* SolutionPage wrapper already uses --background, but force black just in case */
+  .bg-\[hsl\(0_0\%_4\%\)\] {
+    background-color: transparent !important;
+  }
+  /* The "intro" / "for who" / "FAQ" sections inherit body backdrop now */
+}
