@@ -61,7 +61,7 @@ const PerguntasFrequentes = () => {
 
   return (
     <div className="relative min-h-screen">
-      <Header />
+      <TopNav />
       <main id="main">
         <section className="relative overflow-hidden py-20 md:py-28">
           <AnimatedBackdrop variant="dark" />

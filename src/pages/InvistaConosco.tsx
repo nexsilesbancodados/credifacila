@@ -30,7 +30,7 @@ const InvistaConosco = () => {
 
   return (
     <div className="relative min-h-screen">
-      <Header />
+      <TopNav />
       <main id="main">
         {/* Hero */}
         <section className="relative overflow-hidden py-24 md:py-32">
