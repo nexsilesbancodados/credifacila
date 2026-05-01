@@ -197,10 +197,7 @@ const SolutionPage = ({
       <section className="bg-[hsl(220_16%_96%)] py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
-            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
-              Benefícios
-            </span>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
               Por que escolher essa solução
             </h2>
           </div>
