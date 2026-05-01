@@ -214,11 +214,8 @@ const SolutionPage = ({
       <section className="bg-[hsl(220_16%_96%)] py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
-            <h2 className="font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              Por que escolher essa solução
-            </h2>
           </div>
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3" data-anim-stagger>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" data-anim-stagger>
             {benefits.map((b) => {
               const Icon = b.icon;
               return (
