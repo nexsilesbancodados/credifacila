@@ -211,10 +211,8 @@ const SolutionPage = ({
       )}
 
       {/* Benefits */}
-      <section className="bg-[hsl(220_16%_96%)] py-20 md:py-24">
+      <section className="bg-[hsl(220_16%_96%)] py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
-          </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" data-anim-stagger>
             {benefits.map((b) => {
               const Icon = b.icon;
