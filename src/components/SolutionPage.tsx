@@ -92,6 +92,20 @@ const SolutionPage = ({
       </header>
 
       {/* Hero */}
+      {hideHeroText ? (
+        <section className="relative w-full overflow-hidden bg-[hsl(0_0%_4%)]">
+          <img
+            src={heroIllustration}
+            alt={heroAlt}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            width={1920}
+            height={1080}
+            className="block h-auto w-full"
+          />
+        </section>
+      ) : (
       <section className="relative min-h-[640px] overflow-hidden bg-[hsl(215_48%_16%)] pb-20 pt-32 text-white md:min-h-[720px] md:pt-40">
         {/* Background image full-bleed (with subtle parallax) */}
         <div data-parallax="0.16" className="pointer-events-none absolute inset-0 -top-12 -bottom-12">
@@ -135,7 +149,6 @@ const SolutionPage = ({
         <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden />
 
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 px-5 md:px-8 lg:grid-cols-2 lg:items-center">
-          {!hideHeroText && (
           <div data-anim="fade-right" className="max-w-xl">
             <span className="pill-eyebrow-dark">
               <Sparkles className="h-3.5 w-3.5" />
@@ -161,9 +174,9 @@ const SolutionPage = ({
               </a>
             </div>
           </div>
-          )}
         </div>
       </section>
+      )}
 
       {/* Intro */}
       <section className="py-20 md:py-24">
