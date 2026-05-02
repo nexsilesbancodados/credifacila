@@ -57,7 +57,8 @@ const navColumns = [
     links: [
       { label: "Sobre nós", href: "/#sobre" },
       { label: "Como funciona", href: "/#como-funciona" },
-      { label: "Vantagens", href: "/#vantagens" },
+       { label: "Blog", href: "/blog" },
+       { label: "Vantagens", href: "/#vantagens" },
       { label: "Perguntas frequentes", href: "/perguntas-frequentes" },
     ],
   },
