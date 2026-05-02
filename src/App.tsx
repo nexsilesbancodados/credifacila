@@ -14,7 +14,11 @@ const InvistaConosco = lazy(() => import("./pages/InvistaConosco.tsx"));
 const Privacidade = lazy(() => import("./pages/Privacidade.tsx"));
 const Termos = lazy(() => import("./pages/Termos.tsx"));
 const Lgpd = lazy(() => import("./pages/Lgpd.tsx"));
-const Ouvidoria = lazy(() => import("./pages/Ouvidoria.tsx"));
+ const Ouvidoria = lazy(() => import("./pages/Ouvidoria.tsx"));
+ const Blog = lazy(() => import("./pages/Blog.tsx"));
+ const BlogPost = lazy(() => import("./pages/BlogPost.tsx"));
+ const Login = lazy(() => import("./pages/Login.tsx"));
+ const Dashboard = lazy(() => import("./pages/Dashboard.tsx"));
 
 import FloatingChatbot from "./components/FloatingChatbot";
 import CookieBanner from "./components/CookieBanner";
@@ -79,7 +83,11 @@ const App = () => (
         <Route path="/privacidade" element={<Privacidade />} />
         <Route path="/termos" element={<Termos />} />
         <Route path="/lgpd" element={<Lgpd />} />
-        <Route path="/ouvidoria" element={<Ouvidoria />} />
+         <Route path="/ouvidoria" element={<Ouvidoria />} />
+         <Route path="/blog" element={<Blog />} />
+         <Route path="/blog/:slug" element={<BlogPost />} />
+         <Route path="/login" element={<Login />} />
+         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
