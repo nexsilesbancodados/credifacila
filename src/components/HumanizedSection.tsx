@@ -24,15 +24,6 @@ const HumanizedSection = () => (
     aria-label="Atendimento humanizado Credifácil"
     className="relative w-full overflow-hidden py-14 sm:py-20 md:py-28"
   >
-    {/* Soft gold ambient glow */}
-    <div
-      className="pointer-events-none absolute -left-32 top-1/3 h-[480px] w-[480px] opacity-30"
-      style={{
-        background:
-          "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.35), transparent 65%)",
-      }}
-      aria-hidden
-    />
     <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:gap-12 sm:px-5 md:px-8 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
       {/* Left: copy */}
         <div>
