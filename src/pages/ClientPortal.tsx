@@ -218,11 +218,11 @@
        <main className="flex flex-col items-center justify-center px-4 py-12 pt-[112px] sm:px-5 sm:py-24 sm:pt-[132px]">
          <div className="w-full max-w-md">
            <header className="mb-10 text-center">
-             <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-brand-gold/30 bg-brand-gold/5 text-brand-gold">
-               <LogIn className="h-8 w-8" />
+              <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl border border-white/10 bg-white/5 text-brand-gold shadow-2xl">
+                <ShieldCheck className="h-10 w-10" />
              </div>
-             <h1 className="text-3xl font-bold tracking-tight text-white">Área do Cliente</h1>
-             <p className="mt-3 text-white/50">Acesse com seu CPF e data de nascimento.</p>
+              <h1 className="text-4xl font-serif font-bold tracking-tight text-white uppercase">Portal do Cliente</h1>
+              <p className="mt-4 text-white/40 max-w-[280px] mx-auto text-sm">Acesse seus contratos e realize pagamentos de forma segura</p>
            </header>
  
            <Card className="border-white/10 bg-white/[0.02] p-5 sm:p-8 shadow-2xl backdrop-blur-xl">
@@ -233,7 +233,7 @@
              )}
              <form className="space-y-6" onSubmit={handleLogin}>
                <div className="space-y-2">
-                  <Label htmlFor="document" className="text-white/80">CPF ou CNPJ</Label>
+                  <Label htmlFor="document" className="text-white/40 text-[10px] font-bold uppercase tracking-widest">Identificação (CPF/CNPJ)</Label>
                  <div className="relative">
                    <User className="absolute left-3 top-3 h-4 w-4 text-white/20" />
                    <Input 
@@ -248,7 +248,7 @@
                </div>
                
                <div className="space-y-2">
-                 <Label htmlFor="birthDate" className="text-white/80">Data de Nascimento</Label>
+                  <Label htmlFor="birthDate" className="text-white/40 text-[10px] font-bold uppercase tracking-widest">Data de Nascimento</Label>
                  <div className="relative">
                    <Calendar className="absolute left-3 top-3 h-4 w-4 text-white/20" />
                    <Input 
@@ -262,12 +262,12 @@
                  </div>
                </div>
  
-               <Button 
-                 disabled={isLoading}
-                 className="w-full bg-brand-gold font-bold uppercase tracking-wider text-[hsl(0_0%_4%)] hover:bg-brand-gold/90"
-               >
-                 {isLoading ? "Validando..." : "Entrar no Portal"}
-               </Button>
+                <Button 
+                  disabled={isLoading}
+                  className="w-full h-14 bg-blue-600 font-bold uppercase tracking-wider text-white hover:bg-blue-500 shadow-[0_0_20px_rgba(37,99,235,0.3)] transition-all"
+                >
+                  {isLoading ? "Validando..." : "Entrar no Portal"}
+                </Button>
              </form>
            </Card>
            
