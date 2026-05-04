@@ -35,7 +35,7 @@ const CookieBanner = () => {
 
   return (
     <div
-      className="animate-fade-in fixed bottom-3 left-3 right-3 z-[55] max-w-md rounded-2xl border border-foreground/10 bg-card p-4 shadow-[0_24px_60px_-12px_rgba(0,0,0,0.25)] md:bottom-8 md:left-8 md:right-auto md:p-5"
+      className="animate-fade-in fixed bottom-24 left-3 right-3 z-[55] max-w-md rounded-2xl border border-foreground/10 bg-card p-4 shadow-[0_24px_60px_-12px_rgba(0,0,0,0.25)] sm:bottom-5 md:bottom-8 md:left-8 md:right-auto md:p-5"
       role="dialog"
       aria-labelledby="cookie-title"
     >
