@@ -1,5 +1,5 @@
 import { ChevronRight, ShieldCheck } from "lucide-react";
-import { Link } from "react-router-dom";
+import { whatsappLink } from "@/config/site";
 import parceirosImage from "@/assets/parceiros-bancos-clean.png";
 
 const PartnerBanks = () => (
@@ -44,8 +44,10 @@ const PartnerBanks = () => (
             </div>
           </div>
 
-          <Link
-            to="/simular"
+          <a
+            href={whatsappLink("Olá! Quero falar com um especialista da Credifácil.")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group flex w-full items-center justify-between gap-6 rounded-2xl border border-brand-gold/40 bg-brand-gold/5 px-6 py-5 transition-all duration-300 hover:border-brand-gold hover:bg-brand-gold/10 md:w-auto"
           >
             <div>
@@ -57,7 +59,7 @@ const PartnerBanks = () => (
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold-gradient text-brand-ink transition-transform duration-300 group-hover:translate-x-1 group-hover:scale-110">
               <ChevronRight className="h-6 w-6" strokeWidth={3} />
             </div>
-          </Link>
+          </a>
         </div>
       </div>
     </div>

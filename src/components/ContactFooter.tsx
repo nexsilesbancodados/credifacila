@@ -46,19 +46,18 @@ const navColumns = [
   {
     title: "Empréstimos",
     links: [
-      { label: "Crédito pessoal", href: "/#solucoes" },
       { label: "Crédito consignado", href: "/consignado" },
       { label: "Securitizadora", href: "/securitizadora" },
-      { label: "Linhas de crédito", href: "/#solucoes" },
+      { label: "Antecipação de Recebíveis", href: "/securitizadora/antecipacao-de-recebiveis" },
+      { label: "Boleto Garantido", href: "/securitizadora/boleto-garantido" },
+      { label: "Conta Digital Luri", href: "/securitizadora/conta-digital-luri" },
     ],
   },
   {
     title: "Institucional",
     links: [
-      { label: "Sobre nós", href: "/#sobre" },
-      { label: "Como funciona", href: "/#como-funciona" },
-       { label: "Blog", href: "/blog" },
-       { label: "Vantagens", href: "/#vantagens" },
+      { label: "Blog", href: "/blog" },
+      { label: "Invista conosco", href: "/invista-conosco" },
       { label: "Perguntas frequentes", href: "/perguntas-frequentes" },
     ],
   },
