@@ -193,7 +193,7 @@ const FloatingChatbot = () => {
     <div className="fixed bottom-5 right-5 z-[60] flex flex-col items-end gap-3 md:bottom-8 md:right-8">
       {open && (
         <div
-          className="animate-fade-in flex h-[560px] w-[min(380px,calc(100vw-2.5rem))] flex-col overflow-hidden rounded-3xl border border-brand-gold/30 bg-[hsl(0_0%_5%)] shadow-[0_30px_80px_-20px_hsl(42_78%_50%/0.45),0_20px_60px_-15px_hsl(0_0%_0%/0.8)] backdrop-blur-xl"
+         className="animate-fade-in flex h-[min(560px,calc(100dvh-7rem))] w-[min(380px,calc(100vw-2rem))] flex-col overflow-hidden rounded-3xl border border-brand-gold/30 bg-[hsl(0_0%_5%)] shadow-[0_30px_80px_-20px_hsl(42_78%_50%/0.45),0_20px_60px_-15px_hsl(0_0%_0%/0.8)] backdrop-blur-xl"
           role="dialog"
           aria-label="Assistente Credifácil"
         >
