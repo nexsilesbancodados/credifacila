@@ -10,7 +10,7 @@ const PartnerBanks = () => (
   >
     <div className="mx-auto max-w-7xl">
       {/* Hero composition image */}
-       <div className="relative mx-auto" data-anim="zoom-out" data-parallax="0.05">
+        <div className="relative mx-auto">
         <div className="pointer-events-none absolute inset-0 -z-10 opacity-60 blur-3xl"
           style={{ background: "radial-gradient(60% 50% at 50% 50%, hsl(42 78% 45% / 0.25), transparent 70%)" }}
           aria-hidden
@@ -25,10 +25,7 @@ const PartnerBanks = () => (
       </div>
 
        {/* CTA */}
-       <div
-         className="mt-12 overflow-hidden rounded-[32px] border border-brand-gold/30 bg-surface-deep-2/60 p-1 backdrop-blur-md shadow-2xl"
-         data-anim="reveal-up"
-       >
+        <div className="mt-12 overflow-hidden rounded-[32px] border border-brand-gold/30 bg-surface-deep-2/60 p-1 shadow-2xl">
         <div className="flex flex-col items-center gap-6 rounded-[30px] bg-gradient-to-r from-brand-ink to-surface-deep-2 p-5 sm:p-8 md:flex-row md:justify-between md:p-10">
           <div className="flex w-full items-center gap-4 sm:gap-6">
             <div className="hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-brand-gold/30 bg-brand-gold/5 text-brand-gold sm:flex">
