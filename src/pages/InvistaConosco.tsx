@@ -93,7 +93,7 @@ const InvistaConosco = () => {
           <div data-parallax="0.1" className="pointer-events-none absolute inset-0 opacity-25">
             <img src={heroImg} alt="" className="h-full w-full object-cover object-right" />
           </div>
-          <div className="relative mx-auto grid max-w-7xl gap-12 px-5 md:px-8 lg:grid-cols-2 lg:items-center">
+          <div className="relative mx-auto grid max-w-7xl gap-10 px-4 sm:px-5 md:px-8 lg:grid-cols-2 lg:items-center lg:gap-12">
             <div data-anim="fade-right">
               <span className="pill-eyebrow-dark"><Sparkles className="h-3.5 w-3.5" /> Investidor qualificado</span>
               <h1 className="mt-6 font-display text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-6xl">
@@ -118,7 +118,7 @@ const InvistaConosco = () => {
               </div>
             </div>
             <div data-anim="fade-left" className="lg:justify-self-end">
-              <div className="card-glass relative overflow-hidden p-8">
+              <div className="card-glass relative overflow-hidden p-5 sm:p-8">
                 <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full opacity-30" style={{ background: "var(--gradient-gold)" }} />
                 <h3 className="font-display text-2xl font-bold">Receba o material institucional</h3>
                 <p className="mt-2 text-sm text-muted-foreground">Acesso restrito a investidores qualificados.</p>
@@ -138,7 +138,7 @@ const InvistaConosco = () => {
                       <label className="form-label" htmlFor="email">E-mail</label>
                       <input id="email" type="email" required className="form-input" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
                     </div>
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                       <div>
                         <label className="form-label" htmlFor="telefone">Telefone</label>
                         <input id="telefone" required className="form-input" value={form.telefone} onChange={(e) => setForm({ ...form, telefone: e.target.value })} />
