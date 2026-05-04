@@ -29,25 +29,30 @@
    const [errorMsg, setErrorMsg] = useState<string | null>(null);
    const [step, setStep] = useState<"login" | "dashboard">("login");
    const [isLoading, setIsLoading] = useState(false);
-   const [cpf, setCpf] = useState("");
- 
-   const formatCpf = (value: string) => {
-     const nums = value.replace(/\D/g, "");
-     if (nums.length <= 11) {
-       return nums
-         .replace(/(\d{3})(\d)/, "$1.$2")
-         .replace(/(\d{3})(\d)/, "$1.$2")
-         .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-     }
-     return nums;
-   };
- 
-   const handleCpfChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-     const formatted = formatCpf(e.target.value);
-     if (formatted.length <= 14) {
-       setCpf(formatted);
-     }
-   };
+    const [document, setDocument] = useState("");
+
+    const formatDocument = (value: string) => {
+      const nums = value.replace(/\D/g, "");
+      if (nums.length <= 11) {
+        return nums
+          .replace(/(\d{3})(\d)/, "$1.$2")
+          .replace(/(\d{3})(\d)/, "$1.$2")
+          .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+      } else {
+        return nums
+          .replace(/(\d{2})(\d)/, "$1.$2")
+          .replace(/(\d{3})(\d)/, "$1.$2")
+          .replace(/(\d{3})(\d)/, "$1.$2")
+          .replace(/(\d{4})(\d{1,2})$/, "$1-$2");
+      }
+    };
+
+    const handleDocumentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const formatted = formatDocument(e.target.value);
+      if (formatted.length <= 18) {
+        setDocument(formatted);
+      }
+    };
    const [birthDate, setBirthDate] = useState("");
    const [clientData, setClientData] = useState<any>(null);
    const [debts, setDebts] = useState<Debt[]>([]);
