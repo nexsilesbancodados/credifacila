@@ -17,7 +17,7 @@ const ContaDigitalLuri = () => {
       <TopNav />
       <main className="flex-1 w-full">
         <h1 className="sr-only">Conta Digital Luri</h1>
-        <div className="w-full h-[calc(100vh-80px)]">
+        <div className="w-full h-[calc(100dvh-72px)] md:h-[calc(100vh-80px)]">
           <iframe
             src={LURI_URL}
             title="Conta Digital Luri"
