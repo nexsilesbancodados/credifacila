@@ -76,7 +76,7 @@ const ContactFooter = () => {
   return (
     <footer
       id="contato"
-      className="relative w-full px-5 pt-16 md:px-8 md:pt-20 lg:px-10"
+      className="relative w-full px-4 pt-12 sm:px-5 sm:pt-16 md:px-8 md:pt-20 lg:px-10"
       aria-label="Contato e rodapé"
     >
       <div className="mx-auto max-w-7xl">

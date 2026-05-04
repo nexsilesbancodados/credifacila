@@ -5,7 +5,7 @@ import parceirosImage from "@/assets/parceiros-bancos-clean.png";
 const PartnerBanks = () => (
   <section
     id="bancos-parceiros"
-    className="relative w-full overflow-hidden px-5 py-16 md:px-8 md:py-24 lg:px-10"
+    className="relative w-full overflow-hidden px-4 py-12 sm:px-5 sm:py-16 md:px-8 md:py-24 lg:px-10"
     aria-label="Bancos parceiros"
   >
     <div className="mx-auto max-w-7xl">

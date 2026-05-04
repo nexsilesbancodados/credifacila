@@ -47,9 +47,9 @@ const steps = [
 const SolutionsSection = () => (
   <section
     aria-label="Soluções e como funciona"
-    className="relative w-full overflow-hidden py-24 md:py-32"
+    className="relative w-full overflow-hidden py-16 sm:py-24 md:py-32"
   >
-    <div className="relative mx-auto flex max-w-7xl flex-col gap-16 px-5 md:px-8 md:gap-24">
+    <div className="relative mx-auto flex max-w-7xl flex-col gap-16 px-4 sm:px-5 md:px-8 md:gap-24">
       {/* === Bloco 1: Benefícios === */}
       <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
         <div className="order-2 lg:order-1">
@@ -59,7 +59,7 @@ const SolutionsSection = () => (
               Mais benefícios para você
             </span>
           </div>
-          <h2 className="mt-6 font-display text-4xl font-extrabold leading-[0.98] tracking-tight text-white md:text-[56px]">
+          <h2 className="mt-6 font-display text-[28px] font-extrabold leading-[1.05] tracking-tight text-white sm:text-4xl md:text-[56px]">
             Soluções pensadas
             <br />
             para facilitar{" "}
@@ -168,7 +168,7 @@ const SolutionsSection = () => (
             </span>
             <span className="h-px w-8 bg-brand-gold" />
           </div>
-          <h2 className="mt-6 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-white md:text-[52px]">
+          <h2 className="mt-6 font-display text-[28px] font-extrabold leading-[1.05] tracking-tight text-white sm:text-4xl md:text-[52px]">
             Como funciona <span className="text-gold-gradient">na prática</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-[16px] leading-relaxed text-white/65">

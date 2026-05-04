@@ -2,8 +2,7 @@ import heroPrincipal from "@/assets/hero-principal.png";
 
 const HeroCarousel = () => (
   <div
-    className="relative w-full overflow-hidden"
-    style={{ aspectRatio: "16 / 9" }}
+    className="relative w-full overflow-hidden aspect-[4/5] sm:aspect-[16/10] md:aspect-[16/9]"
     aria-label="Credifácil — Mais que crédito, um parceiro para seus melhores planos"
   >
     <img
