@@ -94,6 +94,7 @@ export type Database = {
           email: string | null
           id: string
           name: string
+          owner_id: string | null
           phone: string
           updated_at: string
         }
@@ -105,6 +106,7 @@ export type Database = {
           email?: string | null
           id?: string
           name: string
+          owner_id?: string | null
           phone: string
           updated_at?: string
         }
@@ -116,6 +118,7 @@ export type Database = {
           email?: string | null
           id?: string
           name?: string
+          owner_id?: string | null
           phone?: string
           updated_at?: string
         }
@@ -129,6 +132,7 @@ export type Database = {
           description: string | null
           due_date: string
           id: string
+          owner_id: string | null
           status: string
           updated_at: string
         }
@@ -139,6 +143,7 @@ export type Database = {
           description?: string | null
           due_date: string
           id?: string
+          owner_id?: string | null
           status?: string
           updated_at?: string
         }
@@ -149,6 +154,7 @@ export type Database = {
           description?: string | null
           due_date?: string
           id?: string
+          owner_id?: string | null
           status?: string
           updated_at?: string
         }
