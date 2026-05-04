@@ -8,8 +8,9 @@ const useScrollAnimations = () => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const isMobile = window.matchMedia("(max-width: 767px)").matches;
     // Skip parallax on mobile (jank) and when reduced motion is requested
-    const skipParallax = reduce || isMobile;
-    if (reduce) {
+     // Total skip for anything that causes reflow/paint during scroll on mobile
+     const skipEffects = reduce || isMobile;
+     if (skipEffects) {
       document.querySelectorAll<HTMLElement>("[data-anim], [data-anim-stagger]").forEach((el) => {
         el.classList.add(VISIBLE_CLASS);
       });
@@ -27,14 +28,15 @@ const useScrollAnimations = () => {
       { rootMargin: "0px 0px -10% 0px", threshold: 0.05 }
     );
 
-    const observe = (root: ParentNode = document) => {
-      root.querySelectorAll<HTMLElement>("[data-anim], [data-anim-stagger]").forEach((el) => {
-        if (el.classList.contains(VISIBLE_CLASS)) return;
-        io.observe(el);
-      });
-    };
-
-    if (!reduce) observe();
+     if (!skipEffects) {
+       const observe = (root: ParentNode = document) => {
+         root.querySelectorAll<HTMLElement>("[data-anim], [data-anim-stagger]").forEach((el) => {
+           if (el.classList.contains(VISIBLE_CLASS)) return;
+           io.observe(el);
+         });
+       };
+       observe();
+     }
 
     /* ------- Lightweight parallax (rAF + IO, skips offscreen) ------- */
     const parallaxEls = new Set<HTMLElement>();
@@ -71,24 +73,23 @@ const useScrollAnimations = () => {
       { rootMargin: "10% 0px 10% 0px" }
     );
 
-    const observeParallax = (root: ParentNode = document) => {
-      if (skipParallax) return;
-      root.querySelectorAll<HTMLElement>("[data-parallax]").forEach((el) => {
-        if (parallaxEls.has(el)) return;
-        parallaxEls.add(el);
-        pIO.observe(el);
-      });
-    };
-
-    observeParallax();
-    if (!skipParallax) {
+     if (!skipEffects) {
+       const observeParallax = (root: ParentNode = document) => {
+         root.querySelectorAll<HTMLElement>("[data-parallax]").forEach((el) => {
+           if (parallaxEls.has(el)) return;
+           parallaxEls.add(el);
+           pIO.observe(el);
+         });
+       };
+       observeParallax();
+       
       window.addEventListener("scroll", onScroll, { passive: true });
       window.addEventListener("resize", onScroll, { passive: true });
     }
 
     let pending = false;
-    const mo = new MutationObserver((mutations) => {
-      if (pending) return;
+       const mo = new MutationObserver((mutations) => {
+         if (pending) return;
       let hasNew = false;
       for (const m of mutations) {
         if (m.addedNodes.length > 0) {
@@ -97,13 +98,12 @@ const useScrollAnimations = () => {
         }
       }
       if (!hasNew) return;
-      pending = true;
-      requestAnimationFrame(() => {
-        if (!reduce) observe();
-        observeParallax();
-        pending = false;
-      });
-    });
+         pending = true;
+         requestAnimationFrame(() => {
+           observe();
+           observeParallax();
+           pending = false;
+       });
     mo.observe(document.body, { childList: true, subtree: true });
 
     return () => {
@@ -112,7 +112,11 @@ const useScrollAnimations = () => {
       mo.disconnect();
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
-      if (rafId) cancelAnimationFrame(rafId);
+       if (rafId) cancelAnimationFrame(rafId);
+     }
+ 
+     return () => {
+       io.disconnect();
     };
   }, []);
 };
