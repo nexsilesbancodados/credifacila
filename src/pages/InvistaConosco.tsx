@@ -164,7 +164,7 @@ const InvistaConosco = () => {
         </section>
 
         {/* Highlights */}
-        <section className="relative py-20 md:py-24">
+        <section className="relative py-14 sm:py-20 md:py-24">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
               <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">Por que investir conosco</span>
@@ -189,7 +189,7 @@ const InvistaConosco = () => {
         </section>
 
         {/* Products */}
-        <section className="relative py-20 md:py-24 border-t border-brand-gold/10">
+        <section className="relative py-14 sm:py-20 md:py-24 border-t border-brand-gold/10">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
               <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">Produtos</span>
@@ -238,7 +238,7 @@ const InvistaConosco = () => {
         </section>
 
         {/* Process */}
-        <section className="relative py-20 md:py-24 border-t border-brand-gold/10">
+        <section className="relative py-14 sm:py-20 md:py-24 border-t border-brand-gold/10">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
               <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">Como começar</span>
@@ -258,7 +258,7 @@ const InvistaConosco = () => {
         </section>
 
         {/* Performance */}
-        <section className="relative py-20 md:py-24 border-t border-brand-gold/10">
+        <section className="relative py-14 sm:py-20 md:py-24 border-t border-brand-gold/10">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
               <div data-anim="fade-right">
@@ -319,7 +319,7 @@ const InvistaConosco = () => {
         </section>
 
         {/* Security */}
-        <section className="relative py-20 md:py-24 border-t border-brand-gold/10">
+        <section className="relative py-14 sm:py-20 md:py-24 border-t border-brand-gold/10">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
               <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">Segurança</span>
@@ -344,7 +344,7 @@ const InvistaConosco = () => {
         </section>
 
         {/* FAQ */}
-        <section className="relative py-20 md:py-24 border-t border-brand-gold/10">
+        <section className="relative py-14 sm:py-20 md:py-24 border-t border-brand-gold/10">
           <div className="mx-auto max-w-4xl px-5 md:px-8">
             <div className="text-center" data-anim="fade-up">
               <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">Dúvidas frequentes</span>
@@ -368,7 +368,7 @@ const InvistaConosco = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="relative py-20 md:py-24 border-t border-brand-gold/10">
+        <section className="relative py-14 sm:py-20 md:py-24 border-t border-brand-gold/10">
           <div className="mx-auto max-w-5xl px-5 md:px-8">
             <div className="card-glass relative overflow-hidden p-10 md:p-14 text-center">
               <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full opacity-25" style={{ background: "var(--gradient-gold)" }} />

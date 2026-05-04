@@ -181,7 +181,7 @@ const SolutionPage = ({
           />
         </section>
       ) : (
-      <section className="py-20 md:py-24">
+      <section className="py-14 sm:py-20 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center md:px-8">
           <h2 className="font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             {intro.heading}
@@ -338,7 +338,7 @@ const SolutionPage = ({
       />
 
       {/* How it works */}
-      <section id="como" className="py-20 md:py-24">
+      <section id="como" className="py-14 sm:py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
@@ -415,7 +415,7 @@ const SolutionPage = ({
       </section>
 
       {/* FAQ */}
-      <section className="bg-[hsl(0_0%_4%)] py-20 md:py-24">
+      <section className="bg-[hsl(0_0%_4%)] py-14 sm:py-20 md:py-24">
         <div className="mx-auto max-w-3xl px-5 md:px-8">
           <div className="text-center" data-anim="fade-up">
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
