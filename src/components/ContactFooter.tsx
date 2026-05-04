@@ -46,19 +46,18 @@ const navColumns = [
   {
     title: "Empréstimos",
     links: [
-      { label: "Crédito pessoal", href: "/#solucoes" },
       { label: "Crédito consignado", href: "/consignado" },
       { label: "Securitizadora", href: "/securitizadora" },
-      { label: "Linhas de crédito", href: "/#solucoes" },
+      { label: "Antecipação de Recebíveis", href: "/securitizadora/antecipacao-de-recebiveis" },
+      { label: "Boleto Garantido", href: "/securitizadora/boleto-garantido" },
+      { label: "Conta Digital Luri", href: "/securitizadora/conta-digital-luri" },
     ],
   },
   {
     title: "Institucional",
     links: [
-      { label: "Sobre nós", href: "/#sobre" },
-      { label: "Como funciona", href: "/#como-funciona" },
-       { label: "Blog", href: "/blog" },
-       { label: "Vantagens", href: "/#vantagens" },
+      { label: "Blog", href: "/blog" },
+      { label: "Invista conosco", href: "/invista-conosco" },
       { label: "Perguntas frequentes", href: "/perguntas-frequentes" },
     ],
   },
@@ -77,22 +76,22 @@ const ContactFooter = () => {
   return (
     <footer
       id="contato"
-      className="relative w-full px-5 pt-16 md:px-8 md:pt-20 lg:px-10"
+      className="relative w-full px-4 pt-12 sm:px-5 sm:pt-16 md:px-8 md:pt-20 lg:px-10"
       aria-label="Contato e rodapé"
     >
       <div className="mx-auto max-w-7xl">
         {/* Contact CTA card */}
         <div
           data-anim="scale-in"
-          className="relative overflow-hidden rounded-[32px] border border-white/10 p-8 shadow-[var(--shadow-card)] md:p-10"
+          className="relative overflow-hidden rounded-[32px] border border-white/10 p-6 shadow-[var(--shadow-card)] sm:p-8 md:p-10"
           style={{
             background:
-              "linear-gradient(135deg, hsl(0 0% 8% 0%, hsl(0 0% 8% 100%)",
+              "linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 5%) 100%)",
           }}
         >
           <div
             className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full opacity-30"
-            style={{ background: "radial-gradient(circle, hsl(42 78% 60% / 0.6, transparent 70%)" }}
+            style={{ background: "radial-gradient(circle, hsl(42 78% 60% / 0.6) 0%, transparent 70%)" }}
             aria-hidden="true"
           />
           <div className="relative grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">

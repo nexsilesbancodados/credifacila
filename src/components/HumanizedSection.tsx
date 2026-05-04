@@ -22,7 +22,7 @@ const features = [
 const HumanizedSection = () => (
   <section
     aria-label="Atendimento humanizado Credifácil"
-    className="relative w-full overflow-hidden py-20 md:py-28"
+    className="relative w-full overflow-hidden py-14 sm:py-20 md:py-28"
   >
     {/* Soft gold ambient glow */}
     <div
@@ -33,13 +33,13 @@ const HumanizedSection = () => (
       }}
       aria-hidden
     />
-    <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 md:px-8 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
+    <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:gap-12 sm:px-5 md:px-8 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
       {/* Left: copy */}
       <div>
         <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-brand-gold/5 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-gold">
           Atendimento que faz a diferença
         </span>
-        <h2 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-white md:text-5xl">
+        <h2 className="mt-6 font-display text-[28px] font-extrabold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl">
           Atendimento humanizado em cada etapa da{" "}
           <span className="text-gold-gradient">sua jornada.</span>
         </h2>

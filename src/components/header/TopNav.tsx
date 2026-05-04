@@ -21,8 +21,6 @@ const navItems: {
       { label: "Conta Digital Luri", href: "/securitizadora/conta-digital-luri" },
     ],
   },
-  { label: "Como funciona", href: "#como-funciona" },
-  { label: "Sobre nós", href: "#sobre" },
    { label: "Invista Conosco", href: "/invista-conosco" },
    { label: "Blog", href: "/blog" },
   { label: "Dúvidas", href: "/perguntas-frequentes" },

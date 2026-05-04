@@ -231,6 +231,19 @@
   body::before { animation: none !important; }
 }
 
+  /* Mobile: desliga o gradiente animado e o noise para melhorar FPS e bateria */
+  @media (max-width: 640px) {
+    body::before {
+      animation: none !important;
+      background:
+        radial-gradient(ellipse 70% 45% at 80% 5%, hsl(42 78% 30% / 0.30) 0%, transparent 55%),
+        radial-gradient(ellipse 80% 50% at 20% 100%, hsl(0 0% 8%) 0%, transparent 60%),
+        linear-gradient(180deg, hsl(0 0% 5%) 0%, hsl(0 0% 4%) 50%, hsl(0 0% 3%) 100%);
+      background-size: auto;
+    }
+    body::after { display: none; }
+  }
+
 @layer components {
   /* Skip-link (acessibilidade) */
   .skip-link {
