@@ -81,14 +81,13 @@ const ContactFooter = () => {
     >
       <div className="mx-auto max-w-7xl">
         {/* Contact CTA card */}
-        <div
-          data-anim="scale-in"
-          className="relative overflow-hidden rounded-[32px] border border-white/10 p-6 shadow-[var(--shadow-card)] sm:p-8 md:p-10"
-          style={{
-            background:
-              "linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 5%) 100%)",
-          }}
-        >
+         <div
+           data-anim="reveal-up"
+           className="relative overflow-hidden rounded-[32px] border border-white/10 p-6 shadow-[var(--shadow-card)] sm:p-8 md:p-10"
+           style={{
+             background: "linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 5%) 100%)",
+           }}
+         >
           <div
             className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full opacity-30"
             style={{ background: "radial-gradient(circle, hsl(42 78% 60% / 0.6) 0%, transparent 70%)" }}
@@ -161,8 +160,11 @@ const ContactFooter = () => {
         </div>
 
         {/* Footer nav */}
-        <div className="mt-12 grid grid-cols-2 gap-8 border-t border-brand-gold/20 pt-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
-          <div className="col-span-2 md:col-span-1">
+         <div 
+           className="mt-12 grid grid-cols-2 gap-8 border-t border-brand-gold/20 pt-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]"
+           data-anim="fade-up"
+         >
+           <div className="col-span-2 md:col-span-1" data-anim="fade-right">
             <img src={logo} alt="Credifácil" className="h-9 w-auto" loading="lazy" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               Crédito justo, rápido e humano. Há mais de {site.metrics.yearsInMarket} anos ajudando pessoas a realizarem seus planos com tranquilidade.
