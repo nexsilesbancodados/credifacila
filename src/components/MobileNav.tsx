@@ -168,15 +168,13 @@ const MobileNav = () => {
             </a>
           </div>
 
-           <a
-             href="https://systemjuros.com.br"
-             target="_blank"
-             rel="noopener noreferrer"
+           <Link
+             to="/portal"
              onClick={() => setOpen(false)}
              className="mt-3 flex w-full items-center justify-center gap-2 rounded-2xl border border-brand-gold/40 bg-brand-gold/10 px-3 py-3 text-brand-gold transition-colors hover:bg-brand-gold/15 mx-3"
            >
              <span className="text-[12px] font-bold uppercase tracking-wider">Área do Cliente</span>
-           </a>
+           </Link>
  
            <div className="mt-4 grid grid-cols-2 gap-2 px-3">
             <a
