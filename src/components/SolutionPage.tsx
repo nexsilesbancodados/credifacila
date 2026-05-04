@@ -97,18 +97,18 @@ const SolutionPage = ({
       ) : (
       <section className="relative min-h-[520px] overflow-hidden bg-[hsl(215_48%_16%)] pb-16 pt-28 text-white sm:min-h-[600px] sm:pb-20 md:min-h-[720px] md:pt-40">
         {/* Background image full-bleed (with subtle parallax) */}
-        <div data-parallax="0.16" className="pointer-events-none absolute inset-0 -top-12 -bottom-12">
-          <img
-            src={heroIllustration}
-            alt={heroAlt}
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-            width={1920}
-            height={1080}
-            className="h-full w-full scale-105 object-cover object-[70%_center] md:object-right"
-          />
-        </div>
+         <div className="pointer-events-none absolute inset-0">
+           <img
+             src={heroIllustration}
+             alt={heroAlt}
+             loading="eager"
+             fetchPriority="high"
+             decoding="async"
+             width={1920}
+             height={1080}
+             className="h-full w-full object-cover object-[70%_center] md:object-right"
+           />
+         </div>
         {/* Dark overlay (very strong on the left so the typography is fully legible) */}
         <div
           className="pointer-events-none absolute inset-0"
@@ -127,18 +127,10 @@ const SolutionPage = ({
           }}
           aria-hidden
         />
-        <div
-          className="pointer-events-none absolute -left-40 top-1/3 h-[500px] w-[500px] opacity-40"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.35) 0%, transparent 65%)",
-          }}
-          aria-hidden
-        />
-        <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden />
+         <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden />
 
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 px-5 md:px-8 lg:grid-cols-2 lg:items-center">
-          <div data-anim="fade-right" className="max-w-xl">
+           <div className="max-w-xl">
             <span className="pill-eyebrow-dark">
               <Sparkles className="h-3.5 w-3.5" />
               {eyebrow}
@@ -212,7 +204,7 @@ const SolutionPage = ({
       ) : (
       <section className="bg-[hsl(0_0%_4%)] py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" data-anim-stagger>
+           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {benefits.map((b) => {
               const Icon = b.icon;
               return (
@@ -275,24 +267,23 @@ const SolutionPage = ({
               showcase.imagePosition === "right" ? "lg:[&>*:first-child]:order-2" : ""
             }`}
           >
-            <div
-              data-anim="zoom-out"
-              className="glow-gold-hover relative aspect-[4/5] w-full overflow-hidden rounded-3xl shadow-[var(--shadow-card)] ring-1 ring-brand-gold/15 sm:aspect-[3/4] md:aspect-auto md:h-[520px]"
-            >
-              <div data-parallax="0.12" className="absolute inset-0 -top-12 -bottom-12">
-                <img
-                  src={showcase.image}
-                  alt={showcase.alt}
-                  loading="lazy"
-                  decoding="async"
-                  width={1600}
-                  height={1024}
-                  className="h-full w-full scale-110 object-cover"
-                />
-              </div>
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent" aria-hidden />
-            </div>
-            <div data-anim="fade-right">
+             <div
+               className="glow-gold-hover relative aspect-[4/5] w-full overflow-hidden rounded-3xl shadow-[var(--shadow-card)] ring-1 ring-brand-gold/15 sm:aspect-[3/4] md:aspect-auto md:h-[520px]"
+             >
+               <div className="absolute inset-0">
+                 <img
+                   src={showcase.image}
+                   alt={showcase.alt}
+                   loading="lazy"
+                   decoding="async"
+                   width={1600}
+                   height={1024}
+                   className="h-full w-full object-cover"
+                 />
+               </div>
+               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent" aria-hidden />
+             </div>
+             <div>
               {showcase.eyebrow && (
                 <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
                   {showcase.eyebrow}
