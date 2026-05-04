@@ -45,7 +45,7 @@ const navItems: {
      <div 
        className={`fixed inset-x-0 top-0 z-[100] w-full transition-all duration-300 ${
          isScrolled 
-           ? "bg-[hsl(0_0%_4%/0.85)] py-2 shadow-2xl backdrop-blur-xl md:py-3" 
+           ? "bg-[hsl(0_0%_4%/0.96)] py-2 shadow-2xl md:py-3" 
            : "bg-transparent py-4 md:py-6"
        }`}
      >
