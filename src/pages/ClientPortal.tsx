@@ -8,7 +8,7 @@
  import { Label } from "@/components/ui/label";
  import { supabase } from "@/integrations/supabase/client";
  import { User, Calendar, LogIn, ShieldCheck, CheckCircle2, AlertCircle, FileText } from "lucide-react";
- import { useToast } from "@/hooks/use-toast";
+ // Substituindo useToast por um estado simples já que a lib não está presente
  import { format } from "date-fns";
  import { ptBR } from "date-fns/locale";
  
@@ -26,7 +26,7 @@
      description: "Acesse suas faturas, parcelas e informações de crédito com segurança."
    });
  
-   const { toast } = useToast();
+   const [errorMsg, setErrorMsg] = useState<string | null>(null);
    const [step, setStep] = useState<"login" | "dashboard">("login");
    const [isLoading, setIsLoading] = useState(false);
    const [cpf, setCpf] = useState("");
@@ -52,11 +52,7 @@
        if (error) throw error;
  
        if (!client) {
-         toast({
-           variant: "destructive",
-           title: "Acesso negado",
-           description: "CPF ou data de nascimento não encontrados em nossa base.",
-         });
+         setErrorMsg("CPF ou data de nascimento não encontrados em nossa base.");
          return;
        }
  
@@ -73,17 +69,10 @@
        setDebts(clientDebts || []);
        setStep("dashboard");
        
-       toast({
-         title: `Olá, ${client.name.split(" ")[0]}!`,
-         description: "Bem-vindo ao seu portal do cliente.",
-       });
+       setErrorMsg(null);
      } catch (error: any) {
        console.error("Login error:", error);
-       toast({
-         variant: "destructive",
-         title: "Erro ao acessar",
-         description: "Ocorreu um problema ao validar seus dados. Tente novamente.",
-       });
+       setErrorMsg("Ocorreu um problema ao validar seus dados. Tente novamente.");
      } finally {
        setIsLoading(false);
      }
@@ -214,6 +203,11 @@
            </header>
  
            <Card className="border-white/10 bg-white/[0.02] p-5 sm:p-8 shadow-2xl backdrop-blur-xl">
+             {errorMsg && (
+               <div className="mb-4 rounded-lg bg-red-500/10 p-3 text-sm text-red-500 border border-red-500/20">
+                 {errorMsg}
+               </div>
+             )}
              <form className="space-y-6" onSubmit={handleLogin}>
                <div className="space-y-2">
                  <Label htmlFor="cpf" className="text-white/80">CPF</Label>
