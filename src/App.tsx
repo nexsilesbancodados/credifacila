@@ -95,6 +95,7 @@ const App = () => (
          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/portal" element={<Navigate to="/portal-cliente" replace />} />
           <Route path="/portal-cliente" element={<ClientPortal />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
