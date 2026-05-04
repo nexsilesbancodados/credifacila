@@ -18,7 +18,7 @@ const Login = () => {
     <div className="min-h-screen bg-[hsl(0_0%_4%)]">
       <TopNav />
       
-      <main className="flex flex-col items-center justify-center px-4 py-12 sm:px-5 sm:py-24">
+       <main className="flex flex-col items-center justify-center px-4 py-12 pt-[112px] sm:px-5 sm:py-24 sm:pt-[132px]">
         <div className="w-full max-w-md">
           <header className="mb-10 text-center">
             <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-brand-gold/30 bg-brand-gold/5 text-brand-gold">

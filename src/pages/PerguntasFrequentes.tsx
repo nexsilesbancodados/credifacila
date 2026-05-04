@@ -60,7 +60,7 @@ const PerguntasFrequentes = () => {
     .filter((c) => c.items.length > 0);
 
   return (
-    <div className="relative min-h-screen">
+     <div className="relative min-h-screen pt-[72px] md:pt-[88px]">
       <TopNav />
       <main id="main">
         <section className="relative overflow-hidden py-14 sm:py-20 md:py-28">

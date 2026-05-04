@@ -35,11 +35,11 @@ const HumanizedSection = () => (
     />
     <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:gap-12 sm:px-5 md:px-8 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
       {/* Left: copy */}
-      <div>
-        <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-brand-gold/5 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-gold">
+       <div data-anim="fade-right">
+         <span className="pill-eyebrow-dark mb-6">
           Atendimento que faz a diferença
         </span>
-        <h2 className="mt-6 font-display text-[28px] font-extrabold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl">
+         <h2 className="font-display text-[28px] font-extrabold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl">
           Atendimento humanizado em cada etapa da{" "}
           <span className="text-gold-gradient">sua jornada.</span>
         </h2>
@@ -50,11 +50,14 @@ const HumanizedSection = () => (
           prontos para te ajudar.
         </p>
 
-        <ul className="mt-10 flex flex-col gap-7">
-          {features.map((f) => {
+         <ul className="mt-10 flex flex-col gap-7" data-anim="blur-in" style={{ "--anim-delay": "0.2s" } as React.CSSProperties}>
+           {features.map((f, i) => {
             const Icon = f.icon;
             return (
-              <li key={f.title} className="flex items-start gap-4">
+               <li 
+                 key={f.title} 
+                 className="group flex items-start gap-4 transition-transform duration-300 hover:translate-x-1"
+               >
                 <span
                   className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-brand-gold/30 bg-brand-gold/10 text-brand-gold"
                   aria-hidden
@@ -75,8 +78,8 @@ const HumanizedSection = () => (
         </ul>
       </div>
 
-      {/* Right: image */}
-      <div className="relative">
+       {/* Right: image */}
+       <div className="relative" data-anim="zoom-out" data-parallax="0.08">
         <div
           className="pointer-events-none absolute -inset-6 rounded-[32px] opacity-60"
           style={{

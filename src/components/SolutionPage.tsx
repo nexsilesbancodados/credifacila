@@ -77,7 +77,7 @@ const SolutionPage = ({
   useSeo({ title: metaTitle, description: metaDescription });
 
   return (
-    <div className="min-h-screen bg-[hsl(0_0%_4%)] text-white">
+     <div className="min-h-screen bg-[hsl(0_0%_4%)] text-white pt-[72px] md:pt-[88px]">
       <TopNav />
 
       {/* Hero */}

@@ -84,7 +84,7 @@ const InvistaConosco = () => {
   };
 
   return (
-    <div className="relative min-h-screen">
+     <div className="relative min-h-screen pt-[72px] md:pt-[88px]">
       <TopNav />
       <main id="main">
         {/* Hero */}
