@@ -20,7 +20,6 @@ export const site = {
     phone0800: "5511960248795",
     phone0800Display: "(11) 96024-8795",
     email: "contato@credifacil.com.br",
-    address: "Av. Paulista, 1000 — São Paulo, SP",
     hours: "Seg. a sáb., das 8h às 20h",
   },
   social: {
