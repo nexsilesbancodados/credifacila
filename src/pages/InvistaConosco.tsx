@@ -88,15 +88,15 @@ const InvistaConosco = () => {
       <TopNav />
       <main id="main">
         {/* Hero */}
-        <section className="relative overflow-hidden py-24 md:py-32">
+        <section className="relative overflow-hidden py-16 sm:py-24 md:py-32">
           <AnimatedBackdrop variant="dark" />
           <div data-parallax="0.1" className="pointer-events-none absolute inset-0 opacity-25">
             <img src={heroImg} alt="" className="h-full w-full object-cover object-right" />
           </div>
-          <div className="relative mx-auto grid max-w-7xl gap-12 px-5 md:px-8 lg:grid-cols-2 lg:items-center">
+          <div className="relative mx-auto grid max-w-7xl gap-10 px-4 sm:px-5 md:px-8 lg:grid-cols-2 lg:items-center lg:gap-12">
             <div data-anim="fade-right">
               <span className="pill-eyebrow-dark"><Sparkles className="h-3.5 w-3.5" /> Investidor qualificado</span>
-              <h1 className="mt-6 font-display text-4xl font-extrabold leading-tight tracking-tight md:text-6xl">
+              <h1 className="mt-6 font-display text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-6xl">
                 Invista no <span className="text-gold-gradient">crédito real</span> da economia
               </h1>
               <p className="mt-6 max-w-lg text-base leading-relaxed text-white/82 md:text-lg">
@@ -118,7 +118,7 @@ const InvistaConosco = () => {
               </div>
             </div>
             <div data-anim="fade-left" className="lg:justify-self-end">
-              <div className="card-glass relative overflow-hidden p-8">
+              <div className="card-glass relative overflow-hidden p-5 sm:p-8">
                 <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full opacity-30" style={{ background: "var(--gradient-gold)" }} />
                 <h3 className="font-display text-2xl font-bold">Receba o material institucional</h3>
                 <p className="mt-2 text-sm text-muted-foreground">Acesso restrito a investidores qualificados.</p>
@@ -138,7 +138,7 @@ const InvistaConosco = () => {
                       <label className="form-label" htmlFor="email">E-mail</label>
                       <input id="email" type="email" required className="form-input" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
                     </div>
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                       <div>
                         <label className="form-label" htmlFor="telefone">Telefone</label>
                         <input id="telefone" required className="form-input" value={form.telefone} onChange={(e) => setForm({ ...form, telefone: e.target.value })} />
@@ -164,7 +164,7 @@ const InvistaConosco = () => {
         </section>
 
         {/* Highlights */}
-        <section className="relative py-20 md:py-24">
+        <section className="relative py-14 sm:py-20 md:py-24">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
               <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">Por que investir conosco</span>
@@ -189,7 +189,7 @@ const InvistaConosco = () => {
         </section>
 
         {/* Products */}
-        <section className="relative py-20 md:py-24 border-t border-brand-gold/10">
+        <section className="relative py-14 sm:py-20 md:py-24 border-t border-brand-gold/10">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
               <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">Produtos</span>
@@ -238,7 +238,7 @@ const InvistaConosco = () => {
         </section>
 
         {/* Process */}
-        <section className="relative py-20 md:py-24 border-t border-brand-gold/10">
+        <section className="relative py-14 sm:py-20 md:py-24 border-t border-brand-gold/10">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
               <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">Como começar</span>
@@ -258,7 +258,7 @@ const InvistaConosco = () => {
         </section>
 
         {/* Performance */}
-        <section className="relative py-20 md:py-24 border-t border-brand-gold/10">
+        <section className="relative py-14 sm:py-20 md:py-24 border-t border-brand-gold/10">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
               <div data-anim="fade-right">
@@ -319,7 +319,7 @@ const InvistaConosco = () => {
         </section>
 
         {/* Security */}
-        <section className="relative py-20 md:py-24 border-t border-brand-gold/10">
+        <section className="relative py-14 sm:py-20 md:py-24 border-t border-brand-gold/10">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
               <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">Segurança</span>
@@ -344,7 +344,7 @@ const InvistaConosco = () => {
         </section>
 
         {/* FAQ */}
-        <section className="relative py-20 md:py-24 border-t border-brand-gold/10">
+        <section className="relative py-14 sm:py-20 md:py-24 border-t border-brand-gold/10">
           <div className="mx-auto max-w-4xl px-5 md:px-8">
             <div className="text-center" data-anim="fade-up">
               <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">Dúvidas frequentes</span>
@@ -368,7 +368,7 @@ const InvistaConosco = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="relative py-20 md:py-24 border-t border-brand-gold/10">
+        <section className="relative py-14 sm:py-20 md:py-24 border-t border-brand-gold/10">
           <div className="mx-auto max-w-5xl px-5 md:px-8">
             <div className="card-glass relative overflow-hidden p-10 md:p-14 text-center">
               <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full opacity-25" style={{ background: "var(--gradient-gold)" }} />

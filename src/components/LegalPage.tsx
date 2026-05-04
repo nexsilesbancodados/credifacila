@@ -38,7 +38,7 @@ const LegalPage = ({
       <TopNav />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[hsl(215_48%_16%)] pb-16 pt-28 text-white md:pt-36">
+      <section className="relative overflow-hidden bg-[hsl(215_48%_16%)] pb-12 pt-24 text-white sm:pb-16 sm:pt-28 md:pt-36">
         <div
           className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] opacity-50"
           style={{
@@ -53,7 +53,7 @@ const LegalPage = ({
             <FileText className="h-3.5 w-3.5" />
             {eyebrow}
           </span>
-          <h1 className="mt-6 font-display text-3xl font-extrabold leading-[1.1] tracking-tight md:text-5xl">
+          <h1 className="mt-5 font-display text-2xl font-extrabold leading-[1.15] tracking-tight sm:text-3xl md:text-5xl">
             {title}
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/82">{intro}</p>
@@ -65,7 +65,7 @@ const LegalPage = ({
       </section>
 
       {/* Conteúdo */}
-      <main className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-20">
+      <main className="mx-auto max-w-3xl px-4 py-10 sm:px-5 sm:py-16 md:px-8 md:py-20">
         <article className="prose-legal">
           {sections.map((s, i) => (
             <section key={i} className="mb-10">

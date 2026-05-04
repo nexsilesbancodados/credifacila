@@ -95,7 +95,7 @@ const SolutionPage = ({
           />
         </section>
       ) : (
-      <section className="relative min-h-[640px] overflow-hidden bg-[hsl(215_48%_16%)] pb-20 pt-32 text-white md:min-h-[720px] md:pt-40">
+      <section className="relative min-h-[520px] overflow-hidden bg-[hsl(215_48%_16%)] pb-16 pt-28 text-white sm:min-h-[600px] sm:pb-20 md:min-h-[720px] md:pt-40">
         {/* Background image full-bleed (with subtle parallax) */}
         <div data-parallax="0.16" className="pointer-events-none absolute inset-0 -top-12 -bottom-12">
           <img
@@ -106,7 +106,7 @@ const SolutionPage = ({
             decoding="async"
             width={1920}
             height={1080}
-            className="h-full w-full scale-105 object-cover object-right"
+            className="h-full w-full scale-105 object-cover object-[70%_center] md:object-right"
           />
         </div>
         {/* Dark overlay (very strong on the left so the typography is fully legible) */}
@@ -181,7 +181,7 @@ const SolutionPage = ({
           />
         </section>
       ) : (
-      <section className="py-20 md:py-24">
+      <section className="py-14 sm:py-20 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center md:px-8">
           <h2 className="font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             {intro.heading}
@@ -277,7 +277,7 @@ const SolutionPage = ({
           >
             <div
               data-anim="zoom-out"
-              className="glow-gold-hover relative h-[420px] overflow-hidden rounded-3xl shadow-[var(--shadow-card)] ring-1 ring-brand-gold/15 md:h-[520px]"
+              className="glow-gold-hover relative aspect-[4/5] w-full overflow-hidden rounded-3xl shadow-[var(--shadow-card)] ring-1 ring-brand-gold/15 sm:aspect-[3/4] md:aspect-auto md:h-[520px]"
             >
               <div data-parallax="0.12" className="absolute inset-0 -top-12 -bottom-12">
                 <img
@@ -338,7 +338,7 @@ const SolutionPage = ({
       />
 
       {/* How it works */}
-      <section id="como" className="py-20 md:py-24">
+      <section id="como" className="py-14 sm:py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
@@ -415,7 +415,7 @@ const SolutionPage = ({
       </section>
 
       {/* FAQ */}
-      <section className="bg-[hsl(0_0%_4%)] py-20 md:py-24">
+      <section className="bg-[hsl(0_0%_4%)] py-14 sm:py-20 md:py-24">
         <div className="mx-auto max-w-3xl px-5 md:px-8">
           <div className="text-center" data-anim="fade-up">
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">

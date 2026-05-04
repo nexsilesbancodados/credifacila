@@ -49,12 +49,12 @@ const Blog = () => {
     <div className="min-h-screen bg-[hsl(0_0%_4%)]">
       <TopNav />
       
-      <main className="mx-auto max-w-7xl px-5 py-20 lg:px-10">
-        <header className="mb-16 text-center">
+      <main className="mx-auto max-w-7xl px-4 py-12 sm:px-5 sm:py-20 lg:px-10">
+        <header className="mb-10 text-center sm:mb-16">
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-gold/30 bg-brand-gold/5 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
             Conhecimento e Estratégia
           </span>
-          <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
             Blog <span className="text-brand-gold">Credifácil</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/60">

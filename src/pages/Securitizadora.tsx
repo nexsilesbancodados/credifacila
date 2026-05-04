@@ -45,7 +45,7 @@ const Securitizadora = () => {
       <TopNav />
       <main id="main">
         {/* Hero */}
-        <section className="relative overflow-hidden py-24 md:py-32">
+        <section className="relative overflow-hidden py-16 sm:py-24 md:py-32">
           <AnimatedBackdrop variant="dark" />
           <div data-parallax="0.12" className="pointer-events-none absolute inset-0 opacity-30">
             <img src={heroSec} alt="" className="h-full w-full object-cover" />
