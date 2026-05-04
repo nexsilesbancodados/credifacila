@@ -17,9 +17,10 @@ const Lgpd = lazy(() => import("./pages/Lgpd.tsx"));
  const Ouvidoria = lazy(() => import("./pages/Ouvidoria.tsx"));
  const Blog = lazy(() => import("./pages/Blog.tsx"));
  const BlogPost = lazy(() => import("./pages/BlogPost.tsx"));
- const Login = lazy(() => import("./pages/Login.tsx"));
- const Dashboard = lazy(() => import("./pages/Dashboard.tsx"));
-
+  const Login = lazy(() => import("./pages/Login.tsx"));
+  const Dashboard = lazy(() => import("./pages/Dashboard.tsx"));
+  const ClientPortal = lazy(() => import("./pages/ClientPortal.tsx"));
+ 
 import FloatingChatbot from "./components/FloatingChatbot";
 import CookieBanner from "./components/CookieBanner";
 import useScrollAnimations from "./hooks/useScrollAnimations";
@@ -90,8 +91,9 @@ const App = () => (
          <Route path="/ouvidoria" element={<Ouvidoria />} />
          <Route path="/blog" element={<Blog />} />
          <Route path="/blog/:slug" element={<BlogPost />} />
-         <Route path="/login" element={<Login />} />
-         <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/portal" element={<ClientPortal />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
