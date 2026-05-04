@@ -214,7 +214,6 @@
     return (
       <div className="min-h-[100dvh] bg-[hsl(0_0%_2%)] flex items-center justify-center p-4">
         <main className="w-full max-w-md">
-         <div className="w-full max-w-md">
            <header className="mb-10 text-center">
               <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl border border-white/10 bg-white/5 text-brand-gold shadow-2xl">
                 <ShieldCheck className="h-10 w-10" />
@@ -275,10 +274,10 @@
               </Link>
             </div>
             
-            <div className="mt-12 flex items-center justify-center gap-2 text-[10px] text-white/20 uppercase tracking-widest">
-              Protegido por criptografia de ponta a ponta
-            </div>
-          </main>
+          <div className="mt-12 flex items-center justify-center gap-2 text-[10px] text-white/20 uppercase tracking-widest">
+            Protegido por criptografia de ponta a ponta
+          </div>
+        </main>
       </div>
     );
  };
