@@ -95,7 +95,7 @@ const SolutionPage = ({
           />
         </section>
       ) : (
-      <section className="relative min-h-[640px] overflow-hidden bg-[hsl(215_48%_16%)] pb-20 pt-32 text-white md:min-h-[720px] md:pt-40">
+      <section className="relative min-h-[520px] overflow-hidden bg-[hsl(215_48%_16%)] pb-16 pt-28 text-white sm:min-h-[600px] sm:pb-20 md:min-h-[720px] md:pt-40">
         {/* Background image full-bleed (with subtle parallax) */}
         <div data-parallax="0.16" className="pointer-events-none absolute inset-0 -top-12 -bottom-12">
           <img
