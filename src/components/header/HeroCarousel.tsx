@@ -4,18 +4,17 @@ const HeroCarousel = () => (
    <div
      className="relative w-full overflow-hidden aspect-[4/5] sm:aspect-[16/10] md:aspect-[16/9]"
      aria-label="Credifácil — Mais que crédito, um parceiro para seus melhores planos"
-     data-anim="zoom-out"
-   >
-     <img
-       src={heroPrincipal}
-       alt="Mais que crédito. Um parceiro para seus melhores planos — Credifácil"
-       loading="eager"
-       decoding="async"
-       fetchPriority="high"
-       className="absolute inset-0 h-full w-full object-cover object-[60%_center] sm:object-center transition-transform duration-[20s] ease-linear hover:scale-110"
-       width={1920}
-       height={1080}
-     />
+    >
+      <img
+        src={heroPrincipal}
+        alt="Mais que crédito. Um parceiro para seus melhores planos — Credifácil"
+        loading="eager"
+        decoding="async"
+        fetchPriority="high"
+        className="absolute inset-0 h-full w-full object-cover object-[60%_center] sm:object-center"
+        width={1920}
+        height={1080}
+      />
      {/* Subtle overlay gradient for better text legibility on child components if any */}
      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-60" aria-hidden="true" />
    </div>
