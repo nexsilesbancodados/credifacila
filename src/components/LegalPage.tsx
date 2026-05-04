@@ -120,8 +120,6 @@ const LegalPage = ({
 
         <div className="mt-10 text-center text-xs text-foreground/50">
           {site.legal.razaoSocial} · CNPJ {site.legal.cnpj}
-          <br />
-          {site.contact.address}
         </div>
       </main>
       <ContactFooter />

@@ -35,11 +35,6 @@ const channels = [
     value: site.contact.email,
     href: mailLink("Contato pelo site"),
   },
-  {
-    icon: MapPin,
-    label: "Endereço",
-    value: site.contact.address,
-  },
 ];
 
 const navColumns = [
