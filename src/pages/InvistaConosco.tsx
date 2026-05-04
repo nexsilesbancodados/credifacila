@@ -96,7 +96,7 @@ const InvistaConosco = () => {
           <div className="relative mx-auto grid max-w-7xl gap-12 px-5 md:px-8 lg:grid-cols-2 lg:items-center">
             <div data-anim="fade-right">
               <span className="pill-eyebrow-dark"><Sparkles className="h-3.5 w-3.5" /> Investidor qualificado</span>
-              <h1 className="mt-6 font-display text-4xl font-extrabold leading-tight tracking-tight md:text-6xl">
+              <h1 className="mt-6 font-display text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-6xl">
                 Invista no <span className="text-gold-gradient">crédito real</span> da economia
               </h1>
               <p className="mt-6 max-w-lg text-base leading-relaxed text-white/82 md:text-lg">
