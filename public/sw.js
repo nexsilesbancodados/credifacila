@@ -1,9 +1,15 @@
-/* Service Worker — kill switch
- * Desregistra a si mesmo e limpa todos os caches.
- * Recupera usuários presos em versões antigas do SW.
+/* Service Worker — kill switch permanente
+ * Nunca cacheia nada. Sempre se auto-desregistra e limpa todos os Cache Storage.
+ * Garante que nenhum visitante fique preso em uma versão antiga do site.
  */
-self.addEventListener("install", () => {
+self.addEventListener("install", (event) => {
   self.skipWaiting();
+  event.waitUntil(
+    (async () => {
+      const keys = await caches.keys();
+      await Promise.all(keys.map((k) => caches.delete(k)));
+    })()
+  );
 });
 
 self.addEventListener("activate", (event) => {
@@ -18,6 +24,12 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-self.addEventListener("fetch", () => {
-  // Não interceptar nada — deixa o navegador buscar direto da rede.
+// Bypass total: nunca interceptar nada, sempre rede direta.
+self.addEventListener("fetch", (event) => {
+  // Para requisições de navegação, força no-store para evitar bfcache de erros.
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      fetch(event.request, { cache: "no-store" }).catch(() => fetch(event.request))
+    );
+  }
 });
