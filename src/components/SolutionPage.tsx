@@ -144,7 +144,7 @@ const SolutionPage = ({
               {eyebrow}
             </span>
             <h1
-              className="mt-6 font-display text-[40px] font-extrabold leading-[1.02] tracking-tight md:text-[56px] lg:text-[60px]"
+              className="mt-6 font-display text-[32px] font-extrabold leading-[1.05] tracking-tight sm:text-[40px] md:text-[56px] lg:text-[60px]"
               style={{ textShadow: "0 4px 24px hsl(0 0% 0% / 0.7)" }}
             >
               {title}{" "}
