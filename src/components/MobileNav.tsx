@@ -76,25 +76,15 @@ const MobileNav = () => {
         aria-hidden
       />
 
-      {/* Drawer */}
-      <aside
-        role="dialog"
-        aria-modal="true"
-        aria-label="Menu principal"
-        className={`fixed right-0 top-0 z-[81] flex h-[100dvh] w-[88%] max-w-sm flex-col overflow-hidden bg-[hsl(0_0%_6%)] text-white shadow-[0_0_60px_-10px_rgba(0,0,0,0.6)] transition-transform duration-300 ease-out lg:hidden ${
-          open ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        {/* Decorative gold glow */}
-        <div
-          className="pointer-events-none absolute -right-24 -top-24 h-[400px] w-[400px] opacity-40"
-          style={{
-            background:
-              "radial-gradient(circle, hsl(42 78% 58% / 0.5) 0%, transparent 70%)",
-          }}
-          aria-hidden
-        />
-        <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden />
+       {/* Drawer */}
+       <aside
+         role="dialog"
+         aria-modal="true"
+         aria-label="Menu principal"
+         className={`fixed right-0 top-0 z-[81] flex h-[100dvh] w-[88%] max-w-sm flex-col overflow-hidden bg-[hsl(0_0%_4%)] text-white shadow-[0_0_60px_-10px_rgba(0,0,0,0.6)] transition-transform duration-300 ease-out lg:hidden ${
+           open ? "translate-x-0" : "translate-x-full"
+         }`}
+       >
 
         <div className="relative flex items-center justify-between border-b border-white/10 px-5 py-5">
           <Link to="/" onClick={() => setOpen(false)} aria-label="Credifácil">

@@ -51,15 +51,15 @@ const SolutionsSection = () => (
   >
     <div className="relative mx-auto flex max-w-7xl flex-col gap-16 px-4 sm:px-5 md:px-8 md:gap-24">
       {/* === Bloco 1: Benefícios === */}
-       <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-20" data-anim="fade-up">
-         <div className="order-2 lg:order-1" data-anim="fade-right">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
+          <div className="order-2 lg:order-1">
           <div className="inline-flex items-center gap-2.5">
             <span className="h-px w-8 bg-brand-gold" />
             <span className="text-[11px] font-bold uppercase tracking-[0.32em] text-brand-gold">
               Mais benefícios para você
             </span>
           </div>
-           <h2 className="mt-6 font-display text-[26px] font-extrabold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-[56px]" data-anim="blur-in">
+            <h2 className="mt-6 font-display text-[26px] font-extrabold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-[56px]">
             Soluções pensadas
             <br />
             para facilitar{" "}
@@ -114,8 +114,8 @@ const SolutionsSection = () => (
           </div>
         </div>
 
-         {/* Image */}
-         <div className="relative order-1 lg:order-2" data-anim="fade-left" data-parallax="-0.06">
+          {/* Image */}
+          <div className="relative order-1 lg:order-2">
           <div
             className="pointer-events-none absolute -inset-6 rounded-[32px] opacity-70"
             style={{
@@ -158,9 +158,9 @@ const SolutionsSection = () => (
         </div>
       </div>
 
-       {/* === Bloco 2: Como funciona === */}
-       <div className="relative" data-anim="reveal-up">
-         <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
+        {/* === Bloco 2: Como funciona === */}
+        <div className="relative">
+          <div className="mx-auto max-w-2xl text-center">
           <div className="inline-flex items-center gap-2.5">
             <span className="h-px w-8 bg-brand-gold" />
             <span className="text-[11px] font-bold uppercase tracking-[0.32em] text-brand-gold">
@@ -188,7 +188,7 @@ const SolutionsSection = () => (
             }}
             aria-hidden
           />
-           <ol className="relative grid grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 sm:gap-y-12 md:grid-cols-5 md:gap-x-3" data-anim="blur-in" style={{ "--anim-delay": "0.15s" } as React.CSSProperties}>
+            <ol className="relative grid grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 sm:gap-y-12 md:grid-cols-5 md:gap-x-3">
              {steps.map((s, i) => {
               const Icon = s.icon;
               return (

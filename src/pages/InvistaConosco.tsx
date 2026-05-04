@@ -88,36 +88,35 @@ const InvistaConosco = () => {
       <TopNav />
       <main id="main">
         {/* Hero */}
-        <section className="relative overflow-hidden py-16 sm:py-24 md:py-32">
-          <AnimatedBackdrop variant="dark" />
-          <div data-parallax="0.1" className="pointer-events-none absolute inset-0 opacity-25">
-            <img src={heroImg} alt="" className="h-full w-full object-cover object-right" />
-          </div>
-          <div className="relative mx-auto grid max-w-7xl gap-10 px-4 sm:px-5 md:px-8 lg:grid-cols-2 lg:items-center lg:gap-12">
-            <div data-anim="fade-right">
-              <span className="pill-eyebrow-dark"><Sparkles className="h-3.5 w-3.5" /> Investidor qualificado</span>
-              <h1 className="mt-6 font-display text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-6xl">
-                Invista no <span className="text-gold-gradient">crédito real</span> da economia
-              </h1>
-              <p className="mt-6 max-w-lg text-base leading-relaxed text-white/82 md:text-lg">
-                Rentabilidade consistente, lastro em recebíveis performados e estrutura regulada pela CVM.
-                Para investidores que buscam diversificação com segurança.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <a href="#form" className="btn-gold group">
-                  Quero investir <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </a>
-                <a href={whatsappLink("Olá! Tenho interesse em investir com a Credifácil.")} className="btn-ghost-light">
-                  <MessageCircle className="h-4 w-4" /> Falar com RI
-                </a>
-              </div>
-              <div className="mt-10 grid grid-cols-3 gap-6 border-t border-brand-gold/15 pt-6" data-anim-stagger>
-                <div><div className="font-display text-3xl font-extrabold text-gold-gradient">+R$ 800M</div><div className="mt-1 text-[11px] uppercase tracking-wider text-muted-foreground">Sob gestão</div></div>
-                <div><div className="font-display text-3xl font-extrabold text-gold-gradient">112%</div><div className="mt-1 text-[11px] uppercase tracking-wider text-muted-foreground">do CDI médio</div></div>
-                <div><div className="font-display text-3xl font-extrabold text-gold-gradient">5+ anos</div><div className="mt-1 text-[11px] uppercase tracking-wider text-muted-foreground">de track record</div></div>
-              </div>
-            </div>
-            <div data-anim="fade-left" className="lg:justify-self-end">
+         <section className="relative overflow-hidden py-16 sm:py-24 md:py-32">
+           <div className="pointer-events-none absolute inset-0 opacity-25">
+             <img src={heroImg} alt="" className="h-full w-full object-cover object-right" />
+           </div>
+           <div className="relative mx-auto grid max-w-7xl gap-10 px-4 sm:px-5 md:px-8 lg:grid-cols-2 lg:items-center lg:gap-12">
+             <div>
+               <span className="pill-eyebrow-dark"><Sparkles className="h-3.5 w-3.5" /> Investidor qualificado</span>
+               <h1 className="mt-6 font-display text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-6xl">
+                 Invista no <span className="text-gold-gradient">crédito real</span> da economy
+               </h1>
+               <p className="mt-6 max-w-lg text-base leading-relaxed text-white/82 md:text-lg">
+                 Rentabilidade consistente, lastro em recebíveis performados e estrutura regulada pela CVM.
+                 Para investidores que buscam diversificação com segurança.
+               </p>
+               <div className="mt-8 flex flex-wrap gap-4">
+                 <a href="#form" className="btn-gold group">
+                   Quero investir <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                 </a>
+                 <a href={whatsappLink("Olá! Tenho interesse em investir com a Credifácil.")} className="btn-ghost-light">
+                   <MessageCircle className="h-4 w-4" /> Falar com RI
+                 </a>
+               </div>
+               <div className="mt-10 grid grid-cols-3 gap-6 border-t border-brand-gold/15 pt-6">
+                 <div><div className="font-display text-3xl font-extrabold text-gold-gradient">+R$ 800M</div><div className="mt-1 text-[11px] uppercase tracking-wider text-muted-foreground">Sob gestão</div></div>
+                 <div><div className="font-display text-3xl font-extrabold text-gold-gradient">112%</div><div className="mt-1 text-[11px] uppercase tracking-wider text-muted-foreground">do CDI médio</div></div>
+                 <div><div className="font-display text-3xl font-extrabold text-gold-gradient">5+ anos</div><div className="mt-1 text-[11px] uppercase tracking-wider text-muted-foreground">de track record</div></div>
+               </div>
+             </div>
+             <div className="lg:justify-self-end">
               <div className="card-glass relative overflow-hidden p-5 sm:p-8">
                 <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full opacity-30" style={{ background: "var(--gradient-gold)" }} />
                 <h3 className="font-display text-2xl font-bold">Receba o material institucional</h3>

@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
-import Index from "./pages/Index.tsx";
+ const Index = lazy(() => import("./pages/Index.tsx"));
 
 // Code-splitting: rotas secundárias carregam sob demanda para acelerar o LCP da home.
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
@@ -73,7 +73,7 @@ const App = () => (
     <AnimationsBoot />
     <AnalyticsBoot />
     <RoutePrefetcher />
-    <Suspense fallback={<div className="min-h-screen" aria-hidden="true" />}>
+     <Suspense fallback={<div className="min-h-screen bg-[hsl(0_0%_4%)]" aria-hidden="true" />}>
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/securitizadora" element={<Securitizadora />} />
@@ -95,7 +95,9 @@ const App = () => (
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
-    <FloatingChatbot />
+     <Suspense fallback={null}>
+       <FloatingChatbot />
+     </Suspense>
     <CookieBanner />
   </BrowserRouter>
 );

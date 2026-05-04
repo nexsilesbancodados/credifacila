@@ -24,18 +24,9 @@ const HumanizedSection = () => (
     aria-label="Atendimento humanizado Credifácil"
     className="relative w-full overflow-hidden py-14 sm:py-20 md:py-28"
   >
-    {/* Soft gold ambient glow */}
-    <div
-      className="pointer-events-none absolute -left-32 top-1/3 h-[480px] w-[480px] opacity-30"
-      style={{
-        background:
-          "radial-gradient(ellipse at center, hsl(42 78% 58% / 0.35), transparent 65%)",
-      }}
-      aria-hidden
-    />
     <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:gap-12 sm:px-5 md:px-8 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
       {/* Left: copy */}
-       <div data-anim="fade-right">
+        <div>
          <span className="pill-eyebrow-dark mb-6">
           Atendimento que faz a diferença
         </span>
@@ -50,7 +41,7 @@ const HumanizedSection = () => (
           prontos para te ajudar.
         </p>
 
-         <ul className="mt-10 flex flex-col gap-7" data-anim="blur-in" style={{ "--anim-delay": "0.2s" } as React.CSSProperties}>
+          <ul className="mt-10 flex flex-col gap-7">
            {features.map((f, i) => {
             const Icon = f.icon;
             return (
@@ -78,8 +69,8 @@ const HumanizedSection = () => (
         </ul>
       </div>
 
-       {/* Right: image */}
-       <div className="relative" data-anim="zoom-out" data-parallax="0.08">
+        {/* Right: image */}
+        <div className="relative">
         <div
           className="pointer-events-none absolute -inset-6 rounded-[32px] opacity-60"
           style={{
