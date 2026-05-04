@@ -188,7 +188,7 @@ const SolutionsSection = () => (
             }}
             aria-hidden
           />
-          <ol className="relative grid grid-cols-1 gap-x-5 gap-y-10 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-5 md:gap-x-3 sm:gap-y-12">
+          <ol className="relative grid grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 sm:gap-y-12 md:grid-cols-5 md:gap-x-3">
             {steps.map((s, i) => {
               const Icon = s.icon;
               return (
