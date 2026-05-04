@@ -45,46 +45,44 @@ const Securitizadora = () => {
       <TopNav />
       <main id="main">
         {/* Hero */}
-        <section className="relative overflow-hidden py-16 sm:py-24 md:py-32">
-          <AnimatedBackdrop variant="dark" />
-          <div data-parallax="0.12" className="pointer-events-none absolute inset-0 opacity-30">
-            <img src={heroSec} alt="" className="h-full w-full object-cover" />
-          </div>
-          <div className="relative mx-auto max-w-5xl px-5 text-center md:px-8">
-            <span className="pill-eyebrow-dark mx-auto" data-anim="fade-down">
-              <Sparkles className="h-3.5 w-3.5" /> Credifácil Securitizadora
-            </span>
-            <h1
-              className="mt-6 font-display text-3xl font-extrabold tracking-tight sm:text-4xl md:text-6xl lg:text-7xl"
-              data-anim="fade-up"
-            >
-              Soluções financeiras <br className="hidden md:block" />
-              <span className="text-gold-gradient">sob medida para empresas</span>
-            </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg" data-anim="fade-up">
-              Capital de giro, garantia de recebimento e infraestrutura financeira moderna.
-              Tudo o que sua empresa precisa para crescer sem fricção.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4" data-anim="fade-up">
-              <a href={whatsappLink("Olá! Quero conhecer as soluções da Securitizadora.")} className="btn-gold group">
-                <MessageCircle className="h-5 w-5" /> Falar com consultor B2B
-              </a>
-              <a href="#produtos" className="btn-ghost-light">Ver soluções</a>
-            </div>
-          </div>
-        </section>
+         <section className="relative overflow-hidden py-16 sm:py-24 md:py-32">
+           <div className="pointer-events-none absolute inset-0 opacity-30">
+             <img src={heroSec} alt="" className="h-full w-full object-cover" />
+           </div>
+           <div className="relative mx-auto max-w-5xl px-5 text-center md:px-8">
+             <span className="pill-eyebrow-dark mx-auto">
+               <Sparkles className="h-3.5 w-3.5" /> Credifácil Securitizadora
+             </span>
+             <h1
+               className="mt-6 font-display text-3xl font-extrabold tracking-tight sm:text-4xl md:text-6xl lg:text-7xl"
+             >
+               Soluções financeiras <br className="hidden md:block" />
+               <span className="text-gold-gradient">sob medida para empresas</span>
+             </h1>
+             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
+               Capital de giro, garantia de recebimento e infraestrutura financeira moderna.
+               Tudo o que sua empresa precisa para crescer sem fricção.
+             </p>
+             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+               <a href={whatsappLink("Olá! Quero conhecer as soluções da Securitizadora.")} className="btn-gold group">
+                 <MessageCircle className="h-5 w-5" /> Falar com consultor B2B
+               </a>
+               <a href="#produtos" className="btn-ghost-light">Ver soluções</a>
+             </div>
+           </div>
+         </section>
 
-        {/* Produtos */}
-        <section id="produtos" className="relative py-20 md:py-28">
-          <div className="mx-auto max-w-7xl px-5 md:px-8">
-            <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">Nossas soluções</span>
-              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight md:text-4xl">
-                Três soluções, uma plataforma
-              </h2>
-              <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-brand-gold" />
-            </div>
-            <div className="mt-14 grid gap-6 md:grid-cols-3" data-anim-stagger>
+         {/* Produtos */}
+         <section id="produtos" className="relative py-20 md:py-28">
+           <div className="mx-auto max-w-7xl px-5 md:px-8">
+             <div className="mx-auto max-w-2xl text-center">
+               <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">Nossas soluções</span>
+               <h2 className="mt-3 font-display text-3xl font-bold tracking-tight md:text-4xl">
+                 Três soluções, uma plataforma
+               </h2>
+               <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-brand-gold" />
+             </div>
+             <div className="mt-14 grid gap-6 md:grid-cols-3">
               {products.map((p) => {
                 const Icon = p.icon;
                 return (
