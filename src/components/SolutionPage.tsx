@@ -106,7 +106,7 @@ const SolutionPage = ({
             decoding="async"
             width={1920}
             height={1080}
-            className="h-full w-full scale-105 object-cover object-right"
+            className="h-full w-full scale-105 object-cover object-[70%_center] md:object-right"
           />
         </div>
         {/* Dark overlay (very strong on the left so the typography is fully legible) */}
