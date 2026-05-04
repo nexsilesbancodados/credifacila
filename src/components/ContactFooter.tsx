@@ -136,7 +136,7 @@ const ContactFooter = () => {
                       <c.icon className="h-5 w-5" strokeWidth={2} />
                     </span>
                     <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap items-center gap-2">
                         <div className="text-[11px] font-semibold uppercase tracking-wider text-white/75">
                           {c.label}
                         </div>
@@ -146,7 +146,7 @@ const ContactFooter = () => {
                           </span>
                         )}
                       </div>
-                      <div className="mt-0.5 truncate text-sm font-bold text-white">
+                      <div className="mt-0.5 break-words text-sm font-bold text-white">
                         {c.value}
                       </div>
                     </div>
