@@ -59,7 +59,7 @@ const SolutionsSection = () => (
               Mais benefícios para você
             </span>
           </div>
-          <h2 className="mt-6 font-display text-[28px] font-extrabold leading-[1.05] tracking-tight text-white sm:text-4xl md:text-[56px]">
+          <h2 className="mt-6 font-display text-[26px] font-extrabold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-[56px]">
             Soluções pensadas
             <br />
             para facilitar{" "}
@@ -168,7 +168,7 @@ const SolutionsSection = () => (
             </span>
             <span className="h-px w-8 bg-brand-gold" />
           </div>
-          <h2 className="mt-6 font-display text-[28px] font-extrabold leading-[1.05] tracking-tight text-white sm:text-4xl md:text-[52px]">
+          <h2 className="mt-6 font-display text-[26px] font-extrabold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-[52px]">
             Como funciona <span className="text-gold-gradient">na prática</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-[16px] leading-relaxed text-white/65">
@@ -188,21 +188,21 @@ const SolutionsSection = () => (
             }}
             aria-hidden
           />
-          <ol className="relative grid grid-cols-2 gap-x-5 gap-y-12 sm:grid-cols-3 md:grid-cols-5 md:gap-x-3">
+          <ol className="relative grid grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 sm:gap-y-12 md:grid-cols-5 md:gap-x-3">
             {steps.map((s, i) => {
               const Icon = s.icon;
               return (
-                <li key={s.n} className="group flex flex-col items-center text-center">
+                <li key={s.n} className="group flex flex-col items-center text-center px-2">
                   <div className="relative">
                     <span
-                      className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full border border-brand-gold/40 bg-[hsl(0_0%_5%)] text-brand-gold transition-all duration-300 group-hover:scale-105 group-hover:border-brand-gold"
+                      className="relative z-10 flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full border border-brand-gold/40 bg-[hsl(0_0%_5%)] text-brand-gold transition-all duration-300 group-hover:scale-105 group-hover:border-brand-gold"
                       style={{
                         boxShadow:
                           "0 0 30px -8px hsl(42 78% 55% / 0.5), inset 0 0 20px -10px hsl(42 78% 55% / 0.4)",
                       }}
                       aria-hidden
                     >
-                      <Icon className="h-7 w-7" strokeWidth={1.6} />
+                      <Icon className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={1.6} />
                     </span>
                     <span
                       className="absolute -right-1 -top-1 z-20 flex h-7 w-7 items-center justify-center rounded-full text-[11px] font-extrabold text-[hsl(0_0%_5%)]"
@@ -215,8 +215,8 @@ const SolutionsSection = () => (
                       {s.n}
                     </span>
                   </div>
-                  <h3 className="mt-5 text-[14px] font-bold text-white">{s.title}</h3>
-                  <p className="mt-2 max-w-[180px] text-[12px] leading-relaxed text-white/55">
+                  <h3 className="mt-4 sm:mt-5 text-[14px] font-bold text-white">{s.title}</h3>
+                  <p className="mt-2 max-w-[200px] text-[12px] leading-relaxed text-white/55">
                     {s.desc}
                   </p>
                 </li>
