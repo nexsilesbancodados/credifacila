@@ -25,25 +25,9 @@ const paletteByVariant: Record<Variant, { primary: string; secondary: string; op
   },
 };
 
-const AnimatedBackdrop = memo(({ variant = "default" }: { variant?: Variant }) => {
-  const { primary, secondary, opacity } = paletteByVariant[variant];
-  return (
-    <div
-      aria-hidden
-      className="pointer-events-none absolute inset-0 -z-10 overflow-hidden motion-reduce:hidden"
-      style={{ opacity }}
-    >
-      <span
-        className="absolute -top-24 left-[-6%] h-[420px] w-[420px] rounded-full blur-3xl animate-float-slow"
-        style={{ background: `radial-gradient(circle, ${primary}, transparent 65%)` }}
-      />
-      <span
-        className="absolute bottom-[-10%] right-[-8%] h-[520px] w-[520px] rounded-full blur-3xl animate-drift-slow"
-        style={{ background: `radial-gradient(circle, ${secondary}, transparent 65%)` }}
-      />
-    </div>
-  );
-});
+ const AnimatedBackdrop = memo(({ variant = "default" }: { variant?: Variant }) => {
+   return null; // Removido para performance absoluta
+ });
 
 AnimatedBackdrop.displayName = "AnimatedBackdrop";
 export default AnimatedBackdrop;
