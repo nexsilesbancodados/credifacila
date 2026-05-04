@@ -2,7 +2,7 @@
  * Estratégia: stale-while-revalidate p/ assets, network-first p/ HTML.
  * Mantém o site instantâneo em visitas repetidas e funciona offline.
  */
-const VERSION = "v1";
+const VERSION = "v2";
 const CACHE_STATIC = `credifacil-static-${VERSION}`;
 const CACHE_PAGES = `credifacil-pages-${VERSION}`;
 
@@ -40,13 +40,15 @@ self.addEventListener("fetch", (event) => {
   // Não interceptar fontes externas, analytics, WhatsApp etc.
   if (url.origin !== self.location.origin) return;
 
-  // Páginas (navegação): network-first, cache fallback
+  // Páginas (navegação): network-first, cache fallback (somente respostas OK)
   if (req.mode === "navigate" || req.headers.get("accept")?.includes("text/html")) {
     event.respondWith(
       fetch(req)
         .then((res) => {
-          const copy = res.clone();
-          caches.open(CACHE_PAGES).then((c) => c.put(req, copy));
+          if (res.ok && res.type === "basic") {
+            const copy = res.clone();
+            caches.open(CACHE_PAGES).then((c) => c.put(req, copy));
+          }
           return res;
         })
         .catch(() =>
