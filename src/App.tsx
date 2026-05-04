@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation, Navigate } from "react-router-dom";
  const Index = lazy(() => import("./pages/Index.tsx"));
 
 // Code-splitting: rotas secundárias carregam sob demanda para acelerar o LCP da home.
