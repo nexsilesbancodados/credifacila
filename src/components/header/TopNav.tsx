@@ -11,7 +11,7 @@ const navItems: {
   active?: boolean;
   submenu?: { label: string; href: string }[];
 }[] = [
-  { label: "Início", href: "#inicio", active: true },
+  { label: "Início", href: "/" },
   { label: "Consignado", href: "/consignado" },
   {
     label: "Securitizadora",
