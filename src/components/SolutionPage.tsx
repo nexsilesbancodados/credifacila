@@ -277,7 +277,7 @@ const SolutionPage = ({
           >
             <div
               data-anim="zoom-out"
-              className="glow-gold-hover relative h-[420px] overflow-hidden rounded-3xl shadow-[var(--shadow-card)] ring-1 ring-brand-gold/15 md:h-[520px]"
+              className="glow-gold-hover relative aspect-[4/5] w-full overflow-hidden rounded-3xl shadow-[var(--shadow-card)] ring-1 ring-brand-gold/15 sm:aspect-[3/4] md:aspect-auto md:h-[520px]"
             >
               <div data-parallax="0.12" className="absolute inset-0 -top-12 -bottom-12">
                 <img
