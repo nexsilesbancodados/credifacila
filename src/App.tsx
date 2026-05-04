@@ -46,9 +46,13 @@ const AnimationsBoot = () => {
   return null;
 };
 
-// Pré-busca rotas prováveis quando o navegador estiver ocioso (não bloqueia o LCP).
+// Pré-busca rotas prováveis quando o navegador estiver ocioso e em conexões boas.
+// Em mobile/3G ou Save-Data, evitamos consumir banda do usuário.
 const RoutePrefetcher = () => {
   useEffect(() => {
+    const conn = (navigator as unknown as { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+    if (conn?.saveData) return;
+    if (conn?.effectiveType && /(2g|slow-2g|3g)/.test(conn.effectiveType)) return;
     const idle =
       (window as unknown as { requestIdleCallback?: (cb: () => void) => number })
         .requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1500));
