@@ -211,11 +211,9 @@
      );
    }
  
-   return (
-     <div className="min-h-screen bg-[hsl(0_0%_4%)]">
-       <TopNav />
-       
-       <main className="flex flex-col items-center justify-center px-4 py-12 pt-[112px] sm:px-5 sm:py-24 sm:pt-[132px]">
+    return (
+      <div className="min-h-[100dvh] bg-[hsl(0_0%_2%)] flex items-center justify-center p-4">
+        <main className="w-full max-w-md">
          <div className="w-full max-w-md">
            <header className="mb-10 text-center">
               <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl border border-white/10 bg-white/5 text-brand-gold shadow-2xl">
@@ -271,16 +269,18 @@
              </form>
            </Card>
            
-           <div className="mt-10 flex items-center justify-center gap-2 text-xs text-white/30">
-             <ShieldCheck className="h-4 w-4 text-brand-gold" />
-             Acesso seguro com criptografia de ponta.
-           </div>
-         </div>
-       </main>
- 
-       <ContactFooter />
-     </div>
-   );
+            <div className="mt-8 text-center">
+              <Link to="/" className="text-white/20 hover:text-white/40 text-xs transition-colors">
+                Voltar para o site principal
+              </Link>
+            </div>
+            
+            <div className="mt-12 flex items-center justify-center gap-2 text-[10px] text-white/20 uppercase tracking-widest">
+              Protegido por criptografia de ponta a ponta
+            </div>
+          </main>
+      </div>
+    );
  };
  
  export default ClientPortal;
