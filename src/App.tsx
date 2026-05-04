@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation, Navigate } from "react-router-dom";
  const Index = lazy(() => import("./pages/Index.tsx"));
 
 // Code-splitting: rotas secundárias carregam sob demanda para acelerar o LCP da home.
@@ -95,7 +95,8 @@ const App = () => (
          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/portal" element={<ClientPortal />} />
+          <Route path="/portal" element={<Navigate to="/portal-cliente" replace />} />
+          <Route path="/portal-cliente" element={<ClientPortal />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>

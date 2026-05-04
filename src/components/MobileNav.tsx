@@ -169,7 +169,7 @@ const MobileNav = () => {
           </div>
 
            <Link
-             to="/portal"
+             to="/portal-cliente"
              onClick={() => setOpen(false)}
              className="mt-3 flex w-full items-center justify-center gap-2 rounded-2xl border border-brand-gold/40 bg-brand-gold/10 px-3 py-3 text-brand-gold transition-colors hover:bg-brand-gold/15 mx-3"
            >
