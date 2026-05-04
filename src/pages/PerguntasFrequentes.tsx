@@ -63,13 +63,13 @@ const PerguntasFrequentes = () => {
     <div className="relative min-h-screen">
       <TopNav />
       <main id="main">
-        <section className="relative overflow-hidden py-20 md:py-28">
+        <section className="relative overflow-hidden py-14 sm:py-20 md:py-28">
           <AnimatedBackdrop variant="dark" />
           <div className="relative mx-auto max-w-3xl px-5 text-center md:px-8">
             <span className="pill-eyebrow-dark mx-auto" data-anim="fade-down">
               <Sparkles className="h-3.5 w-3.5" /> Central de ajuda
             </span>
-            <h1 className="mt-6 font-display text-4xl font-extrabold tracking-tight md:text-6xl" data-anim="fade-up">
+            <h1 className="mt-6 font-display text-3xl font-extrabold tracking-tight sm:text-4xl md:text-6xl" data-anim="fade-up">
               Perguntas <span className="text-gold-gradient">frequentes</span>
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/80 md:text-lg" data-anim="fade-up">
