@@ -81,7 +81,7 @@ const MobileNav = () => {
         role="dialog"
         aria-modal="true"
         aria-label="Menu principal"
-        className={`fixed right-0 top-0 z-[81] flex h-[100dvh] w-[88%] max-w-sm flex-col overflow-hidden bg-[hsl(215_42%_20%)] text-white shadow-[0_0_60px_-10px_rgba(0,0,0,0.6)] transition-transform duration-300 ease-out lg:hidden ${
+        className={`fixed right-0 top-0 z-[81] flex h-[100dvh] w-[88%] max-w-sm flex-col overflow-hidden bg-[hsl(0_0%_6%)] text-white shadow-[0_0_60px_-10px_rgba(0,0,0,0.6)] transition-transform duration-300 ease-out lg:hidden ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
