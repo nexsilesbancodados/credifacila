@@ -83,41 +83,50 @@ const useScrollAnimations = () => {
        };
        observeParallax();
        
-      window.addEventListener("scroll", onScroll, { passive: true });
-      window.addEventListener("resize", onScroll, { passive: true });
-    }
-
-    let pending = false;
+       window.addEventListener("scroll", onScroll, { passive: true });
+       window.addEventListener("resize", onScroll, { passive: true });
+ 
+       const observe = (root: ParentNode = document) => {
+         root.querySelectorAll<HTMLElement>("[data-anim], [data-anim-stagger]").forEach((el) => {
+           if (el.classList.contains(VISIBLE_CLASS)) return;
+           io.observe(el);
+         });
+       };
+ 
+       let pending = false;
        const mo = new MutationObserver((mutations) => {
          if (pending) return;
-      let hasNew = false;
-      for (const m of mutations) {
-        if (m.addedNodes.length > 0) {
-          hasNew = true;
-          break;
-        }
-      }
-      if (!hasNew) return;
+         let hasNew = false;
+         for (const m of mutations) {
+           if (m.addedNodes.length > 0) {
+             hasNew = true;
+             break;
+           }
+         }
+         if (!hasNew) return;
          pending = true;
          requestAnimationFrame(() => {
            observe();
            observeParallax();
            pending = false;
+         });
        });
-    mo.observe(document.body, { childList: true, subtree: true });
-
-    return () => {
-      io.disconnect();
-      pIO.disconnect();
-      mo.disconnect();
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-       if (rafId) cancelAnimationFrame(rafId);
-     }
+       mo.observe(document.body, { childList: true, subtree: true });
  
+       return () => {
+         io.disconnect();
+         pIO.disconnect();
+         mo.disconnect();
+         window.removeEventListener("scroll", onScroll);
+         window.removeEventListener("resize", onScroll);
+         if (rafId) cancelAnimationFrame(rafId);
+       };
+     }
+     
+     // If skipping effects, still cleanup basic IO if it exists
      return () => {
        io.disconnect();
-    };
+     };
   }, []);
 };
 
