@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
-import { ChevronDown, MessageCircle } from "lucide-react";
+ import { useState, useEffect } from "react";
+ import { Link, useLocation } from "react-router-dom";
+ import { ChevronDown, MessageCircle, ArrowRight } from "lucide-react";
 import { whatsappLink } from "@/config/site";
 import MobileNav from "@/components/MobileNav";
 import logo from "@/assets/credifacil-logo.webp";
@@ -26,31 +27,42 @@ const navItems: {
   { label: "Dúvidas", href: "/perguntas-frequentes" },
 ];
 
-const TopNav = () => (
-  <div className="relative z-20 w-full bg-[hsl(0_0%_4%)]">
-    {/* Subtle gold ambient glow */}
-    <div
-      className="pointer-events-none absolute inset-x-0 top-0 h-px"
-      style={{
-        background:
-          "linear-gradient(90deg, transparent 0%, hsl(42 78% 55% / 0.4) 50%, transparent 100%)",
-      }}
-      aria-hidden
-    />
-    <div
-      className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-brand-gold/20"
-      aria-hidden
-    />
-    <div
-      className="pointer-events-none absolute left-1/2 top-0 h-24 w-[60%] -translate-x-1/2 opacity-40"
-      style={{
-        background:
-          "radial-gradient(ellipse at top, hsl(42 78% 55% / 0.18), transparent 70%)",
-      }}
-      aria-hidden
-    />
-
-    <nav className="relative mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-5 py-4 md:px-8 lg:gap-10 lg:px-10 lg:py-5">
+ const TopNav = () => {
+   const [isScrolled, setIsScrolled] = useState(false);
+   const { pathname } = useLocation();
+ 
+   useEffect(() => {
+     const handleScroll = () => {
+       setIsScrolled(window.scrollY > 40);
+     };
+     window.addEventListener("scroll", handleScroll, { passive: true });
+     return () => window.removeEventListener("scroll", handleScroll);
+   }, []);
+ 
+   const isHome = pathname === "/";
+ 
+   return (
+     <div 
+       className={`fixed inset-x-0 top-0 z-[100] w-full transition-all duration-300 ${
+         isScrolled 
+           ? "bg-[hsl(0_0%_4%/0.85)] py-2 shadow-2xl backdrop-blur-xl md:py-3" 
+           : "bg-transparent py-4 md:py-6"
+       }`}
+     >
+       {/* Top and Bottom lines with gold accent */}
+       <div
+         className={`pointer-events-none absolute inset-x-0 top-0 h-px transition-opacity duration-500 ${isScrolled ? "opacity-100" : "opacity-0"}`}
+         style={{
+           background: "linear-gradient(90deg, transparent 0%, hsl(42 78% 55% / 0.4) 50%, transparent 100%)",
+         }}
+         aria-hidden
+       />
+       <div
+         className={`pointer-events-none absolute inset-x-0 bottom-0 h-px bg-brand-gold/10 transition-opacity duration-500 ${isScrolled ? "opacity-100" : "opacity-0"}`}
+         aria-hidden
+       />
+ 
+       <nav className="relative mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-5 md:px-8 lg:gap-10 lg:px-10">
       <Link
         to="/"
         className="flex shrink-0 items-center transition-opacity hover:opacity-90"
@@ -70,7 +82,7 @@ const TopNav = () => (
       {/* Desktop menu */}
       <ul className="hidden flex-1 items-center justify-center gap-1 lg:flex">
         {navItems.map((item) => (
-          <li key={item.label} className={`whitespace-nowrap ${item.submenu ? "group relative" : ""}`}>
+           <li key={item.label} className={`whitespace-nowrap ${item.submenu ? "group relative" : ""}`} data-anim="fade-down" style={{ "--anim-delay": `${0.05 * navItems.indexOf(item)}s` } as React.CSSProperties}>
             {item.submenu ? (
               <>
                 <Link
@@ -135,24 +147,31 @@ const TopNav = () => (
       {/* Mobile hamburger */}
       <MobileNav />
 
-      {/* Desktop WhatsApp button */}
-      <a
-        href={whatsappLink("Olá! Quero saber mais sobre os créditos da Credifácil.")}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group relative hidden shrink-0 items-center gap-2.5 overflow-hidden whitespace-nowrap rounded-full px-5 py-2.5 text-[13px] font-bold uppercase tracking-[0.1em] text-[hsl(0_0%_6%)] shadow-[0_8px_24px_-8px_hsl(42_78%_55%/0.6)] transition-all hover:shadow-[0_12px_32px_-8px_hsl(42_78%_55%/0.8)] lg:inline-flex"
-        style={{
-          background:
-            "linear-gradient(135deg, hsl(42 90% 65%) 0%, hsl(42 78% 50%) 50%, hsl(38 75% 45%) 100%)",
-        }}
-      >
-        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[hsl(0_0%_6%/0.15)]">
-          <MessageCircle className="h-3.5 w-3.5" strokeWidth={2.4} />
-        </span>
-        Fale no WhatsApp
-      </a>
-    </nav>
-  </div>
-);
+       {/* Desktop CTA */}
+       <div className="hidden items-center gap-3 lg:flex">
+         <a
+           href={whatsappLink("Olá! Quero saber mais sobre os créditos da Credifácil.")}
+           target="_blank"
+           rel="noopener noreferrer"
+           className="group relative flex shrink-0 items-center gap-2.5 overflow-hidden whitespace-nowrap rounded-full px-5 py-2.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[hsl(0_0%_6%)] shadow-[0_8px_24px_-8px_hsl(42_78%_55%/0.6)] transition-all hover:scale-[1.02] hover:shadow-[0_12px_32px_-8px_hsl(42_78%_55%/0.8)] active:scale-95"
+           style={{
+             background: "var(--gradient-gold)",
+           }}
+         >
+           <MessageCircle className="h-4 w-4" strokeWidth={2.4} />
+           WhatsApp
+         </a>
+         <Link
+           to="/login"
+           className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-white/85 transition-all hover:border-brand-gold/40 hover:bg-white/[0.06] hover:text-brand-gold"
+         >
+           Login
+           <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+         </Link>
+       </div>
+     </nav>
+   </div>
+   );
+ };
 
 export default TopNav;
