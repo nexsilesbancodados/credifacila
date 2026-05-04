@@ -18,7 +18,7 @@ const Login = () => {
     <div className="min-h-screen bg-[hsl(0_0%_4%)]">
       <TopNav />
       
-      <main className="flex flex-col items-center justify-center px-5 py-24">
+      <main className="flex flex-col items-center justify-center px-4 py-12 sm:px-5 sm:py-24">
         <div className="w-full max-w-md">
           <header className="mb-10 text-center">
             <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-brand-gold/30 bg-brand-gold/5 text-brand-gold">
@@ -28,7 +28,7 @@ const Login = () => {
             <p className="mt-3 text-white/50">Acesse sua conta para gerenciar seus planos.</p>
           </header>
 
-          <Card className="border-white/10 bg-white/[0.02] p-8 shadow-2xl backdrop-blur-xl">
+          <Card className="border-white/10 bg-white/[0.02] p-5 sm:p-8 shadow-2xl backdrop-blur-xl">
             <form className="space-y-6">
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-white/80">E-mail</Label>
