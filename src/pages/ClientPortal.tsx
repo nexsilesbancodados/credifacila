@@ -30,6 +30,24 @@
    const [step, setStep] = useState<"login" | "dashboard">("login");
    const [isLoading, setIsLoading] = useState(false);
    const [cpf, setCpf] = useState("");
+ 
+   const formatCpf = (value: string) => {
+     const nums = value.replace(/\D/g, "");
+     if (nums.length <= 11) {
+       return nums
+         .replace(/(\d{3})(\d)/, "$1.$2")
+         .replace(/(\d{3})(\d)/, "$1.$2")
+         .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+     }
+     return nums;
+   };
+ 
+   const handleCpfChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+     const formatted = formatCpf(e.target.value);
+     if (formatted.length <= 14) {
+       setCpf(formatted);
+     }
+   };
    const [birthDate, setBirthDate] = useState("");
    const [clientData, setClientData] = useState<any>(null);
    const [debts, setDebts] = useState<Debt[]>([]);
@@ -218,7 +236,7 @@
                      placeholder="000.000.000-00" 
                      className="border-white/10 bg-white/5 pl-10 text-white placeholder:text-white/20 focus:border-brand-gold/50"
                      value={cpf}
-                     onChange={(e) => setCpf(e.target.value)}
+                     onChange={handleCpfChange}
                      required
                    />
                  </div>
