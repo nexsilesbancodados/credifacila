@@ -1,4 +1,4 @@
- import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
  import { Link, useLocation } from "react-router-dom";
  import { ChevronDown, MessageCircle, ArrowRight } from "lucide-react";
 import { whatsappLink } from "@/config/site";
@@ -161,13 +161,15 @@ const navItems: {
            <MessageCircle className="h-4 w-4" strokeWidth={2.4} />
            WhatsApp
          </a>
-         <Link
-           to="/login"
+         <a
+           href="https://systemjuros.com.br"
+           target="_blank"
+           rel="noopener noreferrer"
            className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-white/85 transition-all hover:border-brand-gold/40 hover:bg-white/[0.06] hover:text-brand-gold"
          >
-           Login
+           Área do Cliente
            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-         </Link>
+         </a>
        </div>
      </nav>
    </div>
