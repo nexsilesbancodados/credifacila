@@ -57,10 +57,12 @@ const RoutePrefetcher = () => {
     const idle =
       (window as unknown as { requestIdleCallback?: (cb: () => void) => number })
         .requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1500));
-    idle(() => {
-      void import("./pages/Consignado.tsx");
-      void import("./pages/Securitizadora.tsx");
-    });
+     idle(() => {
+       void import("./pages/Consignado.tsx");
+       void import("./pages/Securitizadora.tsx");
+       void import("./pages/ClientPortal.tsx");
+       void import("./pages/ContaDigitalLuri.tsx");
+     });
   }, []);
   return null;
 };
