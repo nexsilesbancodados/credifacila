@@ -38,17 +38,5 @@ export default defineConfig(({ mode }) => ({
     sourcemap: false,
     chunkSizeWarningLimit: 800,
     assetsInlineLimit: 6 * 1024, // SVGs até 6KB ficam inline (reduz requests)
-    rollupOptions: {
-      output: {
-        manualChunks: (id) => {
-          if (!id.includes("node_modules")) return;
-          if (id.includes("react-router") || id.includes("@remix-run")) return "router";
-          if (id.includes("lucide-react")) return "icons";
-          if (id.includes("react-dom")) return "react";
-          if (id.includes("react/")) return "react";
-          return "vendor";
-        },
-      },
-    },
   },
 }));
