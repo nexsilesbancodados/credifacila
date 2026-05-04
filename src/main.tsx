@@ -36,9 +36,13 @@ if (root) {
   );
 }
 
-// Service Worker — só em produção, sem bloquear paint
+// Service Worker desativado: registramos /sw.js apenas para que o kill switch
+// limpe caches antigos e se auto-desregistre em quem ainda tem versão antiga.
 if ("serviceWorker" in navigator && import.meta.env.PROD) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/sw.js").catch(() => undefined);
+    navigator.serviceWorker
+      .register("/sw.js")
+      .then((reg) => reg.unregister())
+      .catch(() => undefined);
   });
 }
