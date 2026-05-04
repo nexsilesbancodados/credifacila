@@ -80,19 +80,11 @@
   * { @apply border-border; }
   body {
     @apply text-foreground antialiased;
-    background-color: hsl(var(--background));
+    background-color: hsl(0 0% 4.5%);
     min-height: 100vh;
     font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1, "cv11" 1;
     position: relative;
   }
-   /* Premium static backdrop (animated one removed to save GPU/CPU) */
-   body::before {
-     content: "";
-     position: fixed;
-     inset: 0;
-     z-index: -2;
-     background: hsl(0 0% 4.5%);
-   }
   ::selection { background: hsl(var(--brand-gold) / 0.3); }
   h1, h2, h3, h4 { @apply font-display tracking-tight; }
   /* Range input styling */
