@@ -63,14 +63,14 @@
  
      try {
        // Limpar CPF para busca
-       const cleanCpf = cpf.replace(/\D/g, "");
- 
-       const { data: client, error } = await supabase
-         .from("clients")
-         .select("*")
-         .eq("document", cleanCpf)
-         .eq("birth_date", birthDate)
-         .maybeSingle();
+        const cleanDoc = document.replace(/\D/g, "");
+
+        const { data: client, error } = await supabase
+          .from("clients")
+          .select("*")
+          .eq("document", cleanDoc)
+          .eq("birth_date", birthDate)
+          .maybeSingle();
  
        if (error) throw error;
  
@@ -233,15 +233,15 @@
              )}
              <form className="space-y-6" onSubmit={handleLogin}>
                <div className="space-y-2">
-                 <Label htmlFor="cpf" className="text-white/80">CPF</Label>
+                  <Label htmlFor="document" className="text-white/80">CPF ou CNPJ</Label>
                  <div className="relative">
                    <User className="absolute left-3 top-3 h-4 w-4 text-white/20" />
                    <Input 
-                     id="cpf" 
-                     placeholder="000.000.000-00" 
+                      id="document" 
+                      placeholder="000.000.000-00 ou 00.000.000/0000-00" 
                      className="border-white/10 bg-white/5 pl-10 text-white placeholder:text-white/20 focus:border-brand-gold/50"
-                     value={cpf}
-                     onChange={handleCpfChange}
+                      value={document}
+                      onChange={handleDocumentChange}
                      required
                    />
                  </div>
