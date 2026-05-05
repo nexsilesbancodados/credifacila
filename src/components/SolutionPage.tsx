@@ -54,9 +54,8 @@ export interface SolutionPageProps {
    /** Seções personalizadas inseridas entre os blocos padrão */
    customSections?: React.ReactNode;
  }
-}
-
-const SolutionPage = ({
+ 
+ const SolutionPage = ({
   eyebrow,
   title,
   titleGold,
@@ -76,9 +75,8 @@ const SolutionPage = ({
   hideHeroText,
   introImage,
    benefitsImage,
-   customSections,
+    customSections,
  }: SolutionPageProps) => {
-}: SolutionPageProps) => {
   useSeo({ title: metaTitle, description: metaDescription });
 
   return (
