@@ -1,14 +1,14 @@
-import { useState } from "react";
-import {
-  TrendingUp, ShieldCheck, BarChart3, Lock, Sparkles, ArrowRight, MessageCircle,
-  Building2, Landmark, Layers, FileCheck2, Award, Eye, Clock, Users, CheckCircle2,
-} from "lucide-react";
-import TopNav from "@/components/header/TopNav";
-import ContactFooter from "@/components/ContactFooter";
-import AnimatedBackdrop from "@/components/AnimatedBackdrop";
-import { useSeo } from "@/hooks/useSeo";
-import { whatsappLink } from "@/config/site";
-import heroImg from "@/assets/invista-hero.webp";
+ import { useState } from "react";
+ import {
+   TrendingUp, ShieldCheck, BarChart3, Lock, Sparkles, ArrowRight, MessageCircle,
+   Building2, Landmark, Layers, FileCheck2, Award, Eye, Clock, Users, CheckCircle2,
+ } from "lucide-react";
+ import TopNav from "@/components/header/TopNav";
+ import ContactFooter from "@/components/ContactFooter";
+ import { useSeo } from "@/hooks/useSeo";
+ import { whatsappLink } from "@/config/site";
+ import heroImg from "@/assets/invista-hero.webp";
+ import InvestmentCalculator from "@/components/calculators/InvestmentCalculator";
 
 const highlights = [
   { icon: TrendingUp, title: "Rentabilidade acima do CDI", desc: "Operações de crédito estruturado com retornos consistentes acima de 110% do CDI." },
@@ -187,7 +187,7 @@ const InvistaConosco = () => {
           </div>
         </section>
 
-        {/* Products */}
+         {/* Products */}
         <section className="relative py-14 sm:py-20 md:py-24 border-t border-brand-gold/10">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">
@@ -231,12 +231,15 @@ const InvistaConosco = () => {
                     </div>
                   </article>
                 );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Process */}
+               })}
+             </div>
+           </div>
+         </section>
+ 
+         {/* Calculator */}
+         <InvestmentCalculator />
+ 
+         {/* Process */}
         <section className="relative py-14 sm:py-20 md:py-24 border-t border-brand-gold/10">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <div className="mx-auto max-w-2xl text-center" data-anim="fade-up">

@@ -50,10 +50,12 @@ export interface SolutionPageProps {
   /** Substitui o bloco de intro por uma imagem full-bleed */
   introImage?: { src: string; alt: string };
   /** Substitui o bloco de benefícios por uma imagem full-bleed */
-  benefitsImage?: { src: string; alt: string };
-}
-
-const SolutionPage = ({
+   benefitsImage?: { src: string; alt: string };
+   /** Seções personalizadas inseridas entre os blocos padrão */
+   customSections?: React.ReactNode;
+ }
+ 
+ const SolutionPage = ({
   eyebrow,
   title,
   titleGold,
@@ -72,8 +74,9 @@ const SolutionPage = ({
   showcase,
   hideHeroText,
   introImage,
-  benefitsImage,
-}: SolutionPageProps) => {
+   benefitsImage,
+    customSections,
+ }: SolutionPageProps) => {
   useSeo({ title: metaTitle, description: metaDescription });
 
   return (
@@ -251,7 +254,10 @@ const SolutionPage = ({
       </section>
       )}
 
-      {/* Showcase visual (opcional) */}
+       {/* Custom Sections (como simuladores) */}
+       {customSections}
+ 
+       {/* Showcase visual (opcional) */}
       {showcase && (
         <section className="relative overflow-hidden bg-card py-20 md:py-28">
           <div

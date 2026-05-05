@@ -1,4 +1,4 @@
- import { Smartphone, Zap, ShieldCheck, CreditCard, Banknote, Landmark } from "lucide-react";
+  import { Smartphone, Zap, ShieldCheck, CreditCard, Banknote, Landmark, Globe, Fingerprint, Activity } from "lucide-react";
  import SolutionPage from "@/components/SolutionPage";
  import hero from "@/assets/luri-hero.webp";
  
@@ -61,9 +61,32 @@
          { q: "Como deposito dinheiro na conta?", a: "Você pode depositar via Pix, transferência bancária de outros bancos ou gerando um boleto de depósito no próprio app." },
          { q: "A conta Luri é segura?", a: "Sim, utilizamos os mais modernos protocolos de segurança e somos regulamentados pelo Banco Central do Brasil." },
        ]}
-       ctaTitle="Sua evolução financeira começa aqui"
-       ctaSubtitle="Baixe o app agora e descubra como a Luri pode transformar sua relação com o dinheiro."
-     />
+        ctaTitle="Sua evolução financeira começa aqui"
+        ctaSubtitle="Baixe o app agora e descubra como a Luri pode transformar sua relação com o dinheiro."
+        customSections={
+          <section className="py-20 bg-card/10">
+            <div className="mx-auto max-w-7xl px-5 md:px-8">
+              <div className="grid gap-6 md:grid-cols-3">
+                <div className="p-8 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all group">
+                  <Fingerprint className="h-10 w-10 text-brand-gold mb-6 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-xl font-bold text-white mb-2">Biometria Avançada</h4>
+                  <p className="text-sm text-muted-foreground">Acesso seguro via FaceID ou Digital, garantindo que só você mexa no seu dinheiro.</p>
+                </div>
+                <div className="p-8 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all group">
+                  <Globe className="h-10 w-10 text-brand-gold mb-6 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-xl font-bold text-white mb-2">Cartão Global</h4>
+                  <p className="text-sm text-muted-foreground">Use seu cartão Luri em qualquer lugar do mundo, com conversão de câmbio transparente.</p>
+                </div>
+                <div className="p-8 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all group">
+                  <Activity className="h-10 w-10 text-brand-gold mb-6 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-xl font-bold text-white mb-2">Analytics em Tempo Real</h4>
+                  <p className="text-sm text-muted-foreground">Gráficos de gastos e previsões inteligentes para você nunca mais fechar o mês no vermelho.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        }
+      />
    </div>
  );
 

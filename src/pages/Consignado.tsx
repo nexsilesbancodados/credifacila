@@ -6,7 +6,8 @@ import {
   Users,
   HeartHandshake,
 } from "lucide-react";
-import SolutionPage from "@/components/SolutionPage";
+ import SolutionPage from "@/components/SolutionPage";
+ import ConsignadoSimulator from "@/components/calculators/ConsignadoSimulator";
 import heroConsignado from "@/assets/hero-consignado-banner.png";
 import introBanner from "@/assets/consignado-solucoes-banner.png";
 import beneficiosBanner from "@/assets/consignado-beneficios-banner.png";
@@ -74,9 +75,10 @@ const Consignado = () => (
       { q: "Tem alguma taxa para simular ou contratar?", a: "Não. Simulação, análise e atendimento são 100% gratuitos. Você só paga as parcelas combinadas." },
       { q: "Posso quitar antes do prazo?", a: "Sim, com desconto proporcional dos juros futuros, conforme regulamentação do Banco Central." },
     ]}
-    ctaTitle="Pronto para liberar seu consignado?"
-    ctaSubtitle="Fale agora com um especialista Credifácil e receba sua simulação personalizada em minutos."
-  />
+     ctaTitle="Pronto para liberar seu consignado?"
+     ctaSubtitle="Fale agora com um especialista Credifácil e receba sua simulação personalizada em minutos."
+     customSections={<ConsignadoSimulator />}
+   />
 );
 
 export default Consignado;

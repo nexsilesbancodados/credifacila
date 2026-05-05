@@ -44,11 +44,16 @@ const steps = [
   { icon: DollarSign, n: "05", title: "Dinheiro na conta", desc: "Após a aprovação, o valor é liberado diretamente na sua conta." },
 ];
 
-const SolutionsSection = () => (
-  <section
-    aria-label="Soluções e como funciona"
-    className="relative w-full overflow-hidden py-16 sm:py-24 md:py-32"
-  >
+ interface SolutionsSectionProps {
+   id?: string;
+ }
+ 
+ const SolutionsSection = ({ id }: SolutionsSectionProps) => (
+   <section
+     id={id}
+     aria-label="Soluções e como funciona"
+     className="relative w-full overflow-hidden py-16 sm:py-24 md:py-32"
+   >
     <div className="relative mx-auto flex max-w-7xl flex-col gap-16 px-4 sm:px-5 md:px-8 md:gap-24">
       {/* === Bloco 1: Benefícios === */}
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
