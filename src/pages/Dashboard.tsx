@@ -78,7 +78,7 @@ import {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, []);
+  }, [authChecked]);
 
   const fmtBRL = (v: number) =>
     v >= 1000 ? `R$ ${(v / 1000).toFixed(0)}k` : new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(v);
