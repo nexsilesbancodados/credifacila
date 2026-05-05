@@ -38,7 +38,7 @@ import {
   const [recentClients, setRecentClients] = useState<Array<{ name: string; document: string; created_at: string }>>([]);
 
   useEffect(() => {
-    (async () => {
+    const load = async () => {
       const [{ count: cCount }, { data: dData }, { data: rClients }] = await Promise.all([
         supabase.from("clients").select("id", { count: "exact", head: true }),
         supabase.from("debts").select("amount,status,due_date,created_at"),
@@ -48,7 +48,18 @@ import {
       setDebts((dData ?? []).map((d: any) => ({ ...d, amount: Number(d.amount) })));
       setRecentClients(rClients ?? []);
       setLoading(false);
-    })();
+    };
+    load();
+
+    const channel = supabase
+      .channel("dashboard-live")
+      .on("postgres_changes", { event: "*", schema: "public", table: "clients" }, load)
+      .on("postgres_changes", { event: "*", schema: "public", table: "debts" }, load)
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, []);
 
   const fmtBRL = (v: number) =>
@@ -57,6 +68,27 @@ import {
   const totalVolume = debts.reduce((s, d) => s + d.amount, 0);
   const activeContracts = debts.filter((d) => d.status !== "pago").length;
   const ticket = debts.length ? totalVolume / debts.length : 0;
+  const overdueCount = debts.filter(
+    (d) => d.status !== "pago" && new Date(d.due_date) < new Date(),
+  ).length;
+  const pendingValue = debts
+    .filter((d) => d.status !== "pago")
+    .reduce((s, d) => s + d.amount, 0);
+
+  const exportCSV = () => {
+    const rows = [
+      ["Cliente", "Documento", "Cadastro"],
+      ...recentClients.map((c) => [c.name, c.document, format(new Date(c.created_at), "dd/MM/yyyy")]),
+    ];
+    const csv = rows.map((r) => r.map((v) => `"${String(v).replace(/"/g, '""')}"`).join(";")).join("\n");
+    const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `dashboard-clientes-${format(new Date(), "yyyy-MM-dd")}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
  
    const stats = [
     { label: "Total de Clientes", value: String(clientsCount), trend: "live", icon: Users, color: "text-blue-500", bg: "bg-blue-500/10" },
@@ -112,7 +144,7 @@ import {
              <p className="mt-2 text-white/50 text-sm">Visão geral do sistema e controle de operações.</p>
            </div>
            <div className="flex flex-wrap gap-3">
-             <Button variant="outline" className="border-white/10 bg-white/5 text-white hover:bg-white/10">
+            <Button onClick={exportCSV} variant="outline" className="border-white/10 bg-white/5 text-white hover:bg-white/10">
               <Download className="mr-2 h-4 w-4" />
               Exportar
             </Button>
@@ -248,27 +280,40 @@ import {
            </Card>
  
            <Card className="border-white/10 bg-white/[0.02] p-8 backdrop-blur-xl">
-             <h3 className="mb-6 text-lg font-bold text-white">Alertas do Sistema</h3>
+              <div className="mb-6 flex items-center justify-between">
+                <h3 className="text-lg font-bold text-white">Alertas do Sistema</h3>
+                <span className="flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-green-500">
+                  <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" /> Ao vivo
+                </span>
+              </div>
              <div className="space-y-6">
                <div className="flex gap-4">
                  <div className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]" />
                  <div>
                    <div className="text-sm font-bold text-white">Parcelas Vencidas</div>
-                   <p className="mt-1 text-xs leading-relaxed text-white/40">Existem 14 contratos com parcelas atrasadas há mais de 5 dias.</p>
+                    <p className="mt-1 text-xs leading-relaxed text-white/40">
+                      {overdueCount === 0
+                        ? "Nenhuma parcela em atraso no momento."
+                        : `Existem ${overdueCount} parcela(s) vencida(s) que requerem atenção.`}
+                    </p>
                  </div>
                </div>
                <div className="flex gap-4">
                  <div className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-brand-gold shadow-[0_0_8px_rgba(212,175,55,0.5)]" />
                  <div>
-                   <div className="text-sm font-bold text-white">Novos Leads</div>
-                   <p className="mt-1 text-xs leading-relaxed text-white/40">8 novos clientes solicitaram acesso ao portal nas últimas 24h.</p>
+                    <div className="text-sm font-bold text-white">Valor Pendente</div>
+                    <p className="mt-1 text-xs leading-relaxed text-white/40">
+                      {fmtBRL(pendingValue)} a receber em parcelas em aberto.
+                    </p>
                  </div>
                </div>
                <div className="flex gap-4">
                  <div className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-500" />
                  <div>
-                   <div className="text-sm font-bold text-white">Backup Concluído</div>
-                   <p className="mt-1 text-xs leading-relaxed text-white/40">A sincronização com o banco de dados foi realizada com sucesso.</p>
+                    <div className="text-sm font-bold text-white">Base de Clientes</div>
+                    <p className="mt-1 text-xs leading-relaxed text-white/40">
+                      {clientsCount} cliente(s) ativo(s) no sistema.
+                    </p>
                  </div>
                </div>
              </div>
