@@ -1,5 +1,6 @@
 import { ShieldCheck, Banknote, Clock3, TrendingUp, FileCheck2, BadgePercent } from "lucide-react";
-import SolutionPage from "@/components/SolutionPage";
+ import SolutionPage from "@/components/SolutionPage";
+ import BoletoGarantidoCalculator from "@/components/calculators/BoletoGarantidoCalculator";
 import hero from "@/assets/banner-boleto-garantido.webp";
 import showcase from "@/assets/showcase-boleto.webp";
 
@@ -61,9 +62,10 @@ const BoletoGarantido = () => (
       { q: "Posso integrar com meu ERP?", a: "Sim. Temos API REST e plugins prontos para os principais sistemas (Bling, Omie, Conta Azul e outros)." },
       { q: "Quanto tempo após o vencimento recebo?", a: "Em até 48h úteis após o vencimento, mesmo que o cliente não tenha pagado." },
     ]}
-    ctaTitle="Acabe com o risco de inadimplência"
-    ctaSubtitle="Converse com nosso time comercial e veja como o Boleto Garantido transforma sua operação."
-  />
+     ctaTitle="Acabe com o risco de inadimplência"
+     ctaSubtitle="Converse com nosso time comercial e veja como o Boleto Garantido transforma sua operação."
+     customSections={<BoletoGarantidoCalculator />}
+   />
 );
 
 export default BoletoGarantido;
