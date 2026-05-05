@@ -9,6 +9,8 @@
  import { Label } from "@/components/ui/label";
  import { supabase } from "@/integrations/supabase/client";
  import { User, Calendar, LogIn, ShieldCheck, CheckCircle2, AlertCircle, FileText, TrendingUp, Wallet, Clock } from "lucide-react";
+import { Search, Download, MessageCircle, Printer } from "lucide-react";
+import { whatsappLink } from "@/config/site";
  // Substituindo useToast por um estado simples já que a lib não está presente
  import { format, isAfter, isBefore, addDays } from "date-fns";
  import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from "recharts";
@@ -58,6 +60,8 @@
    const [birthDate, setBirthDate] = useState("");
    const [clientData, setClientData] = useState<any>(null);
    const [debts, setDebts] = useState<Debt[]>([]);
+  const [filter, setFilter] = useState<"todos" | "pago" | "pendente" | "atrasado">("todos");
+  const [search, setSearch] = useState("");
  
    const handleLogin = async (e: React.FormEvent) => {
      e.preventDefault();
@@ -126,6 +130,39 @@
  
      const nextDebt = pendingDebts
        .sort((a, b) => new Date(a.due_date).getTime() - new Date(b.due_date).getTime())[0];
+
+      const filteredDebts = debts.filter((d) => {
+        const isOverdue = new Date(d.due_date) < new Date() && d.status !== "pago";
+        const matchesFilter =
+          filter === "todos" ||
+          (filter === "pago" && d.status === "pago") ||
+          (filter === "pendente" && d.status !== "pago" && !isOverdue) ||
+          (filter === "atrasado" && isOverdue);
+        const matchesSearch =
+          search.trim() === "" ||
+          (d.description ?? "").toLowerCase().includes(search.toLowerCase());
+        return matchesFilter && matchesSearch;
+      });
+
+      const exportCSV = () => {
+        const rows = [
+          ["Descrição", "Vencimento", "Valor", "Status"],
+          ...debts.map((d) => [
+            d.description ?? "",
+            format(new Date(d.due_date), "dd/MM/yyyy"),
+            d.amount.toFixed(2).replace(".", ","),
+            d.status === "pago" ? "Pago" : new Date(d.due_date) < new Date() ? "Atrasado" : "Pendente",
+          ]),
+        ];
+        const csv = rows.map((r) => r.map((c) => `"${String(c).replace(/"/g, '""')}"`).join(";")).join("\n");
+        const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" });
+        const url = URL.createObjectURL(blob);
+        const a = window.document.createElement("a");
+        a.href = url;
+        a.download = `parcelas-${clientData?.name?.replace(/\s+/g, "-").toLowerCase() ?? "cliente"}.csv`;
+        a.click();
+        URL.revokeObjectURL(url);
+      };
  
      return (
        <div className="min-h-screen bg-[hsl(0_0%_4%)]">
@@ -136,13 +173,35 @@
                <h1 className="text-3xl font-bold text-white">Olá, {clientData.name}</h1>
                <p className="mt-2 text-white/50">Confira o status das suas parcelas e contratos.</p>
              </div>
-             <Button 
-               variant="outline" 
-               onClick={() => setStep("login")}
-               className="border-white/10 bg-transparent text-white hover:bg-white/5"
-             >
-               Sair do Portal
-             </Button>
+              <div className="flex flex-wrap gap-2">
+                <a
+                  href={whatsappLink(`Olá, sou ${clientData?.name} e gostaria de tirar uma dúvida sobre meu contrato.`)}
+                  className="inline-flex items-center gap-2 rounded-md border border-brand-gold/30 bg-brand-gold/10 px-4 py-2 text-sm font-bold text-brand-gold transition hover:bg-brand-gold/20"
+                >
+                  <MessageCircle className="h-4 w-4" /> Falar com atendente
+                </a>
+                <Button
+                  variant="outline"
+                  onClick={exportCSV}
+                  className="border-white/10 bg-transparent text-white hover:bg-white/5"
+                >
+                  <Download className="mr-2 h-4 w-4" /> Exportar
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => window.print()}
+                  className="border-white/10 bg-transparent text-white hover:bg-white/5"
+                >
+                  <Printer className="mr-2 h-4 w-4" /> Imprimir
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => setStep("login")}
+                  className="border-white/10 bg-transparent text-white hover:bg-white/5"
+                >
+                  Sair
+                </Button>
+              </div>
            </header>
  
              <div className="grid gap-6 lg:grid-cols-4">
@@ -256,7 +315,33 @@
             </div>
 
             <div className="mt-12">
-              <h2 className="mb-6 text-xl font-bold text-white">Detalhamento das Parcelas</h2>
+              <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <h2 className="text-xl font-bold text-white">Detalhamento das Parcelas</h2>
+                <div className="flex flex-wrap items-center gap-2">
+                  <div className="relative">
+                    <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-white/30" />
+                    <input
+                      value={search}
+                      onChange={(e) => setSearch(e.target.value)}
+                      placeholder="Buscar descrição..."
+                      className="h-9 w-56 rounded-full border border-white/10 bg-white/5 pl-9 pr-3 text-xs text-white placeholder:text-white/20 focus:border-brand-gold/50 focus:outline-none"
+                    />
+                  </div>
+                  {(["todos", "pendente", "atrasado", "pago"] as const).map((f) => (
+                    <button
+                      key={f}
+                      onClick={() => setFilter(f)}
+                      className={`rounded-full px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider transition ${
+                        filter === f
+                          ? "bg-brand-gold text-black"
+                          : "border border-white/10 bg-white/5 text-white/60 hover:text-white"
+                      }`}
+                    >
+                      {f}
+                    </button>
+                  ))}
+                </div>
+              </div>
              <Card className="overflow-hidden border-white/10 bg-white/[0.02] backdrop-blur-xl">
                <div className="overflow-x-auto">
                  <table className="w-full text-left">
@@ -269,8 +354,8 @@
                      </tr>
                    </thead>
                    <tbody className="divide-y divide-white/5">
-                     {debts.length > 0 ? (
-                       debts.map((debt) => (
+                      {filteredDebts.length > 0 ? (
+                        filteredDebts.map((debt) => (
                          <tr key={debt.id} className="transition-colors hover:bg-white/[0.02]">
                            <td className="px-6 py-4 text-sm text-white/80">{debt.description}</td>
                            <td className="px-6 py-4 text-sm text-white/80">
@@ -295,7 +380,7 @@
                      ) : (
                        <tr>
                          <td colSpan={4} className="px-6 py-12 text-center text-white/30">
-                           Nenhuma parcela encontrada.
+                            Nenhuma parcela encontrada para o filtro selecionado.
                          </td>
                        </tr>
                      )}
