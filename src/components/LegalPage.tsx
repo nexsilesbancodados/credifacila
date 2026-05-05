@@ -1,4 +1,5 @@
-import { FileText, ShieldCheck, MessageCircle, Mail } from "lucide-react";
+import { useEffect, useState } from "react";
+import { FileText, ShieldCheck, MessageCircle, Mail, ArrowUp } from "lucide-react";
 import { site, mailLink, whatsappLink } from "@/config/site";
 import { useSeo } from "@/hooks/useSeo";
 import ContactFooter from "@/components/ContactFooter";
@@ -33,6 +34,15 @@ const LegalPage = ({
 }: Props) => {
   useSeo({ title: metaTitle, description: metaDescription });
 
+  const [showTop, setShowTop] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 600);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const slug = (s: string) => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+
   return (
     <div className="min-h-screen bg-[hsl(0_0%_4%)] text-white">
       <TopNav />
@@ -65,10 +75,27 @@ const LegalPage = ({
       </section>
 
       {/* Conteúdo */}
-      <main className="mx-auto max-w-3xl px-4 py-10 sm:px-5 sm:py-16 md:px-8 md:py-20">
+      <main className="mx-auto grid max-w-6xl gap-12 px-4 py-10 sm:px-5 sm:py-16 md:px-8 md:py-20 lg:grid-cols-[220px_1fr]">
+        {/* TOC */}
+        <aside className="hidden lg:block">
+          <div className="sticky top-28">
+            <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-brand-gold">Nesta página</p>
+            <ul className="space-y-2 border-l border-white/10 pl-4">
+              {sections.map((s, i) => (
+                <li key={i}>
+                  <a href={`#${slug(s.title)}`} className="block text-[13px] text-white/55 transition-colors hover:text-brand-gold">
+                    {i + 1}. {s.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </aside>
+
+        <div>
         <article className="prose-legal">
           {sections.map((s, i) => (
-            <section key={i} className="mb-10">
+            <section key={i} id={slug(s.title)} className="mb-10 scroll-mt-32">
               <h2 className="mb-3 font-display text-xl font-bold tracking-tight text-foreground md:text-2xl">
                 {i + 1}. {s.title}
               </h2>
@@ -121,7 +148,19 @@ const LegalPage = ({
         <div className="mt-10 text-center text-xs text-foreground/50">
           {site.legal.razaoSocial} · CNPJ {site.legal.cnpj}
         </div>
+        </div>
       </main>
+
+      {showTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Voltar ao topo"
+          className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-brand-gold/40 bg-[hsl(0_0%_4%/0.9)] text-brand-gold shadow-[var(--shadow-gold)] backdrop-blur-md transition-all hover:scale-110"
+        >
+          <ArrowUp className="h-5 w-5" />
+        </button>
+      )}
+
       <ContactFooter />
     </div>
   );
