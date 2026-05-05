@@ -1,4 +1,3 @@
-import { useState } from "react";
  import { useState } from "react";
  import {
    TrendingUp, ShieldCheck, BarChart3, Lock, Sparkles, ArrowRight, MessageCircle,
