@@ -80,6 +80,28 @@ const NotFound = () => {
           <ArrowLeft className="h-3 w-3" />
           ou volte usando o navegador
         </Link>
+
+        <div className="mt-12 border-t border-white/10 pt-8">
+          <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.25em] text-white/40">Páginas mais buscadas</p>
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            {[
+              { label: "Consignado", href: "/consignado" },
+              { label: "Securitizadora", href: "/securitizadora" },
+              { label: "Conta Luri", href: "/securitizadora/conta-digital-luri" },
+              { label: "Invista Conosco", href: "/invista-conosco" },
+              { label: "FAQ", href: "/perguntas-frequentes" },
+              { label: "Portal do Cliente", href: "/portal-cliente" },
+            ].map((l) => (
+              <Link
+                key={l.href}
+                to={l.href}
+                className="rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/75 transition-all hover:border-brand-gold/50 hover:bg-brand-gold/10 hover:text-brand-gold"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
     </main>
   );
