@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Banknote, ShieldCheck, FileCheck2, Sparkles, MessageCircle } from "lucide-react";
+ import { ArrowRight, Banknote, ShieldCheck, FileCheck2, Sparkles, MessageCircle, BarChart3, Zap, Clock, Lock } from "lucide-react";
 import TopNav from "@/components/header/TopNav";
 import ContactFooter from "@/components/ContactFooter";
 import AnimatedBackdrop from "@/components/AnimatedBackdrop";
@@ -72,7 +72,35 @@ const Securitizadora = () => {
            </div>
          </section>
 
-         {/* Produtos */}
+          {/* Vantagens */}
+          <section className="relative py-20 bg-card/30">
+            <div className="mx-auto max-w-7xl px-5 md:px-8">
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+                  <BarChart3 className="h-10 w-10 text-brand-gold mb-4" />
+                  <h4 className="text-white font-bold mb-2">Taxas Competitivas</h4>
+                  <p className="text-sm text-muted-foreground">Otimizamos sua estrutura de capital com as melhores taxas do mercado secundário.</p>
+                </div>
+                <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+                  <Zap className="h-10 w-10 text-brand-gold mb-4" />
+                  <h4 className="text-white font-bold mb-2">Liquidez Imediata</h4>
+                  <p className="text-sm text-muted-foreground">Transforme ativos ilíquidos em caixa em até 24 horas para sua operação não parar.</p>
+                </div>
+                <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+                  <Clock className="h-10 w-10 text-brand-gold mb-4" />
+                  <h4 className="text-white font-bold mb-2">Agilidade Digital</h4>
+                  <p className="text-sm text-muted-foreground">Processos 100% online, sem papelada e com análise de crédito em tempo real.</p>
+                </div>
+                <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+                  <Lock className="h-10 w-10 text-brand-gold mb-4" />
+                  <h4 className="text-white font-bold mb-2">Segurança CVM</h4>
+                  <p className="text-sm text-muted-foreground">Operamos sob as mais rígidas normas regulatórias para sua total tranquilidade.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+ 
+          {/* Produtos */}
          <section id="produtos" className="relative py-20 md:py-28">
            <div className="mx-auto max-w-7xl px-5 md:px-8">
              <div className="mx-auto max-w-2xl text-center">
