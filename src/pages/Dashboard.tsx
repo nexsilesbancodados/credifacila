@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSeo } from "@/hooks/useSeo";
  import { Card } from "@/components/ui/card";
  import { Button } from "@/components/ui/button";
@@ -16,6 +16,8 @@ import { useSeo } from "@/hooks/useSeo";
  } from "lucide-react";
  import TopNav from "@/components/header/TopNav";
  import ContactFooter from "@/components/ContactFooter";
+import { supabase } from "@/integrations/supabase/client";
+import { format, subMonths, startOfMonth } from "date-fns";
 import {
   AreaChart,
   Area,
@@ -30,31 +32,69 @@ import {
    useSeo({ title: "Painel Administrativo | Credifácil" });
   const [statusFilter, setStatusFilter] = useState<"Todos" | "Ativo" | "Pendente" | "Bloqueado">("Todos");
   const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [clientsCount, setClientsCount] = useState(0);
+  const [debts, setDebts] = useState<Array<{ amount: number; status: string; due_date: string; created_at: string }>>([]);
+  const [recentClients, setRecentClients] = useState<Array<{ name: string; document: string; created_at: string }>>([]);
+
+  useEffect(() => {
+    (async () => {
+      const [{ count: cCount }, { data: dData }, { data: rClients }] = await Promise.all([
+        supabase.from("clients").select("id", { count: "exact", head: true }),
+        supabase.from("debts").select("amount,status,due_date,created_at"),
+        supabase.from("clients").select("name,document,created_at").order("created_at", { ascending: false }).limit(8),
+      ]);
+      setClientsCount(cCount ?? 0);
+      setDebts((dData ?? []).map((d: any) => ({ ...d, amount: Number(d.amount) })));
+      setRecentClients(rClients ?? []);
+      setLoading(false);
+    })();
+  }, []);
+
+  const fmtBRL = (v: number) =>
+    v >= 1000 ? `R$ ${(v / 1000).toFixed(0)}k` : new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(v);
+
+  const totalVolume = debts.reduce((s, d) => s + d.amount, 0);
+  const activeContracts = debts.filter((d) => d.status !== "pago").length;
+  const ticket = debts.length ? totalVolume / debts.length : 0;
  
    const stats = [
-    { label: "Total de Clientes", value: "1,284", trend: "+12%", icon: Users, color: "text-blue-500", bg: "bg-blue-500/10" },
-    { label: "Contratos Ativos", value: "856", trend: "+8%", icon: FileText, color: "text-brand-gold", bg: "bg-brand-gold/10" },
-    { label: "Volume Mensal", value: "R$ 452k", trend: "+24%", icon: TrendingUp, color: "text-green-500", bg: "bg-green-500/10" },
-    { label: "Ticket Médio", value: "R$ 12.400", trend: "+3%", icon: DollarSign, color: "text-purple-500", bg: "bg-purple-500/10" },
+    { label: "Total de Clientes", value: String(clientsCount), trend: "live", icon: Users, color: "text-blue-500", bg: "bg-blue-500/10" },
+    { label: "Contratos Ativos", value: String(activeContracts), trend: "live", icon: FileText, color: "text-brand-gold", bg: "bg-brand-gold/10" },
+    { label: "Volume Total", value: fmtBRL(totalVolume), trend: "live", icon: TrendingUp, color: "text-green-500", bg: "bg-green-500/10" },
+    { label: "Ticket Médio", value: fmtBRL(ticket), trend: "live", icon: DollarSign, color: "text-purple-500", bg: "bg-purple-500/10" },
    ];
 
-  const monthlyData = [
-    { month: "Jan", volume: 280, contratos: 620 },
-    { month: "Fev", volume: 310, contratos: 660 },
-    { month: "Mar", volume: 295, contratos: 690 },
-    { month: "Abr", volume: 360, contratos: 720 },
-    { month: "Mai", volume: 410, contratos: 770 },
-    { month: "Jun", volume: 452, contratos: 856 },
-  ];
+  const monthlyData = (() => {
+    const months: Array<{ month: string; volume: number; contratos: number; key: string }> = [];
+    for (let i = 5; i >= 0; i--) {
+      const d = startOfMonth(subMonths(new Date(), i));
+      months.push({ month: format(d, "MMM"), key: format(d, "yyyy-MM"), volume: 0, contratos: 0 });
+    }
+    debts.forEach((d) => {
+      const k = format(new Date(d.created_at), "yyyy-MM");
+      const slot = months.find((m) => m.key === k);
+      if (slot) {
+        slot.volume += d.amount;
+        slot.contratos += 1;
+      }
+    });
+    return months;
+  })();
 
-  const allClients = [
-    { name: "João Silva Santos", doc: "045.***.***-98", status: "Ativo", date: "Há 2 horas" },
-    { name: "Maria Oliveira Lima", doc: "123.***.***-45", status: "Pendente", date: "Há 5 horas" },
-    { name: "Empresa ABC Ltda", doc: "12.***.***/0001-90", status: "Ativo", date: "Ontem" },
-    { name: "Ricardo Ferreira", doc: "876.***.***-32", status: "Bloqueado", date: "Ontem" },
-    { name: "Fernanda Costa", doc: "234.***.***-11", status: "Ativo", date: "2 dias" },
-    { name: "Carlos Mendes", doc: "567.***.***-22", status: "Pendente", date: "3 dias" },
-  ];
+  const maskDoc = (d: string) => {
+    const n = (d ?? "").replace(/\D/g, "");
+    if (n.length === 11) return `${n.slice(0, 3)}.***.***-${n.slice(-2)}`;
+    if (n.length === 14) return `${n.slice(0, 2)}.***.***/${n.slice(8, 12)}-${n.slice(-2)}`;
+    return d;
+  };
+
+  const allClients = recentClients.map((c) => ({
+    name: c.name,
+    doc: maskDoc(c.document),
+    status: "Ativo" as const,
+    date: format(new Date(c.created_at), "dd/MM/yyyy"),
+  }));
 
   const filteredClients = allClients.filter((c) => {
     const matchesStatus = statusFilter === "Todos" || c.status === statusFilter;
@@ -94,13 +134,13 @@ import {
                  <div className={`flex h-12 w-12 items-center justify-center rounded-2xl ${stat.bg} ${stat.color}`}>
                    <stat.icon className="h-6 w-6" />
                  </div>
-                 <div className="flex items-center text-xs font-medium text-green-500">
-                   <ArrowUpRight className="mr-1 h-3 w-3" />
+                  <div className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-green-500">
+                    <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
                     {stat.trend}
                  </div>
                </div>
                <div className="mt-6">
-                 <div className="text-2xl font-bold text-white">{stat.value}</div>
+                  <div className="text-2xl font-bold text-white">{loading ? "—" : stat.value}</div>
                  <div className="mt-1 text-sm text-white/40">{stat.label}</div>
                </div>
              </Card>
