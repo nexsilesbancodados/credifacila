@@ -8,9 +8,10 @@
  import { Input } from "@/components/ui/input";
  import { Label } from "@/components/ui/label";
  import { supabase } from "@/integrations/supabase/client";
- import { User, Calendar, LogIn, ShieldCheck, CheckCircle2, AlertCircle, FileText } from "lucide-react";
+ import { User, Calendar, LogIn, ShieldCheck, CheckCircle2, AlertCircle, FileText, TrendingUp, Wallet, Clock } from "lucide-react";
  // Substituindo useToast por um estado simples já que a lib não está presente
- import { format } from "date-fns";
+ import { format, isAfter, isBefore, addDays } from "date-fns";
+ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from "recharts";
  import { ptBR } from "date-fns/locale";
  
  interface Debt {
@@ -112,6 +113,19 @@
    if (step === "dashboard") {
      const paidDebts = debts.filter(d => d.status === "pago");
      const pendingDebts = debts.filter(d => d.status !== "pago");
+     const overdueDebts = pendingDebts.filter(d => isBefore(new Date(d.due_date), new Date()) && d.status !== "pago");
+     
+     const totalValue = debts.reduce((acc, d) => acc + d.amount, 0);
+     const paidValue = paidDebts.reduce((acc, d) => acc + d.amount, 0);
+     const pendingValue = pendingDebts.reduce((acc, d) => acc + d.amount, 0);
+ 
+     const chartData = [
+       { name: "Pago", value: paidValue, color: "#10b981" },
+       { name: "Pendente", value: pendingValue, color: "#eab308" },
+     ];
+ 
+     const nextDebt = pendingDebts
+       .sort((a, b) => new Date(a.due_date).getTime() - new Date(b.due_date).getTime())[0];
  
      return (
        <div className="min-h-screen bg-[hsl(0_0%_4%)]">
@@ -131,34 +145,118 @@
              </Button>
            </header>
  
-           <div className="grid gap-6 md:grid-cols-3">
-             <Card className="border-white/10 bg-white/[0.02] p-6 backdrop-blur-xl">
-               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-gold">
-                 <FileText className="h-5 w-5" />
+             <div className="grid gap-6 lg:grid-cols-4">
+               <Card className="border-white/10 bg-white/[0.02] p-6 backdrop-blur-xl md:col-span-2 lg:col-span-1">
+                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-gold">
+                   <Wallet className="h-5 w-5" />
+                 </div>
+                 <div className="text-2xl font-bold text-white">{formatCurrency(totalValue)}</div>
+                 <div className="text-sm text-white/50 text-nowrap">Valor total em aberto</div>
+               </Card>
+               
+               <Card className="border-white/10 bg-white/[0.02] p-6 backdrop-blur-xl">
+                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-green-500/10 text-green-500">
+                   <CheckCircle2 className="h-5 w-5" />
+                 </div>
+                 <div className="text-2xl font-bold text-white">{paidDebts.length} / {debts.length}</div>
+                 <div className="text-sm text-white/50">Parcelas pagas</div>
+               </Card>
+   
+               <Card className="border-white/10 bg-white/[0.02] p-6 backdrop-blur-xl">
+                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-red-500/10 text-red-500">
+                   <AlertCircle className="h-5 w-5" />
+                 </div>
+                 <div className="text-2xl font-bold text-white">{overdueDebts.length}</div>
+                 <div className="text-sm text-white/50">Parcelas em atraso</div>
+               </Card>
+
+               <Card className="border-brand-gold/20 bg-brand-gold/5 p-6 backdrop-blur-xl">
+                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold/20 text-brand-gold">
+                   <Clock className="h-5 w-5" />
+                 </div>
+                 <div className="text-lg font-bold text-white">
+                   {nextDebt ? format(new Date(nextDebt.due_date), "dd/MM") : "---"}
+                 </div>
+                 <div className="text-xs font-medium text-brand-gold uppercase tracking-wider">Próximo Vencimento</div>
+               </Card>
+             </div>
+
+             <div className="mt-8 grid gap-6 md:grid-cols-3">
+               <Card className="border-white/10 bg-white/[0.02] p-6 backdrop-blur-xl md:col-span-1">
+                 <h3 className="mb-4 text-sm font-medium text-white/70 uppercase tracking-wider">Resumo de Pagamento</h3>
+                 <div className="h-[200px] w-full">
+                   <ResponsiveContainer width="100%" height="100%">
+                     <PieChart>
+                       <Pie
+                         data={chartData}
+                         cx="50%"
+                         cy="50%"
+                         innerRadius={60}
+                         outerRadius={80}
+                         paddingAngle={5}
+                         dataKey="value"
+                       >
+                         {chartData.map((entry, index) => (
+                           <Cell key={`cell-${index}`} fill={entry.color} stroke="none" />
+                         ))}
+                       </Pie>
+                       <Tooltip 
+                        contentStyle={{ backgroundColor: "#111", border: "1px solid #333", borderRadius: "8px" }}
+                        itemStyle={{ color: "#fff" }}
+                        formatter={(value: number) => formatCurrency(value)}
+                       />
+                     </PieChart>
+                   </ResponsiveContainer>
+                 </div>
+                 <div className="mt-4 space-y-2">
+                   {chartData.map((item) => (
+                     <div key={item.name} className="flex items-center justify-between text-xs">
+                       <div className="flex items-center gap-2">
+                         <div className="h-2 w-2 rounded-full" style={{ backgroundColor: item.color }} />
+                         <span className="text-white/50">{item.name}</span>
+                       </div>
+                       <span className="font-bold text-white">{formatCurrency(item.value)}</span>
+                     </div>
+                   ))}
+                 </div>
+               </Card>
+
+               <div className="md:col-span-2">
+                 <Card className="h-full border-white/10 bg-white/[0.02] p-6 backdrop-blur-xl">
+                   <div className="flex items-center justify-between mb-6">
+                     <h3 className="text-sm font-medium text-white/70 uppercase tracking-wider">Últimas Atividades</h3>
+                     <TrendingUp className="h-4 w-4 text-brand-gold" />
+                   </div>
+                   <div className="space-y-4">
+                     {debts.slice(0, 3).map((debt) => (
+                       <div key={debt.id} className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/5">
+                         <div className="flex items-center gap-3">
+                           <div className={`h-8 w-8 rounded-full flex items-center justify-center ${debt.status === "pago" ? "bg-green-500/10 text-green-500" : "bg-brand-gold/10 text-brand-gold"}`}>
+                             {debt.status === "pago" ? <CheckCircle2 className="h-4 w-4" /> : <Clock className="h-4 w-4" />}
+                           </div>
+                           <div>
+                             <div className="text-sm font-medium text-white">{debt.description}</div>
+                             <div className="text-[10px] text-white/40">{format(new Date(debt.due_date), "dd/MM/yyyy")}</div>
+                           </div>
+                         </div>
+                         <div className="text-right">
+                           <div className="text-sm font-bold text-white">{formatCurrency(debt.amount)}</div>
+                           <div className={`text-[10px] uppercase font-bold ${debt.status === "pago" ? "text-green-500" : "text-brand-gold"}`}>
+                             {debt.status === "pago" ? "Liquidado" : "A vencer"}
+                           </div>
+                         </div>
+                       </div>
+                     ))}
+                     {debts.length === 0 && (
+                       <p className="text-center text-white/30 py-8 italic">Sem atividades recentes</p>
+                     )}
+                   </div>
+                 </Card>
                </div>
-               <div className="text-2xl font-bold text-white">{debts.length}</div>
-               <div className="text-sm text-white/50">Total de parcelas</div>
-             </Card>
-             
-             <Card className="border-white/10 bg-white/[0.02] p-6 backdrop-blur-xl">
-               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-green-500/10 text-green-500">
-                 <CheckCircle2 className="h-5 w-5" />
-               </div>
-               <div className="text-2xl font-bold text-white">{paidDebts.length}</div>
-               <div className="text-sm text-white/50">Parcelas pagas</div>
-             </Card>
- 
-             <Card className="border-white/10 bg-white/[0.02] p-6 backdrop-blur-xl">
-               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-gold">
-                 <AlertCircle className="h-5 w-5" />
-               </div>
-               <div className="text-2xl font-bold text-white">{pendingDebts.length}</div>
-               <div className="text-sm text-white/50">Aguardando pagamento</div>
-             </Card>
-           </div>
- 
-           <div className="mt-10">
-             <h2 className="mb-6 text-xl font-bold text-white">Minhas Parcelas</h2>
+            </div>
+
+            <div className="mt-12">
+              <h2 className="mb-6 text-xl font-bold text-white">Detalhamento das Parcelas</h2>
              <Card className="overflow-hidden border-white/10 bg-white/[0.02] backdrop-blur-xl">
                <div className="overflow-x-auto">
                  <table className="w-full text-left">
