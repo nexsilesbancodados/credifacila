@@ -253,12 +253,10 @@
                    </div>
                  </Card>
                </div>
-             </div>
-  
-            <div className="mt-10">
- 
-           <div className="mt-10">
-             <h2 className="mb-6 text-xl font-bold text-white">Minhas Parcelas</h2>
+            </div>
+
+            <div className="mt-12">
+              <h2 className="mb-6 text-xl font-bold text-white">Detalhamento das Parcelas</h2>
              <Card className="overflow-hidden border-white/10 bg-white/[0.02] backdrop-blur-xl">
                <div className="overflow-x-auto">
                  <table className="w-full text-left">
