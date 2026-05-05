@@ -47,8 +47,10 @@ const PerguntasFrequentes = () => {
     description: "Tire suas dúvidas sobre consignado, securitizadora, conta digital e nossa estrutura. Respostas claras e objetivas.",
   });
   const [query, setQuery] = useState("");
+  const [activeCat, setActiveCat] = useState<string>("Todos");
 
   const filtered = categories
+    .filter((c) => activeCat === "Todos" || c.name === activeCat)
     .map((c) => ({
       ...c,
       items: c.items.filter(
@@ -83,6 +85,21 @@ const PerguntasFrequentes = () => {
                 placeholder="Busque sua dúvida…"
                 className="w-full rounded-full border border-brand-gold/30 bg-card/85 py-4 pl-14 pr-5 text-[15px] text-foreground shadow-[var(--shadow-elev)] outline-none backdrop-blur-xl focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20"
               />
+            </div>
+            <div className="mx-auto mt-6 flex max-w-3xl flex-wrap justify-center gap-2">
+              {["Todos", ...categories.map(c => c.name)].map((c) => (
+                <button
+                  key={c}
+                  onClick={() => setActiveCat(c)}
+                  className={`rounded-full border px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider transition-all ${
+                    activeCat === c
+                      ? "border-brand-gold bg-brand-gold/10 text-brand-gold"
+                      : "border-white/15 text-white/60 hover:border-brand-gold/40 hover:text-white"
+                  }`}
+                >
+                  {c}
+                </button>
+              ))}
             </div>
           </div>
         </section>
@@ -122,6 +139,15 @@ const PerguntasFrequentes = () => {
                 </div>
               </div>
             ))}
+
+            {/* CTA final */}
+            <div className="mt-16 rounded-3xl border border-brand-gold/25 bg-gradient-to-br from-brand-gold/5 to-transparent p-8 text-center md:p-12">
+              <h3 className="font-display text-2xl font-bold text-white md:text-3xl">Não encontrou sua resposta?</h3>
+              <p className="mt-3 text-white/60">Nosso time responde em minutos pelo WhatsApp ou e-mail.</p>
+              <a href={whatsappLink("Olá! Tenho uma dúvida não listada na FAQ.")} className="btn-gold mt-6 inline-flex">
+                <MessageCircle className="h-4 w-4" /> Falar agora
+              </a>
+            </div>
           </div>
         </section>
       </main>
