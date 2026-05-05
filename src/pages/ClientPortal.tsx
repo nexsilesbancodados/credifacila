@@ -71,31 +71,18 @@ import { whatsappLink } from "@/config/site";
        // Limpar CPF para busca
         const cleanDoc = document.replace(/\D/g, "");
 
-        const { data: client, error } = await supabase
-          .from("clients")
-          .select("*")
-          .eq("document", cleanDoc)
-          .eq("birth_date", birthDate)
-          .maybeSingle();
- 
-       if (error) throw error;
- 
-       if (!client) {
+        const { data, error } = await supabase.functions.invoke("portal-login", {
+          body: { document: cleanDoc, birthDate },
+        });
+
+        if (error || !data || (data as any).error === "not_found") {
          setErrorMsg("CPF ou data de nascimento não encontrados em nossa base.");
          return;
        }
+        if ((data as any).error) throw new Error((data as any).error);
  
-       setClientData(client);
-       
-       const { data: clientDebts, error: debtsError } = await supabase
-         .from("debts")
-         .select("*")
-         .eq("client_id", client.id)
-         .order("due_date", { ascending: true });
- 
-       if (debtsError) throw debtsError;
- 
-       setDebts(clientDebts || []);
+        setClientData((data as any).client);
+        setDebts((data as any).debts || []);
        setStep("dashboard");
        
        setErrorMsg(null);
