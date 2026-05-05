@@ -1,5 +1,6 @@
 import { Zap, BarChart3, ShieldCheck, Banknote, Clock3, FileCheck2 } from "lucide-react";
-import SolutionPage from "@/components/SolutionPage";
+ import SolutionPage from "@/components/SolutionPage";
+ import AntecipacaoSimulator from "@/components/calculators/AntecipacaoSimulator";
 import hero from "@/assets/hero-antecipacao-wide.webp";
 import showcase from "@/assets/showcase-antecipacao.webp";
 
@@ -61,9 +62,10 @@ const AntecipacaoRecebiveis = () => (
       { q: "Preciso ter cadastro em algum banco?", a: "Não. Operamos como securitizadora independente, com nossa própria estrutura de funding." },
       { q: "Quais documentos são necessários?", a: "Contrato social, últimos balanços, faturamento dos últimos 12 meses e os recebíveis a antecipar." },
     ]}
-    ctaTitle="Liberte o capital que está parado"
-    ctaSubtitle="Fale com um consultor B2B e receba uma proposta personalizada em até 4 horas úteis."
-  />
+     ctaTitle="Liberte o capital que está parado"
+     ctaSubtitle="Fale com um consultor B2B e receba uma proposta personalizada em até 4 horas úteis."
+     customSections={<AntecipacaoSimulator />}
+   />
 );
 
 export default AntecipacaoRecebiveis;
