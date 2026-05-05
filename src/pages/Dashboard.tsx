@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSeo } from "@/hooks/useSeo";
+import { useNavigate } from "react-router-dom";
  import { Card } from "@/components/ui/card";
  import { Button } from "@/components/ui/button";
  import { 
@@ -30,6 +31,8 @@ import {
  
  const Dashboard = () => {
    useSeo({ title: "Painel Administrativo | Credifácil" });
+  const navigate = useNavigate();
+  const [authChecked, setAuthChecked] = useState(false);
   const [statusFilter, setStatusFilter] = useState<"Todos" | "Ativo" | "Pendente" | "Bloqueado">("Todos");
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
@@ -38,6 +41,21 @@ import {
   const [recentClients, setRecentClients] = useState<Array<{ name: string; document: string; created_at: string }>>([]);
 
   useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      if (!data.session) {
+        navigate("/login", { replace: true });
+      } else {
+        setAuthChecked(true);
+      }
+    });
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
+      if (!session) navigate("/login", { replace: true });
+    });
+    return () => sub.subscription.unsubscribe();
+  }, [navigate]);
+
+  useEffect(() => {
+    if (!authChecked) return;
     const load = async () => {
       const [{ count: cCount }, { data: dData }, { data: rClients }] = await Promise.all([
         supabase.from("clients").select("id", { count: "exact", head: true }),
@@ -60,7 +78,7 @@ import {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, []);
+  }, [authChecked]);
 
   const fmtBRL = (v: number) =>
     v >= 1000 ? `R$ ${(v / 1000).toFixed(0)}k` : new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(v);
