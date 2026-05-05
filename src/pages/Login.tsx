@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { LogIn, UserPlus, ShieldCheck } from "lucide-react";
+import { useState } from "react";
+import { LogIn, UserPlus, ShieldCheck, Eye, EyeOff } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Login = () => {
@@ -13,6 +14,7 @@ const Login = () => {
     title: "Área do Cliente | Credifácil",
     description: "Acesse sua conta Credifácil para gerenciar seus empréstimos e investimentos com segurança."
   });
+  const [showPass, setShowPass] = useState(false);
 
   return (
     <div className="min-h-screen bg-[hsl(0_0%_4%)]">
@@ -47,12 +49,22 @@ const Login = () => {
                     Esqueceu a senha?
                   </button>
                 </div>
-                <Input 
-                  id="pass" 
-                  type="password" 
-                  placeholder="••••••••" 
-                  className="border-white/10 bg-white/5 text-white placeholder:text-white/20 focus:border-brand-gold/50"
-                />
+                <div className="relative">
+                  <Input 
+                    id="pass" 
+                    type={showPass ? "text" : "password"}
+                    placeholder="••••••••" 
+                    className="border-white/10 bg-white/5 pr-11 text-white placeholder:text-white/20 focus:border-brand-gold/50"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPass(v => !v)}
+                    aria-label={showPass ? "Ocultar senha" : "Mostrar senha"}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-brand-gold"
+                  >
+                    {showPass ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                  </button>
+                </div>
               </div>
 
               <Button className="w-full bg-brand-gold font-bold uppercase tracking-wider text-[hsl(0_0%_4%)] hover:bg-brand-gold/90">
