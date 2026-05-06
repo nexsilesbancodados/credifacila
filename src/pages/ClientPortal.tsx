@@ -25,9 +25,10 @@ import { whatsappLink } from "@/config/site";
  }
  
  const ClientPortal = () => {
-   useSeo({ 
+   useSeo({
      title: "Portal do Cliente | Credifácil",
-     description: "Acesse suas faturas, parcelas e informações de crédito com segurança."
+     description: "Acesse suas faturas, parcelas e informações de crédito com segurança e criptografia de ponta a ponta.",
+     noindex: true,
    });
  
    const [errorMsg, setErrorMsg] = useState<string | null>(null);
