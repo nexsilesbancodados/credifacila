@@ -2,7 +2,7 @@ import heroPrincipal from "@/assets/hero-principal.png";
 
 const HeroCarousel = () => (
    <div
-     className="relative w-full overflow-hidden aspect-[16/8] sm:aspect-[16/9]"
+     className="relative w-full overflow-hidden aspect-[16/9] sm:aspect-[16/9]"
      aria-label="Credifácil — Mais que crédito, um parceiro para seus melhores planos"
     >
       <img
@@ -11,7 +11,7 @@ const HeroCarousel = () => (
         loading="eager"
         decoding="async"
         fetchPriority="high"
-        className="absolute inset-x-0 -top-[8%] h-[112%] w-full object-cover object-top bg-background"
+        className="absolute inset-0 h-full w-full object-cover bg-background"
         width={1920}
         height={1080}
       />
