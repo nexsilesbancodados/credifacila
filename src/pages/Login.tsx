@@ -11,9 +11,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 
 const Login = () => {
-  useSeo({ 
-    title: "Área do Cliente | Credifácil",
-    description: "Acesse sua conta Credifácil para gerenciar seus empréstimos e investimentos com segurança."
+  useSeo({
+    title: "Login Administrativo | Credifácil",
+    description: "Acesso restrito à equipe Credifácil. Login administrativo seguro com criptografia de ponta a ponta.",
+    noindex: true,
   });
   const [showPass, setShowPass] = useState(false);
   const [email, setEmail] = useState("");

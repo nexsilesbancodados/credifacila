@@ -21,8 +21,8 @@ const Lgpd = lazy(() => import("./pages/Lgpd.tsx"));
   const Dashboard = lazy(() => import("./pages/Dashboard.tsx"));
   const ClientPortal = lazy(() => import("./pages/ClientPortal.tsx"));
  
-import FloatingChatbot from "./components/FloatingChatbot";
-import CookieBanner from "./components/CookieBanner";
+const FloatingChatbot = lazy(() => import("./components/FloatingChatbot"));
+const CookieBanner = lazy(() => import("./components/CookieBanner"));
 import useScrollAnimations from "./hooks/useScrollAnimations";
 import { initAnalytics, trackEvent } from "./lib/analytics";
 
@@ -103,7 +103,9 @@ const App = () => (
      <Suspense fallback={null}>
        <FloatingChatbot />
      </Suspense>
-    <CookieBanner />
+    <Suspense fallback={null}>
+      <CookieBanner />
+    </Suspense>
   </BrowserRouter>
 );
 

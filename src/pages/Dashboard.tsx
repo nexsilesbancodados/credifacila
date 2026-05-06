@@ -30,7 +30,7 @@ import {
 } from "recharts";
  
  const Dashboard = () => {
-   useSeo({ title: "Painel Administrativo | Credifácil" });
+   useSeo({ title: "Painel Administrativo | Credifácil", description: "Painel interno de gestão de clientes e contratos.", noindex: true });
   const navigate = useNavigate();
   const [authChecked, setAuthChecked] = useState(false);
   const [statusFilter, setStatusFilter] = useState<"Todos" | "Ativo" | "Pendente" | "Bloqueado">("Todos");
