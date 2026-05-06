@@ -3,7 +3,7 @@ import { whatsappLink } from "@/config/site";
 import heroBg from "@/assets/hero-consignado-banner.png";
 
 const HeroHome = () => (
-  <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-20">
+  <section className="relative min-h-[70vh] md:min-h-[90vh] flex items-center overflow-hidden pt-16 pb-16 md:pt-20">
     <div className="absolute inset-0 pointer-events-none">
       <img 
         src={heroBg} 
@@ -18,25 +18,25 @@ const HeroHome = () => (
         <span className="pill-eyebrow-dark mb-6">
           <Sparkles className="h-4 w-4" /> Autorizada pelo Banco Central
         </span>
-        <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white leading-[0.95] mb-8">
+        <h1 className="font-display text-[2.25rem] sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white leading-[1.02] sm:leading-[0.95] mb-6 md:mb-8">
           O crédito que <br />
           <span className="text-gold-gradient">respeita você.</span>
         </h1>
-        <p className="text-lg md:text-xl text-white/70 max-w-xl leading-relaxed mb-10">
+        <p className="text-base md:text-xl text-white/70 max-w-xl leading-relaxed mb-8 md:mb-10">
           Do consignado à securitização de ativos, oferecemos soluções financeiras sólidas, transparentes e 100% digitais.
         </p>
         
-        <div className="flex flex-wrap gap-4">
-          <a href={whatsappLink("Olá! Gostaria de conhecer as soluções da Credifácil.")} className="btn-gold px-8 py-4 text-lg">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4">
+          <a href={whatsappLink("Olá! Gostaria de conhecer as soluções da Credifácil.")} className="btn-gold px-6 sm:px-8 py-3.5 sm:py-4 text-base sm:text-lg justify-center">
             Falar com Especialista
             <ArrowRight className="h-5 w-5 ml-2" />
           </a>
-          <a href="#solucoes" className="btn-ghost-light px-8 py-4 text-lg">
+          <a href="#solucoes" className="btn-ghost-light px-6 sm:px-8 py-3.5 sm:py-4 text-base sm:text-lg justify-center">
             Ver Soluções
           </a>
         </div>
         
-        <div className="mt-16 flex items-center gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+        <div className="mt-10 md:mt-16 flex flex-wrap items-center gap-x-6 gap-y-3 sm:gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
            <div className="flex items-center gap-2">
              <ShieldCheck className="h-5 w-5 text-brand-gold" />
              <span className="text-xs uppercase tracking-widest font-bold text-white">Segurança Total</span>
