@@ -44,7 +44,20 @@ const categories = [
 const PerguntasFrequentes = () => {
   useSeo({
     title: "Perguntas Frequentes — FAQ Credifácil",
-    description: "Tire suas dúvidas sobre consignado, securitizadora, conta digital e nossa estrutura. Respostas claras e objetivas.",
+    description:
+      "Tire suas dúvidas sobre consignado, securitizadora, conta digital e nossa estrutura. Respostas claras e objetivas.",
+    keywords: "FAQ Credifácil, dúvidas consignado, dúvidas securitizadora, taxa consignado",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: categories.flatMap((c) =>
+        c.items.map((it) => ({
+          "@type": "Question",
+          name: it.q,
+          acceptedAnswer: { "@type": "Answer", text: it.a },
+        })),
+      ),
+    },
   });
   const [query, setQuery] = useState("");
   const [activeCat, setActiveCat] = useState<string>("Todos");
