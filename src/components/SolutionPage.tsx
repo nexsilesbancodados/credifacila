@@ -77,7 +77,30 @@ export interface SolutionPageProps {
    benefitsImage,
     customSections,
  }: SolutionPageProps) => {
-  useSeo({ title: metaTitle, description: metaDescription });
+  useSeo({
+    title: metaTitle,
+    description: metaDescription,
+    type: "website",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: eyebrow,
+        provider: { "@type": "Organization", name: "Credifácil" },
+        description: metaDescription,
+        areaServed: "BR",
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faq.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+    ],
+  });
 
   return (
      <div className="min-h-screen bg-[hsl(0_0%_4%)] text-white pt-[72px] md:pt-[88px]">
