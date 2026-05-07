@@ -11,7 +11,7 @@ const HeroCarousel = () => (
         loading="eager"
         decoding="async"
         fetchPriority="high"
-        className="absolute inset-0 h-full w-full object-cover bg-background"
+        className="absolute inset-0 h-full w-full object-contain bg-background"
         width={1920}
         height={1080}
       />
