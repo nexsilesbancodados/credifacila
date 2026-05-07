@@ -1,6 +1,5 @@
 import { Zap, BarChart3, ShieldCheck, Banknote, Clock3, FileCheck2 } from "lucide-react";
  import SolutionPage from "@/components/SolutionPage";
- import AntecipacaoSimulator from "@/components/calculators/AntecipacaoSimulator";
 import hero from "@/assets/hero-antecipacao-wide.webp";
 import showcase from "@/assets/showcase-antecipacao.webp";
 
@@ -64,7 +63,6 @@ const AntecipacaoRecebiveis = () => (
     ]}
      ctaTitle="Liberte o capital que está parado"
      ctaSubtitle="Fale com um consultor B2B e receba uma proposta personalizada em até 4 horas úteis."
-     customSections={<AntecipacaoSimulator />}
    />
 );
 
