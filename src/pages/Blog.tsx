@@ -76,8 +76,14 @@ const Blog = () => {
         {/* Featured */}
         <Link to={`/blog/${featured.slug}`} className="group mb-12 block">
           <Card className="grid overflow-hidden border-white/10 bg-white/[0.02] transition-all hover:border-brand-gold/40 lg:grid-cols-2">
-            <div className="relative aspect-video overflow-hidden lg:aspect-auto">
-              <img src={featured.image} alt={featured.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-brand-gold/20 via-white/5 to-transparent lg:aspect-auto lg:min-h-[320px]">
+              <img
+                src={featured.image}
+                alt={featured.title}
+                loading="lazy"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
               <span className="absolute left-4 top-4 rounded-full bg-brand-gold px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[hsl(0_0%_4%)]">
                 Em destaque
               </span>
@@ -130,11 +136,13 @@ const Blog = () => {
           {filtered.map((post) => (
             <Link key={post.id} to={`/blog/${post.slug}`} className="group flex h-full">
               <Card className="flex flex-col overflow-hidden border-white/10 bg-white/[0.02] transition-all duration-300 hover:border-brand-gold/40 hover:bg-white/[0.05]">
-                <div className="relative aspect-video overflow-hidden">
+                <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-brand-gold/20 via-white/5 to-transparent">
                   <img 
                     src={post.image} 
                     alt={post.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute left-4 top-4">
                     <span className="flex items-center gap-1.5 rounded-full bg-[hsl(0_0%_4%/0.8)] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold backdrop-blur-md">
