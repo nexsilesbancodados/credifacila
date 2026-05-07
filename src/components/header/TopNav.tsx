@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
  import { ChevronDown, MessageCircle, ArrowRight } from "lucide-react";
 import { whatsappLink } from "@/config/site";
 import MobileNav from "@/components/MobileNav";
-import logo from "@/assets/credifacil-logo-oficial.png";
+import logo from "@/assets/credifacil-logo.webp";
 
 const navItems: {
   label: string;

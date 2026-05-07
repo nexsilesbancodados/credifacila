@@ -10,7 +10,7 @@ import {
   ShieldCheck,
   ChevronRight,
 } from "lucide-react";
-import logo from "@/assets/credifacil-logo-oficial.png";
+import logo from "@/assets/credifacil-logo.webp";
 import { site, whatsappLink, telLink, mailLink } from "@/config/site";
 
 
