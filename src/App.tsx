@@ -12,6 +12,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Duvidas = lazy(() => import("./pages/Duvidas"));
 const Contato = lazy(() => import("./pages/Contato"));
+const Sobre = lazy(() => import("./pages/Sobre"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const ScrollToTop = () => {
@@ -36,6 +37,7 @@ const App = () => (
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/duvidas" element={<Duvidas />} />
         <Route path="/contato" element={<Contato />} />
+        <Route path="/sobre" element={<Sobre />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
