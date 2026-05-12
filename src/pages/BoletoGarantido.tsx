@@ -6,6 +6,8 @@ import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepTimeline from "@/components/sections/StepTimeline";
 import CTASection from "@/components/CTASection";
 import imgBoleto from "@/assets/img-boleto.jpg";
+import SectionBanner from "@/components/SectionBanner";
+import bannerSeguranca from "@/assets/banner-seguranca.png";
 
 const BoletoGarantido = () => (
   <Layout>
@@ -77,6 +79,8 @@ const BoletoGarantido = () => (
         />
       </div>
     </section>
+
+    <SectionBanner image={bannerSeguranca} alt="Atendente Credifácil com elementos visuais de segurança" />
 
     <section className="container-x py-20">
       <SectionTitle eyebrow="Comparativo" title="Veja a diferença" />

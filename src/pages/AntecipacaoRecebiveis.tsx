@@ -5,6 +5,8 @@ import SectionTitle from "@/components/SectionTitle";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import CTASection from "@/components/CTASection";
 import imgAntecipacao from "@/assets/img-antecipacao.jpg";
+import SectionBanner from "@/components/SectionBanner";
+import bannerEquipe from "@/assets/banner-equipe.png";
 
 const AntecipacaoRecebiveis = () => (
   <Layout>
@@ -48,6 +50,8 @@ const AntecipacaoRecebiveis = () => (
         />
       </div>
     </section>
+
+    <SectionBanner image={bannerEquipe} alt="Equipe Credifácil em ambiente corporativo" />
 
     <section className="container-x py-20">
       <SectionTitle eyebrow="Vantagens" title="Por que antecipar com a Credifácil" />

@@ -6,6 +6,8 @@ import FeatureGrid from "@/components/sections/FeatureGrid";
 import CTASection from "@/components/CTASection";
 import PhoneMockup from "@/components/mockups/PhoneMockup";
 import imgLuri from "@/assets/img-luri.jpg";
+import SectionBanner from "@/components/SectionBanner";
+import bannerLuriApp from "@/assets/banner-luri-app.png";
 
 const ContaDigitalLuri = () => (
   <Layout>
@@ -52,6 +54,8 @@ const ContaDigitalLuri = () => (
         />
       </div>
     </section>
+
+    <SectionBanner image={bannerLuriApp} alt="Cliente usando soluções digitais da Credifácil no celular" />
 
     {/* Big phone showcase */}
     <section className="container-x py-20">
