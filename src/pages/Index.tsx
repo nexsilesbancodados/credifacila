@@ -6,6 +6,12 @@ import CTASection from "@/components/CTASection";
 import HeroImage from "@/components/HeroImage";
 import heroHome from "@/assets/img-hero-home.jpg";
 import imgEquipe from "@/assets/img-equipe.jpg";
+import imgConsignado from "@/assets/img-consignado.jpg";
+import imgAntecipacao from "@/assets/img-antecipacao.jpg";
+import imgBoleto from "@/assets/img-boleto.jpg";
+import imgLuri from "@/assets/img-luri.jpg";
+import imgInvestimentos from "@/assets/img-investimentos.jpg";
+import imgSecuritizadora from "@/assets/img-securitizadora.jpg";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepTimeline from "@/components/sections/StepTimeline";
 import ServiceCard from "@/components/sections/ServiceCard";
@@ -87,12 +93,12 @@ const Index = () => (
         subtitle="Crédito, gestão e investimentos em um único lugar — com tecnologia, segurança e atendimento humano."
       />
       <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        <ServiceCard icon={Banknote} title="Consignado" text="Aprovação facilitada com taxas reduzidas e parcelas que cabem no seu orçamento." href="/consignado" />
-        <ServiceCard icon={Receipt} title="Antecipação de Recebíveis" text="Transforme vendas futuras em capital imediato para sua empresa crescer." href="/securitizadora/antecipacao-de-recebiveis" />
-        <ServiceCard icon={ShieldCheck} title="Boleto Garantido" text="Mais segurança nas vendas e previsibilidade no recebimento." href="/securitizadora/boleto-garantido" accent="gold" />
-        <ServiceCard icon={Smartphone} title="Conta Digital Luri" text="Conta completa para pessoas e empresas com Pix, pagamentos e gestão." href="/securitizadora/conta-digital-luri" />
-        <ServiceCard icon={TrendingUp} title="Invista Conosco" text="Oportunidades estruturadas com transparência e acompanhamento consultivo." href="/invista-conosco" accent="gold" />
-        <ServiceCard icon={Building2} title="Securitizadora" text="Soluções financeiras inteligentes para empresas crescerem com segurança." href="/securitizadora" />
+        <ServiceCard icon={Banknote} title="Consignado" text="Aprovação facilitada com taxas reduzidas e parcelas que cabem no seu orçamento." href="/consignado" image={imgConsignado} />
+        <ServiceCard icon={Receipt} title="Antecipação de Recebíveis" text="Transforme vendas futuras em capital imediato para sua empresa crescer." href="/securitizadora/antecipacao-de-recebiveis" image={imgAntecipacao} />
+        <ServiceCard icon={ShieldCheck} title="Boleto Garantido" text="Mais segurança nas vendas e previsibilidade no recebimento." href="/securitizadora/boleto-garantido" accent="gold" image={imgBoleto} />
+        <ServiceCard icon={Smartphone} title="Conta Digital Luri" text="Conta completa para pessoas e empresas com Pix, pagamentos e gestão." href="/securitizadora/conta-digital-luri" image={imgLuri} />
+        <ServiceCard icon={TrendingUp} title="Invista Conosco" text="Oportunidades estruturadas com transparência e acompanhamento consultivo." href="/invista-conosco" accent="gold" image={imgInvestimentos} />
+        <ServiceCard icon={Building2} title="Securitizadora" text="Soluções financeiras inteligentes para empresas crescerem com segurança." href="/securitizadora" image={imgSecuritizadora} />
       </div>
     </section>
 
