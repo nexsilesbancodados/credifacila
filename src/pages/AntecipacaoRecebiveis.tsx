@@ -4,7 +4,6 @@ import PageHeader from "@/components/PageHeader";
 import SectionTitle from "@/components/SectionTitle";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import CTASection from "@/components/CTASection";
-import ReceivablesMockup from "@/components/mockups/ReceivablesMockup";
 import imgAntecipacao from "@/assets/img-antecipacao.jpg";
 
 const AntecipacaoRecebiveis = () => (

@@ -5,7 +5,6 @@ import SectionTitle from "@/components/SectionTitle";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepTimeline from "@/components/sections/StepTimeline";
 import CTASection from "@/components/CTASection";
-import BoletoMockup from "@/components/mockups/BoletoMockup";
 import imgBoleto from "@/assets/img-boleto.jpg";
 
 const BoletoGarantido = () => (
