@@ -43,8 +43,8 @@ const navItems: {
      <div 
        className={`fixed inset-x-0 top-0 z-[100] w-full transition-all duration-300 ${
          isScrolled 
-          ? "bg-[hsl(0_0%_4%/0.96)] py-2 shadow-2xl md:py-2.5"
-          : "bg-transparent py-3 md:py-3.5"
+          ? "bg-white/95 py-2 shadow-lg backdrop-blur-md md:py-2.5"
+          : "bg-white/80 py-3 backdrop-blur-sm md:py-3.5"
        }`}
      >
        {/* Top and Bottom lines with gold accent */}
@@ -86,7 +86,7 @@ const navItems: {
                 <Link
                   to={item.href}
                   className={`relative inline-flex items-center gap-1 rounded-full px-3 py-2 text-[14px] font-medium tracking-normal transition-colors hover:text-brand-gold ${
-                    pathname.startsWith(item.href) ? "text-brand-gold" : "text-white/85"
+                    pathname.startsWith(item.href) ? "text-brand-gold" : "text-foreground/85"
                   }`}
                 >
                   {item.label}
@@ -96,7 +96,7 @@ const navItems: {
                   )}
                 </Link>
                 <div className="invisible absolute left-1/2 top-full z-50 mt-2 w-72 -translate-x-1/2 translate-y-1 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                  <div className="rounded-2xl border border-brand-gold/30 bg-[hsl(0_0%_6%/0.98)] p-2 shadow-[0_20px_60px_-15px_hsl(42_78%_50%/0.25)] backdrop-blur-xl">
+                  <div className="rounded-2xl border border-brand-gold/30 bg-white p-2 shadow-[0_20px_60px_-15px_hsl(218_90%_48%/0.25)] backdrop-blur-xl">
                     <Link
                       to={item.href}
                       className="block rounded-xl px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-gold transition-colors hover:bg-brand-gold/10"
@@ -108,7 +108,7 @@ const navItems: {
                       <Link
                         key={sub.href}
                         to={sub.href}
-                        className="block rounded-xl px-4 py-2.5 text-[14px] font-medium text-white/80 transition-all hover:bg-brand-gold/5 hover:pl-5 hover:text-brand-gold"
+                        className="block rounded-xl px-4 py-2.5 text-[14px] font-medium text-foreground/80 transition-all hover:bg-brand-gold/5 hover:pl-5 hover:text-brand-gold"
                       >
                         {sub.label}
                       </Link>
@@ -120,7 +120,7 @@ const navItems: {
               <Link
                 to={item.href}
                 className={`relative inline-flex items-center rounded-full px-3 py-2 text-[14px] font-medium tracking-normal transition-colors hover:text-brand-gold ${
-                  pathname === item.href ? "text-brand-gold" : "text-white/85"
+                  pathname === item.href ? "text-brand-gold" : "text-foreground/85"
                 }`}
               >
                 {item.label}
@@ -132,7 +132,7 @@ const navItems: {
               <a
                 href={item.href}
                 className={`relative rounded-full px-3 py-2 text-[14px] font-medium tracking-normal transition-colors hover:text-brand-gold ${
-                  item.active ? "text-brand-gold" : "text-white/85"
+                  item.active ? "text-brand-gold" : "text-foreground/85"
                 }`}
               >
                 {item.label}
@@ -161,7 +161,7 @@ const navItems: {
            href={whatsappLink("Olá! Quero saber mais sobre os créditos da Credifácil.")}
            target="_blank"
            rel="noopener noreferrer"
-           className="group inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border border-brand-gold/50 bg-transparent px-4 py-2 text-[13px] font-medium text-white transition-all hover:border-brand-gold hover:bg-brand-gold/10 hover:text-brand-gold"
+           className="group inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border border-brand-gold/50 bg-transparent px-4 py-2 text-[13px] font-medium text-foreground transition-all hover:border-brand-gold hover:bg-brand-gold/10 hover:text-brand-gold"
          >
            <MessageCircle className="h-4 w-4 text-brand-gold" strokeWidth={2.2} />
            Fale no WhatsApp

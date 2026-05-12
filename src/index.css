@@ -4,66 +4,66 @@
 
 @layer base {
   :root {
-    /* === Black & Gold premium palette === */
+    /* === Clean white & royal blue palette === */
 
-    --background: 0 0% 5%;            /* near-black */
-    --foreground: 40 25% 92%;         /* warm off-white */
+    --background: 0 0% 100%;          /* white */
+    --foreground: 220 40% 12%;        /* deep navy ink */
 
-    /* Brand accent — true gold */
-    --brand-gold: 42 78% 55%;         /* #D4A434 */
-    --brand-gold-soft: 44 92% 70%;    /* champagne */
-    --brand-gold-foreground: 0 0% 8%;
-    --brand-ink: 0 0% 6%;
+    /* Brand accent — royal blue (kept under brand-gold token names for compatibility) */
+    --brand-gold: 218 90% 48%;        /* royal blue */
+    --brand-gold-soft: 212 100% 62%;  /* bright sky blue */
+    --brand-gold-foreground: 0 0% 100%;
+    --brand-ink: 220 40% 12%;
 
-    /* Deep surfaces (black tints) */
-    --surface-deep: 0 0% 4%;
-    --surface-deep-2: 0 0% 7%;
-    --surface-dark: 0 0% 10%;
-    --surface-elevated: 0 0% 14%;
-    --surface-light: 0 0% 5%;
+    /* Surfaces */
+    --surface-deep: 218 60% 14%;
+    --surface-deep-2: 218 50% 22%;
+    --surface-dark: 218 40% 30%;
+    --surface-elevated: 0 0% 100%;
+    --surface-light: 218 30% 97%;
 
-    --gradient-gold: linear-gradient(135deg, hsl(44 92% 70%) 0%, hsl(42 78% 55%) 50%, hsl(38 75% 42%) 100%);
-    --gradient-gold-soft: linear-gradient(135deg, hsl(44 80% 28%) 0%, hsl(42 70% 18%) 100%);
-    --gradient-ink: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 14%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(212 100% 62%) 0%, hsl(218 90% 48%) 50%, hsl(224 85% 38%) 100%);
+    --gradient-gold-soft: linear-gradient(135deg, hsl(212 100% 95%) 0%, hsl(218 90% 90%) 100%);
+    --gradient-ink: linear-gradient(135deg, hsl(220 40% 12%) 0%, hsl(218 50% 22%) 100%);
 
-    --shadow-gold: 0 14px 44px -12px hsl(42 78% 55% / 0.45);
-    --shadow-gold-sm: 0 4px 12px -4px hsl(42 78% 55% / 0.40);
-    --shadow-card: 0 30px 60px -25px hsl(0 0% 0% / 0.65);
-    --shadow-soft: 0 10px 30px -10px hsl(0 0% 0% / 0.55);
-    --shadow-elev: 0 24px 60px -20px hsl(0 0% 0% / 0.60);
+    --shadow-gold: 0 14px 44px -12px hsl(218 90% 48% / 0.35);
+    --shadow-gold-sm: 0 4px 12px -4px hsl(218 90% 48% / 0.30);
+    --shadow-card: 0 30px 60px -25px hsl(218 60% 20% / 0.20);
+    --shadow-soft: 0 10px 30px -10px hsl(218 60% 20% / 0.15);
+    --shadow-elev: 0 24px 60px -20px hsl(218 60% 20% / 0.18);
 
-    /* Page background — black with warm gold ambient glows */
+    /* Page background — clean white with subtle blue ambient glows */
     --gradient-page:
-      radial-gradient(ellipse 70% 45% at 80% 5%, hsl(42 78% 30% / 0.35) 0%, transparent 55%),
-      radial-gradient(ellipse 60% 40% at 10% 35%, hsl(42 70% 22% / 0.30) 0%, transparent 55%),
-      radial-gradient(ellipse 70% 35% at 90% 70%, hsl(44 80% 28% / 0.28) 0%, transparent 55%),
-      radial-gradient(ellipse 80% 50% at 20% 100%, hsl(0 0% 8%) 0%, transparent 60%),
-      linear-gradient(180deg, hsl(0 0% 5%) 0%, hsl(0 0% 4%) 50%, hsl(0 0% 3%) 100%);
+      radial-gradient(ellipse 70% 45% at 80% 5%, hsl(218 90% 88% / 0.45) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 40% at 10% 35%, hsl(212 100% 90% / 0.40) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 35% at 90% 70%, hsl(218 90% 88% / 0.35) 0%, transparent 55%),
+      radial-gradient(ellipse 80% 50% at 20% 100%, hsl(218 30% 97%) 0%, transparent 60%),
+      linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(218 30% 99%) 50%, hsl(218 30% 97%) 100%);
 
     --gradient-animated:
-      radial-gradient(ellipse 55% 40% at var(--bg-x1, 20%) var(--bg-y1, 15%), hsl(42 78% 28% / 0.45) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 35% at var(--bg-x2, 85%) var(--bg-y2, 30%), hsl(38 70% 22% / 0.40) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 45% at var(--bg-x3, 75%) var(--bg-y3, 85%), hsl(44 80% 26% / 0.35) 0%, transparent 60%),
-      radial-gradient(ellipse 55% 40% at var(--bg-x4, 15%) var(--bg-y4, 75%), hsl(42 70% 20% / 0.40) 0%, transparent 60%),
-      linear-gradient(180deg, hsl(0 0% 5%) 0%, hsl(0 0% 4%) 50%, hsl(0 0% 3%) 100%);
+      radial-gradient(ellipse 55% 40% at var(--bg-x1, 20%) var(--bg-y1, 15%), hsl(218 90% 90% / 0.55) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 35% at var(--bg-x2, 85%) var(--bg-y2, 30%), hsl(212 100% 88% / 0.50) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 45% at var(--bg-x3, 75%) var(--bg-y3, 85%), hsl(218 90% 88% / 0.45) 0%, transparent 60%),
+      radial-gradient(ellipse 55% 40% at var(--bg-x4, 15%) var(--bg-y4, 75%), hsl(212 100% 92% / 0.50) 0%, transparent 60%),
+      linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(218 30% 99%) 50%, hsl(218 30% 97%) 100%);
 
-    --card: 0 0% 8%;
-    --card-foreground: 40 25% 92%;
-    --popover: 0 0% 8%;
-    --popover-foreground: 40 25% 92%;
-    --primary: 42 78% 55%;
-    --primary-foreground: 0 0% 8%;
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 40 25% 92%;
-    --muted: 0 0% 14%;
-    --muted-foreground: 40 10% 65%;
-    --accent: 42 78% 18%;
-    --accent-foreground: 44 92% 80%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 40% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 40% 12%;
+    --primary: 218 90% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 218 30% 96%;
+    --secondary-foreground: 220 40% 12%;
+    --muted: 218 25% 95%;
+    --muted-foreground: 218 15% 40%;
+    --accent: 212 100% 95%;
+    --accent-foreground: 218 90% 30%;
     --destructive: 0 72% 52%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 42 78% 55%;
+    --border: 218 25% 88%;
+    --input: 218 25% 88%;
+    --ring: 218 90% 48%;
     --radius: 0.875rem;
   }
 }
@@ -80,7 +80,7 @@
   * { @apply border-border; }
   body {
     @apply text-foreground antialiased;
-    background-color: hsl(0 0% 4.5%);
+    background-color: hsl(0 0% 100%);
     min-height: 100vh;
     font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1, "cv11" 1;
     position: relative;
@@ -211,9 +211,9 @@
     body::before {
       animation: none !important;
       background:
-        radial-gradient(ellipse 70% 45% at 80% 5%, hsl(42 78% 30% / 0.30) 0%, transparent 55%),
-        radial-gradient(ellipse 80% 50% at 20% 100%, hsl(0 0% 8%) 0%, transparent 60%),
-        linear-gradient(180deg, hsl(0 0% 5%) 0%, hsl(0 0% 4%) 50%, hsl(0 0% 3%) 100%);
+        radial-gradient(ellipse 70% 45% at 80% 5%, hsl(218 90% 88% / 0.45) 0%, transparent 55%),
+        radial-gradient(ellipse 80% 50% at 20% 100%, hsl(218 30% 97%) 0%, transparent 60%),
+        linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(218 30% 99%) 50%, hsl(218 30% 97%) 100%);
       background-size: auto;
     }
     body::after { display: none; }
@@ -458,7 +458,7 @@
   /* Section gradient overlays (use as ::before via a wrapper) */
   .section-fade-top::before {
     content: ""; position: absolute; inset: 0 0 auto 0; height: 120px;
-    background: linear-gradient(180deg, hsl(0 0% 4%) 0%, transparent 100%);
+    background: linear-gradient(180deg, hsl(0 0% 100%) 0%, transparent 100%);
     pointer-events: none;
   }
 

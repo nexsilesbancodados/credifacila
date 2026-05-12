@@ -80,7 +80,7 @@ const ContactFooter = () => {
            data-anim="reveal-up"
            className="relative overflow-hidden rounded-[32px] border border-white/10 p-6 shadow-[var(--shadow-card)] sm:p-8 md:p-10"
            style={{
-             background: "linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 5%) 100%)",
+             background: "linear-gradient(135deg, hsl(220 50% 14%) 0%, hsl(218 60% 22%) 100%)",
            }}
          >
           <div
