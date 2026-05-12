@@ -5,7 +5,6 @@ import SectionTitle from "@/components/SectionTitle";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepTimeline from "@/components/sections/StepTimeline";
 import CTASection from "@/components/CTASection";
-import SimulatorMockup from "@/components/mockups/SimulatorMockup";
 import imgConsignado from "@/assets/img-consignado.jpg";
 import FAQAccordion from "@/components/FAQAccordion";
 
@@ -104,16 +103,6 @@ const Consignado = () => (
       subtitle="Fale com um especialista e descubra a melhor condição para você."
       cta="Fale com um especialista"
     />
-    <section className="container-x py-12">
-      <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.1fr]">
-        <SimulatorMockup />
-        <div>
-          <span className="pill">Simulador</span>
-          <h2 className="mt-4 text-3xl font-extrabold leading-tight md:text-4xl">Simule sua parcela em segundos</h2>
-          <p className="mt-4 text-muted-foreground">Ajuste o valor e o prazo e veja a parcela estimada na hora. Sem compromisso e sem consulta ao SPC/Serasa.</p>
-        </div>
-      </div>
-    </section>
   </Layout>
 );
 
