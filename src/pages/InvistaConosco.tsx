@@ -6,6 +6,8 @@ import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepTimeline from "@/components/sections/StepTimeline";
 import CTASection from "@/components/CTASection";
 import imgInvest from "@/assets/img-investimentos.jpg";
+import SectionBanner from "@/components/SectionBanner";
+import bannerInvestimentos from "@/assets/banner-investimentos.png";
 
 const InvistaConosco = () => (
   <Layout>
@@ -64,6 +66,8 @@ const InvistaConosco = () => (
         />
       </div>
     </section>
+
+    <SectionBanner image={bannerInvestimentos} alt="Executivo observando indicadores financeiros" />
 
     <section className="container-x">
       <div className="rounded-2xl border border-[hsl(var(--gold))/0.3] bg-[hsl(var(--gold))/0.06] p-5 text-sm text-foreground">

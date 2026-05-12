@@ -7,6 +7,8 @@ import ServiceCard from "@/components/sections/ServiceCard";
 import StepTimeline from "@/components/sections/StepTimeline";
 import CTASection from "@/components/CTASection";
 import imgSecuritizadora from "@/assets/img-securitizadora.jpg";
+import SectionBanner from "@/components/SectionBanner";
+import bannerEquipe from "@/assets/banner-equipe.png";
 
 const Securitizadora = () => (
   <Layout>
@@ -74,6 +76,8 @@ const Securitizadora = () => (
         />
       </div>
     </section>
+
+    <SectionBanner image={bannerEquipe} alt="Equipe Credifácil em ambiente premium" />
 
     <section className="container-x py-20">
       <SectionTitle eyebrow="Como funciona" title="Quatro passos simples" />
