@@ -25,12 +25,10 @@ const PageHeader = ({ eyebrow, title, subtitle, primaryCta, secondaryCta, right,
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-[hsl(220,85%,15%)]/80" />
-        <div className="bg-grid-blue absolute inset-0 opacity-30" />
       </>
     ) : (
       <>
         <div className="absolute inset-0 bg-mesh-blue" />
-        <div className="bg-grid-blue absolute inset-0 opacity-40" />
       </>
     )}
     <div className="blob -left-16 top-20 h-80 w-80 anim-floaty" style={{ background: "hsl(202 100% 56% / 0.55)" }} />
