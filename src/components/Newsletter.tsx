@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { Mail, Send, CheckCircle2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.includes("@")) return;
     try { localStorage.setItem("cf_newsletter", email); } catch {}
+    await supabase.from("newsletter_subscribers").insert({ email }).then(() => {});
     setDone(true);
   };
   return (

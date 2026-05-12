@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
+import { ChevronDown, Menu, X, ArrowRight, User } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import Logo from "./Logo";
 import { NAV } from "@/data/site";
@@ -97,9 +97,14 @@ const Header = () => {
         </nav>
 
         <div className="hidden lg:block">
-          <Link to="/contato" className="btn-primary">
-            Solicitar crédito <ArrowRight className="h-4 w-4" />
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link to="/auth" aria-label="Acessar minha conta" className={cn("flex items-center gap-1.5 rounded-full border px-3.5 py-2 text-sm font-semibold transition", scrolled ? "border-border text-foreground hover:bg-black/5" : "border-white/30 text-white hover:bg-white/10")}>
+              <User className="h-4 w-4" /> Entrar
+            </Link>
+            <Link to="/contato" className="btn-primary">
+              Solicitar crédito <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
 
         <button
