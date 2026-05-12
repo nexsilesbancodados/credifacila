@@ -5,7 +5,6 @@ import SectionTitle from "@/components/SectionTitle";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import CTASection from "@/components/CTASection";
 import PhoneMockup from "@/components/mockups/PhoneMockup";
-import HeroImage from "@/components/HeroImage";
 import imgLuri from "@/assets/img-luri.jpg";
 
 const ContaDigitalLuri = () => (
@@ -16,8 +15,8 @@ const ContaDigitalLuri = () => (
       subtitle="Controle seu dinheiro, pagamentos e movimentações em uma conta digital prática para pessoas e empresas."
       primaryCta={{ label: "Abrir minha conta", href: "/contato" }}
       secondaryCta={{ label: "Conhecer recursos", href: "#recursos" }}
+      bgImage={imgLuri}
       className="-mt-[72px] pt-[72px] md:-mt-[84px] md:pt-[84px]"
-      right={<HeroImage src={imgLuri} alt="Aplicativo Luri em smartphone premium" />}
     />
 
     <section id="recursos" className="container-x py-20">
