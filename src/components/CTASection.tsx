@@ -7,7 +7,6 @@ type Props = { title: string; subtitle?: string; cta: string; href?: string };
 const CTASection = ({ title, subtitle, cta, href = "/contato" }: Props) => (
   <section className="container-x my-24">
     <div className="relative overflow-hidden rounded-3xl bg-mesh-blue p-10 md:p-16">
-      <div className="bg-grid-blue absolute inset-0 opacity-40" />
       <div className="blob -right-10 -top-10 h-72 w-72" style={{ background: "hsl(40 78% 48% / 0.5)" }} />
       <div className="relative grid items-center gap-10 md:grid-cols-[1fr_auto]">
         <div>
