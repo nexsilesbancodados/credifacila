@@ -16,6 +16,10 @@ const Sobre = lazy(() => import("./pages/Sobre"));
 const Auth = lazy(() => import("./pages/Auth"));
 const AreaCliente = lazy(() => import("./pages/AreaCliente"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const AdminLayout = lazy(() => import("./pages/admin/AdminLayout"));
+const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard"));
+const AdminBlog = lazy(() => import("./pages/admin/AdminBlog"));
+const AdminBlogEditor = lazy(() => import("./pages/admin/AdminBlogEditor"));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -42,6 +46,12 @@ const App = () => (
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/area-cliente" element={<AreaCliente />} />
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
+          <Route path="blog" element={<AdminBlog />} />
+          <Route path="blog/new" element={<AdminBlogEditor />} />
+          <Route path="blog/:id" element={<AdminBlogEditor />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
