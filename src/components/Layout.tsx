@@ -16,17 +16,18 @@ export type BgTone =
   | "twilight";
 
 const TONES: Record<BgTone, string> = {
-  default:  "linear-gradient(160deg, hsl(220 60% 96%) 0%, hsl(218 70% 88%) 50%, hsl(218 80% 78%) 100%)",
-  deep:     "linear-gradient(160deg, hsl(220 70% 92%) 0%, hsl(218 80% 80%) 50%, hsl(220 85% 65%) 100%)",
-  royal:    "linear-gradient(160deg, hsl(218 90% 94%) 0%, hsl(218 95% 78%) 50%, hsl(218 100% 60%) 100%)",
-  ocean:    "linear-gradient(160deg, hsl(202 80% 95%) 0%, hsl(202 90% 78%) 50%, hsl(210 90% 55%) 100%)",
-  midnight: "linear-gradient(160deg, hsl(220 50% 90%) 0%, hsl(220 70% 70%) 50%, hsl(220 85% 22%) 100%)",
-  azure:    "linear-gradient(160deg, hsl(205 95% 95%) 0%, hsl(205 95% 75%) 50%, hsl(205 95% 50%) 100%)",
-  steel:    "linear-gradient(160deg, hsl(212 35% 94%) 0%, hsl(212 45% 75%) 50%, hsl(212 55% 45%) 100%)",
-  indigo:   "linear-gradient(160deg, hsl(225 70% 94%) 0%, hsl(225 75% 72%) 50%, hsl(230 80% 45%) 100%)",
-  sky:      "linear-gradient(160deg, hsl(198 100% 96%) 0%, hsl(198 95% 80%) 50%, hsl(200 95% 60%) 100%)",
-  navy:     "linear-gradient(160deg, hsl(218 60% 90%) 0%, hsl(218 70% 60%) 50%, hsl(220 85% 18%) 100%)",
-  twilight: "linear-gradient(160deg, hsl(230 60% 92%) 0%, hsl(225 70% 65%) 50%, hsl(218 90% 28%) 100%)",
+  // Each tone: subtle wash on top, deeper jewel-tone at bottom — immersive parallax feel
+  default:  "radial-gradient(ellipse at 20% 0%, hsl(252 80% 80% / 0.35) 0%, transparent 55%), radial-gradient(ellipse at 80% 100%, hsl(199 95% 70% / 0.30) 0%, transparent 55%), linear-gradient(180deg, hsl(220 40% 99%) 0%, hsl(220 50% 92%) 60%, hsl(222 70% 78%) 100%)",
+  deep:     "radial-gradient(ellipse at 15% 0%, hsl(222 92% 70% / 0.30) 0%, transparent 55%), radial-gradient(ellipse at 85% 100%, hsl(252 80% 62% / 0.30) 0%, transparent 55%), linear-gradient(180deg, hsl(220 40% 98%) 0%, hsl(222 70% 86%) 55%, hsl(224 80% 58%) 100%)",
+  royal:    "radial-gradient(ellipse at 10% 0%, hsl(252 80% 62% / 0.35) 0%, transparent 55%), radial-gradient(ellipse at 90% 100%, hsl(218 100% 64% / 0.35) 0%, transparent 55%), linear-gradient(180deg, hsl(220 60% 98%) 0%, hsl(222 85% 84%) 55%, hsl(222 92% 52%) 100%)",
+  ocean:    "radial-gradient(ellipse at 20% 0%, hsl(188 90% 70% / 0.35) 0%, transparent 55%), radial-gradient(ellipse at 80% 100%, hsl(199 95% 50% / 0.35) 0%, transparent 55%), linear-gradient(180deg, hsl(199 60% 98%) 0%, hsl(199 80% 82%) 55%, hsl(202 95% 42%) 100%)",
+  midnight: "radial-gradient(ellipse at 25% 0%, hsl(252 80% 50% / 0.35) 0%, transparent 55%), radial-gradient(ellipse at 75% 100%, hsl(222 92% 30% / 0.50) 0%, transparent 60%), linear-gradient(180deg, hsl(220 40% 95%) 0%, hsl(224 60% 60%) 50%, hsl(226 70% 14%) 100%)",
+  azure:    "radial-gradient(ellipse at 15% 0%, hsl(199 95% 75% / 0.35) 0%, transparent 55%), radial-gradient(ellipse at 90% 100%, hsl(188 90% 55% / 0.35) 0%, transparent 55%), linear-gradient(180deg, hsl(199 60% 99%) 0%, hsl(199 90% 80%) 55%, hsl(199 95% 48%) 100%)",
+  steel:    "radial-gradient(ellipse at 20% 0%, hsl(218 60% 80% / 0.30) 0%, transparent 55%), radial-gradient(ellipse at 80% 100%, hsl(222 50% 30% / 0.40) 0%, transparent 60%), linear-gradient(180deg, hsl(220 30% 98%) 0%, hsl(218 35% 80%) 55%, hsl(222 50% 36%) 100%)",
+  indigo:   "radial-gradient(ellipse at 15% 0%, hsl(252 80% 70% / 0.40) 0%, transparent 55%), radial-gradient(ellipse at 85% 100%, hsl(232 85% 50% / 0.40) 0%, transparent 55%), linear-gradient(180deg, hsl(232 50% 98%) 0%, hsl(232 75% 80%) 55%, hsl(232 80% 40%) 100%)",
+  sky:      "radial-gradient(ellipse at 20% 0%, hsl(199 95% 80% / 0.40) 0%, transparent 55%), radial-gradient(ellipse at 80% 100%, hsl(218 100% 64% / 0.30) 0%, transparent 55%), linear-gradient(180deg, hsl(199 80% 99%) 0%, hsl(199 95% 84%) 55%, hsl(202 95% 55%) 100%)",
+  navy:     "radial-gradient(ellipse at 25% 0%, hsl(222 92% 50% / 0.30) 0%, transparent 55%), radial-gradient(ellipse at 75% 100%, hsl(226 70% 14% / 0.55) 0%, transparent 60%), linear-gradient(180deg, hsl(220 40% 96%) 0%, hsl(222 60% 50%) 55%, hsl(226 70% 12%) 100%)",
+  twilight: "radial-gradient(ellipse at 15% 0%, hsl(252 80% 62% / 0.40) 0%, transparent 55%), radial-gradient(ellipse at 85% 100%, hsl(222 92% 30% / 0.45) 0%, transparent 60%), linear-gradient(180deg, hsl(232 50% 98%) 0%, hsl(240 60% 60%) 50%, hsl(224 75% 22%) 100%)",
 };
 
 const Layout = ({ children, tone = "default" }: { children: ReactNode; tone?: BgTone }) => {
