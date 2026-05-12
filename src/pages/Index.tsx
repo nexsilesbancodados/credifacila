@@ -18,7 +18,7 @@ const Logo = ({ light = false }: { light?: boolean }) => (
 const TopNav = () => (
   <header className="absolute inset-x-0 top-0 z-30">
     <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-      <Logo />
+      <Logo light />
       <nav className="hidden items-center gap-8 text-[15px] font-medium text-white/90 lg:flex">
         <a href="#inicio" className="relative text-gold after:absolute after:-bottom-2 after:left-1/2 after:h-0.5 after:w-6 after:-translate-x-1/2 after:bg-gold">Início</a>
         <a href="#consignado" className="hover:text-gold transition">Consignado</a>
