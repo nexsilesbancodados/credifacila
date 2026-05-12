@@ -112,7 +112,23 @@
   }
 
   .card-soft {
-    @apply rounded-3xl border border-border bg-white shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-elev)];
+    @apply relative overflow-hidden rounded-3xl border border-white/15 text-white shadow-[var(--shadow-elev)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-white/25 hover:shadow-[var(--shadow-glow)];
+    background:
+      linear-gradient(135deg, hsl(0 0% 100% / 0.10) 0%, hsl(0 0% 100% / 0.04) 100%),
+      linear-gradient(160deg, hsl(222 80% 22% / 0.55) 0%, hsl(226 75% 12% / 0.65) 100%);
+  }
+  .card-soft::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse at 0% 0%, hsl(218 100% 64% / 0.18) 0%, transparent 55%),
+                radial-gradient(ellipse at 100% 100%, hsl(252 80% 62% / 0.18) 0%, transparent 55%);
+    opacity: 0.9; transition: opacity .3s ease;
+  }
+  .card-soft:hover::before { opacity: 1; }
+  .card-soft > * { position: relative; z-index: 1; }
+  .card-soft h1, .card-soft h2, .card-soft h3, .card-soft h4 { color: hsl(0 0% 100%); }
+  .card-soft p, .card-soft .text-muted-foreground { color: hsl(220 30% 82%); }
+  .card-soft .text-foreground { color: hsl(0 0% 100%); }
+  .card-soft .text-\[hsl\(var\(--royal\)\)\] { color: hsl(var(--gold-soft)); }
   }
   .card-glass {
     @apply rounded-3xl border border-white/15 bg-white/5 backdrop-blur-xl;
