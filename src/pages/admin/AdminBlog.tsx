@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Pencil, Trash2, PlusCircle, ExternalLink } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import { toast } from "sonner";
 
 type Post = { id: string; title: string; slug: string; published_at: string | null; updated_at: string };
 
@@ -13,7 +12,7 @@ const AdminBlog = () => {
   const load = async () => {
     setLoading(true);
     const { data, error } = await supabase.from("blog_posts").select("id,title,slug,published_at,updated_at").order("updated_at", { ascending: false });
-    if (error) toast.error(error.message);
+    if (error) alert(error.message);
     else setPosts((data as Post[]) ?? []);
     setLoading(false);
   };
@@ -23,8 +22,8 @@ const AdminBlog = () => {
   const remove = async (id: string) => {
     if (!confirm("Excluir este post?")) return;
     const { error } = await supabase.from("blog_posts").delete().eq("id", id);
-    if (error) toast.error(error.message);
-    else { toast.success("Post excluído"); load(); }
+    if (error) alert(error.message);
+    else load();
   };
 
   return (
