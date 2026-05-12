@@ -1,4 +1,7 @@
-import { corsHeaders } from "@supabase/supabase-js/cors";
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+};
 
 const SYSTEM = `Você é a Luri, assistente virtual da Credifácil — uma instituição financeira brasileira.
 Seja calorosa, objetiva e profissional. Responda em português do Brasil.
