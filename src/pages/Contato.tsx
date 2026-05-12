@@ -21,8 +21,8 @@ const Contato = () => {
         eyebrow="Fale com a Credifácil"
         title={<>Estamos prontos para <span className="text-gold-gradient">ajudar você</span></>}
         subtitle="Nossa equipe está pronta para encontrar a melhor solução para você."
+        bgImage={imgAtendimento}
         className="-mt-[72px] pt-[72px] md:-mt-[84px] md:pt-[84px]"
-        right={<HeroImage src={imgAtendimento} alt="Atendente Credifácil com headset" withLogo />}
       />
 
       <section className="container-x py-16">
