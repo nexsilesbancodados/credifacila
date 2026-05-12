@@ -129,7 +129,6 @@
   .card-soft p, .card-soft .text-muted-foreground { color: hsl(220 30% 82%); }
   .card-soft .text-foreground { color: hsl(0 0% 100%); }
   .card-soft .text-\[hsl\(var\(--royal\)\)\] { color: hsl(var(--gold-soft)); }
-  }
   .card-glass {
     @apply rounded-3xl border border-white/15 bg-white/5 backdrop-blur-xl;
   }
