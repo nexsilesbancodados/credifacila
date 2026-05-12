@@ -5,6 +5,8 @@ import SectionTitle from "@/components/SectionTitle";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import CTASection from "@/components/CTASection";
 import ReceivablesMockup from "@/components/mockups/ReceivablesMockup";
+import HeroImage from "@/components/HeroImage";
+import imgAntecipacao from "@/assets/img-antecipacao.jpg";
 
 const AntecipacaoRecebiveis = () => (
   <Layout>
@@ -15,7 +17,7 @@ const AntecipacaoRecebiveis = () => (
       primaryCta={{ label: "Fale com um consultor", href: "/contato" }}
       secondaryCta={{ label: "Saiba como funciona", href: "#como" }}
       className="-mt-[72px] pt-[72px] md:-mt-[84px] md:pt-[84px]"
-      right={<ReceivablesMockup />}
+      right={<HeroImage src={imgAntecipacao} alt="Empresária analisando dashboard de recebíveis" />}
     />
 
     <section id="como" className="container-x py-20">

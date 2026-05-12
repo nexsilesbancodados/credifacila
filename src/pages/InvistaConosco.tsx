@@ -6,6 +6,8 @@ import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepTimeline from "@/components/sections/StepTimeline";
 import CTASection from "@/components/CTASection";
 import InvestMockup from "@/components/mockups/InvestMockup";
+import HeroImage from "@/components/HeroImage";
+import imgInvest from "@/assets/img-investimentos.jpg";
 
 const InvistaConosco = () => (
   <Layout>
@@ -16,7 +18,7 @@ const InvistaConosco = () => (
       primaryCta={{ label: "Quero falar com um consultor", href: "/contato" }}
       secondaryCta={{ label: "Por que investir", href: "#porque" }}
       className="-mt-[72px] pt-[72px] md:-mt-[84px] md:pt-[84px]"
-      right={<InvestMockup />}
+      right={<HeroImage src={imgInvest} alt="Consultor financeiro premium" />}
     />
 
     <section id="porque" className="container-x py-20">

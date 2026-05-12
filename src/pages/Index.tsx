@@ -1,9 +1,12 @@
-import { ArrowRight, Banknote, Building2, FileCheck2, Headset, Lock, Receipt, ShieldCheck, Smartphone, Sparkles, TrendingUp, Wallet, Zap } from "lucide-react";
+import { ArrowRight, Banknote, Building2, CheckCircle2, FileCheck2, Headset, Lock, Receipt, ShieldCheck, Smartphone, Sparkles, TrendingUp, Wallet, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import CTASection from "@/components/CTASection";
 import DashboardMockup from "@/components/mockups/DashboardMockup";
+import HeroImage from "@/components/HeroImage";
+import heroHome from "@/assets/img-hero-home.jpg";
+import imgEquipe from "@/assets/img-equipe.jpg";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepTimeline from "@/components/sections/StepTimeline";
 import ServiceCard from "@/components/sections/ServiceCard";
@@ -46,7 +49,7 @@ const Index = () => (
           </div>
         </div>
         <div className="relative">
-          <DashboardMockup />
+          <HeroImage src={heroHome} alt="Especialista financeiro Credifácil" />
         </div>
       </div>
 
@@ -89,6 +92,31 @@ const Index = () => (
         <ServiceCard icon={Smartphone} title="Conta Digital Luri" text="Conta completa para pessoas e empresas com Pix, pagamentos e gestão." href="/securitizadora/conta-digital-luri" />
         <ServiceCard icon={TrendingUp} title="Invista Conosco" text="Oportunidades estruturadas com transparência e acompanhamento consultivo." href="/invista-conosco" accent="gold" />
         <ServiceCard icon={Building2} title="Securitizadora" text="Soluções financeiras inteligentes para empresas crescerem com segurança." href="/securitizadora" />
+      </div>
+    </section>
+
+    {/* EQUIPE */}
+    <section className="container-x py-20">
+      <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="relative">
+          <HeroImage src={imgEquipe} alt="Equipe Credifácil" withLogo />
+        </div>
+        <div>
+          <span className="pill"><Sparkles className="h-3 w-3" /> Atendimento humano</span>
+          <h2 className="mt-4 text-3xl font-extrabold leading-tight md:text-4xl">
+            Especialistas reais, do seu lado <span className="text-royal-gradient">em cada decisão</span>
+          </h2>
+          <p className="mt-5 text-base text-muted-foreground md:text-lg">
+            Nossa equipe combina experiência financeira e atendimento humanizado para encontrar a melhor solução para você ou sua empresa.
+          </p>
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+            {["Equipe certificada", "Análise consultiva", "Soluções sob medida", "Acompanhamento real"].map((t) => (
+              <li key={t} className="flex items-center gap-2 text-sm font-semibold">
+                <CheckCircle2 className="h-4 w-4 text-emerald-600" /> {t}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
 

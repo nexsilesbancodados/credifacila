@@ -1,5 +1,7 @@
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
+import HeroImage from "@/components/HeroImage";
+import imgFaq from "@/assets/img-faq.jpg";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
 
@@ -70,6 +72,7 @@ const Duvidas = () => (
       title={<>Encontre respostas <span className="text-gold-gradient">rápidas</span></>}
       subtitle="Perguntas e respostas sobre nossas soluções financeiras."
       className="-mt-[72px] pt-[72px] md:-mt-[84px] md:pt-[84px]"
+      right={<HeroImage src={imgFaq} alt="Ilustração 3D de dúvidas e suporte" />}
     />
     <section className="container-x mx-auto max-w-4xl py-16">
       <div className="space-y-12">
