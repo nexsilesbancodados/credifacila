@@ -4,52 +4,65 @@
 
 @layer base {
   :root {
-    /* === Credifácil — Azul + Dourado === */
-    --background: 0 0% 100%;
-    --foreground: 220 70% 13%;
+    /* === Credifácil — Imersivo: Midnight Indigo + Electric Royal + Champagne Gold === */
+    --background: 220 40% 99%;
+    --foreground: 224 65% 11%;
 
-    /* Blues */
-    --navy-deep: 220 85% 15%;       /* #061B46 */
-    --navy: 218 84% 21%;            /* #082B66 */
-    --royal: 218 100% 50%;          /* #005BFF */
-    --sky: 202 100% 56%;            /* #1FA2FF */
+    /* Deep blues — richer, with a touch of violet for depth */
+    --navy-deep: 226 70% 9%;        /* near-black indigo */
+    --navy: 224 62% 16%;            /* midnight */
+    --navy-soft: 222 50% 24%;       /* slate-navy */
+    --royal: 222 92% 52%;           /* electric royal */
+    --royal-glow: 218 100% 64%;     /* glow accent */
+    --sky: 199 95% 60%;             /* luminous sky */
+    --cyan: 188 90% 55%;            /* secondary accent */
+    --violet: 252 80% 62%;          /* tertiary accent for depth */
 
-    /* Gold accents */
-    --gold: 40 78% 48%;             /* #D9A21B */
-    --gold-soft: 42 100% 70%;       /* #FFD166 */
+    /* Gold accents — warm champagne */
+    --gold: 38 82% 52%;             /* champagne gold */
+    --gold-soft: 44 100% 74%;       /* soft warm */
+    --gold-deep: 32 70% 38%;        /* burnished */
 
-    /* Neutral */
-    --gray-50: 220 33% 97%;         /* #F5F7FB */
-    --gray-text: 220 16% 46%;       /* #667085 */
+    /* Neutrals — cool, refined */
+    --gray-50: 220 30% 98%;
+    --gray-100: 220 25% 95%;
+    --gray-text: 222 18% 42%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 70% 13%;
+    --card-foreground: 224 65% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 70% 13%;
-    --primary: 218 100% 50%;
+    --popover-foreground: 224 65% 11%;
+    --primary: 222 92% 52%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 33% 97%;
-    --secondary-foreground: 220 70% 13%;
-    --muted: 218 25% 95%;
-    --muted-foreground: 220 16% 46%;
-    --accent: 202 100% 95%;
-    --accent-foreground: 218 100% 36%;
-    --destructive: 0 72% 52%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 220 20% 90%;
-    --input: 220 20% 90%;
-    --ring: 218 100% 50%;
-    --radius: 0.875rem;
+    --secondary: 220 30% 97%;
+    --secondary-foreground: 224 65% 11%;
+    --muted: 220 25% 95%;
+    --muted-foreground: 222 18% 42%;
+    --accent: 199 95% 94%;
+    --accent-foreground: 222 92% 38%;
+    --destructive: 0 78% 56%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 22% 90%;
+    --input: 220 22% 90%;
+    --ring: 222 92% 52%;
+    --radius: 1rem;
 
-    --gradient-hero: linear-gradient(135deg, hsl(220 85% 15%) 0%, hsl(218 84% 21%) 50%, hsl(218 100% 30%) 100%);
-    --gradient-royal: linear-gradient(135deg, hsl(218 100% 50%) 0%, hsl(202 100% 56%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(42 100% 70%) 0%, hsl(40 78% 48%) 100%);
-    --gradient-page: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 33% 98%) 100%);
+    /* Premium gradients */
+    --gradient-hero: radial-gradient(ellipse at 20% 0%, hsl(252 80% 30% / 0.55) 0%, transparent 55%),
+                     radial-gradient(ellipse at 90% 100%, hsl(199 95% 40% / 0.45) 0%, transparent 55%),
+                     linear-gradient(135deg, hsl(226 70% 9%) 0%, hsl(224 62% 16%) 50%, hsl(222 75% 22%) 100%);
+    --gradient-royal: linear-gradient(135deg, hsl(222 92% 52%) 0%, hsl(218 100% 64%) 50%, hsl(199 95% 60%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(44 100% 74%) 0%, hsl(38 82% 52%) 60%, hsl(32 70% 38%) 100%);
+    --gradient-aurora: linear-gradient(120deg, hsl(252 80% 62% / 0.9) 0%, hsl(222 92% 52% / 0.9) 45%, hsl(188 90% 55% / 0.9) 100%);
+    --gradient-page: linear-gradient(180deg, hsl(220 40% 99%) 0%, hsl(220 30% 96%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.12) 0%, hsl(0 0% 100% / 0.04) 100%);
 
-    --shadow-card: 0 12px 40px -12px hsl(218 60% 20% / 0.18);
-    --shadow-elev: 0 24px 60px -20px hsl(218 60% 20% / 0.22);
-    --shadow-royal: 0 14px 40px -10px hsl(218 100% 50% / 0.40);
-    --shadow-gold: 0 14px 40px -10px hsl(40 78% 48% / 0.40);
+    /* Layered shadows for depth */
+    --shadow-card: 0 1px 2px hsl(224 65% 11% / 0.04), 0 12px 32px -12px hsl(224 65% 20% / 0.18);
+    --shadow-elev: 0 2px 4px hsl(224 65% 11% / 0.05), 0 28px 60px -20px hsl(224 65% 20% / 0.28);
+    --shadow-royal: 0 8px 24px -8px hsl(222 92% 52% / 0.45), 0 2px 6px hsl(222 92% 52% / 0.18);
+    --shadow-gold: 0 8px 24px -8px hsl(38 82% 52% / 0.45), 0 2px 6px hsl(38 82% 52% / 0.18);
+    --shadow-glow: 0 0 60px hsl(218 100% 64% / 0.35);
   }
 }
 
@@ -123,10 +136,10 @@
 @layer utilities {
   .bg-mesh-blue {
     background:
-      radial-gradient(ellipse 60% 50% at 15% 15%, hsl(218 100% 50% / 0.35) 0%, transparent 60%),
-      radial-gradient(ellipse 55% 45% at 85% 25%, hsl(202 100% 56% / 0.30) 0%, transparent 60%),
-      radial-gradient(ellipse 70% 50% at 50% 100%, hsl(40 78% 48% / 0.18) 0%, transparent 65%),
-      linear-gradient(135deg, hsl(220 85% 12%) 0%, hsl(218 84% 18%) 50%, hsl(218 90% 22%) 100%);
+      radial-gradient(ellipse 60% 50% at 15% 15%, hsl(252 80% 62% / 0.40) 0%, transparent 60%),
+      radial-gradient(ellipse 55% 45% at 85% 25%, hsl(199 95% 60% / 0.32) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 50% at 50% 100%, hsl(38 82% 52% / 0.20) 0%, transparent 65%),
+      linear-gradient(135deg, hsl(226 70% 9%) 0%, hsl(224 62% 16%) 50%, hsl(222 70% 22%) 100%);
   }
   .blob {
     position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.55; pointer-events: none;
