@@ -16,7 +16,7 @@ const HeroImage = ({ src, alt, className, withLogo }: Props) => (
   <div className={cn("relative mx-auto w-full max-w-xl", className)}>
     <div className="absolute -inset-6 rounded-[2rem] bg-[hsl(var(--royal))/0.35] blur-3xl" />
     <div className="absolute -inset-3 rounded-[2rem] bg-[hsl(var(--gold))/0.18] blur-2xl" />
-    <div className="relative overflow-hidden rounded-3xl border border-white/15 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.55)]">
+    <div className="relative overflow-hidden rounded-3xl">
       <img src={src} alt={alt} loading="lazy" className="block h-full w-full object-cover" />
       {withLogo && (
         <img
