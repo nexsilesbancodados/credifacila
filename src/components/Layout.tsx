@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import FloatingWhatsApp from "./FloatingWhatsApp";
 import MobileBottomNav from "./MobileBottomNav";
 import ExitIntentPopup from "./ExitIntentPopup";
+import LuriChat from "./LuriChat";
 
 export type BgTone =
   | "default"
@@ -51,6 +52,7 @@ const Layout = ({ children, tone = "default" }: { children: ReactNode; tone?: Bg
       <FloatingWhatsApp />
       <MobileBottomNav />
       <ExitIntentPopup />
+      <LuriChat />
     </div>
   );
 };
