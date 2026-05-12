@@ -9,7 +9,7 @@ import SectionBanner from "@/components/SectionBanner";
 import bannerEquipe from "@/assets/banner-equipe.png";
 
 const AntecipacaoRecebiveis = () => (
-  <Layout>
+  <Layout tone="ocean">
     <PageHeader
       eyebrow="Antecipação de Recebíveis"
       title={<>Antecipe seus recebíveis e <span className="text-gold-gradient">fortaleça seu caixa</span></>}

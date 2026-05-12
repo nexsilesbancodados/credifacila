@@ -11,7 +11,7 @@ import SectionBanner from "@/components/SectionBanner";
 import bannerEquipe from "@/assets/banner-equipe.png";
 
 const Securitizadora = () => (
-  <Layout>
+  <Layout tone="navy">
     <PageHeader
       eyebrow="Securitizadora"
       title={<>Soluções financeiras para empresas que <span className="text-gold-gradient">querem crescer</span></>}

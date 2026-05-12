@@ -10,7 +10,7 @@ import SectionBanner from "@/components/SectionBanner";
 import bannerInvestimentos from "@/assets/banner-investimentos.png";
 
 const InvistaConosco = () => (
-  <Layout>
+  <Layout tone="midnight">
     <PageHeader
       eyebrow="Invista Conosco"
       title={<>Invista com segurança em <span className="text-gold-gradient">soluções financeiras inteligentes</span></>}

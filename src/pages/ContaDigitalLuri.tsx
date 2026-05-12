@@ -10,7 +10,7 @@ import SectionBanner from "@/components/SectionBanner";
 import bannerLuriApp from "@/assets/banner-luri-app.png";
 
 const ContaDigitalLuri = () => (
-  <Layout>
+  <Layout tone="sky">
     <PageHeader
       eyebrow="Conta Digital Luri"
       title={<>Conta Digital Luri: <span className="text-gold-gradient">gestão simples e moderna</span></>}

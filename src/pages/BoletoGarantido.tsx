@@ -10,7 +10,7 @@ import SectionBanner from "@/components/SectionBanner";
 import bannerSeguranca from "@/assets/banner-seguranca.png";
 
 const BoletoGarantido = () => (
-  <Layout>
+  <Layout tone="azure">
     <PageHeader
       eyebrow="Boleto Garantido"
       title={<>Boleto Garantido para sua empresa <span className="text-gold-gradient">vender com mais segurança</span></>}
