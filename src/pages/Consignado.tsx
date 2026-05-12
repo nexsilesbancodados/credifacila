@@ -7,6 +7,8 @@ import StepTimeline from "@/components/sections/StepTimeline";
 import CTASection from "@/components/CTASection";
 import imgConsignado from "@/assets/img-consignado.jpg";
 import FAQAccordion from "@/components/FAQAccordion";
+import SectionBanner from "@/components/SectionBanner";
+import bannerEscritorioClaro from "@/assets/banner-escritorio-claro.png";
 
 const Consignado = () => (
   <Layout>
@@ -65,6 +67,8 @@ const Consignado = () => (
         />
       </div>
     </section>
+
+    <SectionBanner image={bannerEscritorioClaro} alt="Consultora Credifácil em ambiente corporativo" />
 
     <section className="container-x py-20">
       <SectionTitle eyebrow="Vantagens" title="Por que escolher o consignado Credifácil" />
