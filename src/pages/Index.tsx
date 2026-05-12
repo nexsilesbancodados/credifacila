@@ -4,6 +4,8 @@ import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import CTASection from "@/components/CTASection";
 import HeroImage from "@/components/HeroImage";
+import Reveal from "@/components/Reveal";
+import TrustBadges from "@/components/TrustBadges";
 import heroHome from "@/assets/img-hero-home.jpg";
 import imgEquipe from "@/assets/img-equipe.jpg";
 import imgConsignado from "@/assets/img-consignado.jpg";
@@ -26,6 +28,8 @@ const Index = () => (
         src={heroHome}
         alt=""
         aria-hidden="true"
+        loading="eager"
+        fetchPriority="high"
         className="absolute inset-0 h-full w-full object-cover"
       />
       <div className="blob -left-20 top-32 h-96 w-96 anim-floaty" style={{ background: "hsl(202 100% 56% / 0.5)" }} />
@@ -84,25 +88,37 @@ const Index = () => (
       </div>
     </section>
 
+    {/* TRUST BADGES */}
+    <Reveal>
+      <TrustBadges />
+    </Reveal>
+
     {/* SOLUÇÕES */}
     <section className="container-x py-20">
+      <Reveal>
       <SectionTitle
         eyebrow="Nossas soluções"
         title={<>Soluções completas para você <span className="text-royal-gradient">e seu negócio</span></>}
         subtitle="Crédito, gestão e investimentos em um único lugar — com tecnologia, segurança e atendimento humano."
       />
+      </Reveal>
       <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        <ServiceCard icon={Banknote} title="Consignado" text="Aprovação facilitada com taxas reduzidas e parcelas que cabem no seu orçamento." href="/consignado" image={imgConsignado} />
-        <ServiceCard icon={Receipt} title="Antecipação de Recebíveis" text="Transforme vendas futuras em capital imediato para sua empresa crescer." href="/securitizadora/antecipacao-de-recebiveis" image={imgAntecipacao} />
-        <ServiceCard icon={ShieldCheck} title="Boleto Garantido" text="Mais segurança nas vendas e previsibilidade no recebimento." href="/securitizadora/boleto-garantido" accent="gold" image={imgBoleto} />
-        <ServiceCard icon={Smartphone} title="Conta Digital Luri" text="Conta completa para pessoas e empresas com Pix, pagamentos e gestão." href="/securitizadora/conta-digital-luri" image={imgLuri} />
-        <ServiceCard icon={TrendingUp} title="Invista Conosco" text="Oportunidades estruturadas com transparência e acompanhamento consultivo." href="/invista-conosco" accent="gold" image={imgInvestimentos} />
-        <ServiceCard icon={Building2} title="Securitizadora" text="Soluções financeiras inteligentes para empresas crescerem com segurança." href="/securitizadora" image={imgSecuritizadora} />
+        {[
+          <ServiceCard key="c" icon={Banknote} title="Consignado" text="Aprovação facilitada com taxas reduzidas e parcelas que cabem no seu orçamento." href="/consignado" image={imgConsignado} />,
+          <ServiceCard key="a" icon={Receipt} title="Antecipação de Recebíveis" text="Transforme vendas futuras em capital imediato para sua empresa crescer." href="/securitizadora/antecipacao-de-recebiveis" image={imgAntecipacao} />,
+          <ServiceCard key="b" icon={ShieldCheck} title="Boleto Garantido" text="Mais segurança nas vendas e previsibilidade no recebimento." href="/securitizadora/boleto-garantido" accent="gold" image={imgBoleto} />,
+          <ServiceCard key="l" icon={Smartphone} title="Conta Digital Luri" text="Conta completa para pessoas e empresas com Pix, pagamentos e gestão." href="/securitizadora/conta-digital-luri" image={imgLuri} />,
+          <ServiceCard key="i" icon={TrendingUp} title="Invista Conosco" text="Oportunidades estruturadas com transparência e acompanhamento consultivo." href="/invista-conosco" accent="gold" image={imgInvestimentos} />,
+          <ServiceCard key="s" icon={Building2} title="Securitizadora" text="Soluções financeiras inteligentes para empresas crescerem com segurança." href="/securitizadora" image={imgSecuritizadora} />,
+        ].map((card, i) => (
+          <Reveal key={i} delay={i * 0.06}>{card}</Reveal>
+        ))}
       </div>
     </section>
 
     {/* EQUIPE */}
     <section className="container-x py-20">
+      <Reveal>
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <div className="relative">
           <HeroImage src={imgEquipe} alt="Equipe Credifácil" withLogo />
@@ -124,16 +140,17 @@ const Index = () => (
           </ul>
         </div>
       </div>
+      </Reveal>
     </section>
 
     {/* COMO FUNCIONA */}
     <section className="container-x py-20">
-      <SectionTitle
+      <Reveal><SectionTitle
         eyebrow="Como funciona"
         title="Simples, rápido e 100% digital"
         subtitle="Em poucos passos você sai da simulação para o crédito liberado em conta."
-      />
-      <div className="mt-12">
+      /></Reveal>
+      <Reveal delay={0.1}><div className="mt-12">
         <StepTimeline
           steps={[
             { title: "Solicite", text: "Faça sua solicitação online em poucos minutos." },
@@ -142,17 +159,17 @@ const Index = () => (
             { title: "Use como quiser", text: "Crédito liberado direto na sua conta." },
           ]}
         />
-      </div>
+      </div></Reveal>
     </section>
 
     {/* POR QUE ESCOLHER */}
     <section className="relative overflow-hidden py-20">
       <div className="container-x">
-        <SectionTitle
+        <Reveal><SectionTitle
           eyebrow="Por que Credifácil?"
           title={<>Confiança, agilidade e <span className="text-royal-gradient">resultado real</span></>}
-        />
-        <div className="mt-12">
+        /></Reveal>
+        <Reveal delay={0.1}><div className="mt-12">
           <FeatureGrid
             cols={3}
             items={[
@@ -164,19 +181,23 @@ const Index = () => (
               { icon: FileCheck2, title: "Processo transparente", text: "Tudo claro do início ao fim, sem letras miúdas ou surpresas." },
             ]}
           />
-        </div>
+        </div></Reveal>
       </div>
     </section>
 
     {/* BLOG */}
     <section className="container-x py-20">
-      <SectionTitle
+      <Reveal><SectionTitle
         eyebrow="Conteúdos"
         title="Aprenda mais sobre dinheiro, crédito e investimentos"
         subtitle="Conteúdos práticos para você decidir com mais segurança."
-      />
+      /></Reveal>
       <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {POSTS.slice(0, 3).map((p, i) => <BlogCard key={p.slug} post={p} idx={i} />)}
+        {POSTS.slice(0, 3).map((p, i) => (
+          <Reveal key={p.slug} delay={i * 0.08}>
+            <BlogCard post={p} idx={i} />
+          </Reveal>
+        ))}
       </div>
       <div className="mt-10 text-center">
         <Link to="/blog" className="btn-outline">Ver todos os conteúdos</Link>

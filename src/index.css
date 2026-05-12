@@ -86,11 +86,18 @@
   .container-x { @apply mx-auto w-full max-w-7xl px-5 md:px-8; }
 
   .btn-primary {
-    @apply relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold text-white shadow-[var(--shadow-royal)] transition-all hover:-translate-y-0.5 hover:brightness-110;
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3.5 text-sm font-bold text-white shadow-[var(--shadow-royal)] transition-all hover:-translate-y-0.5 hover:brightness-110;
     background: var(--gradient-royal);
   }
+  .btn-primary::after, .btn-gold::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(115deg, transparent 35%, hsl(0 0% 100% / 0.45) 50%, transparent 65%);
+    transform: translateX(-120%);
+    transition: transform .9s ease;
+  }
+  .btn-primary:hover::after, .btn-gold:hover::after { transform: translateX(120%); }
   .btn-gold {
-    @apply relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold shadow-[var(--shadow-gold)] transition-all hover:-translate-y-0.5 hover:brightness-110;
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3.5 text-sm font-bold shadow-[var(--shadow-gold)] transition-all hover:-translate-y-0.5 hover:brightness-110;
     background: var(--gradient-gold);
     color: hsl(var(--navy-deep));
   }

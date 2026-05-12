@@ -1,6 +1,7 @@
 import { ReactNode, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import FloatingWhatsApp from "./FloatingWhatsApp";
 
 export type BgTone =
   | "default"
@@ -45,6 +46,7 @@ const Layout = ({ children, tone = "default" }: { children: ReactNode; tone?: Bg
       <Header />
       <main className="flex-1 pt-[72px] md:pt-[84px]">{children}</main>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 };

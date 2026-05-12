@@ -51,17 +51,43 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "FinancialService",
-        "name": "Credifácil",
-        "description": "Crédito pessoal, consignado e empresarial 100% online. Aprovação em minutos.",
-        "url": "https://www.credifacil.com.br",
-        "areaServed": "BR",
-        "currenciesAccepted": "BRL",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "12000"
-        }
+        "@graph": [
+          {
+            "@type": "FinancialService",
+            "@id": "https://www.credifacil.com.br/#org",
+            "name": "Credifácil",
+            "description": "Crédito pessoal, consignado e empresarial 100% online. Aprovação em minutos.",
+            "url": "https://www.credifacil.com.br",
+            "logo": "https://www.credifacil.com.br/favicon.png",
+            "image": "https://www.credifacil.com.br/og-image.png",
+            "areaServed": "BR",
+            "currenciesAccepted": "BRL",
+            "telephone": "+55-11-4000-1234",
+            "address": { "@type": "PostalAddress", "addressLocality": "São Paulo", "addressRegion": "SP", "addressCountry": "BR" },
+            "sameAs": [
+              "https://www.instagram.com/credifacil",
+              "https://www.facebook.com/credifacil",
+              "https://www.linkedin.com/company/credifacil"
+            ],
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "12000" }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.credifacil.com.br/#website",
+            "url": "https://www.credifacil.com.br",
+            "name": "Credifácil",
+            "inLanguage": "pt-BR",
+            "publisher": { "@id": "https://www.credifacil.com.br/#org" }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Como solicitar crédito na Credifácil?", "acceptedAnswer": { "@type": "Answer", "text": "Solicite online em poucos minutos pelo nosso site, envie os documentos e receba a análise rapidamente." } },
+              { "@type": "Question", "name": "Quais as taxas oferecidas?", "acceptedAnswer": { "@type": "Answer", "text": "Taxas a partir de 1,15% ao mês, conforme análise de perfil e modalidade de crédito." } },
+              { "@type": "Question", "name": "Em quanto tempo o crédito é liberado?", "acceptedAnswer": { "@type": "Answer", "text": "Após aprovação, o valor é liberado em até 24 horas direto na sua conta." } }
+            ]
+          }
+        ]
       }
     </script>
 

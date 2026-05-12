@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import Logo from "./Logo";
 import { NAV } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -111,54 +112,81 @@ const Header = () => {
       </div>
 
       {/* Mobile drawer */}
-      <div
-        className={cn(
-          "lg:hidden overflow-hidden bg-white transition-[max-height,opacity] duration-300",
-          open ? "max-h-[80vh] opacity-100 border-t border-border" : "max-h-0 opacity-0"
-        )}
-      >
-        <nav className="container-x flex flex-col gap-1 py-4">
-          {NAV.map((item) => {
-            if ("children" in item && item.children) {
-              const isOpen = mobileSub === item.label;
-              return (
-                <div key={item.label}>
-                  <button
-                    onClick={() => setMobileSub(isOpen ? null : item.label)}
-                    className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-semibold"
-                  >
-                    {item.label}
-                    <ChevronDown className={cn("h-4 w-4 transition-transform", isOpen && "rotate-180")} />
-                  </button>
-                  {isOpen && (
-                    <div className="ml-3 border-l border-border pl-3">
-                      {item.children.map((c) => (
-                        <Link
-                          key={c.href}
-                          to={c.href}
-                          className="block rounded-xl px-4 py-2.5 text-sm text-muted-foreground hover:text-[hsl(var(--royal))]"
+      <AnimatePresence>
+        {open && (
+          <>
+            <motion.div
+              key="overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              onClick={() => setOpen(false)}
+              className="fixed inset-0 top-[72px] z-40 bg-[hsl(var(--navy-deep))/0.6] backdrop-blur-sm lg:hidden"
+            />
+            <motion.div
+              key="drawer"
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:hidden relative z-50 border-t border-white/10 bg-[hsl(var(--navy-deep))/0.95] backdrop-blur-xl text-white shadow-[var(--shadow-elev)]"
+            >
+              <nav className="container-x flex flex-col gap-1 py-4">
+                {NAV.map((item) => {
+                  if ("children" in item && item.children) {
+                    const isOpen = mobileSub === item.label;
+                    return (
+                      <div key={item.label}>
+                        <button
+                          onClick={() => setMobileSub(isOpen ? null : item.label)}
+                          className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-semibold hover:bg-white/5"
                         >
-                          {c.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              );
-            }
-            return (
-              <Link
-                key={item.href}
-                to={item.href}
-                className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-[hsl(var(--royal))/0.06] hover:text-[hsl(var(--royal))]"
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-          <Link to="/contato" className="btn-primary mt-3 w-full">Solicitar crédito</Link>
-        </nav>
-      </div>
+                          {item.label}
+                          <ChevronDown className={cn("h-4 w-4 transition-transform", isOpen && "rotate-180")} />
+                        </button>
+                        <AnimatePresence initial={false}>
+                          {isOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.25 }}
+                              className="ml-3 overflow-hidden border-l border-white/15 pl-3"
+                            >
+                              {item.children.map((c) => (
+                                <Link
+                                  key={c.href}
+                                  to={c.href}
+                                  className="block rounded-xl px-4 py-2.5 text-sm text-white/70 hover:bg-white/5 hover:text-[hsl(var(--gold-soft))]"
+                                >
+                                  {c.label}
+                                </Link>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    );
+                  }
+                  return (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-white/5 hover:text-[hsl(var(--gold-soft))]"
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
+                <Link to="/contato" className="btn-gold mt-3 w-full">
+                  Solicitar crédito <ArrowRight className="h-4 w-4" />
+                </Link>
+              </nav>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
