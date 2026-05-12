@@ -43,8 +43,8 @@ const navItems: {
      <div 
        className={`fixed inset-x-0 top-0 z-[100] w-full transition-all duration-300 ${
          isScrolled 
-          ? "bg-[hsl(0_0%_4%/0.96)] py-2 shadow-2xl md:py-2.5"
-          : "bg-transparent py-3 md:py-3.5"
+          ? "bg-white/95 py-2 shadow-lg backdrop-blur-md md:py-2.5"
+          : "bg-white/80 py-3 backdrop-blur-sm md:py-3.5"
        }`}
      >
        {/* Top and Bottom lines with gold accent */}
@@ -96,7 +96,7 @@ const navItems: {
                   )}
                 </Link>
                 <div className="invisible absolute left-1/2 top-full z-50 mt-2 w-72 -translate-x-1/2 translate-y-1 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                  <div className="rounded-2xl border border-brand-gold/30 bg-[hsl(0_0%_6%/0.98)] p-2 shadow-[0_20px_60px_-15px_hsl(42_78%_50%/0.25)] backdrop-blur-xl">
+                  <div className="rounded-2xl border border-brand-gold/30 bg-white p-2 shadow-[0_20px_60px_-15px_hsl(218_90%_48%/0.25)] backdrop-blur-xl">
                     <Link
                       to={item.href}
                       className="block rounded-xl px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-gold transition-colors hover:bg-brand-gold/10"

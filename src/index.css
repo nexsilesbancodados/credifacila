@@ -458,7 +458,7 @@
   /* Section gradient overlays (use as ::before via a wrapper) */
   .section-fade-top::before {
     content: ""; position: absolute; inset: 0 0 auto 0; height: 120px;
-    background: linear-gradient(180deg, hsl(0 0% 4%) 0%, transparent 100%);
+    background: linear-gradient(180deg, hsl(0 0% 100%) 0%, transparent 100%);
     pointer-events: none;
   }
 
