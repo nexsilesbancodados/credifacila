@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
+import HeroImage from "@/components/HeroImage";
+import imgBlog from "@/assets/img-blog.jpg";
 import BlogCard from "@/components/sections/BlogCard";
 import { POSTS, CATEGORIES } from "@/data/posts";
 import { cn } from "@/lib/utils";
@@ -19,6 +21,7 @@ const Blog = () => {
         title={<>Conteúdos para <span className="text-gold-gradient">cuidar melhor do seu dinheiro</span></>}
         subtitle="Dicas, novidades e informações sobre crédito, investimentos e soluções financeiras."
         className="-mt-[72px] pt-[72px] md:-mt-[84px] md:pt-[84px]"
+        right={<HeroImage src={imgBlog} alt="Mesa moderna com notebook e materiais financeiros" />}
       />
 
       <section className="container-x py-16">

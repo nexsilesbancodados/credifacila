@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Clock, Headset, Mail, MapPin, MessageCircle, Phone, Send, ShieldCheck, Sparkles, Zap } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
+import HeroImage from "@/components/HeroImage";
+import imgAtendimento from "@/assets/img-atendimento.jpg";
+import imgHumanizado from "@/assets/img-humanizado.jpg";
 import { SITE } from "@/data/site";
 
 const Contato = () => {
@@ -19,6 +22,7 @@ const Contato = () => {
         title={<>Estamos prontos para <span className="text-gold-gradient">ajudar você</span></>}
         subtitle="Nossa equipe está pronta para encontrar a melhor solução para você."
         className="-mt-[72px] pt-[72px] md:-mt-[84px] md:pt-[84px]"
+        right={<HeroImage src={imgAtendimento} alt="Atendente Credifácil com headset" withLogo />}
       />
 
       <section className="container-x py-16">
@@ -97,6 +101,15 @@ const Contato = () => {
               <p className="text-sm font-bold">{t}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-16 grid items-center gap-10 lg:grid-cols-2">
+          <HeroImage src={imgHumanizado} alt="Consultora atendendo cliente" withLogo />
+          <div>
+            <span className="pill">Atendimento consultivo</span>
+            <h2 className="mt-4 text-3xl font-extrabold leading-tight md:text-4xl">Mais que crédito: parceria de verdade</h2>
+            <p className="mt-5 text-muted-foreground md:text-lg">Conversamos, entendemos seu momento e ajudamos a escolher a melhor solução. Sem promessas vazias, sem letras miúdas.</p>
+          </div>
         </div>
       </section>
     </Layout>
