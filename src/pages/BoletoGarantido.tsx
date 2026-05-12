@@ -6,7 +6,6 @@ import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepTimeline from "@/components/sections/StepTimeline";
 import CTASection from "@/components/CTASection";
 import BoletoMockup from "@/components/mockups/BoletoMockup";
-import HeroImage from "@/components/HeroImage";
 import imgBoleto from "@/assets/img-boleto.jpg";
 
 const BoletoGarantido = () => (
@@ -17,8 +16,8 @@ const BoletoGarantido = () => (
       subtitle="Tenha mais previsibilidade, reduza riscos e receba com tranquilidade."
       primaryCta={{ label: "Conhecer Boleto Garantido", href: "/contato" }}
       secondaryCta={{ label: "Falar com especialista", href: "/contato" }}
+      bgImage={imgBoleto}
       className="-mt-[72px] pt-[72px] md:-mt-[84px] md:pt-[84px]"
-      right={<HeroImage src={imgBoleto} alt="Boleto protegido por escudo de garantia" />}
     />
 
     <section className="container-x py-20">

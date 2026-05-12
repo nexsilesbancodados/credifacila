@@ -7,7 +7,6 @@ import ServiceCard from "@/components/sections/ServiceCard";
 import StepTimeline from "@/components/sections/StepTimeline";
 import CTASection from "@/components/CTASection";
 import ReceivablesMockup from "@/components/mockups/ReceivablesMockup";
-import HeroImage from "@/components/HeroImage";
 import imgSecuritizadora from "@/assets/img-securitizadora.jpg";
 
 const Securitizadora = () => (
@@ -18,8 +17,8 @@ const Securitizadora = () => (
       subtitle="A Credifácil Securitizadora oferece alternativas inteligentes para transformar recebíveis em capital, reduzir riscos e fortalecer o fluxo de caixa."
       primaryCta={{ label: "Falar com especialista", href: "/contato" }}
       secondaryCta={{ label: "Conhecer soluções", href: "#solucoes" }}
+      bgImage={imgSecuritizadora}
       className="-mt-[72px] pt-[72px] md:-mt-[84px] md:pt-[84px]"
-      right={<HeroImage src={imgSecuritizadora} alt="Equipe corporativa analisando crescimento" withLogo />}
     />
 
     <section className="container-x py-20">
