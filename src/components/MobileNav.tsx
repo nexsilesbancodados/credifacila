@@ -62,7 +62,7 @@ const MobileNav = () => {
         onClick={() => setOpen(true)}
         aria-label="Abrir menu"
         aria-expanded={open}
-        className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-gold/40 text-white transition-colors hover:bg-brand-gold/15 hover:text-brand-gold lg:hidden"
+        className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-gold/40 text-foreground transition-colors hover:bg-brand-gold/15 hover:text-brand-gold lg:hidden"
       >
         <Menu className="h-5 w-5" />
       </button>
@@ -86,7 +86,7 @@ const MobileNav = () => {
          }`}
        >
 
-        <div className="relative flex items-center justify-between border-b border-white/10 px-5 py-5">
+        <div className="relative flex items-center justify-between border-b border-border px-5 py-5">
           <Link to="/" onClick={() => setOpen(false)} aria-label="Credifácil">
             <img src={logo} alt="Credifácil" className="h-8 w-auto" width={1795} height={605} />
           </Link>
@@ -94,7 +94,7 @@ const MobileNav = () => {
             type="button"
             onClick={() => setOpen(false)}
             aria-label="Fechar menu"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/82 transition-colors hover:border-brand-gold hover:text-brand-gold"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground/82 transition-colors hover:border-brand-gold hover:text-brand-gold"
           >
             <X className="h-5 w-5" />
           </button>
@@ -111,7 +111,7 @@ const MobileNav = () => {
                     <Link
                       to={item.href}
                       onClick={() => setOpen(false)}
-                      className="flex flex-1 items-center justify-between gap-3 rounded-xl px-3 py-4 text-[15px] font-semibold text-white/85 transition-colors hover:bg-card/5 hover:text-brand-gold"
+                      className="flex flex-1 items-center justify-between gap-3 rounded-xl px-3 py-4 text-[15px] font-semibold text-foreground/85 transition-colors hover:bg-card/5 hover:text-brand-gold"
                     >
                       {item.label}
                     </Link>
@@ -121,7 +121,7 @@ const MobileNav = () => {
                         onClick={() => setExpanded(isExpanded ? null : item.label)}
                         aria-expanded={isExpanded}
                         aria-label={`Expandir ${item.label}`}
-                        className="ml-1 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/82 transition-all hover:border-brand-gold hover:text-brand-gold"
+                        className="ml-1 flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground/82 transition-all hover:border-brand-gold hover:text-brand-gold"
                       >
                         <ChevronRight
                           className={`h-4 w-4 transition-transform ${isExpanded ? "rotate-90" : ""}`}
@@ -141,7 +141,7 @@ const MobileNav = () => {
                             <Link
                               to={s.href}
                               onClick={() => setOpen(false)}
-                              className="block rounded-xl px-7 py-3 text-[13px] font-medium text-white/80 transition-colors hover:bg-card/5 hover:text-brand-gold"
+                              className="block rounded-xl px-7 py-3 text-[13px] font-medium text-foreground/80 transition-colors hover:bg-card/5 hover:text-brand-gold"
                             >
                               {s.label}
                             </Link>
@@ -197,7 +197,7 @@ const MobileNav = () => {
           </div>
         </nav>
 
-        <div className="relative border-t border-white/10 px-5 py-4 text-[10px] text-white/45">
+        <div className="relative border-t border-border px-5 py-4 text-[10px] text-foreground/45">
           {site.contact.hours} · {site.contact.phoneDisplay}
         </div>
       </aside>

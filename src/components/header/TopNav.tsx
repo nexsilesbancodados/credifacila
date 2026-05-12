@@ -86,7 +86,7 @@ const navItems: {
                 <Link
                   to={item.href}
                   className={`relative inline-flex items-center gap-1 rounded-full px-3 py-2 text-[14px] font-medium tracking-normal transition-colors hover:text-brand-gold ${
-                    pathname.startsWith(item.href) ? "text-brand-gold" : "text-white/85"
+                    pathname.startsWith(item.href) ? "text-brand-gold" : "text-foreground/85"
                   }`}
                 >
                   {item.label}
@@ -108,7 +108,7 @@ const navItems: {
                       <Link
                         key={sub.href}
                         to={sub.href}
-                        className="block rounded-xl px-4 py-2.5 text-[14px] font-medium text-white/80 transition-all hover:bg-brand-gold/5 hover:pl-5 hover:text-brand-gold"
+                        className="block rounded-xl px-4 py-2.5 text-[14px] font-medium text-foreground/80 transition-all hover:bg-brand-gold/5 hover:pl-5 hover:text-brand-gold"
                       >
                         {sub.label}
                       </Link>
@@ -120,7 +120,7 @@ const navItems: {
               <Link
                 to={item.href}
                 className={`relative inline-flex items-center rounded-full px-3 py-2 text-[14px] font-medium tracking-normal transition-colors hover:text-brand-gold ${
-                  pathname === item.href ? "text-brand-gold" : "text-white/85"
+                  pathname === item.href ? "text-brand-gold" : "text-foreground/85"
                 }`}
               >
                 {item.label}
@@ -132,7 +132,7 @@ const navItems: {
               <a
                 href={item.href}
                 className={`relative rounded-full px-3 py-2 text-[14px] font-medium tracking-normal transition-colors hover:text-brand-gold ${
-                  item.active ? "text-brand-gold" : "text-white/85"
+                  item.active ? "text-brand-gold" : "text-foreground/85"
                 }`}
               >
                 {item.label}
@@ -161,7 +161,7 @@ const navItems: {
            href={whatsappLink("Olá! Quero saber mais sobre os créditos da Credifácil.")}
            target="_blank"
            rel="noopener noreferrer"
-           className="group inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border border-brand-gold/50 bg-transparent px-4 py-2 text-[13px] font-medium text-white transition-all hover:border-brand-gold hover:bg-brand-gold/10 hover:text-brand-gold"
+           className="group inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border border-brand-gold/50 bg-transparent px-4 py-2 text-[13px] font-medium text-foreground transition-all hover:border-brand-gold hover:bg-brand-gold/10 hover:text-brand-gold"
          >
            <MessageCircle className="h-4 w-4 text-brand-gold" strokeWidth={2.2} />
            Fale no WhatsApp
