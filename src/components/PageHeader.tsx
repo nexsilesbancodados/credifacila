@@ -24,7 +24,6 @@ const PageHeader = ({ eyebrow, title, subtitle, primaryCta, secondaryCta, right,
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-[hsl(220,85%,15%)]/80" />
       </>
     ) : (
       <>
