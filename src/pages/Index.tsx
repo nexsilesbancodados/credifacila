@@ -4,6 +4,9 @@ import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import CTASection from "@/components/CTASection";
 import DashboardMockup from "@/components/mockups/DashboardMockup";
+import HeroImage from "@/components/HeroImage";
+import heroHome from "@/assets/img-hero-home.jpg";
+import imgEquipe from "@/assets/img-equipe.jpg";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepTimeline from "@/components/sections/StepTimeline";
 import ServiceCard from "@/components/sections/ServiceCard";
@@ -46,7 +49,7 @@ const Index = () => (
           </div>
         </div>
         <div className="relative">
-          <DashboardMockup />
+          <HeroImage src={heroHome} alt="Especialista financeiro Credifácil" />
         </div>
       </div>
 
