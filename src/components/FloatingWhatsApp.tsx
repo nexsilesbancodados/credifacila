@@ -16,7 +16,7 @@ const FloatingWhatsApp = () => {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"
-      className={`fixed bottom-5 right-5 z-50 group flex items-center gap-3 rounded-full bg-[#25D366] px-4 py-3 text-white shadow-[0_10px_30px_-8px_rgba(37,211,102,0.6)] transition-all duration-500 hover:-translate-y-0.5 hover:shadow-[0_14px_40px_-8px_rgba(37,211,102,0.8)] anim-pulse-glow ${
+      className={`fixed right-5 bottom-20 lg:bottom-5 z-50 group hidden lg:flex items-center gap-3 rounded-full bg-[#25D366] px-4 py-3 text-white shadow-[0_10px_30px_-8px_rgba(37,211,102,0.6)] transition-all duration-500 hover:-translate-y-0.5 hover:shadow-[0_14px_40px_-8px_rgba(37,211,102,0.8)] anim-pulse-glow ${
         show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
     >
