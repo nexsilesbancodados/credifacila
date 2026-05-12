@@ -211,9 +211,9 @@
     body::before {
       animation: none !important;
       background:
-        radial-gradient(ellipse 70% 45% at 80% 5%, hsl(42 78% 30% / 0.30) 0%, transparent 55%),
-        radial-gradient(ellipse 80% 50% at 20% 100%, hsl(0 0% 8%) 0%, transparent 60%),
-        linear-gradient(180deg, hsl(0 0% 5%) 0%, hsl(0 0% 4%) 50%, hsl(0 0% 3%) 100%);
+        radial-gradient(ellipse 70% 45% at 80% 5%, hsl(218 90% 88% / 0.45) 0%, transparent 55%),
+        radial-gradient(ellipse 80% 50% at 20% 100%, hsl(218 30% 97%) 0%, transparent 60%),
+        linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(218 30% 99%) 50%, hsl(218 30% 97%) 100%);
       background-size: auto;
     }
     body::after { display: none; }
