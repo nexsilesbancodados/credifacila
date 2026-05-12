@@ -6,6 +6,8 @@ import CTASection from "@/components/CTASection";
 import HeroImage from "@/components/HeroImage";
 import Reveal from "@/components/Reveal";
 import TrustBadges from "@/components/TrustBadges";
+import Testimonials from "@/components/Testimonials";
+import Newsletter from "@/components/Newsletter";
 import heroHome from "@/assets/img-hero-home.jpg";
 import imgEquipe from "@/assets/img-equipe.jpg";
 import imgConsignado from "@/assets/img-consignado.jpg";
@@ -203,6 +205,12 @@ const Index = () => (
         <Link to="/blog" className="btn-outline">Ver todos os conteúdos</Link>
       </div>
     </section>
+
+    {/* DEPOIMENTOS */}
+    <Reveal><Testimonials /></Reveal>
+
+    {/* NEWSLETTER */}
+    <Reveal><Newsletter /></Reveal>
 
     {/* CTA */}
     <CTASection
