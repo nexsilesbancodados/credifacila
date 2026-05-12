@@ -16,7 +16,7 @@ const Contato = () => {
   };
 
   return (
-    <Layout>
+    <Layout tone="twilight">
       <PageHeader
         eyebrow="Fale com a Credifácil"
         title={<>Estamos prontos para <span className="text-gold-gradient">ajudar você</span></>}

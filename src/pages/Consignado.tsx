@@ -11,7 +11,7 @@ import SectionBanner from "@/components/SectionBanner";
 import bannerEscritorioClaro from "@/assets/banner-escritorio-claro.png";
 
 const Consignado = () => (
-  <Layout>
+  <Layout tone="indigo">
     <PageHeader
       eyebrow="Crédito Consignado"
       title={<>Consignado com <span className="text-gold-gradient">taxas reduzidas</span></>}

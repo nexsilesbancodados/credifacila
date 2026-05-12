@@ -65,7 +65,7 @@ const groups = [
 ];
 
 const Duvidas = () => (
-  <Layout>
+  <Layout tone="deep">
     <PageHeader
       eyebrow="Dúvidas frequentes"
       title={<>Encontre respostas <span className="text-gold-gradient">rápidas</span></>}

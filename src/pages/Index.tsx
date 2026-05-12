@@ -19,7 +19,7 @@ import BlogCard from "@/components/sections/BlogCard";
 import { POSTS } from "@/data/posts";
 
 const Index = () => (
-  <Layout>
+  <Layout tone="royal">
     {/* HERO */}
     <section className="relative -mt-[72px] overflow-hidden pt-[72px] md:-mt-[84px] md:pt-[84px]">
       <img

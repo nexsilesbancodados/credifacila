@@ -13,7 +13,7 @@ const Blog = () => {
   );
 
   return (
-    <Layout>
+    <Layout tone="steel">
       <PageHeader
         eyebrow="Blog Credifácil"
         title={<>Conteúdos para <span className="text-gold-gradient">cuidar melhor do seu dinheiro</span></>}
