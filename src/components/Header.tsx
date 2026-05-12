@@ -40,7 +40,12 @@ const Header = () => {
               return (
                 <div key={item.label} className="group relative">
                   <button
-                    className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:text-[hsl(var(--royal))]"
+                    className={cn(
+                      "flex items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold transition-colors",
+                      scrolled
+                        ? "text-foreground hover:text-[hsl(var(--royal))]"
+                        : "text-white/90 hover:text-white"
+                    )}
                     aria-haspopup="menu"
                   >
                     {item.label}
@@ -73,12 +78,16 @@ const Header = () => {
                 key={item.href}
                 to={item.href}
                 end
-                className={({ isActive }) =>
-                  cn(
-                    "rounded-full px-4 py-2 text-sm font-semibold transition-colors",
-                    isActive ? "text-[hsl(var(--royal))]" : "text-foreground hover:text-[hsl(var(--royal))]"
-                  )
-                }
+                        className={({ isActive }) =>
+                          cn(
+                            "rounded-full px-4 py-2 text-sm font-semibold transition-colors",
+                            isActive
+                              ? scrolled ? "text-[hsl(var(--royal))]" : "text-[hsl(var(--gold-soft))]"
+                              : scrolled
+                                ? "text-foreground hover:text-[hsl(var(--royal))]"
+                                : "text-white/90 hover:text-white"
+                          )
+                        }
               >
                 {item.label}
               </NavLink>
