@@ -7,13 +7,21 @@
     /* === Clean white & royal blue palette === */
 
     --background: 0 0% 100%;          /* white */
-    --foreground: 220 40% 12%;        /* deep navy ink */
+    --foreground: 220 60% 12%;        /* deep navy ink */
 
-    /* Brand accent — royal blue (kept under brand-gold token names for compatibility) */
-    --brand-gold: 218 90% 48%;        /* royal blue */
-    --brand-gold-soft: 212 100% 62%;  /* bright sky blue */
-    --brand-gold-foreground: 0 0% 100%;
-    --brand-ink: 220 40% 12%;
+    /* Navy + Gold brand */
+    --navy: 220 70% 14%;
+    --navy-deep: 222 80% 9%;
+    --navy-2: 220 55% 22%;
+    --gold: 42 92% 55%;
+    --gold-soft: 45 95% 65%;
+    --gold-deep: 38 90% 48%;
+
+    /* Compatibility: brand-gold tokens map to actual gold */
+    --brand-gold: 42 92% 55%;
+    --brand-gold-soft: 45 95% 65%;
+    --brand-gold-foreground: 220 60% 12%;
+    --brand-ink: 220 60% 12%;
 
     /* Surfaces */
     --surface-deep: 218 60% 14%;
@@ -51,7 +59,7 @@
     --card-foreground: 220 40% 12%;
     --popover: 0 0% 100%;
     --popover-foreground: 220 40% 12%;
-    --primary: 218 90% 48%;
+    --primary: 220 70% 14%;
     --primary-foreground: 0 0% 100%;
     --secondary: 218 30% 96%;
     --secondary-foreground: 220 40% 12%;

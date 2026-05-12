@@ -39,6 +39,16 @@ export default {
           foreground: "hsl(var(--brand-gold-foreground))",
         },
         "brand-ink": "hsl(var(--brand-ink))",
+        navy: {
+          DEFAULT: "hsl(var(--navy))",
+          deep: "hsl(var(--navy-deep))",
+          2: "hsl(var(--navy-2))",
+        },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          soft: "hsl(var(--gold-soft))",
+          deep: "hsl(var(--gold-deep))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
