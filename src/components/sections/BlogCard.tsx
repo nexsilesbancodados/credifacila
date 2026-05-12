@@ -20,7 +20,6 @@ const tones = [
 const BlogCard = ({ post, idx = 0 }: { post: Post; idx?: number }) => (
   <Link to={`/blog/${post.slug}`} className="card-soft group block overflow-hidden p-0">
     <div className={`relative aspect-[16/9] bg-gradient-to-br ${tones[idx % tones.length]}`}>
-      <div className="bg-grid-blue absolute inset-0 opacity-30" />
       <div className="absolute inset-0 grid place-items-center">
         <span className="rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-white backdrop-blur-md">
           {post.category}

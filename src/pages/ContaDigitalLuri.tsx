@@ -56,7 +56,6 @@ const ContaDigitalLuri = () => (
     {/* Big phone showcase */}
     <section className="container-x py-20">
       <div className="relative overflow-hidden rounded-3xl bg-mesh-blue p-10 md:p-16">
-        <div className="bg-grid-blue absolute inset-0 opacity-40" />
         <div className="relative grid items-center gap-12 md:grid-cols-2">
           <div className="text-white">
             <span className="pill-light">Sua conta na palma da mão</span>
