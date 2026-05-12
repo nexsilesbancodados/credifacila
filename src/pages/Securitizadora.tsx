@@ -6,7 +6,6 @@ import FeatureGrid from "@/components/sections/FeatureGrid";
 import ServiceCard from "@/components/sections/ServiceCard";
 import StepTimeline from "@/components/sections/StepTimeline";
 import CTASection from "@/components/CTASection";
-import ReceivablesMockup from "@/components/mockups/ReceivablesMockup";
 import imgSecuritizadora from "@/assets/img-securitizadora.jpg";
 
 const Securitizadora = () => (

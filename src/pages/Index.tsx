@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import CTASection from "@/components/CTASection";
-import DashboardMockup from "@/components/mockups/DashboardMockup";
 import HeroImage from "@/components/HeroImage";
 import heroHome from "@/assets/img-hero-home.jpg";
 import imgEquipe from "@/assets/img-equipe.jpg";
@@ -27,8 +26,8 @@ const Index = () => (
       <div className="bg-grid-blue absolute inset-0 opacity-30" />
       <div className="blob -left-20 top-32 h-96 w-96 anim-floaty" style={{ background: "hsl(202 100% 56% / 0.5)" }} />
       <div className="blob right-0 top-10 h-80 w-80 anim-floaty" style={{ background: "hsl(40 78% 48% / 0.35)", animationDelay: "1.5s" }} />
-      <div className="container-x relative grid items-center gap-14 py-16 md:py-24 lg:grid-cols-[1.05fr_1fr]">
-        <div className="text-white">
+      <div className="container-x relative py-16 md:py-24">
+        <div className="max-w-3xl text-white">
           <span className="pill-light"><Sparkles className="h-3 w-3" /> Soluções financeiras inteligentes</span>
           <h1 className="mt-5 text-4xl font-extrabold leading-[1.05] md:text-5xl lg:text-6xl">
             Crédito fácil, <span className="text-gold-gradient">rápido e seguro</span>
@@ -53,9 +52,6 @@ const Index = () => (
               </div>
             ))}
           </div>
-        </div>
-        <div className="relative flex justify-center">
-          <DashboardMockup />
         </div>
       </div>
 

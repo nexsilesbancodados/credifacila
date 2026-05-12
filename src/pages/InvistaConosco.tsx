@@ -5,7 +5,6 @@ import SectionTitle from "@/components/SectionTitle";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepTimeline from "@/components/sections/StepTimeline";
 import CTASection from "@/components/CTASection";
-import InvestMockup from "@/components/mockups/InvestMockup";
 import imgInvest from "@/assets/img-investimentos.jpg";
 
 const InvistaConosco = () => (
@@ -38,20 +37,17 @@ const InvistaConosco = () => (
     </section>
 
     <section className="container-x py-20">
-      <div className="grid items-center gap-10 lg:grid-cols-2">
-        <div>
-          <span className="pill-gold"><Sparkles className="h-3 w-3" /> Perfil do investidor</span>
-          <h2 className="mt-4 text-3xl font-extrabold leading-tight md:text-4xl">Para quem busca oportunidades estruturadas</h2>
-          <p className="mt-5 text-base text-muted-foreground md:text-lg">
-            Soluções voltadas a investidores que buscam alternativas com análise técnica, transparência e suporte profissional, com foco em equilíbrio entre risco e retorno.
-          </p>
-          <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
-            <li className="flex items-center gap-2"><BarChart3 className="h-4 w-4 text-[hsl(var(--royal))]" /> Análise estruturada das operações</li>
-            <li className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-[hsl(var(--royal))]" /> Governança e controles internos</li>
-            <li className="flex items-center gap-2"><Headset className="h-4 w-4 text-[hsl(var(--royal))]" /> Acompanhamento dedicado</li>
-          </ul>
-        </div>
-        <InvestMockup />
+      <div className="mx-auto max-w-3xl text-center">
+        <span className="pill-gold"><Sparkles className="h-3 w-3" /> Perfil do investidor</span>
+        <h2 className="mt-4 text-3xl font-extrabold leading-tight md:text-4xl">Para quem busca oportunidades estruturadas</h2>
+        <p className="mt-5 text-base text-muted-foreground md:text-lg">
+          Soluções voltadas a investidores que buscam alternativas com análise técnica, transparência e suporte profissional, com foco em equilíbrio entre risco e retorno.
+        </p>
+        <ul className="mx-auto mt-5 inline-flex flex-col gap-2 text-left text-sm text-muted-foreground">
+          <li className="flex items-center gap-2"><BarChart3 className="h-4 w-4 text-[hsl(var(--royal))]" /> Análise estruturada das operações</li>
+          <li className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-[hsl(var(--royal))]" /> Governança e controles internos</li>
+          <li className="flex items-center gap-2"><Headset className="h-4 w-4 text-[hsl(var(--royal))]" /> Acompanhamento dedicado</li>
+        </ul>
       </div>
     </section>
 
