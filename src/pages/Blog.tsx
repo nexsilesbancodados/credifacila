@@ -1,25 +1,55 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import Layout from "@/components/Layout";
+import SEOHead from "@/components/SEOHead";
 import PageHeader from "@/components/PageHeader";
-import BlogCard from "@/components/sections/BlogCard";
+import BlogCard, { type Post } from "@/components/sections/BlogCard";
 import { POSTS, CATEGORIES } from "@/data/posts";
+import { supabase } from "@/integrations/supabase/client";
 import { cn } from "@/lib/utils";
 
 const Blog = () => {
   const [cat, setCat] = useState<string>("Todos");
   const [q, setQ] = useState("");
+  const [posts, setPosts] = useState<Post[]>(POSTS);
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await supabase
+        .from("blog_posts")
+        .select("slug,title,excerpt,published_at,blog_categories(name)")
+        .lte("published_at", new Date().toISOString())
+        .order("published_at", { ascending: false });
+      if (data && data.length > 0) {
+        setPosts(
+          data.map((p) => ({
+            slug: p.slug,
+            title: p.title,
+            excerpt: p.excerpt ?? "",
+            category: (p as { blog_categories?: { name?: string } }).blog_categories?.name ?? "Conteúdo",
+            date: p.published_at ? new Date(p.published_at).toLocaleDateString("pt-BR", { day: "2-digit", month: "short", year: "numeric" }) : "",
+            readTime: "5 min",
+          })),
+        );
+      }
+    })();
+  }, []);
+
   const filtered = useMemo(() => {
     const term = q.trim().toLowerCase();
-    return POSTS.filter((p) => {
+    return posts.filter((p) => {
       const matchCat = cat === "Todos" || p.category === cat;
       const matchQ = !term || p.title.toLowerCase().includes(term) || p.excerpt.toLowerCase().includes(term);
       return matchCat && matchQ;
     });
-  }, [cat, q]);
+  }, [cat, q, posts]);
 
   return (
     <Layout tone="steel">
+      <SEOHead
+        title="Blog Credifácil | Educação financeira e crédito inteligente"
+        description="Conteúdos práticos sobre crédito, investimentos e gestão financeira para você e sua empresa. Atualizado semanalmente."
+      />
       <PageHeader
         eyebrow="Blog Credifácil"
         title={<>Conteúdos para <span className="text-gold-gradient">cuidar melhor do seu dinheiro</span></>}

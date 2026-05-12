@@ -1,6 +1,7 @@
 import { ArrowRight, Banknote, Building2, CheckCircle2, FileCheck2, Headset, Lock, Receipt, ShieldCheck, Smartphone, Sparkles, TrendingUp, Wallet, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import SEOHead from "@/components/SEOHead";
 import SectionTitle from "@/components/SectionTitle";
 import CTASection from "@/components/CTASection";
 import HeroImage from "@/components/HeroImage";
@@ -24,6 +25,17 @@ import { POSTS } from "@/data/posts";
 
 const Index = () => (
   <Layout tone="royal">
+    <SEOHead
+      title="Credifácil | Crédito rápido, seguro e descomplicado"
+      description="Crédito pessoal, consignado e empresarial 100% online. Aprovação em minutos, sem burocracia. Mais de 50 mil clientes confiam na Credifácil."
+      jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Credifácil",
+        url: typeof window !== "undefined" ? window.location.origin : "",
+        potentialAction: { "@type": "SearchAction", target: "/blog?q={search_term_string}", "query-input": "required name=search_term_string" },
+      }}
+    />
     {/* HERO */}
     <section className="relative -mt-[72px] overflow-hidden pt-[72px] md:-mt-[84px] md:pt-[84px]">
       <img
