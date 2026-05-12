@@ -17,8 +17,14 @@ const Index = () => (
   <Layout>
     {/* HERO */}
     <section className="relative -mt-[72px] overflow-hidden pt-[72px] md:-mt-[84px] md:pt-[84px]">
-      <div className="absolute inset-0 bg-mesh-blue" />
-      <div className="bg-grid-blue absolute inset-0 opacity-40" />
+      <img
+        src={heroHome}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 bg-[hsl(220,85%,15%)]/80" />
+      <div className="bg-grid-blue absolute inset-0 opacity-30" />
       <div className="blob -left-20 top-32 h-96 w-96 anim-floaty" style={{ background: "hsl(202 100% 56% / 0.5)" }} />
       <div className="blob right-0 top-10 h-80 w-80 anim-floaty" style={{ background: "hsl(40 78% 48% / 0.35)", animationDelay: "1.5s" }} />
       <div className="container-x relative grid items-center gap-14 py-16 md:py-24 lg:grid-cols-[1.05fr_1fr]">
@@ -48,8 +54,8 @@ const Index = () => (
             ))}
           </div>
         </div>
-        <div className="relative">
-          <HeroImage src={heroHome} alt="Especialista financeiro Credifácil" />
+        <div className="relative flex justify-center">
+          <DashboardMockup />
         </div>
       </div>
 
