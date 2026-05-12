@@ -6,7 +6,6 @@ import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepTimeline from "@/components/sections/StepTimeline";
 import CTASection from "@/components/CTASection";
 import SimulatorMockup from "@/components/mockups/SimulatorMockup";
-import HeroImage from "@/components/HeroImage";
 import imgConsignado from "@/assets/img-consignado.jpg";
 import FAQAccordion from "@/components/FAQAccordion";
 
@@ -18,8 +17,8 @@ const Consignado = () => (
       subtitle="Aprovação facilitada, segurança e parcelas que cabem no seu orçamento. Ideal para aposentados, pensionistas do INSS e servidores públicos."
       primaryCta={{ label: "Simular agora", href: "/contato" }}
       secondaryCta={{ label: "Falar com especialista", href: "/contato" }}
+      bgImage={imgConsignado}
       className="-mt-[72px] pt-[72px] md:-mt-[84px] md:pt-[84px]"
-      right={<HeroImage src={imgConsignado} alt="Aposentados felizes contratando consignado" />}
     />
 
     {/* Floating benefits */}
