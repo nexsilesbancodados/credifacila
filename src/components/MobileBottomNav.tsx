@@ -13,7 +13,10 @@ const items = [
 
 const MobileBottomNav = () => (
   <>
-    <nav className="fixed inset-x-0 bottom-0 z-[60] border-t border-white/5 bg-midnight/80 backdrop-blur-xl text-white lg:hidden pb-safe">
+    <nav 
+      className="fixed inset-x-0 bottom-0 z-[60] border-t border-white/5 bg-midnight/80 backdrop-blur-xl text-white lg:hidden pb-safe"
+      aria-label="Navegação móvel inferior"
+    >
       <div className="grid grid-cols-5 h-16">
         {items.map(({ to, I, label }) => (
           <NavLink
@@ -22,12 +25,13 @@ const MobileBottomNav = () => (
             end
             className={({ isActive }) =>
               cn(
-                "flex flex-col items-center justify-center gap-1 transition-all active:scale-90",
-                isActive ? "text-[hsl(var(--gold-soft))]" : "text-white/30"
+                "flex flex-col items-center justify-center gap-1 transition-all active:scale-95 outline-none focus-visible:bg-white/5",
+                isActive ? "text-[hsl(var(--gold-soft))]" : "text-white/40"
               )
             }
+            aria-label={label}
           >
-            <I className="h-5 w-5" />
+            <I className="h-5 w-5" aria-hidden="true" />
             <span className="text-[9px] font-black uppercase tracking-widest leading-none">{label}</span>
           </NavLink>
         ))}
@@ -35,9 +39,10 @@ const MobileBottomNav = () => (
           href={`${SITE.whatsappLink}?text=${encodeURIComponent("Olá! Vim pelo site da Credifácil.")}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center justify-center gap-1 text-[#25D366] transition-all active:scale-90"
+          className="flex flex-col items-center justify-center gap-1 text-[#25D366] transition-all active:scale-95 outline-none focus-visible:bg-white/5"
+          aria-label="Falar no WhatsApp"
         >
-          <MessageCircle className="h-5 w-5" />
+          <MessageCircle className="h-5 w-5" aria-hidden="true" />
           <span className="text-[9px] font-black uppercase tracking-widest leading-none">WhatsApp</span>
         </a>
       </div>
