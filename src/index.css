@@ -4,29 +4,44 @@
 
 @layer base {
   :root {
-    /* === Credifácil Corporate: Midnight Indigo + Champagne Gold === */
-    --background: 224 71% 4%;
-    --foreground: 0 0% 100%;
+    /* === Modern Institutional Design System === */
+    --background: 226 70% 4%;
+    --foreground: 210 40% 98%;
     
-    --navy-deep: 226 70% 9%;
-    --midnight: 224 71% 4%;
-    --royal: 222 92% 52%;
-    --gold: 38 82% 52%;
-    --gold-soft: 44 100% 74%;
+    --navy-deep: 226 70% 6%;
+    --midnight: 226 70% 3%;
+    --royal: 222 92% 55%;
+    --gold: 42 82% 55%;
+    --gold-soft: 42 100% 75%;
 
-    --radius: 1.5rem;
+    --radius: 1rem;
+    --border: 226 70% 15%;
+    --input: 226 70% 12%;
+    --ring: 222 92% 55%;
+    
+    --primary: 42 82% 55%;
+    --primary-foreground: 226 70% 4%;
+    
+    --secondary: 226 70% 12%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 226 70% 15%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 222 92% 55%;
+    --accent-foreground: 210 40% 98%;
   }
 }
 
 @layer base {
-  * { @apply border-white/5; }
-  html { @apply scroll-smooth; }
+  * { @apply border-border/40; }
+  html { @apply scroll-smooth antialiased; }
   body {
-    @apply bg-[#05070A] text-white antialiased;
-    font-family: "Inter", system-ui, sans-serif;
-    font-size: 16px;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
   }
 }
 
@@ -45,8 +60,16 @@
     @apply inline-flex items-center gap-2 rounded-full border border-[hsl(var(--gold-soft))/0.2] bg-[hsl(var(--gold-soft))/0.1] px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-[hsl(var(--gold-soft))];
   }
 
-  .card-soft {
-    @apply rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:border-white/20 hover:bg-white/[0.07];
+  .card-modern {
+    @apply rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06];
+  }
+
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-xl border border-white/10;
+  }
+
+  .glass-light {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
   }
 
   .text-gold-gradient {
