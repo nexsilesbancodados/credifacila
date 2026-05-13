@@ -12,7 +12,7 @@ const Footer = () => (
         <div className="rounded-2xl bg-white/95 px-4 py-3 inline-flex">
           <Logo className="h-12" />
         </div>
-        <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/75">{SITE.description}</p>
+        <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/90">{SITE.description}</p>
         <div className="mt-6 flex gap-3">
           {[Instagram, Facebook, Linkedin, Youtube].map((Icon, i) => (
             <a
@@ -29,7 +29,7 @@ const Footer = () => (
 
       <div>
         <h4 className="text-xs font-bold uppercase tracking-widest text-[hsl(var(--gold-soft))]">Navegação</h4>
-        <ul className="mt-5 space-y-3 text-sm text-white/80">
+        <ul className="mt-5 space-y-3 text-sm text-white/90">
           {[
             ["Início", "/"],
             ["Consignado", "/consignado"],
@@ -47,7 +47,7 @@ const Footer = () => (
 
       <div>
         <h4 className="text-xs font-bold uppercase tracking-widest text-[hsl(var(--gold-soft))]">Soluções</h4>
-        <ul className="mt-5 space-y-3 text-sm text-white/80">
+        <ul className="mt-5 space-y-3 text-sm text-white/90">
           {[
             ["Antecipação de Recebíveis", "/securitizadora/antecipacao-de-recebiveis"],
             ["Boleto Garantido", "/securitizadora/boleto-garantido"],
@@ -63,7 +63,7 @@ const Footer = () => (
 
       <div>
         <h4 className="text-xs font-bold uppercase tracking-widest text-[hsl(var(--gold-soft))]">Contato</h4>
-        <ul className="mt-5 space-y-3 text-sm text-white/80">
+        <ul className="mt-5 space-y-3 text-sm text-white/90">
           <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-[hsl(var(--gold-soft))]" /> {SITE.phone}</li>
           <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-[hsl(var(--gold-soft))]" /> {SITE.whatsapp}</li>
           <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 text-[hsl(var(--gold-soft))]" /> {SITE.email}</li>
@@ -73,7 +73,7 @@ const Footer = () => (
     </div>
 
     <div className="border-t border-white/10">
-      <div className="container-x flex flex-col items-center justify-between gap-3 py-5 text-xs text-white/60 md:flex-row">
+      <div className="container-x flex flex-col items-center justify-between gap-3 py-5 text-xs text-white/80 md:flex-row">
         <p>© {new Date().getFullYear()} Credifácil. Todos os direitos reservados.</p>
         <p>CNPJ {SITE.cnpj}</p>
       </div>

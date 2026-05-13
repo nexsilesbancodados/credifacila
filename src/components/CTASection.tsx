@@ -11,7 +11,7 @@ const CTASection = ({ title, subtitle, cta, href = "/contato" }: Props) => (
       <div className="relative grid items-center gap-10 md:grid-cols-[1fr_auto]">
         <div>
           <h3 className="text-3xl font-extrabold leading-tight text-white md:text-4xl">{title}</h3>
-          {subtitle && <p className="mt-4 max-w-xl text-base text-white/80 md:text-lg">{subtitle}</p>}
+          {subtitle && <p className="mt-4 max-w-xl text-base text-white/95 md:text-lg">{subtitle}</p>}
         </div>
         <div className="flex flex-col items-start gap-5 md:items-end">
           <div className="rounded-2xl bg-white/95 px-4 py-2.5">

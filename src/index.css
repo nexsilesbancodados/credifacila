@@ -26,7 +26,7 @@
     /* Neutrals — cool, refined */
     --gray-50: 220 30% 98%;
     --gray-100: 220 25% 95%;
-    --gray-text: 222 18% 42%;
+    --gray-text: 224 20% 28%; /* Darker for better contrast (WCAG AA+) */
 
     --card: 0 0% 100%;
     --card-foreground: 224 65% 11%;
@@ -37,7 +37,7 @@
     --secondary: 220 30% 97%;
     --secondary-foreground: 224 65% 11%;
     --muted: 220 25% 95%;
-    --muted-foreground: 222 18% 42%;
+    --muted-foreground: 224 20% 28%; /* Darker for better contrast (WCAG AA+) */
     --accent: 199 95% 94%;
     --accent-foreground: 222 92% 38%;
     --destructive: 0 78% 56%;
@@ -109,13 +109,13 @@
   }
 
   .pill {
-    @apply inline-flex items-center gap-2 rounded-full border border-[hsl(var(--royal))/0.3] bg-[hsl(var(--royal))/0.08] px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[hsl(var(--royal))];
+    @apply inline-flex items-center gap-2 rounded-full border border-[hsl(var(--royal))/0.3] bg-[hsl(var(--royal))/0.1] px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[hsl(222,92%,35%)];
   }
   .pill-light {
     @apply inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md;
   }
   .pill-gold {
-    @apply inline-flex items-center gap-2 rounded-full border border-[hsl(var(--gold))/0.4] bg-[hsl(var(--gold))/0.12] px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold))];
+    @apply inline-flex items-center gap-2 rounded-full border border-[hsl(var(--gold-deep))/0.5] bg-[hsl(var(--gold))/0.15] px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-deep))];
   }
 
   .card-soft {
@@ -133,7 +133,7 @@
   .card-soft:hover::before { opacity: 1; }
   .card-soft > * { position: relative; z-index: 1; }
   .card-soft h1, .card-soft h2, .card-soft h3, .card-soft h4 { color: hsl(0 0% 100%); }
-  .card-soft p, .card-soft .text-muted-foreground { color: hsl(220 30% 82%); }
+  .card-soft p, .card-soft .text-muted-foreground { color: hsl(220 30% 92%); }
   .card-soft .text-foreground { color: hsl(0 0% 100%); }
   .card-soft .text-\[hsl\(var\(--royal\)\)\] { color: hsl(var(--gold-soft)); }
   .card-glass {

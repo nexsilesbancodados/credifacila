@@ -163,7 +163,7 @@ const Header = () => {
                                 <Link
                                   key={c.href}
                                   to={c.href}
-                                  className="block rounded-xl px-4 py-2.5 text-sm text-white/70 hover:bg-white/5 hover:text-[hsl(var(--gold-soft))]"
+                                  className="block rounded-xl px-4 py-2.5 text-sm text-white/90 hover:bg-white/5 hover:text-[hsl(var(--gold-soft))]"
                                 >
                                   {c.label}
                                 </Link>

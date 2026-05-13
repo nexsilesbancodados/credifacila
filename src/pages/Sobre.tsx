@@ -60,7 +60,7 @@ const Sobre = () => (
           <h2 className="mt-4 text-3xl font-extrabold leading-tight text-white md:text-4xl">
             Crédito que <span className="text-gold-gradient">faz sentido</span> para quem realmente importa
           </h2>
-          <p className="mt-5 text-base text-white/75 md:text-lg">
+          <p className="mt-5 text-base text-white/95 md:text-lg">
             Acreditamos que crédito bem oferecido é ferramenta de realização — não armadilha. Por isso colocamos clareza, taxa justa e atendimento humano no centro de tudo o que fazemos.
           </p>
         </Reveal>
@@ -148,7 +148,7 @@ const Sobre = () => (
               <p className="mt-4 text-sm leading-relaxed">"{c.text}"</p>
               <div className="mt-5 border-t border-white/10 pt-4">
                 <p className="text-sm font-extrabold">{c.name}</p>
-                <p className="text-xs uppercase tracking-wider opacity-70">{c.role}</p>
+                <p className="text-xs uppercase tracking-wider opacity-90">{c.role}</p>
               </div>
             </article>
           </Reveal>
