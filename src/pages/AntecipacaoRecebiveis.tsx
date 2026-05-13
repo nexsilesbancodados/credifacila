@@ -150,7 +150,7 @@ const AntecipacaoRecebiveis = () => {
                       loading="lazy"
                       width={1024}
                       height={1280}
-                      className="absolute bottom-0 right-0 h-[110%] w-auto max-w-none object-contain object-bottom drop-shadow-[0_30px_40px_rgba(0,0,0,0.5)]"
+                      className="absolute bottom-0 right-0 h-[110%] w-auto max-w-none object-contain object-bottom drop-shadow-[0_30px_40px_rgba(0,0,0,0.5)] pl-[22px] pt-[21px]"
                     />
                   </Parallax>
                   {/* Badge sobreposto */}
