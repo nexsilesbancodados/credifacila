@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import logo from "@/assets/logo-credifacil.png";
 
 type NavItem = {
   label: string;
@@ -53,10 +54,8 @@ const Navbar = () => {
     >
       <nav className="container-x flex h-16 items-center justify-between md:h-20">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2" aria-label="Credifácil">
-          <span className="text-xl font-display font-extrabold tracking-tight text-foreground md:text-2xl">
-            Credi<span className="text-gold-gradient">fácil</span>
-          </span>
+        <a href="/" className="flex items-center" aria-label="Credifácil">
+          <img src={logo} alt="Credifácil" className="h-10 md:h-12 w-auto object-contain" />
         </a>
 
         {/* Desktop nav */}
