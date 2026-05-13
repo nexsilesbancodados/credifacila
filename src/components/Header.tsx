@@ -26,7 +26,7 @@ const Header = () => {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-white/85 backdrop-blur-xl shadow-[0_4px_20px_-8px_hsl(220_70%_13%/0.15)]"
+          ? "bg-white/85 text-slate-900 backdrop-blur-xl shadow-[0_4px_20px_-8px_hsl(220_70%_13%/0.15)]"
           : "bg-transparent"
       )}
     >
