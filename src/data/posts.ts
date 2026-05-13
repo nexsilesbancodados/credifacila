@@ -9,6 +9,7 @@ export const POSTS: Post[] = [
       "Um passo a passo prático para mapear gastos, criar reserva e tomar decisões financeiras com mais segurança.",
     date: "10 mai 2026",
     readTime: "6 min",
+    cover: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800"
   },
   {
     slug: "quando-vale-a-pena-consignado",
@@ -18,6 +19,7 @@ export const POSTS: Post[] = [
       "Entenda em quais cenários o consignado é uma alternativa inteligente e quais cuidados ter antes de contratar.",
     date: "02 mai 2026",
     readTime: "5 min",
+    cover: "https://images.unsplash.com/photo-1573163281530-5be9c28aa7bb?auto=format&fit=crop&q=80&w=800"
   },
   {
     slug: "antecipacao-recebiveis-empresas",
@@ -27,6 +29,7 @@ export const POSTS: Post[] = [
       "Descubra como transformar vendas futuras em capital imediato e fortalecer o caixa do seu negócio.",
     date: "28 abr 2026",
     readTime: "7 min",
+    cover: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
   },
   {
     slug: "o-que-e-boleto-garantido",
@@ -36,6 +39,7 @@ export const POSTS: Post[] = [
       "Conheça a solução que reduz inadimplência e traz mais previsibilidade ao recebimento de vendas.",
     date: "20 abr 2026",
     readTime: "4 min",
+    cover: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
   },
   {
     slug: "dicas-investir-com-seguranca",
@@ -45,6 +49,7 @@ export const POSTS: Post[] = [
       "Critérios essenciais para escolher operações estruturadas e equilibrar rentabilidade com proteção.",
     date: "12 abr 2026",
     readTime: "6 min",
+    cover: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=800"
   },
   {
     slug: "melhorar-fluxo-caixa-empresa",
@@ -54,6 +59,7 @@ export const POSTS: Post[] = [
       "Práticas comprovadas para ganhar previsibilidade financeira e crescer com mais tranquilidade.",
     date: "04 abr 2026",
     readTime: "5 min",
+    cover: "https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&q=80&w=800"
   },
 ];
 

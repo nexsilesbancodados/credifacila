@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -11,58 +11,73 @@ const ITEMS = [
 
 const Testimonials = () => {
   const [i, setI] = useState(0);
+  
   useEffect(() => {
-    const t = setInterval(() => setI((v) => (v + 1) % ITEMS.length), 6000);
+    const t = setInterval(() => setI((v) => (v + 1) % ITEMS.length), 8000);
     return () => clearInterval(t);
   }, []);
+
   const item = ITEMS[i];
+
   return (
-    <section className="container-x py-20">
-      <div className="relative mx-auto max-w-3xl rounded-3xl border border-white/15 bg-white/5 p-8 backdrop-blur-xl md:p-12">
-        <Quote className="absolute -top-5 left-8 h-10 w-10 rounded-2xl bg-[hsl(var(--gold))] p-2 text-[hsl(var(--navy-deep))] shadow-[var(--shadow-gold)]" />
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.4 }}
-          >
-            <div className="mb-3 flex gap-1">
-              {Array.from({ length: item.rating }).map((_, k) => (
-                <Star key={k} className="h-4 w-4 fill-[hsl(var(--gold))] text-[hsl(var(--gold))]" />
-              ))}
-            </div>
-            <p className="text-lg leading-relaxed text-white/90 md:text-xl">"{item.text}"</p>
-            <div className="mt-6">
-              <p className="text-sm font-extrabold text-white">{item.name}</p>
-              <p className="text-xs uppercase tracking-wider text-white/60">{item.role}</p>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-        <div className="mt-8 flex items-center justify-between">
-          <div className="flex gap-2">
-            {ITEMS.map((_, k) => (
-              <button
-                key={k}
-                onClick={() => setI(k)}
-                aria-label={`Depoimento ${k + 1}`}
-                className={`h-1.5 rounded-full transition-all ${k === i ? "w-8 bg-[hsl(var(--gold))]" : "w-3 bg-white/30 hover:bg-white/50"}`}
-              />
+    <div className="relative mx-auto max-w-4xl rounded-[3rem] border border-white/10 bg-white/5 p-10 backdrop-blur-xl md:p-16">
+      <Quote className="absolute -top-6 left-12 h-12 w-12 rounded-2xl bg-[hsl(var(--gold-soft))] p-3 text-navy-deep shadow-2xl" />
+      
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="min-h-[200px] flex flex-col justify-center"
+        >
+          <div className="mb-6 flex gap-1">
+            {Array.from({ length: item.rating }).map((_, k) => (
+              <Star key={k} className="h-5 w-5 fill-[hsl(var(--gold-soft))] text-[hsl(var(--gold-soft))]" />
             ))}
           </div>
-          <div className="flex gap-2">
-            <button onClick={() => setI((v) => (v - 1 + ITEMS.length) % ITEMS.length)} aria-label="Anterior" className="grid h-9 w-9 place-items-center rounded-full border border-white/20 bg-white/5 text-white transition-all hover:bg-white/15">
-              <ChevronLeft className="h-4 w-4" />
-            </button>
-            <button onClick={() => setI((v) => (v + 1) % ITEMS.length)} aria-label="Próximo" className="grid h-9 w-9 place-items-center rounded-full border border-white/20 bg-white/5 text-white transition-all hover:bg-white/15">
-              <ChevronRight className="h-4 w-4" />
-            </button>
+          <p className="text-xl leading-relaxed text-white md:text-3xl font-medium tracking-tight">"{item.text}"</p>
+          <div className="mt-10 flex items-center gap-4">
+            <div className="h-12 w-12 rounded-full bg-white/10 flex items-center justify-center text-[hsl(var(--gold-soft))] font-black">
+              {item.name[0]}
+            </div>
+            <div>
+              <p className="text-lg font-black text-white">{item.name}</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-white/40 font-bold">{item.role}</p>
+            </div>
           </div>
+        </motion.div>
+      </AnimatePresence>
+
+      <div className="mt-12 flex items-center justify-between">
+        <div className="flex gap-3">
+          {ITEMS.map((_, k) => (
+            <button
+              key={k}
+              onClick={() => setI(k)}
+              aria-label={`Depoimento ${k + 1}`}
+              className={`h-1.5 rounded-full transition-all duration-500 ${k === i ? "w-10 bg-[hsl(var(--gold-soft))]" : "w-3 bg-white/10 hover:bg-white/20"}`}
+            />
+          ))}
+        </div>
+        <div className="flex gap-3">
+          <button 
+            onClick={() => setI((v) => (v - 1 + ITEMS.length) % ITEMS.length)} 
+            className="grid h-12 w-12 place-items-center rounded-2xl border border-white/10 bg-white/5 text-white transition-all hover:bg-[hsl(var(--gold-soft))] hover:text-navy-deep hover:border-transparent"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <button 
+            onClick={() => setI((v) => (v + 1) % ITEMS.length)} 
+            className="grid h-12 w-12 place-items-center rounded-2xl border border-white/10 bg-white/5 text-white transition-all hover:bg-[hsl(var(--gold-soft))] hover:text-navy-deep hover:border-transparent"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default Testimonials;
+export default memo(Testimonials);

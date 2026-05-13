@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 
+// Preload critical assets
 const Index = lazy(() => import("./pages/Index"));
 const Consignado = lazy(() => import("./pages/Consignado"));
 const Securitizadora = lazy(() => import("./pages/Securitizadora"));
@@ -27,10 +28,19 @@ const ScrollToTop = () => {
   return null;
 };
 
+const LoadingFallback = () => (
+  <div className="fixed inset-0 z-[100] flex items-center justify-center bg-midnight text-white">
+    <div className="flex flex-col items-center gap-4">
+      <div className="h-12 w-12 animate-spin rounded-full border-4 border-white/10 border-t-[hsl(var(--gold-soft))]" />
+      <p className="text-[10px] font-black uppercase tracking-[0.3em] opacity-40">Credifácil Network</p>
+    </div>
+  </div>
+);
+
 const App = () => (
   <BrowserRouter>
     <ScrollToTop />
-    <Suspense fallback={<div className="min-h-screen" />}>
+    <Suspense fallback={<LoadingFallback />}>
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/consignado" element={<Consignado />} />

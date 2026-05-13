@@ -1,4 +1,5 @@
-import { ArrowRight, Award, Banknote, Building2, GraduationCap, Headset, HeartHandshake, Lock, Receipt, ShieldCheck, Smartphone, Sparkles, TrendingUp, Users, Zap, ShieldAlert, Briefcase, Landmark } from "lucide-react";
+import { lazy, Suspense } from "react";
+import { ArrowRight, Banknote, Receipt, ShieldCheck, Smartphone, TrendingUp, Briefcase, ShieldAlert, Landmark } from "lucide-react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEOHead from "@/components/SEOHead";
@@ -7,12 +8,8 @@ import CTASection from "@/components/CTASection";
 import HeroImage from "@/components/HeroImage";
 import Reveal from "@/components/Reveal";
 import TrustBadges from "@/components/TrustBadges";
-import Testimonials from "@/components/Testimonials";
-import Newsletter from "@/components/Newsletter";
-import FAQAccordion from "@/components/FAQAccordion";
 import AnimatedStat from "@/components/AnimatedStat";
 import PartnerLogos from "@/components/PartnerLogos";
-import SocialProofToast from "@/components/SocialProofToast";
 import heroHome from "@/assets/img-hero-home.jpg";
 import imgEquipe from "@/assets/img-equipe.jpg";
 import imgConsignado from "@/assets/img-consignado.jpg";
@@ -23,8 +20,12 @@ import imgInvestimentos from "@/assets/img-investimentos.jpg";
 import imgSecuritizadora from "@/assets/img-securitizadora.jpg";
 import StepTimeline from "@/components/sections/StepTimeline";
 import ServiceCard from "@/components/sections/ServiceCard";
-import BlogCard from "@/components/sections/BlogCard";
-import { POSTS } from "@/data/posts";
+
+// Lazy load non-critical below-the-fold components
+const Testimonials = lazy(() => import("@/components/Testimonials"));
+const Newsletter = lazy(() => import("@/components/Newsletter"));
+const FAQAccordion = lazy(() => import("@/components/FAQAccordion"));
+const SocialProofToast = lazy(() => import("@/components/SocialProofToast"));
 
 const Index = () => (
   <Layout tone="midnight">
@@ -124,7 +125,7 @@ const Index = () => (
          <Reveal>
            <div className="relative">
              <div className="absolute -inset-4 bg-[hsl(var(--gold))/0.1] blur-3xl rounded-full" />
-             <HeroImage src={imgEquipe} alt="Wealth Advisory Team" withLogo />
+             <HeroImage src={imgEquipe} alt="Wealth Advisory Team" priority withLogo />
            </div>
          </Reveal>
          <Reveal delay={0.1}>
@@ -181,20 +182,24 @@ const Index = () => (
     <section className="container-x py-24">
        <div className="grid gap-20 lg:grid-cols-2">
          <Reveal>
-           <FAQAccordion
-             dark
-             items={[
-               { q: "Qual o SLA para liberação de crédito?", a: "Para a maioria das operações, a liquidez é garantida em até 24h úteis após aprovação." },
-               { q: "Quais são os ratings de taxas?", a: "Nossas taxas são customizadas por perfil, iniciando em patamares institucionais competitivos." },
-               { q: "Como funciona a segurança dos dados?", a: "Seguimos padrões bancários de criptografia e conformidade total com a LGPD." },
-             ]}
-           />
+           <Suspense fallback={<div className="h-40 animate-pulse bg-white/5 rounded-3xl" />}>
+             <FAQAccordion
+               dark
+               items={[
+                 { q: "Qual o SLA para liberação de crédito?", a: "Para a maioria das operações, a liquidez é garantida em até 24h úteis após aprovação." },
+                 { q: "Quais são as ratings de taxas?", a: "Nossas taxas são customizadas por perfil, iniciando em patamares institucionais competitivos." },
+                 { q: "Como funciona a segurança dos dados?", a: "Seguimos padrões bancários de criptografia e conformidade total com a LGPD." },
+               ]}
+             />
+           </Suspense>
          </Reveal>
          <Reveal delay={0.1}>
             <div className="rounded-[3rem] bg-gradient-to-br from-[hsl(var(--gold-soft))] to-[hsl(var(--gold))] p-12 text-navy-deep shadow-2xl">
               <h3 className="text-3xl font-black leading-tight">Mantenha-se <br/>Atualizado</h3>
               <p className="mt-4 font-medium opacity-80">Receba análises de mercado e insights financeiros exclusivos do nosso time de especialistas.</p>
-              <Newsletter />
+              <Suspense fallback={<div className="h-10 mt-6 animate-pulse bg-white/10 rounded-full" />}>
+                <Newsletter />
+              </Suspense>
             </div>
          </Reveal>
        </div>
@@ -208,7 +213,9 @@ const Index = () => (
           title={<>Referência no <span className="text-gold-gradient">Mercado Financeiro</span></>}
         /></Reveal>
         <div className="mt-16">
-           <Testimonials />
+           <Suspense fallback={<div className="h-64 animate-pulse bg-white/5 rounded-3xl" />}>
+             <Testimonials />
+           </Suspense>
         </div>
     </section>
 
@@ -217,7 +224,10 @@ const Index = () => (
       subtitle="Converse agora com um de nossos Relationship Managers."
       cta="Acessar Consultoria"
     />
-    <SocialProofToast />
+    
+    <Suspense fallback={null}>
+      <SocialProofToast />
+    </Suspense>
   </Layout>
 );
 

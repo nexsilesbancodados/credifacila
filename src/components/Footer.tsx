@@ -1,25 +1,26 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from "lucide-react";
 import Logo from "./Logo";
 import { SITE } from "@/data/site";
 
 const Footer = () => (
-  <footer className="relative mt-24 overflow-hidden bg-[hsl(var(--navy-deep))] text-white">
-    <div className="blob -left-20 top-10 h-72 w-72" style={{ background: "hsl(218 100% 50%)" }} />
-    <div className="blob right-0 bottom-0 h-80 w-80" style={{ background: "hsl(40 78% 48% / 0.4)" }} />
+  <footer className="relative mt-24 overflow-hidden bg-midnight text-white">
+    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40 pointer-events-none" />
+    
     <div className="container-x relative grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-5">
       <div className="lg:col-span-2">
         <div className="rounded-2xl bg-white/95 px-4 py-3 inline-flex">
-          <Logo className="h-12" />
+          <Logo className="h-10" />
         </div>
-        <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/90">{SITE.description}</p>
-        <div className="mt-6 flex gap-3">
+        <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/50">{SITE.description}</p>
+        <div className="mt-8 flex gap-3">
           {[Instagram, Facebook, Linkedin, Youtube].map((Icon, i) => (
             <a
               key={i}
               href="#"
-              aria-label="Rede social"
-              className="grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-white/5 transition-all hover:border-[hsl(var(--gold))] hover:bg-[hsl(var(--gold))/0.15] hover:text-[hsl(var(--gold-soft))]"
+              aria-label="Social Link"
+              className="grid h-10 w-10 place-items-center rounded-full border border-white/5 bg-white/5 transition-all hover:bg-[hsl(var(--gold-soft))] hover:text-navy-deep hover:border-transparent"
             >
               <Icon className="h-4 w-4" />
             </a>
@@ -28,62 +29,61 @@ const Footer = () => (
       </div>
 
       <div>
-        <h4 className="text-xs font-bold uppercase tracking-widest text-[hsl(var(--gold-soft))]">Navegação</h4>
-        <ul className="mt-5 space-y-3 text-sm text-white/90">
+        <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30">Navegação</h4>
+        <ul className="mt-6 space-y-3 text-sm text-white/60">
           {[
             ["Início", "/"],
             ["Consignado", "/consignado"],
             ["Securitizadora", "/securitizadora"],
             ["Invista Conosco", "/invista-conosco"],
-            ["Blog", "/blog"],
-            ["Dúvidas", "/duvidas"],
+            ["Blog & Insights", "/blog"],
+            ["Ajuda & FAQ", "/duvidas"],
           ].map(([label, href]) => (
             <li key={href}>
-              <Link to={href} className="transition-colors hover:text-white">{label}</Link>
+              <Link to={href} className="transition-colors hover:text-[hsl(var(--gold-soft))]">{label}</Link>
             </li>
           ))}
         </ul>
       </div>
 
       <div>
-        <h4 className="text-xs font-bold uppercase tracking-widest text-[hsl(var(--gold-soft))]">Soluções</h4>
-        <ul className="mt-5 space-y-3 text-sm text-white/90">
+        <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30">Business</h4>
+        <ul className="mt-6 space-y-3 text-sm text-white/60">
           {[
-            ["Antecipação de Recebíveis", "/securitizadora/antecipacao-de-recebiveis"],
+            ["Antecipação", "/securitizadora/antecipacao-de-recebiveis"],
             ["Boleto Garantido", "/securitizadora/boleto-garantido"],
-            ["Conta Digital Luri", "/securitizadora/conta-digital-luri"],
-            ["Crédito Consignado", "/consignado"],
+            ["Conta Luri", "/securitizadora/conta-digital-luri"],
+            ["Wealth Advisory", "/contato"],
           ].map(([label, href]) => (
             <li key={href}>
-              <Link to={href} className="transition-colors hover:text-white">{label}</Link>
+              <Link to={href} className="transition-colors hover:text-[hsl(var(--gold-soft))]">{label}</Link>
             </li>
           ))}
         </ul>
       </div>
 
       <div>
-        <h4 className="text-xs font-bold uppercase tracking-widest text-[hsl(var(--gold-soft))]">Contato</h4>
-        <ul className="mt-5 space-y-3 text-sm text-white/90">
-          <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-[hsl(var(--gold-soft))]" /> {SITE.phone}</li>
-          <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-[hsl(var(--gold-soft))]" /> {SITE.whatsapp}</li>
-          <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 text-[hsl(var(--gold-soft))]" /> {SITE.email}</li>
-          <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-[hsl(var(--gold-soft))]" /> {SITE.address}</li>
+        <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30">Contato</h4>
+        <ul className="mt-6 space-y-4 text-sm text-white/60">
+          <li className="flex items-start gap-3"><Phone className="mt-0.5 h-4 w-4 text-[hsl(var(--gold-soft))]" /> <span className="text-white/80">{SITE.phone}</span></li>
+          <li className="flex items-start gap-3"><Mail className="mt-0.5 h-4 w-4 text-[hsl(var(--gold-soft))]" /> <span className="text-white/80">{SITE.email}</span></li>
+          <li className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 text-[hsl(var(--gold-soft))]" /> <span className="text-white/80 leading-relaxed">{SITE.address}</span></li>
         </ul>
       </div>
     </div>
 
-    <div className="border-t border-white/10 bg-black/10 py-8">
+    <div className="border-t border-white/5 bg-black/20 py-10">
       <div className="container-x">
-        <div className="flex flex-col items-center justify-between gap-3 text-xs text-white/50 md:flex-row">
-          <p>© {new Date().getFullYear()} Credifácil. Todos os direitos reservados.</p>
-          <p>CNPJ {SITE.cnpj}</p>
+        <div className="flex flex-col items-center justify-between gap-6 text-[10px] font-bold uppercase tracking-widest text-white/20 md:flex-row">
+          <p>© {new Date().getFullYear()} Credifácil Network</p>
+          <p>CNPJ {SITE.cnpj} • Regulado BACEN</p>
         </div>
-        <div className="mt-8 grid gap-6 text-[10px] leading-relaxed text-white/30 md:grid-cols-2">
+        <div className="mt-10 grid gap-8 text-[9px] leading-loose text-white/10 md:grid-cols-2 text-justify">
           <p>
-            A Credifácil não é uma instituição financeira e não realiza operações de crédito diretamente. Somos um correspondente bancário que atua em conformidade com a Resolução nº 4.935, de 29 de julho de 2021, do Banco Central do Brasil. As propostas de crédito estão sujeitas a análise, revisão e aprovação da instituição financeira parceira.
+            A Credifácil não é uma instituição financeira e não realiza operações de crédito diretamente. Atuamos como correspondente bancário em conformidade com a Resolução nº 4.935 do Banco Central do Brasil. Todas as propostas estão sujeitas à análise de crédito pelas instituições financeiras parceiras autorizadas.
           </p>
           <p>
-            O uso deste site está sujeito aos Termos de Uso e Política de Privacidade. Taxas de juros, prazos e condições variam de acordo com o perfil de crédito de cada cliente e a modalidade escolhida. A rentabilidade de investimentos em ativos estruturados não é garantida e envolve riscos. Consulte sempre um especialista antes de tomar decisões financeiras.
+            Taxas e condições variam conforme o perfil de risco do tomador. Investimentos em ativos estruturados não possuem garantia do FGC. A rentabilidade passada não é garantia de resultados futuros. Consulte sempre um advisor certificado antes de realizar alocações de capital ou contratar linhas de fomento comercial.
           </p>
         </div>
       </div>
@@ -91,4 +91,4 @@ const Footer = () => (
   </footer>
 );
 
-export default Footer;
+export default memo(Footer);
