@@ -37,7 +37,7 @@
     --secondary: 220 30% 97%;
     --secondary-foreground: 224 65% 11%;
     --muted: 220 25% 95%;
-    --muted-foreground: 224 20% 28%; /* Darker for better contrast (WCAG AA+) */
+    --muted-foreground: 224 12% 42%; /* Slightly lighter for light surfaces, but still dark enough */
     --accent: 199 95% 94%;
     --accent-foreground: 222 92% 38%;
     --destructive: 0 78% 56%;
@@ -107,9 +107,12 @@
   .btn-outline {
     @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-[hsl(var(--royal))] bg-white/0 px-6 py-3.5 text-sm font-bold text-[hsl(var(--royal))] transition-all hover:bg-[hsl(var(--royal))] hover:text-white;
   }
+  .btn-outline-white {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/40 bg-white/0 px-6 py-3.5 text-sm font-bold text-white transition-all hover:border-white hover:bg-white/10;
+  }
 
   .pill {
-    @apply inline-flex items-center gap-2 rounded-full border border-[hsl(var(--royal))/0.3] bg-[hsl(var(--royal))/0.1] px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[hsl(222,92%,35%)];
+    @apply inline-flex items-center gap-2 rounded-full border border-[hsl(var(--royal))/0.4] bg-[hsl(var(--royal))/0.15] px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[hsl(var(--royal))];
   }
   .pill-light {
     @apply inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md;
@@ -132,10 +135,9 @@
   }
   .card-soft:hover::before { opacity: 1; }
   .card-soft > * { position: relative; z-index: 1; }
-  .card-soft h1, .card-soft h2, .card-soft h3, .card-soft h4 { color: hsl(0 0% 100%); }
-  .card-soft p, .card-soft .text-muted-foreground { color: hsl(220 30% 92%); }
-  .card-soft .text-foreground { color: hsl(0 0% 100%); }
-  .card-soft .text-\[hsl\(var\(--royal\)\)\] { color: hsl(var(--gold-soft)); }
+  .card-soft h1, .card-soft h2, .card-soft h3, .card-soft h4, .card-soft .text-foreground { color: hsl(0 0% 100%) !important; }
+  .card-soft p, .card-soft .text-muted-foreground, .card-soft span:not(.btn-primary, .btn-gold, .pill, .pill-gold) { color: hsl(220 30% 90%) !important; }
+  .card-soft .text-\[hsl\(var\(--royal\)\)\], .card-soft .text-royal-gradient { color: hsl(var(--gold-soft)) !important; background: none !important; -webkit-background-clip: initial !important; background-clip: initial !important; }
   .card-glass {
     @apply rounded-3xl border border-white/15 bg-white/5 backdrop-blur-xl;
   }
