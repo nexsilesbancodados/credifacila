@@ -1,6 +1,7 @@
 import { BarChart3, Boxes, Building2, FileText, HandCoins, Headset, Receipt, ShieldCheck, Sparkles, Store, TrendingUp, Wallet, Zap } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
+import SEOHead from "@/components/SEOHead";
 import SectionTitle from "@/components/SectionTitle";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import CTASection from "@/components/CTASection";
@@ -10,6 +11,10 @@ import bannerEquipe from "@/assets/banner-equipe.png";
 
 const AntecipacaoRecebiveis = () => (
   <Layout tone="ocean">
+    <SEOHead
+      title="Antecipação de Recebíveis | Credifácil Securitizadora"
+      description="Antecipe duplicatas, contratos e cartões com taxas competitivas. Capital imediato para sua empresa, 100% digital."
+    />
     <PageHeader
       eyebrow="Antecipação de Recebíveis"
       title={<>Antecipe seus recebíveis e <span className="text-gold-gradient">fortaleça seu caixa</span></>}

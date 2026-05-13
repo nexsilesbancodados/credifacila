@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
+import SEOHead from "@/components/SEOHead";
 import imgFaq from "@/assets/img-faq.jpg";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
@@ -66,6 +67,10 @@ const groups = [
 
 const Duvidas = () => (
   <Layout tone="deep">
+    <SEOHead
+      title="Dúvidas Frequentes | Credifácil"
+      description="Respostas rápidas sobre crédito consignado, securitizadora, conta digital e investimentos Credifácil."
+    />
     <PageHeader
       eyebrow="Dúvidas frequentes"
       title={<>Encontre respostas <span className="text-gold-gradient">rápidas</span></>}

@@ -1,6 +1,7 @@
 import { BarChart3, Building2, FileSearch, Headset, LineChart, ShieldCheck, Sparkles, TrendingUp } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
+import SEOHead from "@/components/SEOHead";
 import SectionTitle from "@/components/SectionTitle";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepTimeline from "@/components/sections/StepTimeline";
@@ -11,6 +12,10 @@ import bannerInvestimentos from "@/assets/banner-investimentos.png";
 
 const InvistaConosco = () => (
   <Layout tone="midnight">
+    <SEOHead
+      title="Invista Conosco | Credifácil"
+      description="Oportunidades de investimento estruturadas com transparência, solidez e rentabilidade. Conheça os produtos Credifácil."
+    />
     <PageHeader
       eyebrow="Invista Conosco"
       title={<>Invista com segurança em <span className="text-gold-gradient">soluções financeiras inteligentes</span></>}

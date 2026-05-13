@@ -1,6 +1,7 @@
 import { BarChart3, CreditCard, Headset, QrCode, Receipt, ShieldCheck, Smartphone, Sparkles, TrendingUp, Wallet, Zap } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
+import SEOHead from "@/components/SEOHead";
 import SectionTitle from "@/components/SectionTitle";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import CTASection from "@/components/CTASection";
@@ -11,6 +12,10 @@ import bannerLuriApp from "@/assets/banner-luri-app.png";
 
 const ContaDigitalLuri = () => (
   <Layout tone="sky">
+    <SEOHead
+      title="Conta Digital Luri | Credifácil"
+      description="Conta digital prática para pessoas e empresas: Pix, cartão, pagamentos e gestão financeira em um só lugar."
+    />
     <PageHeader
       eyebrow="Conta Digital Luri"
       title={<>Conta Digital Luri: <span className="text-gold-gradient">gestão simples e moderna</span></>}

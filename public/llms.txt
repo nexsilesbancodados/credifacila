@@ -1,0 +1,19 @@
+# Credifácil
+
+> Crédito pessoal, consignado e empresarial 100% online. Aprovação em minutos, sem burocracia.
+
+A Credifácil oferece soluções financeiras para pessoas e empresas: crédito consignado, antecipação de recebíveis, boleto garantido, conta digital e investimentos.
+
+## Pages
+
+- [Home](/): Visão geral das soluções de crédito e serviços financeiros.
+- [Crédito Consignado](/consignado): Consignado para INSS, servidores e conveniadas.
+- [Securitizadora](/securitizadora): Soluções financeiras para empresas.
+- [Antecipação de Recebíveis](/securitizadora/antecipacao-de-recebiveis): Transforme vendas futuras em capital.
+- [Boleto Garantido](/securitizadora/boleto-garantido): Reduza inadimplência e ganhe previsibilidade.
+- [Conta Digital Luri](/securitizadora/conta-digital-luri): Conta digital prática para pessoas e empresas.
+- [Invista Conosco](/invista-conosco): Oportunidades estruturadas de investimento.
+- [Blog](/blog): Educação financeira e novidades.
+- [Sobre](/sobre): História, valores e equipe Credifácil.
+- [Contato](/contato): Fale com um especialista.
+- [Dúvidas](/duvidas): Perguntas frequentes.

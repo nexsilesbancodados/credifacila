@@ -1,82 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.credifacil.com.br/</loc>
+    <loc>https://credifacila.lovable.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.credifacil.com.br/consignado</loc>
+    <loc>https://credifacila.lovable.app/consignado</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.credifacil.com.br/securitizadora</loc>
+    <loc>https://credifacila.lovable.app/securitizadora</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.credifacil.com.br/securitizadora/antecipacao-de-recebiveis</loc>
+    <loc>https://credifacila.lovable.app/securitizadora/antecipacao-de-recebiveis</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.credifacil.com.br/securitizadora/boleto-garantido</loc>
+    <loc>https://credifacila.lovable.app/securitizadora/boleto-garantido</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.credifacil.com.br/securitizadora/conta-digital-luri</loc>
+    <loc>https://credifacila.lovable.app/securitizadora/conta-digital-luri</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.credifacil.com.br/perguntas-frequentes</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.credifacil.com.br/privacidade</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.credifacil.com.br/termos</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.credifacil.com.br/lgpd</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.credifacil.com.br/ouvidoria</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.credifacil.com.br/invista-conosco</loc>
+    <loc>https://credifacila.lovable.app/invista-conosco</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.credifacil.com.br/blog</loc>
+    <loc>https://credifacila.lovable.app/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.credifacil.com.br/sobre</loc>
+    <loc>https://credifacila.lovable.app/sobre</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.credifacil.com.br/contato</loc>
+    <loc>https://credifacila.lovable.app/contato</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.credifacil.com.br/duvidas</loc>
+    <loc>https://credifacila.lovable.app/duvidas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

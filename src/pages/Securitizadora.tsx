@@ -1,6 +1,7 @@
 import { BarChart3, Building2, FileSearch, HandCoins, LineChart, Receipt, ShieldCheck, Smartphone, TrendingUp, Wallet } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
+import SEOHead from "@/components/SEOHead";
 import SectionTitle from "@/components/SectionTitle";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import ServiceCard from "@/components/sections/ServiceCard";
@@ -12,6 +13,10 @@ import bannerEquipe from "@/assets/banner-equipe.png";
 
 const Securitizadora = () => (
   <Layout tone="navy">
+    <SEOHead
+      title="Securitizadora Credifácil | Soluções financeiras para empresas"
+      description="Transforme recebíveis em capital, reduza riscos e fortaleça o caixa da sua empresa com a Securitizadora Credifácil."
+    />
     <PageHeader
       eyebrow="Securitizadora"
       title={<>Soluções financeiras para empresas que <span className="text-gold-gradient">querem crescer</span></>}

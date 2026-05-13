@@ -1,6 +1,7 @@
 import { Award, Heart, Rocket, ShieldCheck, Sparkles, Target, TrendingUp, Users, Building2, Quote } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
+import SEOHead from "@/components/SEOHead";
 import SectionTitle from "@/components/SectionTitle";
 import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
@@ -38,6 +39,10 @@ const PARTNERS = ["Banco Central", "FEBRABAN", "ABBC", "Reclame Aqui", "Serasa",
 
 const Sobre = () => (
   <Layout tone="midnight">
+    <SEOHead
+      title="Sobre a Credifácil | Quem somos"
+      description="Há mais de uma década descomplicando o crédito no Brasil. Conheça a história, valores e equipe da Credifácil."
+    />
     <PageHeader
       eyebrow="Quem somos"
       title={<>Há mais de uma década <span className="text-gold-gradient">descomplicando o crédito</span></>}
