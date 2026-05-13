@@ -32,7 +32,7 @@ const Header = () => {
     >
       <div className="container-x flex h-[64px] items-center justify-between md:h-[84px]">
         <Link to="/" className="flex items-center gap-2 outline-offset-4" aria-label="Credifácil — Página Inicial">
-          <Logo className="h-9 md:h-12" aria-hidden="true" />
+          <Logo className="h-9 md:h-12" aria-hidden={true} />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Menu Principal">
@@ -52,7 +52,7 @@ const Header = () => {
                     aria-expanded="false" // Should be dynamic in a full implementation, but better than nothing
                   >
                     {item.label}
-                    <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" aria-hidden="true" />
+                    <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" aria-hidden={true} />
                   </button>
                   <div 
                     className="invisible absolute left-1/2 top-full z-50 mt-2 w-72 -translate-x-1/2 translate-y-1 rounded-2xl border border-border bg-white p-2 opacity-0 shadow-[var(--shadow-elev)] transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100"

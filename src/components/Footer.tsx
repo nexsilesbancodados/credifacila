@@ -11,7 +11,7 @@ const Footer = () => (
     <div className="container-x relative grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-5">
       <div className="lg:col-span-2">
         <div className="rounded-2xl bg-white/95 px-4 py-3 inline-flex">
-          <Logo className="h-10" aria-hidden="true" />
+          <Logo className="h-10" aria-hidden={true} />
         </div>
         <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/50">{SITE.description}</p>
         <nav className="mt-8 flex gap-3" aria-label="Redes sociais">
@@ -27,7 +27,7 @@ const Footer = () => (
               aria-label={label}
               className="grid h-10 w-10 place-items-center rounded-full border border-white/5 bg-white/5 transition-all hover:bg-[hsl(var(--gold-soft))] hover:text-navy-deep hover:border-transparent outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--gold-soft))]"
             >
-              <Icon className="h-4 w-4" aria-hidden="true" />
+              <Icon className="h-4 w-4" aria-hidden={true} />
             </a>
           ))}
         </nav>
@@ -71,15 +71,15 @@ const Footer = () => (
         <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40">Contato</h4>
         <ul className="mt-6 space-y-4 text-sm text-white/60">
           <li className="flex items-start gap-3">
-            <Phone className="mt-0.5 h-4 w-4 text-[hsl(var(--gold-soft))]" aria-hidden="true" /> 
+            <Phone className="mt-0.5 h-4 w-4 text-[hsl(var(--gold-soft))]" aria-hidden={true} /> 
             <span className="text-white/80">{SITE.phone}</span>
           </li>
           <li className="flex items-start gap-3">
-            <Mail className="mt-0.5 h-4 w-4 text-[hsl(var(--gold-soft))]" aria-hidden="true" /> 
+            <Mail className="mt-0.5 h-4 w-4 text-[hsl(var(--gold-soft))]" aria-hidden={true} /> 
             <span className="text-white/80">{SITE.email}</span>
           </li>
           <li className="flex items-start gap-3">
-            <MapPin className="mt-0.5 h-4 w-4 text-[hsl(var(--gold-soft))]" aria-hidden="true" /> 
+            <MapPin className="mt-0.5 h-4 w-4 text-[hsl(var(--gold-soft))]" aria-hidden={true} /> 
             <span className="text-white/80 leading-relaxed">{SITE.address}</span>
           </li>
         </ul>
