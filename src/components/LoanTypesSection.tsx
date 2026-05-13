@@ -51,8 +51,42 @@ const loans: Loan[] = [
   },
 ];
 
-const Card = ({ loan }: { loan: Loan }) => {
+const Card = ({ loan, variant = "stack" }: { loan: Loan; variant?: "stack" | "banner" }) => {
   const Icon = loan.icon;
+  if (variant === "banner") {
+    return (
+      <article className="group relative flex h-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-[hsl(var(--gold))/0.45] hover:shadow-[0_30px_80px_-30px_hsl(var(--gold)/0.4)]">
+        <div className="relative w-2/5 shrink-0 overflow-hidden">
+          <img
+            src={loan.img}
+            alt={loan.title}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-background/30 to-background" />
+        </div>
+        <div className="relative flex flex-1 flex-col justify-center p-5 md:p-6">
+          <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-[hsl(var(--gold))/0.35] bg-background/60 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.15em] text-[hsl(var(--gold-soft))] backdrop-blur-md">
+            <Icon className="h-3 w-3" />
+            {loan.tag}
+          </span>
+          <h3 className="mt-3 font-display text-base font-bold text-foreground md:text-lg">
+            {loan.title}
+          </h3>
+          <p className="mt-2 text-xs leading-relaxed text-foreground/65 md:text-[13px]">
+            {loan.desc}
+          </p>
+          <a
+            href="/contato"
+            className="mt-3 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-soft))] transition hover:text-[hsl(var(--gold))]"
+          >
+            Simular agora
+            <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+          </a>
+        </div>
+      </article>
+    );
+  }
   return (
     <article className="group relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-[hsl(var(--gold))/0.45] hover:shadow-[0_30px_80px_-30px_hsl(var(--gold)/0.4)]">
       <div className="relative aspect-[16/10] overflow-hidden">
@@ -106,10 +140,10 @@ const LoanTypesSection = () => {
 
         {/* Cards: 2 / 1 / 2 layout */}
         <div className="mx-auto mt-14 max-w-5xl space-y-5 md:space-y-6">
-          {/* Top row — 2 cards */}
+          {/* Top row — 2 banner cards */}
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
-            <Card loan={loans[0]} />
-            <Card loan={loans[1]} />
+            <Card loan={loans[0]} variant="banner" />
+            <Card loan={loans[1]} variant="banner" />
           </div>
 
           {/* Middle row — 1 centered card */}
@@ -119,10 +153,10 @@ const LoanTypesSection = () => {
             </div>
           </div>
 
-          {/* Bottom row — 2 cards */}
+          {/* Bottom row — 2 banner cards */}
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
-            <Card loan={loans[3]} />
-            <Card loan={loans[4]} />
+            <Card loan={loans[3]} variant="banner" />
+            <Card loan={loans[4]} variant="banner" />
           </div>
         </div>
       </div>
