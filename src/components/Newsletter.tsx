@@ -23,7 +23,7 @@ const Newsletter = () => {
             <h3 className="mt-4 text-2xl font-extrabold leading-tight md:text-3xl">
               Receba dicas exclusivas <span className="text-gold-gradient">de finanças e crédito</span>
             </h3>
-            <p className="mt-3 text-sm text-white/70">
+            <p className="mt-3 text-sm text-white/90">
               Conteúdos práticos, novidades e ofertas direto no seu e-mail. Sem spam, prometido.
             </p>
           </div>
@@ -31,7 +31,7 @@ const Newsletter = () => {
             <div className="rounded-2xl border border-[hsl(var(--gold))/0.4] bg-white/5 p-6 text-center backdrop-blur-md">
               <CheckCircle2 className="mx-auto h-10 w-10 text-[hsl(var(--gold-soft))]" />
               <p className="mt-3 font-extrabold">Inscrição confirmada!</p>
-              <p className="mt-1 text-sm text-white/70">Em breve você receberá nossos conteúdos.</p>
+                <p className="mt-1 text-sm text-white/90">Em breve você receberá nossos conteúdos.</p>
             </div>
           ) : (
             <form onSubmit={submit} className="flex flex-col gap-3 sm:flex-row">
