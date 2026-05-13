@@ -1,6 +1,7 @@
 import { Banknote, BadgeCheck, CalendarClock, Coins, FileCheck2, Headset, Lock, ShieldCheck, Wallet, Zap } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
+import SEOHead from "@/components/SEOHead";
 import SectionTitle from "@/components/SectionTitle";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepTimeline from "@/components/sections/StepTimeline";
@@ -12,6 +13,10 @@ import bannerEscritorioClaro from "@/assets/banner-escritorio-claro.png";
 
 const Consignado = () => (
   <Layout tone="indigo">
+    <SEOHead
+      title="Crédito Consignado | Credifácil"
+      description="Consignado para INSS, servidores públicos e conveniadas. Taxas a partir de 1,15% a.m., aprovação rápida e desconto direto em folha."
+    />
     <PageHeader
       eyebrow="Crédito Consignado"
       title={<>Consignado com <span className="text-gold-gradient">taxas reduzidas</span></>}

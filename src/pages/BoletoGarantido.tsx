@@ -1,6 +1,7 @@
 import { Check, BarChart3, Building2, ShieldCheck, TrendingUp, Wallet, Zap, Headset, X } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
+import SEOHead from "@/components/SEOHead";
 import SectionTitle from "@/components/SectionTitle";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepTimeline from "@/components/sections/StepTimeline";
@@ -11,6 +12,10 @@ import bannerSeguranca from "@/assets/banner-seguranca.png";
 
 const BoletoGarantido = () => (
   <Layout tone="azure">
+    <SEOHead
+      title="Boleto Garantido | Credifácil Securitizadora"
+      description="Venda com mais segurança: previsibilidade de recebimento e proteção contra inadimplência com o Boleto Garantido Credifácil."
+    />
     <PageHeader
       eyebrow="Boleto Garantido"
       title={<>Boleto Garantido para sua empresa <span className="text-gold-gradient">vender com mais segurança</span></>}

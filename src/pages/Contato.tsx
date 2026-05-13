@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Clock, Headset, Mail, MapPin, MessageCircle, Phone, Send, ShieldCheck, Sparkles, Zap } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
+import SEOHead from "@/components/SEOHead";
 import HeroImage from "@/components/HeroImage";
 import imgAtendimento from "@/assets/img-atendimento.jpg";
 import imgHumanizado from "@/assets/img-humanizado.jpg";

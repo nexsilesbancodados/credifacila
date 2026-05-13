@@ -1,6 +1,7 @@
 import { Award, Heart, Rocket, ShieldCheck, Sparkles, Target, TrendingUp, Users, Building2, Quote } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
+import SEOHead from "@/components/SEOHead";
 import SectionTitle from "@/components/SectionTitle";
 import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";

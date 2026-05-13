@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
+import SEOHead from "@/components/SEOHead";
 import imgFaq from "@/assets/img-faq.jpg";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
