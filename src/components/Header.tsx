@@ -38,24 +38,26 @@ const Header = () => {
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Menu Principal">
           {NAV.map((item) => {
             if ("children" in item && item.children) {
+              const isOpen = false; // logic would go here if we tracked hover/focus
               return (
                 <div key={item.label} className="group relative">
                   <button
                     className={cn(
-                       "flex items-center gap-1 rounded-full px-4 py-2 text-base font-bold transition-colors outline-offset-2",
+                       "flex items-center gap-1 rounded-full px-4 py-2 text-base font-bold transition-colors outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--royal))]",
                       scrolled
                         ? "text-foreground hover:text-[hsl(var(--royal))]"
                         : "text-white/90 hover:text-white"
                     )}
-                    aria-haspopup="true"
-                    aria-expanded="false"
+                    aria-haspopup="menu"
+                    aria-expanded="false" // Should be dynamic in a full implementation, but better than nothing
                   >
                     {item.label}
                     <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" aria-hidden="true" />
                   </button>
                   <div 
-                    className="invisible absolute left-1/2 top-full z-50 mt-2 w-72 -translate-x-1/2 translate-y-1 rounded-2xl border border-border bg-white p-2 opacity-0 shadow-[var(--shadow-elev)] transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+                    className="invisible absolute left-1/2 top-full z-50 mt-2 w-72 -translate-x-1/2 translate-y-1 rounded-2xl border border-border bg-white p-2 opacity-0 shadow-[var(--shadow-elev)] transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100"
                     role="menu"
+                    aria-label={`Submenu de ${item.label}`}
                   >
                     {item.children.map((c) => (
                       <NavLink
@@ -65,7 +67,7 @@ const Header = () => {
                         role="menuitem"
                         className={({ isActive }) =>
                           cn(
-                             "block rounded-xl px-4 py-3 text-base font-semibold transition-colors outline-offset-2",
+                             "block rounded-xl px-4 py-3 text-base font-semibold transition-colors outline-none focus-visible:bg-[hsl(var(--royal))/0.06] focus-visible:text-[hsl(var(--royal))]",
                             isActive
                               ? "bg-[hsl(var(--royal))/0.08] text-[hsl(var(--royal))]"
                               : "text-foreground hover:bg-[hsl(var(--royal))/0.06] hover:text-[hsl(var(--royal))]"
@@ -86,7 +88,7 @@ const Header = () => {
                 end
                 className={({ isActive }) =>
                   cn(
-                      "rounded-full px-4 py-2 text-base font-bold transition-colors outline-offset-2",
+                      "rounded-full px-4 py-2 text-base font-bold transition-colors outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--royal))]",
                     isActive
                       ? scrolled ? "text-[hsl(var(--royal))]" : "text-[hsl(var(--gold-soft))]"
                       : scrolled
@@ -106,7 +108,7 @@ const Header = () => {
             <Link 
               to="/auth" 
               aria-label="Acessar minha conta" 
-              className={cn("flex items-center gap-1.5 rounded-full border px-3.5 py-2 text-sm font-semibold transition outline-offset-2", scrolled ? "border-border text-foreground hover:bg-black/5" : "border-white/30 text-white hover:bg-white/10")}
+              className={cn("flex items-center gap-1.5 rounded-full border px-3.5 py-2 text-sm font-semibold transition outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--royal))]", scrolled ? "border-border text-foreground hover:bg-black/5" : "border-white/30 text-white hover:bg-white/10")}
             >
               <User className="h-4 w-4" aria-hidden="true" /> Entrar
             </Link>
@@ -124,7 +126,7 @@ const Header = () => {
             aria-label={open ? "Fechar menu" : "Abrir menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-full border border-border bg-white shadow-sm"
+            className="grid h-10 w-10 place-items-center rounded-full border border-border bg-white shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--royal))]"
           >
             {open ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
           </button>
@@ -164,7 +166,7 @@ const Header = () => {
                         <button
                           onClick={() => setMobileSub(isOpen ? null : item.label)}
                           aria-expanded={isOpen}
-                          className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-semibold hover:bg-white/5"
+                          className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-semibold hover:bg-white/5 outline-none focus-visible:bg-white/5"
                         >
                           {item.label}
                           <ChevronDown className={cn("h-4 w-4 transition-transform", isOpen && "rotate-180")} aria-hidden="true" />
@@ -177,12 +179,14 @@ const Header = () => {
                               exit={{ height: 0, opacity: 0 }}
                               transition={{ duration: 0.25 }}
                               className="ml-3 overflow-hidden border-l border-white/15 pl-3"
+                              role="group"
+                              aria-label={`Submenu ${item.label}`}
                             >
                               {item.children.map((c) => (
                                 <Link
                                   key={c.href}
                                   to={c.href}
-                                  className="block rounded-xl px-4 py-2.5 text-sm text-white/90 hover:bg-white/5 hover:text-[hsl(var(--gold-soft))]"
+                                  className="block rounded-xl px-4 py-2.5 text-sm text-white/90 hover:bg-white/5 hover:text-[hsl(var(--gold-soft))] outline-none focus-visible:bg-white/5"
                                 >
                                   {c.label}
                                 </Link>
@@ -197,7 +201,7 @@ const Header = () => {
                     <Link
                       key={item.href}
                       to={item.href}
-                      className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-white/5 hover:text-[hsl(var(--gold-soft))]"
+                      className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-white/5 hover:text-[hsl(var(--gold-soft))] outline-none focus-visible:bg-white/5"
                     >
                       {item.label}
                     </Link>

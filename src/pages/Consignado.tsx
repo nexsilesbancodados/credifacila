@@ -1,4 +1,5 @@
-import { Banknote, BadgeCheck, CalendarClock, Coins, FileCheck2, Headset, Lock, ShieldCheck, Wallet, Zap, RefreshCcw, Landmark, Users, UserCheck } from "lucide-react";
+import { memo } from "react";
+import { Banknote, BadgeCheck, Coins, FileCheck2, ShieldCheck, Wallet, Zap, RefreshCcw, Landmark, Users, UserCheck } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import SEOHead from "@/components/SEOHead";
@@ -28,29 +29,29 @@ const Consignado = () => (
       className="-mt-[72px] pt-[72px] md:-mt-[84px] md:pt-[84px]"
     />
 
-    <section id="vantagens" className="container-x -mt-16 relative z-10">
+    <section id="vantagens" className="container-x -mt-16 relative z-10" aria-label="Principais vantagens">
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {[
           { I: BadgeCheck, t: "Taxas a partir de 1,15% a.m.", d: "O crédito mais barato do mercado." },
           { I: Zap, t: "Liberação em até 24h", d: "Dinheiro na conta com rapidez." },
-          { I: Lock, t: "100% Seguro & Digital", d: "Biometria facial e criptografia." },
-          { I: UserCheck, t: "Mesmo para Negativados", d: "Sem consulta ao SPC ou Serasa." },
+          { I: UserCheck, t: "100% Seguro & Digital", d: "Biometria facial e criptografia." },
+          { I: ShieldCheck, t: "Mesmo para Negativados", d: "Sem consulta ao SPC ou Serasa." },
         ].map((item, i) => (
           <Reveal key={i} delay={i * 0.1}>
             <div className="card-soft flex flex-col items-center text-center p-8 bg-white/95 backdrop-blur-xl border-white/20 shadow-2xl">
-              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-[hsl(var(--royal))] to-[hsl(var(--sky))] text-white mb-4">
+              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-[hsl(var(--royal))] to-[hsl(var(--sky))] text-white mb-4" aria-hidden="true">
                 <item.I className="h-7 w-7" />
               </div>
-              <p className="text-sm font-black text-navy-deep">{item.t}</p>
-              <p className="mt-2 text-xs text-muted-foreground">{item.d}</p>
+              <p className="text-sm font-black text-navy-deep uppercase tracking-widest">{item.t}</p>
+              <p className="mt-2 text-xs text-slate-500 font-bold">{item.d}</p>
             </div>
           </Reveal>
         ))}
       </div>
     </section>
 
-    <section className="container-x py-24">
-      <SectionTitle light eyebrow="Público Alvo" title="Para quem é o Consignado Credifácil?" />
+    <section className="container-x py-24" aria-labelledby="public-title">
+      <SectionTitle light eyebrow="Público Alvo" title="Para quem é o Consignado Credifácil?" id="public-title" />
       <div className="mt-12">
         <FeatureGrid
           cols={4}
@@ -64,8 +65,8 @@ const Consignado = () => (
       </div>
     </section>
 
-    <section className="container-x py-24 bg-white/[0.02] rounded-[3rem]">
-      <SectionTitle light eyebrow="Simplicidade" title="Como funciona o seu crédito" />
+    <section className="container-x py-24 bg-white/[0.02] rounded-[3rem]" aria-labelledby="workflow-title">
+      <SectionTitle light eyebrow="Simplicidade" title="Como funciona o seu crédito" id="workflow-title" />
       <div className="mt-12">
         <StepTimeline
           steps={[
@@ -78,10 +79,10 @@ const Consignado = () => (
       </div>
     </section>
 
-    <SectionBanner image={bannerEscritorioClaro} alt="Equipe de atendimento especializado" />
+    <SectionBanner image={bannerEscritorioClaro} alt="Equipe de atendimento especializado Credifácil" />
 
-    <section className="container-x py-24">
-      <SectionTitle light eyebrow="Maximize seu Crédito" title="Soluções Inteligentes de Dívida" />
+    <section className="container-x py-24" aria-labelledby="solutions-title">
+      <SectionTitle light eyebrow="Maximize seu Crédito" title="Soluções Inteligentes de Dívida" id="solutions-title" />
       <div className="mt-12">
         <FeatureGrid
           cols={3}
@@ -97,11 +98,11 @@ const Consignado = () => (
       </div>
     </section>
 
-    <section className="container-x py-24">
+    <section className="container-x py-24" aria-labelledby="faq-section-title">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <div>
-          <SectionTitle light align="left" eyebrow="FAQ" title="Dúvidas comuns sobre o Consignado" />
-          <p className="mt-6 text-white/60">Entender o crédito consignado é o primeiro passo para uma vida financeira saudável. Confira as perguntas que nossos clientes mais fazem.</p>
+          <SectionTitle light align="left" eyebrow="FAQ" title="Dúvidas comuns sobre o Consignado" id="faq-section-title" />
+          <p className="mt-6 text-white/60 font-medium leading-relaxed">Entender o crédito consignado é o primeiro passo para uma vida financeira saudável. Confira as perguntas que nossos clientes mais fazem.</p>
         </div>
         <FAQAccordion
           dark
@@ -123,4 +124,4 @@ const Consignado = () => (
   </Layout>
 );
 
-export default Consignado;
+export default memo(Consignado);
