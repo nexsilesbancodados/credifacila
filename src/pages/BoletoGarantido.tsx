@@ -39,11 +39,11 @@ const BoletoGarantido = () => (
             <div className="mt-8 grid grid-cols-2 gap-4">
               <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
                 <p className="text-2xl font-black text-white">-72%</p>
-                <p className="text-xs text-white/40 uppercase tracking-widest">Inadimplência Real</p>
+                <p className="text-xs text-white/60 uppercase tracking-widest">Inadimplência Real</p>
               </div>
               <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
                 <p className="text-2xl font-black text-white">100%</p>
-                <p className="text-xs text-white/40 uppercase tracking-widest">Garantia de Caixa</p>
+                <p className="text-xs text-white/60 uppercase tracking-widest">Garantia de Caixa</p>
               </div>
             </div>
           </div>
