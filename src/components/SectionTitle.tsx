@@ -8,10 +8,12 @@ type Props = {
   align?: "left" | "center";
   light?: boolean;
   className?: string;
+  id?: string;
 };
 
-const SectionTitle = ({ eyebrow, title, subtitle, align = "center", light, className }: Props) => (
+const SectionTitle = ({ eyebrow, title, subtitle, align = "center", light, className, id }: Props) => (
   <div
+    id={id}
     className={cn(
       "max-w-4xl",
       align === "center" ? "mx-auto text-center" : "text-left",
@@ -33,7 +35,7 @@ const SectionTitle = ({ eyebrow, title, subtitle, align = "center", light, class
        <p className={cn(
          "mt-6 text-lg md:text-xl leading-relaxed max-w-2xl",
          align === "center" && "mx-auto",
-         light ? "text-white/70" : "text-slate-600 font-medium"
+         light ? "text-white/60 font-medium" : "text-slate-600 font-medium"
        )}>
          {subtitle}
        </p>
