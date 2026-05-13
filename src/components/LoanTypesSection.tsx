@@ -55,7 +55,7 @@ const Card = ({ loan }: { loan: Loan }) => {
   const Icon = loan.icon;
   return (
     <article className="group relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-[hsl(var(--gold))/0.45] hover:shadow-[0_30px_80px_-30px_hsl(var(--gold)/0.4)]">
-      <div className="relative aspect-[16/9] overflow-hidden">
+      <div className="relative aspect-[16/10] overflow-hidden">
         <img
           src={loan.img}
           alt={loan.title}
@@ -63,21 +63,21 @@ const Card = ({ loan }: { loan: Loan }) => {
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
-        <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-[hsl(var(--gold))/0.35] bg-background/60 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-soft))] backdrop-blur-md">
-          <Icon className="h-3.5 w-3.5" />
+        <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full border border-[hsl(var(--gold))/0.35] bg-background/60 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.15em] text-[hsl(var(--gold-soft))] backdrop-blur-md">
+          <Icon className="h-3 w-3" />
           {loan.tag}
         </span>
       </div>
-      <div className="relative p-6 md:p-7">
-        <h3 className="font-display text-xl font-bold text-foreground md:text-2xl">
+      <div className="relative p-4 md:p-5">
+        <h3 className="font-display text-base font-bold text-foreground md:text-lg">
           {loan.title}
         </h3>
-        <p className="mt-3 text-sm leading-relaxed text-foreground/65">
+        <p className="mt-2 text-xs leading-relaxed text-foreground/65 md:text-[13px]">
           {loan.desc}
         </p>
         <a
           href="/contato"
-          className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-soft))] transition hover:text-[hsl(var(--gold))]"
+          className="mt-3 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold-soft))] transition hover:text-[hsl(var(--gold))]"
         >
           Simular agora
           <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
@@ -105,22 +105,22 @@ const LoanTypesSection = () => {
         </div>
 
         {/* Cards: 2 / 1 / 2 layout */}
-        <div className="mt-16 space-y-6 md:space-y-8">
+        <div className="mx-auto mt-14 max-w-5xl space-y-5 md:space-y-6">
           {/* Top row — 2 cards */}
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
             <Card loan={loans[0]} />
             <Card loan={loans[1]} />
           </div>
 
           {/* Middle row — 1 centered card */}
           <div className="grid grid-cols-1 md:grid-cols-12">
-            <div className="md:col-span-8 md:col-start-3">
+            <div className="md:col-span-6 md:col-start-4">
               <Card loan={loans[2]} />
             </div>
           </div>
 
           {/* Bottom row — 2 cards */}
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
             <Card loan={loans[3]} />
             <Card loan={loans[4]} />
           </div>
