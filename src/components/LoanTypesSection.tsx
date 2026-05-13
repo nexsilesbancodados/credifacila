@@ -146,10 +146,10 @@ const LoanTypesSection = () => {
             <Card loan={loans[1]} variant="banner" />
           </div>
 
-          {/* Middle row — 1 centered card */}
+          {/* Middle row — 1 centered banner card */}
           <div className="grid grid-cols-1 md:grid-cols-12">
             <div className="md:col-span-6 md:col-start-4">
-              <Card loan={loans[2]} />
+              <Card loan={loans[2]} variant="banner" />
             </div>
           </div>
 
