@@ -79,7 +79,7 @@ const Index = () => (
 
       {/* Benefit strip */}
       <div className="container-x relative pb-16">
-        <div className="rounded-3xl border border-white/15 bg-white/95 p-6 shadow-[var(--shadow-elev)] backdrop-blur-xl">
+        <div className="rounded-3xl border border-white/15 bg-white/95 p-6 text-slate-900 shadow-[var(--shadow-elev)] backdrop-blur-xl">
           <div className="grid gap-6 md:grid-cols-4">
             {[
               { I: Zap, t: "Aprovação rápida", s: "Resposta em minutos" },

@@ -32,8 +32,8 @@ const Contato = () => {
 
       <section className="container-x py-16">
         <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
-          <div className="rounded-3xl border border-border bg-white p-8 shadow-[var(--shadow-card)]">
-            <h2 className="text-2xl font-extrabold">Solicitar crédito ou tirar dúvidas</h2>
+          <div className="rounded-3xl border border-border bg-white p-8 text-slate-900 shadow-[var(--shadow-card)]">
+            <h2 className="text-2xl font-extrabold text-slate-900">Solicitar crédito ou tirar dúvidas</h2>
             <p className="mt-2 text-sm text-muted-foreground">Preencha o formulário e em breve um especialista entrará em contato.</p>
 
             {sent ? (

@@ -11,7 +11,7 @@ const FAQAccordion = ({ items }: { items: FAQ[] }) => {
       {items.map((it, i) => {
         const isOpen = open === i;
         return (
-          <div key={i} className="overflow-hidden rounded-2xl border border-border bg-white">
+          <div key={i} className="overflow-hidden rounded-2xl border border-border bg-white text-slate-900">
             <button
               onClick={() => setOpen(isOpen ? null : i)}
               className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
