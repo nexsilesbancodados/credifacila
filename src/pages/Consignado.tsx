@@ -1,4 +1,4 @@
-import { Banknote, BadgeCheck, CalendarClock, Coins, FileCheck2, Headset, Lock, ShieldCheck, Wallet, Zap } from "lucide-react";
+import { Banknote, BadgeCheck, CalendarClock, Coins, FileCheck2, Headset, Lock, ShieldCheck, Wallet, Zap, RefreshCcw, Landmark } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import SEOHead from "@/components/SEOHead";
@@ -60,14 +60,14 @@ const Consignado = () => (
     </section>
 
     <section className="container-x py-20">
-      <SectionTitle light eyebrow="Como funciona" title="Quatro passos para contratar" />
+      <SectionTitle light eyebrow="Processo Transparente" title="Sua jornada para o crédito justo" />
       <div className="mt-12">
         <StepTimeline
           steps={[
-            { title: "Simule", text: "Faça sua simulação online em poucos minutos." },
-            { title: "Envie seus dados", text: "Cadastro 100% digital e seguro." },
-            { title: "Aguarde a análise", text: "Avaliação rápida com nossos especialistas." },
-            { title: "Receba o crédito", text: "Liberação direto na sua conta." },
+            { title: "Cálculo de Margem", text: "Verificamos quanto você pode comprometer mensalmente sem apertar seu orçamento." },
+            { title: "Formalização Digital", text: "Você assina o contrato pelo celular, com biometria facial — seguro e sem papel." },
+            { title: "Averbação", text: "O órgão pagador reserva o valor da parcela, garantindo as taxas mais baixas do mercado." },
+            { title: "Depósito Imediato", text: "O valor entra na sua conta via TED ou Pix em poucas horas após a averbação." },
           ]}
         />
       </div>
@@ -76,17 +76,17 @@ const Consignado = () => (
     <SectionBanner image={bannerEscritorioClaro} alt="Consultora Credifácil em ambiente corporativo" />
 
     <section className="container-x py-20">
-      <SectionTitle light eyebrow="Vantagens" title="Por que escolher o consignado Credifácil" />
+      <SectionTitle light eyebrow="Diferenciais" title="Soluções além do básico" />
       <div className="mt-12">
         <FeatureGrid
           cols={3}
           items={[
-            { icon: Coins, title: "Taxas reduzidas", text: "Condições mais competitivas do mercado." },
-            { icon: CalendarClock, title: "Parcelas fixas", text: "Sem surpresa: você sabe quanto pagar." },
-            { icon: Zap, title: "Processo digital", text: "Tudo online, sem filas ou burocracia." },
-            { icon: Lock, title: "Contratação segura", text: "Tecnologia e proteção bancária." },
-            { icon: BadgeCheck, title: "Liberação rápida", text: "Crédito disponível em até 24h úteis." },
-            { icon: Headset, title: "Atendimento humano", text: "Especialistas reais ao seu lado." },
+            { icon: RefreshCcw, title: "Portabilidade de Crédito", text: "Traga sua dívida de outro banco e reduza o valor das parcelas mensais." },
+            { icon: Landmark, title: "Refinanciamento", text: "Libere dinheiro extra mantendo o mesmo valor de parcela que você já paga." },
+            { icon: Coins, title: "Margem Livre", text: "Uso imediato da margem disponível para novos empréstimos com as melhores taxas." },
+            { icon: ShieldCheck, title: "Crédito para Negativados", text: "Como o desconto é em folha, não consultamos SPC ou Serasa." },
+            { icon: BadgeCheck, title: "Averbação em 24h", text: "Agilidade máxima na comunicação com o INSS e órgãos públicos." },
+            { icon: Wallet, title: "Parcelas que cabem", text: "O desconto nunca ultrapassa o limite legal, garantindo sua saúde financeira." },
           ]}
         />
       </div>

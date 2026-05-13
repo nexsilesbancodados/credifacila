@@ -1,4 +1,4 @@
-import { BarChart3, Building2, FileSearch, HandCoins, LineChart, Receipt, ShieldCheck, Smartphone, TrendingUp, Wallet } from "lucide-react";
+import { BarChart3, Building2, FileSearch, HandCoins, LineChart, Receipt, ShieldCheck, Smartphone, TrendingUp, Wallet, Fingerprint, Search } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import SEOHead from "@/components/SEOHead";
@@ -66,17 +66,17 @@ const Securitizadora = () => (
     </section>
 
     <section className="container-x py-20">
-      <SectionTitle light eyebrow="Benefícios" title="Vantagens para empresas" />
+      <SectionTitle light eyebrow="Gestão Estratégica" title="Muito mais que apenas crédito" />
       <div className="mt-12">
         <FeatureGrid
           cols={3}
           items={[
-            { icon: HandCoins, title: "Mais capital de giro", text: "Recursos disponíveis para suas operações." },
-            { icon: LineChart, title: "Previsibilidade financeira", text: "Planeje com mais segurança." },
-            { icon: ShieldCheck, title: "Redução da inadimplência", text: "Receba com mais tranquilidade." },
-            { icon: BarChart3, title: "Gestão moderna", text: "Tecnologia e dados a favor do seu negócio." },
-            { icon: Building2, title: "Mais controle financeiro", text: "Visão clara de todo o fluxo." },
-            { icon: TrendingUp, title: "Crescimento com segurança", text: "Estrutura sólida para expandir." },
+            { icon: Search, title: "Análise de Sacado", text: "Verificamos a saúde financeira dos seus clientes para reduzir riscos de crédito." },
+            { icon: Fingerprint, title: "Prevenção de Fraudes", text: "Tecnologia de ponta para validar notas fiscais e contratos antes da operação." },
+            { icon: LineChart, title: "Alavancagem Saudável", text: "Utilize seus próprios ativos para financiar o crescimento sem recorrer a dívidas bancárias." },
+            { icon: ShieldCheck, title: "Isenção de IOF", text: "As operações de fomento mercantil possuem vantagens tributárias específicas para sua empresa." },
+            { icon: HandCoins, title: "Liquidez sob Demanda", text: "Transforme faturamento a prazo em dinheiro na conta em poucos minutos." },
+            { icon: BarChart3, title: "Dashboard de Gestão", text: "Visão em tempo real de todos os títulos, vencimentos e histórico de crédito." },
           ]}
         />
       </div>
@@ -85,14 +85,14 @@ const Securitizadora = () => (
     <SectionBanner image={bannerEquipe} alt="Equipe Credifácil em ambiente premium" />
 
     <section className="container-x py-20">
-      <SectionTitle light eyebrow="Como funciona" title="Quatro passos simples" />
+      <SectionTitle light eyebrow="Rito de Passagem" title="Como sua empresa entra no jogo" />
       <div className="mt-12">
         <StepTimeline
           steps={[
-            { title: "Cadastro", text: "Sua empresa se cadastra em poucos minutos." },
-            { title: "Análise dos recebíveis", text: "Avaliação técnica e consultiva." },
-            { title: "Proposta personalizada", text: "Oferta sob medida para seu negócio." },
-            { title: "Liberação", text: "Capital disponível para uso imediato." },
+            { title: "Abertura de Limite", text: "Analisamos o potencial de faturamento da sua empresa para definir seu limite operacional." },
+            { title: "Borderô Eletrônico", text: "Você envia os XMLs das notas fiscais ou duplicatas direto pelo nosso sistema." },
+            { title: "Checagem de Lastro", text: "Validamos as informações com os sacados para garantir a segurança da operação." },
+            { title: "Recompra Automática", text: "Sistema inteligente para gestão de títulos com problemas ou devoluções de mercadoria." },
           ]}
         />
       </div>

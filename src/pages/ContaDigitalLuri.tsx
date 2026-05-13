@@ -1,4 +1,4 @@
-import { BarChart3, CreditCard, Headset, QrCode, Receipt, ShieldCheck, Smartphone, Sparkles, TrendingUp, Wallet, Zap } from "lucide-react";
+import { BarChart3, CreditCard, Headset, QrCode, Receipt, ShieldCheck, Smartphone, Sparkles, TrendingUp, Wallet, Zap, Fingerprint, Banknote } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import SEOHead from "@/components/SEOHead";
@@ -27,17 +27,17 @@ const ContaDigitalLuri = () => (
     />
 
     <section id="recursos" className="container-x py-20">
-      <SectionTitle light eyebrow="Recursos" title="Tudo que você precisa em um só lugar" />
+      <SectionTitle light eyebrow="Ecossistema Luri" title="O banco que entende seu ritmo" />
       <div className="mt-12">
         <FeatureGrid
           cols={3}
           items={[
-            { icon: QrCode, title: "Pix", text: "Envie e receba em segundos, 24/7." },
-            { icon: Receipt, title: "Pagamentos", text: "Boletos e contas pelo app, sem filas." },
-            { icon: BarChart3, title: "Extrato", text: "Histórico completo e organizado." },
-            { icon: Wallet, title: "Gestão financeira", text: "Acompanhe entradas e saídas." },
-            { icon: ShieldCheck, title: "Segurança", text: "Tecnologia bancária ponta a ponta." },
-            { icon: CreditCard, title: "Cartão virtual", text: "Compre online com mais proteção." },
+            { icon: QrCode, title: "Pix de Crédito", text: "Use seu limite de crédito para fazer Pix e pagar depois, com taxas reduzidas." },
+            { icon: Receipt, title: "Gestão de Cobrança", text: "Emita boletos e links de pagamento direto pelo app com conciliação automática." },
+            { icon: Fingerprint, title: "Biometria Nativa", text: "Segurança de nível bancário com reconhecimento facial para todas as transações." },
+            { icon: Banknote, title: "Crédito Pré-Aprovado", text: "Conforme você movimenta sua conta, liberamos limites automáticos para você." },
+            { icon: ShieldCheck, title: "Cartão Empresarial", text: "Gestão de despesas e equipe com cartões virtuais dinâmicos para sua empresa." },
+            { icon: CreditCard, title: "Tap to Pay", text: "Transforme seu celular em uma maquininha para receber pagamentos por aproximação." },
           ]}
         />
       </div>
