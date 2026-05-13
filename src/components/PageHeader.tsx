@@ -22,7 +22,7 @@ const PageHeader = ({ eyebrow, title, subtitle, primaryCta, secondaryCta, right,
           src={bgImage}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover brightness-[0.35]"
         />
       </>
     ) : (
@@ -36,7 +36,7 @@ const PageHeader = ({ eyebrow, title, subtitle, primaryCta, secondaryCta, right,
       <div className="text-white">
         {eyebrow && <span className="pill-light">{eyebrow}</span>}
         <h1 className="mt-5 text-4xl font-extrabold leading-[1.05] md:text-5xl lg:text-6xl">{title}</h1>
-        {subtitle && <p className="mt-5 max-w-xl text-base text-white/80 md:text-lg">{subtitle}</p>}
+        {subtitle && <p className="mt-5 max-w-xl text-base text-white/95 md:text-lg">{subtitle}</p>}
         {(primaryCta || secondaryCta) && (
           <div className="mt-8 flex flex-wrap gap-3">
             {primaryCta && (
