@@ -12,7 +12,7 @@ const FeatureGrid = ({ items, cols = 3 }: { items: Feature[]; cols?: 2 | 3 | 4 }
             <f.icon className="h-6 w-6" />
           </div>
           <h3 className="mt-4 text-base font-extrabold">{f.title}</h3>
-          {f.text && <p className="mt-2 text-sm text-muted-foreground">{f.text}</p>}
+          {f.text && <p className="mt-2 text-sm text-white/70">{f.text}</p>}
         </div>
       ))}
     </div>
