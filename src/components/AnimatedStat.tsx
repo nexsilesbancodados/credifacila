@@ -5,7 +5,7 @@ type Stat = { value: string; label: string };
 
 function useCountUp(target: string, duration = 2000) {
   const [display, setDisplay] = useState("0");
-  const ref = useRef<HTMLSpanElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   useEffect(() => {
@@ -42,14 +42,16 @@ const AnimatedStat = ({ value, label }: Stat) => {
       transition={{ duration: 0.6 }}
       className="rounded-2xl border border-white/15 bg-white/5 p-3 backdrop-blur-md"
     >
-      <p className="text-2xl font-extrabold text-white" ref={ref}>
-        {display}
-      </p>
+      <div ref={ref}>
+        <p className="text-2xl font-extrabold text-white">
+          {display}
+        </p>
+      </div>
       <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/80">
         {label}
       </p>
     </motion.div>
   );
-};
+}
 
 export default AnimatedStat;
