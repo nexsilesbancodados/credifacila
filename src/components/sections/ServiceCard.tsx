@@ -44,8 +44,8 @@ const ServiceCard = ({ icon: Icon, title, text, href, accent = "royal", image }:
           <Icon className="h-7 w-7" />
         </div>
       )}
-      <h3 className={`${image ? "" : "mt-5"} text-xl font-extrabold`}>{title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
+       <h3 className={`${image ? "" : "mt-5"} text-xl font-extrabold`}>{title}</h3>
+       <p className="mt-3 text-[15px] leading-relaxed text-white/90">{text}</p>
       <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-[hsl(var(--royal))] transition-all group-hover:gap-3">
         Saiba mais <ArrowRight className="h-4 w-4" />
       </span>
