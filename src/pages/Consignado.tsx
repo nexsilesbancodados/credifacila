@@ -1,7 +1,6 @@
 import { ArrowRight, ShieldCheck, Percent, Clock, UserCheck, Briefcase, HeartHandshake, Headphones, MessagesSquare, Sparkles } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ContactBannerSection from "@/components/ContactBannerSection";
 import Reveal from "@/components/Reveal";
 import heroImg from "@/assets/consignado-hero.png";
 import whoCanImg from "@/assets/consignado/who-can.jpg";
@@ -268,7 +267,6 @@ const Consignado = () => {
         </div>
       </section>
 
-      <ContactBannerSection />
       <Footer />
     </main>
   );
