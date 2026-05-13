@@ -1,4 +1,4 @@
-import { BarChart3, CreditCard, Headset, QrCode, Receipt, ShieldCheck, Smartphone, Sparkles, TrendingUp, Wallet, Zap, Fingerprint, Banknote } from "lucide-react";
+import { BarChart3, CreditCard, Headset, QrCode, Receipt, ShieldCheck, Smartphone, Sparkles, TrendingUp, Wallet, Zap, Fingerprint, Banknote, ShieldAlert, Cpu, Globe } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import SEOHead from "@/components/SEOHead";
@@ -9,79 +9,123 @@ import PhoneMockup from "@/components/mockups/PhoneMockup";
 import imgLuri from "@/assets/img-luri.jpg";
 import SectionBanner from "@/components/SectionBanner";
 import bannerLuriApp from "@/assets/banner-luri-app.png";
+import Reveal from "@/components/Reveal";
 
 const ContaDigitalLuri = () => (
-  <Layout tone="sky">
+  <Layout tone="midnight">
     <SEOHead
-      title="Conta Digital Luri | Credifácil"
-      description="Conta digital prática para pessoas e empresas: Pix, cartão, pagamentos e gestão financeira em um só lugar."
+      title="Conta Digital Luri | Experiência Bancária Premium"
+      description="A conta digital que integra crédito, gestão e tecnologia. Pix, Cartões e Ecossistema Financeiro Completo para você e sua empresa."
     />
     <PageHeader
-      eyebrow="Conta Digital Luri"
-      title={<>Conta Digital Luri: <span className="text-gold-gradient">gestão simples e moderna</span></>}
-      subtitle="Controle seu dinheiro, pagamentos e movimentações em uma conta digital prática para pessoas e empresas."
-      primaryCta={{ label: "Abrir minha conta", href: "/contato" }}
-      secondaryCta={{ label: "Conhecer recursos", href: "#recursos" }}
+      eyebrow="Fintech & Digital Banking"
+      title={<>Conta Luri: O <span className="text-gold-gradient">hub financeiro</span> do seu negócio</>}
+      subtitle="Muito além de uma conta digital. Uma plataforma integrada de crédito e pagamentos desenhada para alta performance financeira."
+      primaryCta={{ label: "Abrir Conta Business", href: "/contato" }}
+      secondaryCta={{ label: "Explorar Tecnologia", href: "#tecnologia" }}
       bgImage={imgLuri}
       className="-mt-[72px] pt-[72px] md:-mt-[84px] md:pt-[84px]"
     />
 
-    <section id="recursos" className="container-x py-20">
-      <SectionTitle light eyebrow="Ecossistema Luri" title="O banco que entende seu ritmo" />
-      <div className="mt-12">
-        <FeatureGrid
-          cols={3}
-          items={[
-            { icon: QrCode, title: "Pix de Crédito", text: "Use seu limite de crédito para fazer Pix e pagar depois, com taxas reduzidas." },
-            { icon: Receipt, title: "Gestão de Cobrança", text: "Emita boletos e links de pagamento direto pelo app com conciliação automática." },
-            { icon: Fingerprint, title: "Biometria Nativa", text: "Segurança de nível bancário com reconhecimento facial para todas as transações." },
-            { icon: Banknote, title: "Crédito Pré-Aprovado", text: "Conforme você movimenta sua conta, liberamos limites automáticos para você." },
-            { icon: ShieldCheck, title: "Cartão Empresarial", text: "Gestão de despesas e equipe com cartões virtuais dinâmicos para sua empresa." },
-            { icon: CreditCard, title: "Tap to Pay", text: "Transforme seu celular em uma maquininha para receber pagamentos por aproximação." },
-          ]}
-        />
-      </div>
-    </section>
-
-    <section className="container-x py-20">
-      <SectionTitle light eyebrow="Benefícios" title="Por que escolher a Conta Luri" />
-      <div className="mt-12">
-        <FeatureGrid
-          cols={3}
-          items={[
-            { icon: TrendingUp, title: "Mais controle", text: "Visão clara das finanças." },
-            { icon: Zap, title: "Menos burocracia", text: "Cadastro 100% digital e rápido." },
-            { icon: Smartphone, title: "Tudo pelo celular", text: "Aplicativo prático e intuitivo." },
-            { icon: Headset, title: "Atendimento humano", text: "Especialistas reais quando precisar." },
-            { icon: Sparkles, title: "Praticidade no dia a dia", text: "Resolva tudo em poucos toques." },
-            { icon: BarChart3, title: "Organização financeira", text: "Mais clareza para crescer." },
-          ]}
-        />
-      </div>
-    </section>
-
-    <SectionBanner image={bannerLuriApp} alt="Cliente usando soluções digitais da Credifácil no celular" />
-
-    {/* Big phone showcase */}
-    <section className="container-x py-20">
-      <div className="relative overflow-hidden rounded-3xl bg-mesh-blue p-10 md:p-16">
-        <div className="relative grid items-center gap-12 md:grid-cols-2">
-          <div className="text-white">
-            <span className="pill-light">Sua conta na palma da mão</span>
-            <h3 className="mt-5 text-3xl font-extrabold leading-tight md:text-4xl">Banco completo, simples e seguro</h3>
-            <p className="mt-5 text-base text-white/80">Pague, receba, transfira e organize tudo em um só app — feito para acompanhar a sua rotina.</p>
-            <ul className="mt-6 space-y-3 text-sm text-white/85">
-              {["Pix instantâneo 24h", "Cartão virtual ilimitado", "Pagamentos sem filas", "Suporte humano de verdade"].map((t) => (
-                <li key={t} className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-[hsl(var(--gold-soft))]" /> {t}</li>
-              ))}
-            </ul>
+    <section id="tecnologia" className="container-x py-24">
+      <div className="grid gap-16 lg:grid-cols-2 items-center">
+        <Reveal>
+          <div>
+            <span className="pill-gold"><Cpu className="h-3 w-3" /> Core Banking Moderno</span>
+            <h2 className="mt-6 text-3xl font-extrabold leading-tight text-white md:text-5xl">Tecnologia que antecipa necessidades</h2>
+            <p className="mt-6 text-lg text-white/80 leading-relaxed">
+              A Luri nasceu dentro da Credifácil para ser a ponte entre o crédito estruturado e o dia a dia transacional. Nossa infraestrutura garante segurança e velocidade em cada centavo movimentado.
+            </p>
+            
+            <div className="mt-10 grid gap-6 sm:grid-cols-2">
+              <div className="flex gap-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/5 text-[hsl(var(--gold-soft))]">
+                  <ShieldCheck className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white">Segurança de Dados</h4>
+                  <p className="text-sm text-white/50">Criptografia de ponta a ponta e LGPD compliance.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/5 text-[hsl(var(--gold-soft))]">
+                  <Globe className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white">Open Finance</h4>
+                  <p className="text-sm text-white/50">Integrado ao ecossistema financeiro nacional.</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="flex justify-center"><PhoneMockup /></div>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <div className="relative">
+            <div className="absolute inset-0 bg-[hsl(var(--royal))/0.2] blur-[100px] rounded-full" />
+            <div className="relative flex justify-center">
+              <PhoneMockup />
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+
+    <section className="bg-white/[0.02] py-24">
+      <div className="container-x">
+        <SectionTitle light eyebrow="Recursos Exclusivos" title="Diferenciais da Experiência Luri" />
+        <div className="mt-12">
+          <FeatureGrid
+            cols={3}
+            items={[
+              { icon: QrCode, title: "Pix de Crédito", text: "Use seu limite de crédito da securitizadora para fazer Pix instantâneos sem comprometer o caixa." },
+              { icon: Receipt, title: "Gestão de Recebíveis", text: "Visualização integrada de faturas antecipadas e a vencer diretamente no seu extrato." },
+              { icon: Fingerprint, title: "Segurança Biométrica", text: "Reconhecimento facial avançado para aprovação de borderôs e transações de alto valor." },
+              { icon: Banknote, title: "Cash Concentration", text: "Ferramentas para centralização de caixa de múltiplas filiais ou unidades de negócio." },
+              { icon: CreditCard, title: "Multi-Cartões", text: "Emissão de cartões virtuais dinâmicos com limites específicos para cada colaborador ou projeto." },
+              { icon: Smartphone, title: "Tap to Pay Business", text: "Receba pagamentos por aproximação direto no app Luri, sem necessidade de maquininha física." },
+            ]}
+          />
         </div>
       </div>
     </section>
 
-    <CTASection title="Abra sua conta digital com a Credifácil" cta="Abrir minha conta" />
+    <SectionBanner image={bannerLuriApp} alt="Experiência Digital" />
+
+    <section className="container-x py-24">
+      <div className="rounded-[3rem] bg-gradient-to-br from-[hsl(var(--midnight))] to-[hsl(var(--navy-deep))] border border-white/10 p-12 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-[hsl(var(--royal))/0.05] blur-3xl rounded-full translate-x-1/2" />
+        <div className="relative z-10 grid gap-12 lg:grid-cols-2 items-center">
+          <div>
+            <h3 className="text-3xl font-black text-white md:text-5xl">Sua empresa, seu banco, seu ritmo.</h3>
+            <p className="mt-6 text-lg text-white/70">
+              Elimine a barreira entre o faturamento e o uso do dinheiro. Com a Luri, o crédito antecipado está disponível no mesmo instante para pagamentos de folha e fornecedores.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <button className="btn-gold">Abrir Conta Agora</button>
+              <button className="btn-outline-white">Falar com Consultor</button>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-6">
+            <div className="card-soft p-6">
+              <ShieldAlert className="h-8 w-8 text-[hsl(var(--gold-soft))]" />
+              <h4 className="mt-4 font-bold text-white">Zero Mensalidade</h4>
+              <p className="mt-2 text-xs text-white/50">Conta business sem taxas de manutenção abusivas.</p>
+            </div>
+            <div className="card-soft p-6">
+              <TrendingUp className="h-8 w-8 text-[hsl(var(--gold-soft))]" />
+              <h4 className="mt-4 font-bold text-white">CDI 100%</h4>
+              <p className="mt-2 text-xs text-white/50">Seu saldo parado rende todos os dias úteis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTASection 
+      title="Abra sua conta Luri e mude o patamar da sua gestão." 
+      subtitle="Processo de abertura 100% digital em menos de 10 minutos."
+      cta="Começar Agora" 
+    />
   </Layout>
 );
 
