@@ -71,8 +71,8 @@ const Index = () => (
               { l: "1,15%", s: "a partir" },
             ].map((x) => (
               <div key={x.l} className="rounded-2xl border border-white/15 bg-white/5 p-3 backdrop-blur-md">
-                <p className="text-xl font-extrabold">{x.l}</p>
-                <p className="text-[11px] uppercase tracking-wider text-white/90">{x.s}</p>
+                 <p className="text-2xl font-extrabold">{x.l}</p>
+                 <p className="text-xs uppercase tracking-widest font-bold text-white/80">{x.s}</p>
               </div>
             ))}
           </div>
