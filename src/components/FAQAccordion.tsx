@@ -21,7 +21,7 @@ const FAQAccordion = ({ items }: { items: FAQ[] }) => {
             </button>
             <div className={cn("grid transition-all duration-300", isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0")}>
               <div className="overflow-hidden">
-                <p className="px-5 pb-5 text-sm leading-relaxed text-muted-foreground">{it.a}</p>
+                <p className="px-5 pb-5 text-sm leading-relaxed text-slate-700 font-medium">{it.a}</p>
               </div>
             </div>
           </div>
