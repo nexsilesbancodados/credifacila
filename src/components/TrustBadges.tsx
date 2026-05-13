@@ -11,7 +11,7 @@ const items = [
 const TrustBadges = () => (
   <section className="container-x py-12">
     <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-md">
-      <p className="mb-5 text-center text-[11px] font-bold uppercase tracking-[0.22em] text-white/60">
+      <p className="mb-5 text-center text-[11px] font-bold uppercase tracking-[0.22em] text-white/85">
         Segurança & confiança
       </p>
       <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
@@ -25,7 +25,7 @@ const TrustBadges = () => (
             </div>
             <div className="min-w-0">
               <p className="truncate text-xs font-extrabold text-white">{t}</p>
-              <p className="truncate text-[10px] uppercase tracking-wider text-white/60">{s}</p>
+              <p className="truncate text-[10px] uppercase tracking-wider text-white/85">{s}</p>
             </div>
           </li>
         ))}
