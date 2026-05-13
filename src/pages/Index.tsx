@@ -111,6 +111,7 @@ const Index = () => (
     <section className="container-x py-20">
       <Reveal>
       <SectionTitle
+        light
         eyebrow="Nossas soluções"
         title={<>Soluções completas para você <span className="text-royal-gradient">e seu negócio</span></>}
         subtitle="Crédito, gestão e investimentos em um único lugar — com tecnologia, segurança e atendimento humano."
@@ -160,6 +161,7 @@ const Index = () => (
     {/* COMO FUNCIONA */}
     <section className="container-x py-20">
       <Reveal><SectionTitle
+        light
         eyebrow="Como funciona"
         title="Simples, rápido e 100% digital"
         subtitle="Em poucos passos você sai da simulação para o crédito liberado em conta."
@@ -180,6 +182,7 @@ const Index = () => (
     <section className="relative overflow-hidden py-20">
       <div className="container-x">
         <Reveal><SectionTitle
+          light
           eyebrow="Por que Credifácil?"
           title={<>Confiança, agilidade e <span className="text-royal-gradient">resultado real</span></>}
         /></Reveal>
@@ -202,6 +205,7 @@ const Index = () => (
     {/* BLOG */}
     <section className="container-x py-20">
       <Reveal><SectionTitle
+        light
         eyebrow="Conteúdos"
         title="Aprenda mais sobre dinheiro, crédito e investimentos"
         subtitle="Conteúdos práticos para você decidir com mais segurança."
