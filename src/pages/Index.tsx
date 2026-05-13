@@ -23,7 +23,6 @@ import imgInvestimentos from "@/assets/img-investimentos.jpg";
 import imgSecuritizadora from "@/assets/img-securitizadora.jpg";
 import StepTimeline from "@/components/sections/StepTimeline";
 import ServiceCard from "@/components/sections/ServiceCard";
-import BlogCard from "@/components/sections/BlogCard";
 import { POSTS } from "@/data/posts";
 
 const Index = () => (
@@ -124,7 +123,7 @@ const Index = () => (
          <Reveal>
            <div className="relative">
              <div className="absolute -inset-4 bg-[hsl(var(--gold))/0.1] blur-3xl rounded-full" />
-             <HeroImage src={imgEquipe} alt="Wealth Advisory Team" withLogo />
+             <HeroImage src={imgEquipe} alt="Wealth Advisory Team" priority withLogo />
            </div>
          </Reveal>
          <Reveal delay={0.1}>
@@ -185,7 +184,7 @@ const Index = () => (
              dark
              items={[
                { q: "Qual o SLA para liberação de crédito?", a: "Para a maioria das operações, a liquidez é garantida em até 24h úteis após aprovação." },
-               { q: "Quais são os ratings de taxas?", a: "Nossas taxas são customizadas por perfil, iniciando em patamares institucionais competitivos." },
+               { q: "Quais são as ratings de taxas?", a: "Nossas taxas são customizadas por perfil, iniciando em patamares institucionais competitivos." },
                { q: "Como funciona a segurança dos dados?", a: "Seguimos padrões bancários de criptografia e conformidade total com a LGPD." },
              ]}
            />
