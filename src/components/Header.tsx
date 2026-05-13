@@ -32,7 +32,7 @@ const Header = () => {
     >
       <div className="container-x flex h-[64px] items-center justify-between md:h-[84px]">
         <Link to="/" className="flex items-center gap-2 outline-offset-4" aria-label="Credifácil — Página Inicial">
-          <Logo className="h-9 md:h-12" aria-hidden={true} />
+          <Logo className="h-8 md:h-10" aria-hidden={true} />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Menu Principal">
