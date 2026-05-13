@@ -81,20 +81,6 @@ const Index = () => (
       </div>
     </section>
 
-    <section className="bg-white/[0.02] border-y border-white/5" aria-label="Auditoria e Segurança">
-      <div className="container-x py-12">
-        <Reveal>
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div className="lg:max-w-xs text-center lg:text-left">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6">Auditada por</p>
-              <PartnerLogos />
-            </div>
-            <TrustBadges />
-          </div>
-        </Reveal>
-      </div>
-    </section>
-
      <section className="container-x py-24" aria-labelledby="solutions-title">
        <Reveal>
          <SectionTitle
