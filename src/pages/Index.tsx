@@ -21,7 +21,6 @@ import imgBoleto from "@/assets/img-boleto.jpg";
 import imgLuri from "@/assets/img-luri.jpg";
 import imgInvestimentos from "@/assets/img-investimentos.jpg";
 import imgSecuritizadora from "@/assets/img-securitizadora.jpg";
-import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepTimeline from "@/components/sections/StepTimeline";
 import ServiceCard from "@/components/sections/ServiceCard";
 import BlogCard from "@/components/sections/BlogCard";
