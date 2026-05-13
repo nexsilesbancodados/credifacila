@@ -91,7 +91,7 @@ const Auth = () => {
             Google
           </button>
 
-          <div className="my-8 flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.2em] text-white/20">
+            <div className="my-8 flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.2em] text-white/40">
             <div className="h-px flex-1 bg-white/10" aria-hidden="true" />
             ou e-mail
             <div className="h-px flex-1 bg-white/10" aria-hidden="true" />
@@ -134,7 +134,7 @@ const Auth = () => {
             </button>
           </form>
 
-          <p className="mt-8 text-center text-[10px] font-bold uppercase tracking-widest text-white/30 leading-relaxed">
+          <p className="mt-8 text-center text-[10px] font-bold uppercase tracking-widest text-white/50 leading-relaxed">
             Ao continuar você concorda com nossos <br/> termos de uso. <Link to="/" className="text-white hover:text-[hsl(var(--gold-soft))] underline ml-1">Voltar ao site</Link>
           </p>
         </div>
