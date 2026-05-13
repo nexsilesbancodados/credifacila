@@ -76,7 +76,7 @@ const Blog = () => {
                 "rounded-full border px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all",
                 cat === c
                   ? "border-[hsl(var(--gold))] bg-[hsl(var(--gold))] text-[hsl(var(--navy-deep))]"
-                  : "border-white/20 bg-white/5 text-white/80 backdrop-blur-md hover:border-[hsl(var(--gold))/0.6] hover:text-white"
+                  : "border-white/20 bg-white/5 text-white/95 backdrop-blur-md hover:border-[hsl(var(--gold))/0.6] hover:text-white"
               )}
             >
               {c}
@@ -87,7 +87,7 @@ const Blog = () => {
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {filtered.map((p, i) => <BlogCard key={p.slug} post={p} idx={i} />)}
           {filtered.length === 0 && (
-            <p className="col-span-full rounded-2xl border border-white/15 bg-white/5 p-8 text-center text-white/70">
+            <p className="col-span-full rounded-2xl border border-white/15 bg-white/5 p-8 text-center text-white/90">
               Nenhum conteúdo encontrado para sua busca.
             </p>
           )}
