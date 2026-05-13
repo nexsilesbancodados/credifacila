@@ -63,7 +63,7 @@ const Duvidas = () => (
         <aside className="space-y-8">
           <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-10">
             <h3 className="text-xl font-black text-white uppercase tracking-tighter">Canais Diretos</h3>
-            <p className="mt-4 text-sm text-white/50 leading-relaxed">Prefere falar com um humano? Nosso tempo de resposta médio é de 2 minutos.</p>
+            <p className="mt-4 text-sm text-white/80 leading-relaxed">Prefere falar com um humano? Nosso tempo de resposta médio é de 2 minutos.</p>
             
             <div className="mt-10 space-y-8">
               <a href="/contato" className="flex items-center gap-5 group outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--gold-soft))] rounded-xl p-1 -m-1">
@@ -72,7 +72,7 @@ const Duvidas = () => (
                 </div>
                 <div>
                   <p className="text-sm font-black text-white uppercase tracking-widest">Chat ao vivo</p>
-                  <p className="text-xs text-white/30 font-bold uppercase tracking-widest mt-1">Disponível agora</p>
+                  <p className="text-xs text-white/50 font-bold uppercase tracking-widest mt-1">Disponível agora</p>
                 </div>
               </a>
               <a href="tel:0800" className="flex items-center gap-5 group outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--gold-soft))] rounded-xl p-1 -m-1">
@@ -81,7 +81,7 @@ const Duvidas = () => (
                 </div>
                 <div>
                   <p className="text-sm font-black text-white uppercase tracking-widest">0800 Central</p>
-                  <p className="text-xs text-white/30 font-bold uppercase tracking-widest mt-1">Ligação gratuita</p>
+                  <p className="text-xs text-white/50 font-bold uppercase tracking-widest mt-1">Ligação gratuita</p>
                 </div>
               </a>
               <div className="flex items-center gap-5">
@@ -90,7 +90,7 @@ const Duvidas = () => (
                 </div>
                 <div>
                   <p className="text-sm font-black text-white uppercase tracking-widest">Ouvidoria</p>
-                  <p className="text-xs text-white/30 font-bold uppercase tracking-widest mt-1">Segunda instância</p>
+                  <p className="text-xs text-white/50 font-bold uppercase tracking-widest mt-1">Segunda instância</p>
                 </div>
               </div>
             </div>
