@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === "development" && componentTagger(),
-    // Pré-compressão (gera .gz e .br no dist/) — Easypanel/Nginx serve direto
+    // Pré-compressão (gera .gz e .br no dist/)
     mode !== "development" &&
       compression({
         algorithm: "gzip",
@@ -33,10 +33,22 @@ export default defineConfig(({ mode }) => ({
     dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime"],
   },
   build: {
-    target: "es2020",
+    target: "esnext",
     cssCodeSplit: true,
     sourcemap: false,
-    chunkSizeWarningLimit: 800,
-    assetsInlineLimit: 6 * 1024, // SVGs até 6KB ficam inline (reduz requests)
+    chunkSizeWarningLimit: 600,
+    assetsInlineLimit: 4096, 
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-ui': ['framer-motion', 'lucide-react', 'clsx', 'tailwind-merge'],
+          'vendor-utils': ['@supabase/supabase-js', 'date-fns'],
+        },
+      },
+    },
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom', 'framer-motion', 'lucide-react'],
   },
 }));
