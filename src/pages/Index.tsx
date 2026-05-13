@@ -1,254 +1,253 @@
-import { lazy, Suspense, memo } from "react";
-import { ArrowRight, Banknote, Receipt, ShieldCheck, Smartphone, TrendingUp, Briefcase, ShieldAlert, Landmark } from "lucide-react";
-import { Link } from "react-router-dom";
-import Layout from "@/components/Layout";
-import SEOHead from "@/components/SEOHead";
-import SectionTitle from "@/components/SectionTitle";
-import CTASection from "@/components/CTASection";
-import HeroImage from "@/components/HeroImage";
-import Reveal from "@/components/Reveal";
-import AnimatedStat from "@/components/AnimatedStat";
-import heroHome from "@/assets/img-hero-home.jpg";
-import imgEquipe from "@/assets/img-equipe.jpg";
-import imgConsignado from "@/assets/img-consignado.jpg";
-import imgAntecipacao from "@/assets/img-antecipacao.jpg";
-import imgBoleto from "@/assets/img-boleto.jpg";
-import imgLuri from "@/assets/img-luri.jpg";
-import imgInvestimentos from "@/assets/img-investimentos.jpg";
-import imgSecuritizadora from "@/assets/img-securitizadora.jpg";
-import StepTimeline from "@/components/sections/StepTimeline";
-import ServiceCard from "@/components/sections/ServiceCard";
-
-const Testimonials = lazy(() => import("@/components/Testimonials"));
-const Newsletter = lazy(() => import("@/components/Newsletter"));
-const FAQAccordion = lazy(() => import("@/components/FAQAccordion"));
-const SocialProofToast = lazy(() => import("@/components/SocialProofToast"));
-
-const Index = () => (
-  <Layout tone="midnight">
-    <SEOHead
-      title="Credifácil | Inteligência Financeira & Crédito Estruturado"
-      description="Soluções de crédito consignado, securitização e investimentos para alta performance financeira. Tecnologia e solidez bancária de referência nacional."
-      jsonLd={{
-        "@context": "https://schema.org",
-        "@type": "FinancialService",
-        "name": "Credifácil Network",
-        "description": "Plataforma de inteligência financeira e crédito estruturado.",
-        "url": typeof window !== "undefined" ? window.location.origin : "",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Brasil"
-        },
-        "serviceType": ["Crédito Consignado", "Securitização", "Wealth Management"]
-      }}
-    />
-    
-    <section className="relative -mt-[72px] overflow-hidden pt-[72px] md:-mt-[84px] md:pt-[84px]" aria-label="Introdução e Destaques">
-      <img
-        src={heroHome}
-        alt=""
-        aria-hidden="true"
-        loading="eager"
-        fetchPriority="high"
-        className="absolute inset-0 h-full w-full object-cover brightness-[0.25]"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[hsl(var(--midnight))/0.4] to-[hsl(var(--midnight))]" aria-hidden="true" />
-      
-      <div className="container-x relative py-20 md:py-32">
-        <div className="max-w-4xl text-white">
-          <Reveal>
-            <span className="pill-gold"><ShieldAlert className="h-3 w-3" aria-hidden="true" /> Solidez Institucional & Tecnologia</span>
-            <h1 className="mt-8 text-5xl font-bold leading-[0.95] tracking-tight md:text-7xl lg:text-8xl">
-              Inteligência <br/> <span className="text-gold-gradient">Financeira</span>
-            </h1>
-            <p className="mt-8 max-w-2xl text-lg text-white/70 md:text-xl leading-relaxed font-medium">
-              Elevamos o padrão do crédito no Brasil com estruturas personalizadas de fomento comercial e gestão de ativos para indivíduos e empresas de alta performance.
-            </p>
-            <nav className="mt-10 flex flex-wrap gap-4" aria-label="Ações principais">
-              <Link to="/contato" className="btn-gold px-8 py-4 text-lg">Acessar Soluções <ArrowRight className="h-5 w-5 ml-2" aria-hidden="true" /></Link>
-              <Link to="/sobre" className="btn-outline-white px-8 py-4 text-lg">Nossa Governança</Link>
-            </nav>
-            <div className="mt-16 grid grid-cols-2 gap-8 md:grid-cols-4 border-t border-white/5 pt-10" aria-label="Estatísticas de mercado">
-              <AnimatedStat value="1.2B" label="Liberados" prefix="R$" />
-              <AnimatedStat value="65K" label="Clientes" />
-              <AnimatedStat value="98%" label="Satisfação" />
-              <AnimatedStat value="A+" label="Rating" />
-            </div>
-          </Reveal>
-        </div>
-      </div>
-    </section>
-
-     <section className="container-x py-24" aria-labelledby="solutions-title">
-       <Reveal>
-         <SectionTitle
-           light
-           eyebrow="Portfolio"
-           title={<>Ecossistema de <span className="text-gold-gradient">Alta Performance</span></>}
-           subtitle="Integramos crédito, fomento e tecnologia em uma plataforma única para potencializar seus resultados financeiros."
-           id="solutions-title"
-         />
-       </Reveal>
-       <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-         {[
-           <ServiceCard key="c" icon={Banknote} title="Consignado Premium" text="Taxas institucionais para servidores e beneficiários INSS com liberação recorde." href="/consignado" image={imgConsignado} />,
-           <ServiceCard key="a" icon={Receipt} title="Asset-Based Lending" text="Antecipação estratégica de ativos para otimização do fluxo de caixa corporativo." href="/securitizadora/antecipacao-de-recebiveis" image={imgAntecipacao} />,
-           <ServiceCard key="b" icon={ShieldCheck} title="Boleto Garantido" text="Estrutura de garantia de crédito para blindagem contra inadimplência B2B." href="/securitizadora/boleto-garantido" accent="gold" image={imgBoleto} />,
-           <ServiceCard key="l" icon={Smartphone} title="Luri Digital Banking" text="O hub financeiro definitivo para gestão transacional e pix de crédito." href="/securitizadora/conta-digital-luri" image={imgLuri} />,
-           <ServiceCard key="i" icon={TrendingUp} title="Wealth Management" text="Investimentos em ativos reais e crédito privado com gestão técnica especializada." href="/invista-conosco" accent="gold" image={imgInvestimentos} />,
-           <ServiceCard key="s" icon={Briefcase} title="Securitizadora" text="Soluções de mercado de capitais para empresas em expansão estruturada." href="/securitizadora" image={imgSecuritizadora} />,
-         ].map((card, i) => (
-           <Reveal key={i} delay={i * 0.05}>{card}</Reveal>
-         ))}
-       </div>
-     </section>
-  
-      <section className="container-x py-24 border-y border-white/5 bg-white/[0.01]" aria-labelledby="governance-title">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
-          <Reveal>
-            <div className="relative">
-              <div className="absolute -inset-10 bg-primary/10 blur-[100px] rounded-full" aria-hidden="true" />
-              <HeroImage src={imgEquipe} alt="Time de consultores Wealth Advisory Credifácil" priority withLogo />
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div>
-              <span className="pill-gold"><Landmark className="h-3 w-3" aria-hidden="true" /> Governança & Solidez</span>
-              <h2 id="governance-title" className="mt-6 text-4xl font-bold leading-tight text-white md:text-5xl tracking-tight">
-                Mais que crédito: <br/> <span className="text-gold-gradient">Parceria Estratégica</span>
-              </h2>
-              <p className="mt-8 text-lg text-white/50 font-medium leading-relaxed">
-                Nossa equipe multidisciplinar — formada por analistas de risco, economistas e consultores certificados — atua na ponta para garantir que cada solução seja um degrau para o seu crescimento.
-              </p>
-              <div className="mt-10 grid gap-8 sm:grid-cols-3" aria-label="Nossos números institucionais">
-                <div>
-                  <p className="text-4xl font-bold text-white">12+</p>
-                   <p className="text-[10px] uppercase tracking-widest font-bold text-white/30 mt-1">Anos de Mercado</p>
-                </div>
-                <div>
-                  <p className="text-4xl font-bold text-white">100%</p>
-                   <p className="text-[10px] uppercase tracking-widest font-bold text-white/30 mt-1">Processo Digital</p>
-                </div>
-                <div>
-                  <p className="text-4xl font-bold text-white">A+</p>
-                   <p className="text-[10px] uppercase tracking-widest font-bold text-white/30 mt-1">Rating Compliance</p>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-    <section className="bg-white/[0.01] py-24" aria-labelledby="workflow-section-title">
-      <div className="container-x">
-        <Reveal>
-          <SectionTitle
-            light
-            eyebrow="Workflow"
-            title="Do onboarding à liquidez"
-            subtitle="Um processo fluido, seguro e totalmente transparente — sem letras miúdas."
-            id="workflow-section-title"
-          />
-        </Reveal>
-        <Reveal delay={0.1}><div className="mt-16">
-          <StepTimeline
-            steps={[
-              { title: "Diagnóstico", text: "Entendemos seu cenário e necessidades em uma conversa técnica e direta." },
-              { title: "Análise Digital", text: "Nosso motor de risco avalia a operação com base em dados em tempo real." },
-              { title: "Estruturação", text: "Apresentamos a proposta com as melhores taxas e prazos do mercado." },
-              { title: "Liquidez", text: "Assinatura digital e capital disponível em conta em até 24 horas úteis." },
-            ]}
-          />
-        </div></Reveal>
-      </div>
-    </section>
-
-    <section className="container-x py-24" aria-labelledby="trust-title">
-      <Reveal>
-        <div className="card-modern p-12 lg:p-16 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[120px] -rotate-12 translate-x-1/2" />
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div className="max-w-xl">
-              <span className="pill-gold">Segurança & Confiança</span>
-              <h2 id="trust-title" className="mt-6 text-3xl font-bold text-white md:text-5xl tracking-tight">
-                Seus dados protegidos por <span className="text-gold-gradient">padrão bancário</span>
-              </h2>
-              <p className="mt-6 text-white/50 font-medium text-lg leading-relaxed">
-                Utilizamos tecnologia de ponta para garantir a blindagem das suas operações e a total conformidade com os órgãos reguladores.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4 w-full lg:w-auto">
-              {[
-                { label: "Criptografia SSL", detail: "256 bits", icon: ShieldCheck },
-                { label: "Compliance LGPD", detail: "100% Adequado", icon: ShieldAlert },
-                { label: "Regulado BACEN", detail: "Correspondente", icon: Landmark },
-                { label: "Auditoria Externa", detail: "Transparência", icon: TrendingUp },
-              ].map((item, i) => (
-                <div key={i} className="bg-white/5 rounded-2xl p-6 border border-white/5 hover:border-white/10 transition-colors">
-                  <item.icon className="h-8 w-8 text-primary mb-4" />
-                  <h4 className="text-white font-bold text-sm uppercase tracking-wider">{item.label}</h4>
-                  <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest mt-1">{item.detail}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </Reveal>
-    </section>
-    <section className="container-x py-24" aria-label="Ajuda e Novidades">
-       <div className="grid gap-20 lg:grid-cols-2">
-         <Reveal>
-           <div role="region" aria-label="Perguntas Frequentes rápidas">
-             <Suspense fallback={<div className="h-40 animate-pulse bg-white/5 rounded-3xl" aria-hidden="true" />}>
-               <FAQAccordion
-                 dark
-                 items={[
-                   { q: "Qual o SLA para liberação de crédito?", a: "Para a maioria das operações, a liquidez é garantida em até 24h úteis após aprovação." },
-                   { q: "Quais são os ratings de taxas?", a: "Nossas taxas são customizadas por perfil, iniciando em patamares institucionais competitivos." },
-                   { q: "Como funciona a segurança dos dados?", a: "Seguimos padrões bancários de criptografia e conformidade total com a LGPD." },
-                 ]}
-               />
-             </Suspense>
+       {/* Process Section */}
+       <section className="py-24 md:py-40">
+         <div className="container-x">
+           <div className="text-center mb-20">
+             <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+               Sua jornada <span className="text-gold-gradient">simplificada</span>
+             </h2>
+             <p className="text-lg text-white/50 max-w-2xl mx-auto">
+               Quatro passos para transformar sua realidade financeira com o suporte de nossos especialistas.
+             </p>
            </div>
-         </Reveal>
-         <Reveal delay={0.1}>
-            <section className="rounded-[3rem] bg-gradient-to-br from-[hsl(var(--gold-soft))] to-[hsl(var(--gold))] p-12 text-navy-deep shadow-2xl" aria-labelledby="newsletter-title">
-              <h3 id="newsletter-title" className="text-3xl font-black leading-tight">Mantenha-se <br/>Atualizado</h3>
-              <p className="mt-4 font-bold opacity-70">Receba análises de mercado e insights financeiros exclusivos do nosso comitê técnico.</p>
-              <Suspense fallback={<div className="h-10 mt-6 animate-pulse bg-white/10 rounded-full" aria-hidden="true" />}>
-                <Newsletter />
-              </Suspense>
-            </section>
-         </Reveal>
-       </div>
-    </section>
-
-    <section className="container-x py-24 border-t border-white/5" aria-labelledby="credentials-title">
-       <Reveal>
-         <SectionTitle
-          light
-          eyebrow="Credentials"
-          title={<>Referência no <span className="text-gold-gradient">Mercado Financeiro</span></>}
-          id="credentials-title"
-        />
-      </Reveal>
-      <div className="mt-16">
-         <Suspense fallback={<div className="h-64 animate-pulse bg-white/5 rounded-3xl" aria-hidden="true" />}>
-           <Testimonials />
-         </Suspense>
-      </div>
-    </section>
-
-    <CTASection
-      title="Pronto para elevar seu padrão financeiro?"
-      subtitle="Converse agora com um de nossos Relationship Managers."
-      cta="Acessar Consultoria"
-    />
-    
-    <Suspense fallback={null}>
-      <SocialProofToast />
-    </Suspense>
-  </Layout>
-);
-
-export default memo(Index);
+           
+           <div className="grid md:grid-cols-4 gap-8">
+             {[
+               { step: "01", title: "Abertura Digital", desc: "Processo 100% online em menos de 5 minutos." },
+               { step: "02", title: "Análise Técnica", desc: "Nossa IA avalia as melhores oportunidades para seu perfil." },
+               { step: "03", title: "Personalização", desc: "Ajustamos prazos e taxas de acordo com seu objetivo." },
+               { step: "04", title: "Liquidez", desc: "Capital disponível para uso imediato ou investimento." },
+             ].map((item, i) => (
+               <div key={i} className="relative p-8 border-l border-white/10 hover:border-gold transition-colors">
+                 <span className="text-5xl font-bold text-gold/10 absolute top-4 right-4">{item.step}</span>
+                 <h3 className="text-xl font-bold mb-4 relative z-10">{item.title}</h3>
+                 <p className="text-white/40 text-sm leading-relaxed relative z-10">{item.desc}</p>
+               </div>
+             ))}
+           </div>
+         </div>
+       </section>
+ 
+ import { ArrowRight, ShieldCheck, Zap, Globe, TrendingUp, Users, Landmark } from "lucide-react";
+ import Navbar from "@/components/Navbar";
+ 
+ const Index = () => {
+   return (
+     <div className="min-h-screen bg-black text-white font-sans selection:bg-gold selection:text-black">
+       <Navbar />
+       
+       {/* Hero Section */}
+       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl">
+           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-gold/10 blur-[120px] rounded-full animate-pulse" />
+           <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-gold/5 blur-[100px] rounded-full" />
+         </div>
+         
+         <div className="container-x relative z-10">
+           <div className="max-w-4xl">
+             <div className="inline-flex items-center gap-2 rounded-full border border-gold/20 bg-gold/5 px-4 py-2 mb-8 animate-fade-in">
+               <span className="h-2 w-2 rounded-full bg-gold animate-ping" />
+               <span className="text-[10px] font-bold uppercase tracking-widest text-gold">Inteligência Financeira</span>
+             </div>
+             
+             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] mb-8 animate-fade-in">
+               O banco do <span className="text-gold-gradient">amanhã</span>, hoje.
+             </h1>
+             
+             <p className="text-lg md:text-2xl text-white/60 max-w-2xl mb-12 leading-relaxed animate-fade-in [animation-delay:200ms]">
+               Soluções exclusivas em crédito, investimentos e gestão de ativos para quem busca excelência e solidez institucional.
+             </p>
+             
+             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in [animation-delay:400ms]">
+               <button className="btn-gold py-5 px-10 text-lg">
+                 Abra sua conta <ArrowRight className="ml-2 h-5 w-5" />
+               </button>
+               <button className="btn-outline-white py-5 px-10 text-lg">
+                 Nossas Soluções
+               </button>
+             </div>
+           </div>
+         </div>
+       </section>
+ 
+       {/* Logos/Trust Section */}
+       <section className="py-12 border-y border-white/5 bg-white/[0.01]">
+         <div className="container-x">
+           <p className="text-center text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold mb-8">Tecnologia e Segurança de Nível Global</p>
+           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-30 grayscale hover:grayscale-0 transition-all duration-500">
+             <div className="h-6 w-24 bg-white rounded-sm" /> {/* Placeholder logos */}
+             <div className="h-6 w-20 bg-white rounded-sm" />
+             <div className="h-6 w-28 bg-white rounded-sm" />
+             <div className="h-6 w-24 bg-white rounded-sm" />
+             <div className="h-6 w-20 bg-white rounded-sm" />
+           </div>
+         </div>
+       </section>
+ 
+       {/* Stats Section */}
+       <section className="py-20 bg-black">
+         <div className="container-x grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+           {[
+             { label: "Ativos sob Gestão", value: "R$ 2.4B+" },
+             { label: "Clientes Ativos", value: "85K+" },
+             { label: "Crescimento Anual", value: "140%" },
+             { label: "Rating de Segurança", value: "AAA" },
+           ].map((stat, i) => (
+             <div key={i} className="text-center md:text-left">
+               <p className="text-3xl md:text-5xl font-bold text-white mb-2">{stat.value}</p>
+               <p className="text-xs uppercase tracking-widest text-white/40 font-bold">{stat.label}</p>
+             </div>
+           ))}
+         </div>
+       </section>
+ 
+       {/* Solutions Section */}
+       <section id="solutions" className="py-24 md:py-40">
+         <div className="container-x">
+           <div className="mb-20">
+             <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+               Ecossistema de <span className="text-gold-gradient">Alta Performance</span>
+             </h2>
+             <p className="text-lg text-white/50 max-w-2xl">
+               Combinamos tecnologia de ponta com expertise financeira para oferecer o que há de mais avançado no mercado.
+             </p>
+           </div>
+ 
+           <div className="grid md:grid-cols-3 gap-8">
+             {[
+               { icon: ShieldCheck, title: "Segurança Bancária", desc: "Criptografia de nível militar e conformidade total com os órgãos reguladores." },
+               { icon: Zap, title: "Crédito Instantâneo", desc: "Análise em tempo real com liberação de limites estruturados para seu perfil." },
+               { icon: TrendingUp, title: "Investimentos", desc: "Acesso a produtos exclusivos e gestão profissional de patrimônio." },
+               { icon: Globe, title: "Global Banking", desc: "Operações internacionais e câmbio com as melhores taxas do mercado." },
+               { icon: Users, title: "Suporte VIP", desc: "Gerentes de relacionamento dedicados para acompanhar sua jornada." },
+               { icon: Landmark, title: "Private Banking", desc: "Soluções robustas para empresas e grandes corporações em expansão." },
+             ].map((item, i) => (
+               <div key={i} className="card-modern p-10 group">
+       {/* Institutional Section */}
+       <section id="about" className="py-24 md:py-40 bg-white/[0.01]">
+         <div className="container-x grid lg:grid-cols-2 gap-20 items-center">
+           <div className="relative">
+             <div className="aspect-square rounded-3xl overflow-hidden border border-white/10 relative group">
+               <div className="absolute inset-0 bg-gradient-to-tr from-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+               <div className="absolute inset-0 flex items-center justify-center">
+                 <Landmark className="h-32 w-32 text-gold/20" />
+               </div>
+             </div>
+             <div className="absolute -bottom-10 -right-10 hidden md:block w-64 p-8 card-modern border-gold/20">
+               <p className="text-4xl font-bold text-gold mb-2">12+</p>
+               <p className="text-xs uppercase tracking-widest text-white/40 font-bold">Anos de Solidez no Mercado Nacional</p>
+             </div>
+           </div>
+           
+           <div>
+             <div className="inline-flex items-center gap-2 rounded-full border border-gold/20 bg-gold/5 px-4 py-2 mb-8">
+               <span className="text-[10px] font-bold uppercase tracking-widest text-gold">Nossa Governança</span>
+             </div>
+             <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
+               Compromisso com a <span className="text-gold-gradient">Transparência</span>
+             </h2>
+             <p className="text-lg text-white/50 mb-10 leading-relaxed">
+               O Luri Bank nasceu da necessidade de um sistema financeiro mais justo, ágil e transparente. Hoje, somos referência em crédito estruturado e gestão de patrimônio, unindo a solidez de um banco tradicional com a agilidade de uma fintech de elite.
+             </p>
+             <div className="grid grid-cols-2 gap-8">
+               <div>
+                 <h4 className="text-white font-bold mb-2">Missão</h4>
+                 <p className="text-sm text-white/40">Empoderar indivíduos e empresas através de capital inteligente e estratégico.</p>
+               </div>
+               <div>
+                 <h4 className="text-white font-bold mb-2">Visão</h4>
+                 <p className="text-sm text-white/40">Ser o hub financeiro preferencial para operações de alta complexidade no Brasil.</p>
+               </div>
+             </div>
+           </div>
+         </div>
+       </section>
+ 
+                 <div className="h-14 w-14 rounded-2xl bg-gold/10 flex items-center justify-center mb-8 group-hover:bg-gold/20 transition-colors">
+                   <item.icon className="h-8 w-8 text-gold" />
+                 </div>
+                 <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
+                 <p className="text-white/50 leading-relaxed">{item.desc}</p>
+               </div>
+             ))}
+           </div>
+         </div>
+       </section>
+ 
+       {/* CTA Section */}
+       <section id="contact" className="py-24 md:py-40">
+         <div className="container-x">
+           <div className="relative rounded-[3rem] overflow-hidden bg-gradient-to-br from-white/10 to-transparent p-12 md:p-24 border border-white/10">
+             <div className="absolute top-0 right-0 w-1/2 h-full bg-gold/5 blur-[120px] -rotate-12 translate-x-1/2" />
+             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+               <div className="max-w-2xl text-center md:text-left">
+                 <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
+                   Pronto para o <span className="text-gold-gradient">próximo nível</span>?
+                 </h2>
+                 <p className="text-xl text-white/60 mb-0">
+                   Junte-se a milhares de clientes que já transformaram sua relação com o dinheiro.
+                 </p>
+               </div>
+               <div className="flex flex-col gap-4 w-full md:w-auto">
+                 <button className="btn-gold py-6 px-12 text-xl whitespace-nowrap">
+                   Começar agora
+                 </button>
+                 <p className="text-center text-sm text-white/30">Sem taxas de abertura ou manutenção.</p>
+               </div>
+             </div>
+           </div>
+         </div>
+       </section>
+ 
+       {/* Footer */}
+       <footer className="py-20 border-t border-white/5">
+         <div className="container-x">
+           <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
+             <div className="max-w-xs">
+               <div className="flex items-center gap-2 mb-6">
+                 <Landmark className="h-8 w-8 text-gold" />
+                 <span className="text-xl font-bold tracking-tighter text-white">LURI<span className="text-gold">BANK</span></span>
+               </div>
+               <p className="text-white/40 leading-relaxed">
+                 Redefinindo o sistema financeiro através de tecnologia, transparência e solidez institucional.
+               </p>
+             </div>
+             
+             <div className="grid grid-cols-2 md:grid-cols-3 gap-16">
+               <div>
+                 <h4 className="font-bold text-white mb-6 uppercase tracking-widest text-xs">Produto</h4>
+                 <ul className="space-y-4 text-white/40 text-sm">
+                   <li><a href="#" className="hover:text-gold transition-colors">Conta Digital</a></li>
+                   <li><a href="#" className="hover:text-gold transition-colors">Cartões Premium</a></li>
+                   <li><a href="#" className="hover:text-gold transition-colors">Crédito</a></li>
+                 </ul>
+               </div>
+               <div>
+                 <h4 className="font-bold text-white mb-6 uppercase tracking-widest text-xs">Institucional</h4>
+                 <ul className="space-y-4 text-white/40 text-sm">
+                   <li><a href="#" className="hover:text-gold transition-colors">Sobre Nós</a></li>
+                   <li><a href="#" className="hover:text-gold transition-colors">Segurança</a></li>
+                   <li><a href="#" className="hover:text-gold transition-colors">Carreiras</a></li>
+                 </ul>
+               </div>
+               <div className="col-span-2 md:col-span-1">
+                 <h4 className="font-bold text-white mb-6 uppercase tracking-widest text-xs">Legal</h4>
+                 <ul className="space-y-4 text-white/40 text-sm">
+                   <li><a href="#" className="hover:text-gold transition-colors">Privacidade</a></li>
+                   <li><a href="#" className="hover:text-gold transition-colors">Termos de Uso</a></li>
+                   <li><a href="#" className="hover:text-gold transition-colors">Ouvidoria</a></li>
+                 </ul>
+               </div>
+             </div>
+           </div>
+           
+           <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-white/20 text-xs">
+             <p>© 2026 Luri Bank S.A. Todos os direitos reservados.</p>
+             <p>CNPJ: 00.000.000/0000-00 | Av. Paulista, 1000 - São Paulo, SP</p>
+           </div>
+         </div>
+       </footer>
+     </div>
+   );
+ };
+ 
+ export default Index;
