@@ -57,7 +57,7 @@ const Sobre = () => (
             <p className="mt-6 text-lg text-white/80 leading-relaxed">
               A Credifácil não nasceu para ser apenas mais uma financeira. Nascemos para ser o porto seguro de quem precisa de capital para crescer, investir ou reorganizar sua vida financeira. 
             </p>
-            <p className="mt-4 text-white/60">
+            <p className="mt-4 text-white/80">
               Nossa operação é pautada por três pilares inegociáveis: tecnologia de ponta, taxas competitivas e, acima de tudo, respeito pelo ser humano por trás de cada contrato.
             </p>
             <div className="mt-10 space-y-4">
@@ -78,7 +78,7 @@ const Sobre = () => (
                   <I className="h-7 w-7" />
                 </div>
                 <h3 className="mt-6 text-xl font-bold text-white">{t}</h3>
-                <p className="mt-3 text-sm text-white/60 leading-relaxed">{s}</p>
+                <p className="mt-3 text-sm text-white/80 leading-relaxed font-medium">{s}</p>
               </div>
             ))}
           </div>
@@ -103,7 +103,7 @@ const Sobre = () => (
                   <I className="h-6 w-6" />
                 </div>
                 <p className="text-4xl font-black text-white tracking-tighter">{num}</p>
-                <p className="mt-2 text-xs uppercase tracking-widest text-white/40 font-bold">{l}</p>
+                <p className="mt-2 text-xs uppercase tracking-widest text-white/60 font-bold">{l}</p>
               </div>
             </Reveal>
           ))}
@@ -130,7 +130,7 @@ const Sobre = () => (
                 <div className="card-soft ml-12 p-8 md:ml-0 md:w-[45%] bg-white/5">
                   <span className="text-4xl font-black text-[hsl(var(--gold-soft))] opacity-50">{t.year}</span>
                   <h3 className="mt-2 text-xl font-bold text-white">{t.title}</h3>
-                  <p className="mt-3 text-sm text-white/60 leading-relaxed">{t.text}</p>
+                  <p className="mt-3 text-sm text-white/80 leading-relaxed font-medium">{t.text}</p>
                 </div>
                 <div className="hidden md:block md:w-[45%]" />
               </div>
