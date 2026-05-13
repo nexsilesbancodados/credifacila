@@ -229,60 +229,6 @@ const InvistaConosco = () => {
                 backgroundPosition: `center ${50 + scrollY * 0.04}%`,
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#050a18]/95 via-[#050a18]/30 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050a18]/60 via-transparent to-transparent" />
-
-              {/* animated gold arc overlay */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1600 900" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="arcGold" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stopColor="#b8893f" stopOpacity="0" />
-                    <stop offset="50%" stopColor="#f0d78c" stopOpacity="1" />
-                    <stop offset="100%" stopColor="#b8893f" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
-                <path d="M -100,500 Q 800,-200 1700,400" stroke="url(#arcGold)" strokeWidth="2" fill="none" className="invista-arc" />
-                <path d="M -100,700 Q 800,100 1700,650" stroke="url(#arcGold)" strokeWidth="1" fill="none" className="invista-arc" style={{ animationDelay: "1s" }} />
-              </svg>
-            </div>
-
-            {/* overlay text */}
-            <div className="absolute inset-0 flex items-center">
-              <div className="px-8 md:px-16 lg:px-20 max-w-2xl">
-                <Reveal delay={150}>
-                  <h1 className="mt-6 font-serif text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight">
-                    <span className="block text-white">Invista</span>
-                    <span className="block bg-gradient-to-br from-[#f0d78c] via-[#d4a84a] to-[#8b6f3a] bg-clip-text text-transparent italic">
-                      Conosco
-                    </span>
-                  </h1>
-                </Reveal>
-                <Reveal delay={300}>
-                  <div className="mt-6 h-px w-24 bg-gradient-to-r from-[#f0d78c] to-transparent" />
-                </Reveal>
-                <Reveal delay={400}>
-                  <p className="mt-6 text-base md:text-lg text-white/80 max-w-md leading-relaxed">
-                    Soluções inteligentes para fazer seu patrimônio crescer com segurança, estratégia e atendimento especializado.
-                  </p>
-                </Reveal>
-                <Reveal delay={550}>
-                  <div className="mt-8 flex flex-wrap gap-3">
-                    <a
-                      href="#contato"
-                      className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#b8893f] to-[#f0d78c] text-[#050a18] font-medium hover:shadow-[0_10px_40px_-10px_rgba(240,215,140,0.6)] transition-all"
-                    >
-                      Falar com assessor
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </a>
-                    <a
-                      href="#produtos"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#f0d78c]/30 text-[#f0d78c] hover:bg-[#f0d78c]/10 transition-all"
-                    >
-                      Conhecer produtos
-                    </a>
-                  </div>
-                </Reveal>
-              </div>
             </div>
           </div>
         </div>
