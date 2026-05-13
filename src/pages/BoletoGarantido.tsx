@@ -1,4 +1,4 @@
-import { Check, BarChart3, Building2, ShieldCheck, TrendingUp, Wallet, Zap, Headset, X } from "lucide-react";
+import { Check, BarChart3, Building2, ShieldCheck, TrendingUp, Wallet, Zap, Headset, X, BellRing, Scale } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import SEOHead from "@/components/SEOHead";
@@ -55,31 +55,31 @@ const BoletoGarantido = () => (
     </section>
 
     <section className="container-x py-20">
-      <SectionTitle light eyebrow="Benefícios" title="Por que usar Boleto Garantido" />
+      <SectionTitle light eyebrow="Segurança Total" title="Fim do risco de inadimplência" />
       <div className="mt-12">
         <FeatureGrid
           cols={3}
           items={[
-            { icon: TrendingUp, title: "Menos inadimplência", text: "Receba mesmo se o cliente atrasar." },
-            { icon: BarChart3, title: "Fluxo de caixa previsível", text: "Planeje com segurança." },
-            { icon: ShieldCheck, title: "Mais segurança nas vendas", text: "Reduza riscos comerciais." },
-            { icon: Building2, title: "Proteção para sua empresa", text: "Cobertura completa nas operações." },
-            { icon: Wallet, title: "Mais confiança nas negociações", text: "Venda com tranquilidade." },
-            { icon: Zap, title: "Processo simples", text: "Integração rápida e fácil." },
+            { icon: Scale, title: "Régua de Cobrança", text: "Nós cuidamos de todo o processo de cobrança amigável para você focar nas vendas." },
+            { icon: ShieldCheck, title: "Garantia de Recebimento", text: "Caso o seu cliente não pague, a Credifácil honra o compromisso no prazo acordado." },
+            { icon: BellRing, title: "Alertas Automáticos", text: "Notificações via WhatsApp e E-mail para seus clientes evitarem esquecimentos." },
+            { icon: TrendingUp, title: "Poder de Negociação", text: "Venda a prazo com a segurança de uma venda à vista, aumentando seu market share." },
+            { icon: Wallet, title: "Custo-Benefício", text: "Taxas menores que a antecipação comum, com a proteção adicional contra calotes." },
+            { icon: Building2, title: "Blindagem de Caixa", text: "Seu fluxo de caixa nunca para, independente do comportamento de pagamento do sacado." },
           ]}
         />
       </div>
     </section>
 
     <section className="container-x py-20">
-      <SectionTitle light eyebrow="Como funciona" title="Quatro passos simples" />
+      <SectionTitle light eyebrow="O Ciclo" title="Como a garantia protege você" />
       <div className="mt-12">
         <StepTimeline
           steps={[
-            { title: "Emissão", text: "Emita o boleto pela plataforma." },
-            { title: "Análise", text: "Avaliamos e validamos a operação." },
-            { title: "Garantia", text: "Recebimento garantido pela Credifácil." },
-            { title: "Recebimento", text: "Você recebe nos prazos previstos." },
+            { title: "Emissão Inteligente", text: "Você gera o boleto através da nossa API ou painel administrativo para seu cliente." },
+            { title: "Validação do Risco", text: "Nossos algoritmos analisam o histórico do pagador e aprovam a garantia do título." },
+            { title: "Monitoramento Ativo", text: "Acompanhamos o vencimento e enviamos lembretes proativos de pagamento." },
+            { title: "Liquidez Certa", text: "Na data do vencimento + D, o crédito cai na sua conta mesmo que o boleto não seja pago." },
           ]}
         />
       </div>
