@@ -39,6 +39,18 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, sans-serif;
+    background-color: hsl(var(--background));
+    background-image:
+      radial-gradient(ellipse 80% 60% at 15% 0%, hsl(222 92% 25% / 0.35), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 85% 30%, hsl(42 82% 45% / 0.12), transparent 60%),
+      radial-gradient(ellipse 90% 60% at 50% 100%, hsl(222 92% 30% / 0.25), transparent 60%),
+      linear-gradient(115deg, transparent 0%, transparent 49.7%, hsl(42 82% 55% / 0.18) 50%, transparent 50.3%),
+      linear-gradient(115deg, transparent 0%, transparent 39.8%, hsl(222 92% 60% / 0.15) 40%, transparent 40.2%),
+      linear-gradient(295deg, transparent 0%, transparent 69.8%, hsl(42 82% 55% / 0.12) 70%, transparent 70.2%),
+      linear-gradient(295deg, transparent 0%, transparent 24.8%, hsl(222 92% 60% / 0.12) 25%, transparent 25.2%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight;

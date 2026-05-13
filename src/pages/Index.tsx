@@ -35,7 +35,7 @@ const Index = () => {
     setIndex((i) => (i + dir + slides.length) % slides.length);
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen">
       <Navbar />
       <section className="relative w-full overflow-hidden">
         <div className="relative aspect-[16/9] sm:aspect-[21/9] lg:aspect-[21/8] w-full">
