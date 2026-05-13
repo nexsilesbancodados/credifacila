@@ -43,7 +43,7 @@ const Consignado = () => (
                 <item.I className="h-7 w-7" />
               </div>
               <p className="text-sm font-black text-navy-deep uppercase tracking-widest">{item.t}</p>
-              <p className="mt-2 text-xs text-slate-500 font-bold">{item.d}</p>
+              <p className="mt-2 text-xs text-slate-600 font-bold">{item.d}</p>
             </div>
           </Reveal>
         ))}
