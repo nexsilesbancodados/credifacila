@@ -51,7 +51,7 @@ const Index = () => {
             />
           ))}
 
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background via-background/80 to-transparent" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 md:h-32 bg-gradient-to-t from-background to-transparent" />
 
           <button
             onClick={() => go(-1)}
