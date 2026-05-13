@@ -90,9 +90,49 @@
                { icon: TrendingUp, title: "Investimentos", desc: "Acesso a produtos exclusivos e gestão profissional de patrimônio." },
                { icon: Globe, title: "Global Banking", desc: "Operações internacionais e câmbio com as melhores taxas do mercado." },
                { icon: Users, title: "Suporte VIP", desc: "Gerentes de relacionamento dedicados para acompanhar sua jornada." },
-               { icon: Landmark, title: "Institucional", desc: "Soluções robustas para empresas e grandes corporações em expansão." },
+               { icon: Landmark, title: "Private Banking", desc: "Soluções robustas para empresas e grandes corporações em expansão." },
              ].map((item, i) => (
                <div key={i} className="card-modern p-10 group">
+       {/* Institutional Section */}
+       <section id="about" className="py-24 md:py-40 bg-white/[0.01]">
+         <div className="container-x grid lg:grid-cols-2 gap-20 items-center">
+           <div className="relative">
+             <div className="aspect-square rounded-3xl overflow-hidden border border-white/10 relative group">
+               <div className="absolute inset-0 bg-gradient-to-tr from-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+               <div className="absolute inset-0 flex items-center justify-center">
+                 <Landmark className="h-32 w-32 text-gold/20" />
+               </div>
+             </div>
+             <div className="absolute -bottom-10 -right-10 hidden md:block w-64 p-8 card-modern border-gold/20">
+               <p className="text-4xl font-bold text-gold mb-2">12+</p>
+               <p className="text-xs uppercase tracking-widest text-white/40 font-bold">Anos de Solidez no Mercado Nacional</p>
+             </div>
+           </div>
+           
+           <div>
+             <div className="inline-flex items-center gap-2 rounded-full border border-gold/20 bg-gold/5 px-4 py-2 mb-8">
+               <span className="text-[10px] font-bold uppercase tracking-widest text-gold">Nossa Governança</span>
+             </div>
+             <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
+               Compromisso com a <span className="text-gold-gradient">Transparência</span>
+             </h2>
+             <p className="text-lg text-white/50 mb-10 leading-relaxed">
+               O Luri Bank nasceu da necessidade de um sistema financeiro mais justo, ágil e transparente. Hoje, somos referência em crédito estruturado e gestão de patrimônio, unindo a solidez de um banco tradicional com a agilidade de uma fintech de elite.
+             </p>
+             <div className="grid grid-cols-2 gap-8">
+               <div>
+                 <h4 className="text-white font-bold mb-2">Missão</h4>
+                 <p className="text-sm text-white/40">Empoderar indivíduos e empresas através de capital inteligente e estratégico.</p>
+               </div>
+               <div>
+                 <h4 className="text-white font-bold mb-2">Visão</h4>
+                 <p className="text-sm text-white/40">Ser o hub financeiro preferencial para operações de alta complexidade no Brasil.</p>
+               </div>
+             </div>
+           </div>
+         </div>
+       </section>
+ 
                  <div className="h-14 w-14 rounded-2xl bg-gold/10 flex items-center justify-center mb-8 group-hover:bg-gold/20 transition-colors">
                    <item.icon className="h-8 w-8 text-gold" />
                  </div>
