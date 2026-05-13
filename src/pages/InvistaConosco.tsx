@@ -16,11 +16,11 @@ const InvistaConosco = () => (
       description="Oportunidades exclusivas em crédito privado e ativos estruturados com governança institucional e rentabilidade superior."
     />
     <PageHeader
-      eyebrow="Asset Management & Investimentos"
-      title={<>Rentabilidade superior com <span className="text-gold-gradient">gestão técnica e rigorosa</span></>}
-      subtitle="Oportunidades exclusivas em crédito privado e ativos estruturados para investidores que buscam solidez e transparência bancária."
-      primaryCta={{ label: "Falar com um Wealth Manager", href: "/contato" }}
-      secondaryCta={{ label: "Conhecer Produtos", href: "#produtos" }}
+      eyebrow="Asset Management & Wealth"
+      title={<>Soluções em investimentos com <span className="text-gold-gradient">rigor institucional</span></>}
+      subtitle="Acesse oportunidades exclusivas em crédito privado e ativos reais estruturados com a transparência e solidez que o seu patrimônio exige."
+      primaryCta={{ label: "Consultar Wealth Manager", href: "/contato" }}
+      secondaryCta={{ label: "Ver Portfólio", href: "#produtos" }}
       bgImage={imgInvest}
       className="-mt-[72px] pt-[72px] md:-mt-[84px] md:pt-[84px]"
     />
@@ -51,23 +51,23 @@ const InvistaConosco = () => (
             highlight: "Alocação Estratégica"
           }
         ].map((p, i) => (
-          <div key={i} className="group flex flex-col rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition-all hover:border-[hsl(var(--gold-soft))/0.5] hover:bg-white/[0.06]">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[hsl(var(--gold-soft))] to-[hsl(var(--gold))] text-white shadow-xl">
+          <div key={i} className="group flex flex-col card-modern p-10 bg-white/[0.02]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary shadow-xl">
               <p.icon className="h-7 w-7" />
             </div>
-            <span className="mt-6 text-xs font-bold uppercase tracking-widest text-[hsl(var(--gold-soft))]">{p.highlight}</span>
-            <h3 className="mt-2 text-2xl font-bold text-white">{p.title}</h3>
-            <p className="mt-4 text-sm text-white">{p.desc}</p>
-            <ul className="mt-6 flex flex-col gap-3">
+            <span className="mt-8 text-[10px] font-bold uppercase tracking-widest text-primary/60">{p.highlight}</span>
+            <h3 className="mt-2 text-2xl font-bold text-white tracking-tight">{p.title}</h3>
+            <p className="mt-4 text-[15px] text-white/40 font-medium leading-relaxed">{p.desc}</p>
+            <ul className="mt-8 flex flex-col gap-4">
               {p.features.map((f, j) => (
-                <li key={j} className="flex items-center gap-2 text-sm text-white">
-                  <CheckCircle2 className="h-4 w-4 text-[hsl(var(--gold-soft))]" /> {f}
+                <li key={j} className="flex items-center gap-3 text-sm text-white/60 font-medium">
+                  <CheckCircle2 className="h-4 w-4 text-primary" /> {f}
                 </li>
               ))}
             </ul>
-            <div className="mt-auto pt-8">
-              <button className="inline-flex items-center gap-2 text-sm font-bold text-white transition-all hover:gap-3">
-                Ver lâmina do produto <ArrowUpRight className="h-4 w-4" />
+            <div className="mt-auto pt-10">
+              <button className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white transition-all hover:gap-4 hover:text-primary">
+                Ficha Técnica <ArrowUpRight className="h-4 w-4" />
               </button>
             </div>
           </div>
