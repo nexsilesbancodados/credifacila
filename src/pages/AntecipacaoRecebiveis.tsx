@@ -1,4 +1,4 @@
-import { BarChart3, Boxes, Building2, FileText, HandCoins, Headset, Receipt, ShieldCheck, Sparkles, Store, TrendingUp, Wallet, Zap } from "lucide-react";
+import { BarChart3, Boxes, Building2, FileText, HandCoins, Headset, Receipt, ShieldCheck, Sparkles, Store, TrendingUp, Wallet, Zap, FileCheck2, Calculator } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import SEOHead from "@/components/SEOHead";
@@ -26,14 +26,14 @@ const AntecipacaoRecebiveis = () => (
     />
 
     <section id="como" className="container-x py-20">
-      <SectionTitle eyebrow="Como funciona" title="Capital hoje, sem esperar pelo amanhã" subtitle="Sua empresa transforma valores a receber em capital disponível imediatamente, com taxas competitivas e processo 100% digital." />
+      <SectionTitle eyebrow="Faturamento Rápido" title="Antecipe e fature no mesmo dia" subtitle="O ciclo financeiro da sua empresa não precisa esperar 30, 60 ou 90 dias. Nós compramos seus direitos creditórios com agilidade." />
       <div className="mt-12">
         <FeatureGrid
           cols={3}
           items={[
-            { icon: FileText, title: "1. Envie os recebíveis", text: "Cadastre suas duplicatas, contratos ou cartões." },
-            { icon: BarChart3, title: "2. Análise rápida", text: "Avaliamos e estruturamos a melhor proposta." },
-            { icon: Wallet, title: "3. Receba na conta", text: "Capital disponível em até 24h após aprovação." },
+            { icon: FileCheck2, title: "Importação de XML", text: "Basta subir o arquivo da NF-e. Nosso sistema lê os dados e gera o borderô automaticamente." },
+            { icon: Calculator, title: "Cálculo de Deságio", text: "Taxas transparentes aplicadas sobre o valor de face, sem taxas de abertura escondidas." },
+            { icon: Zap, title: "Liquidação Instantânea", text: "Após a confirmação da entrega da mercadoria ou serviço, o recurso é liberado." },
           ]}
         />
       </div>
@@ -59,17 +59,17 @@ const AntecipacaoRecebiveis = () => (
     <SectionBanner image={bannerEquipe} alt="Equipe Credifácil em ambiente corporativo" />
 
     <section className="container-x py-20">
-      <SectionTitle eyebrow="Vantagens" title="Por que antecipar com a Credifácil" />
+      <SectionTitle eyebrow="Onde aplicamos" title="Diferenciais da nossa antecipação" />
       <div className="mt-12">
         <FeatureGrid
           cols={3}
           items={[
-            { icon: Zap, title: "Dinheiro rápido", text: "Liberação em até 24h úteis." },
-            { icon: ShieldCheck, title: "Sem burocracia", text: "Processo simples, digital e seguro." },
-            { icon: TrendingUp, title: "Taxas competitivas", text: "Custos justos e personalizados." },
-            { icon: BarChart3, title: "Mais previsibilidade", text: "Planeje com segurança." },
-            { icon: Building2, title: "Processo seguro", text: "Tecnologia e proteção em cada etapa." },
-            { icon: Headset, title: "Atendimento consultivo", text: "Especialistas ao lado da sua empresa." },
+            { icon: FileText, title: "Contratos de Serviço", text: "Antecipamos medições e parcelas de contratos de prestação de serviços recorrentes." },
+            { icon: Store, title: "Duplicatas Mercantis", text: "Fomento para indústrias e distribuidores com prazos de pagamento estendidos." },
+            { icon: ShieldCheck, title: "Confirmação de Lastro", text: "Garantimos a veracidade da operação para proteger o histórico de crédito da sua empresa." },
+            { icon: Wallet, title: "Melhoria do Balanço", text: "A antecipação não gera endividamento bancário, melhorando seus índices de liquidez." },
+            { icon: BarChart3, title: "Taxas Flutuantes", text: "Nossas taxas acompanham o mercado, garantindo sempre a melhor oferta para o dia." },
+            { icon: Headset, title: "Comitê de Crédito", text: "Decisões rápidas tomadas por quem entende o dia a dia do seu setor de atuação." },
           ]}
         />
       </div>
