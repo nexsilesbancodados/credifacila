@@ -72,10 +72,20 @@ const Footer = () => (
       </div>
     </div>
 
-    <div className="border-t border-white/10">
-      <div className="container-x flex flex-col items-center justify-between gap-3 py-5 text-xs text-white/80 md:flex-row">
-        <p>© {new Date().getFullYear()} Credifácil. Todos os direitos reservados.</p>
-        <p>CNPJ {SITE.cnpj}</p>
+    <div className="border-t border-white/10 bg-black/10 py-8">
+      <div className="container-x">
+        <div className="flex flex-col items-center justify-between gap-3 text-xs text-white/50 md:flex-row">
+          <p>© {new Date().getFullYear()} Credifácil. Todos os direitos reservados.</p>
+          <p>CNPJ {SITE.cnpj}</p>
+        </div>
+        <div className="mt-8 grid gap-6 text-[10px] leading-relaxed text-white/30 md:grid-cols-2">
+          <p>
+            A Credifácil não é uma instituição financeira e não realiza operações de crédito diretamente. Somos um correspondente bancário que atua em conformidade com a Resolução nº 4.935, de 29 de julho de 2021, do Banco Central do Brasil. As propostas de crédito estão sujeitas a análise, revisão e aprovação da instituição financeira parceira.
+          </p>
+          <p>
+            O uso deste site está sujeito aos Termos de Uso e Política de Privacidade. Taxas de juros, prazos e condições variam de acordo com o perfil de crédito de cada cliente e a modalidade escolhida. A rentabilidade de investimentos em ativos estruturados não é garantida e envolve riscos. Consulte sempre um especialista antes de tomar decisões financeiras.
+          </p>
+        </div>
       </div>
     </div>
   </footer>
