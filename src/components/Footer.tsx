@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
+import logo from "@/assets/logo-credifacil.png";
 
 const navGroups = [
   {
@@ -38,13 +39,8 @@ const Footer = () => {
       <div className="container-x relative">
         <div className="grid gap-12 py-16 md:grid-cols-12 md:gap-10 md:py-20">
           <div className="md:col-span-4">
-            <a href="/" className="inline-flex items-baseline gap-1">
-              <span className="font-display text-3xl font-bold tracking-tight text-foreground">
-                Credi
-              </span>
-              <span className="font-display text-3xl font-bold tracking-tight text-gold-gradient">
-                fácil
-              </span>
+            <a href="/" className="inline-flex items-center">
+              <img src={logo} alt="Credifácil" className="h-14 w-auto object-contain" />
             </a>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-foreground/60">
               Crédito sob medida, com atendimento humano e tecnologia de ponta.
