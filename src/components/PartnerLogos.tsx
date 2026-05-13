@@ -17,7 +17,7 @@ const PartnerLogos = () => (
         Instituições parceiras
       </p>
     </Reveal>
-    <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+    <div className="grid grid-cols-2 items-center justify-center gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 lg:gap-6">
       {partners.map((p, i) => (
         <Reveal key={p.name} delay={i * 0.06}>
           <div className="group flex items-center gap-2.5 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-md transition-all hover:border-[hsl(var(--gold))/0.3] hover:bg-white/10">

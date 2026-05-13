@@ -14,7 +14,7 @@ const TrustBadges = () => (
       <p className="mb-5 text-center text-[11px] font-bold uppercase tracking-[0.22em] text-white/85">
         Segurança & confiança
       </p>
-      <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         {items.map(({ I, t, s }) => (
           <li
             key={t}
