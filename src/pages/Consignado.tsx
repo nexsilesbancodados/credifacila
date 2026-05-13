@@ -102,7 +102,7 @@ const Consignado = () => (
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <div>
           <SectionTitle light align="left" eyebrow="FAQ" title="Dúvidas comuns sobre o Consignado" id="faq-section-title" />
-          <p className="mt-6 text-white/60 font-medium leading-relaxed">Entender o crédito consignado é o primeiro passo para uma vida financeira saudável. Confira as perguntas que nossos clientes mais fazem.</p>
+          <p className="mt-6 text-white/80 font-medium leading-relaxed">Entender o crédito consignado é o primeiro passo para uma vida financeira saudável. Confira as perguntas que nossos clientes mais fazem.</p>
         </div>
         <FAQAccordion
           dark
