@@ -15,7 +15,7 @@ type Props = {
 const ServiceCard = ({ icon: Icon, title, text, href, accent = "royal", image }: Props) => (
   <Link 
     to={href} 
-    className="card-soft group flex flex-col h-full overflow-hidden outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--gold-soft))]"
+    className="card-modern group flex flex-col h-full overflow-hidden outline-none focus-visible:ring-2 focus-visible:ring-primary shadow-xl"
     aria-label={`Conhecer serviço: ${title}`}
   >
     {image && (
@@ -47,10 +47,10 @@ const ServiceCard = ({ icon: Icon, title, text, href, accent = "royal", image }:
           <Icon className="h-7 w-7" />
         </div>
       )}
-       <h3 className="text-xl font-black text-white leading-tight">{title}</h3>
-       <p className="mt-4 text-[15px] leading-relaxed text-white/80 font-medium">{text}</p>
+       <h3 className="text-xl font-bold text-white leading-tight">{title}</h3>
+       <p className="mt-4 text-[15px] leading-relaxed text-foreground/70 font-medium">{text}</p>
       <div className="mt-auto pt-8">
-        <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.15em] text-[hsl(var(--gold-soft))] transition-all group-hover:gap-4">
+        <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-primary transition-all group-hover:gap-4">
           Detalhes <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </span>
       </div>
