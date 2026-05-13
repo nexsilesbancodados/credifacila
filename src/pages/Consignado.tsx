@@ -1,8 +1,12 @@
-import { ArrowRight, ShieldCheck, Percent, Clock } from "lucide-react";
+import { ArrowRight, ShieldCheck, Percent, Clock, UserCheck, Briefcase, HeartHandshake, Headphones, MessagesSquare, Sparkles } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactBannerSection from "@/components/ContactBannerSection";
+import Reveal from "@/components/Reveal";
 import heroImg from "@/assets/consignado-hero.png";
+import whoCanImg from "@/assets/consignado/who-can.jpg";
+import howItWorksImg from "@/assets/consignado/how-it-works.jpg";
+import supportImg from "@/assets/consignado/support.jpg";
 
 const benefits = [
   {
@@ -20,6 +24,20 @@ const benefits = [
     title: "Liberação rápida",
     desc: "Crédito na conta em até 24h após a aprovação.",
   },
+];
+
+const eligibles = [
+  { icon: UserCheck, label: "Aposentados e pensionistas do INSS" },
+  { icon: Briefcase, label: "Servidores públicos federais, estaduais e municipais" },
+  { icon: ShieldCheck, label: "Militares das Forças Armadas" },
+  { icon: HeartHandshake, label: "Trabalhadores CLT de empresas conveniadas" },
+];
+
+const steps = [
+  { n: "01", title: "Simulação online", desc: "Em menos de 1 minuto você descobre quanto pode contratar." },
+  { n: "02", title: "Envio de documentos", desc: "Tudo digital, sem precisar sair de casa." },
+  { n: "03", title: "Análise rápida", desc: "Aprovação automática para a maioria dos perfis." },
+  { n: "04", title: "Dinheiro liberado", desc: "Crédito direto na sua conta em até 24h." },
 ];
 
 const Consignado = () => {

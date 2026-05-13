@@ -4,11 +4,10 @@ type Props = {
   children: ReactNode;
   delay?: number;
   className?: string;
-  as?: keyof JSX.IntrinsicElements;
 };
 
-const Reveal = ({ children, delay = 0, className = "", as: Tag = "div" }: Props) => {
-  const ref = useRef<HTMLElement | null>(null);
+const Reveal = ({ children, delay = 0, className = "" }: Props) => {
+  const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -28,13 +27,13 @@ const Reveal = ({ children, delay = 0, className = "", as: Tag = "div" }: Props)
   }, []);
 
   return (
-    <Tag
-      ref={ref as never}
+    <div
+      ref={ref}
       style={{ animationDelay: `${delay}ms` }}
       className={`${visible ? "animate-fade-in" : "opacity-0"} ${className}`}
     >
       {children}
-    </Tag>
+    </div>
   );
 };
 
