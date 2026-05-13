@@ -192,7 +192,7 @@ const AntecipacaoRecebiveis = () => {
                       loading="lazy"
                       width={1024}
                       height={1280}
-                      className="absolute bottom-0 left-0 h-[110%] w-auto max-w-none object-contain object-bottom drop-shadow-[0_30px_40px_rgba(0,0,0,0.5)]"
+                      className="absolute bottom-0 left-0 h-[110%] w-auto max-w-none object-bottom drop-shadow-[0_30px_40px_rgba(0,0,0,0.5)] object-fill mx-0 px-px py-[41px] my-[2px] pb-0 pl-0 pt-[92px]"
                     />
                   </Parallax>
                   {/* Badge tempo */}
