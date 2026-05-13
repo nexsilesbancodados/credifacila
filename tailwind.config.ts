@@ -96,6 +96,10 @@ export default {
           "0%": { transform: "translateY(-50%)" },
           "100%": { transform: "translateY(0)" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-33.3333%)" },
+        },
       },
       animation: {
         "fade-in": "fade-in .6s cubic-bezier(.22,1,.36,1) both",
@@ -106,6 +110,7 @@ export default {
         "drift-slow": "drift-slow 18s ease-in-out infinite",
         "marquee-up": "marquee-up 30s linear infinite",
         "marquee-down": "marquee-down 30s linear infinite",
+        marquee: "marquee 40s linear infinite",
       },
     },
   },
