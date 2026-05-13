@@ -1,4 +1,4 @@
- import { ArrowRight, ShieldCheck, Zap, Globe, TrendingUp, Users } from "lucide-react";
+ import { ArrowRight, ShieldCheck, Zap, Globe, TrendingUp, Users, Landmark } from "lucide-react";
  import Navbar from "@/components/Navbar";
  
  const Index = () => {
