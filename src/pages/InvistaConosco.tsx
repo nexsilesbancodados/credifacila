@@ -249,11 +249,6 @@ const InvistaConosco = () => {
             {/* overlay text */}
             <div className="absolute inset-0 flex items-center">
               <div className="px-8 md:px-16 lg:px-20 max-w-2xl">
-                <Reveal>
-                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#b8893f]/40 bg-[#050a18]/40 backdrop-blur-sm text-[11px] uppercase tracking-[0.25em] text-[#f0d78c]">
-                    <Sparkles className="w-3 h-3" /> Invista Conosco
-                  </span>
-                </Reveal>
                 <Reveal delay={150}>
                   <h1 className="mt-6 font-serif text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight">
                     <span className="block text-white">Invista</span>
