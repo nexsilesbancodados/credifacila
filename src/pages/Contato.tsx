@@ -112,8 +112,8 @@ const Contato = () => {
           <HeroImage src={imgHumanizado} alt="Consultora atendendo cliente" withLogo />
           <div>
             <span className="pill">Atendimento consultivo</span>
-            <h2 className="mt-4 text-3xl font-extrabold leading-tight md:text-4xl">Mais que crédito: parceria de verdade</h2>
-            <p className="mt-5 text-muted-foreground md:text-lg">Conversamos, entendemos seu momento e ajudamos a escolher a melhor solução. Sem promessas vazias, sem letras miúdas.</p>
+            <h2 className="mt-4 text-3xl font-extrabold leading-tight text-white md:text-4xl">Mais que crédito: parceria de verdade</h2>
+            <p className="mt-5 text-white/90 md:text-lg">Conversamos, entendemos seu momento e ajudamos a escolher a melhor solução. Sem promessas vazias, sem letras miúdas.</p>
           </div>
         </div>
       </section>
