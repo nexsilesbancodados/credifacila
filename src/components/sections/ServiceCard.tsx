@@ -20,12 +20,7 @@ const ServiceCard = ({ icon: Icon, title, text, href, accent = "royal", image }:
   >
     {image && (
       <div className="relative h-48 w-full overflow-hidden">
-        <OptimizedImage
-          src={image}
-          alt=""
-          aria-hidden="true"
-          className="h-full w-full transition-transform duration-500 group-hover:scale-105"
-        />
+        <OptimizedImage src={image} alt="" aria-hidden={true} className="h-full w-full transition-transform duration-500 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent" />
         <div
           className={`absolute bottom-3 left-3 grid h-12 w-12 place-items-center rounded-2xl text-white shadow-lg ${
