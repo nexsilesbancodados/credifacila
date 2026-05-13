@@ -21,9 +21,10 @@ const navItems: NavItem[] = [
     ],
   },
   { label: "Invista Conosco", href: "/invista-conosco" },
-  { label: "Blog", href: "/blog" },
-  { label: "Dúvidas", href: "/duvidas" },
-];
+   { label: "Blog", href: "/blog" },
+   { label: "Dúvidas", href: "/duvidas" },
+   { label: "Portal do Cliente", href: "/portal-cliente" },
+ ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -89,13 +90,21 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Desktop CTA */}
-        <a
-          href="/contato"
-          className="hidden rounded-full bg-gradient-to-br from-[hsl(var(--gold-soft))] to-[hsl(var(--gold))] px-5 py-2.5 text-sm font-bold text-background shadow-lg transition hover:scale-[1.03] lg:inline-flex"
-        >
-          Simular Crédito
-        </a>
+         {/* Desktop CTA & Login */}
+         <div className="hidden items-center gap-4 lg:flex">
+           <a
+             href="/portal-cliente"
+             className="text-sm font-medium text-foreground/80 transition hover:text-foreground"
+           >
+             Login
+           </a>
+           <a
+             href="/contato"
+             className="rounded-full bg-gradient-to-br from-[hsl(var(--gold-soft))] to-[hsl(var(--gold))] px-5 py-2.5 text-sm font-bold text-background shadow-lg transition hover:scale-[1.03]"
+           >
+             Simular Crédito
+           </a>
+         </div>
 
         {/* Mobile toggle */}
         <button
