@@ -80,8 +80,8 @@ const InvistaConosco = () => (
         <div className="grid gap-16 lg:grid-cols-2">
           <div>
             <span className="pill-gold"><Shield className="h-3 w-3" /> Segurança Institucional</span>
-            <h2 className="mt-6 text-3xl font-extrabold leading-tight text-white md:text-5xl">Governança inspirada nos maiores bancos</h2>
-            <p className="mt-6 text-lg text-white/90">
+            <h2 className="mt-6 text-3xl font-bold leading-tight text-white md:text-5xl tracking-tight">Governança inspirada nos maiores bancos</h2>
+            <p className="mt-6 text-lg text-white/50 font-medium">
               Seguimos diretrizes rigorosas de compliance e gestão de risco para garantir que cada centavo investido esteja protegido por processos técnicos e auditorias recorrentes.
             </p>
             
@@ -92,12 +92,12 @@ const InvistaConosco = () => (
                 { icon: GanttChart, title: "Gestão Ativa de Portfólio", text: "Monitoramento 24/7 de todos os ativos e garantias subjacentes." }
               ].map((item, i) => (
                 <div key={i} className="flex gap-5">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/5 text-[hsl(var(--gold-soft))]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/5 text-primary">
                     <item.icon className="h-6 w-6" />
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-white">{item.title}</h4>
-                        <p className="mt-1 text-white/90">{item.text}</p>
+                        <p className="mt-1 text-white/40 font-medium">{item.text}</p>
                   </div>
                 </div>
               ))}
