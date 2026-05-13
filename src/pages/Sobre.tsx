@@ -125,7 +125,7 @@ const Sobre = () => (
         <div className="space-y-16">
           {TIMELINE.map((t, i) => (
             <Reveal key={t.year} delay={i * 0.1}>
-              <div className={}>
+              <div className={`relative flex items-center gap-12 md:justify-between ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                 <div className="absolute left-4 h-4 w-4 -translate-x-1/2 rounded-full bg-[hsl(var(--gold))] ring-4 ring-navy-deep md:left-1/2" />
                 <div className="card-soft ml-12 p-8 md:ml-0 md:w-[45%] bg-white/5">
                   <span className="text-4xl font-black text-[hsl(var(--gold-soft))] opacity-50">{t.year}</span>
