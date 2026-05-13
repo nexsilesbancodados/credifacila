@@ -1,3 +1,32 @@
+       {/* Process Section */}
+       <section className="py-24 md:py-40">
+         <div className="container-x">
+           <div className="text-center mb-20">
+             <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+               Sua jornada <span className="text-gold-gradient">simplificada</span>
+             </h2>
+             <p className="text-lg text-white/50 max-w-2xl mx-auto">
+               Quatro passos para transformar sua realidade financeira com o suporte de nossos especialistas.
+             </p>
+           </div>
+           
+           <div className="grid md:grid-cols-4 gap-8">
+             {[
+               { step: "01", title: "Abertura Digital", desc: "Processo 100% online em menos de 5 minutos." },
+               { step: "02", title: "Análise Técnica", desc: "Nossa IA avalia as melhores oportunidades para seu perfil." },
+               { step: "03", title: "Personalização", desc: "Ajustamos prazos e taxas de acordo com seu objetivo." },
+               { step: "04", title: "Liquidez", desc: "Capital disponível para uso imediato ou investimento." },
+             ].map((item, i) => (
+               <div key={i} className="relative p-8 border-l border-white/10 hover:border-gold transition-colors">
+                 <span className="text-5xl font-bold text-gold/10 absolute top-4 right-4">{item.step}</span>
+                 <h3 className="text-xl font-bold mb-4 relative z-10">{item.title}</h3>
+                 <p className="text-white/40 text-sm leading-relaxed relative z-10">{item.desc}</p>
+               </div>
+             ))}
+           </div>
+         </div>
+       </section>
+ 
  import { ArrowRight, ShieldCheck, Zap, Globe, TrendingUp, Users, Landmark } from "lucide-react";
  import Navbar from "@/components/Navbar";
  
