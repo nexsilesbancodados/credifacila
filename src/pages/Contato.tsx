@@ -37,7 +37,7 @@ const Contato = () => {
           <Reveal>
             <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-10 backdrop-blur-sm shadow-2xl">
               <h2 className="text-3xl font-black text-white">Solicitar Consultoria</h2>
-              <p className="mt-4 text-white/60">Um Wealth Manager dedicado entrará em contato em até 1 hora útil.</p>
+                <p className="mt-4 text-white/80">Um Wealth Manager dedicado entrará em contato em até 1 hora útil.</p>
 
               {sent ? (
                 <div 
@@ -105,7 +105,7 @@ const Contato = () => {
                         <item.icon className="h-5 w-5" aria-hidden="true" />
                       </div>
                       <div>
-                        <p className="text-xs font-bold uppercase tracking-widest text-white/40">{item.title}</p>
+                        <p className="text-xs font-bold uppercase tracking-widest text-white/60">{item.title}</p>
                         {item.link ? (
                           <a href={item.link} className="text-white font-medium hover:text-[hsl(var(--gold-soft))] transition-colors focus:ring-2 focus:ring-[hsl(var(--gold-soft))] outline-none rounded-sm px-1 -mx-1">{item.value}</a>
                         ) : (
@@ -150,7 +150,7 @@ const Contato = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-white">Presence Office</h4>
-                    <p className="text-sm text-white/50 leading-relaxed">Salas de reunião premium para sua total privacidade e conforto.</p>
+                    <p className="text-sm text-white/70 leading-relaxed">Salas de reunião premium para sua total privacidade e conforto.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -159,7 +159,7 @@ const Contato = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-white">SLA Prioritário</h4>
-                    <p className="text-sm text-white/50 leading-relaxed">Respostas executivas com diagnósticos técnicos em tempo recorde.</p>
+                    <p className="text-sm text-white/70 leading-relaxed">Respostas executivas com diagnósticos técnicos em tempo recorde.</p>
                   </div>
                 </div>
               </div>
