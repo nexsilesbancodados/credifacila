@@ -1,10 +1,12 @@
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, Suspense, lazy } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import FloatingWhatsApp from "./FloatingWhatsApp";
 import MobileBottomNav from "./MobileBottomNav";
-import ExitIntentPopup from "./ExitIntentPopup";
-import LuriChat from "./LuriChat";
+
+// Lazy load non-critical overlay components
+const FloatingWhatsApp = lazy(() => import("./FloatingWhatsApp"));
+const ExitIntentPopup = lazy(() => import("./ExitIntentPopup"));
+const LuriChat = lazy(() => import("./LuriChat"));
 
 export type BgTone =
   | "default"
@@ -20,7 +22,6 @@ export type BgTone =
   | "twilight";
 
 const TONES: Record<BgTone, string> = {
-  // Deep blue immersive tones — each page bathed in its own dark-blue mesh
   default:  "radial-gradient(ellipse at 18% 0%, hsl(252 80% 55% / 0.45) 0%, transparent 55%), radial-gradient(ellipse at 82% 100%, hsl(199 95% 50% / 0.35) 0%, transparent 55%), linear-gradient(180deg, hsl(226 70% 10%) 0%, hsl(224 65% 14%) 55%, hsl(222 70% 18%) 100%)",
   deep:     "radial-gradient(ellipse at 15% 0%, hsl(222 92% 55% / 0.40) 0%, transparent 55%), radial-gradient(ellipse at 85% 100%, hsl(252 80% 50% / 0.40) 0%, transparent 55%), linear-gradient(180deg, hsl(226 75% 8%) 0%, hsl(224 70% 12%) 55%, hsl(222 75% 16%) 100%)",
   royal:    "radial-gradient(ellipse at 10% 0%, hsl(252 80% 60% / 0.45) 0%, transparent 55%), radial-gradient(ellipse at 90% 100%, hsl(218 100% 55% / 0.45) 0%, transparent 55%), linear-gradient(180deg, hsl(224 70% 10%) 0%, hsl(222 80% 16%) 50%, hsl(222 90% 22%) 100%)",
@@ -49,10 +50,13 @@ const Layout = ({ children, tone = "default" }: { children: ReactNode; tone?: Bg
       <Header />
       <main className="flex-1 pt-[72px] md:pt-[84px]">{children}</main>
       <Footer />
-      <FloatingWhatsApp />
       <MobileBottomNav />
-      <ExitIntentPopup />
-      <LuriChat />
+      
+      <Suspense fallback={null}>
+        <FloatingWhatsApp />
+        <ExitIntentPopup />
+        <LuriChat />
+      </Suspense>
     </div>
   );
 };
