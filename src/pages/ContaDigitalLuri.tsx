@@ -27,7 +27,7 @@ const ContaDigitalLuri = () => (
     />
 
     <section id="recursos" className="container-x py-20">
-      <SectionTitle eyebrow="Recursos" title="Tudo que você precisa em um só lugar" />
+      <SectionTitle light eyebrow="Recursos" title="Tudo que você precisa em um só lugar" />
       <div className="mt-12">
         <FeatureGrid
           cols={3}
@@ -44,7 +44,7 @@ const ContaDigitalLuri = () => (
     </section>
 
     <section className="container-x py-20">
-      <SectionTitle eyebrow="Benefícios" title="Por que escolher a Conta Luri" />
+      <SectionTitle light eyebrow="Benefícios" title="Por que escolher a Conta Luri" />
       <div className="mt-12">
         <FeatureGrid
           cols={3}

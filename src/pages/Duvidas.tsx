@@ -82,7 +82,7 @@ const Duvidas = () => (
       <div className="space-y-12">
         {groups.map((g) => (
           <div key={g.name}>
-            <h2 className="mb-5 text-2xl font-extrabold">{g.name}</h2>
+            <h2 className="mb-5 text-2xl font-extrabold text-white">{g.name}</h2>
             <FAQAccordion items={g.items} />
           </div>
         ))}

@@ -55,7 +55,7 @@ const BoletoGarantido = () => (
     </section>
 
     <section className="container-x py-20">
-      <SectionTitle eyebrow="Benefícios" title="Por que usar Boleto Garantido" />
+      <SectionTitle light eyebrow="Benefícios" title="Por que usar Boleto Garantido" />
       <div className="mt-12">
         <FeatureGrid
           cols={3}
@@ -72,7 +72,7 @@ const BoletoGarantido = () => (
     </section>
 
     <section className="container-x py-20">
-      <SectionTitle eyebrow="Como funciona" title="Quatro passos simples" />
+      <SectionTitle light eyebrow="Como funciona" title="Quatro passos simples" />
       <div className="mt-12">
         <StepTimeline
           steps={[
@@ -88,7 +88,7 @@ const BoletoGarantido = () => (
     <SectionBanner image={bannerSeguranca} alt="Atendente Credifácil com elementos visuais de segurança" />
 
     <section className="container-x py-20">
-      <SectionTitle eyebrow="Comparativo" title="Veja a diferença" />
+      <SectionTitle light eyebrow="Comparativo" title="Veja a diferença" />
       <div className="mt-12 grid gap-5 md:grid-cols-2">
         <div className="card-soft p-7">
           <div className="flex items-center gap-2"><X className="h-5 w-5 text-rose-500" /><h3 className="text-lg font-extrabold">Venda comum</h3></div>

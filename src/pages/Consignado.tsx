@@ -45,7 +45,7 @@ const Consignado = () => (
     </section>
 
     <section className="container-x py-20">
-      <SectionTitle eyebrow="Para quem é" title="Quem pode contratar o consignado?" />
+      <SectionTitle light eyebrow="Para quem é" title="Quem pode contratar o consignado?" />
       <div className="mt-12">
         <FeatureGrid
           cols={4}
@@ -60,7 +60,7 @@ const Consignado = () => (
     </section>
 
     <section className="container-x py-20">
-      <SectionTitle eyebrow="Como funciona" title="Quatro passos para contratar" />
+      <SectionTitle light eyebrow="Como funciona" title="Quatro passos para contratar" />
       <div className="mt-12">
         <StepTimeline
           steps={[
@@ -76,7 +76,7 @@ const Consignado = () => (
     <SectionBanner image={bannerEscritorioClaro} alt="Consultora Credifácil em ambiente corporativo" />
 
     <section className="container-x py-20">
-      <SectionTitle eyebrow="Vantagens" title="Por que escolher o consignado Credifácil" />
+      <SectionTitle light eyebrow="Vantagens" title="Por que escolher o consignado Credifácil" />
       <div className="mt-12">
         <FeatureGrid
           cols={3}
@@ -93,7 +93,7 @@ const Consignado = () => (
     </section>
 
     <section className="container-x py-20">
-      <SectionTitle eyebrow="Perguntas frequentes" title="Tire suas dúvidas sobre o consignado" />
+      <SectionTitle light eyebrow="Perguntas frequentes" title="Tire suas dúvidas sobre o consignado" />
       <div className="mx-auto mt-12 max-w-3xl">
         <FAQAccordion
           items={[

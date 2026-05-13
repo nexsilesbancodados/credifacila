@@ -32,10 +32,10 @@ const Securitizadora = () => (
         <div>
           <span className="pill"><FileSearch className="h-3 w-3" /> O que é</span>
           <h2 className="mt-4 text-3xl font-extrabold leading-tight md:text-4xl">O que é uma securitizadora?</h2>
-          <p className="mt-5 text-base text-muted-foreground md:text-lg">
+          <p className="mt-5 text-base text-white/95 md:text-lg">
             A securitizadora é a empresa que ajuda negócios a transformar recebíveis em soluções financeiras estruturadas, trazendo liquidez, previsibilidade e segurança para o caixa.
           </p>
-          <p className="mt-3 text-base text-muted-foreground">
+          <p className="mt-3 text-base text-white/90">
             Com a Credifácil, sua empresa antecipa vendas, protege pagamentos e ganha um parceiro consultivo para acelerar o crescimento.
           </p>
         </div>
@@ -57,7 +57,7 @@ const Securitizadora = () => (
     </section>
 
     <section id="solucoes" className="container-x py-20">
-      <SectionTitle eyebrow="Soluções disponíveis" title="Inteligência financeira para sua empresa" />
+      <SectionTitle light eyebrow="Soluções disponíveis" title="Inteligência financeira para sua empresa" />
       <div className="mt-12 grid gap-5 md:grid-cols-3">
         <ServiceCard icon={Receipt} title="Antecipação de Recebíveis" text="Transforme vendas futuras em capital imediato." href="/securitizadora/antecipacao-de-recebiveis" />
         <ServiceCard icon={ShieldCheck} title="Boleto Garantido" text="Mais segurança nas vendas e previsibilidade no recebimento." href="/securitizadora/boleto-garantido" accent="gold" />
@@ -66,7 +66,7 @@ const Securitizadora = () => (
     </section>
 
     <section className="container-x py-20">
-      <SectionTitle eyebrow="Benefícios" title="Vantagens para empresas" />
+      <SectionTitle light eyebrow="Benefícios" title="Vantagens para empresas" />
       <div className="mt-12">
         <FeatureGrid
           cols={3}
@@ -85,7 +85,7 @@ const Securitizadora = () => (
     <SectionBanner image={bannerEquipe} alt="Equipe Credifácil em ambiente premium" />
 
     <section className="container-x py-20">
-      <SectionTitle eyebrow="Como funciona" title="Quatro passos simples" />
+      <SectionTitle light eyebrow="Como funciona" title="Quatro passos simples" />
       <div className="mt-12">
         <StepTimeline
           steps={[

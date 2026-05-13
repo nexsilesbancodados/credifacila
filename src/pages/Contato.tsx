@@ -32,8 +32,8 @@ const Contato = () => {
 
       <section className="container-x py-16">
         <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
-          <div className="rounded-3xl border border-border bg-white p-8 shadow-[var(--shadow-card)]">
-            <h2 className="text-2xl font-extrabold">Solicitar crédito ou tirar dúvidas</h2>
+          <div className="rounded-3xl border border-border bg-white p-8 text-slate-900 shadow-[var(--shadow-card)]">
+            <h2 className="text-2xl font-extrabold text-slate-900">Solicitar crédito ou tirar dúvidas</h2>
             <p className="mt-2 text-sm text-muted-foreground">Preencha o formulário e em breve um especialista entrará em contato.</p>
 
             {sent ? (
@@ -112,8 +112,8 @@ const Contato = () => {
           <HeroImage src={imgHumanizado} alt="Consultora atendendo cliente" withLogo />
           <div>
             <span className="pill">Atendimento consultivo</span>
-            <h2 className="mt-4 text-3xl font-extrabold leading-tight md:text-4xl">Mais que crédito: parceria de verdade</h2>
-            <p className="mt-5 text-muted-foreground md:text-lg">Conversamos, entendemos seu momento e ajudamos a escolher a melhor solução. Sem promessas vazias, sem letras miúdas.</p>
+            <h2 className="mt-4 text-3xl font-extrabold leading-tight text-white md:text-4xl">Mais que crédito: parceria de verdade</h2>
+            <p className="mt-5 text-white/90 md:text-lg">Conversamos, entendemos seu momento e ajudamos a escolher a melhor solução. Sem promessas vazias, sem letras miúdas.</p>
           </div>
         </div>
       </section>

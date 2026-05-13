@@ -43,7 +43,7 @@ const Layout = ({ children, tone = "default" }: { children: ReactNode; tone?: Bg
 
   return (
     <div
-      className="relative flex min-h-screen flex-col"
+      className="relative flex min-h-screen flex-col text-white"
       style={{ background: TONES[tone], backgroundAttachment: "fixed" }}
     >
       <Header />
