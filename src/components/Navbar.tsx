@@ -23,7 +23,6 @@ const navItems: NavItem[] = [
   { label: "Invista Conosco", href: "/invista-conosco" },
    { label: "Blog", href: "/blog" },
    { label: "Dúvidas", href: "/duvidas" },
-   { label: "Portal do Cliente", href: "/portal-cliente" },
  ];
 
 const Navbar = () => {
