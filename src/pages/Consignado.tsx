@@ -1,4 +1,4 @@
-import { Banknote, BadgeCheck, CalendarClock, Coins, FileCheck2, Headset, Lock, ShieldCheck, Wallet, Zap, RefreshCcw, Landmark } from "lucide-react";
+import { Banknote, BadgeCheck, CalendarClock, Coins, FileCheck2, Headset, Lock, ShieldCheck, Wallet, Zap, RefreshCcw, Landmark, Users, UserCheck } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import SEOHead from "@/components/SEOHead";
@@ -10,107 +10,115 @@ import imgConsignado from "@/assets/img-consignado.jpg";
 import FAQAccordion from "@/components/FAQAccordion";
 import SectionBanner from "@/components/SectionBanner";
 import bannerEscritorioClaro from "@/assets/banner-escritorio-claro.png";
+import Reveal from "@/components/Reveal";
 
 const Consignado = () => (
-  <Layout tone="indigo">
+  <Layout tone="midnight">
     <SEOHead
-      title="Crédito Consignado | Credifácil"
-      description="Consignado para INSS, servidores públicos e conveniadas. Taxas a partir de 1,15% a.m., aprovação rápida e desconto direto em folha."
+      title="Crédito Consignado Online | Melhores Taxas do Mercado"
+      description="Consignado para INSS e Servidores Públicos. Taxas reduzidas, liberação rápida e processo 100% digital seguro."
     />
     <PageHeader
-      eyebrow="Crédito Consignado"
-      title={<>Consignado com <span className="text-gold-gradient">taxas reduzidas</span></>}
-      subtitle="Aprovação facilitada, segurança e parcelas que cabem no seu orçamento. Ideal para aposentados, pensionistas do INSS e servidores públicos."
+      eyebrow="Crédito com Garantia"
+      title={<>Consignado com as <span className="text-gold-gradient">menores taxas</span> do Brasil</>}
+      subtitle="A solução financeira mais inteligente para aposentados, pensionistas e servidores públicos. Crédito justo, sem burocracia e com liberação imediata."
       primaryCta={{ label: "Simular agora", href: "/contato" }}
-      secondaryCta={{ label: "Falar com especialista", href: "/contato" }}
+      secondaryCta={{ label: "Vantagens", href: "#vantagens" }}
       bgImage={imgConsignado}
       className="-mt-[72px] pt-[72px] md:-mt-[84px] md:pt-[84px]"
     />
 
-    {/* Floating benefits */}
-    <section className="container-x -mt-12 relative z-10">
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <section id="vantagens" className="container-x -mt-16 relative z-10">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {[
-          { I: BadgeCheck, t: "Aprovação rápida e segura" },
-          { I: Coins, t: "Taxas a partir de 1,15% a.m." },
-          { I: CalendarClock, t: "Parcelas fixas" },
-          { I: Wallet, t: "Desconto em folha" },
-        ].map(({ I, t }) => (
-          <div key={t} className="card-soft flex items-center gap-3 p-4">
-            <div className="grid h-11 w-11 place-items-center rounded-2xl bg-[hsl(var(--royal))/0.1] text-[hsl(var(--royal))]"><I className="h-5 w-5" /></div>
-            <p className="text-sm font-bold">{t}</p>
-          </div>
+          { I: BadgeCheck, t: "Taxas a partir de 1,15% a.m.", d: "O crédito mais barato do mercado." },
+          { I: Zap, t: "Liberação em até 24h", d: "Dinheiro na conta com rapidez." },
+          { I: Lock, t: "100% Seguro & Digital", d: "Biometria facial e criptografia." },
+          { I: UserCheck, t: "Mesmo para Negativados", d: "Sem consulta ao SPC ou Serasa." },
+        ].map((item, i) => (
+          <Reveal key={i} delay={i * 0.1}>
+            <div className="card-soft flex flex-col items-center text-center p-8 bg-white/95 backdrop-blur-xl border-white/20 shadow-2xl">
+              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-[hsl(var(--royal))] to-[hsl(var(--sky))] text-white mb-4">
+                <item.I className="h-7 w-7" />
+              </div>
+              <p className="text-sm font-black text-navy-deep">{item.t}</p>
+              <p className="mt-2 text-xs text-muted-foreground">{item.d}</p>
+            </div>
+          </Reveal>
         ))}
       </div>
     </section>
 
-    <section className="container-x py-20">
-      <SectionTitle light eyebrow="Para quem é" title="Quem pode contratar o consignado?" />
+    <section className="container-x py-24">
+      <SectionTitle light eyebrow="Público Alvo" title="Para quem é o Consignado Credifácil?" />
       <div className="mt-12">
         <FeatureGrid
           cols={4}
           items={[
-            { icon: Headset, title: "Aposentados INSS", text: "Aposentados pelo INSS com benefício ativo." },
-            { icon: ShieldCheck, title: "Pensionistas", text: "Pensionistas do INSS com benefício regular." },
-            { icon: Banknote, title: "Servidores públicos", text: "Federais, estaduais e municipais." },
-            { icon: FileCheck2, title: "Profissionais conveniados", text: "Empresas e órgãos com convênio ativo." },
+            { icon: Users, title: "Aposentados INSS", text: "Crédito garantido para quem já contribuiu e hoje desfruta da aposentadoria." },
+            { icon: ShieldCheck, title: "Pensionistas", text: "Segurança financeira para pensionistas do INSS com as melhores condições." },
+            { icon: Landmark, title: "Servidores Públicos", text: "Taxas exclusivas para funcionários federais, estaduais e municipais." },
+            { icon: Banknote, title: "Convênios Privados", text: "Crédito para colaboradores de empresas parceiras com desconto em folha." },
           ]}
         />
       </div>
     </section>
 
-    <section className="container-x py-20">
-      <SectionTitle light eyebrow="Processo Transparente" title="Sua jornada para o crédito justo" />
+    <section className="container-x py-24 bg-white/[0.02] rounded-[3rem]">
+      <SectionTitle light eyebrow="Simplicidade" title="Como funciona o seu crédito" />
       <div className="mt-12">
         <StepTimeline
           steps={[
-            { title: "Cálculo de Margem", text: "Verificamos quanto você pode comprometer mensalmente sem apertar seu orçamento." },
-            { title: "Formalização Digital", text: "Você assina o contrato pelo celular, com biometria facial — seguro e sem papel." },
-            { title: "Averbação", text: "O órgão pagador reserva o valor da parcela, garantindo as taxas mais baixas do mercado." },
-            { title: "Depósito Imediato", text: "O valor entra na sua conta via TED ou Pix em poucas horas após a averbação." },
+            { title: "Simulação Instantânea", text: "Avaliamos sua margem disponível em segundos junto aos órgãos pagadores." },
+            { title: "Formalização Digital", text: "Assinatura do contrato via celular com total validade jurídica e segurança." },
+            { title: "Averbação do Contrato", text: "O valor da parcela é reservado diretamente na sua folha de pagamento." },
+            { title: "Depósito em Conta", text: "Receba seu dinheiro via TED ou Pix em qualquer banco de sua preferência." },
           ]}
         />
       </div>
     </section>
 
-    <SectionBanner image={bannerEscritorioClaro} alt="Consultora Credifácil em ambiente corporativo" />
+    <SectionBanner image={bannerEscritorioClaro} alt="Equipe de atendimento especializado" />
 
-    <section className="container-x py-20">
-      <SectionTitle light eyebrow="Diferenciais" title="Soluções além do básico" />
+    <section className="container-x py-24">
+      <SectionTitle light eyebrow="Maximize seu Crédito" title="Soluções Inteligentes de Dívida" />
       <div className="mt-12">
         <FeatureGrid
           cols={3}
           items={[
-            { icon: RefreshCcw, title: "Portabilidade de Crédito", text: "Traga sua dívida de outro banco e reduza o valor das parcelas mensais." },
-            { icon: Landmark, title: "Refinanciamento", text: "Libere dinheiro extra mantendo o mesmo valor de parcela que você já paga." },
-            { icon: Coins, title: "Margem Livre", text: "Uso imediato da margem disponível para novos empréstimos com as melhores taxas." },
-            { icon: ShieldCheck, title: "Crédito para Negativados", text: "Como o desconto é em folha, não consultamos SPC ou Serasa." },
-            { icon: BadgeCheck, title: "Averbação em 24h", text: "Agilidade máxima na comunicação com o INSS e órgãos públicos." },
-            { icon: Wallet, title: "Parcelas que cabem", text: "O desconto nunca ultrapassa o limite legal, garantindo sua saúde financeira." },
+            { icon: RefreshCcw, title: "Portabilidade de Crédito", text: "Reduza o juros da sua dívida atual trazendo seu contrato de outro banco para a Credifácil." },
+            { icon: Landmark, title: "Refinanciamento", text: "Libere um novo valor extra mantendo o mesmo valor de parcela que você já paga hoje." },
+            { icon: Coins, title: "Compra de Dívida", text: "Unificamos seus empréstimos em uma única parcela menor, sobrando mais dinheiro no mês." },
+            { icon: ShieldCheck, title: "Seguro Prestamista", text: "Proteção para sua família em casos de imprevistos, garantindo a quitação do saldo devedor." },
+            { icon: BadgeCheck, title: "Margem Reservada", text: "Utilize sua margem de cartão consignado para saques imediatos com taxas de juros baixíssimas." },
+            { icon: Wallet, title: "Planejamento Financeiro", text: "Nossos consultores ajudam você a usar o crédito para sair de dívidas mais caras." },
           ]}
         />
       </div>
     </section>
 
-    <section className="container-x py-20">
-      <SectionTitle light eyebrow="Perguntas frequentes" title="Tire suas dúvidas sobre o consignado" />
-      <div className="mx-auto mt-12 max-w-3xl">
+    <section className="container-x py-24">
+      <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <SectionTitle light align="left" eyebrow="FAQ" title="Dúvidas comuns sobre o Consignado" />
+          <p className="mt-6 text-white/60">Entender o crédito consignado é o primeiro passo para uma vida financeira saudável. Confira as perguntas que nossos clientes mais fazem.</p>
+        </div>
         <FAQAccordion
+          dark
           items={[
-            { q: "Quem pode contratar?", a: "Aposentados e pensionistas do INSS, servidores públicos e profissionais de empresas conveniadas." },
-            { q: "Como funciona o desconto em folha?", a: "As parcelas são descontadas automaticamente do seu benefício ou salário, garantindo organização." },
-            { q: "É seguro contratar online?", a: "Sim. Todo processo é criptografado e segue protocolos bancários de segurança." },
-            { q: "Qual o prazo para liberação?", a: "Após aprovação, o valor é liberado em conta em até 24h úteis." },
-            { q: "Posso antecipar parcelas?", a: "Sim, antecipações são permitidas conforme regras do contrato." },
+            { q: "O que é margem consignável?", a: "É o percentual máximo do seu salário ou benefício (geralmente 35% a 45%) que pode ser usado para pagar as parcelas." },
+            { q: "Posso fazer se estiver com o nome sujo?", a: "Sim. No consignado, a garantia é o próprio salário ou benefício, por isso não há consulta ao SPC/Serasa." },
+            { q: "Como funciona a portabilidade?", a: "Nós 'compramos' sua dívida do banco atual e fazemos um novo contrato com taxas muito menores para você." },
+            { q: "Qual o prazo máximo de pagamento?", a: "Para o INSS, o prazo pode chegar a 84 meses. Para servidores públicos, pode chegar a 96 ou 120 meses." },
           ]}
         />
       </div>
     </section>
 
-    <CTASection
-      title="Pronto para contratar seu consignado?"
-      subtitle="Fale com um especialista e descubra a melhor condição para você."
-      cta="Fale com um especialista"
+    <CTASection 
+      title="Pronto para realizar seus planos com juros justos?" 
+      subtitle="Fale agora com um consultor e receba uma proposta personalizada."
+      cta="Simular meu Consignado" 
     />
   </Layout>
 );
