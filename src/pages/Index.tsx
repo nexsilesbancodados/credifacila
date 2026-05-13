@@ -38,7 +38,7 @@ const Index = () => {
     <main className="min-h-screen bg-background">
       <Navbar />
       <section className="relative w-full overflow-hidden">
-        <div className="relative aspect-[16/9] sm:aspect-[21/9] lg:aspect-[21/8] w-full pt-16 md:pt-20">
+        <div className="relative aspect-[16/9] sm:aspect-[21/9] lg:aspect-[21/8] w-full">
           {slides.map((s, i) => (
             <img
               key={i}
