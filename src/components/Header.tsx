@@ -25,9 +25,9 @@ const Header = () => {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled
-          ? "bg-white/85 text-slate-900 backdrop-blur-xl shadow-[0_4px_20px_-8px_hsl(220_70%_13%/0.15)]"
-          : "bg-transparent"
+         scrolled
+           ? "bg-white text-slate-950 shadow-md py-1"
+           : "bg-transparent py-2"
       )}
     >
       <div className="container-x flex h-[72px] items-center justify-between md:h-[84px]">
@@ -42,7 +42,7 @@ const Header = () => {
                 <div key={item.label} className="group relative">
                   <button
                     className={cn(
-                      "flex items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold transition-colors",
+                       "flex items-center gap-1 rounded-full px-4 py-2 text-base font-bold transition-colors",
                       scrolled
                         ? "text-foreground hover:text-[hsl(var(--royal))]"
                         : "text-white/90 hover:text-white"
@@ -60,7 +60,7 @@ const Header = () => {
                         end
                         className={({ isActive }) =>
                           cn(
-                            "block rounded-xl px-4 py-3 text-sm font-medium transition-colors",
+                             "block rounded-xl px-4 py-3 text-base font-semibold transition-colors",
                             isActive
                               ? "bg-[hsl(var(--royal))/0.08] text-[hsl(var(--royal))]"
                               : "text-foreground hover:bg-[hsl(var(--royal))/0.06] hover:text-[hsl(var(--royal))]"
@@ -81,7 +81,7 @@ const Header = () => {
                 end
                         className={({ isActive }) =>
                           cn(
-                            "rounded-full px-4 py-2 text-sm font-semibold transition-colors",
+                             "rounded-full px-4 py-2 text-base font-bold transition-colors",
                             isActive
                               ? scrolled ? "text-[hsl(var(--royal))]" : "text-[hsl(var(--gold-soft))]"
                               : scrolled

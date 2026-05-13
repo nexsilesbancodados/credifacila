@@ -26,7 +26,7 @@
     /* Neutrals — cool, refined */
     --gray-50: 220 30% 98%;
     --gray-100: 220 25% 95%;
-    --gray-text: 224 20% 28%; /* Darker for better contrast (WCAG AA+) */
+     --gray-text: 224 20% 18%; /* Even darker for better contrast */
 
     --card: 0 0% 100%;
     --card-foreground: 224 65% 11%;
@@ -37,7 +37,7 @@
     --secondary: 220 30% 97%;
     --secondary-foreground: 224 65% 11%;
     --muted: 220 25% 95%;
-    --muted-foreground: 224 12% 42%; /* Slightly lighter for light surfaces, but still dark enough */
+     --muted-foreground: 224 12% 38%; /* Darker for accessibility */
     --accent: 199 95% 94%;
     --accent-foreground: 222 92% 38%;
     --destructive: 0 78% 56%;
@@ -71,12 +71,13 @@
   html, body, #root { width: 100%; margin: 0; padding: 0; }
   html, body { overflow-x: hidden; scroll-behavior: smooth; }
   img, svg { max-width: 100%; height: auto; }
-  body {
-    @apply text-foreground antialiased;
-    background: var(--gradient-page);
-    min-height: 100vh;
-    font-family: "Manrope", system-ui, sans-serif;
-  }
+   body {
+     @apply text-foreground antialiased;
+     background: var(--gradient-page);
+     min-height: 100vh;
+     font-family: "Inter", "Manrope", system-ui, sans-serif; /* Inter is more readable */
+     font-size: 16px;
+   }
   h1, h2, h3, h4 { font-family: "Plus Jakarta Sans", "Manrope", system-ui, sans-serif; @apply tracking-tight; }
   ::selection { background: hsl(var(--royal) / 0.25); }
   :focus-visible { outline: 2px solid hsl(var(--royal)); outline-offset: 3px; border-radius: 6px; }
@@ -136,7 +137,7 @@
   .card-soft:hover::before { opacity: 1; }
   .card-soft > * { position: relative; z-index: 1; }
   .card-soft h1, .card-soft h2, .card-soft h3, .card-soft h4, .card-soft .text-foreground { color: hsl(0 0% 100%) !important; }
-  .card-soft p, .card-soft .text-muted-foreground, .card-soft span:not(.btn-primary, .btn-gold, .pill, .pill-gold) { color: hsl(220 30% 90%) !important; }
+   .card-soft p, .card-soft .text-muted-foreground, .card-soft span:not(.btn-primary, .btn-gold, .pill, .pill-gold) { color: hsl(0 0% 100% / 0.95) !important; font-weight: 500; }
   .card-soft .text-\[hsl\(var\(--royal\)\)\], .card-soft .text-royal-gradient { color: hsl(var(--gold-soft)) !important; background: none !important; -webkit-background-clip: initial !important; background-clip: initial !important; }
   .card-glass {
     @apply rounded-3xl border border-white/15 bg-white/5 backdrop-blur-xl;

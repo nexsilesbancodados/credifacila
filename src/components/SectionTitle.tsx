@@ -29,11 +29,14 @@ const SectionTitle = ({ eyebrow, title, subtitle, align = "center", light, class
     >
       {title}
     </h2>
-    {subtitle && (
-      <p className={cn("mt-5 text-base md:text-lg", light ? "text-white/95" : "text-slate-700 font-medium")}>
-        {subtitle}
-      </p>
-    )}
+     {subtitle && (
+       <p className={cn(
+         "mt-5 text-base md:text-lg leading-relaxed",
+         light ? "text-white/100" : "text-slate-900 font-medium"
+       )}>
+         {subtitle}
+       </p>
+     )}
   </div>
 );
 

@@ -8,7 +8,9 @@ import HeroImage from "@/components/HeroImage";
 import Reveal from "@/components/Reveal";
 import TrustBadges from "@/components/TrustBadges";
 import Testimonials from "@/components/Testimonials";
-import Newsletter from "@/components/Newsletter";
+ import Newsletter from "@/components/Newsletter";
+ import CreditSimulator from "@/components/CreditSimulator";
+ import FAQAccordion from "@/components/FAQAccordion";
 import heroHome from "@/assets/img-hero-home.jpg";
 import imgEquipe from "@/assets/img-equipe.jpg";
 import imgConsignado from "@/assets/img-consignado.jpg";
@@ -69,8 +71,8 @@ const Index = () => (
               { l: "1,15%", s: "a partir" },
             ].map((x) => (
               <div key={x.l} className="rounded-2xl border border-white/15 bg-white/5 p-3 backdrop-blur-md">
-                <p className="text-xl font-extrabold">{x.l}</p>
-                <p className="text-[11px] uppercase tracking-wider text-white/90">{x.s}</p>
+                 <p className="text-2xl font-extrabold">{x.l}</p>
+                 <p className="text-xs uppercase tracking-widest font-bold text-white/80">{x.s}</p>
               </div>
             ))}
           </div>
@@ -107,30 +109,101 @@ const Index = () => (
       <TrustBadges />
     </Reveal>
 
-    {/* SOLUÇÕES */}
-    <section className="container-x py-20">
-      <Reveal>
-      <SectionTitle
-        light
-        eyebrow="Nossas soluções"
-        title={<>Soluções completas para você <span className="text-royal-gradient">e seu negócio</span></>}
-        subtitle="Crédito, gestão e investimentos em um único lugar — com tecnologia, segurança e atendimento humano."
-      />
-      </Reveal>
-      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {[
-          <ServiceCard key="c" icon={Banknote} title="Consignado" text="Aprovação facilitada com taxas reduzidas e parcelas que cabem no seu orçamento." href="/consignado" image={imgConsignado} />,
-          <ServiceCard key="a" icon={Receipt} title="Antecipação de Recebíveis" text="Transforme vendas futuras em capital imediato para sua empresa crescer." href="/securitizadora/antecipacao-de-recebiveis" image={imgAntecipacao} />,
-          <ServiceCard key="b" icon={ShieldCheck} title="Boleto Garantido" text="Mais segurança nas vendas e previsibilidade no recebimento." href="/securitizadora/boleto-garantido" accent="gold" image={imgBoleto} />,
-          <ServiceCard key="l" icon={Smartphone} title="Conta Digital Luri" text="Conta completa para pessoas e empresas com Pix, pagamentos e gestão." href="/securitizadora/conta-digital-luri" image={imgLuri} />,
-          <ServiceCard key="i" icon={TrendingUp} title="Invista Conosco" text="Oportunidades estruturadas com transparência e acompanhamento consultivo." href="/invista-conosco" accent="gold" image={imgInvestimentos} />,
-          <ServiceCard key="s" icon={Building2} title="Securitizadora" text="Soluções financeiras inteligentes para empresas crescerem com segurança." href="/securitizadora" image={imgSecuritizadora} />,
-        ].map((card, i) => (
-          <Reveal key={i} delay={i * 0.06}>{card}</Reveal>
-        ))}
-      </div>
-    </section>
-
+     {/* SIMULADOR */}
+     <section className="container-x py-20">
+       <div className="grid gap-12 lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_480px]">
+         <div>
+           <Reveal>
+             <SectionTitle
+               light
+               align="left"
+               eyebrow="Simulação rápida"
+               title={<>Quanto você <span className="text-gold-gradient">precisa hoje?</span></>}
+               subtitle="Simule agora e veja as condições exclusivas que preparamos para você ou sua empresa."
+             />
+           </Reveal>
+           <div className="mt-8 grid gap-4 sm:grid-cols-2">
+             {[
+               { t: "Taxas reduzidas", s: "A partir de 1,15% ao mês" },
+               { t: "Liberação rápida", s: "Dinheiro na conta em até 24h" },
+               { t: "Sem burocracia", s: "Processo 100% digital e seguro" },
+               { t: "Flexibilidade", s: "Pague em até 84 meses" },
+             ].map((x) => (
+               <Reveal key={x.t}>
+                 <div className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                   <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
+                     <CheckCircle2 className="h-3 w-3" />
+                   </div>
+                   <div>
+                     <p className="text-sm font-bold text-white">{x.t}</p>
+                     <p className="text-xs text-white/60">{x.s}</p>
+                   </div>
+                 </div>
+               </Reveal>
+             ))}
+           </div>
+         </div>
+         <Reveal delay={0.2}>
+           <CreditSimulator />
+         </Reveal>
+       </div>
+     </section>
+ 
+     {/* SOLUÇÕES */}
+     <section className="container-x py-20">
+       <Reveal>
+       <SectionTitle
+         light
+         eyebrow="Nossas soluções"
+         title={<>Soluções completas para você <span className="text-royal-gradient">e seu negócio</span></>}
+         subtitle="Crédito, gestão e investimentos em um único lugar — com tecnologia, segurança e atendimento humano."
+       />
+       </Reveal>
+       <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+         {[
+           <ServiceCard key="c" icon={Banknote} title="Consignado" text="Aprovação facilitada com taxas reduzidas e parcelas que cabem no seu orçamento." href="/consignado" image={imgConsignado} />,
+           <ServiceCard key="a" icon={Receipt} title="Antecipação de Recebíveis" text="Transforme vendas futuras em capital imediato para sua empresa crescer." href="/securitizadora/antecipacao-de-recebiveis" image={imgAntecipacao} />,
+           <ServiceCard key="b" icon={ShieldCheck} title="Boleto Garantido" text="Mais segurança nas vendas e previsibilidade no recebimento." href="/securitizadora/boleto-garantido" accent="gold" image={imgBoleto} />,
+           <ServiceCard key="l" icon={Smartphone} title="Conta Digital Luri" text="Conta completa para pessoas e empresas com Pix, pagamentos e gestão." href="/securitizadora/conta-digital-luri" image={imgLuri} />,
+           <ServiceCard key="i" icon={TrendingUp} title="Invista Conosco" text="Oportunidades estruturadas com transparência e acompanhamento consultivo." href="/invista-conosco" accent="gold" image={imgInvestimentos} />,
+           <ServiceCard key="s" icon={Building2} title="Securitizadora" text="Soluções financeiras inteligentes para empresas crescerem com segurança." href="/securitizadora" image={imgSecuritizadora} />,
+         ].map((card, i) => (
+           <Reveal key={i} delay={i * 0.06}>{card}</Reveal>
+         ))}
+       </div>
+     </section>
+ 
+     {/* FAQ */}
+     <section className="container-x py-20">
+       <div className="grid gap-12 lg:grid-cols-2">
+         <Reveal>
+           <div>
+             <SectionTitle
+               light
+               align="left"
+               eyebrow="Tire suas dúvidas"
+               title="Perguntas frequentes"
+               subtitle="Separamos as principais dúvidas dos nossos clientes para te ajudar."
+             />
+             <div className="mt-8">
+               <Link to="/duvidas" className="btn-outline-white">Ver FAQ completo</Link>
+             </div>
+           </div>
+         </Reveal>
+         <Reveal delay={0.1}>
+           <FAQAccordion
+             dark
+             items={[
+               { q: "Qual o prazo para liberação do crédito?", a: "Após a aprovação final, o valor é liberado em sua conta em até 24 horas úteis." },
+               { q: "Quais são as taxas de juros?", a: "As taxas variam conforme a modalidade e perfil, iniciando em 1,15% ao mês para consignado." },
+               { q: "Posso contratar se estiver negativado?", a: "Sim, para a modalidade de crédito consignado, realizamos análise mesmo para negativados." },
+               { q: "O processo é totalmente digital?", a: "Sim, você pode fazer tudo pelo seu celular ou computador com total segurança e rapidez." },
+             ]}
+           />
+         </Reveal>
+       </div>
+     </section>
+ 
     {/* EQUIPE */}
     <section className="container-x py-20">
       <Reveal>
