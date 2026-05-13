@@ -51,13 +51,13 @@ const Sobre = () => (
         <Reveal>
           <div>
             <span className="pill-gold"><ShieldAlert className="h-3 w-3" /> Nossa Essência</span>
-            <h2 className="mt-6 text-3xl font-extrabold leading-tight text-white md:text-5xl">
+            <h2 className="mt-6 text-3xl font-bold leading-tight text-white md:text-5xl tracking-tight">
               Propósito que gera <span className="text-gold-gradient">valor real</span>
             </h2>
-            <p className="mt-6 text-lg text-white/80 leading-relaxed">
+            <p className="mt-6 text-lg text-white/50 leading-relaxed font-medium">
               A Credifácil não nasceu para ser apenas mais uma financeira. Nascemos para ser o porto seguro de quem precisa de capital para crescer, investir ou reorganizar sua vida financeira. 
             </p>
-            <p className="mt-4 text-white/80">
+            <p className="mt-4 text-white/50 font-medium">
               Nossa operação é pautada por três pilares inegociáveis: tecnologia de ponta, taxas competitivas e, acima de tudo, respeito pelo ser humano por trás de cada contrato.
             </p>
             <div className="mt-10 space-y-4">
@@ -72,15 +72,15 @@ const Sobre = () => (
         </Reveal>
         <Reveal delay={0.1}>
           <div className="grid gap-6 sm:grid-cols-2">
-            {VALUES.map(({ I, t, s }) => (
-              <div key={t} className="card-soft p-8 bg-white/5 border-white/10 hover:bg-white/10 transition-all">
-                <div className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-[hsl(var(--royal))] to-[hsl(var(--gold))] text-white shadow-xl">
-                  <I className="h-7 w-7" />
+              {VALUES.map(({ I, t, s }) => (
+                <div key={t} className="card-modern p-8 bg-white/[0.03]">
+                  <div className="grid h-14 w-14 place-items-center rounded-2xl bg-primary/10 text-primary shadow-xl">
+                    <I className="h-7 w-7" />
+                  </div>
+                  <h3 className="mt-6 text-xl font-bold text-white">{t}</h3>
+                  <p className="mt-3 text-sm text-white/40 leading-relaxed font-medium">{s}</p>
                 </div>
-                <h3 className="mt-6 text-xl font-bold text-white">{t}</h3>
-                <p className="mt-3 text-sm text-white/80 leading-relaxed font-medium">{s}</p>
-              </div>
-            ))}
+              ))}
           </div>
         </Reveal>
       </div>
@@ -98,11 +98,11 @@ const Sobre = () => (
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {CASES.map(({ num, l, I }, i) => (
             <Reveal key={l} delay={i * 0.1}>
-              <div className="card-soft p-8 text-center bg-white/5">
+              <div className="card-modern p-8 text-center bg-white/[0.03]">
                 <div className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-white/10 text-[hsl(var(--gold-soft))] mb-6">
                   <I className="h-6 w-6" />
                 </div>
-                <p className="text-4xl font-black text-white tracking-tighter">{num}</p>
+                <p className="text-4xl font-bold text-white tracking-tight">{num}</p>
                 <p className="mt-2 text-xs uppercase tracking-widest text-white/60 font-bold">{l}</p>
               </div>
             </Reveal>
@@ -127,10 +127,10 @@ const Sobre = () => (
             <Reveal key={t.year} delay={i * 0.1}>
               <div className={`relative flex items-center gap-12 md:justify-between ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                 <div className="absolute left-4 h-4 w-4 -translate-x-1/2 rounded-full bg-[hsl(var(--gold))] ring-4 ring-navy-deep md:left-1/2" />
-                <div className="card-soft ml-12 p-8 md:ml-0 md:w-[45%] bg-white/5">
-                  <span className="text-4xl font-black text-[hsl(var(--gold-soft))] opacity-50">{t.year}</span>
+                <div className="card-modern ml-12 p-8 md:ml-0 md:w-[45%] bg-white/[0.03]">
+                  <span className="text-4xl font-bold text-primary opacity-50 tracking-tight">{t.year}</span>
                   <h3 className="mt-2 text-xl font-bold text-white">{t.title}</h3>
-                  <p className="mt-3 text-sm text-white/80 leading-relaxed font-medium">{t.text}</p>
+                  <p className="mt-3 text-sm text-white/40 leading-relaxed font-medium">{t.text}</p>
                 </div>
                 <div className="hidden md:block md:w-[45%]" />
               </div>

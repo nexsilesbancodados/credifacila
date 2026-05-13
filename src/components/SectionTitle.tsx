@@ -25,7 +25,7 @@ const SectionTitle = ({ eyebrow, title, subtitle, align = "center", light, class
     )}
     <h2
       className={cn(
-        "mt-6 text-3xl font-black leading-[1.1] sm:text-4xl md:text-6xl tracking-tighter",
+        "mt-6 text-3xl font-bold leading-[1.1] sm:text-4xl md:text-6xl tracking-tight",
         light ? "text-white" : "text-foreground"
       )}
     >

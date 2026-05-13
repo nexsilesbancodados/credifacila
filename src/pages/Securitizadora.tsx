@@ -17,6 +17,13 @@ const Securitizadora = () => (
     <SEOHead
       title="Securitizadora Credifácil | Engenharia Financeira para Empresas"
       description="Soluções estruturadas para transformar recebíveis em capital estratégico. Liquidez, segurança e governança de alto nível para sua gestão financeira corporativa."
+      jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Securitização de Ativos",
+        "description": "Engenharia financeira para transformação de recebíveis em capital estratégico.",
+        "provider": { "@type": "FinancialService", "name": "Credifácil" }
+      }}
     />
     <PageHeader
       eyebrow="Structured Finance"
@@ -33,8 +40,8 @@ const Securitizadora = () => (
         <Reveal>
           <div>
             <span className="pill-gold"><Briefcase className="h-3 w-3" aria-hidden="true" /> Soluções B2B</span>
-            <h2 id="definition-title" className="mt-6 text-3xl font-black leading-tight text-white md:text-5xl tracking-tighter">O que é a Securitização Estratégica?</h2>
-            <p className="mt-6 text-lg text-white/80 font-medium leading-relaxed">
+            <h2 id="definition-title" className="mt-6 text-3xl font-bold leading-tight text-white md:text-5xl tracking-tight">O que é a Securitização Estratégica?</h2>
+            <p className="mt-6 text-lg text-white/50 font-medium leading-relaxed">
               Diferente da antecipação bancária comum, a securitização é um processo de engenharia financeira que isola o risco dos ativos, permitindo taxas mais competitivas e maior fôlego para o fluxo de caixa da sua empresa.
             </p>
             <div className="mt-8 p-8 rounded-[2rem] bg-white/5 border border-white/10">
@@ -50,11 +57,11 @@ const Securitizadora = () => (
               { I: Wallet, t: "Cash-on-hand", v: "Imediato", d: "Liquidez em D+0" },
               { I: BarChart3, t: "Efficiency Score", v: "A+", d: "Rating de performance" },
             ].map((s) => (
-              <div key={s.t} className="card-soft p-6 border-white/5">
-                <s.I className="h-6 w-6 text-[hsl(var(--gold-soft))]" aria-hidden="true" />
-                <p className="mt-4 text-3xl font-black text-white">{s.v}</p>
-                <p className="text-xs font-black text-white/50 uppercase tracking-widest mt-1">{s.t}</p>
-                <p className="mt-2 text-[10px] text-white/50 uppercase tracking-[0.1em] font-bold">{s.d}</p>
+              <div key={s.t} className="card-modern p-6 bg-white/[0.03]">
+                <s.I className="h-6 w-6 text-primary" aria-hidden="true" />
+                <p className="mt-4 text-3xl font-bold text-white tracking-tight">{s.v}</p>
+                <p className="text-xs font-bold text-white/40 uppercase tracking-widest mt-1">{s.t}</p>
+                <p className="mt-2 text-[10px] text-white/20 uppercase tracking-[0.1em] font-bold">{s.d}</p>
               </div>
             ))}
           </div>

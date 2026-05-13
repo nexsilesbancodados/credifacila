@@ -10,10 +10,10 @@ const Footer = () => (
     
     <div className="container-x relative grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-5">
       <div className="lg:col-span-2">
-        <div className="rounded-2xl bg-white/95 px-4 py-3 inline-flex">
-          <Logo className="h-10" aria-hidden={true} />
+        <div className="rounded-xl bg-white/10 px-4 py-3 inline-flex border border-white/10">
+          <Logo className="h-8 brightness-0 invert" aria-hidden={true} />
         </div>
-        <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/80">{SITE.description}</p>
+        <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/40 font-medium">{SITE.description}</p>
         <nav className="mt-8 flex gap-3" aria-label="Redes sociais">
           {[
             { Icon: Instagram, label: "Instagram" },

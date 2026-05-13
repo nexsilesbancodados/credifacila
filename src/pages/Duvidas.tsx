@@ -44,12 +44,27 @@ const groups = [
   },
 ];
 
-const Duvidas = () => (
-  <Layout tone="midnight">
-    <SEOHead
-      title="Suporte & Dúvidas Frequentes | Credifácil Help Center"
-      description="Central de ajuda Credifácil. Respostas técnicas sobre crédito, securitização, investimentos e conta digital."
-    />
+const Duvidas = () => {
+  const faqItems = groups.flatMap(g => g.items);
+  
+  return (
+    <Layout tone="midnight">
+      <SEOHead
+        title="Suporte & Dúvidas Frequentes | Credifácil Help Center"
+        description="Central de ajuda Credifácil. Respostas técnicas sobre crédito, securitização, investimentos e conta digital."
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqItems.map(item => ({
+            "@type": "Question",
+            "name": item.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.a
+            }
+          }))
+        }}
+      />
     <PageHeader
       eyebrow="Help Center"
       title={<>Central de <span className="text-gold-gradient">Atendimento & Suporte</span></>}
@@ -62,8 +77,8 @@ const Duvidas = () => (
       <div className="grid gap-16 lg:grid-cols-[1fr_2.5fr]">
         <aside className="space-y-8">
           <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-10">
-            <h3 className="text-xl font-black text-white uppercase tracking-tighter">Canais Diretos</h3>
-            <p className="mt-4 text-sm text-white/80 leading-relaxed">Prefere falar com um humano? Nosso tempo de resposta médio é de 2 minutos.</p>
+            <h3 className="text-xl font-bold text-white uppercase tracking-tight">Canais Diretos</h3>
+            <p className="mt-4 text-sm text-white/40 leading-relaxed font-medium">Prefere falar com um humano? Nosso tempo de resposta médio é de 2 minutos.</p>
             
             <div className="mt-10 space-y-8">
               <a href="/contato" className="flex items-center gap-5 group outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--gold-soft))] rounded-xl p-1 -m-1">
@@ -71,8 +86,8 @@ const Duvidas = () => (
                   <MessageCircle className="h-6 w-6" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-sm font-black text-white uppercase tracking-widest">Chat ao vivo</p>
-                  <p className="text-xs text-white/50 font-bold uppercase tracking-widest mt-1">Disponível agora</p>
+                  <p className="text-sm font-bold text-white uppercase tracking-widest">Chat ao vivo</p>
+                  <p className="text-xs text-primary font-bold uppercase tracking-widest mt-1">Disponível agora</p>
                 </div>
               </a>
               <a href="tel:0800" className="flex items-center gap-5 group outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--gold-soft))] rounded-xl p-1 -m-1">
@@ -124,7 +139,8 @@ const Duvidas = () => (
       subtitle="Nossa equipe de Relationship Managers está à disposição para diagnósticos profundos."
       cta="Agendar Consultoria" 
     />
-  </Layout>
-);
+    </Layout>
+  );
+};
 
 export default memo(Duvidas);

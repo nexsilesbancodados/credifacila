@@ -24,15 +24,15 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-         scrolled
-           ? "bg-white text-slate-950 shadow-md py-1"
-           : "bg-transparent py-2"
+        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
+        scrolled
+          ? "bg-background/80 backdrop-blur-xl border-b border-white/5 py-2 shadow-2xl"
+          : "bg-transparent py-4"
       )}
     >
       <div className="container-x flex h-[64px] items-center justify-between md:h-[84px]">
         <Link to="/" className="flex items-center gap-2 outline-offset-4" aria-label="Credifácil — Página Inicial">
-          <Logo className="h-9 md:h-12" aria-hidden={true} />
+          <Logo className="h-8 md:h-10" aria-hidden={true} />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Menu Principal">
@@ -43,13 +43,10 @@ const Header = () => {
                 <div key={item.label} className="group relative">
                   <button
                     className={cn(
-                       "flex items-center gap-1 rounded-full px-4 py-2 text-base font-bold transition-colors outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--royal))]",
-                      scrolled
-                        ? "text-foreground hover:text-[hsl(var(--royal))]"
-                        : "text-white/90 hover:text-white"
+                      "flex items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold transition-all outline-none hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-primary",
+                      scrolled ? "text-foreground" : "text-white/90 hover:text-white"
                     )}
                     aria-haspopup="menu"
-                    aria-expanded="false" // Should be dynamic in a full implementation, but better than nothing
                   >
                     {item.label}
                     <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" aria-hidden={true} />
@@ -88,12 +85,10 @@ const Header = () => {
                 end
                 className={({ isActive }) =>
                   cn(
-                      "rounded-full px-4 py-2 text-base font-bold transition-colors outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--royal))]",
+                    "rounded-full px-4 py-2 text-sm font-semibold transition-all outline-none hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-primary",
                     isActive
-                      ? scrolled ? "text-[hsl(var(--royal))]" : "text-[hsl(var(--gold-soft))]"
-                      : scrolled
-                        ? "text-foreground hover:text-[hsl(var(--royal))]"
-                        : "text-white/90 hover:text-white"
+                      ? "text-primary bg-primary/10"
+                      : scrolled ? "text-foreground" : "text-white/90 hover:text-white"
                   )
                 }
               >

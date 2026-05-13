@@ -58,17 +58,17 @@ const Index = () => (
         <div className="max-w-4xl text-white">
           <Reveal>
             <span className="pill-gold"><ShieldAlert className="h-3 w-3" aria-hidden="true" /> Solidez Institucional & Tecnologia</span>
-            <h1 className="mt-8 text-5xl font-black leading-[0.95] tracking-tighter md:text-7xl lg:text-9xl">
+            <h1 className="mt-8 text-5xl font-bold leading-[0.95] tracking-tight md:text-7xl lg:text-8xl">
               Inteligência <br/> <span className="text-gold-gradient">Financeira</span>
             </h1>
-            <p className="mt-8 max-w-2xl text-lg text-white/80 md:text-xl leading-relaxed font-medium">
+            <p className="mt-8 max-w-2xl text-lg text-white/70 md:text-xl leading-relaxed font-medium">
               Elevamos o padrão do crédito no Brasil com estruturas personalizadas de fomento comercial e gestão de ativos para indivíduos e empresas de alta performance.
             </p>
             <nav className="mt-10 flex flex-wrap gap-4" aria-label="Ações principais">
               <Link to="/contato" className="btn-gold px-8 py-4 text-lg">Acessar Soluções <ArrowRight className="h-5 w-5 ml-2" aria-hidden="true" /></Link>
               <Link to="/sobre" className="btn-outline-white px-8 py-4 text-lg">Nossa Governança</Link>
             </nav>
-            <div className="mt-16 grid grid-cols-2 gap-8 md:grid-cols-4 border-t border-white/10 pt-10" aria-label="Estatísticas de mercado">
+            <div className="mt-16 grid grid-cols-2 gap-8 md:grid-cols-4 border-t border-white/5 pt-10" aria-label="Estatísticas de mercado">
               <AnimatedStat value="1.2B" label="Liberados" prefix="R$" />
               <AnimatedStat value="65K" label="Clientes" />
               <AnimatedStat value="98%" label="Satisfação" />
@@ -103,43 +103,43 @@ const Index = () => (
        </div>
      </section>
   
-     <section className="container-x py-24 border-t border-white/5" aria-labelledby="governance-title">
-       <div className="grid items-center gap-16 lg:grid-cols-2">
-         <Reveal>
-           <div className="relative">
-             <div className="absolute -inset-4 bg-[hsl(var(--gold))/0.1] blur-3xl rounded-full" aria-hidden="true" />
-             <HeroImage src={imgEquipe} alt="Time de consultores Wealth Advisory Credifácil" priority withLogo />
-           </div>
-         </Reveal>
-         <Reveal delay={0.1}>
-           <div>
-             <span className="pill-gold"><Landmark className="h-3 w-3" aria-hidden="true" /> Governança & Solidez</span>
-             <h2 id="governance-title" className="mt-6 text-4xl font-black leading-tight text-white md:text-5xl tracking-tighter">
-               Mais que crédito: <br/> <span className="text-gold-gradient">Parceria Estratégica</span>
-             </h2>
-             <p className="mt-8 text-lg text-white/60 font-medium leading-relaxed">
-               Nossa equipe multidisciplinar — formada por analistas de risco, economistas e consultores certificados — atua na ponta para garantir que cada solução seja um degrau para o seu crescimento.
-             </p>
-             <div className="mt-10 grid gap-8 sm:grid-cols-3" aria-label="Nossos números institucionais">
-               <div>
-                 <p className="text-4xl font-black text-white">12+</p>
-                  <p className="text-[10px] uppercase tracking-widest font-bold text-white/50 mt-1">Anos de Mercado</p>
-               </div>
-               <div>
-                 <p className="text-4xl font-black text-white">100%</p>
-                  <p className="text-[10px] uppercase tracking-widest font-bold text-white/50 mt-1">Processo Digital</p>
-               </div>
-               <div>
-                 <p className="text-4xl font-black text-white">A+</p>
-                  <p className="text-[10px] uppercase tracking-widest font-bold text-white/50 mt-1">Rating Compliance</p>
-               </div>
-             </div>
-           </div>
-         </Reveal>
-       </div>
-     </section>
+      <section className="container-x py-24 border-y border-white/5 bg-white/[0.01]" aria-labelledby="governance-title">
+        <div className="grid items-center gap-16 lg:grid-cols-2">
+          <Reveal>
+            <div className="relative">
+              <div className="absolute -inset-10 bg-primary/10 blur-[100px] rounded-full" aria-hidden="true" />
+              <HeroImage src={imgEquipe} alt="Time de consultores Wealth Advisory Credifácil" priority withLogo />
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div>
+              <span className="pill-gold"><Landmark className="h-3 w-3" aria-hidden="true" /> Governança & Solidez</span>
+              <h2 id="governance-title" className="mt-6 text-4xl font-bold leading-tight text-white md:text-5xl tracking-tight">
+                Mais que crédito: <br/> <span className="text-gold-gradient">Parceria Estratégica</span>
+              </h2>
+              <p className="mt-8 text-lg text-white/50 font-medium leading-relaxed">
+                Nossa equipe multidisciplinar — formada por analistas de risco, economistas e consultores certificados — atua na ponta para garantir que cada solução seja um degrau para o seu crescimento.
+              </p>
+              <div className="mt-10 grid gap-8 sm:grid-cols-3" aria-label="Nossos números institucionais">
+                <div>
+                  <p className="text-4xl font-bold text-white">12+</p>
+                   <p className="text-[10px] uppercase tracking-widest font-bold text-white/30 mt-1">Anos de Mercado</p>
+                </div>
+                <div>
+                  <p className="text-4xl font-bold text-white">100%</p>
+                   <p className="text-[10px] uppercase tracking-widest font-bold text-white/30 mt-1">Processo Digital</p>
+                </div>
+                <div>
+                  <p className="text-4xl font-bold text-white">A+</p>
+                   <p className="text-[10px] uppercase tracking-widest font-bold text-white/30 mt-1">Rating Compliance</p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
-    <section className="bg-white/[0.02] py-24" aria-labelledby="workflow-section-title">
+    <section className="bg-white/[0.01] py-24" aria-labelledby="workflow-section-title">
       <div className="container-x">
         <Reveal>
           <SectionTitle
@@ -163,6 +163,38 @@ const Index = () => (
       </div>
     </section>
 
+    <section className="container-x py-24" aria-labelledby="trust-title">
+      <Reveal>
+        <div className="card-modern p-12 lg:p-16 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[120px] -rotate-12 translate-x-1/2" />
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="max-w-xl">
+              <span className="pill-gold">Segurança & Confiança</span>
+              <h2 id="trust-title" className="mt-6 text-3xl font-bold text-white md:text-5xl tracking-tight">
+                Seus dados protegidos por <span className="text-gold-gradient">padrão bancário</span>
+              </h2>
+              <p className="mt-6 text-white/50 font-medium text-lg leading-relaxed">
+                Utilizamos tecnologia de ponta para garantir a blindagem das suas operações e a total conformidade com os órgãos reguladores.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4 w-full lg:w-auto">
+              {[
+                { label: "Criptografia SSL", detail: "256 bits", icon: ShieldCheck },
+                { label: "Compliance LGPD", detail: "100% Adequado", icon: ShieldAlert },
+                { label: "Regulado BACEN", detail: "Correspondente", icon: Landmark },
+                { label: "Auditoria Externa", detail: "Transparência", icon: TrendingUp },
+              ].map((item, i) => (
+                <div key={i} className="bg-white/5 rounded-2xl p-6 border border-white/5 hover:border-white/10 transition-colors">
+                  <item.icon className="h-8 w-8 text-primary mb-4" />
+                  <h4 className="text-white font-bold text-sm uppercase tracking-wider">{item.label}</h4>
+                  <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest mt-1">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Reveal>
+    </section>
     <section className="container-x py-24" aria-label="Ajuda e Novidades">
        <div className="grid gap-20 lg:grid-cols-2">
          <Reveal>

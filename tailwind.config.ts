@@ -12,20 +12,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: [
-          "Manrope",
-          "system-ui",
-          "-apple-system",
-          "Segoe UI",
-          "Roboto",
-          "sans-serif",
-        ],
-        display: [
-          "Plus Jakarta Sans",
-          "Manrope",
-          "system-ui",
-          "sans-serif",
-        ],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Plus Jakarta Sans", "Inter", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -33,12 +21,11 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        "brand-gold": {
-          DEFAULT: "hsl(var(--brand-gold))",
-          soft: "hsl(var(--brand-gold-soft))",
-          foreground: "hsl(var(--brand-gold-foreground))",
+        "navy-deep": "hsl(var(--navy-deep))",
+        "gold": {
+          DEFAULT: "hsl(var(--gold))",
+          soft: "hsl(var(--gold-soft))",
         },
-        "brand-ink": "hsl(var(--brand-ink))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
