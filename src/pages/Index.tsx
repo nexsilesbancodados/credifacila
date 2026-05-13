@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import EasyLoanSection from "@/components/EasyLoanSection";
 import BanksPartnersSection from "@/components/BanksPartnersSection";
+import LoanTypesSection from "@/components/LoanTypesSection";
 import hero1 from "@/assets/hero/hero-1.png";
 import hero2 from "@/assets/hero/hero-2.png";
 import hero3 from "@/assets/hero/hero-3.png";
@@ -87,6 +88,7 @@ const Index = () => {
 
       <EasyLoanSection />
       <BanksPartnersSection />
+      <LoanTypesSection />
     </main>
   );
 };
