@@ -144,25 +144,19 @@ const Blog = () => {
             </div>
           </Reveal>
 
-          <div className="grid lg:grid-cols-12 gap-8 items-end">
-            <Reveal delay={150}>
-              <div className="lg:col-span-8">
-                <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight">
-                  <span className="block text-white">Diário</span>
-                  <span className="block bg-gradient-to-br from-[#f0d78c] via-[#d4a84a] to-[#8b6f3a] bg-clip-text text-transparent italic">
-                    Financeiro
-                  </span>
-                </h1>
-              </div>
-            </Reveal>
-            <Reveal delay={300}>
-              <div className="lg:col-span-4">
-                <p className="text-base md:text-lg text-white/70 leading-relaxed border-l-2 border-[#f0d78c]/40 pl-6">
-                  Análises, ensaios e curadoria sobre crédito, investimentos e o futuro do dinheiro — escritos pela nossa mesa.
-                </p>
-              </div>
-            </Reveal>
-          </div>
+          <Reveal delay={150}>
+            <h1 className="font-serif text-6xl md:text-8xl lg:text-[9rem] leading-[0.9] tracking-tight">
+              <span className="block text-white">Diário</span>
+              <span className="block bg-gradient-to-br from-[#f0d78c] via-[#d4a84a] to-[#8b6f3a] bg-clip-text text-transparent italic">
+                Financeiro
+              </span>
+            </h1>
+          </Reveal>
+          <Reveal delay={300}>
+            <p className="mt-10 max-w-xl text-base md:text-lg text-white/70 leading-relaxed border-l-2 border-[#f0d78c]/40 pl-6">
+              Análises, ensaios e curadoria sobre crédito, investimentos e o futuro do dinheiro — escritos pela nossa mesa.
+            </p>
+          </Reveal>
         </div>
       </section>
 
