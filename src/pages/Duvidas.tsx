@@ -1,10 +1,11 @@
+import { memo } from "react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import SEOHead from "@/components/SEOHead";
 import imgFaq from "@/assets/img-faq.jpg";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
-import { Search, HelpCircle, MessageCircle, PhoneCall } from "lucide-react";
+import { HelpCircle, MessageCircle, PhoneCall, ShieldAlert } from "lucide-react";
 import Reveal from "@/components/Reveal";
 
 const groups = [
@@ -57,60 +58,61 @@ const Duvidas = () => (
       className="-mt-[72px] pt-[72px] md:-mt-[84px] md:pt-[84px]"
     />
 
-    <section className="container-x py-16">
-      <div className="grid gap-12 lg:grid-cols-[1fr_2.5fr]">
-        <aside className="space-y-6">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-            <h3 className="text-xl font-bold text-white">Canais Diretos</h3>
-            <p className="mt-2 text-sm text-white/60">Prefere falar com um humano? Estamos prontos para ajudar.</p>
+    <section className="container-x py-24">
+      <div className="grid gap-16 lg:grid-cols-[1fr_2.5fr]">
+        <aside className="space-y-8">
+          <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-10">
+            <h3 className="text-xl font-black text-white uppercase tracking-tighter">Canais Diretos</h3>
+            <p className="mt-4 text-sm text-white/50 leading-relaxed">Prefere falar com um humano? Nosso tempo de resposta médio é de 2 minutos.</p>
             
-            <div className="mt-8 space-y-6">
-              <a href="/contato" className="flex items-center gap-4 group">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-[hsl(var(--gold-soft))] group-hover:bg-[hsl(var(--gold-soft))] group-hover:text-white transition-all">
-                  <MessageCircle className="h-5 w-5" />
+            <div className="mt-10 space-y-8">
+              <a href="/contato" className="flex items-center gap-5 group outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--gold-soft))] rounded-xl p-1 -m-1">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-[hsl(var(--gold-soft))] group-hover:bg-[hsl(var(--gold-soft))] group-hover:text-navy-deep transition-all">
+                  <MessageCircle className="h-6 w-6" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-white">Chat ao vivo</p>
-                  <p className="text-xs text-white/50">Tempo médio: 2 min</p>
+                  <p className="text-sm font-black text-white uppercase tracking-widest">Chat ao vivo</p>
+                  <p className="text-xs text-white/30 font-bold uppercase tracking-widest mt-1">Disponível agora</p>
                 </div>
               </a>
-              <a href="tel:0800" className="flex items-center gap-4 group">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-[hsl(var(--gold-soft))] group-hover:bg-[hsl(var(--gold-soft))] group-hover:text-white transition-all">
-                  <PhoneCall className="h-5 w-5" />
+              <a href="tel:0800" className="flex items-center gap-5 group outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--gold-soft))] rounded-xl p-1 -m-1">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-[hsl(var(--gold-soft))] group-hover:bg-[hsl(var(--gold-soft))] group-hover:text-navy-deep transition-all">
+                  <PhoneCall className="h-6 w-6" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-white">0800 Central</p>
-                  <p className="text-xs text-white/50">Atendimento Nacional</p>
+                  <p className="text-sm font-black text-white uppercase tracking-widest">0800 Central</p>
+                  <p className="text-xs text-white/30 font-bold uppercase tracking-widest mt-1">Ligação gratuita</p>
                 </div>
               </a>
-              <div className="flex items-center gap-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-[hsl(var(--gold-soft))]">
-                  <HelpCircle className="h-5 w-5" />
+              <div className="flex items-center gap-5">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-[hsl(var(--gold-soft))]">
+                  <HelpCircle className="h-6 w-6" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-white">Ouvidoria</p>
-                  <p className="text-xs text-white/50">Canal de segunda instância</p>
+                  <p className="text-sm font-black text-white uppercase tracking-widest">Ouvidoria</p>
+                  <p className="text-xs text-white/30 font-bold uppercase tracking-widest mt-1">Segunda instância</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="rounded-3xl bg-gradient-to-br from-[hsl(var(--royal))] to-[hsl(var(--sky))] p-8 text-white shadow-xl">
-            <h4 className="font-bold">Segurança Digital</h4>
-            <p className="mt-3 text-sm opacity-90">Nunca solicitamos senhas ou tokens por telefone. Nossos e-mails oficiais terminam sempre em @credifacil.com.br</p>
+          <div className="rounded-[2.5rem] bg-gradient-to-br from-[hsl(var(--royal))] to-[hsl(var(--sky))] p-10 text-white shadow-2xl relative overflow-hidden group">
+            <ShieldAlert className="absolute -right-4 -bottom-4 h-32 w-32 text-white/10 rotate-12 transition-transform group-hover:scale-110" aria-hidden="true" />
+            <h4 className="font-black text-xl uppercase tracking-tighter relative z-10">Segurança Digital</h4>
+            <p className="mt-4 text-sm opacity-90 leading-relaxed relative z-10 font-medium">Nunca solicitamos tokens ou senhas por telefone. Nossas comunicações oficiais são centralizadas no portal Luri.</p>
           </div>
         </aside>
 
-        <div className="space-y-16">
+        <div className="space-y-20">
           {groups.map((g, i) => (
             <Reveal key={g.name} delay={i * 0.1}>
-              <div id={g.name.toLowerCase().replace(/ /g, '-')}>
-                <div className="mb-6 flex items-center gap-4">
-                  <div className="h-px flex-1 bg-white/10" />
-                  <h2 className="text-2xl font-black uppercase tracking-tighter text-white/90">{g.name}</h2>
+              <section id={g.name.toLowerCase().replace(/ /g, '-')} aria-labelledby={`title-${i}`}>
+                <div className="mb-10 flex items-center gap-6">
+                  <h2 id={`title-${i}`} className="text-2xl font-black uppercase tracking-tighter text-white/90 whitespace-nowrap">{g.name}</h2>
+                  <div className="h-px flex-1 bg-white/10" aria-hidden="true" />
                 </div>
                 <FAQAccordion items={g.items} dark />
-              </div>
+              </section>
             </Reveal>
           ))}
         </div>
@@ -118,11 +120,11 @@ const Duvidas = () => (
     </section>
 
     <CTASection 
-      title="Ainda precisa de auxílio?" 
-      subtitle="Nossos consultores estão disponíveis para reuniões presenciais ou via vídeo-conferência."
+      title="Ainda possui questionamentos técnicos?" 
+      subtitle="Nossa equipe de Relationship Managers está à disposição para diagnósticos profundos."
       cta="Agendar Consultoria" 
     />
   </Layout>
 );
 
-export default Duvidas;
+export default memo(Duvidas);
