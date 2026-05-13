@@ -1,4 +1,4 @@
-import { Check, BarChart3, Building2, ShieldCheck, TrendingUp, Wallet, Zap, Headset, X, BellRing, Scale } from "lucide-react";
+import { Check, BarChart3, Building2, ShieldCheck, TrendingUp, Wallet, Zap, Headset, X, BellRing, Scale, ShieldAlert, BadgeCheck } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import SEOHead from "@/components/SEOHead";
@@ -9,108 +9,138 @@ import CTASection from "@/components/CTASection";
 import imgBoleto from "@/assets/img-boleto.jpg";
 import SectionBanner from "@/components/SectionBanner";
 import bannerSeguranca from "@/assets/banner-seguranca.png";
+import Reveal from "@/components/Reveal";
 
 const BoletoGarantido = () => (
-  <Layout tone="azure">
+  <Layout tone="midnight">
     <SEOHead
-      title="Boleto Garantido | Credifácil Securitizadora"
-      description="Venda com mais segurança: previsibilidade de recebimento e proteção contra inadimplência com o Boleto Garantido Credifácil."
+      title="Boleto Garantido | Proteção Contra Inadimplência"
+      description="Receba suas vendas mesmo que seu cliente não pague. Proteção total do fluxo de caixa e gestão de cobrança profissional."
     />
     <PageHeader
-      eyebrow="Boleto Garantido"
-      title={<>Boleto Garantido para sua empresa <span className="text-gold-gradient">vender com mais segurança</span></>}
-      subtitle="Tenha mais previsibilidade, reduza riscos e receba com tranquilidade."
-      primaryCta={{ label: "Conhecer Boleto Garantido", href: "/contato" }}
-      secondaryCta={{ label: "Falar com especialista", href: "/contato" }}
+      eyebrow="Credit Insurance & Protection"
+      title={<>Boleto Garantido: <span className="text-gold-gradient">Risco Zero</span> na sua inadimplência</>}
+      subtitle="A solução definitiva para empresas que buscam blindar o caixa contra o calote e garantir liquidez total em cada venda realizada."
+      primaryCta={{ label: "Proteger meu Caixa", href: "/contato" }}
+      secondaryCta={{ label: "Como funciona", href: "#como" }}
       bgImage={imgBoleto}
       className="-mt-[72px] pt-[72px] md:-mt-[84px] md:pt-[84px]"
     />
 
-    <section className="container-x py-20">
-      <div className="grid items-center gap-10 lg:grid-cols-2">
-        <div>
-          <span className="pill"><ShieldCheck className="h-3 w-3" /> O que é</span>
-          <h2 className="mt-4 text-3xl font-extrabold leading-tight md:text-4xl">O que é Boleto Garantido?</h2>
-          <p className="mt-5 text-base text-muted-foreground md:text-lg">
-            É a solução que aumenta a segurança das vendas com boleto e traz mais previsibilidade ao recebimento, protegendo sua empresa contra inadimplência.
-          </p>
-          <p className="mt-3 text-base text-muted-foreground">
-            Você vende com tranquilidade e nós cuidamos da garantia do recebimento.
-          </p>
-        </div>
-        <div className="grid grid-cols-2 gap-4">
-          {[
-            { v: "-72%", l: "Inadimplência" },
-            { v: "+98%", l: "Previsibilidade" },
-            { v: "24h", l: "Recebimento" },
-            { v: "100%", l: "Seguro" },
-          ].map((s) => (
-            <div key={s.l} className="card-soft p-5 text-center">
-              <p className="text-3xl font-extrabold text-royal-gradient">{s.v}</p>
-              <p className="text-sm text-muted-foreground">{s.l}</p>
+    <section className="container-x py-24">
+      <div className="grid items-center gap-16 lg:grid-cols-2">
+        <Reveal>
+          <div>
+            <span className="pill-gold"><ShieldAlert className="h-3 w-3" /> Blindagem de Fluxo</span>
+            <h2 className="mt-6 text-3xl font-extrabold leading-tight text-white md:text-5xl">Venda hoje, receba sempre.</h2>
+            <p className="mt-6 text-lg text-white/80 leading-relaxed">
+              O Boleto Garantido da Credifácil não é apenas uma cobrança: é um seguro de crédito integrado. Se o seu cliente não pagar no vencimento, nós honramos o título para sua empresa não parar.
+            </p>
+            <div className="mt-8 grid grid-cols-2 gap-4">
+              <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                <p className="text-2xl font-black text-white">-72%</p>
+                <p className="text-xs text-white/40 uppercase tracking-widest">Inadimplência Real</p>
+              </div>
+              <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                <p className="text-2xl font-black text-white">100%</p>
+                <p className="text-xs text-white/40 uppercase tracking-widest">Garantia de Caixa</p>
+              </div>
             </div>
-          ))}
+          </div>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <div className="relative">
+            <div className="aspect-square rounded-[3rem] overflow-hidden border border-white/10">
+              <img src={imgBoleto} alt="Segurança financeira" className="h-full w-full object-cover opacity-60" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[hsl(var(--midnight))] via-transparent to-transparent" />
+            </div>
+            <div className="absolute -bottom-8 -right-8 p-8 bg-gradient-to-br from-[hsl(var(--gold-soft))] to-[hsl(var(--gold))] rounded-3xl shadow-2xl">
+              <BadgeCheck className="h-10 w-10 text-white" />
+              <p className="mt-4 text-white font-black">Selo de Proteção<br/>Ativo</p>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+
+    <section className="bg-white/[0.02] py-24">
+      <div className="container-x">
+        <SectionTitle light eyebrow="Serviços Integrados" title="Gestão 360º do seu Recebimento" />
+        <div className="mt-12">
+          <FeatureGrid
+            cols={3}
+            items={[
+              { icon: Scale, title: "Régua de Cobrança", text: "Processo de cobrança amigável automatizado via WhatsApp e E-mail, mantendo o bom relacionamento." },
+              { icon: ShieldCheck, title: "Seguro de Crédito", text: "Garantia total do valor de face do título em caso de não pagamento pelo sacado." },
+              { icon: BellRing, title: "Monitoramento Ativo", text: "Acompanhamento proativo de vencimentos para reduzir o esquecimento dos pagadores." },
+              { icon: TrendingUp, title: "Aumento de Market Share", text: "Venda a prazo para novos clientes com a segurança de que o risco é nosso, não seu." },
+              { icon: Wallet, title: "Liquidez Automática", text: "O crédito entra na sua conta na data do vencimento + D, independente da baixa do boleto." },
+              { icon: Building2, title: "Relatórios de Performance", text: "Dashboard completo para visualizar a saúde da sua carteira de clientes em tempo real." },
+            ]}
+          />
         </div>
       </div>
     </section>
 
-    <section className="container-x py-20">
-      <SectionTitle light eyebrow="Segurança Total" title="Fim do risco de inadimplência" />
-      <div className="mt-12">
-        <FeatureGrid
-          cols={3}
-          items={[
-            { icon: Scale, title: "Régua de Cobrança", text: "Nós cuidamos de todo o processo de cobrança amigável para você focar nas vendas." },
-            { icon: ShieldCheck, title: "Garantia de Recebimento", text: "Caso o seu cliente não pague, a Credifácil honra o compromisso no prazo acordado." },
-            { icon: BellRing, title: "Alertas Automáticos", text: "Notificações via WhatsApp e E-mail para seus clientes evitarem esquecimentos." },
-            { icon: TrendingUp, title: "Poder de Negociação", text: "Venda a prazo com a segurança de uma venda à vista, aumentando seu market share." },
-            { icon: Wallet, title: "Custo-Benefício", text: "Taxas menores que a antecipação comum, com a proteção adicional contra calotes." },
-            { icon: Building2, title: "Blindagem de Caixa", text: "Seu fluxo de caixa nunca para, independente do comportamento de pagamento do sacado." },
-          ]}
-        />
-      </div>
-    </section>
-
-    <section className="container-x py-20">
-      <SectionTitle light eyebrow="O Ciclo" title="Como a garantia protege você" />
+    <section id="como" className="container-x py-24">
+      <SectionTitle light eyebrow="Operacional" title="Fluxo de Garantia Credifácil" />
       <div className="mt-12">
         <StepTimeline
           steps={[
-            { title: "Emissão Inteligente", text: "Você gera o boleto através da nossa API ou painel administrativo para seu cliente." },
-            { title: "Validação do Risco", text: "Nossos algoritmos analisam o histórico do pagador e aprovam a garantia do título." },
-            { title: "Monitoramento Ativo", text: "Acompanhamos o vencimento e enviamos lembretes proativos de pagamento." },
-            { title: "Liquidez Certa", text: "Na data do vencimento + D, o crédito cai na sua conta mesmo que o boleto não seja pago." },
+            { title: "Emissão & Registro", text: "Os boletos são gerados com registro instantâneo no sistema bancário nacional via Luri." },
+            { title: "Scoring de Crédito", text: "Nosso motor de risco avalia o pagador e ativa a garantia automaticamente para o título." },
+            { title: "Cobrança Preventiva", text: "Enviamos lembretes e links de pagamento facilitados antes da data de vencimento." },
+            { title: "Repasse de Recursos", text: "O valor é creditado em sua conta, finalizando o ciclo com segurança total para seu caixa." },
           ]}
         />
       </div>
     </section>
 
-    <SectionBanner image={bannerSeguranca} alt="Atendente Credifácil com elementos visuais de segurança" />
+    <SectionBanner image={bannerSeguranca} alt="Segurança de dados e transações" />
 
-    <section className="container-x py-20">
-      <SectionTitle light eyebrow="Comparativo" title="Veja a diferença" />
-      <div className="mt-12 grid gap-5 md:grid-cols-2">
-        <div className="card-soft p-7">
-          <div className="flex items-center gap-2"><X className="h-5 w-5 text-rose-500" /><h3 className="text-lg font-extrabold">Venda comum</h3></div>
-          <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
-            <li className="flex items-start gap-2"><X className="mt-0.5 h-4 w-4 shrink-0 text-rose-500" /> Maior risco de inadimplência</li>
-            <li className="flex items-start gap-2"><X className="mt-0.5 h-4 w-4 shrink-0 text-rose-500" /> Possível atraso ou perda</li>
-            <li className="flex items-start gap-2"><X className="mt-0.5 h-4 w-4 shrink-0 text-rose-500" /> Menos previsibilidade no caixa</li>
-          </ul>
-        </div>
-        <div className="card-soft border-2 border-[hsl(var(--royal))/0.4] p-7">
-          <div className="flex items-center gap-2"><ShieldCheck className="h-5 w-5 text-[hsl(var(--royal))]" /><h3 className="text-lg font-extrabold">Venda com Boleto Garantido</h3></div>
-          <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
-            <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" /> Mais segurança nas vendas</li>
-            <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" /> Recebimento previsível</li>
-            <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" /> Mais tranquilidade para crescer</li>
-            <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" /> Atendimento <Headset className="inline h-3.5 w-3.5" /> consultivo</li>
-          </ul>
+    <section className="container-x py-24">
+      <div className="mx-auto max-w-4xl">
+        <div className="rounded-[3rem] bg-white p-12 shadow-2xl overflow-hidden relative">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="text-3xl font-black text-navy-deep leading-tight">Por que aceitar o risco se você pode delegá-lo?</h3>
+              <p className="mt-6 text-muted-foreground">O Boleto Garantido transforma sua estrutura de cobrança em um centro de lucro e segurança.</p>
+              <div className="mt-8 space-y-4">
+                <div className="flex items-center gap-3 text-navy-deep font-bold">
+                  <Check className="h-5 w-5 text-emerald-500" /> Sem custo de implantação
+                </div>
+                <div className="flex items-center gap-3 text-navy-deep font-bold">
+                  <Check className="h-5 w-5 text-emerald-500" /> Integração via API ou ERP
+                </div>
+              </div>
+            </div>
+            <div className="bg-navy-deep rounded-3xl p-8 text-white">
+              <h4 className="text-xl font-bold mb-4">Comparativo Real</h4>
+              <div className="space-y-4">
+                <div className="flex justify-between border-b border-white/10 pb-2">
+                  <span className="opacity-60">Cobrança Comum</span>
+                  <span className="text-rose-400">Risco Total</span>
+                </div>
+                <div className="flex justify-between border-b border-white/10 pb-2">
+                  <span className="opacity-60">Inadimplência</span>
+                  <span className="text-rose-400">Variável</span>
+                </div>
+                <div className="flex justify-between font-bold text-[hsl(var(--gold-soft))]">
+                  <span>Boleto Garantido</span>
+                  <span>Risco Zero</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <CTASection title="Proteja suas vendas com a Credifácil" cta="Conhecer Boleto Garantido" />
+    <CTASection 
+      title="Elimine a inadimplência do seu negócio hoje." 
+      subtitle="Fale com um especialista em gestão de recebíveis."
+      cta="Ativar Boleto Garantido" 
+    />
   </Layout>
 );
 
