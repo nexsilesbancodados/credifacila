@@ -18,6 +18,18 @@ const Consignado = () => (
     <SEOHead
       title="Crédito Consignado Online | Melhores Taxas do Mercado"
       description="Consignado para INSS e Servidores Públicos. Taxas reduzidas, liberação rápida e processo 100% digital seguro."
+      jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Crédito Consignado",
+        "description": "Solução de crédito com desconto em folha para aposentados, pensionistas e servidores.",
+        "provider": { "@type": "FinancialService", "name": "Credifácil" },
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "BRL",
+          "description": "Taxas a partir de 1,15% a.m."
+        }
+      }}
     />
     <PageHeader
       eyebrow="Crédito com Garantia"
@@ -38,12 +50,12 @@ const Consignado = () => (
           { I: ShieldCheck, t: "Mesmo para Negativados", d: "Sem consulta ao SPC ou Serasa." },
         ].map((item, i) => (
           <Reveal key={i} delay={i * 0.1}>
-            <div className="card-soft flex flex-col items-center text-center p-8 bg-white/95 backdrop-blur-xl border-white/20 shadow-2xl">
-              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-[hsl(var(--royal))] to-[hsl(var(--sky))] text-white mb-4" aria-hidden="true">
+            <div className="card-modern flex flex-col items-center text-center p-8 bg-white/95 backdrop-blur-xl border-white/20 shadow-2xl">
+              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-primary/10 text-primary mb-6" aria-hidden="true">
                 <item.I className="h-7 w-7" />
               </div>
-              <p className="text-sm font-black text-navy-deep uppercase tracking-widest">{item.t}</p>
-              <p className="mt-2 text-xs text-slate-600 font-bold">{item.d}</p>
+              <p className="text-sm font-bold text-navy-deep uppercase tracking-widest">{item.t}</p>
+              <p className="mt-2 text-xs text-slate-600 font-medium">{item.d}</p>
             </div>
           </Reveal>
         ))}
