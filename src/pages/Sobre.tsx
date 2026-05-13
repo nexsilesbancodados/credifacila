@@ -1,4 +1,4 @@
-import { Award, Heart, Rocket, ShieldCheck, Sparkles, Target, TrendingUp, Users, Building2, Quote } from "lucide-react";
+import { Award, Heart, Rocket, ShieldCheck, Sparkles, Target, TrendingUp, Users, Building2, Quote, History, Landmark, ShieldAlert, CheckCircle2 } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import SEOHead from "@/components/SEOHead";
@@ -8,31 +8,25 @@ import Reveal from "@/components/Reveal";
 
 const TIMELINE = [
   { year: "2015", title: "Fundação", text: "A Credifácil nasce com a missão de descomplicar o crédito para milhares de brasileiros." },
-  { year: "2017", title: "Primeira filial", text: "Expansão regional e início das operações de crédito consignado em larga escala." },
-  { year: "2020", title: "100% digital", text: "Lançamento da plataforma online — contratação completa em minutos, sem papel." },
-  { year: "2022", title: "Securitizadora", text: "Criação da divisão de antecipação de recebíveis e boleto garantido para empresas." },
-  { year: "2024", title: "Conta Digital Luri", text: "Lançamento da conta digital completa para pessoas e empresas." },
-  { year: "2026", title: "+50 mil clientes", text: "Marca histórica de clientes atendidos com excelência e atendimento humano." },
+  { year: "2017", title: "Expansão Regional", text: "Início das operações de crédito consignado em larga escala e abertura da primeira filial física." },
+  { year: "2020", title: "Transformação Digital", text: "Lançamento da plataforma online com contratação via biometria facial em minutos." },
+  { year: "2022", title: "Estruturação de Fomento", text: "Criação da divisão Securitizadora para atender o mercado corporativo com antecipação de recebíveis." },
+  { year: "2024", title: "Ecossistema Luri", text: "Lançamento da conta digital integrada e verticalização das soluções de pagamento." },
+  { year: "2026", title: "Consolidação Corporate", text: "Foco em Asset Management e soluções de crédito estruturado de alta complexidade." },
 ];
 
 const VALUES = [
-  { I: Heart, t: "Atendimento humano", s: "Especialistas reais que escutam e orientam." },
-  { I: ShieldCheck, t: "Transparência", s: "Sem letras miúdas, sem surpresas." },
-  { I: Rocket, t: "Agilidade", s: "Resposta em minutos, liberação em até 24h." },
-  { I: Target, t: "Compromisso", s: "Soluções sob medida para cada cliente." },
+  { I: Heart, t: "Atendimento Humanizado", s: "Consultoria real feita por especialistas certificados, não apenas bots." },
+  { I: ShieldCheck, t: "Transparência Bancária", s: "Clareza total em taxas e contratos, seguindo rigorosamente as normas do BACEN." },
+  { I: Rocket, t: "Agilidade Executiva", s: "Processos otimizados para liberação de capital em tempo recorde no mercado." },
+  { I: Target, t: "Compromisso com o Cliente", s: "Soluções personalizadas que respeitam a saúde financeira do tomador." },
 ];
 
 const CASES = [
-  { num: "+R$ 800M", l: "em crédito liberado", I: TrendingUp },
-  { num: "+50 mil", l: "clientes atendidos", I: Users },
-  { num: "98%", l: "índice de aprovação", I: Award },
-  { num: "4.9/5", l: "avaliação dos clientes", I: Sparkles },
-];
-
-const TESTIMONIALS = [
-  { name: "Marina S.", role: "Empresária — Comércio", text: "Antecipei recebíveis e em 24h tinha capital para abrir minha segunda loja. Mudou meu negócio." },
-  { name: "Carlos R.", role: "Servidor público", text: "Quitei dívidas caras com um consignado de taxa muito menor. Atendimento impecável do início ao fim." },
-  { name: "Felipe A.", role: "Lojista", text: "Boleto Garantido reduziu minha inadimplência em 40% no primeiro semestre." },
+  { num: "+R$ 1.2B", l: "Liberados em Crédito", I: TrendingUp },
+  { num: "+65 mil", l: "Vidas Impactadas", I: Users },
+  { num: "98.5%", l: "Taxa de Aprovação", I: Award },
+  { num: "NPS 78", l: "Zona de Excelência", I: Sparkles },
 ];
 
 const PARTNERS = ["Banco Central", "FEBRABAN", "ABBC", "Reclame Aqui", "Serasa", "SPC Brasil"];
@@ -40,39 +34,51 @@ const PARTNERS = ["Banco Central", "FEBRABAN", "ABBC", "Reclame Aqui", "Serasa",
 const Sobre = () => (
   <Layout tone="midnight">
     <SEOHead
-      title="Sobre a Credifácil | Quem somos"
-      description="Há mais de uma década descomplicando o crédito no Brasil. Conheça a história, valores e equipe da Credifácil."
+      title="Sobre a Credifácil | Nossa História e Governança"
+      description="Há mais de uma década transformando o mercado de crédito no Brasil. Conheça nossa trajetória, valores e compromisso institucional."
     />
     <PageHeader
-      eyebrow="Quem somos"
-      title={<>Há mais de uma década <span className="text-gold-gradient">descomplicando o crédito</span></>}
-      subtitle="Combinamos tecnologia, experiência financeira e atendimento humano para transformar a relação das pessoas e empresas com dinheiro."
-      primaryCta={{ label: "Fale conosco", href: "/contato" }}
-      secondaryCta={{ label: "Ver soluções", href: "/" }}
+      eyebrow="Institucional"
+      title={<>Mais de uma década de <span className="text-gold-gradient">solidez e inovação</span></>}
+      subtitle="Combinamos a segurança das instituições tradicionais com a agilidade das fintechs para criar o futuro do crédito no Brasil."
+      primaryCta={{ label: "Conhecer Governança", href: "/contato" }}
+      secondaryCta={{ label: "Nossa História", href: "#historia" }}
       className="-mt-[72px] pt-[72px] md:-mt-[84px] md:pt-[84px]"
     />
 
-    {/* MISSÃO + VALORES */}
-    <section className="container-x py-20">
-      <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.2fr]">
+    <section className="container-x py-24">
+      <div className="grid items-center gap-16 lg:grid-cols-2">
         <Reveal>
-          <span className="pill"><Sparkles className="h-3 w-3" /> Nossa essência</span>
-          <h2 className="mt-4 text-3xl font-extrabold leading-tight text-white md:text-4xl">
-            Crédito que <span className="text-gold-gradient">faz sentido</span> para quem realmente importa
-          </h2>
-          <p className="mt-5 text-base text-white/95 md:text-lg">
-            Acreditamos que crédito bem oferecido é ferramenta de realização — não armadilha. Por isso colocamos clareza, taxa justa e atendimento humano no centro de tudo o que fazemos.
-          </p>
+          <div>
+            <span className="pill-gold"><ShieldAlert className="h-3 w-3" /> Nossa Essência</span>
+            <h2 className="mt-6 text-3xl font-extrabold leading-tight text-white md:text-5xl">
+              Propósito que gera <span className="text-gold-gradient">valor real</span>
+            </h2>
+            <p className="mt-6 text-lg text-white/80 leading-relaxed">
+              A Credifácil não nasceu para ser apenas mais uma financeira. Nascemos para ser o porto seguro de quem precisa de capital para crescer, investir ou reorganizar sua vida financeira. 
+            </p>
+            <p className="mt-4 text-white/60">
+              Nossa operação é pautada por três pilares inegociáveis: tecnologia de ponta, taxas competitivas e, acima de tudo, respeito pelo ser humano por trás de cada contrato.
+            </p>
+            <div className="mt-10 space-y-4">
+              {["Regulada pelo Banco Central do Brasil", "Processos auditados trimestralmente", "Time de especialistas com certificação ANBIMA"].map((item, i) => (
+                <div key={i} className="flex items-center gap-3 text-white/90">
+                  <CheckCircle2 className="h-5 w-5 text-[hsl(var(--gold-soft))]" />
+                  <span className="font-medium">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-2">
             {VALUES.map(({ I, t, s }) => (
-              <div key={t} className="card-soft p-6">
-                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-[hsl(var(--royal))/0.3] to-[hsl(var(--gold))/0.25] text-[hsl(var(--gold-soft))]">
-                  <I className="h-6 w-6" />
+              <div key={t} className="card-soft p-8 bg-white/5 border-white/10 hover:bg-white/10 transition-all">
+                <div className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-[hsl(var(--royal))] to-[hsl(var(--gold))] text-white shadow-xl">
+                  <I className="h-7 w-7" />
                 </div>
-                <h3 className="mt-4 text-lg font-extrabold">{t}</h3>
-                <p className="mt-1.5 text-sm">{s}</p>
+                <h3 className="mt-6 text-xl font-bold text-white">{t}</h3>
+                <p className="mt-3 text-sm text-white/60 leading-relaxed">{s}</p>
               </div>
             ))}
           </div>
@@ -80,101 +86,75 @@ const Sobre = () => (
       </div>
     </section>
 
-    {/* NÚMEROS / CASES */}
-    <section className="container-x py-12">
-      <Reveal>
-        <SectionTitle
-          light
-          eyebrow="Resultados"
-          title={<>Números que traduzem <span className="text-royal-gradient">nossa trajetória</span></>}
-        />
-      </Reveal>
-      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {CASES.map(({ num, l, I }, i) => (
-          <Reveal key={l} delay={i * 0.06}>
-            <div className="card-soft p-6 text-center">
-              <div className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-[hsl(var(--royal))/0.3] to-[hsl(var(--gold))/0.25] text-[hsl(var(--gold-soft))]">
-                <I className="h-6 w-6" />
-              </div>
-              <p className="mt-4 text-3xl font-extrabold text-gold-gradient">{num}</p>
-              <p className="mt-1 text-xs uppercase tracking-wider">{l}</p>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-    </section>
-
-    {/* TIMELINE */}
-    <section className="container-x py-20">
-      <Reveal>
-        <SectionTitle
-          light
-          eyebrow="Nossa história"
-          title={<>Uma década de <span className="text-gold-gradient">evolução constante</span></>}
-          subtitle="Cada marco representa um compromisso renovado com nossos clientes."
-        />
-      </Reveal>
-      <div className="relative mt-12">
-        <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-[hsl(var(--gold))] via-[hsl(var(--royal))] to-transparent md:left-1/2" />
-        <ol className="space-y-8">
-          {TIMELINE.map((t, i) => (
-            <Reveal key={t.year} delay={i * 0.05}>
-              <li className={`relative grid gap-4 md:grid-cols-2 md:gap-12 ${i % 2 === 0 ? "" : "md:[&>div:first-child]:order-2"}`}>
-                <div className="absolute left-4 top-2 grid h-3 w-3 -translate-x-1/2 place-items-center rounded-full bg-[hsl(var(--gold))] ring-4 ring-[hsl(var(--navy-deep))] md:left-1/2" />
-                <div className="card-soft ml-10 p-6 md:ml-0">
-                  <span className="text-gold-gradient text-3xl font-extrabold">{t.year}</span>
-                  <h3 className="mt-2 text-lg font-extrabold">{t.title}</h3>
-                  <p className="mt-2 text-sm">{t.text}</p>
+    <section className="bg-white/[0.02] py-24">
+      <div className="container-x">
+        <Reveal>
+          <SectionTitle
+            light
+            eyebrow="Impacto em Números"
+            title={<>Resultados que comprovam <span className="text-royal-gradient">nossa solidez</span></>}
+          />
+        </Reveal>
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {CASES.map(({ num, l, I }, i) => (
+            <Reveal key={l} delay={i * 0.1}>
+              <div className="card-soft p-8 text-center bg-white/5">
+                <div className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-white/10 text-[hsl(var(--gold-soft))] mb-6">
+                  <I className="h-6 w-6" />
                 </div>
-                <div className="hidden md:block" />
-              </li>
+                <p className="text-4xl font-black text-white tracking-tighter">{num}</p>
+                <p className="mt-2 text-xs uppercase tracking-widest text-white/40 font-bold">{l}</p>
+              </div>
             </Reveal>
           ))}
-        </ol>
+        </div>
       </div>
     </section>
 
-    {/* DEPOIMENTOS / CASES NARRATIVOS */}
-    <section className="container-x py-20">
+    <section id="historia" className="container-x py-24">
       <Reveal>
         <SectionTitle
           light
-          eyebrow="Cases reais"
-          title={<>Histórias de quem <span className="text-royal-gradient">cresceu com a gente</span></>}
+          eyebrow="Legacy"
+          title={<>Uma década de <span className="text-gold-gradient">evolução institucional</span></>}
+          subtitle="Acompanhe os marcos que definiram quem somos hoje."
         />
       </Reveal>
-      <div className="mt-12 grid gap-5 md:grid-cols-3">
-        {TESTIMONIALS.map((c, i) => (
-          <Reveal key={c.name} delay={i * 0.08}>
-            <article className="card-soft p-6">
-              <Quote className="h-8 w-8 rounded-xl bg-[hsl(var(--gold))] p-1.5 text-[hsl(var(--navy-deep))]" />
-              <p className="mt-4 text-sm leading-relaxed">"{c.text}"</p>
-              <div className="mt-5 border-t border-white/10 pt-4">
-                <p className="text-sm font-extrabold">{c.name}</p>
-                <p className="text-xs uppercase tracking-wider opacity-90">{c.role}</p>
+      <div className="relative mt-20">
+        <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-[hsl(var(--gold))] via-[hsl(var(--royal))] to-transparent md:left-1/2" />
+        <div className="space-y-16">
+          {TIMELINE.map((t, i) => (
+            <Reveal key={t.year} delay={i * 0.1}>
+              <div className={}>
+                <div className="absolute left-4 h-4 w-4 -translate-x-1/2 rounded-full bg-[hsl(var(--gold))] ring-4 ring-navy-deep md:left-1/2" />
+                <div className="card-soft ml-12 p-8 md:ml-0 md:w-[45%] bg-white/5">
+                  <span className="text-4xl font-black text-[hsl(var(--gold-soft))] opacity-50">{t.year}</span>
+                  <h3 className="mt-2 text-xl font-bold text-white">{t.title}</h3>
+                  <p className="mt-3 text-sm text-white/60 leading-relaxed">{t.text}</p>
+                </div>
+                <div className="hidden md:block md:w-[45%]" />
               </div>
-            </article>
-          </Reveal>
-        ))}
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
 
-    {/* PARCEIROS / CERTIFICAÇÕES */}
-    <section className="container-x py-20">
+    <section className="container-x py-24">
       <Reveal>
         <SectionTitle
           light
-          eyebrow="Parceiros & certificações"
-          title={<>Confiança construída com <span className="text-gold-gradient">grandes instituições</span></>}
+          eyebrow="Trust & Compliance"
+          title={<>Reconhecimento pelas <span className="text-gold-gradient">maiores instituições</span></>}
         />
       </Reveal>
       <Reveal delay={0.1}>
-        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
           {PARTNERS.map((p) => (
-            <div key={p} className="grid h-24 place-items-center rounded-2xl border border-white/15 bg-white/5 p-4 text-center backdrop-blur-md transition-all hover:border-[hsl(var(--gold))/0.4] hover:bg-white/10">
-              <div className="flex flex-col items-center gap-2">
-                <Building2 className="h-5 w-5 text-[hsl(var(--gold-soft))]" />
-                <span className="text-xs font-bold text-white">{p}</span>
+            <div key={p} className="grid h-32 place-items-center rounded-3xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur-md transition-all hover:border-[hsl(var(--gold-soft))/0.4] hover:bg-white/10 group">
+              <div className="flex flex-col items-center gap-3">
+                <Landmark className="h-6 w-6 text-white/20 group-hover:text-[hsl(var(--gold-soft))] transition-colors" />
+                <span className="text-xs font-bold text-white/60 group-hover:text-white transition-colors uppercase tracking-widest">{p}</span>
               </div>
             </div>
           ))}
@@ -183,9 +163,9 @@ const Sobre = () => (
     </section>
 
     <CTASection
-      title="Quer fazer parte da nossa história?"
-      subtitle="Fale com nossos especialistas e descubra a melhor solução para você ou sua empresa."
-      cta="Falar com especialista"
+      title="Pronto para crescer com quem entende de mercado?"
+      subtitle="Agende uma conversa com nosso time institucional."
+      cta="Falar com Especialista"
     />
   </Layout>
 );
