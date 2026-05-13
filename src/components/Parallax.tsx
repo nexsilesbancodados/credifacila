@@ -43,7 +43,7 @@ const Parallax = ({ children, amount = 60, className = "" }: Props) => {
     <div ref={ref} className={`overflow-hidden ${className}`}>
       <div
         style={{ transform: `translate3d(0, ${offset}px, 0)` }}
-        className="will-change-transform transition-transform duration-100 ease-out"
+        className="relative h-full w-full will-change-transform transition-transform duration-100 ease-out"
       >
         {children}
       </div>
