@@ -92,7 +92,9 @@ const Navbar = () => {
          {/* Desktop CTA & Login */}
          <div className="hidden items-center gap-4 lg:flex">
            <a
-             href="/portal-cliente"
+             href="https://www.systemjuros.com.br/portal-cliente"
+             target="_blank"
+             rel="noopener noreferrer"
              className="text-sm font-medium text-foreground/80 transition hover:text-foreground"
            >
              Login
