@@ -7,8 +7,7 @@ import ContaDigitalLuri from "./pages/ContaDigitalLuri";
 import InvistaConosco from "./pages/InvistaConosco";
 import Blog from "./pages/Blog";
 import Duvidas from "./pages/Duvidas";
- import PortalCliente from "./pages/PortalCliente";
- import NotFound from "./pages/NotFound";
+import NotFound from "./pages/NotFound";
  
  const App = () => (
    <BrowserRouter>
@@ -21,7 +20,6 @@ import Duvidas from "./pages/Duvidas";
        <Route path="/invista-conosco" element={<InvistaConosco />} />
        <Route path="/blog" element={<Blog />} />
        <Route path="/duvidas" element={<Duvidas />} />
-       <Route path="/portal-cliente" element={<PortalCliente />} />
        <Route path="*" element={<NotFound />} />
      </Routes>
    </BrowserRouter>
