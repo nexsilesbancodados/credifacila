@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import { BanksMarquee } from "@/components/BanksMarquee";
+import EasyLoanSection from "@/components/EasyLoanSection";
 import hero1 from "@/assets/hero/hero-1.png";
 import hero2 from "@/assets/hero/hero-2.png";
 import hero3 from "@/assets/hero/hero-3.png";
@@ -33,8 +36,9 @@ const Index = () => {
 
   return (
     <main className="min-h-screen bg-background">
+      <Navbar />
       <section className="relative w-full overflow-hidden">
-        <div className="relative aspect-[16/9] sm:aspect-[21/9] lg:aspect-[21/8] w-full">
+        <div className="relative aspect-[16/9] sm:aspect-[21/9] lg:aspect-[21/8] w-full pt-16 md:pt-20">
           {slides.map((s, i) => (
             <img
               key={i}
@@ -80,6 +84,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <BanksMarquee />
+      <EasyLoanSection />
     </main>
   );
 };
