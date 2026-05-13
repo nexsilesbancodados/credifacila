@@ -1,4 +1,4 @@
-import { BarChart3, Building2, FileSearch, Headset, LineChart, ShieldCheck, Sparkles, TrendingUp } from "lucide-react";
+import { BarChart3, Building2, FileSearch, Headset, LineChart, ShieldCheck, Sparkles, TrendingUp, Shield, Gem, GanttChart, Users, Scale, History, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import SEOHead from "@/components/SEOHead";
