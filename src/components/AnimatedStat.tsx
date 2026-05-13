@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
-type Stat = { value: string; label: string };
+type Stat = { value: string; label: string; prefix?: string };
 
 function useCountUp(target: string, duration = 2000) {
   const [display, setDisplay] = useState("0");
@@ -32,7 +32,7 @@ function useCountUp(target: string, duration = 2000) {
   return { ref, display };
 }
 
-const AnimatedStat = ({ value, label }: Stat) => {
+const AnimatedStat = ({ value, label, prefix }: Stat) => {
   const { ref, display } = useCountUp(value, 2200);
   return (
     <motion.div
@@ -44,7 +44,7 @@ const AnimatedStat = ({ value, label }: Stat) => {
     >
       <div ref={ref}>
         <p className="text-2xl font-extrabold text-white">
-          {display}
+          {prefix}{display}
         </p>
       </div>
       <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/80">
