@@ -9,7 +9,6 @@ import Reveal from "@/components/Reveal";
 import TrustBadges from "@/components/TrustBadges";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
-import CreditSimulator from "@/components/CreditSimulator";
 import FAQAccordion from "@/components/FAQAccordion";
 import AnimatedStat from "@/components/AnimatedStat";
 import PartnerLogos from "@/components/PartnerLogos";
@@ -108,46 +107,6 @@ const Index = () => (
     {/* PARCEIROS */}
     <PartnerLogos />
 
-     {/* SIMULADOR */}
-     <section className="container-x py-20">
-       <div className="grid gap-12 lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_480px]">
-         <div>
-           <Reveal>
-             <SectionTitle
-               light
-               align="left"
-               eyebrow="Simulação rápida"
-               title={<>Quanto você <span className="text-gold-gradient">precisa hoje?</span></>}
-               subtitle="Simule agora e veja as condições exclusivas que preparamos para você ou sua empresa."
-             />
-           </Reveal>
-           <div className="mt-8 grid gap-4 sm:grid-cols-2">
-             {[
-               { t: "Taxas reduzidas", s: "A partir de 1,15% ao mês" },
-               { t: "Liberação rápida", s: "Dinheiro na conta em até 24h" },
-               { t: "Sem burocracia", s: "Processo 100% digital e seguro" },
-               { t: "Flexibilidade", s: "Pague em até 84 meses" },
-             ].map((x) => (
-               <Reveal key={x.t}>
-                 <div className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                   <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
-                     <CheckCircle2 className="h-3 w-3" />
-                   </div>
-                   <div>
-                     <p className="text-sm font-bold text-white">{x.t}</p>
-                     <p className="text-xs text-white/60">{x.s}</p>
-                   </div>
-                 </div>
-               </Reveal>
-             ))}
-           </div>
-         </div>
-         <Reveal delay={0.2}>
-           <CreditSimulator />
-         </Reveal>
-       </div>
-     </section>
- 
      {/* SOLUÇÕES */}
      <section className="container-x py-20">
        <Reveal>
