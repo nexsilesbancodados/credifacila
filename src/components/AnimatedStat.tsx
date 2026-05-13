@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, memo } from "react";
 import { motion, useInView } from "framer-motion";
 
 type Stat = { value: string; label: string; prefix?: string };
@@ -40,18 +40,19 @@ const AnimatedStat = ({ value, label, prefix }: Stat) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="rounded-2xl border border-white/15 bg-white/5 p-3 backdrop-blur-md"
+      className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md"
+      aria-label={`${label}: ${prefix || ''}${value}`}
     >
-      <div ref={ref}>
-        <p className="text-2xl font-extrabold text-white">
+      <div ref={ref} aria-hidden="true">
+        <p className="text-2xl font-black text-white tracking-tighter">
           {prefix}{display}
         </p>
       </div>
-      <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/80">
+      <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/50 mt-1" aria-hidden="true">
         {label}
       </p>
     </motion.div>
   );
 }
 
-export default AnimatedStat;
+export default memo(AnimatedStat);
