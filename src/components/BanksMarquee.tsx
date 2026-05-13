@@ -32,11 +32,13 @@ const BanksMarquee = ({
   return (
     <section className="py-16 md:py-24">
       <div className="container-x flex flex-col items-center text-center">
-        <h2 className="text-balance text-xl font-semibold tracking-tight text-foreground/80 md:text-2xl">
-          {heading}
-        </h2>
+        {heading ? (
+          <h2 className="text-balance text-xl font-semibold tracking-tight text-foreground/80 md:text-2xl">
+            {heading}
+          </h2>
+        ) : null}
 
-        <div className="relative mt-10 w-full">
+        <div className={`relative w-full ${heading ? "mt-10" : ""}`}>
           <Carousel
             opts={{ loop: true, align: "start", dragFree: true }}
             plugins={[AutoScroll({ playOnInit: true, speed: 0.8, stopOnInteraction: false })]}
