@@ -84,6 +84,7 @@ const Sobre = () => (
     <section className="container-x py-12">
       <Reveal>
         <SectionTitle
+          light
           eyebrow="Resultados"
           title={<>Números que traduzem <span className="text-royal-gradient">nossa trajetória</span></>}
         />
@@ -107,6 +108,7 @@ const Sobre = () => (
     <section className="container-x py-20">
       <Reveal>
         <SectionTitle
+          light
           eyebrow="Nossa história"
           title={<>Uma década de <span className="text-gold-gradient">evolução constante</span></>}
           subtitle="Cada marco representa um compromisso renovado com nossos clientes."
@@ -136,6 +138,7 @@ const Sobre = () => (
     <section className="container-x py-20">
       <Reveal>
         <SectionTitle
+          light
           eyebrow="Cases reais"
           title={<>Histórias de quem <span className="text-royal-gradient">cresceu com a gente</span></>}
         />
@@ -160,6 +163,7 @@ const Sobre = () => (
     <section className="container-x py-20">
       <Reveal>
         <SectionTitle
+          light
           eyebrow="Parceiros & certificações"
           title={<>Confiança construída com <span className="text-gold-gradient">grandes instituições</span></>}
         />
