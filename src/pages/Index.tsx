@@ -306,6 +306,7 @@ const Index = () => (
       subtitle="Fale com nossos especialistas e descubra a melhor solução para você."
       cta="Fale com um especialista"
     />
+    <SocialProofToast />
   </Layout>
 );
 
