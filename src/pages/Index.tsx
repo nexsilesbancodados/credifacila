@@ -58,7 +58,7 @@ const Index = () => (
         <div className="max-w-4xl text-white">
           <Reveal>
             <span className="pill-gold"><ShieldAlert className="h-3 w-3" aria-hidden="true" /> Solidez Institucional & Tecnologia</span>
-            <h1 className="mt-8 text-5xl font-black leading-[0.95] tracking-tighter md:text-7xl lg:text-8xl">
+            <h1 className="mt-8 text-5xl font-black leading-[0.95] tracking-tighter md:text-7xl lg:text-9xl">
               Inteligência <br/> <span className="text-gold-gradient">Financeira</span>
             </h1>
             <p className="mt-8 max-w-2xl text-lg text-white/80 md:text-xl leading-relaxed font-medium">

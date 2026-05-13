@@ -34,7 +34,7 @@ const ServiceCard = ({ icon: Icon, title, text, href, accent = "royal", image }:
         </div>
       </div>
     )}
-    <div className="p-8 flex flex-col flex-1">
+    <div className="p-8 md:p-10 flex flex-col flex-1">
       {!image && (
         <div
           className={`mb-6 grid h-14 w-14 place-items-center rounded-2xl text-white shadow-lg transition-transform group-hover:scale-110 ${
