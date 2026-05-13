@@ -14,7 +14,6 @@ const navItems: NavItem[] = [
     label: "Securitizadora",
     href: "/securitizadora",
     children: [
-      { label: "Visão Geral", href: "/securitizadora" },
       { label: "Antecipação de Recebíveis", href: "/securitizadora/antecipacao-de-recebiveis" },
       { label: "Boleto Garantido", href: "/securitizadora/boleto-garantido" },
       { label: "Conta Digital Luri", href: "/securitizadora/conta-digital-luri" },
