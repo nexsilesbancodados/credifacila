@@ -54,7 +54,7 @@ const Index = () => (
           <h1 className="mt-5 text-4xl font-extrabold leading-[1.05] md:text-5xl lg:text-6xl">
             Crédito fácil, <span className="text-gold-gradient">rápido e seguro</span>
           </h1>
-          <p className="mt-5 max-w-xl text-base text-white/80 md:text-lg">
+          <p className="mt-5 max-w-xl text-base text-white/95 md:text-lg">
             Soluções financeiras inteligentes para realizar seus planos e impulsionar seu negócio com tranquilidade.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -70,7 +70,7 @@ const Index = () => (
             ].map((x) => (
               <div key={x.l} className="rounded-2xl border border-white/15 bg-white/5 p-3 backdrop-blur-md">
                 <p className="text-xl font-extrabold">{x.l}</p>
-                <p className="text-[11px] uppercase tracking-wider text-white/70">{x.s}</p>
+                <p className="text-[11px] uppercase tracking-wider text-white/90">{x.s}</p>
               </div>
             ))}
           </div>
