@@ -2,6 +2,7 @@ import { ArrowRight, ShieldCheck, Percent, Clock, UserCheck, Briefcase, HeartHan
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
+import Parallax from "@/components/Parallax";
 import heroImg from "@/assets/consignado-hero.png";
 import whoCanImg from "@/assets/consignado/who-can.jpg";
 import howItWorksImg from "@/assets/consignado/how-it-works.jpg";
@@ -136,17 +137,19 @@ const Consignado = () => {
             <Reveal delay={150} className="order-1 md:order-2">
               <div className="relative">
                 <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-[hsl(var(--gold))/0.25] via-transparent to-transparent blur-2xl" />
-                <div className="relative overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_40px_120px_-40px_hsl(var(--gold)/0.4)]">
-                  <img
-                    src={whoCanImg}
-                    alt="Casal sorrindo, ideal para crédito consignado"
-                    loading="lazy"
-                    width={1280}
-                    height={896}
-                    className="aspect-[5/4] h-full w-full object-cover transition-transform duration-[1200ms] hover:scale-105"
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-background/40 via-transparent to-transparent" />
-                </div>
+                <Parallax amount={50} className="relative rounded-[2rem] border border-white/10 shadow-[0_40px_120px_-40px_hsl(var(--gold)/0.4)]">
+                  <div className="relative aspect-[5/4]">
+                    <img
+                      src={whoCanImg}
+                      alt="Casal sorrindo, ideal para crédito consignado"
+                      loading="lazy"
+                      width={1280}
+                      height={896}
+                      className="h-[120%] w-full -translate-y-[10%] object-cover"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-background/40 via-transparent to-transparent" />
+                  </div>
+                </Parallax>
               </div>
             </Reveal>
           </div>
@@ -161,17 +164,19 @@ const Consignado = () => {
             <Reveal>
               <div className="relative">
                 <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-[hsl(var(--gold))/0.25] via-transparent to-transparent blur-2xl" />
-                <div className="relative overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_40px_120px_-40px_hsl(var(--gold)/0.4)]">
-                  <img
-                    src={howItWorksImg}
-                    alt="Assinatura de contrato com caneta dourada"
-                    loading="lazy"
-                    width={1280}
-                    height={896}
-                    className="aspect-[5/4] h-full w-full object-cover transition-transform duration-[1200ms] hover:scale-105"
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-tl from-background/40 via-transparent to-transparent" />
-                </div>
+                <Parallax amount={50} className="relative rounded-[2rem] border border-white/10 shadow-[0_40px_120px_-40px_hsl(var(--gold)/0.4)]">
+                  <div className="relative aspect-[5/4]">
+                    <img
+                      src={howItWorksImg}
+                      alt="Assinatura de contrato com caneta dourada"
+                      loading="lazy"
+                      width={1280}
+                      height={896}
+                      className="h-[120%] w-full -translate-y-[10%] object-cover"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-tl from-background/40 via-transparent to-transparent" />
+                  </div>
+                </Parallax>
               </div>
             </Reveal>
             <Reveal delay={150}>
