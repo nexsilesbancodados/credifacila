@@ -34,11 +34,11 @@ const Securitizadora = () => (
           <div>
             <span className="pill-gold"><Briefcase className="h-3 w-3" aria-hidden="true" /> Soluções B2B</span>
             <h2 id="definition-title" className="mt-6 text-3xl font-black leading-tight text-white md:text-5xl tracking-tighter">O que é a Securitização Estratégica?</h2>
-            <p className="mt-6 text-lg text-white/60 font-medium leading-relaxed">
+            <p className="mt-6 text-lg text-white/80 font-medium leading-relaxed">
               Diferente da antecipação bancária comum, a securitização é um processo de engenharia financeira que isola o risco dos ativos, permitindo taxas mais competitivas e maior fôlego para o fluxo de caixa da sua empresa.
             </p>
             <div className="mt-8 p-8 rounded-[2rem] bg-white/5 border border-white/10">
-              <p className="text-sm italic text-white/40 leading-relaxed">"A securitizadora atua como um braço financeiro externo, permitindo que a empresa foque em sua atividade core enquanto garantimos a liquidez do faturamento."</p>
+              <p className="text-sm italic text-white/60 leading-relaxed">"A securitizadora atua como um braço financeiro externo, permitindo que a empresa foque em sua atividade core enquanto garantimos a liquidez do faturamento."</p>
             </div>
           </div>
         </Reveal>
@@ -54,7 +54,7 @@ const Securitizadora = () => (
                 <s.I className="h-6 w-6 text-[hsl(var(--gold-soft))]" aria-hidden="true" />
                 <p className="mt-4 text-3xl font-black text-white">{s.v}</p>
                 <p className="text-xs font-black text-white/50 uppercase tracking-widest mt-1">{s.t}</p>
-                <p className="mt-2 text-[10px] text-white/30 uppercase tracking-[0.1em] font-bold">{s.d}</p>
+                <p className="mt-2 text-[10px] text-white/50 uppercase tracking-[0.1em] font-bold">{s.d}</p>
               </div>
             ))}
           </div>
@@ -77,7 +77,7 @@ const Securitizadora = () => (
           <div>
             <span className="pill-gold"><Network className="h-3 w-3" aria-hidden="true" /> Gestão de Risco</span>
             <h2 id="intelligence-title" className="mt-6 text-3xl font-black text-white tracking-tighter">Ecossistema de Inteligência</h2>
-            <p className="mt-4 text-white/60 font-medium leading-relaxed">Utilizamos Big Data e algoritmos proprietários para blindar sua operação contra riscos sistêmicos e inadimplência.</p>
+            <p className="mt-4 text-white/80 font-medium leading-relaxed">Utilizamos Big Data e algoritmos proprietários para blindar sua operação contra riscos sistêmicos e inadimplência.</p>
           </div>
         </Reveal>
         <div className="grid gap-6 sm:grid-cols-2" role="list">
@@ -90,7 +90,7 @@ const Securitizadora = () => (
             <div key={i} role="listitem" className="p-8 rounded-[2rem] border border-white/10 bg-white/5 transition-all hover:bg-white/10 group">
               <item.icon className="h-8 w-8 text-[hsl(var(--gold-soft))] transition-transform group-hover:scale-110" aria-hidden="true" />
               <h4 className="mt-6 font-black text-white text-lg uppercase tracking-tighter">{item.title}</h4>
-              <p className="mt-3 text-sm text-white/40 font-medium leading-relaxed">{item.text}</p>
+              <p className="mt-3 text-sm text-white/60 font-medium leading-relaxed">{item.text}</p>
             </div>
           ))}
         </div>

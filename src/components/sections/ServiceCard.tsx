@@ -34,7 +34,7 @@ const ServiceCard = ({ icon: Icon, title, text, href, accent = "royal", image }:
         </div>
       </div>
     )}
-    <div className="p-8 flex flex-col flex-1">
+    <div className="p-8 md:p-10 flex flex-col flex-1">
       {!image && (
         <div
           className={`mb-6 grid h-14 w-14 place-items-center rounded-2xl text-white shadow-lg transition-transform group-hover:scale-110 ${
@@ -48,7 +48,7 @@ const ServiceCard = ({ icon: Icon, title, text, href, accent = "royal", image }:
         </div>
       )}
        <h3 className="text-xl font-black text-white leading-tight">{title}</h3>
-       <p className="mt-4 text-[15px] leading-relaxed text-white/60 font-medium">{text}</p>
+       <p className="mt-4 text-[15px] leading-relaxed text-white/80 font-medium">{text}</p>
       <div className="mt-auto pt-8">
         <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.15em] text-[hsl(var(--gold-soft))] transition-all group-hover:gap-4">
           Detalhes <ArrowRight className="h-4 w-4" aria-hidden="true" />

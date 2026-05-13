@@ -85,8 +85,8 @@ const Blog = () => {
                     className={cn(
                       "whitespace-nowrap rounded-full border px-6 py-2 text-[10px] font-bold uppercase tracking-widest transition-all outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--gold-soft))]",
                       cat === c
-                        ? "border-[hsl(var(--gold-soft))] bg-[hsl(var(--gold-soft))] text-navy-deep shadow-lg"
-                        : "border-white/10 bg-white/5 text-white/60 hover:border-white/30 hover:text-white"
+                    ? "border-[hsl(var(--gold-soft))] bg-[hsl(var(--gold-soft))] text-navy-deep shadow-lg font-black"
+                    : "border-white/10 bg-white/5 text-white/80 hover:border-white/30 hover:text-white font-bold"
                     )}
                   >
                     {c}
@@ -135,7 +135,7 @@ const Blog = () => {
             <div key={i} className="text-center md:text-left">
               <item.icon className="h-6 w-6 text-[hsl(var(--gold-soft))] mb-4 mx-auto md:mx-0" aria-hidden="true" />
               <h4 className="text-sm font-black text-white uppercase tracking-widest mb-2">{item.title}</h4>
-              <p className="text-xs text-white/50 leading-relaxed font-medium">{item.desc}</p>
+              <p className="text-xs text-white/70 leading-relaxed font-medium">{item.desc}</p>
             </div>
           ))}
         </div>

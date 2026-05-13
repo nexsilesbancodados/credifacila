@@ -46,7 +46,7 @@ const BlogCard = ({ post }: { post: Post; idx?: number }) => (
       <h3 className="text-xl font-black leading-tight text-white group-hover:text-[hsl(var(--gold-soft))] transition-colors">
         {post.title}
       </h3>
-      <p className="mt-4 line-clamp-2 text-sm text-white/60 leading-relaxed font-medium">
+      <p className="mt-4 line-clamp-2 text-sm text-white/80 leading-relaxed font-medium">
         {post.excerpt}
       </p>
       <div className="mt-auto pt-8 flex items-center justify-end">

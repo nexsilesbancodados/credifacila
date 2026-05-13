@@ -44,7 +44,7 @@ const ContaDigitalLuri = () => (
                 </div>
                 <div>
                   <h4 className="font-bold text-white">Segurança de Dados</h4>
-                  <p className="text-sm text-white/50">Criptografia de ponta a ponta e LGPD compliance.</p>
+                  <p className="text-sm text-white/70">Criptografia de ponta a ponta e LGPD compliance.</p>
                 </div>
               </div>
               <div className="flex gap-4">
@@ -53,7 +53,7 @@ const ContaDigitalLuri = () => (
                 </div>
                 <div>
                   <h4 className="font-bold text-white">Open Finance</h4>
-                  <p className="text-sm text-white/50">Integrado ao ecossistema financeiro nacional.</p>
+                  <p className="text-sm text-white/70">Integrado ao ecossistema financeiro nacional.</p>
                 </div>
               </div>
             </div>

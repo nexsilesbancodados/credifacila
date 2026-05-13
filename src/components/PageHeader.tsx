@@ -40,7 +40,7 @@ const PageHeader = ({ eyebrow, title, subtitle, primaryCta, secondaryCta, right,
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-6 max-w-xl text-lg text-white/60 md:text-xl leading-relaxed">
+          <p className="mt-6 max-w-xl text-lg text-white/80 md:text-xl leading-relaxed">
             {subtitle}
           </p>
         )}
