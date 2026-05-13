@@ -1,4 +1,5 @@
 import { UserCheck, FileSearch, Wallet, Sparkles } from "lucide-react";
+import peopleImg from "@/assets/easy-loan-people.jpg";
 
 const steps = [
   {
@@ -32,17 +33,39 @@ const EasyLoanSection = () => {
       </div>
 
       <div className="container-x">
-        {/* Header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="pill-gold">Empréstimo descomplicado</span>
-          <h2 className="mt-6 font-display text-4xl font-bold leading-[1.1] tracking-tight text-foreground md:text-5xl lg:text-6xl">
-            Conseguir crédito com a{" "}
-            <span className="text-gold-gradient">Credifácil</span> nunca foi tão simples
-          </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-foreground/65 md:text-lg">
-            Em poucos cliques você simula, contrata e recebe seu empréstimo com
-            segurança, transparência e atendimento dedicado em cada etapa.
-          </p>
+        {/* Header — split layout with portrait */}
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="relative">
+            {/* Thin gold accent line */}
+            <div className="absolute -top-6 left-0 h-px w-40 bg-gradient-to-r from-[hsl(var(--gold))] via-[hsl(var(--gold-soft))] to-transparent" />
+            <div className="absolute -top-[7px] left-40 h-[5px] w-[5px] rounded-full bg-[hsl(var(--gold-soft))] shadow-[0_0_12px_hsl(var(--gold))]" />
+
+            <h2 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-foreground md:text-5xl lg:text-6xl">
+              Conseguir crédito com a{" "}
+              <span className="text-gold-gradient">Credifácil</span> nunca foi tão simples
+            </h2>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/65 md:text-lg">
+              Em poucos cliques você simula, contrata e recebe seu empréstimo com
+              segurança, transparência e atendimento dedicado em cada etapa.
+            </p>
+          </div>
+
+          {/* Portrait with curved gold ring */}
+          <div className="relative mx-auto w-full max-w-xl">
+            <div className="relative aspect-square overflow-hidden rounded-full border border-[hsl(var(--gold))/0.35] shadow-[0_0_60px_-15px_hsl(var(--gold)/0.4)]">
+              <img
+                src={peopleImg}
+                alt="Atendimento Credifácil"
+                loading="lazy"
+                width={1024}
+                height={1024}
+                className="h-full w-full object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-tr from-background/60 via-transparent to-transparent" />
+            </div>
+            {/* Outer faint ring */}
+            <div className="pointer-events-none absolute -inset-4 rounded-full border border-[hsl(var(--gold))/0.12]" />
+          </div>
         </div>
 
         {/* Steps grid */}
