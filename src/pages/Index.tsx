@@ -139,7 +139,7 @@ const Index = () => (
         </div>
       </section>
 
-    <section className="bg-white/[0.02] py-24" aria-labelledby="workflow-section-title">
+    <section className="bg-white/[0.01] py-24" aria-labelledby="workflow-section-title">
       <div className="container-x">
         <Reveal>
           <SectionTitle
@@ -163,6 +163,38 @@ const Index = () => (
       </div>
     </section>
 
+    <section className="container-x py-24" aria-labelledby="trust-title">
+      <Reveal>
+        <div className="card-modern p-12 lg:p-16 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[120px] -rotate-12 translate-x-1/2" />
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="max-w-xl">
+              <span className="pill-gold">Segurança & Confiança</span>
+              <h2 id="trust-title" className="mt-6 text-3xl font-bold text-white md:text-5xl tracking-tight">
+                Seus dados protegidos por <span className="text-gold-gradient">padrão bancário</span>
+              </h2>
+              <p className="mt-6 text-white/50 font-medium text-lg leading-relaxed">
+                Utilizamos tecnologia de ponta para garantir a blindagem das suas operações e a total conformidade com os órgãos reguladores.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4 w-full lg:w-auto">
+              {[
+                { label: "Criptografia SSL", detail: "256 bits", icon: ShieldCheck },
+                { label: "Compliance LGPD", detail: "100% Adequado", icon: ShieldAlert },
+                { label: "Regulado BACEN", detail: "Correspondente", icon: Landmark },
+                { label: "Auditoria Externa", detail: "Transparência", icon: TrendingUp },
+              ].map((item, i) => (
+                <div key={i} className="bg-white/5 rounded-2xl p-6 border border-white/5 hover:border-white/10 transition-colors">
+                  <item.icon className="h-8 w-8 text-primary mb-4" />
+                  <h4 className="text-white font-bold text-sm uppercase tracking-wider">{item.label}</h4>
+                  <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest mt-1">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Reveal>
+    </section>
     <section className="container-x py-24" aria-label="Ajuda e Novidades">
        <div className="grid gap-20 lg:grid-cols-2">
          <Reveal>
