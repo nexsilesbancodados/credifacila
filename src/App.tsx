@@ -5,6 +5,8 @@ import AntecipacaoRecebiveis from "./pages/AntecipacaoRecebiveis";
 import BoletoGarantido from "./pages/BoletoGarantido";
 import ContaDigitalLuri from "./pages/ContaDigitalLuri";
 import InvistaConosco from "./pages/InvistaConosco";
+import Blog from "./pages/Blog";
+import Duvidas from "./pages/Duvidas";
  import NotFound from "./pages/NotFound";
  
  const App = () => (
@@ -16,6 +18,8 @@ import InvistaConosco from "./pages/InvistaConosco";
       <Route path="/securitizadora/boleto-garantido" element={<BoletoGarantido />} />
       <Route path="/securitizadora/conta-digital-luri" element={<ContaDigitalLuri />} />
        <Route path="/invista-conosco" element={<InvistaConosco />} />
+       <Route path="/blog" element={<Blog />} />
+       <Route path="/duvidas" element={<Duvidas />} />
        <Route path="*" element={<NotFound />} />
      </Routes>
    </BrowserRouter>
