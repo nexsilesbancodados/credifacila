@@ -13,7 +13,7 @@ const Footer = () => (
         <div className="rounded-2xl bg-white/95 px-4 py-3 inline-flex">
           <Logo className="h-10" aria-hidden={true} />
         </div>
-        <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/50">{SITE.description}</p>
+        <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/80">{SITE.description}</p>
         <nav className="mt-8 flex gap-3" aria-label="Redes sociais">
           {[
             { Icon: Instagram, label: "Instagram" },
@@ -34,8 +34,8 @@ const Footer = () => (
       </div>
 
       <nav aria-label="Links de navegação">
-        <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40">Navegação</h4>
-        <ul className="mt-6 space-y-3 text-sm text-white/60">
+        <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/60">Navegação</h4>
+        <ul className="mt-6 space-y-3 text-sm text-white/80">
           {[
             ["Início", "/"],
             ["Consignado", "/consignado"],
@@ -52,8 +52,8 @@ const Footer = () => (
       </nav>
 
       <nav aria-label="Links de negócios">
-        <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40">Business</h4>
-        <ul className="mt-6 space-y-3 text-sm text-white/60">
+        <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/60">Business</h4>
+        <ul className="mt-6 space-y-3 text-sm text-white/80">
           {[
             ["Antecipação", "/securitizadora/antecipacao-de-recebiveis"],
             ["Boleto Garantido", "/securitizadora/boleto-garantido"],
@@ -68,8 +68,8 @@ const Footer = () => (
       </nav>
 
       <div aria-label="Informações de contato">
-        <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40">Contato</h4>
-        <ul className="mt-6 space-y-4 text-sm text-white/60">
+        <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/60">Contato</h4>
+        <ul className="mt-6 space-y-4 text-sm text-white/80">
           <li className="flex items-start gap-3">
             <Phone className="mt-0.5 h-4 w-4 text-[hsl(var(--gold-soft))]" aria-hidden={true} /> 
             <span className="text-white/80">{SITE.phone}</span>

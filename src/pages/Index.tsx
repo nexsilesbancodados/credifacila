@@ -61,7 +61,7 @@ const Index = () => (
             <h1 className="mt-8 text-5xl font-black leading-[0.95] tracking-tighter md:text-7xl lg:text-8xl">
               Inteligência <br/> <span className="text-gold-gradient">Financeira</span>
             </h1>
-            <p className="mt-8 max-w-2xl text-lg text-white/60 md:text-xl leading-relaxed font-medium">
+            <p className="mt-8 max-w-2xl text-lg text-white/80 md:text-xl leading-relaxed font-medium">
               Elevamos o padrão do crédito no Brasil com estruturas personalizadas de fomento comercial e gestão de ativos para indivíduos e empresas de alta performance.
             </p>
             <nav className="mt-10 flex flex-wrap gap-4" aria-label="Ações principais">
@@ -123,15 +123,15 @@ const Index = () => (
              <div className="mt-10 grid gap-8 sm:grid-cols-3" aria-label="Nossos números institucionais">
                <div>
                  <p className="text-4xl font-black text-white">12+</p>
-                 <p className="text-[10px] uppercase tracking-widest font-bold text-white/30 mt-1">Anos de Mercado</p>
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-white/50 mt-1">Anos de Mercado</p>
                </div>
                <div>
                  <p className="text-4xl font-black text-white">100%</p>
-                 <p className="text-[10px] uppercase tracking-widest font-bold text-white/30 mt-1">Processo Digital</p>
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-white/50 mt-1">Processo Digital</p>
                </div>
                <div>
                  <p className="text-4xl font-black text-white">A+</p>
-                 <p className="text-[10px] uppercase tracking-widest font-bold text-white/30 mt-1">Rating Compliance</p>
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-white/50 mt-1">Rating Compliance</p>
                </div>
              </div>
            </div>
