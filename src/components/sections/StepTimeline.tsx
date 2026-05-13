@@ -20,7 +20,7 @@ const StepTimeline = ({ steps }: { steps: Step[] }) => {
               </div>
               <div className="card-soft p-8 h-full flex-1">
                 <h3 className="text-lg font-black text-white">{s.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-white/60 font-medium">{s.text}</p>
+                <p className="mt-4 text-sm leading-relaxed text-white/80 font-medium">{s.text}</p>
               </div>
             </div>
           </li>
