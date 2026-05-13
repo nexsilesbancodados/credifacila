@@ -39,6 +39,10 @@ const PARTNERS = ["Banco Central", "FEBRABAN", "ABBC", "Reclame Aqui", "Serasa",
 
 const Sobre = () => (
   <Layout tone="midnight">
+    <SEOHead
+      title="Sobre a Credifácil | Quem somos"
+      description="Há mais de uma década descomplicando o crédito no Brasil. Conheça a história, valores e equipe da Credifácil."
+    />
     <PageHeader
       eyebrow="Quem somos"
       title={<>Há mais de uma década <span className="text-gold-gradient">descomplicando o crédito</span></>}

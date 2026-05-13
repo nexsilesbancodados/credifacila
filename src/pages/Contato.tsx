@@ -18,6 +18,10 @@ const Contato = () => {
 
   return (
     <Layout tone="twilight">
+      <SEOHead
+        title="Contato | Fale com a Credifácil"
+        description="Fale com nossos especialistas. Atendimento humano por WhatsApp, telefone e e-mail para crédito, investimentos e empresas."
+      />
       <PageHeader
         eyebrow="Fale com a Credifácil"
         title={<>Estamos prontos para <span className="text-gold-gradient">ajudar você</span></>}
