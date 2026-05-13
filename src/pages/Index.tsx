@@ -20,7 +20,7 @@
                <span className="text-[10px] font-bold uppercase tracking-widest text-gold">Inteligência Financeira</span>
              </div>
              
-             <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-8 animate-fade-in">
+             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] mb-8 animate-fade-in">
                O banco do <span className="text-gold-gradient">amanhã</span>, hoje.
              </h1>
              
@@ -40,9 +40,23 @@
          </div>
        </section>
  
+       {/* Logos/Trust Section */}
+       <section className="py-12 border-y border-white/5 bg-white/[0.01]">
+         <div className="container-x">
+           <p className="text-center text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold mb-8">Tecnologia e Segurança de Nível Global</p>
+           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-30 grayscale hover:grayscale-0 transition-all duration-500">
+             <div className="h-6 w-24 bg-white rounded-sm" /> {/* Placeholder logos */}
+             <div className="h-6 w-20 bg-white rounded-sm" />
+             <div className="h-6 w-28 bg-white rounded-sm" />
+             <div className="h-6 w-24 bg-white rounded-sm" />
+             <div className="h-6 w-20 bg-white rounded-sm" />
+           </div>
+         </div>
+       </section>
+ 
        {/* Stats Section */}
-       <section className="py-20 border-y border-white/5 bg-white/[0.02]">
-         <div className="container-x grid grid-cols-2 md:grid-cols-4 gap-12">
+       <section className="py-20 bg-black">
+         <div className="container-x grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
            {[
              { label: "Ativos sob Gestão", value: "R$ 2.4B+" },
              { label: "Clientes Ativos", value: "85K+" },
