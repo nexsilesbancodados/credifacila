@@ -67,17 +67,10 @@ const Index = () => (
             <Link to="/contato" className="btn-ghost">Fale com um especialista</Link>
           </div>
           <div className="mt-10 grid max-w-xl grid-cols-2 gap-3 text-white sm:grid-cols-4">
-            {[
-              { l: "+20 mil", s: "clientes" },
-              { l: "98%", s: "aprovação" },
-              { l: "24h", s: "liberação" },
-              { l: "1,15%", s: "a partir" },
-            ].map((x) => (
-              <div key={x.l} className="rounded-2xl border border-white/15 bg-white/5 p-3 backdrop-blur-md">
-                 <p className="text-2xl font-extrabold">{x.l}</p>
-                 <p className="text-xs uppercase tracking-widest font-bold text-white/80">{x.s}</p>
-              </div>
-            ))}
+            <AnimatedStat value="20000" label="clientes" />
+            <AnimatedStat value="98%" label="aprovação" />
+            <AnimatedStat value="24h" label="liberação" />
+            <AnimatedStat value="1.15%" label="a partir" />
           </div>
         </div>
       </div>
