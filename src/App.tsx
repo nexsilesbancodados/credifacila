@@ -7,7 +7,10 @@ import ContaDigitalLuri from "./pages/ContaDigitalLuri";
 import InvistaConosco from "./pages/InvistaConosco";
 import Blog from "./pages/Blog";
 import Duvidas from "./pages/Duvidas";
+ import PortalCliente from "./pages/PortalCliente";
  import NotFound from "./pages/NotFound";
+       <Route path="/portal-cliente" element={<PortalCliente />} />
+       <Route path="*" element={<NotFound />} />
  
  const App = () => (
    <BrowserRouter>
