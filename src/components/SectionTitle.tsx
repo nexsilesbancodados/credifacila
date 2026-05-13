@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, memo } from "react";
 import { cn } from "@/lib/utils";
 
 type Props = {
@@ -13,17 +13,17 @@ type Props = {
 const SectionTitle = ({ eyebrow, title, subtitle, align = "center", light, className }: Props) => (
   <div
     className={cn(
-      "max-w-3xl",
+      "max-w-4xl",
       align === "center" ? "mx-auto text-center" : "text-left",
       className
     )}
   >
     {eyebrow && (
-      <span className={light ? "pill-light" : "pill"}>{eyebrow}</span>
+      <span className={light ? "pill-gold" : "pill"}>{eyebrow}</span>
     )}
     <h2
       className={cn(
-        "mt-4 text-3xl font-extrabold leading-[1.1] sm:text-4xl md:text-5xl",
+        "mt-6 text-3xl font-black leading-[1.1] sm:text-4xl md:text-6xl tracking-tighter",
         light ? "text-white" : "text-foreground"
       )}
     >
@@ -31,8 +31,9 @@ const SectionTitle = ({ eyebrow, title, subtitle, align = "center", light, class
     </h2>
      {subtitle && (
        <p className={cn(
-         "mt-5 text-base md:text-lg leading-relaxed",
-         light ? "text-white/100" : "text-slate-900 font-medium"
+         "mt-6 text-lg md:text-xl leading-relaxed max-w-2xl",
+         align === "center" && "mx-auto",
+         light ? "text-white/70" : "text-slate-600 font-medium"
        )}>
          {subtitle}
        </p>
@@ -40,4 +41,4 @@ const SectionTitle = ({ eyebrow, title, subtitle, align = "center", light, class
   </div>
 );
 
-export default SectionTitle;
+export default memo(SectionTitle);
