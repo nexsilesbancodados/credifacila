@@ -3,7 +3,6 @@ import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import SEOHead from "@/components/SEOHead";
 import SectionTitle from "@/components/SectionTitle";
-import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepTimeline from "@/components/sections/StepTimeline";
 import CTASection from "@/components/CTASection";
 import imgInvest from "@/assets/img-investimentos.jpg";
@@ -13,60 +12,143 @@ import bannerInvestimentos from "@/assets/banner-investimentos.png";
 const InvistaConosco = () => (
   <Layout tone="midnight">
     <SEOHead
-      title="Invista Conosco | Credifácil"
-      description="Oportunidades de investimento estruturadas com transparência, solidez e rentabilidade. Conheça os produtos Credifácil."
+      title="Invista Conosco | Credifácil Asset & Wealth"
+      description="Oportunidades exclusivas em crédito privado e ativos estruturados com governança institucional e rentabilidade superior."
     />
     <PageHeader
-      eyebrow="Invista Conosco"
-      title={<>Invista com segurança em <span className="text-gold-gradient">soluções financeiras inteligentes</span></>}
-      subtitle="Conheça oportunidades estruturadas para quem busca rentabilidade, transparência e solidez."
-      primaryCta={{ label: "Quero falar com um consultor", href: "/contato" }}
-      secondaryCta={{ label: "Por que investir", href: "#porque" }}
+      eyebrow="Asset Management & Investimentos"
+      title={<>Rentabilidade superior com <span className="text-gold-gradient">gestão técnica e rigorosa</span></>}
+      subtitle="Oportunidades exclusivas em crédito privado e ativos estruturados para investidores que buscam solidez e transparência bancária."
+      primaryCta={{ label: "Falar com um Wealth Manager", href: "/contato" }}
+      secondaryCta={{ label: "Conhecer Produtos", href: "#produtos" }}
       bgImage={imgInvest}
       className="-mt-[72px] pt-[72px] md:-mt-[84px] md:pt-[84px]"
     />
 
-    <section id="porque" className="container-x py-20">
-      <SectionTitle light eyebrow="Por que investir" title="Vantagens de investir com a Credifácil" />
-      <div className="mt-12">
-        <FeatureGrid
-          cols={3}
-          items={[
-            { icon: ShieldCheck, title: "Segurança", text: "Operações estruturadas com critérios técnicos." },
-            { icon: FileSearch, title: "Transparência", text: "Informações claras em cada etapa." },
-            { icon: TrendingUp, title: "Rentabilidade", text: "Oportunidades alinhadas ao seu perfil." },
-            { icon: Building2, title: "Gestão especializada", text: "Time experiente em finanças e crédito." },
-            { icon: LineChart, title: "Acompanhamento", text: "Relatórios e indicadores claros." },
-            { icon: Headset, title: "Relacionamento consultivo", text: "Atendimento próximo e dedicado." },
-          ]}
-        />
+    <section id="produtos" className="container-x py-24">
+      <SectionTitle light eyebrow="Portfólio de Ativos" title="Soluções estruturadas sob medida" />
+      <div className="mt-12 grid gap-8 lg:grid-cols-3">
+        {[
+          {
+            title: "FIDC Credifácil",
+            desc: "Fundo de Investimento em Direitos Creditórios com foco em ativos de alta qualidade e governança institucional.",
+            features: ["Baixa volatilidade", "Crédito corporativo", "Risco pulverizado"],
+            icon: BarChart3,
+            highlight: "Ideal para Investidor Qualificado"
+          },
+          {
+            title: "CRI / CRA",
+            desc: "Títulos de crédito privado isentos de IR para pessoa física, com lastro imobiliário ou do agronegócio.",
+            features: ["Isenção de IR", "Garantias reais", "Fluxo de caixa fixo"],
+            icon: Gem,
+            highlight: "Rentabilidade Isenta"
+          },
+          {
+            title: "Debêntures Privadas",
+            desc: "Emissão de dívida para expansão de empresas consolidadas, oferecendo prêmios sobre o CDI.",
+            features: ["Longo Prazo", "Prêmio sobre CDI", "Garantia de ativos"],
+            icon: Building2,
+            highlight: "Alocação Estratégica"
+          }
+        ].map((p, i) => (
+          <div key={i} className="group flex flex-col rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition-all hover:border-[hsl(var(--gold-soft))/0.5] hover:bg-white/[0.06]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[hsl(var(--gold-soft))] to-[hsl(var(--gold))] text-white shadow-xl">
+              <p.icon className="h-7 w-7" />
+            </div>
+            <span className="mt-6 text-xs font-bold uppercase tracking-widest text-[hsl(var(--gold-soft))]">{p.highlight}</span>
+            <h3 className="mt-2 text-2xl font-bold text-white">{p.title}</h3>
+            <p className="mt-4 text-white/70">{p.desc}</p>
+            <ul className="mt-6 flex flex-col gap-3">
+              {p.features.map((f, j) => (
+                <li key={j} className="flex items-center gap-2 text-sm text-white/90">
+                  <CheckCircle2 className="h-4 w-4 text-[hsl(var(--gold-soft))]" /> {f}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-auto pt-8">
+              <button className="inline-flex items-center gap-2 text-sm font-bold text-white transition-all hover:gap-3">
+                Ver lâmina do produto <ArrowUpRight className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
 
-    <section className="container-x py-20">
-      <div className="mx-auto max-w-3xl text-center">
-        <span className="pill-gold"><Sparkles className="h-3 w-3" /> Perfil do investidor</span>
-        <h2 className="mt-4 text-3xl font-extrabold leading-tight text-white md:text-4xl">Para quem busca oportunidades estruturadas</h2>
-        <p className="mt-5 text-base text-white/90 md:text-lg">
-          Soluções voltadas a investidores que buscam alternativas com análise técnica, transparência e suporte profissional, com foco em equilíbrio entre risco e retorno.
+    <section className="bg-white/[0.02] py-24">
+      <div className="container-x">
+        <div className="grid gap-16 lg:grid-cols-2">
+          <div>
+            <span className="pill-gold"><Shield className="h-3 w-3" /> Segurança Institucional</span>
+            <h2 className="mt-6 text-3xl font-extrabold leading-tight text-white md:text-5xl">Governança inspirada nos maiores bancos</h2>
+            <p className="mt-6 text-lg text-white/80">
+              Seguimos diretrizes rigorosas de compliance e gestão de risco para garantir que cada centavo investido esteja protegido por processos técnicos e auditorias recorrentes.
+            </p>
+            
+            <div className="mt-12 space-y-8">
+              {[
+                { icon: Scale, title: "Comitê de Crédito Independente", text: "Decisões colegiadas baseadas em dados e scoring proprietário." },
+                { icon: History, title: "Track Record Comprovado", text: "Mais de 12 anos de atuação sem histórico de perdas significativas." },
+                { icon: GanttChart, title: "Gestão Ativa de Portfólio", text: "Monitoramento 24/7 de todos os ativos e garantias subjacentes." }
+              ].map((item, i) => (
+                <div key={i} className="flex gap-5">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/5 text-[hsl(var(--gold-soft))]">
+                    <item.icon className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-white">{item.title}</h4>
+                    <p className="mt-1 text-white/70">{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative">
+            <div className="aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10">
+              <img src={imgInvest} alt="Análise de mercado" className="h-full w-full object-cover opacity-80" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--midnight))] via-transparent to-transparent" />
+            </div>
+            <div className="absolute -bottom-10 -left-10 hidden rounded-3xl bg-gradient-to-br from-[hsl(var(--royal))] to-[hsl(var(--sky))] p-8 shadow-2xl md:block">
+              <p className="text-4xl font-black text-white">NPS 78</p>
+              <p className="text-sm font-medium text-white/80 uppercase tracking-wider">Satisfação do Investidor</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="container-x py-24">
+      <div className="mx-auto max-w-4xl text-center">
+        <span className="pill-gold"><Users className="h-3 w-3" /> Suitability</span>
+        <h2 className="mt-4 text-3xl font-extrabold leading-tight text-white md:text-4xl">Perfil do Investidor Credifácil</h2>
+        <p className="mt-6 text-lg text-white/80">
+          Nossas soluções são desenhadas para investidores que compreendem o mercado de crédito privado e buscam diversificação inteligente.
         </p>
-        <ul className="mx-auto mt-5 inline-flex flex-col gap-2 text-left text-sm text-white/85">
-          <li className="flex items-center gap-2"><BarChart3 className="h-4 w-4 text-[hsl(var(--gold-soft))]" /> Análise estruturada das operações</li>
-          <li className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-[hsl(var(--gold-soft))]" /> Governança e controles internos</li>
-          <li className="flex items-center gap-2"><Headset className="h-4 w-4 text-[hsl(var(--gold-soft))]" /> Acompanhamento dedicado</li>
-        </ul>
+
+        <div className="mt-12 grid gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-left">
+            <h4 className="font-bold text-white">Investidor Qualificado</h4>
+            <p className="mt-2 text-sm text-white/70 italic">Instrução CVM 554</p>
+            <p className="mt-4 text-sm text-white/80">Acesso a FIDCs e emissões exclusivas com rentabilidades diferenciadas.</p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-left">
+            <h4 className="font-bold text-white">Wealth & Family Offices</h4>
+            <p className="mt-2 text-sm text-white/70 italic">Gestão de Patrimônio</p>
+            <p className="mt-4 text-sm text-white/80">Estruturas personalizadas para preservação e sucessão familiar.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section className="container-x py-20">
-      <SectionTitle light eyebrow="Como funciona" title="Quatro passos para investir" />
+    <section className="container-x py-24">
+      <SectionTitle light eyebrow="Processo de Alocação" title="Como começar a investir" />
       <div className="mt-12">
         <StepTimeline
           steps={[
-            { title: "Cadastro", text: "Inicie seu cadastro online com poucos dados." },
-            { title: "Análise de perfil", text: "Identificamos seu perfil e objetivos." },
-            { title: "Escolha da oportunidade", text: "Apresentamos opções compatíveis." },
-            { title: "Acompanhamento", text: "Você acompanha tudo de perto." },
+            { title: "Onboarding Digital", text: "Cadastro simplificado e seguro com validação de documentos via app." },
+            { title: "Suitability", text: "Questionário de perfil para alinhar expectativas de risco e retorno." },
+            { title: "Wealth Advisory", text: "Reunião com um de nossos consultores para definir a estratégia de alocação." },
+            { title: "Acompanhamento", text: "Relatórios mensais de performance e acesso ao dashboard em tempo real." },
           ]}
         />
       </div>
@@ -74,13 +156,16 @@ const InvistaConosco = () => (
 
     <SectionBanner image={bannerInvestimentos} alt="Executivo observando indicadores financeiros" />
 
-    <section className="container-x">
-      <div className="rounded-2xl border border-[hsl(var(--gold))/0.3] bg-[hsl(var(--gold))/0.06] p-5 text-sm text-foreground">
-        <strong>Aviso:</strong> Todo investimento envolve riscos. Consulte nossos especialistas antes de investir.
+    <section className="container-x py-12">
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-8 text-[10px] leading-relaxed text-white/40">
+        <p className="mb-4"><strong>DISCLAIMER LEGAL:</strong></p>
+        <p className="mb-2">A Credifácil não realiza a venda direta de valores mobiliários. Nossos produtos são estruturados e distribuídos por instituições financeiras parceiras devidamente autorizadas pelo Banco Central do Brasil e pela CVM (Comissão de Valores Mobiliários).</p>
+        <p className="mb-2">O investimento em fundos de investimento e outros ativos financeiros não conta com garantia do administrador, do gestor, de qualquer mecanismo de seguro ou, ainda, do fundo garantidor de crédito - FGC.</p>
+        <p>A rentabilidade passada não representa garantia de rentabilidade futura. É recomendada a leitura cuidadosa do prospecto e do regulamento do fundo de investimento pelo investidor ao aceitar suas decisões.</p>
       </div>
     </section>
 
-    <CTASection title="Converse com um consultor de investimentos" cta="Quero falar com um consultor" />
+    <CTASection title="Pronto para sofisticar seu portfólio?" cta="Falar com um Wealth Manager" />
   </Layout>
 );
 
