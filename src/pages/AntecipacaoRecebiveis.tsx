@@ -261,7 +261,7 @@ const AntecipacaoRecebiveis = () => {
                       loading="lazy"
                       width={1024}
                       height={1280}
-                      className="absolute bottom-0 left-0 h-[110%] w-auto max-w-none object-contain object-bottom drop-shadow-[0_30px_40px_rgba(0,0,0,0.5)]"
+                      className="absolute bottom-0 left-0 h-[110%] w-auto max-w-none object-contain object-bottom drop-shadow-[0_30px_40px_rgba(0,0,0,0.5)] pb-px pt-[53px]"
                     />
                   </Parallax>
                   <div className="absolute right-4 top-6 z-10 md:left-6 md:right-auto">
