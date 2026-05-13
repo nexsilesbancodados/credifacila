@@ -214,7 +214,7 @@ const Index = () => (
         ))}
       </div>
       <div className="mt-10 text-center">
-        <Link to="/blog" className="btn-outline">Ver todos os conteúdos</Link>
+        <Link to="/blog" className="btn-outline-white">Ver todos os conteúdos</Link>
       </div>
     </section>
 
