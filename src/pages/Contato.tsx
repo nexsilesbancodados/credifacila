@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Clock, Headset, Mail, MapPin, MessageCircle, Phone, Send, ShieldCheck, Sparkles, Zap, Building2, UserCheck } from "lucide-react";
+import { useState, useId } from "react";
+import { Clock, Mail, MapPin, MessageCircle, Phone, Send, Building2, UserCheck, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import SEOHead from "@/components/SEOHead";
@@ -11,6 +11,7 @@ import Reveal from "@/components/Reveal";
 
 const Contato = () => {
   const [sent, setSent] = useState(false);
+  const id = useId();
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -39,9 +40,12 @@ const Contato = () => {
               <p className="mt-4 text-white/60">Um Wealth Manager dedicado entrará em contato em até 1 hora útil.</p>
 
               {sent ? (
-                <div className="mt-12 rounded-3xl bg-emerald-500/10 border border-emerald-500/20 p-8 text-emerald-400 text-center">
+                <div 
+                  className="mt-12 rounded-3xl bg-emerald-500/10 border border-emerald-500/20 p-8 text-emerald-400 text-center"
+                  role="alert"
+                >
                   <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/20 mb-4">
-                    <Send className="h-8 w-8" />
+                    <Send className="h-8 w-8" aria-hidden="true" />
                   </div>
                   <p className="text-xl font-bold">Solicitação enviada!</p>
                   <p className="mt-2 text-sm opacity-80">Seu ticket de atendimento foi gerado com sucesso.</p>
@@ -49,34 +53,34 @@ const Contato = () => {
               ) : (
                 <form className="mt-10 grid gap-6 sm:grid-cols-2" onSubmit={onSubmit}>
                   <div className="sm:col-span-2">
-                    <label className="form-label text-white/70">Nome ou Razão Social</label>
-                    <input required className="form-input bg-white/5 border-white/10 text-white" placeholder="Identificação completa" />
+                    <label htmlFor={`${id}-name`} className="form-label text-white/70">Nome ou Razão Social</label>
+                    <input id={`${id}-name`} required className="form-input bg-white/5 border-white/10 text-white" placeholder="Identificação completa" />
                   </div>
                   <div>
-                    <label className="form-label text-white/70">Telefone Corporativo</label>
-                    <input required className="form-input bg-white/5 border-white/10 text-white" placeholder="(00) 00000-0000" />
+                    <label htmlFor={`${id}-phone`} className="form-label text-white/70">Telefone Corporativo</label>
+                    <input id={`${id}-phone`} required className="form-input bg-white/5 border-white/10 text-white" placeholder="(00) 00000-0000" />
                   </div>
                   <div>
-                    <label className="form-label text-white/70">E-mail Profissional</label>
-                    <input required type="email" className="form-input bg-white/5 border-white/10 text-white" placeholder="nome@empresa.com.br" />
+                    <label htmlFor={`${id}-email`} className="form-label text-white/70">E-mail Profissional</label>
+                    <input id={`${id}-email`} required type="email" className="form-input bg-white/5 border-white/10 text-white" placeholder="nome@empresa.com.br" />
                   </div>
                   <div className="sm:col-span-2">
-                    <label className="form-label text-white/70">Área de Interesse</label>
-                    <select required className="form-input bg-white/5 border-white/10 text-white">
+                    <label htmlFor={`${id}-interest`} className="form-label text-white/70">Área de Interesse</label>
+                    <select id={`${id}-interest`} required className="form-input bg-white/5 border-white/10 text-white">
                       <option value="" className="bg-navy-deep">Selecione uma opção...</option>
-                      <option className="bg-navy-deep">Securitização & Antecipação</option>
-                      <option className="bg-navy-deep">Crédito Consignado</option>
-                      <option className="bg-navy-deep">Asset & Wealth Management</option>
-                      <option className="bg-navy-deep">Conta Digital Luri Business</option>
+                      <option className="bg-navy-deep" value="securitizacao">Securitização & Antecipação</option>
+                      <option className="bg-navy-deep" value="consignado">Crédito Consignado</option>
+                      <option className="bg-navy-deep" value="wealth">Asset & Wealth Management</option>
+                      <option className="bg-navy-deep" value="luri">Conta Digital Luri Business</option>
                     </select>
                   </div>
                   <div className="sm:col-span-2">
-                    <label className="form-label text-white/70">Observações Estratégicas</label>
-                    <textarea rows={4} className="form-input bg-white/5 border-white/10 text-white resize-none" placeholder="Breve resumo da necessidade..." />
+                    <label htmlFor={`${id}-obs`} className="form-label text-white/70">Observações Estratégicas</label>
+                    <textarea id={`${id}-obs`} rows={4} className="form-input bg-white/5 border-white/10 text-white resize-none" placeholder="Breve resumo da necessidade..." />
                   </div>
                   <div className="sm:col-span-2">
                     <button type="submit" className="btn-gold w-full flex justify-center py-4">
-                      Agendar Consultoria <ArrowRight className="h-4 w-4 ml-2" />
+                      Agendar Consultoria <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
                     </button>
                   </div>
                 </form>
@@ -98,12 +102,12 @@ const Contato = () => {
                   ].map((item, i) => (
                     <div key={i} className="flex gap-4">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/5 text-[hsl(var(--gold-soft))]">
-                        <item.icon className="h-5 w-5" />
+                        <item.icon className="h-5 w-5" aria-hidden="true" />
                       </div>
                       <div>
                         <p className="text-xs font-bold uppercase tracking-widest text-white/40">{item.title}</p>
                         {item.link ? (
-                          <a href={item.link} className="text-white font-medium hover:text-[hsl(var(--gold-soft))] transition-colors">{item.value}</a>
+                          <a href={item.link} className="text-white font-medium hover:text-[hsl(var(--gold-soft))] transition-colors focus:ring-2 focus:ring-[hsl(var(--gold-soft))] outline-none rounded-sm px-1 -mx-1">{item.value}</a>
                         ) : (
                           <p className="text-white font-medium">{item.value}</p>
                         )}
@@ -115,12 +119,12 @@ const Contato = () => {
             </Reveal>
 
             <Reveal delay={0.2}>
-              <div className="rounded-3xl bg-gradient-to-br from-[hsl(var(--royal))] to-[hsl(var(--sky))] p-8 text-white">
+              <div className="rounded-3xl bg-gradient-to-br from-[hsl(var(--royal))] to-[hsl(var(--sky))] p-8 text-white shadow-xl">
                 <h4 className="font-bold text-lg">Suporte de Segunda Instância</h4>
-                <p className="mt-3 text-sm opacity-80 leading-relaxed">
+                <p className="mt-3 text-sm opacity-90 leading-relaxed text-white/95">
                   Possui algum ticket em aberto e deseja prioridade? Entre em contato diretamente com nossa Ouvidoria através do portal do cliente.
                 </p>
-                <button className="mt-6 text-sm font-bold underline">Acessar Ouvidoria</button>
+                <button className="mt-6 text-sm font-bold underline outline-offset-4 decoration-2 focus:ring-2 focus:ring-white">Acessar Ouvidoria</button>
               </div>
             </Reveal>
           </div>
@@ -130,32 +134,32 @@ const Contato = () => {
           <Reveal>
             <div className="relative">
               <div className="absolute -inset-4 bg-[hsl(var(--gold))/0.1] blur-2xl rounded-full" />
-              <HeroImage src={imgHumanizado} alt="Atendimento de excelência" withLogo />
+              <HeroImage src={imgHumanizado} alt="Consultora Credifácil atendendo cliente com excelência" withLogo />
             </div>
           </Reveal>
           <Reveal delay={0.1}>
             <div>
-              <span className="pill-gold"><UserCheck className="h-3 w-3" /> Wealth Advisory</span>
+              <span className="pill-gold"><UserCheck className="h-3 w-3" aria-hidden="true" /> Wealth Advisory</span>
               <h2 className="mt-6 text-3xl font-extrabold leading-tight text-white md:text-5xl">Atendimento que valoriza seu tempo</h2>
-              <p className="mt-6 text-lg text-white/70">Na Credifácil, acreditamos que decisões financeiras complexas exigem conversas profundas. Nossos gerentes de relacionamento são certificados e preparados para oferecer diagnósticos precisos, sem burocracia.</p>
+              <p className="mt-6 text-lg text-white/80">Na Credifácil, acreditamos que decisões financeiras complexas exigem conversas profundas. Nossos gerentes de relacionamento são certificados e preparados para oferecer diagnósticos precisos, sem burocracia.</p>
               
               <div className="mt-10 grid gap-8 sm:grid-cols-2">
                 <div className="flex gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/5 text-[hsl(var(--gold-soft))]">
-                    <Building2 className="h-6 w-6" />
+                    <Building2 className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <div>
                     <h4 className="font-bold text-white">Presence Office</h4>
-                    <p className="text-sm text-white/50">Salas de reunião premium para sua privacidade.</p>
+                    <p className="text-sm text-white/50 leading-relaxed">Salas de reunião premium para sua total privacidade e conforto.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/5 text-[hsl(var(--gold-soft))]">
-                    <Zap className="h-6 w-6" />
+                    <Send className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <div>
                     <h4 className="font-bold text-white">SLA Prioritário</h4>
-                    <p className="text-sm text-white/50">Respostas executivas em tempo recorde.</p>
+                    <p className="text-sm text-white/50 leading-relaxed">Respostas executivas com diagnósticos técnicos em tempo recorde.</p>
                   </div>
                 </div>
               </div>
@@ -168,4 +172,3 @@ const Contato = () => {
 };
 
 export default Contato;
-import { ArrowRight } from "lucide-react";

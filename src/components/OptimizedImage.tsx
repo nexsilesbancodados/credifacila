@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 type Props = {
@@ -7,9 +7,10 @@ type Props = {
   className?: string;
   priority?: boolean;
   aspectRatio?: string;
+  "aria-hidden"?: boolean;
 };
 
-const OptimizedImage = ({ src, alt, className, priority = false, aspectRatio }: Props) => {
+const OptimizedImage = ({ src, alt, className, priority = false, aspectRatio, "aria-hidden": ariaHidden }: Props) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
@@ -19,10 +20,11 @@ const OptimizedImage = ({ src, alt, className, priority = false, aspectRatio }: 
         aspectRatio, 
         className
       )}
+      aria-hidden={ariaHidden}
     >
       <img
         src={src}
-        alt={alt}
+        alt={ariaHidden ? "" : alt}
         loading={priority ? "eager" : "lazy"}
         fetchPriority={priority ? "high" : "auto"}
         onLoad={() => setLoaded(true)}
@@ -32,7 +34,7 @@ const OptimizedImage = ({ src, alt, className, priority = false, aspectRatio }: 
         )}
       />
       {!loaded && (
-        <div className="absolute inset-0 animate-pulse bg-white/5" />
+        <div className="absolute inset-0 animate-pulse bg-white/5" aria-hidden="true" />
       )}
     </div>
   );
