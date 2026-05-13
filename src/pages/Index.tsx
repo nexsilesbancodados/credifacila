@@ -1,4 +1,4 @@
-import { ArrowRight, Banknote, Building2, CheckCircle2, FileCheck2, Headset, Lock, Receipt, ShieldCheck, Smartphone, Sparkles, TrendingUp, Wallet, Zap } from "lucide-react";
+import { ArrowRight, Award, Banknote, Building2, GraduationCap, Headset, HeartHandshake, Lock, Receipt, ShieldCheck, Smartphone, Sparkles, TrendingUp, Users, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEOHead from "@/components/SEOHead";
@@ -21,7 +21,6 @@ import imgBoleto from "@/assets/img-boleto.jpg";
 import imgLuri from "@/assets/img-luri.jpg";
 import imgInvestimentos from "@/assets/img-investimentos.jpg";
 import imgSecuritizadora from "@/assets/img-securitizadora.jpg";
-import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepTimeline from "@/components/sections/StepTimeline";
 import ServiceCard from "@/components/sections/ServiceCard";
 import BlogCard from "@/components/sections/BlogCard";
@@ -170,20 +169,27 @@ const Index = () => (
           <HeroImage src={imgEquipe} alt="Equipe Credifácil" withLogo />
         </div>
         <div>
-          <span className="pill"><Sparkles className="h-3 w-3" /> Atendimento humano</span>
+          <span className="pill"><Users className="h-3 w-3" /> Quem somos</span>
           <h2 className="mt-4 text-3xl font-extrabold leading-tight md:text-4xl">
-            Especialistas reais, do seu lado <span className="text-royal-gradient">em cada decisão</span>
+            Mais de uma década construindo <span className="text-royal-gradient">histórias financeiras</span>
           </h2>
           <p className="mt-5 text-base text-muted-foreground md:text-lg">
-            Nossa equipe combina experiência financeira e atendimento humanizado para encontrar a melhor solução para você ou sua empresa.
+            Nascemos da convicção de que crédito e investimento devem ser acessíveis, claros e justos. Hoje, somos uma equipe multidisciplinar formada por economistas, analistas de risco e consultores certificados — pessoas que tratam cada cliente pelo nome.
           </p>
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-            {["Equipe certificada", "Análise consultiva", "Soluções sob medida", "Acompanhamento real"].map((t) => (
-              <li key={t} className="flex items-center gap-2 text-sm font-semibold">
-                <CheckCircle2 className="h-4 w-4 text-emerald-600" /> {t}
-              </li>
-            ))}
-          </ul>
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            <div>
+              <p className="text-3xl font-extrabold text-[hsl(var(--royal))]">12+</p>
+              <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground">anos de mercado</p>
+            </div>
+            <div>
+              <p className="text-3xl font-extrabold text-[hsl(var(--royal))]">120</p>
+              <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground">colaboradores</p>
+            </div>
+            <div>
+              <p className="text-3xl font-extrabold text-[hsl(var(--royal))]">4.8</p>
+              <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground">nota Reclame Aqui</p>
+            </div>
+          </div>
         </div>
       </div>
       </Reveal>
@@ -194,41 +200,43 @@ const Index = () => (
       <Reveal><SectionTitle
         light
         eyebrow="Como funciona"
-        title="Simples, rápido e 100% digital"
-        subtitle="Em poucos passos você sai da simulação para o crédito liberado em conta."
+        title="Da solicitação ao dinheiro em conta"
+        subtitle="Um fluxo único, transparente e sem letras miúdas — pensado para você acompanhar cada etapa em tempo real."
       /></Reveal>
       <Reveal delay={0.1}><div className="mt-12">
         <StepTimeline
           steps={[
-            { title: "Solicite", text: "Faça sua solicitação online em poucos minutos." },
-            { title: "Análise", text: "Avaliação rápida e segura por nossos especialistas." },
-            { title: "Aprovação", text: "Você recebe a melhor oferta personalizada." },
-            { title: "Use como quiser", text: "Crédito liberado direto na sua conta." },
+            { title: "Conte sua história", text: "Em até 3 minutos você nos diz o que precisa — sem formulários longos." },
+            { title: "Análise inteligente", text: "Cruzamos dados em tempo real e um analista valida tudo manualmente." },
+            { title: "Proposta sob medida", text: "Você compara taxas, prazos e parcelas antes de qualquer compromisso." },
+            { title: "Dinheiro liberado", text: "Crédito disponível na sua conta em até 24h após assinatura digital." },
           ]}
         />
       </div></Reveal>
     </section>
 
-    {/* POR QUE ESCOLHER */}
+    {/* RECONHECIMENTOS */}
     <section className="relative overflow-hidden py-20">
       <div className="container-x">
         <Reveal><SectionTitle
           light
-          eyebrow="Por que Credifácil?"
-          title={<>Confiança, agilidade e <span className="text-royal-gradient">resultado real</span></>}
+          eyebrow="Reconhecimentos"
+          title={<>Premiada pelo mercado, <span className="text-royal-gradient">aprovada pelos clientes</span></>}
+          subtitle="Resultados que comprovam nosso compromisso com excelência e transparência."
         /></Reveal>
-        <Reveal delay={0.1}><div className="mt-12">
-          <FeatureGrid
-            cols={3}
-            items={[
-              { icon: ShieldCheck, title: "Confiança e tradição", text: "Empresa consolidada no mercado financeiro com milhares de clientes atendidos." },
-              { icon: Zap, title: "Agilidade", text: "Aprovação e liberação rápidas, sem burocracia desnecessária." },
-              { icon: Headset, title: "Atendimento humano", text: "Especialistas reais, prontos para encontrar a melhor solução para você." },
-              { icon: Lock, title: "Segurança", text: "Tecnologia bancária e proteção completa em todas as etapas." },
-              { icon: TrendingUp, title: "Melhores condições", text: "Taxas competitivas e prazos que cabem no seu planejamento." },
-              { icon: FileCheck2, title: "Processo transparente", text: "Tudo claro do início ao fim, sem letras miúdas ou surpresas." },
-            ]}
-          />
+        <Reveal delay={0.1}><div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { I: Award, big: "Top 5", small: "Fintechs de crédito 2025 — Valor Econômico" },
+            { I: ShieldCheck, big: "RA1000", small: "Selo de excelência no atendimento Reclame Aqui" },
+            { I: HeartHandshake, big: "NPS 78", small: "Clientes que recomendam a Credifácil" },
+            { I: GraduationCap, big: "ANBIMA", small: "Certificação de boas práticas em distribuição" },
+          ].map((it) => (
+            <div key={it.big} className="card-soft p-6">
+              <it.I className="h-7 w-7 text-[hsl(var(--gold-soft))]" />
+              <p className="mt-4 text-2xl font-extrabold">{it.big}</p>
+              <p className="mt-1 text-xs leading-relaxed">{it.small}</p>
+            </div>
+          ))}
         </div></Reveal>
       </div>
     </section>
