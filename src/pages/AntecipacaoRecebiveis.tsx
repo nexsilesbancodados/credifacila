@@ -8,15 +8,18 @@ import {
   Store,
   Truck,
   Stethoscope,
+  Clock,
+  TrendingUp,
+  CheckCircle2,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 import heroImg from "@/assets/antecipacao-hero.png";
-import whoImg from "@/assets/antecipacao/who.jpg";
-import howImg from "@/assets/antecipacao/how.jpg";
-import growthImg from "@/assets/antecipacao/growth.jpg";
+import personEmpresario from "@/assets/antecipacao/person-empresario.png";
+import personEmpresaria from "@/assets/antecipacao/person-empresaria.png";
+import personLojista from "@/assets/antecipacao/person-lojista.png";
 
 const benefits = [
   {
@@ -104,111 +107,141 @@ const AntecipacaoRecebiveis = () => {
       </section>
 
       {/* Para quem é */}
-      <section className="relative overflow-hidden py-20 md:py-28">
+      <section className="relative py-20 md:py-28">
         <div className="container-x">
-          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
-            <Reveal className="order-2 md:order-1">
-              <span className="pill-gold">Para quem é</span>
-              <h2 className="mt-6 font-display text-3xl font-bold leading-[1.1] tracking-tight text-foreground md:text-4xl lg:text-5xl">
-                Para empresas que precisam de{" "}
-                <span className="text-gold-gradient">caixa agora</span>
-              </h2>
-              <p className="mt-5 max-w-md text-base leading-relaxed text-foreground/65">
-                Atendemos empresas de todos os portes que vendem a prazo e
-                querem antecipar seus recebíveis para girar o caixa com mais
-                liberdade.
-              </p>
-              <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                {sectors.map(({ icon: Icon, label }, i) => (
-                  <Reveal key={label} delay={i * 100}>
-                    <li className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur-md transition hover:border-[hsl(var(--gold))/0.45] hover:bg-white/[0.05]">
-                      <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[hsl(var(--gold))/0.35] bg-background/60 text-[hsl(var(--gold-soft))] transition group-hover:scale-110">
-                        <Icon className="h-4 w-4" />
-                      </span>
-                      <span className="text-sm font-medium text-foreground/85 md:text-[15px]">
-                        {label}
-                      </span>
-                    </li>
-                  </Reveal>
-                ))}
-              </ul>
-            </Reveal>
-            <Reveal delay={150} className="order-1 md:order-2">
-              <div className="relative">
-                <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-[hsl(var(--gold))/0.25] via-transparent to-transparent blur-2xl" />
-                <Parallax amount={50} className="relative rounded-[2rem] border border-white/10 shadow-[0_40px_120px_-40px_hsl(var(--gold)/0.4)]">
-                  <div className="relative aspect-[5/4]">
-                    <img
-                      src={whoImg}
-                      alt="Empresário analisando notas fiscais"
-                      loading="lazy"
-                      width={1280}
-                      height={896}
-                      className="h-[120%] w-full -translate-y-[10%] object-cover"
-                    />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-background/40 via-transparent to-transparent" />
+          <Reveal>
+            <div className="relative overflow-hidden rounded-[2rem] border border-[hsl(var(--gold))/0.35] bg-gradient-to-br from-[#0a1428] via-[#0d1a36] to-[#0a1428] shadow-[0_40px_120px_-40px_hsl(var(--gold)/0.4)]">
+              {/* gold glow */}
+              <div className="pointer-events-none absolute -right-24 -top-24 h-[420px] w-[420px] rounded-full bg-[hsl(var(--gold))/0.18] blur-3xl" />
+              <div className="pointer-events-none absolute -left-32 bottom-0 h-[300px] w-[300px] rounded-full bg-[hsl(var(--gold))/0.10] blur-3xl" />
+
+              <div className="relative grid min-h-[520px] items-stretch md:grid-cols-12">
+                {/* Texto */}
+                <div className="relative z-10 col-span-12 flex flex-col justify-center p-8 md:col-span-7 md:p-14 lg:p-16">
+                  <span className="pill-gold w-fit">Para quem é</span>
+                  <h2 className="mt-6 font-display text-3xl font-bold leading-[1.05] tracking-tight text-foreground md:text-4xl lg:text-5xl">
+                    Para empresas que precisam de{" "}
+                    <span className="text-gold-gradient">caixa agora</span>
+                  </h2>
+                  <p className="mt-5 max-w-lg text-base leading-relaxed text-foreground/70">
+                    Atendemos negócios de todos os portes que vendem a prazo e
+                    querem girar o caixa com mais liberdade.
+                  </p>
+
+                  <div className="mt-8 flex flex-wrap gap-2.5">
+                    {sectors.map(({ icon: Icon, label }, i) => (
+                      <Reveal key={label} delay={i * 100}>
+                        <span className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--gold))/0.35] bg-white/[0.04] px-4 py-2 text-xs font-semibold text-foreground/85 backdrop-blur-md md:text-sm">
+                          <Icon className="h-4 w-4 text-[hsl(var(--gold-soft))]" />
+                          {label}
+                        </span>
+                      </Reveal>
+                    ))}
                   </div>
-                </Parallax>
+                </div>
+
+                {/* Pessoa sangrando no fundo */}
+                <div className="relative col-span-12 min-h-[360px] md:col-span-5 md:min-h-0">
+                  <div className="pointer-events-none absolute inset-y-0 -left-20 hidden w-40 bg-gradient-to-r from-[#0a1428] to-transparent md:block" />
+                  <Parallax amount={40} className="absolute inset-0">
+                    <img
+                      src={personEmpresario}
+                      alt="Empresário sorrindo"
+                      loading="lazy"
+                      width={1024}
+                      height={1280}
+                      className="absolute bottom-0 right-0 h-[110%] w-auto max-w-none object-contain object-bottom drop-shadow-[0_30px_40px_rgba(0,0,0,0.5)]"
+                    />
+                  </Parallax>
+                  {/* Badge sobreposto */}
+                  <div className="absolute left-4 top-6 z-10 md:left-auto md:right-6">
+                    <Reveal delay={200}>
+                      <div className="flex items-center gap-3 rounded-2xl border border-[hsl(var(--gold))/0.45] bg-[#0a1428]/85 px-4 py-3 backdrop-blur-md">
+                        <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--gold))] to-[hsl(var(--gold-soft))] text-[#0a1428]">
+                          <TrendingUp className="h-4 w-4" />
+                        </span>
+                        <div>
+                          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-foreground/60">Caixa girando</p>
+                          <p className="text-sm font-bold text-foreground">+R$ 250 mil/mês</p>
+                        </div>
+                      </div>
+                    </Reveal>
+                  </div>
+                </div>
               </div>
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Como funciona */}
-      <section className="relative overflow-hidden py-20 md:py-28">
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[hsl(var(--gold))/0.04] via-transparent to-transparent" />
-        <div className="container-x relative">
-          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
-            <Reveal>
-              <div className="relative">
-                <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-[hsl(var(--gold))/0.25] via-transparent to-transparent blur-2xl" />
-                <Parallax amount={50} className="relative rounded-[2rem] border border-white/10 shadow-[0_40px_120px_-40px_hsl(var(--gold)/0.4)]">
-                  <div className="relative aspect-[5/4]">
+      <section className="relative py-20 md:py-28">
+        <div className="container-x">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-[2rem] border border-[hsl(var(--gold))/0.35] bg-gradient-to-bl from-[#0a1428] via-[#0d1a36] to-[#0a1428] shadow-[0_40px_120px_-40px_hsl(var(--gold)/0.4)]">
+              <div className="pointer-events-none absolute -left-24 -top-24 h-[420px] w-[420px] rounded-full bg-[hsl(var(--gold))/0.18] blur-3xl" />
+
+              <div className="relative grid min-h-[600px] items-stretch md:grid-cols-12">
+                {/* Pessoa à esquerda */}
+                <div className="relative col-span-12 order-2 min-h-[360px] md:col-span-5 md:order-1 md:min-h-0">
+                  <div className="pointer-events-none absolute inset-y-0 -right-20 hidden w-40 bg-gradient-to-l from-[#0a1428] to-transparent md:block" />
+                  <Parallax amount={40} className="absolute inset-0">
                     <img
-                      src={howImg}
-                      alt="Troca de duplicatas em mesa executiva"
+                      src={personEmpresaria}
+                      alt="Empresária aprovando antecipação"
                       loading="lazy"
-                      width={1280}
-                      height={896}
-                      className="h-[120%] w-full -translate-y-[10%] object-cover"
+                      width={1024}
+                      height={1280}
+                      className="absolute bottom-0 left-0 h-[110%] w-auto max-w-none object-contain object-bottom drop-shadow-[0_30px_40px_rgba(0,0,0,0.5)]"
                     />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-tl from-background/40 via-transparent to-transparent" />
-                  </div>
-                </Parallax>
-              </div>
-            </Reveal>
-            <Reveal delay={150}>
-              <span className="pill-gold">Como funciona</span>
-              <h2 className="mt-6 font-display text-3xl font-bold leading-[1.1] tracking-tight text-foreground md:text-4xl lg:text-5xl">
-                Quatro passos do recebível ao{" "}
-                <span className="text-gold-gradient">dinheiro na conta</span>
-              </h2>
-              <p className="mt-5 max-w-md text-base leading-relaxed text-foreground/65">
-                Você nos passa o título, a gente assume a cobrança e adianta o
-                valor para sua empresa imediatamente.
-              </p>
-              <ol className="mt-8 space-y-4">
-                {steps.map((s, i) => (
-                  <Reveal key={s.n} delay={i * 120}>
-                    <li className="group relative flex gap-5 rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-md transition hover:border-[hsl(var(--gold))/0.45]">
-                      <span className="font-display text-2xl font-bold text-gold-gradient md:text-3xl">
-                        {s.n}
-                      </span>
-                      <div>
-                        <h3 className="font-display text-base font-bold text-foreground md:text-lg">
-                          {s.title}
-                        </h3>
-                        <p className="mt-1 text-sm leading-relaxed text-foreground/65">
-                          {s.desc}
-                        </p>
+                  </Parallax>
+                  {/* Badge tempo */}
+                  <div className="absolute right-4 top-6 z-10 md:left-6 md:right-auto">
+                    <Reveal delay={200}>
+                      <div className="flex items-center gap-3 rounded-2xl border border-[hsl(var(--gold))/0.45] bg-[#0a1428]/85 px-4 py-3 backdrop-blur-md">
+                        <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--gold))] to-[hsl(var(--gold-soft))] text-[#0a1428]">
+                          <Clock className="h-4 w-4" />
+                        </span>
+                        <div>
+                          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-foreground/60">Liberação em</p>
+                          <p className="text-sm font-bold text-foreground">Até 4 horas</p>
+                        </div>
                       </div>
-                    </li>
-                  </Reveal>
-                ))}
-              </ol>
-            </Reveal>
-          </div>
+                    </Reveal>
+                  </div>
+                </div>
+
+                {/* Steps à direita */}
+                <div className="relative z-10 col-span-12 order-1 flex flex-col justify-center p-8 md:col-span-7 md:order-2 md:p-14 lg:p-16">
+                  <span className="pill-gold w-fit">Como funciona</span>
+                  <h2 className="mt-6 font-display text-3xl font-bold leading-[1.05] tracking-tight text-foreground md:text-4xl lg:text-5xl">
+                    Quatro passos do recebível ao{" "}
+                    <span className="text-gold-gradient">dinheiro na conta</span>
+                  </h2>
+
+                  <ol className="mt-8 grid gap-3 sm:grid-cols-2">
+                    {steps.map((s, i) => (
+                      <Reveal key={s.n} delay={i * 120}>
+                        <li className="group relative flex gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-md transition hover:border-[hsl(var(--gold))/0.45]">
+                          <span className="font-display text-2xl font-bold text-gold-gradient">
+                            {s.n}
+                          </span>
+                          <div>
+                            <h3 className="font-display text-sm font-bold text-foreground md:text-base">
+                              {s.title}
+                            </h3>
+                            <p className="mt-1 text-xs leading-relaxed text-foreground/65 md:text-sm">
+                              {s.desc}
+                            </p>
+                          </div>
+                        </li>
+                      </Reveal>
+                    ))}
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -216,20 +249,37 @@ const AntecipacaoRecebiveis = () => {
       <section className="relative overflow-hidden py-20 md:py-28">
         <div className="container-x">
           <Reveal>
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0a1428] shadow-[0_40px_120px_-40px_hsl(var(--gold)/0.4)]">
-              <div className="grid items-stretch md:grid-cols-2">
-                <div className="relative min-h-[320px] overflow-hidden md:min-h-[480px]">
-                  <img
-                    src={growthImg}
-                    alt="Gráfico de crescimento"
-                    loading="lazy"
-                    width={1280}
-                    height={896}
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1400ms] hover:scale-105"
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent to-[#0a1428] md:via-transparent" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-[hsl(var(--gold))/0.35] bg-gradient-to-r from-[#0a1428] via-[#0d1a36] to-[#0a1428] shadow-[0_40px_120px_-40px_hsl(var(--gold)/0.4)]">
+              <div className="pointer-events-none absolute -right-32 -bottom-24 h-[500px] w-[500px] rounded-full bg-[hsl(var(--gold))/0.18] blur-3xl" />
+              <div className="relative grid items-stretch md:grid-cols-12">
+                <div className="relative col-span-12 min-h-[340px] md:col-span-5 md:min-h-[520px]">
+                  <div className="pointer-events-none absolute inset-y-0 -right-20 hidden w-40 bg-gradient-to-l from-[#0a1428] to-transparent md:block" />
+                  <Parallax amount={40} className="absolute inset-0">
+                    <img
+                      src={personLojista}
+                      alt="Lojista satisfeito"
+                      loading="lazy"
+                      width={1024}
+                      height={1280}
+                      className="absolute bottom-0 left-0 h-[110%] w-auto max-w-none object-contain object-bottom drop-shadow-[0_30px_40px_rgba(0,0,0,0.5)]"
+                    />
+                  </Parallax>
+                  <div className="absolute right-4 top-6 z-10 md:left-6 md:right-auto">
+                    <Reveal delay={200}>
+                      <div className="flex items-center gap-3 rounded-2xl border border-[hsl(var(--gold))/0.45] bg-[#0a1428]/85 px-4 py-3 backdrop-blur-md">
+                        <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--gold))] to-[hsl(var(--gold-soft))] text-[#0a1428]">
+                          <CheckCircle2 className="h-4 w-4" />
+                        </span>
+                        <div>
+                          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-foreground/60">Aprovado</p>
+                          <p className="text-sm font-bold text-foreground">100% digital</p>
+                        </div>
+                      </div>
+                    </Reveal>
+                  </div>
                 </div>
-                <div className="relative flex flex-col justify-center p-8 md:p-12 lg:p-16">
+
+                <div className="relative z-10 col-span-12 flex flex-col justify-center p-8 md:col-span-7 md:p-12 lg:p-16">
                   <span className="pill-gold w-fit">Cresça com fôlego</span>
                   <h2 className="mt-6 font-display text-3xl font-bold leading-[1.1] tracking-tight text-foreground md:text-4xl">
                     Mais caixa hoje,{" "}
