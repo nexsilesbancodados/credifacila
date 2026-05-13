@@ -32,20 +32,20 @@ const PageHeader = ({ eyebrow, title, subtitle, primaryCta, secondaryCta, right,
     )}
     <div className="blob -left-16 top-20 h-80 w-80 anim-floaty" style={{ background: "hsl(202 100% 56% / 0.55)" }} />
     <div className="blob right-0 bottom-0 h-96 w-96 anim-floaty" style={{ background: "hsl(40 78% 48% / 0.35)", animationDelay: "2s" }} />
-    <div className="container-x relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-2">
+    <div className="container-x relative grid items-center gap-12 py-12 md:py-24 lg:grid-cols-2">
       <div className="text-white">
         {eyebrow && <span className="pill-light">{eyebrow}</span>}
-        <h1 className="mt-5 text-4xl font-extrabold leading-[1.05] md:text-5xl lg:text-6xl">{title}</h1>
-        {subtitle && <p className="mt-5 max-w-xl text-base text-white/95 md:text-lg">{subtitle}</p>}
+        <h1 className="mt-4 text-3xl font-extrabold leading-[1.1] sm:text-4xl md:text-5xl lg:text-7xl tracking-tighter">{title}</h1>
+        {subtitle && <p className="mt-5 max-w-xl text-base text-white/80 md:text-xl leading-relaxed">{subtitle}</p>}
         {(primaryCta || secondaryCta) && (
           <div className="mt-8 flex flex-wrap gap-3">
             {primaryCta && (
-              <Link to={primaryCta.href} className="btn-gold">
+              <Link to={primaryCta.href} className="btn-gold w-full sm:w-auto">
                 {primaryCta.label} <ArrowRight className="h-4 w-4" />
               </Link>
             )}
             {secondaryCta && (
-              <Link to={secondaryCta.href} className="btn-ghost">{secondaryCta.label}</Link>
+              <Link to={secondaryCta.href} className="btn-ghost w-full sm:w-auto">{secondaryCta.label}</Link>
             )}
           </div>
         )}
