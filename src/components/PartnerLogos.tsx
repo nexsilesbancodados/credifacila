@@ -1,4 +1,4 @@
-import { Reveal } from "./Reveal";
+import Reveal from "./Reveal";
 import { Landmark, Building2, Briefcase, ShieldCheck, BadgeCheck, Wallet } from "lucide-react";
 
 const partners = [
