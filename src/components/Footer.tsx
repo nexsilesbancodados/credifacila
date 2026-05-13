@@ -88,11 +88,11 @@ const Footer = () => (
 
     <div className="border-t border-white/5 bg-black/20 py-10">
       <div className="container-x">
-        <div className="flex flex-col items-center justify-between gap-6 text-[10px] font-bold uppercase tracking-widest text-white/30 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-6 text-[10px] font-bold uppercase tracking-widest text-white/50 md:flex-row">
           <p>© {new Date().getFullYear()} Credifácil Network</p>
           <p>CNPJ {SITE.cnpj} • Regulado BACEN</p>
         </div>
-        <div className="mt-10 grid gap-8 text-[9px] leading-loose text-white/20 md:grid-cols-2 text-justify">
+        <div className="mt-10 grid gap-8 text-[9px] leading-loose text-white/40 md:grid-cols-2 text-justify">
           <p>
             A Credifácil não é uma instituição financeira e não realiza operações de crédito diretamente. Atuamos como correspondente bancário em conformidade com a Resolução nº 4.935 do Banco Central do Brasil. Todas as propostas estão sujeitas à análise de crédito pelas instituições financeiras parceiras autorizadas.
           </p>
