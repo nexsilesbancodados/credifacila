@@ -9,7 +9,6 @@ import Reveal from "@/components/Reveal";
 import TrustBadges from "@/components/TrustBadges";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
-import CreditSimulator from "@/components/CreditSimulator";
 import FAQAccordion from "@/components/FAQAccordion";
 import AnimatedStat from "@/components/AnimatedStat";
 import PartnerLogos from "@/components/PartnerLogos";
