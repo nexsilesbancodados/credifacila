@@ -33,7 +33,7 @@ const AntecipacaoRecebiveis = () => (
           <div>
             <span className="pill-gold"><Zap className="h-3 w-3" aria-hidden="true" /> Eficiência Operacional</span>
             <h2 id="liquidity-title" className="mt-6 text-3xl font-black leading-tight text-white md:text-5xl tracking-tighter">Liquidez no tempo do seu negócio</h2>
-            <p className="mt-6 text-lg text-white/60 font-medium leading-relaxed">
+            <p className="mt-6 text-lg text-white/80 font-medium leading-relaxed">
               Diferente dos bancos tradicionais, nossa análise foca na qualidade do seu recebível e na saúde da operação, garantindo agilidade e taxas de securitização justas.
             </p>
             
@@ -64,7 +64,7 @@ const AntecipacaoRecebiveis = () => (
               <div key={i} className="rounded-[2rem] border border-white/10 bg-white/5 p-8 transition-all hover:bg-white/10 group">
                 <item.icon className="h-8 w-8 text-[hsl(var(--gold-soft))] transition-transform group-hover:scale-110" aria-hidden="true" />
                 <h4 className="mt-6 font-black text-white uppercase tracking-tighter">{item.title}</h4>
-                <p className="mt-2 text-xs text-white/40 font-bold leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-xs text-white/60 font-bold leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -90,7 +90,7 @@ const AntecipacaoRecebiveis = () => (
               <item.icon className="h-6 w-6" />
             </div>
             <h3 className="mt-6 text-xl font-black text-white uppercase tracking-tighter">{item.title}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-white/50 font-medium">{item.text}</p>
+            <p className="mt-3 text-sm leading-relaxed text-white/80 font-medium">{item.text}</p>
           </div>
         ))}
       </div>

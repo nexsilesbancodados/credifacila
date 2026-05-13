@@ -57,10 +57,10 @@ const InvistaConosco = () => (
             </div>
             <span className="mt-6 text-xs font-bold uppercase tracking-widest text-[hsl(var(--gold-soft))]">{p.highlight}</span>
             <h3 className="mt-2 text-2xl font-bold text-white">{p.title}</h3>
-            <p className="mt-4 text-white/90">{p.desc}</p>
+            <p className="mt-4 text-sm text-white">{p.desc}</p>
             <ul className="mt-6 flex flex-col gap-3">
               {p.features.map((f, j) => (
-                <li key={j} className="flex items-center gap-2 text-sm text-white/90">
+                <li key={j} className="flex items-center gap-2 text-sm text-white">
                   <CheckCircle2 className="h-4 w-4 text-[hsl(var(--gold-soft))]" /> {f}
                 </li>
               ))}
