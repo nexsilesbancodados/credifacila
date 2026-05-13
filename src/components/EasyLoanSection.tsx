@@ -97,24 +97,8 @@ const EasyLoanSection = () => {
           ))}
         </div>
 
-        {/* Trust strip */}
-        <div className="mt-16 grid grid-cols-1 gap-6 rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-transparent p-8 sm:grid-cols-3 md:p-10">
-          {[
-            { v: "+15 anos", l: "de tradição no mercado financeiro" },
-            { v: "+250 mil", l: "clientes atendidos com excelência" },
-            { v: "98%", l: "de aprovação entre simulações qualificadas" },
-          ].map((s) => (
-            <div key={s.l} className="text-center sm:text-left">
-              <div className="font-display text-3xl font-extrabold text-gold-gradient md:text-4xl">
-                {s.v}
-              </div>
-              <div className="mt-2 text-sm text-foreground/60">{s.l}</div>
-            </div>
-          ))}
-        </div>
-
         {/* CTA */}
-        <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="mt-16 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             href="/contato"
             className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-br from-[hsl(var(--gold-soft))] to-[hsl(var(--gold))] px-8 py-4 text-sm font-bold uppercase tracking-wider text-background shadow-2xl transition hover:scale-[1.02] sm:w-auto"
