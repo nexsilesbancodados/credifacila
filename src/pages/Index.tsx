@@ -44,7 +44,7 @@ const Index = () => (
         aria-hidden="true"
         loading="eager"
         fetchPriority="high"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover brightness-[0.4]"
       />
       <div className="blob -left-20 top-32 h-96 w-96 anim-floaty" style={{ background: "hsl(202 100% 56% / 0.5)" }} />
       <div className="blob right-0 top-10 h-80 w-80 anim-floaty" style={{ background: "hsl(40 78% 48% / 0.35)", animationDelay: "1.5s" }} />
