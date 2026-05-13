@@ -1,18 +1,28 @@
 export type Step = { title: string; text: string };
 
-const StepTimeline = ({ steps }: { steps: Step[] }) => (
-  <ol className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-    {steps.map((s, i) => (
-      <li key={i} className="relative card-soft p-6">
-        <div className="flex items-baseline gap-3">
-          <span className="text-gold-gradient text-4xl font-extrabold leading-none">0{i + 1}</span>
-          <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Passo</span>
-        </div>
-        <h3 className="mt-3 text-lg font-extrabold">{s.title}</h3>
-        <p className="mt-2 text-sm text-muted-foreground">{s.text}</p>
-      </li>
-    ))}
-  </ol>
-);
+const StepTimeline = ({ steps }: { steps: Step[] }) => {
+  return (
+    <div className="relative">
+      {/* Desktop horizontal line */}
+      <div className="absolute top-12 left-0 right-0 hidden h-0.5 bg-white/10 lg:block" />
+      
+      <ol className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 relative z-10">
+        {steps.map((s, i) => (
+          <li key={i} className="relative">
+            <div className="group flex flex-col">
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-[hsl(var(--gold-soft))] shadow-xl transition-all group-hover:bg-[hsl(var(--gold-soft))] group-hover:text-navy-deep">
+                <span className="text-2xl font-black italic">{i + 1}</span>
+              </div>
+              <div className="card-soft p-6 h-full flex-1">
+                <h3 className="text-lg font-bold text-white">{s.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/60">{s.text}</p>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+};
 
 export default StepTimeline;

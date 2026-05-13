@@ -12,7 +12,7 @@ const items = [
 
 const MobileBottomNav = () => (
   <>
-    <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-[hsl(var(--navy-deep))/0.92] backdrop-blur-xl text-white lg:hidden">
+    <nav className="fixed inset-x-0 bottom-0 z-[60] border-t border-white/10 bg-[hsl(var(--navy-deep))/0.92] backdrop-blur-xl text-white lg:hidden pb-safe">
       <div className="grid grid-cols-5">
         {items.map(({ to, I, label }) => (
           <NavLink

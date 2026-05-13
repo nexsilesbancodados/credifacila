@@ -30,9 +30,9 @@ const Header = () => {
            : "bg-transparent py-2"
       )}
     >
-      <div className="container-x flex h-[72px] items-center justify-between md:h-[84px]">
+      <div className="container-x flex h-[64px] items-center justify-between md:h-[84px]">
         <Link to="/" className="flex items-center gap-2" aria-label="Credifácil — Início">
-          <Logo className="h-11 md:h-12" />
+          <Logo className="h-9 md:h-12" />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
@@ -107,13 +107,18 @@ const Header = () => {
           </div>
         </div>
 
-        <button
-          aria-label="Abrir menu"
-          onClick={() => setOpen((v) => !v)}
-          className="grid h-11 w-11 place-items-center rounded-full border border-border bg-white shadow-sm lg:hidden"
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <Link to="/auth" className="grid h-10 w-10 place-items-center rounded-full border border-border bg-white text-foreground shadow-sm">
+            <User className="h-4 w-4" />
+          </Link>
+          <button
+            aria-label="Abrir menu"
+            onClick={() => setOpen((v) => !v)}
+            className="grid h-10 w-10 place-items-center rounded-full border border-border bg-white shadow-sm"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile drawer */}
@@ -127,7 +132,7 @@ const Header = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
               onClick={() => setOpen(false)}
-              className="fixed inset-0 top-[72px] z-40 bg-[hsl(var(--navy-deep))/0.6] backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 top-[64px] md:top-[84px] z-40 bg-[hsl(var(--navy-deep))/0.6] backdrop-blur-sm lg:hidden"
             />
             <motion.div
               key="drawer"
@@ -135,7 +140,7 @@ const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:hidden relative z-50 border-t border-white/10 bg-[hsl(var(--navy-deep))/0.95] backdrop-blur-xl text-white shadow-[var(--shadow-elev)]"
+              className="lg:hidden absolute top-full left-0 w-full z-50 border-t border-white/10 bg-[hsl(var(--navy-deep))/0.95] backdrop-blur-xl text-white shadow-[var(--shadow-elev)] max-h-[calc(100vh-64px)] overflow-y-auto"
             >
               <nav className="container-x flex flex-col gap-1 py-4">
                 {NAV.map((item) => {
