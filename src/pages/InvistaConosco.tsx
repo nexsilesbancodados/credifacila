@@ -57,7 +57,7 @@ const InvistaConosco = () => (
             </div>
             <span className="mt-6 text-xs font-bold uppercase tracking-widest text-[hsl(var(--gold-soft))]">{p.highlight}</span>
             <h3 className="mt-2 text-2xl font-bold text-white">{p.title}</h3>
-            <p className="mt-4 text-white/70">{p.desc}</p>
+            <p className="mt-4 text-white/90">{p.desc}</p>
             <ul className="mt-6 flex flex-col gap-3">
               {p.features.map((f, j) => (
                 <li key={j} className="flex items-center gap-2 text-sm text-white/90">
@@ -81,7 +81,7 @@ const InvistaConosco = () => (
           <div>
             <span className="pill-gold"><Shield className="h-3 w-3" /> Segurança Institucional</span>
             <h2 className="mt-6 text-3xl font-extrabold leading-tight text-white md:text-5xl">Governança inspirada nos maiores bancos</h2>
-            <p className="mt-6 text-lg text-white/80">
+            <p className="mt-6 text-lg text-white/90">
               Seguimos diretrizes rigorosas de compliance e gestão de risco para garantir que cada centavo investido esteja protegido por processos técnicos e auditorias recorrentes.
             </p>
             
@@ -97,7 +97,7 @@ const InvistaConosco = () => (
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-white">{item.title}</h4>
-                    <p className="mt-1 text-white/70">{item.text}</p>
+                        <p className="mt-1 text-white/90">{item.text}</p>
                   </div>
                 </div>
               ))}
@@ -121,20 +121,20 @@ const InvistaConosco = () => (
       <div className="mx-auto max-w-4xl text-center">
         <span className="pill-gold"><Users className="h-3 w-3" /> Suitability</span>
         <h2 className="mt-4 text-3xl font-extrabold leading-tight text-white md:text-4xl">Perfil do Investidor Credifácil</h2>
-        <p className="mt-6 text-lg text-white/80">
+        <p className="mt-6 text-lg text-white/90">
           Nossas soluções são desenhadas para investidores que compreendem o mercado de crédito privado e buscam diversificação inteligente.
         </p>
 
         <div className="mt-12 grid gap-4 md:grid-cols-2">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-left">
             <h4 className="font-bold text-white">Investidor Qualificado</h4>
-            <p className="mt-2 text-sm text-white/70 italic">Instrução CVM 554</p>
-            <p className="mt-4 text-sm text-white/80">Acesso a FIDCs e emissões exclusivas com rentabilidades diferenciadas.</p>
+            <p className="mt-2 text-sm text-white/80 italic">Instrução CVM 554</p>
+            <p className="mt-4 text-sm text-white/90">Acesso a FIDCs e emissões exclusivas com rentabilidades diferenciadas.</p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-left">
             <h4 className="font-bold text-white">Wealth & Family Offices</h4>
-            <p className="mt-2 text-sm text-white/70 italic">Gestão de Patrimônio</p>
-            <p className="mt-4 text-sm text-white/80">Estruturas personalizadas para preservação e sucessão familiar.</p>
+            <p className="mt-2 text-sm text-white/80 italic">Gestão de Patrimônio</p>
+            <p className="mt-4 text-sm text-white/90">Estruturas personalizadas para preservação e sucessão familiar.</p>
           </div>
         </div>
       </div>
@@ -157,7 +157,7 @@ const InvistaConosco = () => (
     <SectionBanner image={bannerInvestimentos} alt="Executivo observando indicadores financeiros" />
 
     <section className="container-x py-12">
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-8 text-[10px] leading-relaxed text-white/40">
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-8 text-[10px] leading-relaxed text-white/60">
         <p className="mb-4"><strong>DISCLAIMER LEGAL:</strong></p>
         <p className="mb-2">A Credifácil não realiza a venda direta de valores mobiliários. Nossos produtos são estruturados e distribuídos por instituições financeiras parceiras devidamente autorizadas pelo Banco Central do Brasil e pela CVM (Comissão de Valores Mobiliários).</p>
         <p className="mb-2">O investimento em fundos de investimento e outros ativos financeiros não conta com garantia do administrador, do gestor, de qualquer mecanismo de seguro ou, ainda, do fundo garantidor de crédito - FGC.</p>

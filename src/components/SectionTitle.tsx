@@ -35,7 +35,7 @@ const SectionTitle = ({ eyebrow, title, subtitle, align = "center", light, class
        <p className={cn(
          "mt-6 text-lg md:text-xl leading-relaxed max-w-2xl",
          align === "center" && "mx-auto",
-         light ? "text-white/60 font-medium" : "text-slate-600 font-medium"
+         light ? "text-white/80 font-medium" : "text-slate-600 font-medium"
        )}>
          {subtitle}
        </p>

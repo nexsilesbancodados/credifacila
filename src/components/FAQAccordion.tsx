@@ -40,7 +40,7 @@ const FAQAccordionItem = memo(({ item, isOpen, onClick, dark, id }: { item: FAQ;
         <p
           className={cn(
             "px-6 pb-6 text-sm leading-relaxed font-medium",
-            dark ? "text-white/70" : "text-slate-600"
+            dark ? "text-white/90" : "text-slate-600"
           )}
         >
           {item.a}

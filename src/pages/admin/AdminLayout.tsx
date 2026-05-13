@@ -50,18 +50,12 @@ const AdminLayout = () => {
         
         <nav className="flex-1 space-y-2">
           {links.map((l) => (
-            <NavLink
-              key={l.to}
-              to={l.to}
-              end={l.end}
-              className={({ isActive }) => cn(
-                "flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-bold transition-all",
-                isActive 
-                  ? "bg-white/10 text-white shadow-xl" 
-                  : "text-white/40 hover:bg-white/5 hover:text-white"
+            <NavLink key={l.to} to={l.to} end={l.end} className={({ isActive }) => cn("flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-bold transition-all", isActive ? "bg-white/10 text-white shadow-xl" : "text-white/40 hover:bg-white/5 hover:text-white")}>
+              {({ isActive }) => (
+                <>
+                  <l.icon className={cn("h-4 w-4", isActive ? "text-[hsl(var(--gold-soft))]" : "")} /> {l.label}
+                </>
               )}
-            >
-              <l.icon className={cn("h-4 w-4", isActive ? "text-[hsl(var(--gold-soft))]" : "")} /> {l.label}
             </NavLink>
           ))}
         </nav>
