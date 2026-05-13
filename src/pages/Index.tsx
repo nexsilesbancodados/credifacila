@@ -105,6 +105,9 @@ const Index = () => (
       <TrustBadges />
     </Reveal>
 
+    {/* PARCEIROS */}
+    <PartnerLogos />
+
      {/* SIMULADOR */}
      <section className="container-x py-20">
        <div className="grid gap-12 lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_480px]">
