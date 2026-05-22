@@ -8,7 +8,7 @@ const navGroups = [
       { label: "Crédito Consignado", href: "/consignado" },
       { label: "Empréstimo Pessoal", href: "/pessoal" },
       { label: "Securitizadora", href: "/securitizadora" },
-      { label: "Invista Conosco", href: "/invista" },
+      { label: "Portal do Cliente", href: "https://www.systemjuros.com.br/portal-cliente" },
     ],
   },
   {
@@ -50,7 +50,11 @@ const Footer = () => {
             <ul className="mt-8 space-y-3 text-sm text-foreground/70">
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--gold-soft))]" />
-                <span>0800 000 0000</span>
+                <span>(11) 96454-1758</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--gold-soft))]" />
+                <span>(11) 94089-3852</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--gold-soft))]" />

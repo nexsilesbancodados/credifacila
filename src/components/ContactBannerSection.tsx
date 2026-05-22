@@ -36,11 +36,13 @@ const ContactBannerSection = () => {
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
                 <a
-                  href="tel:+5500000000000"
+                  href="https://wa.me/5511964541758"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-foreground/85 backdrop-blur-md transition hover:border-[hsl(var(--gold))/0.45] hover:text-foreground"
                 >
                   <Phone className="h-4 w-4 text-[hsl(var(--gold-soft))]" />
-                  Ligue agora
+                  WhatsApp
                 </a>
               </div>
             </div>
