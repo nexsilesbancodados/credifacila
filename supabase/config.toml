@@ -1,7 +1,1 @@
 project_id = "qsroydcldmhsbqtonpjv"
-
-[functions.chat]
-verify_jwt = false
-
-[functions.portal-login]
-verify_jwt = false
