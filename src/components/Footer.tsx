@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
+import { Mail, Phone, Instagram, Facebook, Linkedin } from "lucide-react";
 import logo from "@/assets/logo-credifacil.png";
 
 const navGroups = [
@@ -59,10 +59,6 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--gold-soft))]" />
                 <span>contato@credifacil.com.br</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--gold-soft))]" />
-                <span>Av. Paulista, 1000 — São Paulo, SP</span>
               </li>
             </ul>
           </div>
