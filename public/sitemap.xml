@@ -11,11 +11,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://credifacila.lovable.app/securitizadora</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://credifacila.lovable.app/securitizadora/antecipacao-de-recebiveis</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -31,23 +26,8 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://credifacila.lovable.app/invista-conosco</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://credifacila.lovable.app/blog</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://credifacila.lovable.app/sobre</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://credifacila.lovable.app/contato</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
