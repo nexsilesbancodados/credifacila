@@ -20,10 +20,9 @@ const navItems: NavItem[] = [
       { label: "Conta Digital Luri", href: "/securitizadora/conta-digital-luri" },
     ],
   },
-  { label: "Invista Conosco", href: "/invista-conosco" },
-   { label: "Blog", href: "/blog" },
-   { label: "Dúvidas", href: "/duvidas" },
- ];
+  { label: "Blog", href: "/blog" },
+  { label: "Dúvidas", href: "/duvidas" },
+];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
