@@ -107,7 +107,7 @@ const Duvidas = () => {
                   Nosso time de especialistas está pronto para te atender pessoalmente.
                 </p>
                 <div className="space-y-3">
-                  <a href="#" className="flex items-center gap-3 text-sm hover:text-gold transition-colors">
+                  <a href="https://wa.me/5511964541758" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm hover:text-gold transition-colors">
                     <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-gold/30">
                       <MessageCircle className="w-4 h-4 text-gold" />
                     </div>
