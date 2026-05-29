@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import EasyLoanSection from "@/components/EasyLoanSection";
 import BanksPartnersSection from "@/components/BanksPartnersSection";
 import LoanTypesSection from "@/components/LoanTypesSection";
+import AppDriverSection from "@/components/AppDriverSection";
+import WorkersConsignadoSection from "@/components/WorkersConsignadoSection";
 import ContactBannerSection from "@/components/ContactBannerSection";
 import Footer from "@/components/Footer";
 import hero1 from "@/assets/hero/hero-1.png";
@@ -91,6 +93,8 @@ const Index = () => {
       <EasyLoanSection />
       <BanksPartnersSection />
       <LoanTypesSection />
+      <AppDriverSection />
+      <WorkersConsignadoSection />
       <ContactBannerSection />
       <Footer />
     </main>
