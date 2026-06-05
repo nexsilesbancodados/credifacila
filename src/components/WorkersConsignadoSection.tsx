@@ -1,7 +1,8 @@
 import { DollarSign, Zap, ShieldCheck, ArrowRight, Lock, Users, Wallet, Calendar, CreditCard, Headphones } from "lucide-react";
 import Reveal from "./Reveal";
 import workersImg from "@/assets/sections/workers-duo.jpg";
-import logo from "@/assets/logo-credifacil.png";
+import logoAsset from "@/assets/logo-credmais.png.asset.json";
+const logo = logoAsset.url;
 
 const WorkersConsignadoSection = () => {
   return (

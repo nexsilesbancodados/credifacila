@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
-import logo from "@/assets/logo-credifacil.png";
+import logoAsset from "@/assets/logo-credmais.png.asset.json";
+const logo = logoAsset.url;
 
 type NavItem = {
   label: string;
