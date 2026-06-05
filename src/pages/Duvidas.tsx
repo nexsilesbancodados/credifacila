@@ -14,7 +14,7 @@ const categories = [
 const faqs = [
   {
     category: "geral",
-    q: "Quem pode ser cliente Credifácil?",
+    q: "Quem pode ser cliente CredMais?",
     a: "Pessoas físicas e jurídicas que buscam soluções financeiras personalizadas, seja para crédito consignado, antecipação de recebíveis ou investimentos estratégicos.",
   },
   {
@@ -117,7 +117,7 @@ const Duvidas = () => {
                     <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-gold/30">
                       <Mail className="w-4 h-4 text-gold" />
                     </div>
-                    meajuda@credifacil.com
+                    meajuda@credmais.com
                   </a>
                 </div>
               </div>

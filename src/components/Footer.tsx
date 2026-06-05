@@ -41,7 +41,7 @@ const Footer = () => {
         <div className="grid gap-12 py-16 md:grid-cols-12 md:gap-10 md:py-20">
           <div className="md:col-span-4">
             <a href="/" className="inline-flex items-center">
-              <img src={logo} alt="Credifácil" className="h-14 w-auto object-contain" />
+              <img src={logo} alt="CredMais" className="h-14 w-auto object-contain" />
             </a>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-foreground/60">
               Crédito sob medida, com atendimento humano e tecnologia de ponta.
@@ -59,7 +59,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--gold-soft))]" />
-                <span>contato@credifacil.com.br</span>
+                <span>contato@credmais.com.br</span>
               </li>
             </ul>
           </div>
@@ -91,7 +91,7 @@ const Footer = () => {
 
         <div className="flex flex-col items-start justify-between gap-6 py-8 md:flex-row md:items-center">
           <p className="text-xs text-foreground/50">
-            © {new Date().getFullYear()} Credifácil. Todos os direitos reservados.
+            © {new Date().getFullYear()} CredMais. Todos os direitos reservados.
             CNPJ 00.000.000/0001-00.
           </p>
 
