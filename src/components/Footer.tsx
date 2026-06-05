@@ -1,5 +1,6 @@
 import { Mail, Phone, Instagram, Facebook, Linkedin } from "lucide-react";
-import logo from "@/assets/logo-credifacil.png";
+import logoAsset from "@/assets/logo-credmais.png.asset.json";
+const logo = logoAsset.url;
 
 const navGroups = [
   {
