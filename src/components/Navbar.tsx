@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import logo from "@/assets/credmais-logo.png.asset.json";
 
 const servicos = [
   { label: "Consignado", href: "/consignado" },
@@ -14,8 +15,20 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <a href="/" className="text-2xl font-serif font-bold tracking-tight text-white drop-shadow-lg">
-          CredMais
+        <a
+          href="/"
+          className="group relative flex items-center transition-transform hover:scale-[1.02]"
+          aria-label="CredMais Securitizadora"
+        >
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-amber-400/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+          />
+          <img
+            src={logo.url}
+            alt="CredMais Securitizadora"
+            className="h-11 w-auto object-contain drop-shadow-[0_4px_18px_rgba(0,0,0,0.55)]"
+          />
         </a>
 
         <ul className="flex items-center gap-8 text-sm font-medium text-white">
