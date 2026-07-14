@@ -27,7 +27,7 @@ const Navbar = () => {
           <img
             src={logo.url}
             alt="CredMais Securitizadora"
-            className="h-56 w-auto object-contain drop-shadow-[0_8px_28px_rgba(0,0,0,0.6)]"
+            className="h-12 w-auto object-contain drop-shadow-[0_4px_18px_rgba(0,0,0,0.55)]"
           />
         </a>
 
