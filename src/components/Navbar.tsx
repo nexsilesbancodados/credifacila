@@ -66,15 +66,6 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-
-        <a
-          href="https://www.systemjuros.com.br/portal-cliente"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rounded-full bg-amber-400 px-5 py-2 text-sm font-semibold text-neutral-900 hover:bg-amber-300 transition-colors shadow-lg"
-        >
-          Login
-        </a>
       </nav>
     </header>
   );
