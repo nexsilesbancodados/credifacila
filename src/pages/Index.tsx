@@ -1,14 +1,6 @@
-import HeroReveal from "@/components/HeroReveal";
-import Carousel3D from "@/components/Carousel3D";
-import ClientsReveal from "@/components/ClientsReveal";
-import LivingWords from "@/components/LivingWords";
-
 const Index = () => (
-  <main className="min-h-screen bg-background">
-    <HeroReveal />
-    <Carousel3D />
-    <ClientsReveal />
-    <LivingWords />
+  <main className="min-h-screen flex items-center justify-center bg-background">
+    <h1 className="text-2xl font-medium text-foreground">Site em construção</h1>
   </main>
 );
 
