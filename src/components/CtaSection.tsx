@@ -26,14 +26,14 @@ const CtaSection = () => {
   return (
     <section
       ref={ref}
-      className="relative w-full min-h-[90vh] overflow-hidden bg-neutral-950"
+      className="relative w-full min-h-[90vh] overflow-hidden"
     >
       <img
         src={ctaImage.url}
         alt="Consultores CredMais analisando proposta"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover opacity-60"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/70 via-neutral-950/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#04070f] via-[#04070f]/60 to-transparent" />
 
       <div className="relative z-10 mx-auto flex min-h-[90vh] max-w-7xl items-center justify-end px-6 py-24">
         <div

@@ -14,7 +14,7 @@ const items = [
     title: "Fluxo de caixa liberado hoje",
     desc: "Transforme vendas a prazo em capital imediato e mantenha sua operação em movimento.",
     cta: "Antecipar recebíveis",
-    color: "#F5D97A",
+    color: "#F0C876",
     img: img1.url,
   },
   {
@@ -22,7 +22,7 @@ const items = [
     title: "Liquidez sem risco de calote",
     desc: "Receba à vista pelos boletos emitidos e transfira o risco de inadimplência para nós.",
     cta: "Garantir meus boletos",
-    color: "#7DD6FF",
+    color: "#D4A64A",
     img: img2.url,
   },
   {
@@ -30,7 +30,7 @@ const items = [
     title: "Crédito com desconto em folha",
     desc: "Taxas exclusivas para servidores, aposentados e pensionistas, com aprovação rápida.",
     cta: "Simular consignado",
-    color: "#FFA0B0",
+    color: "#F0C876",
     img: img3.url,
   },
   {
@@ -38,12 +38,10 @@ const items = [
     title: "Conta digital sem burocracia",
     desc: "Cartão, PIX ilimitado e gestão financeira completa em uma única plataforma segura.",
     cta: "Abrir minha conta",
-    color: "#FFA17B",
+    color: "#D4A64A",
     img: img4.url,
   },
 ];
-
-const bgColors = ["#0f1a3a", "#1a1330", "#2a1520", "#2a1a10"];
 
 const ArchShowcase = () => {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -54,6 +52,7 @@ const ArchShowcase = () => {
 
     const ctx = gsap.context(() => {
       const imgs = gsap.utils.toArray<HTMLImageElement>(".arch-img");
+      if (!imgs.length) return;
 
       const mm = gsap.matchMedia();
 
@@ -75,11 +74,6 @@ const ArchShowcase = () => {
           const sub = gsap.timeline();
           if (next) {
             sub
-              .to(
-                root,
-                { backgroundColor: bgColors[index + 1] ?? bgColors[0], duration: 1.5, ease: "power2.inOut" },
-                0
-              )
               .to(
                 current,
                 { clipPath: "inset(0px 0px 100%)", objectPosition: "0px 60%", duration: 1.5, ease: "none" },
@@ -103,8 +97,8 @@ const ArchShowcase = () => {
                 scrub: true,
               },
             })
-            .to(image, { objectPosition: "0px 30%", duration: 5, ease: "none" })
-            .to(root, { backgroundColor: bgColors[index] ?? bgColors[0], duration: 1.5, ease: "power2.inOut" });
+            .to(image, { objectPosition: "0px 30%", duration: 5, ease: "none" });
+          void index;
         });
       });
     }, root);
@@ -116,7 +110,6 @@ const ArchShowcase = () => {
     <section
       ref={rootRef}
       className="arch-showcase"
-      style={{ backgroundColor: bgColors[0] }}
     >
       <div className="arch-container">
         <header className="arch-header">
