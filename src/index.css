@@ -39,16 +39,21 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, sans-serif;
-    /* === Single unified gradient (CredMais palette) === */
-    /* Navy #0A1330 · Midnight #04070F · Gold #D4A64A · Soft Gold #F0C876 */
-    background-color: #04070f;
+    /* === Fundo unificado bege/marrom claro === */
+    background-color: #f2e6d0;
     background-image:
-      radial-gradient(ellipse 60% 45% at 12% 8%, rgba(212, 166, 74, 0.10), transparent 65%),
-      radial-gradient(ellipse 55% 40% at 88% 92%, rgba(212, 166, 74, 0.08), transparent 65%),
-      linear-gradient(180deg, #0a1330 0%, #060a1c 45%, #04070f 100%);
+      radial-gradient(ellipse 60% 45% at 12% 8%, rgba(212, 166, 74, 0.18), transparent 65%),
+      radial-gradient(ellipse 55% 40% at 88% 92%, rgba(160, 120, 70, 0.14), transparent 65%),
+      linear-gradient(180deg, #f6ecd6 0%, #ecdcbd 45%, #e2cea6 100%);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  /* Máscara suave para imagens que devem fundir com o fundo */
+  .img-fade-bottom {
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight;
