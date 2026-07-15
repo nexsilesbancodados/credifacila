@@ -144,3 +144,36 @@
   .hero-reveal .image-grid { width: 75%; gap: 0.5em; }
   .hero-reveal .grid-row { width: 95%; justify-content: space-around; gap: 0.5em; }
 }
+
+/* ===== Services Grid Section ===== */
+.services-grid-section { --sg-d: 700ms; --sg-e: cubic-bezier(0.19, 1, 0.22, 1); background: hsl(var(--midnight)); padding: 6rem 1rem; }
+.services-grid-container { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 3rem; }
+.services-grid-header { text-align: center; }
+.services-grid-header h2 { font-family: 'Inter', sans-serif; font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 0.75rem; background: linear-gradient(135deg, #fff 0%, hsl(var(--gold-soft)) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.services-grid-header p { font-family: 'Cardo', serif; font-style: italic; color: hsl(var(--muted-foreground)); margin: 0; font-size: 1.15rem; }
+.services-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(4, 1fr); } }
+.service-card { position: relative; display: flex; align-items: flex-end; overflow: hidden; padding: 1rem; width: 100%; height: 460px; text-align: center; color: #fff; border-radius: 14px; box-shadow: 0 16px 40px rgba(0,0,0,0.35); outline: none; }
+.service-card-img { position: absolute; inset: 0; width: 100%; height: 110%; object-fit: cover; object-position: center; transition: transform calc(var(--sg-d) * 1.5) var(--sg-e); z-index: 0; }
+.service-card-shade { position: absolute; top: 0; left: 0; width: 100%; height: 200%; pointer-events: none; z-index: 1; background-image: linear-gradient(to bottom, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,0.35) 50%, hsla(0,0%,0%,0.85) 100%); transform: translateY(-50%); transition: transform calc(var(--sg-d) * 2) var(--sg-e); }
+.service-card-content { position: relative; display: flex; flex-direction: column; align-items: center; width: 100%; padding: 1.25rem 0.75rem; transition: transform var(--sg-d) var(--sg-e); z-index: 2; }
+.service-card-content > * + * { margin-top: 0.9rem; }
+.service-card-title { font-family: 'Inter', sans-serif; font-size: 1.35rem; font-weight: 700; line-height: 1.2; margin: 0; text-shadow: 0 2px 6px rgba(0,0,0,0.7); }
+.service-card-copy { font-family: 'Cardo', serif; font-size: 1.05rem; font-style: italic; line-height: 1.4; margin: 0; text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
+.service-card-btn { cursor: pointer; padding: 0.75rem 1.25rem; font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: hsl(var(--midnight)); background-color: hsl(var(--gold)); border: none; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); transition: transform 0.2s ease, background-color 0.2s ease; }
+.service-card-btn:hover { background-color: hsl(var(--gold-soft)); transform: scale(1.05); }
+.service-card-btn:focus-visible { outline: 2px dashed hsl(var(--gold-soft)); outline-offset: 3px; }
+@media (hover: none) {
+  .service-card-shade { transform: translateY(-30%); }
+}
+@media (hover: hover) and (min-width: 640px) {
+  .service-card-content { transform: translateY(calc(100% - 4.5rem)); }
+  .service-card-content > *:not(.service-card-title) { opacity: 0; transform: translateY(1.5rem); transition: transform var(--sg-d) var(--sg-e), opacity var(--sg-d) var(--sg-e); }
+  .service-card:hover, .service-card:focus-within { align-items: center; }
+  .service-card:hover .service-card-img, .service-card:focus-within .service-card-img { transform: translateY(-4%); }
+  .service-card:hover .service-card-shade, .service-card:focus-within .service-card-shade { transform: translateY(-50%); }
+  .service-card:hover .service-card-content, .service-card:focus-within .service-card-content { transform: translateY(0); }
+  .service-card:hover .service-card-content > *:not(.service-card-title),
+  .service-card:focus-within .service-card-content > *:not(.service-card-title) { opacity: 1; transform: translateY(0); transition-delay: calc(var(--sg-d) / 8); }
+}
