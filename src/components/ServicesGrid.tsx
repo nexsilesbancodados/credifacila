@@ -24,8 +24,8 @@ const cards = [
   },
   {
     img: card4.url,
-    title: "Conta Digital Luri",
-    copy: "Uma conta completa com cartão, PIX e serviços bancários sem burocracia.",
+    title: "Shield Bank",
+    copy: "Conta digital completa com cartão, PIX e serviços bancários sem burocracia.",
     cta: "Abrir minha conta",
   },
 ];
