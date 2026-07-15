@@ -6,7 +6,7 @@ const servicos = [
   { label: "Consignado", href: "/consignado" },
   { label: "Antecipação de Recebíveis", href: "/antecipacao-de-recebiveis" },
   { label: "Boleto Garantido", href: "/boleto-garantido" },
-  { label: "Conta Digital Luri", href: "/conta-digital-luri" },
+  { label: "Shield Bank", href: "/shield-bank" },
 ];
 
 const Navbar = () => {
