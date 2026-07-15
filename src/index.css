@@ -52,8 +52,8 @@
 
   /* Máscara suave para imagens que devem fundir com o fundo */
   .img-fade-bottom {
-    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 88%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 88%, transparent 100%);
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight;
