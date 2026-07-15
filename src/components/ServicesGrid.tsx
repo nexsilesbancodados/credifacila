@@ -1,7 +1,7 @@
 import card1 from "@/assets/card-antecipacao.png.asset.json";
 import card2 from "@/assets/card-boleto.png.asset.json";
 import card3 from "@/assets/card-consignado.png.asset.json";
-import card4 from "@/assets/card-conta.png.asset.json";
+import card4 from "@/assets/card-shield-bank.png.asset.json";
 
 const cards = [
   {
