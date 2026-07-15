@@ -2,6 +2,7 @@ import heroAsset from "@/assets/hero.png.asset.json";
 import Navbar from "@/components/Navbar";
 import CtaSection from "@/components/CtaSection";
 import ServicesGrid from "@/components/ServicesGrid";
+import ArchShowcase from "@/components/ArchShowcase";
 
 const Index = () => (
   <main className="min-h-screen bg-background">
@@ -14,6 +15,7 @@ const Index = () => (
       />
     </section>
     <ServicesGrid />
+    <ArchShowcase />
     <CtaSection />
   </main>
 );
