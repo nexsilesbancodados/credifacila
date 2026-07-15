@@ -31,9 +31,9 @@ const Navbar = () => {
           />
         </a>
 
-        <ul className="flex items-center gap-8 text-sm font-medium text-white">
+        <ul className="flex items-center gap-8 text-sm font-semibold text-[#2b1d0a]">
           <li>
-            <a href="/" className="hover:text-amber-400 transition-colors drop-shadow">
+            <a href="/" className="hover:text-amber-700 transition-colors">
               Início
             </a>
           </li>
@@ -44,7 +44,7 @@ const Navbar = () => {
           >
             <button
               type="button"
-              className="flex items-center gap-1 hover:text-amber-400 transition-colors drop-shadow"
+              className="flex items-center gap-1 hover:text-amber-700 transition-colors"
             >
               Serviços
               <ChevronDown
@@ -69,12 +69,12 @@ const Navbar = () => {
             )}
           </li>
           <li>
-            <a href="/blog" className="hover:text-amber-400 transition-colors drop-shadow">
+            <a href="/blog" className="hover:text-amber-700 transition-colors">
               Blog
             </a>
           </li>
           <li>
-            <a href="/duvidas" className="hover:text-amber-400 transition-colors drop-shadow">
+            <a href="/duvidas" className="hover:text-amber-700 transition-colors">
               Dúvidas
             </a>
           </li>

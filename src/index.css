@@ -52,8 +52,8 @@
 
   /* Máscara suave para imagens que devem fundir com o fundo */
   .img-fade-bottom {
-    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 88%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 88%, transparent 100%);
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight;
@@ -152,8 +152,8 @@
 .services-grid-section { --sg-d: 700ms; --sg-e: cubic-bezier(0.19, 1, 0.22, 1); background: transparent; padding: 6rem 1rem; }
 .services-grid-container { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 3rem; }
 .services-grid-header { text-align: center; }
-.services-grid-header h2 { font-family: 'Inter', sans-serif; font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em; margin: 0 0 0.75rem; background: linear-gradient(135deg, #fff 0%, hsl(var(--gold-soft)) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.services-grid-header p { font-family: 'Cardo', serif; font-style: italic; color: hsl(var(--muted-foreground)); margin: 0; font-size: 1.15rem; }
+.services-grid-header h2 { font-family: 'Inter', sans-serif; font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 800; letter-spacing: -0.03em; margin: 0 0 0.75rem; color: #2b1d0a; }
+.services-grid-header p { font-family: 'Cardo', serif; font-style: italic; color: #6b4d2a; margin: 0; font-size: 1.15rem; }
 .services-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
 @media (min-width: 640px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(4, 1fr); } }
@@ -172,18 +172,18 @@
 }
 
 /* ===== Arch Showcase (pinned mask reveal) ===== */
-.arch-showcase { color: #fff; background: transparent; }
+.arch-showcase { color: #2b1d0a; background: transparent; }
 .arch-container { max-width: 1440px; padding: 4rem 2rem; margin: 0 auto; }
 .arch-header { max-width: 720px; margin: 0 auto 4rem; text-align: center; }
-.arch-eyebrow { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: hsl(var(--gold-soft)); margin-bottom: 1rem; }
-.arch-header h2 { font-family: 'Inter', sans-serif; font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; margin: 0; background: linear-gradient(135deg, #fff 0%, hsl(var(--gold-soft)) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.arch-eyebrow { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #8a5a1c; margin-bottom: 1rem; }
+.arch-header h2 { font-family: 'Inter', sans-serif; font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; margin: 0; color: #2b1d0a; }
 .arch { display: flex; gap: 60px; justify-content: space-between; max-width: 1100px; margin-inline: auto; }
 .arch__left { display: flex; flex-direction: column; min-width: 300px; }
 .arch__left .arch__info { max-width: 420px; height: 100vh; display: grid; place-items: center; }
 .arch__left .arch__info .content { max-width: 380px; }
 .arch-tag { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #121212; padding: 0.4rem 0.9rem; border-radius: 999px; margin-bottom: 1.25rem; }
-.arch__left .arch__info h3.header { font-family: 'Inter', sans-serif; font-size: clamp(1.75rem, 2.4vw, 2.4rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; margin: 0 0 1rem; color: #fff; }
-.arch__left .arch__info p.desc { font-family: 'Cardo', serif; font-style: italic; color: rgba(255,255,255,0.78); font-size: 1.1rem; line-height: 1.55; margin: 0 0 1.75rem; }
+.arch__left .arch__info h3.header { font-family: 'Inter', sans-serif; font-size: clamp(1.75rem, 2.4vw, 2.4rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; margin: 0 0 1rem; color: #2b1d0a; }
+.arch__left .arch__info p.desc { font-family: 'Cardo', serif; font-style: italic; color: #4a3418; font-size: 1.1rem; line-height: 1.55; margin: 0 0 1.75rem; }
 .arch__left .arch__info a.link { text-decoration: none; padding: 0.85rem 1.25rem; color: #121212; border-radius: 999px; display: inline-flex; gap: 0.5rem; align-items: center; font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
 .arch__left .arch__info a.link:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,0.4); }
 .arch__right { flex-shrink: 1; height: 100vh; width: 100%; max-width: 540px; position: relative; display: flex; flex-direction: column; }
