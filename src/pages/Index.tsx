@@ -11,7 +11,7 @@ const Index = () => (
       <img
         src={heroAsset.url}
         alt="CredMais hero"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover img-fade-bottom"
       />
     </section>
     <ServicesGrid />
