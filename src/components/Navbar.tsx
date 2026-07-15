@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import logo from "@/assets/credmais-logo.png.asset.json";
 
@@ -8,9 +8,23 @@ const servicos = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+        scrolled
+          ? "bg-[#f6ecd6]/85 backdrop-blur-md border-b border-amber-900/10 shadow-sm"
+          : "bg-gradient-to-b from-black/35 to-transparent"
+      }`}
+    >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <a
           href="/"
@@ -28,9 +42,13 @@ const Navbar = () => {
           />
         </a>
 
-        <ul className="flex items-center gap-8 text-sm font-semibold text-[#2b1d0a]">
+        <ul
+          className={`flex items-center gap-8 text-sm font-semibold transition-colors ${
+            scrolled ? "text-[#2b1d0a]" : "text-white drop-shadow"
+          }`}
+        >
           <li>
-            <a href="/" className="hover:text-amber-700 transition-colors">
+            <a href="/" className="hover:text-amber-400 transition-colors">
               Início
             </a>
           </li>
@@ -41,7 +59,7 @@ const Navbar = () => {
           >
             <button
               type="button"
-              className="flex items-center gap-1 hover:text-amber-700 transition-colors"
+              className="flex items-center gap-1 hover:text-amber-400 transition-colors"
             >
               Serviços
               <ChevronDown
@@ -66,12 +84,12 @@ const Navbar = () => {
             )}
           </li>
           <li>
-            <a href="/blog" className="hover:text-amber-700 transition-colors">
+            <a href="/blog" className="hover:text-amber-400 transition-colors">
               Blog
             </a>
           </li>
           <li>
-            <a href="/duvidas" className="hover:text-amber-700 transition-colors">
+            <a href="/duvidas" className="hover:text-amber-400 transition-colors">
               Dúvidas
             </a>
           </li>
