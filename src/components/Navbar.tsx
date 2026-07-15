@@ -5,6 +5,7 @@ import logo from "@/assets/credmais-logo.png.asset.json";
 const servicos = [
   { label: "Consignado", href: "/consignado" },
   { label: "Antecipação de Recebíveis", href: "/antecipacao-de-recebiveis" },
+  { label: "Boleto Antecipado", href: "/boleto-antecipado" },
   { label: "Boleto Garantido", href: "/boleto-garantido" },
   { label: "Shield Bank", href: "/shield-bank" },
 ];

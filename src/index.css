@@ -216,3 +216,21 @@
   .service-card:hover .service-card-content > *:not(.service-card-title),
   .service-card:focus-within .service-card-content > *:not(.service-card-title) { opacity: 1; transform: translateY(0); transition-delay: calc(var(--sg-d) / 8); }
 }
+
+/* ===== Boleto Antecipado Page ===== */
+.ba-page { width: 100%; overscroll-behavior: none; }
+.ba-page img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ba-sticky-bar { position: fixed; width: 100%; top: 50%; left: 0; transform: translateY(-50%); padding: 1em; display: flex; mix-blend-mode: difference; z-index: 40; pointer-events: none; }
+.ba-sticky-bar .ba-item:nth-child(1), .ba-sticky-bar .ba-item:nth-child(3) { flex: 2; }
+.ba-sticky-bar .ba-item:nth-child(3) { text-align: right; }
+.ba-sticky-bar .ba-item:nth-child(2) { flex: 1; text-align: center; }
+.ba-sticky-bar .ba-item p { color: #fff; font-size: 1.25vw; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin: 0; font-family: 'Inter', sans-serif; }
+.ba-hero { width: 100vw; height: 100vh; }
+.ba-clients { width: 100%; padding: 10em 1em; background: #f6ecd6; }
+.ba-row { width: 100%; display: flex; justify-content: center; gap: 1em; }
+.ba-logo p { font-size: 40px; text-transform: uppercase; font-weight: 700; color: #2b1d0a; font-family: 'Inter', sans-serif; margin: 0; }
+.ba-trigger-footer { width: 100%; height: 100vh; background: #000; }
+@media (max-width: 900px) {
+  .ba-sticky-bar .ba-item p { font-size: 2.5vw; }
+  .ba-logo p { font-size: 20px; }
+}
