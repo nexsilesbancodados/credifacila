@@ -5,7 +5,7 @@ import ServicesGrid from "@/components/ServicesGrid";
 import ArchShowcase from "@/components/ArchShowcase";
 
 const Index = () => (
-  <main className="min-h-screen bg-background">
+  <main className="min-h-screen text-foreground">
     <Navbar />
     <section className="relative w-full h-screen overflow-hidden">
       <img
